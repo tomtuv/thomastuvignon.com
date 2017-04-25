@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Que faire en Arize-Lèze ?</title>
+	<link rel="icon" href="img/logo.png">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
+</head>
+
+<body>
+	<header class="titre">
+		<nav class="menu">
+			<ul>
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="carnet.html">Carnet d’envies</a></li>
+			</ul>
+		</nav>
+		<div class="social">
+			<span><a href="https://www.facebook.com/Office-de-tourisme-des-vallées-de-lArize-et-de-la-Lèze-354915084562735/"><img src="img/facebook.png"></a></span>
+			<span><a href="https://fr.pinterest.com/lemasdazil/"><img src="img/pinterest.png"></a></span>
+		</div>
+		<a href="index.html"><img src="img/logo.png" class="logo"></a>
+	</header>
+
+	<div class="contenu">
+		<div id="accueil">
+		<h1>Que faire en Arize-Lèze ?</h1>
+
+		<section id="categories">
+			<p>Vous recherchez…</p>
+			<div class="owl-carousel">
+				<div>
+					<input type="radio" id="visiter" name="filtre">
+					<label for="visiter">
+						<h2 class="intitule">Visiter</h2>
+						<img src="img/visiter.jpg" class="diapo">
+					</label>
+				</div>
+				<div>
+					<input type="radio" id="plein-air" name="filtre">
+					<label for="plein-air">
+						<h2 class="intitule">Plein air</h2>
+						<img src="img/plein-air.jpg" class="diapo">
+					</label>
+				</div>
+				<div>
+					<input type="radio" id="terroir" name="filtre">
+					<label for="terroir">
+						<h2 class="intitule">Terroir</h2>
+						<img src="img/terroir.jpg" class="diapo">
+					</label>
+				</div>
+				<div>
+					<input type="radio" id="ou-manger" name="filtre">
+					<label for="ou-manger">
+						<h2 class="intitule">Où manger</h2>
+						<img src="img/ou-manger.jpg" class="diapo">
+					</label>
+				</div>
+				<div>
+					<input type="radio" id="animations" name="filtre">
+					<label for="animations">
+						<h2 class="intitule">Animations</h2>
+						<img src="img/animations.jpg" class="diapo">
+					</label>
+				</div>
+				<div>
+					<input type="radio" id="ou-dormir" name="filtre">
+					<label for="ou-dormir">
+						<h2 class="intitule">Où dormir</h2>
+						<img src="img/ou-dormir.jpg" class="diapo">
+					</label>
+				</div>
+			</div>
+		</section>
+
+		<section id="options">
+			<p>
+				<select style="background-image:url(img/profil.png);" class="liste">
+					<option>Votre profil</option>
+					<option>En solo ou en duo</option>
+					<option>Entre amis</option>
+					<option>En famille</option>
+				</select>
+			</p>
+
+			<p>
+				<select style="background-image:url(img/quand.png);" class="liste">
+					<option>Pour quand ?</option>
+					<option>Le matin</option>
+					<option>L’après-midi</option>
+					<option>Le soir</option>
+				</select>
+			</p>
+		</section>
+
+		<div id="rechercher">
+			<button type="submit">Rechercher</button>
+		</div>
+	</div>
+	</div>
+
+	<footer>
+		<div class="infos">
+			<h3>Contact</h3>
+			<p>Téléphone : 05 61 69 99 90
+				<br> E-mail : informations@tourisme-arize-leze.com
+				<br> Site web : <a href="http://www.tourisme-arize-leze.com">www.tourisme-arize-leze.com</a>
+			</p>
+		</div>
+
+		<div class="infos">
+			<h3>Adresse</h3>
+			<p>Office de tourisme des valées de l’Arize et de la Lèze
+				<br> 11 place du champs de Mars
+				<br> 09290 Le Mas d’Azil
+			</p>
+		</div>
+
+		<div class="infos">
+			<h3>Horaires</h3>
+			<p>Lundi, mardi, mercredi, jeudi, vendredi :
+				<br> 09h30-12h30, 14h00-18h00
+				<br> Samedi, dimanche :
+				<br> 09h30-12h30, 14h00-18h00
+			</p>
+		</div>
+
+		<div class="mentions">
+			<span><a href="">Mentions légales</a></span>
+			<span><a href="">Remerciements</a></span>
+		</div>
+	</footer>
+
+	<nav class="navigation">
+		<a href="index.html"><img src="img/accueil-actif.png"></a>
+		<a href="carnet.html"><img src="img/carnet.png"></a>
+		<a href="infos.html"><img src="img/infos.png"></a>
+	</nav>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".owl-carousel").owlCarousel();
+		});
+
+		$('.owl-carousel').owlCarousel({
+			stagePadding: 110,
+			loop: true,
+			margin: 20,
+			nav: false,
+			startPosition: 0,
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 5
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.mentions-form-table tr th {
+    text-align: left !important;
+    width: 300px !important;
+}
+.mentions-legales-form-input {
+    width: 300px !important;
+}
+.mentions-legales-h2 {
+    font-size: 1.5em !important;
+}
+.mentions-legales-h4 {
+    font-size: 1.2em !important;
+    text-decoration: underline;
+}
+div#mentions-legales-right-card{
+    width: 200px;
+    padding-left: 20px;
+}
+div.mentions-legales-cell{
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+@media(max-width: 768px){
+    div#mentions-legales-right-card{
+        display: none;
+    }
+}
+p.mentions-legales-alert-options {
+    font-weight: bold;
+    color: rgb(205, 0, 0);
+}
