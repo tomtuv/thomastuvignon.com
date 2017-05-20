@@ -21,21 +21,6 @@ h2 {
 	margin:0 0 25px;
 }
 
-h3 {
-	font-size:24px;
-	font-weight:500;
-	margin-top:0;
-}
-
-h4 {
-	font-size:16px;
-	font-weight:600;
-	text-transform:uppercase;
-	letter-spacing:1px;
-	margin:0;
-	color:#333;
-}
-
 p {
 	font-size:18px;
 }
@@ -338,8 +323,8 @@ iframe#youtube {
 }
 
 #thomas a {
-	position: relative;
-	display: inline-block;
+	position:relative;
+	display:inline-block;
 }
 
 #thomas img {
@@ -349,12 +334,12 @@ iframe#youtube {
 }
 
 #thomas .fa-play {
-	opacity: 0;
-	color: #fff;
-	position: absolute;
-	font-size: 48px;
-	left: 40%;
-	top: 30%;
+	opacity:0;
+	color:#fff;
+	position:absolute;
+	font-size:48px;
+	left:40%;
+	top:30%;
 	-webkit-transition:all .25s;
 	-moz-transition:all .25s;
 	-o-transition:all .25s;
@@ -362,7 +347,7 @@ iframe#youtube {
 }
 
 #thomas .fa-play:hover {
-	opacity: 0.5;
+	opacity:.5;
 	-webkit-transition:all .25s;
 	-moz-transition:all .25s;
 	-o-transition:all .25s;
@@ -370,7 +355,7 @@ iframe#youtube {
 }
 
 #thomas img:hover + .fa-play {
-	opacity: 0.5;
+	opacity:.5;
 	-webkit-transition:all .25s;
 	-moz-transition:all .25s;
 	-o-transition:all .25s;
@@ -389,6 +374,12 @@ iframe#youtube {
 #parcours section {
 	color:#333;
 	padding:4em 0 2em;
+}
+
+#parcours h3 {
+	font-size:24px;
+	font-weight:500;
+	margin-top:0;
 }
 
 #parcours article {
@@ -410,6 +401,26 @@ iframe#youtube {
 
 #parcours p {
 	margin:1em 0 1.5em;
+}
+
+#experience h4 {
+	font-size:20px;
+	font-weight:500;
+	margin:0 0 .25em;
+}
+
+#experience h5 {
+	font-size:16px;
+	font-weight:600;
+	text-transform:uppercase;
+	margin:0;
+}
+
+#formation h4 {
+	font-size:16px;
+	font-weight:600;
+	text-transform:uppercase;
+	margin:0;
 }
 
 #outils video {
@@ -454,6 +465,13 @@ iframe#youtube {
 	margin-top:1em;
 	clear:both;
 	overflow:hidden;
+}
+
+#creations h3 {
+	font-size:16px;
+	font-weight:600;
+	text-transform:uppercase;
+	margin:0;
 }
 
 #creations .maquette {
@@ -544,7 +562,7 @@ footer a:hover {
 }
 
 /* !Media queries */
-@media screen and (max-width: 530px) {	
+@media screen and (max-width: 530px) {
 	#outils figure {
 		width:32%;
 	}
@@ -590,10 +608,6 @@ footer a:hover {
 		font-size:21px;
 	}
 	
-	h4 {
-		font-size:14px;
-	}
-	
 	p {
 		font-size:16px;
 	}
@@ -628,7 +642,7 @@ footer a:hover {
 	}
 	
 	#thomas .fa-play {
-		font-size: 42px;
+		font-size:42px;
 	}
 	
 	#thomas span {
@@ -637,6 +651,18 @@ footer a:hover {
 	
 	#parcours section {
 		padding:2em 0 .5em;
+	}
+	
+	#experience h4 {
+		font-size:18px;
+	}
+	
+	#experience h5 {
+		font-size:14px;
+	}
+	
+	#formation h4 {
+		font-size:14px;
 	}
 	
 	#parcours article {
@@ -665,6 +691,10 @@ footer a:hover {
 	
 	#creations section {
 		padding:2em 0 1em;
+	}
+	
+	#creations h3 {
+		font-size:14px;
 	}
 	
 	#creations button {
