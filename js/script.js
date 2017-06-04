@@ -1,83 +1,3 @@
-// !Parallax
-if ("ontouchstart" in window) {
-	document.documentElement.className = document.documentElement.className + " touch";
-}
-if (!$("html").hasClass("touch")) {
-	$(".parallax").css("background-attachment", "fixed");
-}
-
-function fullscreenFix() {
-	var h = $('body').height();
-	$(".content-b").each(function(i) {
-		if ($(this).innerHeight() > h) {
-			$(this).closest(".fullscreen").addClass("overflow");
-		}
-	});
-}
-$(window).resize(fullscreenFix);
-fullscreenFix();
-
-function backgroundResize() {
-	var windowH = $(window).height();
-	$(".background").each(function(i) {
-		var path = $(this);
-		var contW = path.width();
-		var contH = path.height();
-		var imgW = path.attr("data-img-width");
-		var imgH = path.attr("data-img-height");
-		var ratio = imgW / imgH;
-		var diff = parseFloat(path.attr("data-diff"));
-		diff = diff ? diff : 0;
-		var remainingH = 0;
-		if (path.hasClass("parallax") && !$("html").hasClass("touch")) {
-			var maxH = contH > windowH ? contH : windowH;
-			remainingH = windowH - contH;
-		}
-		imgH = contH + remainingH + diff;
-		imgW = imgH * ratio;
-		if (contW > imgW) {
-			imgW = contW;
-			imgH = imgW / ratio;
-		}
-		path.data("resized-imgW", imgW);
-		path.data("resized-imgH", imgH);
-		path.css("background-size", imgW + "px " + imgH + "px");
-	});
-}
-$(window).resize(backgroundResize);
-$(window).focus(backgroundResize);
-backgroundResize();
-
-function parallaxPosition(e) {
-	var heightWindow = $(window).height();
-	var topWindow = $(window).scrollTop();
-	var bottomWindow = topWindow + heightWindow;
-	var currentWindow = (topWindow + bottomWindow) / 2;
-	$(".parallax").each(function(i) {
-		var path = $(this);
-		var height = path.height();
-		var top = path.offset().top;
-		var bottom = top + height;
-		if (bottomWindow > top && topWindow < bottom) {
-			var imgW = path.data("resized-imgW");
-			var imgH = path.data("resized-imgH");
-			var min = 0;
-			var max = -imgH + heightWindow;
-			var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow;
-			top = top - overflowH;
-			bottom = bottom + overflowH;
-			var value = min + (max - min) * (currentWindow - top) / (bottom - top);
-			var orizontalPosition = path.attr("data-oriz-pos");
-			orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
-			$(this).css("background-position", orizontalPosition + " " + value + "px");
-		}
-	});
-}
-if (!$("html").hasClass("touch")) {
-	$(window).resize(parallaxPosition);
-	$(window).scroll(parallaxPosition);
-	parallaxPosition();
-}
 // !Menu
 $('#hamburger').click(function() {
 	$(this).toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
@@ -142,11 +62,9 @@ function hasScrolled() {
 $(window).scroll(function(e) {
 	var s1 = $('#thomas'),
 		s2 = $('#parcours'),
-		s3 = $('#plus'),
 		menu = $('nav'),
 		diff = s1[0].offsetTop - window.pageYOffset;
 	diff2 = s2[0].offsetTop - window.pageYOffset;
-	diff3 = s3[0].offsetTop - window.pageYOffset;
 	if (diff < 60) {
 		$("nav").addClass("menu-texte");
 		$("nav").removeClass("menu-rectangle");
@@ -154,10 +72,6 @@ $(window).scroll(function(e) {
 	if (diff2 < 60) {
 		$("nav").addClass("menu-rectangle");
 		$("nav").removeClass("menu-texte");
-	}
-	if (diff3 < 60) {
-		$("nav").addClass("menu-texte");
-		$("nav").removeClass("menu-rectangle");
 	}
 });
 // !Vidéo
@@ -189,29 +103,30 @@ $('#midi-life').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/creations/midi-life/01.jpg'
+			'src': 'img/realisations/midi-life/01.jpg',
+			'subHtml': '<p>Maquette de l’application Midi Life réalisée dans le cadre du hackathon organisé conjointement par l’école Digital Campus et le journal Midi libre.</p>'
 		}, {
-			'src': 'img/creations/midi-life/02.jpg'
+			'src': 'img/realisations/midi-life/02.jpg'
 		}, {
-			'src': 'img/creations/midi-life/03.jpg'
+			'src': 'img/realisations/midi-life/03.jpg'
 		}, {
-			'src': 'img/creations/midi-life/04.jpg'
+			'src': 'img/realisations/midi-life/04.jpg'
 		}, {
-			'src': 'img/creations/midi-life/05.jpg'
+			'src': 'img/realisations/midi-life/05.jpg'
 		}, {
-			'src': 'img/creations/midi-life/06.jpg'
+			'src': 'img/realisations/midi-life/06.jpg'
 		}, {
-			'src': 'img/creations/midi-life/07.jpg'
+			'src': 'img/realisations/midi-life/07.jpg'
 		}, {
-			'src': 'img/creations/midi-life/08.jpg'
+			'src': 'img/realisations/midi-life/08.jpg'
 		}, {
-			'src': 'img/creations/midi-life/09.jpg'
+			'src': 'img/realisations/midi-life/09.jpg'
 		}, {
-			'src': 'img/creations/midi-life/10.jpg'
+			'src': 'img/realisations/midi-life/10.jpg'
 		}, {
-			'src': 'img/creations/midi-life/11.jpg'
+			'src': 'img/realisations/midi-life/11.jpg'
 		}, {
-			'src': 'img/creations/midi-life/12.jpg'
+			'src': 'img/realisations/midi-life/12.jpg'
 		}],
 		speed: 500,
 		hideBarsDelay: 1000
@@ -221,13 +136,12 @@ $('#arize-leze').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/creations/arize-leze/01.jpg'
+			'src': 'img/realisations/arize-leze/01.jpg',
+			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle.</p><a href="sites/arize-leze" target="_blank">Voir le prototype HTML ›</a>'
 		}, {
-			'src': 'img/creations/arize-leze/02.jpg'
+			'src': 'img/realisations/arize-leze/02.jpg'
 		}, {
-			'src': 'img/creations/arize-leze/03.jpg'
-		}, {
-			'subHtml': '<a href="sites/arize-leze" target="_blank">Voir le prototype</a>'
+			'src': 'img/realisations/arize-leze/03.jpg'
 		}],
 		speed: 500,
 		hideBarsDelay: 1000
@@ -237,11 +151,16 @@ $('#musee-de-la-mine').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/creations/musee-de-la-mine/01.jpg'
+			'src': 'img/realisations/musee-de-la-mine/01.jpg',
+			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle.</p><a href="sites/musee-de-la-mine" target="_blank">Voir le site web ›</a>'
 		}, {
-			'src': 'img/creations/musee-de-la-mine/02.jpg'
+			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
-			'subHtml': '<a href="sites/musee-de-la-mine" target="_blank">Voir le site web</a>'
+			'src': 'img/realisations/musee-de-la-mine/03.jpg'
+		}, {
+			'src': 'img/realisations/musee-de-la-mine/04.jpg'
+		}, {
+			'src': 'img/realisations/musee-de-la-mine/05.jpg'
 		}],
 		speed: 500,
 		hideBarsDelay: 1000
@@ -251,11 +170,10 @@ $('#bron').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/creations/bron/01.jpg'
+			'src': 'img/realisations/bron/01.jpg',
+			'subHtml': '<p>Maquette du site de la ville de Bron réalisée en stage dans le cadre d’une réponse à un appel d’offre.</p>'
 		}, {
-			'src': 'img/creations/bron/02.jpg'
-		}, {
-			'src': 'img/creations/bron/03.jpg'
+			'src': 'img/realisations/bron/02.jpg'
 		}],
 		speed: 500,
 		hideBarsDelay: 1000
