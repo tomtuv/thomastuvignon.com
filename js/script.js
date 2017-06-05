@@ -99,6 +99,31 @@ $(document).ready(function() {
 	toggle_video_modal();
 });
 // !Galeries
+$('#wheel').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/wheel/01.jpg',
+			'subHtml': '<p>Maquette du site et de l’application Wheel pour une marque de vélo fictive réalisée dans le cadre de mon partiel de web design.</p>'
+		}, {
+			'src': 'img/realisations/wheel/02.jpg'
+		}, {
+			'src': 'img/realisations/wheel/03.jpg'
+		}, {
+			'src': 'img/realisations/wheel/04.jpg'
+		}, {
+			'src': 'img/realisations/wheel/05.jpg'
+		}, {
+			'src': 'img/realisations/wheel/06.jpg'
+		}, {
+			'src': 'img/realisations/wheel/07.jpg'
+		}, {
+			'src': 'img/realisations/wheel/08.jpg'
+		}],
+		speed: 500,
+		hideBarsDelay: 1000
+	})
+});
 $('#midi-life').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
@@ -132,27 +157,12 @@ $('#midi-life').on('click', function() {
 		hideBarsDelay: 1000
 	})
 });
-$('#arize-leze').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'img/realisations/arize-leze/01.jpg',
-			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle.</p><a href="sites/arize-leze" target="_blank">Voir le prototype HTML ›</a>'
-		}, {
-			'src': 'img/realisations/arize-leze/02.jpg'
-		}, {
-			'src': 'img/realisations/arize-leze/03.jpg'
-		}],
-		speed: 500,
-		hideBarsDelay: 1000
-	})
-});
 $('#musee-de-la-mine').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/musee-de-la-mine/01.jpg',
-			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle.</p><a href="sites/musee-de-la-mine" target="_blank">Voir le site web ›</a>'
+			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web ›</a></p>'
 		}, {
 			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
@@ -174,6 +184,21 @@ $('#bron').on('click', function() {
 			'subHtml': '<p>Maquette du site de la ville de Bron réalisée en stage dans le cadre d’une réponse à un appel d’offre.</p>'
 		}, {
 			'src': 'img/realisations/bron/02.jpg'
+		}],
+		speed: 500,
+		hideBarsDelay: 1000
+	})
+});
+$('#arize-leze').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/arize-leze/01.jpg',
+			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML ›</a></p>'
+		}, {
+			'src': 'img/realisations/arize-leze/02.jpg'
+		}, {
+			'src': 'img/realisations/arize-leze/03.jpg'
 		}],
 		speed: 500,
 		hideBarsDelay: 1000
