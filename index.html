@@ -8,7 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Actuellement étudiant en web design, mes compétences vont de la conception graphique au développement web.">
 	
-	<link rel="icon" href="img/icone.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/icone/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/icone/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/icone/favicon-16x16.png">
+	<link rel="manifest" href="/img/icone/manifest.json">
+	<link rel="mask-icon" href="img/icone/safari-pinned-tab.svg" color="#31185a">
+	<link rel="shortcut icon" href="/img/icone/favicon.ico">
+	<meta name="msapplication-config" content="/img/icone/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/lightgallery.css">
 	
@@ -60,29 +68,23 @@
 	</section>
 
 	<div id="thomas">
-		<div class="conteneur-a">
-			<div class="conteneur-b">
-				<video autoplay loop playsinline>
-					<source src="video/bulles.mp4" type="video/mp4">
-				</video>
-				<section>
-					<img src="img/photo.jpg" id="photo" alt="Thomas Tuvignon">
-				 
-					<h1>Thomas Tuvignon</h1>
-					 
-					<p>Web designer et intégrateur</p>
-					  
-					<a href="https://youtu.be/7MqJW1rugWo" data-youtube-id="7MqJW1rugWo" class="js-trigger-modal">Voir le CV vidéo ›</a>
-				</section>
-			</div>
-		</div>
+		<canvas id="canvas"></canvas>
+		<section>
+			<img src="img/photo.jpg" id="photo" alt="Thomas Tuvignon">
+		 
+			<h1>Thomas Tuvignon</h1>
+			 
+			<p>Web designer et intégrateur</p>
+			  
+			<a href="https://youtu.be/7MqJW1rugWo" data-youtube-id="7MqJW1rugWo" class="js-trigger-modal">Voir le CV vidéo ›</a>
+		</section>
 	</div>
 
 	<div id="parcours">
 		<section>
 			<h2>Parcours</h2>
 			
-			<article>
+			<article id="experience">
 				<h3>Expérience</h3>
 				
 				<img src="img/parcours/ultro.jpg" alt="Ultrō">
@@ -114,7 +116,7 @@
 				</div>
 			</article>
 
-			<article>
+			<article id="formation">
 				<h3>Formation</h3>
 				
 				<img src="img/parcours/digital-campus.jpg" alt="Digital Campus">

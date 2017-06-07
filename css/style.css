@@ -18,26 +18,13 @@ h1 {
 h2 {
 	font-size:30px;
 	font-weight:700;
-	margin:0 0 25px;
+	margin:0 0 20px;
 }
 
 h3 {
 	font-size:24px;
 	font-weight:500;
 	margin-top:0;
-}
-
-h4 {
-	font-size:20px;
-	font-weight:500;
-	margin:0 0 .25em;
-}
-
-h5 {
-	font-size:16px;
-	font-weight:600;
-	text-transform:uppercase;
-	margin:0;
 }
 
 p {
@@ -315,34 +302,24 @@ iframe#youtube {
 }
 
 /* !Sections */
-#thomas,#thomas .conteneur-a {
+#thomas {
 	width:100%;
 	height:100%;
-	overflow:hidden;
 	background-color:#31185a;
 }
 
-#thomas .conteneur-a {
-	display:table;
-}
-
-#thomas .conteneur-b {
-	display:table-cell;
-	position:relative;
-	vertical-align:middle;
+#thomas canvas {
+	position:absolute;
 }
 
 #thomas section {
 	color:#fff;
 	max-width:840px;
 	position:relative;
+	top:50%;
+	transform:translateY(-50%);
 	margin:auto;
 	padding:0 2em;
-}
-
-#thomas .presentation {
-	width:49%;
-	display:inline-block;
 }
 
 #thomas a {
@@ -350,7 +327,6 @@ iframe#youtube {
 	font-size:20px;
 	font-weight:600;
 	text-decoration:none;
-	display:block;
 }
 
 #thomas p {
@@ -364,45 +340,6 @@ iframe#youtube {
 	border-radius:100px;
 	margin-right:30px;
 	float:left;
-}
-
-#thomas .fa-play {
-	opacity:0;
-	color:#fff;
-	position:absolute;
-	font-size:48px;
-	left:40%;
-	top:30%;
-	-webkit-transition:all .25s;
-	-moz-transition:all .25s;
-	-o-transition:all .25s;
-	transition:all .25s;
-}
-
-#thomas .fa-play:hover {
-	opacity:.5;
-	-webkit-transition:all .25s;
-	-moz-transition:all .25s;
-	-o-transition:all .25s;
-	transition:all .25s;
-}
-
-#thomas img:hover + .fa-play {
-	opacity:.5;
-	-webkit-transition:all .25s;
-	-moz-transition:all .25s;
-	-o-transition:all .25s;
-	transition:all .25s;
-}
-
-#thomas video {
-	position:absolute;
-	top:0;
-	display:block;
-}
-
-#thomas video::-webkit-media-controls-start-playback-button {
-	display:none!important;
 }
 
 #parcours section,#outils section,#realisations section {
@@ -426,6 +363,19 @@ iframe#youtube {
 	vertical-align:top;
 	margin-right:1em;
 	float:left;
+}
+
+#parcours #experience h4 {
+	font-size:20px;
+	font-weight:500;
+	margin:0 0 .25em;
+}
+
+#parcours #experience h5,#parcours #formation h4 {
+	font-size:16px;
+	font-weight:600;
+	text-transform:uppercase;
+	margin:0;
 }
 
 #parcours .description {
@@ -489,12 +439,16 @@ iframe#youtube {
 	margin:0 2.3% 4.6%;
 	border-radius:5px;
 	-webkit-transition:box-shadow .15s linear;
+	-moz-transition:box-shadow .15s linear;
+	-o-transition:box-shadow .15s linear;
 	transition:box-shadow .15s linear;
 }
 
 #realisations img:hover {
-	box-shadow:0 14px 28px rgba(0,0,0,0.20),0 10px 10px rgba(0,0,0,0.20);
+	box-shadow:0 15px 25px rgba(0,0,0,0.20),0 10px 20px rgba(0,0,0,0.20);
 	-webkit-transition:box-shadow .15s linear;
+	-moz-transition:box-shadow .15s linear;
+	-o-transition:box-shadow .15s linear;
 	transition:box-shadow .15s linear;
 }
 
@@ -603,14 +557,6 @@ footer a:hover {
 		font-size:22px;
 	}
 	
-	h4 {
-		font-size:18px;
-	}
-	
-	h5 {
-		font-size:14px;
-	}
-	
 	p {
 		font-size:16px;
 	}
@@ -666,6 +612,14 @@ footer a:hover {
 		margin-right:.75em;
 	}
 	
+	#parcours #experience h4 {
+		font-size:18px;
+	}
+	
+	#parcours #experience h5,#parcours #formation h4 {
+		font-size:14px;
+	}
+	
 	#outils section {
 		padding:2em 1em;
 	}
@@ -676,6 +630,10 @@ footer a:hover {
 	
 	#realisations section {
 		padding:2em 1em 1em;
+	}
+	
+	#realisations img:hover {
+		box-shadow:0 10px 20px rgba(0,0,0,0.20),0 5px 15px rgba(0,0,0,0.20);
 	}
 	
 	#plus section {
@@ -690,10 +648,6 @@ footer a:hover {
 		padding:1em;
 	}
 	
-	footer span {
-		padding:0;
-	}
-	
 	footer .fa {
 		font-size:24px;
 	}
@@ -706,23 +660,5 @@ footer a:hover {
 	
 	header #menu-mobile {
 		display:none;
-	}
-}
-
-@media (max-aspect-ratio: 16/9) {
-	#thomas video {
-		width:auto;
-		height:100%;
-		transform:translateX(-50%);
-		left:50%;
-	}
-}
-
-@media (min-aspect-ratio: 16/9) {
-	#thomas video {
-		width:100%;
-		height:auto;
-		transform:translateY(-50%);
-		top:50%;
 	}
 }
