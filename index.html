@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Actuellement étudiant en web design, mes compétences vont de la conception graphique au développement web.">
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="img/icone/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/icone/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/icone/favicon-16x16.png">
+	<link rel="apple-touch-icon" tailles="180x180" href="img/icone/apple-touch-icon.png">
+	<link rel="icon" type="image/png" tailles="32x32" href="img/icone/favicon-32x32.png">
+	<link rel="icon" type="image/png" tailles="16x16" href="img/icone/favicon-16x16.png">
 	<link rel="manifest" href="/img/icone/manifest.json">
 	<link rel="mask-icon" href="img/icone/safari-pinned-tab.svg" color="#31185a">
 	<link rel="shortcut icon" href="/img/icone/favicon.ico">
@@ -61,14 +61,58 @@
 		<div id="video-modal-content" class="video-modal-content">
 			<img class="video-sizer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABaAQAAAAAXvWD/AAAAAnRSTlMAAHaTzTgAAAAWSURBVHgBY6ABGAWjYBSMglEwCkYBAAdiAAFufS70AAAAAElFTkSuQmCC">
 			<iframe id="youtube" width="100%" height="100%" frameborder="0" allowfullscreen="" src=""></iframe>
-			<a href="#" class="close-video-modal">‹ Fermer la vidéo</a>
+			<a href="#" class="close-video-modal"><span>‹ </span>Fermer la vidéo</a>
 		</div>
 
 		<div class="overlay"></div>
 	</section>
 
 	<div id="thomas">
-		<canvas id="canvas"></canvas>
+		<div id="bulles">
+			<div id="parallax-1">
+			    <div id="bulle-1-1" class="bulle taille4 jaune">&nbsp;</div>
+			    <div id="bulle-1-2" class="bulle taille3 jaune">&nbsp;</div>
+			    <div id="bulle-1-3" class="bulle taille2 jaune">&nbsp;</div>
+			    <div id="bulle-1-4" class="bulle taille3 bleu">&nbsp;</div>
+			    <div id="bulle-1-5" class="bulle taille2 jaune">&nbsp;</div>
+			    <div id="bulle-1-6" class="bulle taille2 jaune">&nbsp;</div>
+			    <div id="bulle-1-7" class="bulle taille2 orange">&nbsp;</div>
+			    <div id="bulle-1-8" class="bulle taille3 bleu">&nbsp;</div>
+			</div>  
+			 
+			<div id="parallax-2">
+			    <div id="bulle-2-1" class="bulle taille1 bleu">&nbsp;</div>
+			    <div id="bulle-2-2" class="bulle taille4 bleu">&nbsp;</div>
+			    <div id="bulle-2-3" class="bulle taille3 bleu">&nbsp;</div>
+			    <div id="bulle-2-4" class="bulle taille2 violet">&nbsp;</div>
+			    <div id="bulle-2-5" class="bulle taille1 vert">&nbsp;</div>
+			    <div id="bulle-2-6" class="bulle taille2 vert">&nbsp;</div>
+			    <div id="bulle-2-7" class="bulle taille1 jaune">&nbsp;</div>
+			    <div id="bulle-2-8" class="bulle taille2 vert">&nbsp;</div>
+			</div>
+			
+			<div id="parallax-3">
+			    <div id="bulle-3-1" class="bulle taille2 bleu">&nbsp;</div>
+			    <div id="bulle-3-2" class="bulle taille1 violet">&nbsp;</div>
+			    <div id="bulle-3-3" class="bulle taille2 jaune">&nbsp;</div>
+			    <div id="bulle-3-4" class="bulle taille2 vert">&nbsp;</div>
+			    <div id="bulle-3-5" class="bulle taille3 orange">&nbsp;</div>
+			    <div id="bulle-3-6" class="bulle taille1 orange">&nbsp;</div>
+			    <div id="bulle-3-7" class="bulle taille3 violet">&nbsp;</div>
+			    <div id="bulle-3-8" class="bulle taille1 orange">&nbsp;</div>
+			</div>
+			
+			<div id="parallax-4">
+			    <div id="bulle-4-1" class="bulle taille3 vert">&nbsp;</div>
+			    <div id="bulle-4-2" class="bulle taille2 violet">&nbsp;</div>
+			    <div id="bulle-4-3" class="bulle taille1 orange">&nbsp;</div>
+			    <div id="bulle-4-4" class="bulle taille4 vert">&nbsp;</div>
+			    <div id="bulle-4-5" class="bulle taille1 vert">&nbsp;</div>
+			    <div id="bulle-4-6" class="bulle taille3 bleu">&nbsp;</div>
+			    <div id="bulle-4-7" class="bulle taille1 bleu">&nbsp;</div>
+			    <div id="bulle-4-8" class="bulle taille2 jaune">&nbsp;</div>
+			</div>
+		</div>
 		<section>
 			<img src="img/photo.jpg" id="photo" alt="Thomas Tuvignon">
 		 
@@ -76,7 +120,7 @@
 			 
 			<p>Web designer et intégrateur</p>
 			  
-			<a href="https://youtu.be/7MqJW1rugWo" data-youtube-id="7MqJW1rugWo" class="js-trigger-modal">Voir le CV vidéo ›</a>
+			<a href="https://youtu.be/7MqJW1rugWo" data-youtube-id="7MqJW1rugWo" class="js-trigger-modal lien">Voir le CV vidéo<span> ›</span></a>
 		</section>
 	</div>
 
@@ -225,28 +269,14 @@
 	<div id="realisations">
 		<section>
 			<h2>Réalisations</h2>
+			
 			<div id="grille">
-				<a id="wheel">
-					<img src="img/realisations/wheel.jpg">
-				</a>
-				
-				<a id="midi-life">
-					<img src="img/realisations/midi-life.jpg">
-				</a>
-
-				<a id="musee-de-la-mine">
-					<img src="img/realisations/musee-de-la-mine.jpg">
-				</a>
-				
-				<a id="bron">
-					<img src="img/realisations/bron.jpg">
-				</a>
-				
-				<a id="arize-leze">
-					<img src="img/realisations/arize-leze.jpg">
-				</a>
+				<img src="img/realisations/wheel.jpg" id="wheel">
+				<img src="img/realisations/midi-life.jpg" id="midi-life">
+				<img src="img/realisations/musee-de-la-mine.jpg" id="musee-de-la-mine">
+				<img src="img/realisations/bron.jpg" id="bron">
+				<img src="img/realisations/arize-leze.jpg" id="arize-leze">
 			</div>
-			</article>
 		</section>
 	</div>
 

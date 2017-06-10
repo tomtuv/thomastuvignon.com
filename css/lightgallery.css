@@ -219,6 +219,19 @@
   font-weight: 600;
   text-decoration: none;
 }
+.lg-sub-html span {
+  -webkit-transition: margin-left .15s;
+  -moz-transition: margin-left .15s;
+  -o-transition: margin-left .15s;
+  transition: margin-left .15s;
+}
+.lg-sub-html a:hover > span {
+  margin-left: 5px;
+  -webkit-transition: margin-left .15s;
+  -moz-transition: margin-left .15s;
+  -o-transition: margin-left .15s;
+  transition: margin-left .15s;
+}
 @media (max-width: 840px) {
   .lg-sub-html p {
     padding: 0 1em;

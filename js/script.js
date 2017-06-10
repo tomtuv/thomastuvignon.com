@@ -75,152 +75,17 @@ $(window).scroll(function(e) {
 	}
 });
 // !Bulles
-(function() {
-	"use strict";
-	var canvas = document.getElementById('canvas'),
-		ctx = canvas.getContext('2d'),
-		canvasWidth = canvas.width = window.innerWidth,
-		canvasHeight = canvas.height = window.innerHeight;
-	var mouseX, mouseY, pop = false,
-		attract = false;
-	var mouseOver = function(x, y, radius) {
-			var diffX = mouseX - x;
-			var diffY = mouseY - y;
-			if (diffX < radius && diffX > (radius * -1) && diffY < radius && diffY > (radius * -1)) {
-				return true;
-			}
-			return false;
-		}
-	var randomNum = function(min, max) {
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		};
-	var changeSettings = function(setting, min, max, prob) {
-			var chance = randomNum(0, prob);
-			if (setting < min || chance === 1) {
-				return 1;
-			} else if (setting > max || chance === 2) {
-				return -1;
-			} else {
-				return 0;
-			}
-		};
-	var bubbles = [],
-		count = 0,
-		maxCount = 20,
-		maxSize = 60,
-		minSize = 20,
-		minSpeed = 5,
-		maxSpeed = 10,
-		bgcolor = '#31185A',
-		colors = [{
-			rgba: 'rgba(245, 144, 0, 0.75)'
-		}, {
-			rgba: 'rgba(234, 255, 0, 0.75)'
-		}, {
-			rgba: 'rgba(151, 2, 232, 0.75)'
-		}, {
-			rgba: 'rgba(0, 200, 255, 0.75)'
-		}, {
-			rgba: 'rgba(0, 191, 36, 0.75)'
-		}];
-	var Bubble = function(x, y, size) {
-			this.id = count + 1;
-			this.x = x || randomNum(0, canvasWidth);
-			this.y = y || randomNum(0, canvasHeight);
-			this.radius = size || randomNum(minSize, maxSize);
-			this.color = colors[randomNum(0, colors.length - 1)];
-			this.speed = randomNum(minSpeed, maxSpeed) / 10;
-			this.speedBackup = this.speed;
-			this.directionX = randomNum(-1, 1) || 1;
-			this.directionY = randomNum(-1, 1) || 1;
-			this.flicker = 0;
-			count++;
-			bubbles[count] = this;
-		};
-	Bubble.prototype.destroy = function() {
-		var popCount = this.radius / 10 > 0 ? this.radius / 10 : 2;
-		for (var i = 0; i < popCount; i++) {
-			new Bubble(this.x, this.y, randomNum(this.radius / 4, this.radius / 2));
-		}
-		this.radius = randomNum(this.radius / 4, this.radius / 2);
-		this.color = colors[randomNum(0, colors.length - 1)];
-	};
-	Bubble.prototype.draw = function() {
-		this.directionX = changeSettings(this.x, 0, canvasWidth, 500) || this.directionX;
-		this.directionY = changeSettings(this.y, 0, canvasHeight, 500) || this.directionY;
-		this.speed = this.speedBackup;
-		if (attract === true && mouseOver(this.x, this.y, 200)) {
-			var moveTowardMouse = randomNum(0, 15);
-			if (moveTowardMouse === 5) {
-				this.directionX = mouseX - this.x > 0 ? 1 : -1;
-			} else if (moveTowardMouse === 1) {
-				this.directionY = mouseY - this.y > 0 ? 1 : -1;
-			}
-			this.speed = 1.25;
-		}
-		this.x += this.speed * this.directionX;
-		this.y += this.speed * this.directionY;
-		ctx.save();
-		ctx.beginPath();
-		ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-		ctx.fillStyle = this.color.rgba;
-		ctx.fill();
-		ctx.closePath();
-		ctx.restore();
-		if (pop === true && mouseOver(this.x, this.y, this.radius)) {
-			bubbles[this.id].destroy();
-			pop = false;
-		}
-	};
-	for (var i = 0; i < maxCount; i++) {
-		new Bubble();
-	}
-	var animate = function() {
-			ctx.fillStyle = bgcolor;
-			ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-			for (var i = 1; i <= count; i++) {
-				bubbles[i].draw();
-			}
-			requestAnimationFrame(animate);
-		};
-	requestAnimationFrame(animate);
-	canvas.addEventListener('click', function(e) {
-		new Bubble(e.pageX, e.pageY);
-	});
-	canvas.addEventListener('contextmenu', function(e) {
-		mouseX = e.pageX;
-		mouseY = e.pageY;
-		pop = true;
-		e.preventDefault();
-	});
-	var startAttracting;
-	canvas.addEventListener('mousedown', function(e) {
-		mouseX = e.pageX;
-		mouseY = e.pageY;
-		clearTimeout(startAttracting);
-		startAttracting = setTimeout(function() {
-			return attract = true;
-		}, 500);
-	});
-	canvas.addEventListener('mousemove', function(e) {
-		if (attract) {
-			mouseX = e.pageX;
-			mouseY = e.pageY;
-		}
-	});
-	canvas.addEventListener('mouseup', function(e) {
-		clearTimeout(startAttracting);
-		attract = false;
-	});
-	var resizing;
-	window.addEventListener('resize', function() {
-		clearTimeout(resizing);
-		resizing = setTimeout(function() {
-			canvasWidth = canvas.width = window.innerWidth;
-			canvasHeight = canvas.height = window.innerHeight;
-		}, 500);
-	});
-}());
+$(window).bind('scroll', function(e) {
+	parallaxScroll();
+});
+
+function parallaxScroll() {
+	var scrolled = $(window).scrollTop();
+	$('#parallax-1').css('top', (0 - (scrolled * .2)) + 'px');
+	$('#parallax-2').css('top', (0 - (scrolled * .4)) + 'px');
+	$('#parallax-3').css('top', (0 - (scrolled * .6)) + 'px');
+	$('#parallax-4').css('top', (0 - (scrolled * .8)) + 'px');
+}
 // !Vidéo
 $(document).ready(function() {
 	$('#thomas a').click(function() {
@@ -307,7 +172,7 @@ $('#musee-de-la-mine').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/musee-de-la-mine/01.jpg',
-			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web ›</a></p>'
+			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<span> ›</span></a></p>'
 		}, {
 			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
@@ -337,7 +202,7 @@ $('#arize-leze').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/arize-leze/01.jpg',
-			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML ›</a></p>'
+			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<span> ›</span></a></p>'
 		}, {
 			'src': 'img/realisations/arize-leze/02.jpg'
 		}, {
