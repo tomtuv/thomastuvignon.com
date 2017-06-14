@@ -427,6 +427,16 @@ iframe#youtube {
 	left:-300px;
 }
 
+#bulle-1-9 {
+	top:1200px;
+	left:-100px;
+}
+
+#bulle-1-10 {
+	top:1350px;
+	left:450px;
+}
+
 #bulle-2-1 {
 	top:-120px;
 	left:-200px;
@@ -465,6 +475,16 @@ iframe#youtube {
 #bulle-2-8 {
 	top:900px;
 	left:-200px;
+}
+
+#bulle-2-9 {
+	top:1400px;
+	left:-300px;
+}
+
+#bulle-2-10 {
+	top:1500px;
+	left:200px;
 }
 
 #bulle-3-1 {
@@ -507,6 +527,16 @@ iframe#youtube {
 	left:200px;
 }
 
+#bulle-3-9 {
+	top:1150px;
+	left:-50px;
+}
+
+#bulle-3-10 {
+	top:1400px;
+	left:300px;
+}
+
 #bulle-4-1 {
 	top:50px;
 	left:500px;
@@ -545,6 +575,16 @@ iframe#youtube {
 #bulle-4-8 {
 	top:-50px;
 	left:50px;
+}
+
+#bulle-4-9 {
+	top:1600px;
+	left:50px;
+}
+
+#bulle-4-10 {
+	top:1700px;
+	left:400px;
 }
 
 /* !Sections */
@@ -768,14 +808,14 @@ footer a:hover {
 }
 
 /* !Media queries */
-@media (max-width: 530px) {
+@media (max-width:530px) {
 	#thomas img {
 		float:none;
 		margin:0 0 15px;
 	}
 	
 	#outils figure {
-		width:33%;
+		width:33.33%;
 	}
 	
 	#outils img {
@@ -797,9 +837,10 @@ footer a:hover {
 	}
 }
 
-@media (min-width: 531px) and (max-width: 840px) {
+@media (min-width:531px) and (max-width:840px) {
 	#outils figure {
 		width:16.66%;
+		height:130px;
 	}
 	
 	#realisations #grille {
@@ -812,7 +853,7 @@ footer a:hover {
 	}
 }
 
-@media (max-width: 840px) {
+@media (max-width:840px) {
 	h1 {
 		font-size:32px;
 	}
@@ -921,7 +962,7 @@ footer a:hover {
 	}
 }
 
-@media (min-width: 841px) {
+@media (min-width:841px) {
 	header #hamburger {
 		display:none;
 	}

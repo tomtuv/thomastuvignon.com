@@ -81,10 +81,10 @@ $(window).bind('scroll', function(e) {
 
 function parallaxScroll() {
 	var scrolled = $(window).scrollTop();
-	$('#parallax-1').css('top', (0 - (scrolled * .2)) + 'px');
-	$('#parallax-2').css('top', (0 - (scrolled * .4)) + 'px');
-	$('#parallax-3').css('top', (0 - (scrolled * .6)) + 'px');
-	$('#parallax-4').css('top', (0 - (scrolled * .8)) + 'px');
+	$('#parallax-1').css('top', (0 - (scrolled * .1)) + 'px');
+	$('#parallax-2').css('top', (0 - (scrolled * .2)) + 'px');
+	$('#parallax-3').css('top', (0 - (scrolled * .3)) + 'px');
+	$('#parallax-4').css('top', (0 - (scrolled * .4)) + 'px');
 }
 // !Vidéo
 $(document).ready(function() {
@@ -172,7 +172,7 @@ $('#musee-de-la-mine').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/musee-de-la-mine/01.jpg',
-			'subHtml': '<p>Maquette du site du Musée de la mine de Gréasque réalisée dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<span> ›</span></a></p>'
+			'subHtml': '<p>Maquette et site du Musée de la mine de Gréasque réalisés dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<span> ›</span></a></p>'
 		}, {
 			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
@@ -202,7 +202,7 @@ $('#arize-leze').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/arize-leze/01.jpg',
-			'subHtml': '<p>Maquette de la web app de l’office de tourisme Arize-Lèze réalisée dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<span> ›</span></a></p>'
+			'subHtml': '<p>Maquette et web app de l’office de tourisme Arize-Lèze réalisés dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<span> ›</span></a></p>'
 		}, {
 			'src': 'img/realisations/arize-leze/02.jpg'
 		}, {
