@@ -31,6 +31,11 @@ p {
 	font-size:18px;
 }
 
+section {
+	max-width:840px;
+	margin:0 auto;
+}
+
 /* !Header */
 header nav {
 	padding:.25em 0;
@@ -423,12 +428,12 @@ iframe#youtube {
 }
 
 #bulle-1-8 {
-	top:950px;
+	top:900px;
 	left:-300px;
 }
 
 #bulle-1-9 {
-	top:1200px;
+	top:1250px;
 	left:-100px;
 }
 
@@ -473,8 +478,8 @@ iframe#youtube {
 }
 
 #bulle-2-8 {
-	top:900px;
-	left:-200px;
+	top:800px;
+	left:-300px;
 }
 
 #bulle-2-9 {
@@ -483,8 +488,8 @@ iframe#youtube {
 }
 
 #bulle-2-10 {
-	top:1500px;
-	left:200px;
+	top:1200px;
+	left:100px;
 }
 
 #bulle-3-1 {
@@ -528,8 +533,8 @@ iframe#youtube {
 }
 
 #bulle-3-9 {
-	top:1150px;
-	left:-50px;
+	top:1050px;
+	left:-100px;
 }
 
 #bulle-3-10 {
@@ -598,11 +603,9 @@ iframe#youtube {
 
 #thomas section {
 	color:#fff;
-	max-width:840px;
 	position:relative;
 	top:50%;
 	transform:translateY(-50%);
-	margin:auto;
 	padding:0 2em;
 }
 
@@ -639,11 +642,6 @@ iframe#youtube {
 	border-radius:100%;
 	margin-right:30px;
 	float:left;
-}
-
-#parcours section,#outils section,#realisations section {
-	max-width:840px;
-	margin:0 auto;
 }
 
 #parcours section {
@@ -766,9 +764,42 @@ iframe#youtube {
 
 #plus section {
 	color:#000;
-	max-width:840px;
-	margin:0 auto;
 	padding:4em 2em 3em;
+}
+
+#plus ul {
+	list-style:none;
+	margin-left:0;
+	padding-left:1.75em;
+	text-indent:-1.75em;
+}
+
+#plus li {
+	margin:1em 0;
+	font-size:18px;
+}
+
+#plus li:before {
+	font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
+	display:block;
+	float:left;
+	width:1.75em;
+}
+
+#plus li:nth-child(1):before {
+	content:"🎂";
+}
+
+#plus li:nth-child(2):before {
+	content:"🌐";
+}
+
+#plus li:nth-child(3):before {
+	content:"✈️";
+}
+
+#plus li:nth-child(4):before {
+	content:"📷";
 }
 
 /* !Footer */
@@ -797,6 +828,7 @@ footer section {
 footer #liens {
 	float:right;
 	margin:0 -.5em;
+	cursor:default;
 }
 
 footer p {
@@ -890,11 +922,6 @@ footer a:hover {
 		width:calc(100% - 2em);
 	}
 	
-	#thomas section,#parcours section,#outils section,#realisations section,#plus section {
-		margin:0;
-		max-width:100%;
-	}
-	
 	#thomas section {
 		padding:0 1em;
 	}
@@ -947,6 +974,10 @@ footer a:hover {
 	
 	#plus section {
 		padding:2em 1em 1em;
+	}
+	
+	#plus li {
+		font-size:16px;
 	}
 	
 	footer {
