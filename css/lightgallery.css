@@ -219,14 +219,15 @@
   font-weight: 600;
   text-decoration: none;
 }
-.lg-sub-html span {
+.lg-sub-html .fa {
+  margin-left: 5px;
   -webkit-transition: margin-left .15s;
   -moz-transition: margin-left .15s;
   -o-transition: margin-left .15s;
   transition: margin-left .15s;
 }
-.lg-sub-html a:hover > span {
-  margin-left: 5px;
+.lg-sub-html a:hover > .fa {
+  margin-left: 10px;
   -webkit-transition: margin-left .15s;
   -moz-transition: margin-left .15s;
   -o-transition: margin-left .15s;

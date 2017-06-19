@@ -220,6 +220,7 @@ header .menu-invisible {
 }
 
 .video-modal {
+	max-width:100%;
 	overflow:hidden;
 	position:fixed;
 	opacity:0;
@@ -275,15 +276,16 @@ header .menu-invisible {
 	color:#fff;
 }
 
-.close-video-modal span {
+.close-video-modal .fa {
+	margin-right:5px;
 	-webkit-transition:margin-right .15s;
 	-moz-transition:margin-right .15s;
 	-o-transition:margin-right .15s;
 	transition:margin-right .15s;
 }
 
-.close-video-modal:hover > span {
-	margin-right:5px;
+.close-video-modal:hover > .fa {
+	margin-right:10px;
 	-webkit-transition:margin-right .15s;
 	-moz-transition:margin-right .15s;
 	-o-transition:margin-right .15s;
@@ -616,15 +618,16 @@ iframe#youtube {
 	text-decoration:none;
 }
 
-#thomas span {
+#thomas .fa {
+	margin-left:5px;
 	-webkit-transition:margin-left .15s;
 	-moz-transition:margin-left .15s;
 	-o-transition:margin-left .15s;
 	transition:margin-left .15s;
 }
 
-#thomas a:hover > span {
-	margin-left:5px;
+#thomas a:hover > .fa {
+	margin-left:10px;
 	-webkit-transition:margin-left .15s;
 	-moz-transition:margin-left .15s;
 	-o-transition:margin-left .15s;
