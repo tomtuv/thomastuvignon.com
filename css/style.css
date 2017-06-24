@@ -10,9 +10,9 @@ html,body {
 }
 
 h1 {
-	font-size:36px;
+	font-size:48px;
 	font-weight:700;
-	margin:0 0 15px;
+	margin:0 0 20px;
 }
 
 h2 {
@@ -613,13 +613,13 @@ iframe#youtube {
 
 #thomas a {
 	color:#fff;
-	font-size:20px;
+	font-size:24px;
 	font-weight:600;
 	text-decoration:none;
 }
 
 #thomas .fa {
-	margin-left:5px;
+	margin-left:7.5px;
 	-webkit-transition:margin-left .15s;
 	-moz-transition:margin-left .15s;
 	-o-transition:margin-left .15s;
@@ -627,7 +627,7 @@ iframe#youtube {
 }
 
 #thomas a:hover > .fa {
-	margin-left:10px;
+	margin-left:15px;
 	-webkit-transition:margin-left .15s;
 	-moz-transition:margin-left .15s;
 	-o-transition:margin-left .15s;
@@ -635,15 +635,15 @@ iframe#youtube {
 }
 
 #thomas p {
-	font-size:20px;
+	font-size:24px;
 	font-weight:500;
-	margin:15px 0;
+	margin:20px 0;
 }
 
 #thomas img {
-	width:136px;
+	width:173px;
 	border-radius:100%;
-	margin-right:30px;
+	margin-right:40px;
 	float:left;
 }
 
@@ -935,7 +935,7 @@ footer a:hover {
 	}
 	
 	#thomas p,#thomas a {
-		font-size:18px;
+		font-size:20px;
 	}
 	
 	#parcours section {
