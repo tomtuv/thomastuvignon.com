@@ -779,7 +779,7 @@ iframe#youtube {
 
 #plus li {
 	margin:1em 0;
-	font-size:18px;
+	font-size:20px;
 }
 
 #plus li:before {
@@ -891,6 +891,7 @@ footer a:hover {
 @media (max-width:840px) {
 	h1 {
 		font-size:32px;
+		margin:0 0 15px;
 	}
 	
 	h2 {
@@ -930,12 +931,21 @@ footer a:hover {
 	}
 	
 	#thomas img {
-		width:124px;
-		margin-right:15px;
+		width:130px;
+		margin-right:1em;
 	}
 	
 	#thomas p,#thomas a {
 		font-size:20px;
+		margin:15px 0;
+	}
+	
+	#thomas .fa {
+		margin-left:6.25px;
+	}
+	
+	#thomas a:hover > .fa {
+		margin-left:12.5px;
 	}
 	
 	#parcours section {
@@ -980,7 +990,7 @@ footer a:hover {
 	}
 	
 	#plus li {
-		font-size:16px;
+		font-size:18px;
 	}
 	
 	footer {

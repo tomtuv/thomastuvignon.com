@@ -111,6 +111,16 @@ $(document).ready(function() {
 	toggle_video_modal();
 });
 // !Galeries
+$('#flagship').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/flagship/01.jpg',
+			'subHtml': '<p>Site de présentation du programme Flagship de l’agence Ultrō réalisé pendant mon stage de cette année. <a href="https://flagship.solutions/webslides" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
 $('#wheel').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
@@ -190,7 +200,7 @@ $('#bron').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Maquette du site de la ville de Bron réalisée en stage dans le cadre d’une réponse à un appel d’offre.</p>'
+			'subHtml': '<p>Maquette du site de la ville de Bron réalisée pendant mon stage chez 1989 dans le cadre d’une réponse à un appel d’offre.</p>'
 		}, {
 			'src': 'img/realisations/bron/02.jpg'
 		}],
