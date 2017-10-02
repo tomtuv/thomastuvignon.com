@@ -111,12 +111,25 @@ $(document).ready(function() {
 	toggle_video_modal();
 });
 // !Galeries
+$('#horse-pilot').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/horse-pilot/01.jpg',
+			'subHtml': '<p>Stage chez Ultrō : intégration de la newsletter Horse Pilot sur MailChimp en HTML et CSS. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}, {
+			'src': 'img/realisations/horse-pilot/02.jpg',
+			'subHtml': '<p>Stage chez Ultrō : réalisation de la maquette de l’agenda Facebook Horse Pilot sur Photoshop et développement sous WordPress avec les extensions CPT UI et ACF. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
 $('#flagship').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/flagship/01.jpg',
-			'subHtml': '<p>Site de présentation du programme Flagship de l’agence Ultrō réalisé pendant mon stage de cette année. <a href="https://flagship.solutions/webslides" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Stage chez Ultrō : développement du site de présentation du programme Flagship de l’agence avec le framework WebSlides. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -126,7 +139,7 @@ $('#wheel').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/wheel/01.jpg',
-			'subHtml': '<p>Maquette du site et de l’application Wheel pour une marque de vélo fictive réalisée dans le cadre de mon partiel de web design.</p>'
+			'subHtml': '<p>Partiel de web design : réalisation de la maquette du site et de l’application Wheel sur Sketch.</p>'
 		}, {
 			'src': 'img/realisations/wheel/02.jpg'
 		}, {
@@ -150,7 +163,7 @@ $('#midi-life').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/midi-life/01.jpg',
-			'subHtml': '<p>Maquette de l’application Midi Life réalisée dans le cadre du hackathon organisé conjointement par l’école Digital Campus et le journal Midi libre.</p>'
+			'subHtml': '<p>Hackathon Midi libre : réalisation de la maquette de l’application Midi Life sur Sketch.</p>'
 		}, {
 			'src': 'img/realisations/midi-life/02.jpg'
 		}, {
@@ -182,7 +195,7 @@ $('#musee-de-la-mine').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/musee-de-la-mine/01.jpg',
-			'subHtml': '<p>Maquette et site du Musée de la mine de Gréasque réalisés dans le cadre de mon deuxième projet tutoré de licence professionnelle. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Projet tutoré : réalisation de la maquette du site du Musée de la mine de Gréasque sur Sketch et développement sous WordPress. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
@@ -200,7 +213,7 @@ $('#bron').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Maquette du site de la ville de Bron réalisée pendant mon stage chez 1989 dans le cadre d’une réponse à un appel d’offre.</p>'
+			'subHtml': '<p>Stage chez 1989 : réalisation de la maquette du site de la ville de Bron sur Sketch.</p>'
 		}, {
 			'src': 'img/realisations/bron/02.jpg'
 		}],
@@ -212,7 +225,7 @@ $('#arize-leze').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/arize-leze/01.jpg',
-			'subHtml': '<p>Maquette et web app de l’office de tourisme Arize-Lèze réalisés dans le cadre de mon premier projet tutoré de licence professionnelle. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Projet tutoré : réalisation de la maquette de la web app de l’office de tourisme Arize-Lèze sur Photoshop et intégration en HTML et CSS. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/arize-leze/02.jpg'
 		}, {

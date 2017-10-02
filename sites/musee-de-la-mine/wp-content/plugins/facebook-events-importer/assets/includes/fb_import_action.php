@@ -30,7 +30,7 @@ try {
 }
 
 }
-set_time_limit(1000000);
+// set_time_limit(1000000);
 
 function fbe_facebook_sdk($facebook_page,$appID,$appSecret){
 

@@ -679,10 +679,11 @@ iframe#youtube {
 
 #parcours .description {
 	overflow:hidden;
+	margin-bottom:1.5em;
 }
 
 #parcours p {
-	margin:1em 0 1.5em;
+	margin:1em 0 0;
 }
 
 #outils {
@@ -773,8 +774,8 @@ iframe#youtube {
 #plus ul {
 	list-style:none;
 	margin-left:0;
-	padding-left:1.75em;
-	text-indent:-1.75em;
+	padding-left:32px;
+	text-indent:-32px;
 }
 
 #plus li {
@@ -786,7 +787,7 @@ iframe#youtube {
 	font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
 	display:block;
 	float:left;
-	width:1.75em;
+	width:32px;
 }
 
 #plus li:nth-child(1):before {
@@ -844,11 +845,6 @@ footer a:hover {
 
 /* !Media queries */
 @media (max-width:530px) {
-	#thomas img {
-		float:none;
-		margin:0 0 15px;
-	}
-	
 	#outils figure {
 		width:33.33%;
 	}
@@ -928,11 +924,13 @@ footer a:hover {
 	
 	#thomas section {
 		padding:0 1em;
+		text-align: center;
 	}
 	
 	#thomas img {
 		width:130px;
-		margin-right:1em;
+		float: none;
+		margin:0 0 15px;
 	}
 	
 	#thomas p,#thomas a {
