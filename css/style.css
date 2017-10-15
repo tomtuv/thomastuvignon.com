@@ -456,7 +456,7 @@ iframe#youtube {
 
 #bulle-2-3 {
 	top:100px;
-	left:100px;
+	left:70px;
 }
 
 #bulle-2-4 {
@@ -924,12 +924,12 @@ footer a:hover {
 	
 	#thomas section {
 		padding:0 1em;
-		text-align: center;
+		text-align:center;
 	}
 	
 	#thomas img {
 		width:130px;
-		float: none;
+		float:none;
 		margin:0 0 15px;
 	}
 	
