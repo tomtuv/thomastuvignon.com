@@ -31,21 +31,19 @@ p {
 	font-size:18px;
 }
 
-section {
-	max-width:840px;
-	margin:0 auto;
-}
-
 /* !Header */
 header nav {
-	padding:.25em 0;
 	position:fixed;
 	z-index:1;
 	width:100%;
+	box-sizing: border-box;
+}
+
+header nav section {
+	padding:.25em 2em;
 }
 
 header a {
-	margin-left:2em;
 	line-height:65px;
 	font-weight:600;
 	text-transform:uppercase;
@@ -58,7 +56,6 @@ header a {
 }
 
 header ul {
-	padding-right:2em;
 	padding-left:0;
 	float:right;
 	margin:0;
@@ -66,6 +63,7 @@ header ul {
 }
 
 header li {
+	padding-left: 2em;
 	display:inline-block;
 	position:relative;
 }
@@ -99,7 +97,7 @@ header .menu-rectangle #hamburger span {
 header #hamburger {
 	width:60px;
 	height:45px;
-	right:-4px;
+	right:-20px;
 	position:relative;
 	-webkit-transform:rotate(0deg);
 	-moz-transform:rotate(0deg);
@@ -209,392 +207,12 @@ header .menu-invisible {
 	transition:all .5s;
 }
 
-/* !Vidéo */
-.video-modal,.video-modal .overlay {
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	z-index:300;
-}
-
-.video-modal {
-	max-width:100%;
-	overflow:hidden;
-	position:fixed;
-	opacity:0;
-	-webkit-transform:translate(500%,0%);
-	transform:translate(500%,0%);
-	-webkit-transition:-webkit-transform 0 linear 0;
-	transition:transform 0 linear 0;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:flex;
-	-webkit-box-pack:center;
-	-moz-box-pack:center;
-	-ms-flex-pack:center;
-	-webkit-justify-content:center;
-	justify-content:center;
-	-webkit-box-align:center;
-	-moz-box-align:center;
-	-ms-flex-align:center;
-	-webkit-align-items:center;
-	align-items:center;
-	-webkit-transform-style:preserve-3d;
-	-moz-transform-style:preserve-3d;
-	transform-style:preserve-3d;
-}
-
-.video-modal .overlay {
-	z-index:0;
-	background-color:#000;
-}
-
-.video-modal-content {
-	position:relative;
-	top:auto;
-	right:auto;
-	bottom:auto;
-	left:auto;
-	z-index:1;
-	height:auto;
-	width:calc(100% - 200px);
-	max-width:1000px;
-	max-height:calc(100% - 100px);
-	margin:0 auto;
-	overflow-y:visible;
-}
-
-.close-video-modal {
-	display:block;
-	position:absolute;
-	right:0;
-	top:-2em;
-	text-decoration:none;
-	font-weight:600;
-	color:#fff;
-}
-
-.close-video-modal .fa {
-	margin-right:5px;
-	-webkit-transition:margin-right .15s;
-	-moz-transition:margin-right .15s;
-	-o-transition:margin-right .15s;
-	transition:margin-right .15s;
-}
-
-.close-video-modal:hover > .fa {
-	margin-right:10px;
-	-webkit-transition:margin-right .15s;
-	-moz-transition:margin-right .15s;
-	-o-transition:margin-right .15s;
-	transition:margin-right .15s;
-}
-
-.video-sizer {
-	display:block;
-	width:100%;
-	height:auto;
-}
-
-iframe#youtube {
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	z-index:1;
-	background:#000;
-}
-
-.show-video-modal .video-modal {
-	opacity:1;
-	transform:translate(0%,0%);
-	-webkit-transform:translate(0%,0%);
-}
-
-.show-video-modal .video-modal .overlay {
-	opacity:1;
-}
-
-.show-video-modal .video-modal-content {
-	transform:translate(0%,0%);
-	-webkit-transform:translate(0%,0%);
-}
-
-/* !Bulles */
-#bulles {
-	position:relative;
-	width:30em;
-	margin:0 auto;
-	z-index:0;
-}
-
-#parallax-1,#parallax-2,#parallax-3,#parallax-4 {
-	position:absolute;
-	top:0;
-}
-
-#parallax-2 {
-	z-index:0;
-}
-
-#parallax-3 {
-	z-index:10;
-}
-
-#parallax-4 {
-	z-index:100;
-}
-
-.bulle {
-	border-radius:100%;
-	position:absolute;
-	opacity:.75;
-}
-
-.taille1 {
-	width:75px;
-	height:75px;
-}
-
-.taille2 {
-	width:100px;
-	height:100px;
-}
-
-.taille3 {
-	width:125px;
-	height:125px;
-}
-
-.taille4 {
-	width:150px;
-	height:150px;
-}
-
-.jaune {
-	background-color:#E8FF00;
-}
-
-.bleu {
-	background-color:#00C6FF;
-}
-
-.violet {
-	background-color:#9902E8;
-}
-
-.orange {
-	background-color:#F48D01;
-}
-
-.vert {
-	background-color:#01BF24;
-}
-
-#bulle-1-1 {
-	top:-30px;
-	left:-200px;
-}
-
-#bulle-1-2 {
-	top:200px;
-	left:720px;
-}
-
-#bulle-1-3 {
-	top:450px;
-	left:-50px;
-}
-
-#bulle-1-4 {
-	top:200px;
-	left:-450px;
-}
-
-#bulle-1-5 {
-	top:100px;
-	left:480px;
-}
-
-#bulle-1-6 {
-	top:800px;
-	left:700px;
-}
-
-#bulle-1-7 {
-	top:650px;
-	left:-100px;
-}
-
-#bulle-1-8 {
-	top:900px;
-	left:-300px;
-}
-
-#bulle-1-9 {
-	top:1250px;
-	left:-100px;
-}
-
-#bulle-1-10 {
-	top:1350px;
-	left:450px;
-}
-
-#bulle-2-1 {
-	top:-120px;
-	left:-200px;
-}
-
-#bulle-2-2 {
-	top:800px;
-	left:220px;
-}
-
-#bulle-2-3 {
-	top:100px;
-	left:70px;
-}
-
-#bulle-2-4 {
-	top:250px;
-	left:-360px;
-}
-
-#bulle-2-5 {
-	top:500px;
-	left:700px;
-}
-
-#bulle-2-6 {
-	top:350px;
-	left:300px;
-}
-
-#bulle-2-7 {
-	top:600px;
-	left:-400px;
-}
-
-#bulle-2-8 {
-	top:800px;
-	left:-300px;
-}
-
-#bulle-2-9 {
-	top:1400px;
-	left:-300px;
-}
-
-#bulle-2-10 {
-	top:1200px;
-	left:100px;
-}
-
-#bulle-3-1 {
-	top:600px;
-	left:300px;
-}
-
-#bulle-3-2 {
-	top:150px;
-	left:250px;
-}
-
-#bulle-3-3 {
-	top:1000px;
-	left:100px;
-}
-
-#bulle-3-4 {
-	top:1100px;
-	left:360px;
-}
-
-#bulle-3-5 {
-	top:750px;
-	left:480px;
-}
-
-#bulle-3-6 {
-	top:500px;
-	left:500px;
-}
-
-#bulle-3-7 {
-	top:700px;
-	left:150px;
-}
-
-#bulle-3-8 {
-	top:1100px;
-	left:200px;
-}
-
-#bulle-3-9 {
-	top:1050px;
-	left:-100px;
-}
-
-#bulle-3-10 {
-	top:1400px;
-	left:300px;
-}
-
-#bulle-4-1 {
-	top:50px;
-	left:500px;
-}
-
-#bulle-4-2 {
-	top:500px;
-	left:530px;
-}
-
-#bulle-4-3 {
-	top:400px;
-	left:130px;
-}
-
-#bulle-4-4 {
-	top:200px;
-	left:-100px;
-}
-
-#bulle-4-5 {
-	top:600px;
-	left:200px;
-}
-
-#bulle-4-6 {
-	top:600px;
-	left:-200px;
-}
-
-#bulle-4-7 {
-	top:250px;
-	left:400px;
-}
-
-#bulle-4-8 {
-	top:-50px;
-	left:50px;
-}
-
-#bulle-4-9 {
-	top:1600px;
-	left:50px;
-}
-
-#bulle-4-10 {
-	top:1700px;
-	left:400px;
-}
-
 /* !Sections */
+#thomas section, #parcours section, #outils section, #realisations section, #plus section, footer section {
+	max-width:840px;
+	margin:0 auto;
+}
+
 #thomas {
 	width:100%;
 	height:100%;
@@ -647,8 +265,11 @@ iframe#youtube {
 	float:left;
 }
 
-#parcours section {
+#parcours {
 	color:#000;
+}
+
+#parcours section {
 	padding:4em 2em 2em;
 }
 
@@ -720,9 +341,12 @@ iframe#youtube {
 	padding:1em;
 }
 
+#realisations {
+	color:#000;
+}
+
 #realisations section {
 	padding:4em 2em 2.5em;
-	color:#000;
 }
 
 #realisations article {
@@ -811,6 +435,12 @@ footer {
 	background-color:#fff;
 	color:#000;
 	line-height:65px;
+	padding-left: constant(safe-area-inset-left);
+	padding-right: constant(safe-area-inset-right);
+}
+
+footer section {
+	padding:2em;
 }
 
 footer a {
@@ -821,12 +451,6 @@ footer .fa {
 	font-size:28px;
 	vertical-align:middle;
 	margin:0 .5em;
-}
-
-footer section {
-	max-width:840px;
-	margin:0 auto;
-	padding:2em;
 }
 
 footer #liens {
@@ -902,6 +526,15 @@ footer a:hover {
 		font-size:16px;
 	}
 	
+	header nav {
+		padding-left: constant(safe-area-inset-left);
+	    padding-right: constant(safe-area-inset-right);
+	}
+	
+	header nav section {
+		padding: .25em 1em;
+	}
+	
 	header ul {
 		display:none;
 		float:none;
@@ -911,11 +544,11 @@ footer a:hover {
 	
 	header li {
 		display:block;
+		padding: 0;
 	}
 	
 	header a {
 		line-height:45px;
-		margin-left:1em;
 	}
 	
 	.video-modal-content {
@@ -924,6 +557,8 @@ footer a:hover {
 	
 	#thomas section {
 		padding:0 1em;
+		padding-top: constant(safe-area-inset-top);
+	    padding-bottom: constant(safe-area-inset-bottom);
 		text-align:center;
 	}
 	
@@ -944,6 +579,11 @@ footer a:hover {
 	
 	#thomas a:hover > .fa {
 		margin-left:12.5px;
+	}
+	
+	#parcours {
+		padding-left: constant(safe-area-inset-left);
+	    padding-right: constant(safe-area-inset-right);
 	}
 	
 	#parcours section {
@@ -967,6 +607,11 @@ footer a:hover {
 		font-size:14px;
 	}
 	
+	#outils {
+		padding-left: constant(safe-area-inset-left);
+	    padding-right: constant(safe-area-inset-right);
+	}
+	
 	#outils section {
 		padding:2em 1em;
 	}
@@ -975,12 +620,22 @@ footer a:hover {
 		font-size:16px;
 	}
 	
+	#realisations {
+		padding-left: constant(safe-area-inset-left);
+	    padding-right: constant(safe-area-inset-right);
+	}
+	
 	#realisations section {
 		padding:2em 1em 1em;
 	}
 	
 	#realisations img:hover {
 		box-shadow:0 10px 20px rgba(0,0,0,0.20),0 5px 15px rgba(0,0,0,0.20);
+	}
+	
+	#plus {
+		padding-left: constant(safe-area-inset-left);
+	    padding-right: constant(safe-area-inset-right);
 	}
 	
 	#plus section {
@@ -996,7 +651,7 @@ footer a:hover {
 	}
 	
 	footer section {
-		padding:1em;
+		padding: 1em;
 	}
 	
 	footer .fa {

@@ -45,12 +45,14 @@
 }
 .lg-actions .lg-next {
   right: 20px;
+  padding-right: constant(safe-area-inset-right);
 }
 .lg-actions .lg-next:before {
   content: "\e095";
 }
 .lg-actions .lg-prev {
   left: 20px;
+  padding-left: constant(safe-area-inset-left);
 }
 .lg-actions .lg-prev:after {
   content: "\e094";
@@ -164,6 +166,8 @@
   top: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
 }
 .lg-toolbar .lg-icon {
   color: #000;
@@ -202,6 +206,8 @@
   right: 0;
   text-align: left;
   z-index: 1080;
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
 }
 .lg-sub-html h4 {
   margin: 0;
