@@ -36,7 +36,7 @@ header nav {
 	position:fixed;
 	z-index:1;
 	width:100%;
-	box-sizing: border-box;
+	box-sizing:border-box;
 }
 
 header nav section {
@@ -44,6 +44,7 @@ header nav section {
 }
 
 header a {
+	display:inline-block;
 	line-height:65px;
 	font-weight:600;
 	text-transform:uppercase;
@@ -63,7 +64,7 @@ header ul {
 }
 
 header li {
-	padding-left: 2em;
+	padding-left:1.75em;
 	display:inline-block;
 	position:relative;
 }
@@ -208,7 +209,7 @@ header .menu-invisible {
 }
 
 /* !Sections */
-#thomas section, #parcours section, #outils section, #realisations section, #plus section, footer section {
+#thomas section,#parcours section,#outils section,#realisations section,#plus section,footer section {
 	max-width:840px;
 	margin:0 auto;
 }
@@ -435,8 +436,8 @@ footer {
 	background-color:#fff;
 	color:#000;
 	line-height:65px;
-	padding-left: constant(safe-area-inset-left);
-	padding-right: constant(safe-area-inset-right);
+	padding-left:env(safe-area-inset-left);
+	padding-right:env(safe-area-inset-right);
 }
 
 footer section {
@@ -527,12 +528,12 @@ footer a:hover {
 	}
 	
 	header nav {
-		padding-left: constant(safe-area-inset-left);
-	    padding-right: constant(safe-area-inset-right);
+		padding-left:env(safe-area-inset-left);
+		padding-right:env(safe-area-inset-right);
 	}
 	
 	header nav section {
-		padding: .25em 1em;
+		padding:.25em 1em;
 	}
 	
 	header ul {
@@ -544,21 +545,15 @@ footer a:hover {
 	
 	header li {
 		display:block;
-		padding: 0;
+		padding:0;
 	}
 	
 	header a {
 		line-height:45px;
 	}
 	
-	.video-modal-content {
-		width:calc(100% - 2em);
-	}
-	
 	#thomas section {
 		padding:0 1em;
-		padding-top: constant(safe-area-inset-top);
-	    padding-bottom: constant(safe-area-inset-bottom);
 		text-align:center;
 	}
 	
@@ -582,8 +577,8 @@ footer a:hover {
 	}
 	
 	#parcours {
-		padding-left: constant(safe-area-inset-left);
-	    padding-right: constant(safe-area-inset-right);
+		padding-left:env(safe-area-inset-left);
+		padding-right:env(safe-area-inset-right);
 	}
 	
 	#parcours section {
@@ -608,8 +603,8 @@ footer a:hover {
 	}
 	
 	#outils {
-		padding-left: constant(safe-area-inset-left);
-	    padding-right: constant(safe-area-inset-right);
+		padding-left:env(safe-area-inset-left);
+		padding-right:env(safe-area-inset-right);
 	}
 	
 	#outils section {
@@ -621,12 +616,12 @@ footer a:hover {
 	}
 	
 	#realisations {
-		padding-left: constant(safe-area-inset-left);
-	    padding-right: constant(safe-area-inset-right);
+		padding-left:env(safe-area-inset-left);
+		padding-right:env(safe-area-inset-right);
 	}
 	
 	#realisations section {
-		padding:2em 1em 1em;
+		padding:2em 1em;
 	}
 	
 	#realisations img:hover {
@@ -634,8 +629,8 @@ footer a:hover {
 	}
 	
 	#plus {
-		padding-left: constant(safe-area-inset-left);
-	    padding-right: constant(safe-area-inset-right);
+		padding-left:env(safe-area-inset-left);
+		padding-right:env(safe-area-inset-right);
 	}
 	
 	#plus section {
@@ -651,7 +646,7 @@ footer a:hover {
 	}
 	
 	footer section {
-		padding: 1em;
+		padding:1em;
 	}
 	
 	footer .fa {

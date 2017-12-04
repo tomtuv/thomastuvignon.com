@@ -32,8 +32,8 @@
 	-webkit-transform-style:preserve-3d;
 	-moz-transform-style:preserve-3d;
 	transform-style:preserve-3d;
-	padding-left: constant(safe-area-inset-left);
-	padding-right: constant(safe-area-inset-right);
+	padding-left:constant(safe-area-inset-left);
+	padding-right:constant(safe-area-inset-right);
 }
 
 .video-modal .overlay {
@@ -111,4 +111,10 @@ iframe#youtube {
 .show-video-modal .video-modal-content {
 	transform:translate(0%,0%);
 	-webkit-transform:translate(0%,0%);
+}
+
+@media (max-width:840px) {
+	.video-modal-content {
+		width:calc(100% - 2em);
+	}
 }
