@@ -111,15 +111,25 @@ $(document).ready(function() {
 	toggle_video_modal();
 });
 // !Galeries
+$('#michelin').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/michelin/01.jpg',
+			'subHtml': '<p>Stage et alternance chez Ultrō : intégration de contenu et design graphique pour le site Michelin Brands Center.</p>'
+		}],
+		speed: 500,
+	})
+});
 $('#horse-pilot').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/horse-pilot/01.jpg',
-			'subHtml': '<p>Stage chez Ultrō : intégration de la newsletter Horse Pilot sur MailChimp en HTML et CSS. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Stage chez Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/horse-pilot/02.jpg',
-			'subHtml': '<p>Stage chez Ultrō : réalisation de la maquette de l’agenda Facebook Horse Pilot sur Photoshop et développement sous WordPress avec les extensions CPT UI et ACF. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Stage chez Ultrō : maquettage et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -129,31 +139,46 @@ $('#flagship').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/flagship/01.jpg',
-			'subHtml': '<p>Stage chez Ultrō : développement du site de présentation du programme Flagship de l’agence avec le framework WebSlides. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Stage chez Ultrō : intégration du site de présentation du programme Flagship de l’agence. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
 });
-$('#wheel').on('click', function() {
+$('#bron').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/wheel/01.jpg',
-			'subHtml': '<p>Partiel de web design : réalisation de la maquette du site et de l’application Wheel sur Sketch.</p>'
+			'src': 'img/realisations/bron/01.jpg',
+			'subHtml': '<p>Stage chez 1989 : maquettage du site de la ville de Bron.</p>'
 		}, {
-			'src': 'img/realisations/wheel/02.jpg'
+			'src': 'img/realisations/bron/02.jpg'
+		}],
+		speed: 500,
+	})
+});
+
+$('#thematis-conseil').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/thematis-conseil/01.jpg',
+			'subHtml': '<p>Alternance chez Ultrō : gestion de projet, prototypage, maquettage et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
-			'src': 'img/realisations/wheel/03.jpg'
+			'src': 'img/realisations/thematis-conseil/02.jpg'
 		}, {
-			'src': 'img/realisations/wheel/04.jpg'
+			'src': 'img/realisations/thematis-conseil/03.jpg'
 		}, {
-			'src': 'img/realisations/wheel/05.jpg'
+			'src': 'img/realisations/thematis-conseil/04.jpg'
 		}, {
-			'src': 'img/realisations/wheel/06.jpg'
+			'src': 'img/realisations/thematis-conseil/05.jpg'
 		}, {
-			'src': 'img/realisations/wheel/07.jpg'
+			'src': 'img/realisations/thematis-conseil/06.jpg'
 		}, {
-			'src': 'img/realisations/wheel/08.jpg'
+			'src': 'img/realisations/thematis-conseil/07.jpg'
+		}, {
+			'src': 'img/realisations/thematis-conseil/08.jpg'
+		}, {
+			'src': 'img/realisations/thematis-conseil/09.jpg'
 		}],
 		speed: 500,
 	})
@@ -163,7 +188,7 @@ $('#midi-life').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/midi-life/01.jpg',
-			'subHtml': '<p>Hackathon Midi libre : réalisation de la maquette de l’application Midi Life sur Sketch.</p>'
+			'subHtml': '<p>Hackathon Midi libre : maquettage de l’application Midi Life.</p>'
 		}, {
 			'src': 'img/realisations/midi-life/02.jpg'
 		}, {
@@ -190,12 +215,64 @@ $('#midi-life').on('click', function() {
 		speed: 500,
 	})
 });
+$('#higgins').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/higgins/01.jpg',
+			'subHtml': '<p>CPME Camp : maquettage de l’application de menu numérique et d’assistant personnel Higgins.</p>'
+		}, {
+			'src': 'img/realisations/higgins/02.jpg'
+		}, {
+			'src': 'img/realisations/higgins/03.jpg'
+		}, {
+			'src': 'img/realisations/higgins/04.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#stella-babyfoot').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/stella-babyfoot/01.jpg',
+			'subHtml': '<p>Projet : maquettage du site Stella Baby-Foot.</p>'
+		}, {
+			'src': 'img/realisations/stella-babyfoot/02.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#wheel').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/wheel/01.jpg',
+			'subHtml': '<p>Projet : maquettage du site et de l’application Wheel.</p>'
+		}, {
+			'src': 'img/realisations/wheel/02.jpg'
+		}, {
+			'src': 'img/realisations/wheel/03.jpg'
+		}, {
+			'src': 'img/realisations/wheel/04.jpg'
+		}, {
+			'src': 'img/realisations/wheel/05.jpg'
+		}, {
+			'src': 'img/realisations/wheel/06.jpg'
+		}, {
+			'src': 'img/realisations/wheel/07.jpg'
+		}, {
+			'src': 'img/realisations/wheel/08.jpg'
+		}],
+		speed: 500,
+	})
+});
 $('#musee-de-la-mine').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/musee-de-la-mine/01.jpg',
-			'subHtml': '<p>Projet tutoré : réalisation de la maquette du site du Musée de la mine de Gréasque sur Sketch et développement sous WordPress. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Projet : prototypage, maquettage et développement du site du Musée de la mine de Gréasque. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/musee-de-la-mine/02.jpg'
 		}, {
@@ -208,24 +285,12 @@ $('#musee-de-la-mine').on('click', function() {
 		speed: 500,
 	})
 });
-$('#bron').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Stage chez 1989 : réalisation de la maquette du site de la ville de Bron sur Sketch.</p>'
-		}, {
-			'src': 'img/realisations/bron/02.jpg'
-		}],
-		speed: 500,
-	})
-});
 $('#arize-leze').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/arize-leze/01.jpg',
-			'subHtml': '<p>Projet tutoré : réalisation de la maquette de la web app de l’office de tourisme Arize-Lèze sur Photoshop et intégration en HTML et CSS. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Projet : maquettage et intégration de la web app de l’office de tourisme Arize-Lèze. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/arize-leze/02.jpg'
 		}, {
