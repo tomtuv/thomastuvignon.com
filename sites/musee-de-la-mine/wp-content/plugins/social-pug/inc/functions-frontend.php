@@ -101,10 +101,13 @@
 		$wrapper_classes[] = ( isset( $settings['button_style'] ) && $settings['button_style'] == 6 ? 'dpsp-has-icon-background' : '' );
 		$wrapper_classes[] = ( isset( $settings['button_style'] ) && $settings['button_style'] == 7 ? 'dpsp-icon-hover' : '' );
 
-		$wrapper_classes = implode( ' ', array_filter( $wrapper_classes ) );
+		// Button total share counts
+		$show_total_count = ( ! empty( $settings['display']['show_count_total'] ) ? true : false );
 
-		if( !empty( $settings['display']['message'] ) )
-			$output .= '<p class="dpsp-share-text">' . esc_attr( $settings['display']['message'] ) . '</p>';
+		$wrapper_classes[] = ( $show_total_count ? 'dpsp-show-total-share-count' : '' );
+		$wrapper_classes[] = ( $show_total_count ? ( ! empty( $settings['display']['total_count_position'] ) ? 'dpsp-show-total-share-count-' . $settings['display']['total_count_position'] : 'dpsp-show-total-share-count-before' ) : '' );
+
+		$wrapper_classes = implode( ' ', array_filter( $wrapper_classes ) );
 
 		// Total share count before buttons
 		if( isset( $settings['display']['show_count_total'] ) && ( !isset( $settings['display']['total_count_position'] ) || $settings['display']['total_count_position'] == 'before' ) )
@@ -124,6 +127,16 @@
 		// Wrap output for top and bottom cases
 		$output_top 	= '<div id="dpsp-content-top" class="' . $wrapper_classes . '">' . $output . '</div>';
 		$output_bottom 	= '<div id="dpsp-content-bottom" class="' . $wrapper_classes . '">' . $output . '</div>';
+
+		// Share text
+		if( !empty( $settings['display']['message'] ) ) {
+
+			$share_text = '<p class="dpsp-share-text">' . esc_attr( $settings['display']['message'] ) . '</p>';
+
+			$output_top    = $share_text . $output_top;
+			$output_bottom = $share_text . $output_bottom;
+
+		}
 
 		// Concatenate output and content
 		if( $settings['display']['position'] == 'top' ) {
@@ -156,7 +169,7 @@
 
 		global $post;
 
-		$output = '<ul class="dpsp-networks-btns-wrapper ' . ( !empty($location) ? 'dpsp-networks-btns-' . $location : '' ) . '">';
+		$output = '<ul class="dpsp-networks-btns-wrapper ' . ( !empty($location) ? 'dpsp-networks-btns-' . esc_attr( $location ) : '' ) . '">';
 
 		// Set current network and networks count		
 		$current_network = 1;
@@ -259,6 +272,7 @@
 
 		// HTML output
 		$output = '<div class="dpsp-total-share-wrapper">';
+			$output .= '<span class="dpsp-icon-total-share"></span>';
 			$output .= '<span class="dpsp-total-share-count">' . apply_filters( 'dpsp_get_output_total_share_count', $total_shares, $location ) . '</span>';
 			$output .= '<span>' . apply_filters( 'dpsp_total_share_count_text', __( 'shares', 'social-pug' ) ) . '</span>';
 		$output .= '</div>';
@@ -275,6 +289,54 @@
 
 		// Styling default
 		$output = '';
+
+		/**
+		 * Handle locations
+		 *
+		 */
+		$locations = dpsp_get_network_locations();
+
+		foreach( $locations as $location ) {
+
+			$location_settings = dpsp_get_location_settings( $location );
+
+			// Jump to next one if location is not active
+			if( empty( $location_settings['active'] ) )
+				continue;
+
+			/**
+			 * Mobile display
+			 *
+			 */
+			switch( $location ) {
+
+				case 'sidebar':
+					$tool_html_selector = '#dpsp-floating-sidebar';
+					break;
+
+				case 'content':
+					$tool_html_selector = '.dpsp-content-wrapper';
+					break;
+
+				default:
+					$tool_html_selector = '';
+					break;
+
+			}
+
+			if( ! empty( $tool_html_selector ) && empty( $location_settings['display']['show_mobile'] ) ) {
+
+				$mobile_screen_width = ( ! empty( $location_settings['display']['screen_size'] ) ? (int)$location_settings['display']['screen_size'] : 720 );
+
+				$output .= '
+					@media screen and ( max-width : ' . $mobile_screen_width . 'px ) {
+						' . $tool_html_selector . '.dpsp-hide-on-mobile { display: none !important; }
+					}
+				';
+
+			}
+
+		}
 
 		// Actually outputting the styling
 		echo '<style type="text/css" data-source="Social Pug">' . apply_filters( 'dpsp_output_inline_style', $output ) . '</style>';
@@ -302,8 +364,12 @@
 		if( !is_singular() )
 			return;
 
+		// Facebook specific
+		if( ! empty( $settings['facebook_app_id'] ) )
+			echo '<meta property="fb:app_id" 	content ="' . esc_attr( $settings['facebook_app_id'] ) . '" />';
+
 		// Twitter specific
-		echo '<meta name="twitter:card" 		content="summary" />';
+		echo '<meta name="twitter:card" 		content="summary_large_image" />';
 
 		// Meta tags for Open Graph
 		echo '<meta property="og:url"			content="' . esc_attr( dpsp_get_post_url() ) . '" />';
@@ -329,6 +395,10 @@
 			return;
 
 		global $post;
+
+		// Filter to disable the output of the ajax pull share counts js data variables
+		if( ! apply_filters( 'dpsp_output_ajax_pull_post_share_counts', true ) )
+			return;
 
 		// Check last updated timestamp and output the script only
 		// if at least 3 hours have passed

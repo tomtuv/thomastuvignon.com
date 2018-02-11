@@ -19,7 +19,6 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 
 		$this->links_model = &$polylang->links_model;
 		$this->links = &$polylang->links;
-		$this->curlang = &$polylang->curlang;
 
 		add_action( 'pll_language_defined', array( $this, 'pll_language_defined' ) );
 		add_action( 'pll_home_requested', array( $this, 'pll_home_requested' ) );
@@ -77,19 +76,6 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 	}
 
 	/**
-	 * Translates page for posts
-	 *
-	 * @since 1.8
-	 *
-	 * @param int $v page for posts page id
-	 * @return int
-	 */
-	public function translate_page_for_posts( $v ) {
-		// Returns the current page if there is no translation to avoid ugly notices
-		return isset( $this->curlang->page_for_posts ) ? $this->curlang->page_for_posts : $v;
-	}
-
-	/**
 	 * Manages canonical redirection of the homepage when using page on front
 	 *
 	 * @since 0.1
@@ -144,7 +130,7 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 	}
 
 	/**
-	 * Prevents canonical redirection if we are on a static front page
+	 * Handles canonical redirection if we are on a static front page
 	 *
 	 * @since 1.8
 	 *
@@ -152,7 +138,36 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 	 * @return bool|string
 	 */
 	public function pll_check_canonical_url( $redirect_url ) {
-		return $this->options['redirect_lang'] && ! empty( $this->curlang->page_on_front ) && is_page( $this->curlang->page_on_front ) ? false : $redirect_url;
+		if ( ! empty( $this->curlang->page_on_front ) && is_page( $this->curlang->page_on_front ) ) {
+			// Redirect www.mysite.fr to mysite.fr
+			if ( 3 === $this->options['force_lang'] ) {
+				foreach ( $this->options['domains'] as $lang => $domain ) {
+					$host = parse_url( $domain, PHP_URL_HOST );
+					if ( 'www.' . $_SERVER['HTTP_HOST'] === $host || 'www.' . $host === $_SERVER['HTTP_HOST'] ) {
+						$language = $this->model->get_language( $lang );
+						return $language->home_url;
+					}
+				}
+			}
+
+			// Prevents canonical redirection made by WP from secondary language to main language
+			if ( $this->options['redirect_lang'] ) {
+				return false;
+			}
+		}
+		return $redirect_url;
+	}
+
+	/**
+	 * Is the query for a the static front page (redirected from the language page)?
+	 *
+	 * @since 2.3
+	 *
+	 * @param object $query
+	 * @return bool
+	 */
+	protected function is_front_page( $query ) {
+		return ! is_date() && ! is_author() && ! is_search() && ! is_feed() && ! is_post_type_archive() && is_tax() && 1 === count( $query->tax_query->queries );
 	}
 
 	/**
@@ -175,8 +190,7 @@ class PLL_Frontend_Static_Pages extends PLL_Static_Pages {
 		}
 
 		// Redirect the language page to the homepage when using a static front page
-		elseif ( ( $this->options['redirect_lang'] || $this->options['hide_default'] ) && ( count( $query->query ) == 1 || ( ( is_preview() || is_paged() || ! empty( $query->query['page'] ) ) && count( $query->query ) == 2 ) || ( ( is_preview() && ( is_paged() || ! empty( $query->query['page'] ) ) ) && count( $query->query ) == 3 ) ) && is_tax( 'language' ) ) {
-			$lang = $this->model->get_language( get_query_var( 'lang' ) );
+		elseif ( ( $this->options['redirect_lang'] || $this->options['hide_default'] ) && $this->is_front_page( $query ) && $lang = $this->model->get_language( get_query_var( 'lang' ) ) ) {
 			$query->set( 'page_id', $lang->page_on_front );
 			$query->is_singular = $query->is_page = true;
 			$query->is_archive = $query->is_tax = false;

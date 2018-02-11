@@ -48,6 +48,8 @@
 		if( !isset( $new_settings['button_style'] ) )
 			$new_settings['button_style'] = 1;
 
+		$new_settings = dpsp_array_strip_script_tags( $new_settings );
+
 		return $new_settings;
 
 	}

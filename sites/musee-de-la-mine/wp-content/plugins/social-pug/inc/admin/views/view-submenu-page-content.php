@@ -39,17 +39,19 @@
 
 			<?php dpsp_settings_field( 'radio', 'dpsp_location_content[display][shape]', ( isset($dpsp_location_content['display']['shape']) ? $dpsp_location_content['display']['shape'] : '' ), __( 'Button shape', 'social-pug' ), array( 'rectangular' => __( 'Rectangular', 'social-pug' ), 'rounded' => __( 'Rounded', 'social-pug' ), 'circle' => __( 'Circle', 'social-pug' ) ) ); ?>
 
-			<?php dpsp_settings_field( 'select', 'dpsp_location_content[display][position]', ( isset($dpsp_location_content['display']['position']) ? $dpsp_location_content['display']['position'] : '' ), __( 'Position', 'social-pug' ), array( 'top' => __( 'Above', 'social-pug' ), 'bottom' => __( 'Below', 'social-pug' ), 'both' => __( 'Both', 'social-pug' ) ) ); ?>
+			<?php dpsp_settings_field( 'select', 'dpsp_location_content[display][position]', ( isset($dpsp_location_content['display']['position']) ? $dpsp_location_content['display']['position'] : '' ), __( 'Buttons position', 'social-pug' ), array( 'top' => __( 'Above Content', 'social-pug' ), 'bottom' => __( 'Below Content', 'social-pug' ), 'both' => __( 'Above and Below', 'social-pug' ) ) ); ?>
 
 			<?php dpsp_settings_field( 'select', 'dpsp_location_content[display][column_count]', ( isset($dpsp_location_content['display']['column_count']) ? $dpsp_location_content['display']['column_count'] : '' ), __( 'Number of columns', 'social-pug' ), array( 'auto' => __( 'Width Auto', 'social-pug' ), '1' => __( '1 column', 'social-pug' ), '2' => __( '2 columns', 'social-pug' ), '3' => __( '3 columns', 'social-pug' ), '4' => __( '4 columns', 'social-pug' ) ) ); ?>
 
-			<?php dpsp_settings_field( 'text', 'dpsp_location_content[display][message]', ( isset( $dpsp_location_content['display']['message']) ? $dpsp_location_content['display']['message'] : 'Sharing is caring!' ), __( 'Share Text', 'social-pug' ), '' ); ?>
+			<?php dpsp_settings_field( 'text', 'dpsp_location_content[display][message]', ( isset( $dpsp_location_content['display']['message']) ? $dpsp_location_content['display']['message'] : 'Sharing is caring!' ), __( 'Share text', 'social-pug' ), '' ); ?>
 
-			<?php dpsp_settings_field( 'checkbox', 'dpsp_location_content[display][show_labels]', ( isset( $dpsp_location_content['display']['show_labels']) ? $dpsp_location_content['display']['show_labels'] : '' ), __( 'Show labels', 'social-pug' ), array('yes') ); ?>
+			<?php dpsp_settings_field( 'checkbox', 'dpsp_location_content[display][show_labels]', ( isset( $dpsp_location_content['display']['show_labels']) ? $dpsp_location_content['display']['show_labels'] : '' ), __( 'Show button labels', 'social-pug' ), array('yes') ); ?>
 
 			<?php dpsp_settings_field( 'checkbox', 'dpsp_location_content[display][spacing]', ( isset( $dpsp_location_content['display']['spacing']) ? $dpsp_location_content['display']['spacing'] : '' ), __( 'Button spacing', 'social-pug' ), array('yes') ); ?>
 
 			<?php dpsp_settings_field( 'checkbox', 'dpsp_location_content[display][show_mobile]', ( isset( $dpsp_location_content['display']['show_mobile']) ? $dpsp_location_content['display']['show_mobile'] : '' ), __( 'Show on mobile', 'social-pug' ), array('yes') ); ?>
+
+			<?php dpsp_settings_field( 'text', 'dpsp_location_content[display][screen_size]', ( isset( $dpsp_location_content['display']['screen_size']) ? $dpsp_location_content['display']['screen_size'] : '' ), __( 'Mobile screen width (pixels)', 'social-pug' ), '', __( 'For screen widths smaller than this value ( in pixels ) the buttons will be displayed on screen if the show on mobile option is checked.', 'social-pug' ) ); ?>
 		</div>
 
 
@@ -83,3 +85,4 @@
 	</div>
 
 </form>
+<?php do_action( 'dpsp_submenu_page_bottom' ); ?>

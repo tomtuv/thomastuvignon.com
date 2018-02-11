@@ -5,7 +5,7 @@
 	<?php wp_nonce_field( 'dpsptkn', 'dpsptkn' ); ?>
 
 	<!-- Share Tools -->
-	<h1 class="dpsp-page-title"><?php echo __( 'Share Tools', 'social-pug' ); ?></h1>
+	<h1 class="dpsp-page-title"><?php echo __( 'Social Share Tools', 'social-pug' ); ?></h1>
 
 	<div class="dpsp-row dpsp-m-padding">
 	<?php 
@@ -17,3 +17,5 @@
 	</div><!-- End of Share Tools -->
 
 </div>
+
+<?php do_action( 'dpsp_submenu_page_bottom' ); ?>

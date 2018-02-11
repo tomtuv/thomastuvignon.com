@@ -6,9 +6,9 @@
  * Author:              MonsterInsights
  * Author URI:          https://www.monsterinsights.com/
  *
- * Version:             6.0.16
+ * Version:             6.2.8
  * Requires at least:   3.9.0
- * Tested up to:        4.7.4
+ * Tested up to:        4.9.1
  *
  * License:             GPL v3
  * 
@@ -69,7 +69,7 @@ final class MonsterInsights_Lite {
 	 * @access public
 	 * @var string $version Plugin version.
 	 */
-	public $version = '6.0.16';
+	public $version = '6.2.8';
 
 	/**
 	 * Plugin file.
@@ -181,20 +181,29 @@ final class MonsterInsights_Lite {
 				monsterinsights_lite_call_install_and_upgrade();
 			}
 
+			if ( is_admin() ) {
+				new AM_Notification( 'mi-lite', self::$instance->version );
+				new AM_Deactivation_Survey( 'MonsterInsights', basename( __DIR__ ) );
+			}
+
 			// Load the plugin textdomain.
 			add_action( 'plugins_loaded', array( self::$instance, 'load_plugin_textdomain' ) );
 
 			// Load GA for admin, lazyload for frontend
-			if ( is_admin() ) {
+			if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 				self::$instance->ga    		= new MonsterInsights_GA();
 			}
 
 			// Load admin only components.
-			if ( is_admin() ) {
+			if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 				self::$instance->notices    = new MonsterInsights_Notice_Admin();
 				self::$instance->license    = new MonsterInsights_License();
 				self::$instance->reports 	= new MonsterInsights_Reporting();
-				add_action( 'admin_init', array( self::$instance, 'require_updater' ) );
+				if ( defined( 'DOING_CRON' ) && DOING_CRON ) {
+					self::$instance->require_updater();
+				} else {
+					add_action( 'admin_init', array( self::$instance, 'require_updater' ) );
+				}
 			}
 
 			// Run hook to load MonsterInsights addons.
@@ -449,15 +458,18 @@ final class MonsterInsights_Lite {
 	 */
 	public function require_files() {
 
-		if ( is_admin() ) {
+		if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 
 			// Lite and Pro files
+				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'assets/lib/pandora/class-am-notification.php';
+				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'assets/lib/pandora/class-am-deactivation-survey.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/ajax.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/admin.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/common.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/notice.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/capabilities.php';
 				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/licensing/license.php';
+				require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/licensing/autoupdate.php';
 
 			// Pages
 				// Multisite
@@ -490,13 +502,14 @@ final class MonsterInsights_Lite {
 		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'lite/includes/google.php';
 
 		// Lazy Load for Frontend. Load for Admin.
-		if ( is_admin() ) {
+		if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 			require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/google.php';
 		}
 
-		if ( is_admin() ) {
+		if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 			require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/admin/googleauth.php';
 			require_once MONSTERINSIGHTS_PLUGIN_DIR . 'lite/includes/admin/addons.php';
+			require_once MONSTERINSIGHTS_PLUGIN_DIR . 'lite/includes/admin/tools.php';
 			//require_once MONSTERINSIGHTS_PLUGIN_DIR . 'lite/includes/admin/tab-support.php';
 			
 			// Late loading classes (self instantiating)
@@ -505,6 +518,7 @@ final class MonsterInsights_Lite {
 		}
 
 		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/frontend/frontend.php';
+		require_once MONSTERINSIGHTS_PLUGIN_DIR . 'includes/measurement-protocol.php';
 	}
 
 	/**
@@ -618,13 +632,12 @@ register_deactivation_hook( __FILE__, 'monsterinsights_lite_deactivation_hook' )
 function monsterinsights_lite_uninstall_hook( $network_wide ) {
 	wp_cache_flush();
 	$instance = MonsterInsights();
+
 	// Note, if both MI Pro and Lite are active, this is an MI Pro instance
 	// Therefore MI Lite can only use functions of the instance common to
 	// both plugins. If it needs to be pro specific, then include a file that
 	// has that method.
 	if ( is_multisite() && $network_wide ) {
-		delete_site_option( 'monsterinsights_license' );
-		delete_site_option( 'monsterinsights_license_updates' );
 		$site_list = get_sites();
 
 		$options = array(
@@ -639,9 +652,6 @@ function monsterinsights_lite_uninstall_hook( $network_wide ) {
 
 		foreach ( (array) $site_list as $site ) {
 			switch_to_blog( $site->blog_id );
-			delete_option( 'monsterinsights_license' );
-			delete_option( 'monsterinsights_license_updates' );
-
 			monsterinsights_delete_options( $options );
 			delete_option( 'monsterinsights_lite_access_token' );
 			delete_option( 'monsterinsights_lite_refresh_token' );
@@ -651,9 +661,6 @@ function monsterinsights_lite_uninstall_hook( $network_wide ) {
 			restore_current_blog();
 		}
 	} else {
-		delete_option( 'monsterinsights_license' );
-		delete_option( 'monsterinsights_license_updates' );
-
 		$options = array(
 			'analytics_profile_code',
 			'analytics_profile',

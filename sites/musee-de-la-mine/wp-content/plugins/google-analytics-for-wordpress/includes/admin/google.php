@@ -183,7 +183,7 @@ final class MonsterInsights_GA {
 	private function get_notices() {
 		// Notice for no manual or profile GA
 		if ( $this->status === 'empty' ) {
-			add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_empty_notice' ) );
+			add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_empty_notice' ),6 );
 		}
 
 		$current_page = filter_input( INPUT_GET, 'page' );
@@ -196,17 +196,17 @@ final class MonsterInsights_GA {
 		
 			// Notice for GA Access token expired (needs re-authenticate)
 			if ( $this->status === 'expired' ) {
-				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_expired_notice' ) );
+				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_expired_notice' ),6 );
 			}
 			
 			// Notice for Needs Permissions
 			if ( $this->status === 'needs-permissions' ) {
-				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_needs_permissions_notice' ) );
+				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_needs_permissions_notice' ),6 );
 			}
 
 			// Notice for trouble connecting to Google
 			if ( $this->status === 'blocked' ) {
-				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_blocked_notice' ) );
+				add_action( 'admin_notices', array( $this, 'monsterinsights_show_admin_config_blocked_notice' ),6 );
 			}
 		}
 	}
@@ -315,7 +315,11 @@ final class MonsterInsights_GA {
 				if ( version_compare( $version, '4.6', '<' ) ) {
 					return esc_html__( 'MonsterInsights requires WordPress version 4.6 or newer to use oAuth. Please update your WordPress version.', 'google-analytics-for-wordpress' );
 				} else {
-					return esc_html__( 'Google Analytics had a connection error.', 'google-analytics-for-wordpress' );
+					if ( ! empty( $accounts ) ) {
+						return $accounts;
+					} else {
+						return esc_html__( 'Google Analytics had a connection error or your Google account is not signed up for Google Analytics.', 'google-analytics-for-wordpress' );
+					}
 				}
 			}
 			
@@ -327,7 +331,50 @@ final class MonsterInsights_GA {
 						if ( isset( $item['type'] ) && 'WEB' != $item['type'] ) {
 							continue;
 						}
-						
+
+						/**
+						 * Future:
+						* // Accounts
+						* 	// Properties
+						* 		// Views
+						* $items = array(
+						* 	{account_id} => array(
+						* 		{property_id} => array(
+						* 			{view_id} => array( 
+						* 				'account_id'  => '',
+						* 				'property_id' => '',
+						* 				'view_id'	  => '',
+						* 				'url'		  => '',
+						* 				'view_name'	  => '',
+						* 				'ua_code'	  => '',
+						* 			),
+						* 		),
+						* 	),
+						* ),
+						**/
+						/*
+						CurrenT:
+						$accounts[ $item['accountId'] ] = array( 
+							'id'          => $item['accountId'],
+							'ua_code'     => $item['webPropertyId'],
+							'parent_name' => $item['websiteUrl'],
+							'items'       => array(
+								[ $item['internalWebPropertyId'] ]= array( 
+									'id'          => $item['webPropertyId'],
+									'name'        => $item['websiteUrl'],
+									'items'       => array(
+										[ $item['id'] ] = array( 
+											'name'    => $item['name'] . ' (' . $item['webPropertyId'] . ')',
+											'ua_code' => $item['webPropertyId'],
+											'id'      => $item['id'],
+										);
+									),
+								);
+							),
+						);
+						*/
+
+
 						if ( empty( $accounts[ $item['accountId'] ] ) ) {
 							$accounts[ $item['accountId'] ] = array( 
 								'id'          => $item['accountId'],
@@ -354,13 +401,33 @@ final class MonsterInsights_GA {
 						}
 					}
 				}
-			} else if ( isset( $response['response']['code'] ) && isset( $response['body']['error']['errors']['message'] )  && $response['response']['code'] !== 200 && ! $paginate ) {
-				return $response['body']['error']['errors']['message'];
 			} else if ( isset( $response['response']['code'] ) && $response['response']['code'] !== 200 && ! $paginate ) {
 				if ( version_compare( $version, '4.6', '<' ) ) {
 					return esc_html__( 'MonsterInsights requires WordPress version 4.6 or newer to use oAuth. Please update your WordPress version.', 'google-analytics-for-wordpress' );
 				} else {
-					return esc_html__( 'Google Analytics had a connection error.', 'google-analytics-for-wordpress' );
+					if ( ! empty( $accounts ) ) {
+						return $accounts;
+					} else {
+						$code = isset( $response['response']['code'] ) ? $response['response']['code'] : 'Unknown';
+						$type = isset( $response['body']['error']['errors'][0]['reason'] ) ? $response['body']['error']['errors'][0]['reason'] : false;
+						if ( $type === 'insufficientPermissions' ) {
+							return esc_html__( 'Please ensure your Google Account is signed up for Google Analytics.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'badRequest' ) {
+							return esc_html__( 'Bad Request. Please contact support.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'dailyLimitExceeded' ) {
+							return esc_html__( 'Daily Limit Exceeded. Please contact support.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'userRateLimitExceeded' ) {
+							return esc_html__( 'User Rate Limit Exceeded. Wait 2 minutes and then try again.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'rateLimitExceeded' ) {
+							return esc_html__( 'Project Rate Limit Exceeded. Wait 2 minutes and then try again.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'quotaExceeded' ) {
+							return esc_html__( 'Project Rate Limit Quota Exceeded. Wait 2 minutes and then try again.', 'google-analytics-for-wordpress' );
+						} else if ( $type === 'internalServerError' || $type === 'backendError' ) {
+							return esc_html__( 'Google Analytics is having API issues on their side. Wait 2 minutes and then try again.', 'google-analytics-for-wordpress' );
+						} else {
+							return sprintf( esc_html__( 'Google Analytics had a connection error. Error code: %1$s. Reason: %2$s', 'google-analytics-for-wordpress' ), $code, $type );
+						}
+					}
 				}
 			}
 
@@ -603,11 +670,15 @@ final class MonsterInsights_GA {
 		if ( empty( $profiles ) || ! is_array( $profiles ) ) { 
 			$profiles = $this->get_profiles();
 		}
-
+		
 		$optgroups = array();
 		foreach ( $profiles as $key => $value ) {
 			foreach ( $value['items'] as $subitem ) {
-				$optgroups[ $subitem['name'] ]['items'] = $subitem['items'];
+				if ( empty( $optgroups[ $subitem['name'] ]['items'] ) ) {
+					$optgroups[ $subitem['name'] ]['items'] = $subitem['items'];
+				} else {
+					$optgroups[ $subitem['name'] ]['items'] = array_merge( $optgroups[ $subitem['name'] ]['items'], $subitem['items'] );
+				}
 			}
 		}
 
@@ -643,7 +714,7 @@ final class MonsterInsights_GA {
 	 * @return string
 	 */
 	private function create_optgroup( $optgroup, $value ) {
-		$optgroup = '<optgroup label="' . esc_attr( $optgroup ) . '">';
+		$optgroup = '<optgroup label="' . esc_attr( $optgroup ) . '" disabled>';
 
 		foreach ( $value['items'] as $option ) {
 			if ( ! empty( $option['items'] ) ) {
@@ -723,6 +794,10 @@ final class MonsterInsights_GA {
 		$screen = get_current_screen(); 
 		if ( empty( $screen->id ) || strpos( $screen->id, 'monsterinsights' ) !== false ) {
 			return;
+		}
+		
+		if ( ! defined( 'MONSTERINSIGHTS_SHOWING_EMPTY_CONFIG_NOTICE' ) ) {
+			define( 'MONSTERINSIGHTS_SHOWING_EMPTY_CONFIG_NOTICE', true );
 		}
 		echo '<div class="error"><p>' . 
 			sprintf( esc_html__( 'Please configure your %1$sGoogle Analytics settings%2$s!', 'google-analytics-for-wordpress' ),

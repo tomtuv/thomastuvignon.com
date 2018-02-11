@@ -81,8 +81,8 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 
 		if ( ! empty( $languages ) ) {
 			$pattern = str_replace( '/', '\/', $this->home . '/' . $this->root );
-			$pattern = '#' . $pattern . ( $this->options['rewrite'] ? '' : 'language\/' ) . '('.implode( '|', $languages ).')(\/|$)#';
-			$url = preg_replace( $pattern,  $this->home . '/' . $this->root, $url );
+			$pattern = '#' . $pattern . ( $this->options['rewrite'] ? '' : 'language\/' ) . '(' . implode( '|', $languages ) . ')(\/|$)#';
+			$url = preg_replace( $pattern, $this->home . '/' . $this->root, $url );
 		}
 		return $url;
 	}
@@ -99,12 +99,15 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 	 */
 	public function get_language_from_url( $url = '' ) {
 		if ( empty( $url ) ) {
-			$url  = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+			$path = $_SERVER['REQUEST_URI'];
+		} else {
+			$path = parse_url( $url, PHP_URL_PATH );
 		}
 
-		$pattern = str_replace( '/', '\/', $this->home . '/' . $this->root . ( $this->options['rewrite'] ? '' : 'language/' ) );
-		$pattern = '#' . $pattern . '('. implode( '|', $this->model->get_languages_list( array( 'fields' => 'slug' ) ) ) . ')(\/|$)#';
-		return preg_match( $pattern, trailingslashit( $url ), $matches ) ? $matches[1] : ''; // $matches[1] is the slug of the requested language
+		$pattern = parse_url( $this->home . '/' . $this->root . ( $this->options['rewrite'] ? '' : 'language/' ), PHP_URL_PATH );
+		$pattern = str_replace( '/', '\/', $pattern );
+		$pattern = '#' . $pattern . '(' . implode( '|', $this->model->get_languages_list( array( 'fields' => 'slug' ) ) ) . ')(\/|$)#';
+		return preg_match( $pattern, trailingslashit( $path ), $matches ) ? $matches[1] : ''; // $matches[1] is the slug of the requested language
 	}
 
 	/**
@@ -123,7 +126,7 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 	}
 
 	/**
-	 * Optionaly removes 'language' in permalinks so that we get http://www.myblog/en/ instead of http://www.myblog/language/en/
+	 * Optionally removes 'language' in permalinks so that we get http://www.myblog/en/ instead of http://www.myblog/language/en/
 	 *
 	 * @since 1.2
 	 */
@@ -203,7 +206,7 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 				 * @param string      $filter  current set of rules being modified
 				 * @param string|bool $archive custom post post type archive name or false if it is not a cpt archive
 				 */
-				if (  isset( $slug ) && apply_filters( 'pll_modify_rewrite_rule', true, array( $key => $rule ), $filter, false ) ) {
+				if ( isset( $slug ) && apply_filters( 'pll_modify_rewrite_rule', true, array( $key => $rule ), $filter, false ) ) {
 					$newrules[ $slug . str_replace( $wp_rewrite->root, '', ltrim( $key, '^' ) ) ] = str_replace(
 						array( '[8]', '[7]', '[6]', '[5]', '[4]', '[3]', '[2]', '[1]', '?' ),
 						array( '[9]', '[8]', '[7]', '[6]', '[5]', '[4]', '[3]', '[2]', '?lang=$matches[1]&' ),
@@ -230,7 +233,7 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 					if ( $this->options['hide_default'] ) {
 						$newrules[ $key ] = str_replace( '?', '?lang=' . $this->options['default_lang'] . '&', $rule );
 					}
-				}	else {
+				} else {
 					$newrules[ $key ] = $rule;
 				}
 			}
@@ -243,7 +246,7 @@ class PLL_Links_Directory extends PLL_Links_Permalinks {
 
 		// The home rewrite rule
 		if ( 'root' == $filter && isset( $slug ) ) {
-			$newrules[ $slug . '?$' ] = $wp_rewrite->index.'?lang=$matches[1]';
+			$newrules[ $slug . '?$' ] = $wp_rewrite->index . '?lang=$matches[1]';
 		}
 
 		return $newrules;

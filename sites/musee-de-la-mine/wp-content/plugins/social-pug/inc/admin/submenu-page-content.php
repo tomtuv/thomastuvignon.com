@@ -7,7 +7,7 @@
 	 *
 	 */
 	function dpsp_register_content_subpage() {
-		add_submenu_page( 'dpsp-social-pug', __('Content', 'social-pug'), __('Content', 'social-pug'), 'manage_options', 'dpsp-content', 'dpsp_content_subpage' );
+		add_submenu_page( 'dpsp-social-pug', __('Inline Content', 'social-pug'), __('Inline Content', 'social-pug'), 'manage_options', 'dpsp-content', 'dpsp_content_subpage' );
 	}
 	add_action( 'admin_menu', 'dpsp_register_content_subpage' );
 
@@ -47,6 +47,8 @@
 		
 		if( !isset( $new_settings['button_style'] ) )
 			$new_settings['button_style'] = 1;
+
+		$new_settings = dpsp_array_strip_script_tags( $new_settings );
 
 		return $new_settings;
 

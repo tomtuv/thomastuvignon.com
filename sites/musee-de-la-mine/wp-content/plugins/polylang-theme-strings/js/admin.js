@@ -22,13 +22,13 @@ window.mw_polylang_strings_admin = function(){
                     form.prepend(area);
                     area = jQuery(id, form);
 
-                    var html  = '<span class="caption">&laquo;<b>' + _this.lng[10] + '</b>&raquo; ' + _this.lng[11] + '.</span>';
+                    var html  = '<span class="caption">&laquo;<b>' + _this.lng[10] + '</b>&raquo; ' + _this.lng[11] + ' [v.<b>' + _this.lng[12] + '</b>].</span>';
                         html += '<span>' + _this.lng[20] + ': <i><a href="' + _this.attr.urls['polylang_strings_theme_current'] + '">' + _this.lng[21] + '</a></i></span>';
                         html += '<span>' + _this.lng[30] + ': <i><a href="' + _this.attr.urls['polylang_strings'] + '">' + _this.lng[31] + '</a></i></span>';
                         html += '<span class="links">';
-                        html += '<a href="http://modeewine.com/en-polylang-theme-strings" target="_blank">' + _this.lng[40] + '</a>';
-                        html += '<a href="http://modeewine.com/en-donation" target="_blank">' + _this.lng[50] + '</a>';
-                        html += '<a href="https://wordpress.org/support/view/plugin-reviews/polylang-theme-strings" target="_blank">' + _this.lng[60] + '</a>';
+                        html += '<a href="https://modeewine.com/en-polylang-theme-strings" target="_blank">' + _this.lng[40] + '</a>';
+                        html += '<a href="https://modeewine.com/en-donation" target="_blank">' + _this.lng[50] + '</a>';
+                        html += '<a href="https://wordpress.org/support/view/plugin-reviews/polylang-theme-strings#new-post" target="_blank">' + _this.lng[60] + '</a>';
                         html += '</span>';
 
                     area.html(html);

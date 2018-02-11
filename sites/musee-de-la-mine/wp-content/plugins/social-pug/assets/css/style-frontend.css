@@ -16,6 +16,20 @@
 /*****************************************/
 /* General: Icons
 /*****************************************/
+.dpsp-icon-total-share:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+
+.dpsp-icon-total-share:before,
 .dpsp-network-btn:before {
 	font-family: "Social Pug";
 	font-style: normal;
@@ -28,6 +42,8 @@
 	text-transform: none;
 	line-height: 1em;
 }
+
+.dpsp-icon-total-share:before { content: '\e883'; }
 
 .dpsp-facebook:before {
 	content: '\e800';
@@ -43,6 +59,10 @@
 
 .dpsp-pinterest:before {
 	content: '\e803';
+}
+
+.dpsp-linkedin:before {
+	content: '\e804'; 
 }
 
 /*****************************************/
@@ -222,7 +242,8 @@
 	position: relative;
 
 	display: block;
-	text-decoration: none;
+	text-decoration: none !important;
+	text-transform: unset !important;
 	height: 40px;
 	min-width: 40px;
 
@@ -245,11 +266,14 @@
 	-o-transition: all 0.15s ease-in;
 	transition: all 0.15s ease-in;
 
+	box-shadow: none;
+
 	cursor: pointer;
 }
 
 .dpsp-networks-btns-wrapper .dpsp-network-btn:hover {
 	border: 2px solid;
+	box-shadow: none;
 }
 
 .dpsp-networks-btns-wrapper .dpsp-network-btn:focus {
@@ -478,6 +502,36 @@
 	border-color: #b31e24;
 }
 
+
+/* LinkedIn */
+.dpsp-networks-btns-wrapper .dpsp-network-btn.dpsp-linkedin:before,
+.dpsp-networks-btns-wrapper .dpsp-network-btn.dpsp-linkedin {
+	border-color: #0077b5;
+	color: #0077b5;
+}
+.dpsp-networks-btns-wrapper .dpsp-network-btn.dpsp-linkedin:hover:before,
+.dpsp-networks-btns-wrapper .dpsp-network-btn.dpsp-linkedin:hover {
+	border-color: #00669c;
+	color: #00669c;
+}
+.dpsp-has-icon-background .dpsp-networks-btns-wrapper .dpsp-linkedin:before,
+.dpsp-has-button-background .dpsp-networks-btns-wrapper .dpsp-linkedin {
+	background: #0077b5;
+	color: #fff;
+}
+.dpsp-icon-hover .dpsp-networks-btns-wrapper .dpsp-linkedin:hover:before,
+.dpsp-button-hover .dpsp-networks-btns-wrapper .dpsp-linkedin:hover,
+.dpsp-has-icon-background .dpsp-networks-btns-wrapper .dpsp-linkedin:hover:before,
+.dpsp-has-button-background .dpsp-networks-btns-wrapper .dpsp-linkedin:hover {
+	background: #00669c;
+	color: #fff;
+}
+.dpsp-has-icon-dark .dpsp-networks-btns-wrapper .dpsp-linkedin:before {
+	background: #00669c;
+	border-color: #00669c;
+}
+
+
 /* Sidebar needs color white for icons */
 .dpsp-has-button-background .dpsp-networks-btns-wrapper.dpsp-networks-btns-sidebar .dpsp-network-btn:before {
 	color: #fff;
@@ -539,30 +593,69 @@
 /*****************************************/
 /* Total shares
 /*****************************************/
-.dpsp-total-share-wrapper { 
+.dpsp-show-total-share-count {
+	position: relative;
+}
+
+.dpsp-total-share-wrapper {
+	position: relative;
 	font-family: 'Arial';
 	margin-top: 10px;
-	margin-bottom: 10px;
 	line-height: 1.345;
 	color: #5d6368;
 }
 
-.dpsp-total-share-wrapper span {
-	display: inline-block;
-	font-size: 12px;
-	margin-right: 5px;
-}
-
-.dpsp-total-share-wrapper .dpsp-total-share-count {
-	font-weight: bold;
-	font-size: 15px;
+.dpsp-total-share-wrapper .dpsp-icon-total-share:before {
+	font-size: 16px;
+	top: 7px;
+	left: -2px;
+	margin-top: 0;
+	margin-left: 0;
 }
 
 #dpsp-floating-sidebar .dpsp-total-share-wrapper {
+	margin-bottom: 10px;
+}
+
+#dpsp-floating-sidebar .dpsp-total-share-wrapper .dpsp-icon-total-share {
+	display: none;
+}
+
+.dpsp-total-share-wrapper span {
+	display: block;
+	font-size: 9px;
+	font-weight: bold;
+	text-transform: uppercase;
 	text-align: center;
 }
 
-#dpsp-floating-sidebar .dpsp-total-share-wrapper span {
-	display: block;
-	margin-right: 0;
+.dpsp-total-share-wrapper .dpsp-total-share-count {
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.dpsp-content-wrapper .dpsp-total-share-wrapper {
+	position: absolute;
+	width: 60px;
+	height: 40px;
+	margin-top: -21px;
+	top: 50%;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+.dpsp-content-wrapper.dpsp-show-total-share-count.dpsp-show-total-share-count-before {
+	padding-left: 70px;
+}
+
+.dpsp-content-wrapper.dpsp-show-total-share-count.dpsp-show-total-share-count-after {
+	padding-right: 70px;
+}
+
+.dpsp-content-wrapper.dpsp-show-total-share-count.dpsp-show-total-share-count-before .dpsp-total-share-wrapper {
+	left: 0;
+}
+
+.dpsp-content-wrapper.dpsp-show-total-share-count.dpsp-show-total-share-count-after .dpsp-total-share-wrapper {
+	right: 0;
 }

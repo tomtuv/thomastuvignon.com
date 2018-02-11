@@ -11,6 +11,7 @@ class WPCF7_ConfigValidator {
 	const error_file_not_found = 106;
 	const error_unavailable_names = 107;
 	const error_invalid_mail_header = 108;
+	const error_deprecated_settings = 109;
 
 	public static function get_doc_link( $error_code = '' ) {
 		$url = __( 'https://contactform7.com/configuration-errors/',
@@ -99,8 +100,9 @@ class WPCF7_ConfigValidator {
 				}
 
 				$error_messages[$section][] = array(
-					'message' => esc_html( $message ),
-					'link' => esc_url( $link ) );
+					'message' => $message,
+					'link' => esc_url( $link ),
+				);
 			}
 		}
 
@@ -139,6 +141,8 @@ class WPCF7_ConfigValidator {
 				return __( "Multiple form controls are in a single label element.", 'contact-form-7' );
 			case self::error_invalid_mail_header:
 				return __( "There are invalid mail header fields.", 'contact-form-7' );
+			case self::error_deprecated_settings:
+				return __( "Deprecated settings are used.", 'contact-form-7' );
 			default:
 				return '';
 		}
@@ -178,6 +182,7 @@ class WPCF7_ConfigValidator {
 		$this->validate_mail( 'mail' );
 		$this->validate_mail( 'mail_2' );
 		$this->validate_messages();
+		$this->validate_additional_settings();
 
 		do_action( 'wpcf7_config_validator_validate', $this );
 
@@ -231,31 +236,15 @@ class WPCF7_ConfigValidator {
 		$tagname = $matches[2];
 		$values = $matches[3];
 
-		if ( ! empty( $values ) ) {
-			preg_match_all( '/"[^"]*"|\'[^\']*\'/', $values, $matches );
-			$values = wpcf7_strip_quote_deep( $matches[0] );
-		}
-
-		$do_not_heat = false;
-
-		if ( preg_match( '/^_raw_(.+)$/', $tagname, $matches ) ) {
-			$tagname = trim( $matches[1] );
-			$do_not_heat = true;
-		}
-
-		$format = '';
-
-		if ( preg_match( '/^_format_(.+)$/', $tagname, $matches ) ) {
-			$tagname = trim( $matches[1] );
-			$format = $values[0];
-		}
+		$mail_tag = new WPCF7_MailTag( $tag, $tagname, $values );
+		$field_name = $mail_tag->field_name();
 
 		$example_email = 'example@example.com';
 		$example_text = 'example';
 		$example_blank = '';
 
 		$form_tags = $this->contact_form->scan_form_tags(
-			array( 'name' => $tagname ) );
+			array( 'name' => $field_name ) );
 
 		if ( $form_tags ) {
 			$form_tag = new WPCF7_FormTag( $form_tags[0] );
@@ -268,7 +257,7 @@ class WPCF7_ConfigValidator {
 
 			if ( wpcf7_form_tag_supports( $form_tag->type, 'selectable-values' ) ) {
 				if ( $form_tag->pipes instanceof WPCF7_Pipes ) {
-					if ( $do_not_heat ) {
+					if ( $mail_tag->get_option( 'do_not_heat' ) ) {
 						$before_pipes = $form_tag->pipes->collect_befores();
 						$last_item = array_pop( $before_pipes );
 					} else {
@@ -292,13 +281,28 @@ class WPCF7_ConfigValidator {
 				return $example_text;
 			}
 
-		} else {
-			$tagname = preg_replace( '/^wpcf7\./', '_', $tagname ); // for back-compat
+		} else { // maybe special mail tag
+			// for back-compat
+			$field_name = preg_replace( '/^wpcf7\./', '_', $field_name );
 
-			if ( '_post_author_email' == $tagname ) {
-				return $example_email;
-			} elseif ( '_' == substr( $tagname, 0, 1 ) ) { // maybe special mail tag
+			if ( '_user_agent' == $field_name ) {
 				return $example_text;
+
+			} elseif ( '_user_email' == $field_name ) {
+				return $this->contact_form->is_true( 'subscribers_only' )
+					? $example_email
+					: $example_blank;
+
+			} elseif ( '_user_' == substr( $field_name, 0, 6 ) ) {
+				return $this->contact_form->is_true( 'subscribers_only' )
+					? $example_text
+					: $example_blank;
+
+			} elseif ( '_' == substr( $field_name, 0, 1 ) ) {
+				return '_email' == substr( $field_name, -6 )
+					? $example_email
+					: $example_text;
+
 			}
 		}
 
@@ -323,10 +327,10 @@ class WPCF7_ConfigValidator {
 				$fields_count = 0;
 
 				foreach ( $tags as $tag ) {
-					$tag = new WPCF7_FormTag( $tag );
-
 					$is_multiple_controls_container = wpcf7_form_tag_supports(
 						$tag->type, 'multiple-controls-container' );
+					$is_zero_controls_container = wpcf7_form_tag_supports(
+						$tag->type, 'zero-controls-container' );
 
 					if ( $is_multiple_controls_container ) {
 						$fields_count += count( $tag->values );
@@ -334,6 +338,8 @@ class WPCF7_ConfigValidator {
 						if ( $tag->has_option( 'free_text' ) ) {
 							$fields_count += 1;
 						}
+					} elseif ( $is_zero_controls_container ) {
+						$fields_count += 0;
 					} elseif ( ! empty( $tag->name ) ) {
 						$fields_count += 1;
 					}
@@ -369,7 +375,7 @@ class WPCF7_ConfigValidator {
 		$ng_names = array();
 
 		foreach ( $ng_named_tags as $tag ) {
-			$ng_names[] = $tag['name'];
+			$ng_names[] = sprintf( '"%s"', $tag->name );
 		}
 
 		if ( $ng_names ) {
@@ -378,7 +384,11 @@ class WPCF7_ConfigValidator {
 			return $this->add_error( $section,
 				self::error_unavailable_names,
 				array(
-					'message' => __( "Unavailable names (%names%) are used for form controls.", 'contact-form-7' ),
+					/* translators: %names%: a list of form control names */
+					'message' => _n(
+						"An unavailable name (%names%) is used for form controls.",
+						"Unavailable names (%names%) are used for form controls.",
+						count( $ng_names ), 'contact-form-7' ),
 					'params' => array( 'names' => implode( ', ', $ng_names ) ),
 					'link' => self::get_doc_link( 'unavailable_names' ),
 				)
@@ -531,7 +541,7 @@ class WPCF7_ConfigValidator {
 	public function detect_file_not_found( $section, $content ) {
 		$path = path_join( WP_CONTENT_DIR, $content );
 
-		if ( ! @is_readable( $path ) || ! @is_file( $path ) ) {
+		if ( ! is_readable( $path ) || ! is_file( $path ) ) {
 			return $this->add_error( $section,
 				self::error_file_not_found,
 				array(
@@ -578,4 +588,20 @@ class WPCF7_ConfigValidator {
 
 		return false;
 	}
+
+	public function validate_additional_settings() {
+		$deprecated_settings_used =
+			$this->contact_form->additional_setting( 'on_sent_ok' ) ||
+			$this->contact_form->additional_setting( 'on_submit' );
+
+		if ( $deprecated_settings_used ) {
+			return $this->add_error( 'additional_settings.body',
+				self::error_deprecated_settings,
+				array(
+					'link' => self::get_doc_link( 'deprecated_settings' ),
+				)
+			);
+		}
+	}
+
 }

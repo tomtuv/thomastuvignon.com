@@ -28,7 +28,7 @@ function monsterinsights_get_settings_tabs() {
 			'level' => 'lite'
 		),
 		'links' => array( 
-			'title' => esc_html__( 'Enhanced Link Attribution', 'google-analytics-for-wordpress' ),
+			'title' => esc_html__( 'Link Attribution', 'google-analytics-for-wordpress' ),
 			'level' => 'lite'
 		),
 		'files' => array( 
@@ -50,8 +50,7 @@ function monsterinsights_get_settings_tabs() {
 		),
 		'forms' => array( 
 			'title' => esc_html__( 'Forms', 'google-analytics-for-wordpress' ),
-			'level' => 'plus',
-			'comingsoon' => true
+			'level' => 'pro',
 		),
 		'ecommerce' => array( 
 			'title' => esc_html__( 'eCommerce', 'google-analytics-for-wordpress' ),
@@ -73,7 +72,24 @@ function monsterinsights_get_settings_tabs() {
 		),
 		'performance' => array( 
 			'title' => esc_html__( 'Performance', 'google-analytics-for-wordpress' ),
-			'level' => 'basic'
+			'level' => 'plus'
+		),
+		'amp' => array( 
+			'title' => esc_html__( 'Google AMP', 'google-analytics-for-wordpress' ),
+			'level' => 'plus'
+		),
+		'goptimize' => array( 
+			'title' => esc_html__( 'Google Optimize', 'google-analytics-for-wordpress' ),
+			'level' => 'pro'
+		),
+		'fbia' => array( 
+			'title' => esc_html__( 'FB Instant Articles', 'google-analytics-for-wordpress' ),
+			'level' => 'plus'
+		),
+		'bounce' => array( 
+			'title' => esc_html__( 'Bounce Reduction', 'google-analytics-for-wordpress' ),
+			'level' => 'plus',
+			'comingsoon' => true
 		),
 		'reporting' => array( 
 			'title' => esc_html__( 'Additional Reporting', 'google-analytics-for-wordpress' ),
@@ -184,6 +200,12 @@ function monsterinsights_get_registered_settings() {
 					'desc'        => sprintf( esc_html__( 'Add %1$sEnhanced Link Attribution%2$s to your tracking code.', 'google-analytics-for-wordpress' ), '<a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-link-attribution" target="_blank" rel="noopener noreferrer" referrer="no-referrer">', ' </a>' ),
 					'type' 		  => 'checkbox',
 				),
+				'hash_tracking' => array(
+					'id'          => 'hash_tracking',
+					'name'        => __( 'Turn on anchor tracking', 'google-analytics-for-wordpress' ),
+					'desc'        => esc_html__( 'Many WordPress "1-page" style themes rely on anchor tags for navigation to show virtual pages. The problem is that to Google Analytics, these are all just a single page, and it makes it hard to get meaningful statistics about pages viewed. This feature allows proper tracking in those themes.', 'google-analytics-for-wordpress' ),
+					'type' 		  => 'checkbox',
+				),
 				'allow_anchor' => array(
 					'id'          => 'allow_anchor',
 					'name'        => __( 'Turn on allowAnchor', 'google-analytics-for-wordpress' ),
@@ -268,11 +290,27 @@ function monsterinsights_get_registered_settings() {
 			array()
 		),
 		/** Dimensions Tracking Settings */
-		'memberships' => apply_filters('monsterinsights_settings_dimensions',
+		'dimensions' => apply_filters('monsterinsights_settings_dimensions',
 			array()
 		),
 		/** Performance Tracking Settings */
 		'performance' => apply_filters('monsterinsights_settings_performance',
+			array()
+		),
+		/** AMP Tracking Settings */
+		'amp' => apply_filters('monsterinsights_settings_amp',
+			array()
+		),
+		/** Google Optimize Tracking Settings */
+		'goptimize' => apply_filters('monsterinsights_settings_goptimize',
+			array()
+		),
+		/** Facebook Instant Articles Tracking Settings */
+		'fbia' => apply_filters('monsterinsights_settings_fbia',
+			array()
+		),
+		/** Bounce Reduction Settings */
+		'bounce' => apply_filters('monsterinsights_settings_bounce',
 			array()
 		),
 		/** Reporting Tracking Settings */
@@ -328,6 +366,17 @@ function monsterinsights_get_registered_settings() {
 					'select2'     => true,
 					'multiple'    => true,
 					'allowclear'  => true
+				),
+				'automatic_updates' => array(
+					'id'          => 'automatic_updates',
+					'name'        => __( 'Automatic Updates', 'google-analytics-for-wordpress' ),
+					'type' 		  => 'radio',
+					'std'  		  => 'none',
+					'options'     => array(
+						'all'     => __( 'Yes (Recommended) - Get the latest features, bugfixes, and security updates as they are released.', 'google-analytics-for-wordpress' ),
+						'minor'   => __( 'Minor Only - Only get bugfixes and security updates, but not major features.', 'google-analytics-for-wordpress' ),
+						'none'    => __( 'None - Manually update everything.', 'google-analytics-for-wordpress' ),
+					),
 				),
 				'anonymous_data' => array(
 					'id'          => 'anonymous_data',

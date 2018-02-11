@@ -4,7 +4,7 @@
     Plugin Name: Polylang Theme Strings
     Plugin URI: http://modeewine.com/en-polylang-theme-strings
     Description: Automatic scanning of strings translation in the theme and registration of them in Polylang plugin. Extension for Polylang plugin.
-    Version: 3.3.2
+    Version: 3.5
     Author: Modeewine
     Author URI: http://modeewine.com
     License: GPL2
@@ -15,8 +15,9 @@
     class MW_Polylang_Theme_Strings
     {
         static $prefix = 'mw_polylang_strings_';
-        static $plugin_version = '3.3.2';
+        static $plugin_version = '3.5';
         static $pll_f = 'pll_register_string';
+        static $php_file_size_limit = 2097152;
         private $paths;
         private $var = array();
 
@@ -29,10 +30,12 @@
         {
             if (!version_compare(phpversion(), '5', '>='))
             {
-                echo 'Your PHP version (' . phpversion() . ') is incompatible with the plug-in code.';
-                echo '<br />';
-                echo 'The minimum supported PHP version is 5.0.';
-                exit;
+                ?>
+                Your PHP version (<?php echo phpversion(); ?>) is incompatible with the plug-in code.<br />
+                Minimum supported PHP version is 5.0.
+                <?php
+
+                die();
             }
             else
             {
@@ -53,6 +56,7 @@
             $this->Plugin_Install_Hooks_Init();
 
             add_action('init', array($this, 'Plugin_Hooks_Init'));
+            add_action('init', array($this, 'PLL_Exists_Check'));
             add_action('admin_enqueue_scripts', array($this, 'Styles_Scripts_Admin_Init'));
             add_action('admin_head', array($this, 'Head_Admin_Init'));
         }
@@ -74,8 +78,8 @@
 
         private function Plugin_Install_Hooks_Init()
         {
-            register_activation_hook($this->Path_Get('plugin_file_index'), array('MW_Polylang_Theme_Strings', 'Install'));
-            register_uninstall_hook($this->Path_Get('plugin_file_index'), array('MW_Polylang_Theme_Strings', 'Uninstall'));
+            register_activation_hook($this->Path_Get('plugin_file_index'), array(__CLASS__, 'Install'));
+            register_uninstall_hook($this->Path_Get('plugin_file_index'), array(__CLASS__, 'Uninstall'));
         }
 
         public function Plugin_Hooks_Init()
@@ -91,7 +95,7 @@
 
                 if (!pll_default_language())
                 {
-                    if (defined('POLYLANG_VERSION') && (float)POLYLANG_VERSION < 2.1)
+                    if (defined('POLYLANG_VERSION') && version_compare(POLYLANG_VERSION, '2.1', '<'))
                     {
                         wp_redirect(admin_url('options-general.php?page=mlang'));
                     }
@@ -147,6 +151,7 @@
 
                         window.<?php echo self::$prefix; ?>admin.lng[10] = '<?php _e('Polylang Theme Strings'); ?>';
                         window.<?php echo self::$prefix; ?>admin.lng[11] = '<?php _e('works'); ?>';
+                        window.<?php echo self::$prefix; ?>admin.lng[12] = '<?php echo self::$plugin_version; ?>';
                         window.<?php echo self::$prefix; ?>admin.lng[20] = '<?php _e('Current theme polylang-strings detected'); ?>';
                         window.<?php echo self::$prefix; ?>admin.lng[21] = '<?php echo $this->var['theme-strings-count'][$this->Path_Get('theme_dir_name')]; ?>';
                         window.<?php echo self::$prefix; ?>admin.lng[30] = '<?php _e('All themes polylang-strings detected'); ?>';
@@ -211,7 +216,7 @@
                 {
                     $f = $dir . '/' . $item;
 
-                    if (is_file($f))
+                    if (is_file($f) && filesize($f) <= self::$php_file_size_limit)
                     {
                         $files[] = $f;
                     }
@@ -226,6 +231,26 @@
             }
 
             return $files;
+        }
+
+        public static function PLL_Exists_Check()
+        {
+            if (is_admin() && !function_exists(self::$pll_f))
+            {
+                add_action('admin_notices', array(__CLASS__, 'Notice_PLL_Not_Exists'));
+            }
+        }
+
+        public static function Notice_PLL_Not_Exists()
+        {
+            ?>
+            <div class="notice notice-warning">
+                <p>
+                    <b><?php printf(__('Base plugin %1$s is not defined'), '&quot;Polylang&quot;'); ?></b>.<br />
+                    <?php printf(__('You need install and activate base plugin %1$s for works of plugin %2$s'), '<a href="https://wordpress.org/plugins/polylang" target="_blank">Polylang</a>', '<a href="https://wordpress.org/plugins/polylang-theme-strings" target="_blank">Polylang Theme Strings</a>'); ?>.
+                </p>
+            </div>
+            <?php
         }
 
         public static function Is_PLL_Strings_Settings_Page()
@@ -282,7 +307,7 @@
                                 {
                                     foreach ($p[0] as $pv)
                                     {
-                                        preg_match_all("/pll_[_e][\s]*\([\s]*[\'\"](.*?)[\'\"][\s]*\)/uis", $pv, $m);
+                                        preg_match_all("/pll_[_e][\s]*\([\s]*[\'\"](.*?)[\'\"][\s]*[\),]/uis", $pv, $m);
 
                                         if (count($m[0]))
                                         {

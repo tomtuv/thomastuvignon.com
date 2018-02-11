@@ -125,7 +125,10 @@
 		switch( $network_slug ) {
 
 			case 'facebook':
-				$url = 'https://graph.facebook.com/?id=' . $page_url;
+				if( empty( $settings['facebook_app_access_token'] ) )
+					$url = 'https://graph.facebook.com/?id=' . $page_url;
+				else
+					$url = 'https://graph.facebook.com/v2.7/?id=' . $page_url . '&access_token=' . $settings['facebook_app_access_token'];
 				break;
 
 			case 'twitter':
@@ -160,6 +163,10 @@
 
 			case 'pinterest':
 				$url = 'http://widgets.pinterest.com/v1/urls/count.json?source=6&url=' . $page_url;
+				break;
+
+			case 'linkedin':
+				$url = 'https://www.linkedin.com/countserv/count/share?format=json&url=' . $page_url;
 				break;
 
 		}

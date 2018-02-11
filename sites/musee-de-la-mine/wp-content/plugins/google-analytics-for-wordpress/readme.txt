@@ -3,8 +3,8 @@ Contributors: chriscct7, smub
 Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics, analytics dashboard, google analytics, google analytics dashboard, google analytics widget, universal google analytics, statistics, tracking, stats, google, yoast, google analytics by yoast, ga, monster insights, monsterinsights, universal analytics, web stats, ecommerce, ecommerce tracking
 Requires at least: 3.9
-Tested up to: 4.7.4
-Stable tag: 6.0.16
+Tested up to: 4.9.3
+Stable tag: 6.2.8
 License: GPL v3
 
 The best Google Analytics plugin for WordPress. See how visitors find and use your website, so you can keep them coming back.
@@ -17,7 +17,7 @@ We believe that you shouldn't have to hire a developer to add Google Analytics t
 
 MonsterInsights allow you to connect your WordPress website with Google Analytics, so you can see how visitors find and use your website, so you can keep them coming back. Simply put, we show you the stats that matter.
 
-With almost 13 million downloads, MonsterInsights is the most popular Google Analytics plugin for WordPress.
+With almost 15 million downloads, MonsterInsights is the most popular Google Analytics plugin for WordPress.
 
 At MonsterInsights, user experience is our #1 priority. That's why we make it extremely easy for you to connect and view your Google Analytics reports from inside your WordPress dashboard. Our tracking settings and workflows make MonsterInsights the most beginner friendly google analytics plugin in the market.
 
@@ -119,8 +119,6 @@ This plugin is created by <a href="https://twitter.com/chriscct7" rel="friend" t
 If you like this plugin, then consider checking out our other projects:
 
 * <a href="http://optinmonster.com/" rel="friend" title="OptinMonster">OptinMonster</a> - Get More Email Subscribers
-* <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy">Soliloquy</a> - Best WordPress Slider Plugin
-* <a href="http://enviragallery.com/" rel="friend" title="Envira Gallery">Envira Gallery</a> - Best WordPress Gallery Plugin
 * <a href="https://wpforms.com/" rel="friend" title="WPForms">WPForms</a> - Best WordPress Contact Form Plugin
 
 This plugin would not be possible without the help and support of <a href="http://www.wpbeginner.com/" rel="friend" title="WPBeginner">WPBeginner</a>, the largest WordPress resource site. You can learn from our <a href="http://www.wpbeginner.com/category/wp-tutorials/" rel="friend" title="WordPress Tutorials">free WordPress Tutorials</a> like <a href="http://www.wpbeginner.com/how-to-install-wordpress/" rel="friend" title="How to Install WordPress - Step by Step">how to install WordPress</a>, <a href="http://www.wpbeginner.com/wordpress-hosting/" rel="friend" title="How to choose the best WordPress hosting">choose the best WordPress hosting</a>, <a href="http://www.wpbeginner.com/glossary/" rel="friend" title="WordPress Glossary Terms for Beginners">WordPress glossary</a>, and more.
@@ -136,6 +134,112 @@ You can also learn about other <a href="http://www.wpbeginner.com/category/plugi
 4. Want more features? <a href="https://www.monsterinsights.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase MonsterInsights Pro</a>!
 
 == Changelog ==
+= 6.2.8: January 30, 2018 =
+* Fix: Issue with a capability check being left accidentally around a is_super_admin() call.
+
+= 6.2.7: January 19, 2018 =
+* Tweak: Adjustments to notifications.
+
+= 6.2.6: November 17, 2017 =
+* Tweak: Compatibility with WordPress 4.9.
+
+= 6.2.5: Not issued =
+* Skipped release version.
+
+= 6.2.4: October 6, 2017 =
+* Tweak: Adjusted how the optin tracking is sent to us.
+
+= 6.2.3: September 9, 2017 =
+* Tweak: Added a notice for new users of MonsterInsights about when the reports will begin populating.
+
+= 6.2.2: August 16, 2017 =
+* Tweak: Adjusted order of setup/config notices
+* Fix: Fixed an issue with the sanitation of number fields. Solves an issue with the Google Optimize extension.
+
+= 6.2.1: August 9, 2017 =
+* New: MonsterInsights now has the ability to automatically update itself and it's addons. You can set MonsterInsights to automatically update minor versions only or all new versions inside the MonsterInsights settings panel in Tracking -> Permissions.
+* Tweak: Introduce scrollbars on GA auth screen for users with many Google accounts
+* Tweak: Added notice to users still on deprecated GA.js tracking and PHP-based events tracking.
+* Fix: Issue with notices having multiple icons has been resolved.
+* Fix: Facebook Instant Articles can now properly handle the Automattic Facebook plugin transformation changes (requires FB IA addon version 1.0.1 or newer)
+* Fix: Conflict with wp_head output for some themes.
+* Fix: Correct level for Forms and Google Optimize addons.
+* Fix: License key errors will no longer show to lite users.
+
+= 6.2.0: June 6, 2017 =
+* New: Form Tracking addon
+* New: Google Optimize addon
+* New: Facebook Instant Articles addon
+* New: Telephone link tracking
+* New: Functions for supporting enhanced eCommerce tracking in the eCommerce addon
+* New: Measurement protocol functions
+* New: Tweaks for the settings pages to get ready for a speed improvement release upcoming along with some coming soon addons.
+* Tweaks: Spelling corrections.
+* Fix: Internet Explorer tracking fix.
+* Fix: Issue with initialization of settings on certain installs.
+
+
+= 6.1.11: May 31, 2017 =
+* Tweak: Renamed the tools tab for settings import/export
+* Bugfix: Issue with saving of manual UA codes
+* Bugfix: Fixed a couple display issues in the admin
+* Bugfix: Issue for undefined index when the settings array hasn't been initialized.
+
+= 6.1.10, May 18, 2017 =
+* New: Performance improvement in tracking.
+
+= 6.1.9, May 15, 2017 =
+* New: Plugin has been tested for compatibility with WordPress 4.8-beta1. We'll continue to test through the beta and release candidates, but MonsterInsights is 4.8 ready as-is.
+* Tweak: Deleting lite plugin will no longer delete license key of installed pro version.
+* Bugfix: Import/export settings page has been fixed so that on sites with a ton of plugins installed that make lots of admin bar items, the admin bar will have relative positioning now to allow it to be scrollable.
+* Bugfix: Users with more than 1 property for the same domain name can now use any of the views for those properties.
+* Bugfix: For Pro users, sometimes all available addons for your license level didn't show, requiring you to download them from our site. This has been corrected.
+
+= 6.1.8, May 11, 2017 =
+* New: Functions needed to support future features including enhanced eCommerce
+* Bugfix: Compatibility with Firefox for link tracking.
+* Bugfix: Issue saving certain fields.
+
+= 6.1.7, April 10, 2017 =
+* New: Changes needed to support new addons, including the Google AMP addon, available as of today.
+* Tweak: Comments for frontend are minification-safe.
+* Tweak: GA notice is now hidden when debug mode is on.
+* Tweak: All settings now use the Settings API framework, including all addons.
+
+= 6.1.6, March 29, 2017 =
+* New: Select2 filter for the Google oAuth list of profiles, to make it easier to find your Google property by fully supporting search by URL.
+* Tweak: Inbound-as-external now is prioritized before downloads in tracking preference order.
+
+= 6.1.5, March 24, 2017 =
+* New: Added some functions to prepare for upcoming new addon (Google AMP) and updates (eCommerce, Performance, Dimensions).
+* Tweak: JS events tracking for click events.
+
+= 6.1.4, March 23, 2017 =
+* Tweak: JS events tracking for click events.
+* Bugfix: Edge case where JS events tracking won't turn on if the main tracking setting was disabled (such as faulty import).
+
+= 6.1.1 - 6.1.3 (depending on which version of MI you have), March 22, 2017 =
+* Bugfix: (pro users) Issue with JS events throwing an error for array on non-set settings.
+
+= 6.1.0, March 22, 2017 =
+* New: Campaign URL building tool with shortlink capability.
+* New: Settings import/export tool.
+* New: Experimental (beta) hash tracking for single-page style themes. Note, as the description for the setting says, this feature is a beta feature, and can be tweaked or removed in upcoming versions.
+* New: Manual default subsite UA's can now be set from the network settings panel for MonsterInsights.
+* New: Optout of GA tracking is now enabled per Google standard. See https://github.com/awesomemotive/google-analytics-for-wordpress/issues/488 for more information.
+* Tweak: Notices about JS conflicts now include the JS error when possible.
+* Tweak: Some tweaking to when the "Connection error with Google" error is displayed during oAuth.
+* Tweak: Notice now shown when too early to display statistics from Google.
+* Tweak: Inbound as outbound links may now have a period in them.
+* Tweak: Removed duplicate option checking on frontend.
+* Tweak: oAuth dialog now only programically closes when the select profile view is shown or when a new one is opened.
+* Tweak: Mailto links are now handled as an externally opening link, allowing to bypass issues with the Safari browser not following standards.
+* Tweak: WP-Admin Login page tracking has been removed.
+* Tweak: More countries now shown in the country map in the overview report.
+* Tweak: License key field is no longer shown on lite installs.
+* Tweak: Frontend JS file has been refactored to make it more unit testable.
+* Bugfix: Download events now correctly include data in all cases not just some.
+* Bugfix: A syntax error involving the manual UA code input has been resolved that could have affected some users under a rare circumstance.
 
 = 6.0.16, March 7, 2017 =
 * Fixed: Issues related to link tracking.

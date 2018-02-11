@@ -9,12 +9,15 @@ add_action( 'wpcf7_init', 'wpcf7_add_form_tag_acceptance' );
 
 function wpcf7_add_form_tag_acceptance() {
 	wpcf7_add_form_tag( 'acceptance',
-		'wpcf7_acceptance_form_tag_handler', array( 'name-attr' => true ) );
+		'wpcf7_acceptance_form_tag_handler',
+		array(
+			'name-attr' => true,
+			'do-not-store' => true,
+		)
+	);
 }
 
 function wpcf7_acceptance_form_tag_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
 	if ( empty( $tag->name ) ) {
 		return '';
 	}
@@ -28,30 +31,50 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 	}
 
 	if ( $tag->has_option( 'invert' ) ) {
-		$class .= ' wpcf7-invert';
+		$class .= ' invert';
 	}
 
-	$atts = array();
+	if ( $tag->has_option( 'optional' ) ) {
+		$class .= ' optional';
+	}
+
+	$atts = $item_atts = array();
+
+	$item_atts['type'] = 'checkbox';
+	$item_atts['name'] = $tag->name;
+	$item_atts['value'] = '1';
+	$item_atts['tabindex'] = $tag->get_option( 'tabindex', 'signed_int', true );
+	$item_atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
+	if ( $tag->has_option( 'default:on' ) ) {
+		$item_atts['checked'] = 'checked';
+	}
+
+	$item_atts = wpcf7_format_atts( $item_atts );
+
+	$content = empty( $tag->content )
+		? (string) reset( $tag->values )
+		: $tag->content;
+
+	$content = trim( $content );
+
+	if ( $content ) {
+		$html = sprintf(
+			'<span class="wpcf7-list-item"><label><input %1$s /><span class="wpcf7-list-item-label">%2$s</span></label></span>',
+			$item_atts, $content );
+	} else {
+		$html = sprintf(
+			'<span class="wpcf7-list-item"><input %1$s /></span>',
+			$item_atts );
+	}
 
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_id_option();
-	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
-
-	if ( $tag->has_option( 'default:on' ) ) {
-		$atts['checked'] = 'checked';
-	}
-
-	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
-
-	$atts['type'] = 'checkbox';
-	$atts['name'] = $tag->name;
-	$atts['value'] = '1';
-
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
-		sanitize_html_class( $tag->name ), $atts, $validation_error );
+		'<span class="wpcf7-form-control-wrap %1$s"><span %2$s>%3$s</span>%4$s</span>',
+		sanitize_html_class( $tag->name ), $atts, $html, $validation_error );
 
 	return $html;
 }
@@ -59,14 +82,17 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 
 /* Validation filter */
 
-add_filter( 'wpcf7_validate_acceptance', 'wpcf7_acceptance_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_acceptance',
+	'wpcf7_acceptance_validation_filter', 10, 2 );
 
 function wpcf7_acceptance_validation_filter( $result, $tag ) {
 	if ( ! wpcf7_acceptance_as_validation() ) {
 		return $result;
 	}
 
-	$tag = new WPCF7_FormTag( $tag );
+	if ( $tag->has_option( 'optional' ) ) {
+		return $result;
+	}
 
 	$name = $tag->name;
 	$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
@@ -83,27 +109,39 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 
 /* Acceptance filter */
 
-add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter' );
+add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter', 10, 2 );
 
-function wpcf7_acceptance_filter( $accepted ) {
-	if ( ! $accepted )
-		return $accepted;
+function wpcf7_acceptance_filter( $accepted, $submission ) {
+	$tags = wpcf7_scan_form_tags( array( 'type' => 'acceptance' ) );
 
-	$fes = wpcf7_scan_form_tags( array( 'type' => 'acceptance' ) );
+	foreach ( $tags as $tag ) {
+		$name = $tag->name;
 
-	foreach ( $fes as $fe ) {
-		$name = $fe['name'];
-		$options = (array) $fe['options'];
-
-		if ( empty( $name ) )
+		if ( empty( $name ) ) {
 			continue;
+		}
 
 		$value = ( ! empty( $_POST[$name] ) ? 1 : 0 );
 
-		$invert = (bool) preg_grep( '%^invert$%', $options );
+		$content = empty( $tag->content )
+			? (string) reset( $tag->values )
+			: $tag->content;
 
-		if ( $invert && $value || ! $invert && ! $value )
+		$content = trim( $content );
+
+		if ( $value && $content ) {
+			$submission->add_consent( $name, $content );
+		}
+
+		if ( $tag->has_option( 'optional' ) ) {
+			continue;
+		}
+
+		$invert = $tag->has_option( 'invert' );
+
+		if ( $invert && $value || ! $invert && ! $value ) {
 			$accepted = false;
+		}
 	}
 
 	return $accepted;
@@ -112,17 +150,57 @@ function wpcf7_acceptance_filter( $accepted ) {
 add_filter( 'wpcf7_form_class_attr', 'wpcf7_acceptance_form_class_attr' );
 
 function wpcf7_acceptance_form_class_attr( $class ) {
-	if ( wpcf7_acceptance_as_validation() )
+	if ( wpcf7_acceptance_as_validation() ) {
 		return $class . ' wpcf7-acceptance-as-validation';
+	}
 
 	return $class;
 }
 
 function wpcf7_acceptance_as_validation() {
-	if ( ! $contact_form = wpcf7_get_current_contact_form() )
+	if ( ! $contact_form = wpcf7_get_current_contact_form() ) {
 		return false;
+	}
 
 	return $contact_form->is_true( 'acceptance_as_validation' );
+}
+
+add_filter( 'wpcf7_mail_tag_replaced_acceptance',
+	'wpcf7_acceptance_mail_tag', 10, 4 );
+
+function wpcf7_acceptance_mail_tag( $replaced, $submitted, $html, $mail_tag ) {
+	$form_tag = $mail_tag->corresponding_form_tag();
+
+	if ( ! $form_tag ) {
+		return $replaced;
+	}
+
+	if ( ! empty( $submitted ) ) {
+		$replaced = __( 'Consented', 'contact-form-7' );
+	} else {
+		$replaced = __( 'Not consented', 'contact-form-7' );
+	}
+
+	$content = empty( $form_tag->content )
+		? (string) reset( $form_tag->values )
+		: $form_tag->content;
+
+	if ( ! $html ) {
+		$content = wp_strip_all_tags( $content );
+	}
+
+	$content = trim( $content );
+
+	if ( $content ) {
+		/* translators: 1: 'Consented' or 'Not consented', 2: conditions */
+		$replaced = sprintf(
+			_x( '%1$s: %2$s', 'mail output for acceptance checkboxes',
+				'contact-form-7' ),
+			$replaced,
+			$content );
+	}
+
+	return $replaced;
 }
 
 
@@ -154,6 +232,11 @@ function wpcf7_tag_generator_acceptance( $contact_form, $args = '' ) {
 	<tr>
 	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php echo esc_html( __( 'Name', 'contact-form-7' ) ); ?></label></th>
 	<td><input type="text" name="name" class="tg-name oneline" id="<?php echo esc_attr( $args['content'] . '-name' ); ?>" /></td>
+	</tr>
+
+	<tr>
+	<th scope="row"><label for="<?php echo esc_attr( $args['content'] . '-content' ); ?>"><?php echo esc_html( __( 'Condition', 'contact-form-7' ) ); ?></label></th>
+	<td><input type="text" name="content" class="oneline large-text" id="<?php echo esc_attr( $args['content'] . '-content' ); ?>" /></td>
 	</tr>
 
 	<tr>

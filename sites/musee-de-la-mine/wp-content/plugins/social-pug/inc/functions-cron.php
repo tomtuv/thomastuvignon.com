@@ -53,6 +53,8 @@
 	 */
 	function dpsp_cron_get_posts_networks_share_count() {
 
+		$settings = get_option( 'dpsp_settings', array() );
+
 		/*
 		 * Start with getting all post types saved in every 
 		 * settings page. We only wish to get share counts for the
@@ -99,6 +101,10 @@
 		 *
 		 */
 		$args = array( 'post_type' => $post_types, 'numberposts' => 200 );
+
+		if( ! empty( $settings['facebook_app_access_token'] ) )
+			$args['numberposts'] = 500;
+		
 		
 		// Get posts
 		$posts = get_posts( $args );

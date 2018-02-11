@@ -31,17 +31,23 @@ function wpcf7_admin_save_button( $post_id ) {
 
 ?><div class="wrap">
 
-<h1><?php
+<h1 class="wp-heading-inline"><?php
 	if ( $post->initial() ) {
 		echo esc_html( __( 'Add New Contact Form', 'contact-form-7' ) );
 	} else {
 		echo esc_html( __( 'Edit Contact Form', 'contact-form-7' ) );
-
-		if ( current_user_can( 'wpcf7_edit_contact_forms' ) ) {
-			echo ' <a href="' . esc_url( menu_page_url( 'wpcf7-new', false ) ) . '" class="add-new-h2">' . esc_html( __( 'Add New', 'contact-form-7' ) ) . '</a>';
-		}
 	}
 ?></h1>
+
+<?php
+	if ( ! $post->initial() && current_user_can( 'wpcf7_edit_contact_forms' ) ) {
+		echo sprintf( '<a href="%1$s" class="add-new-h2">%2$s</a>',
+			esc_url( menu_page_url( 'wpcf7-new', false ) ),
+			esc_html( __( 'Add New', 'contact-form-7' ) ) );
+	}
+?>
+
+<hr class="wp-header-end">
 
 <?php do_action( 'wpcf7_admin_warnings' ); ?>
 <?php do_action( 'wpcf7_admin_notices' ); ?>
@@ -82,8 +88,9 @@ if ( $post ) :
 		'id' => 'title',
 		'spellcheck' => 'true',
 		'autocomplete' => 'off',
-		'disabled' => current_user_can( 'wpcf7_edit_contact_form', $post_id )
-			? '' : 'disabled' );
+		'disabled' =>
+			current_user_can( 'wpcf7_edit_contact_form', $post_id ) ? '' : 'disabled',
+	);
 
 	echo sprintf( '<input %s />', wpcf7_format_atts( $posttitle_atts ) );
 ?>
@@ -174,7 +181,18 @@ if ( $post ) :
 
 <div id="postbox-container-2" class="postbox-container">
 <div id="contact-form-editor">
-<div class="keyboard-interaction"><?php echo sprintf( esc_html( __( '%s keys switch panels', 'contact-form-7' ) ), '<span class="dashicons dashicons-leftright"></span>' ); ?></div>
+<div class="keyboard-interaction"><?php
+	echo sprintf(
+		/* translators: 1: ◀ ▶ dashicon, 2: screen reader text for the dashicon */
+		esc_html( __( '%1$s %2$s keys switch panels', 'contact-form-7' ) ),
+		'<span class="dashicons dashicons-leftright" aria-hidden="true"></span>',
+		sprintf(
+			'<span class="screen-reader-text">%s</span>',
+			/* translators: screen reader text */
+			esc_html( __( '(left and right arrow)', 'contact-form-7' ) )
+		)
+	);
+?></div>
 
 <?php
 
@@ -185,13 +203,17 @@ if ( $post ) :
 		$panels = array(
 			'form-panel' => array(
 				'title' => __( 'Form', 'contact-form-7' ),
-				'callback' => 'wpcf7_editor_panel_form' ),
+				'callback' => 'wpcf7_editor_panel_form',
+			),
 			'mail-panel' => array(
 				'title' => __( 'Mail', 'contact-form-7' ),
-				'callback' => 'wpcf7_editor_panel_mail' ),
+				'callback' => 'wpcf7_editor_panel_mail',
+			),
 			'messages-panel' => array(
 				'title' => __( 'Messages', 'contact-form-7' ),
-				'callback' => 'wpcf7_editor_panel_messages' ) );
+				'callback' => 'wpcf7_editor_panel_messages',
+			),
+		);
 
 		$additional_settings = trim( $post->prop( 'additional_settings' ) );
 		$additional_settings = explode( "\n", $additional_settings );
@@ -200,11 +222,13 @@ if ( $post ) :
 
 		$panels['additional-settings-panel'] = array(
 			'title' => $additional_settings
+				/* translators: %d: number of additional settings */
 				? sprintf(
 					__( 'Additional Settings (%d)', 'contact-form-7' ),
 					$additional_settings )
 				: __( 'Additional Settings', 'contact-form-7' ),
-			'callback' => 'wpcf7_editor_panel_additional_settings' );
+			'callback' => 'wpcf7_editor_panel_additional_settings',
+		);
 	}
 
 	$panels = apply_filters( 'wpcf7_editor_panels', $panels );
