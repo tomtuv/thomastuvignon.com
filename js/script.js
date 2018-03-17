@@ -116,7 +116,10 @@ $('#michelin').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/michelin/01.jpg',
-			'subHtml': '<p>Stage et alternance chez Ultrō : intégration de contenu et design de vignettes pour le site Michelin Brands Center.</p>'
+			'subHtml': '<p>Ultrō : intégration de contenu et design de vignettes pour le site Michelin Brands Center.</p>'
+		}, {
+			'src': 'img/realisations/michelin/02.jpg',
+			'subHtml': '<p>Ultrō : maquette du module de téléchargement pour le site Michelin Brands Center.</p>'
 		}],
 		speed: 500,
 	})
@@ -126,10 +129,10 @@ $('#horse-pilot').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/horse-pilot/01.jpg',
-			'subHtml': '<p>Stage chez Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/horse-pilot/02.jpg',
-			'subHtml': '<p>Stage chez Ultrō : design et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : design et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -139,7 +142,17 @@ $('#flagship').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/flagship/01.jpg',
-			'subHtml': '<p>Stage chez Ultrō : intégration du site de présentation du programme Flagship de l’agence. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship de l’agence. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#hudi').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'img/realisations/hudi/01.jpg',
+			'subHtml': '<p>Ultrō : intégration du site Hudi. <a href="https://hudi.fr" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -149,7 +162,7 @@ $('#bron').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Stage chez 1989 : design du site de la ville de Bron.</p>'
+			'subHtml': '<p>Agence 1989 : design du site de la ville de Bron.</p>'
 		}, {
 			'src': 'img/realisations/bron/02.jpg'
 		}],
@@ -162,7 +175,7 @@ $('#thematis-conseil').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'img/realisations/thematis-conseil/01.jpg',
-			'subHtml': '<p>Alternance chez Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'img/realisations/thematis-conseil/02.jpg'
 		}, {
