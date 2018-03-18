@@ -204,7 +204,7 @@
   padding: 0;
   position: fixed;
   right: 0;
-  text-align: left;
+  text-align: center;
   z-index: 1080;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
@@ -226,18 +226,15 @@
   text-decoration: none;
 }
 .lg-sub-html .fa {
-  margin-left: 5.625px;
-  -webkit-transition: margin-left .15s;
-  -moz-transition: margin-left .15s;
-  -o-transition: margin-left .15s;
-  transition: margin-left .15s;
+  position: relative;
+  left: 5.625px;
+  -webkit-transition: left .15s;
+  -moz-transition: left .15s;
+  -o-transition: left .15s;
+  transition: left .15s;
 }
 .lg-sub-html a:hover > .fa {
-  margin-left: 11.25px;
-  -webkit-transition: margin-left .15s;
-  -moz-transition: margin-left .15s;
-  -o-transition: margin-left .15s;
-  transition: margin-left .15s;
+  left: 11.25px;
 }
 @media (max-width: 840px) {
   .lg-sub-html p {

@@ -59,7 +59,7 @@
 .close-video-modal {
 	display:block;
 	position:absolute;
-	right:0;
+	left:0;
 	top:-2em;
 	text-decoration:none;
 	font-weight:600;
@@ -67,19 +67,16 @@
 }
 
 .close-video-modal .fa {
-	margin-right:5px;
-	-webkit-transition:margin-right .15s;
-	-moz-transition:margin-right .15s;
-	-o-transition:margin-right .15s;
-	transition:margin-right .15s;
+	position: relative;
+	right:5px;
+	-webkit-transition:right .15s;
+	-moz-transition:right .15s;
+	-o-transition:right .15s;
+	transition:right .15s;
 }
 
 .close-video-modal:hover > .fa {
-	margin-right:10px;
-	-webkit-transition:margin-right .15s;
-	-moz-transition:margin-right .15s;
-	-o-transition:margin-right .15s;
-	transition:margin-right .15s;
+	right:10px;
 }
 
 .video-sizer {

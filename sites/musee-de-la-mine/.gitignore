@@ -1,0 +1,10 @@
+# Ignorer tout
+*
+
+# Exceptions
+!.gitignore
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/museedelamine/
+!/wp-content/themes/museedelamine/*
+!/wp-content/themes/museedelamine/*/*
