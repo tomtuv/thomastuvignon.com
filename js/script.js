@@ -119,7 +119,7 @@ $('#michelin').on('click', function() {
 			'subHtml': '<p>Ultrō : intégration de contenu et design de vignettes pour le site Michelin Brands Center.</p>'
 		}, {
 			'src': 'img/realisations/michelin/02.jpg',
-			'subHtml': '<p>Ultrō : maquette du module de téléchargement pour le site Michelin Brands Center.</p>'
+			'subHtml': '<p>Ultrō : design du module de téléchargement pour le site Michelin Brands Center.</p>'
 		}],
 		speed: 500,
 	})
@@ -141,19 +141,6 @@ $('#hudi').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-<<<<<<< HEAD
-=======
-			'src': 'img/realisations/flagship/01.jpg',
-			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship de l’agence. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}],
-		speed: 500,
-	})
-});
-$('#hudi').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
->>>>>>> f48ae43930a6b32c29edc984eb79b9a6c7641c3e
 			'src': 'img/realisations/hudi/01.jpg',
 			'subHtml': '<p>Ultrō : intégration du site Hudi. <a href="https://hudi.fr" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
@@ -164,15 +151,8 @@ $('#flagship').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-<<<<<<< HEAD
 			'src': 'img/realisations/flagship/01.jpg',
 			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship d’Ultrō. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-=======
-			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Agence 1989 : design du site de la ville de Bron.</p>'
-		}, {
-			'src': 'img/realisations/bron/02.jpg'
->>>>>>> f48ae43930a6b32c29edc984eb79b9a6c7641c3e
 		}],
 		speed: 500,
 	})
