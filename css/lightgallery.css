@@ -198,7 +198,6 @@
 .lg-sub-html {
   background-color: rgba(255, 255, 255, 0.5);
   bottom: 0;
-  color: #000;
   font-size: 18px;
   left: 0;
   padding: 0;
@@ -216,13 +215,13 @@
 }
 .lg-sub-html p {
   font-size: 18px;
-  max-width: 840px;
-  margin: 1em auto;
-  padding: 0 2em;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 40px;
 }
 .lg-sub-html a {
-  color: #000;
-  font-weight: 600;
+  color: #222;
+  font-weight: 500;
   text-decoration: none;
 }
 .lg-sub-html .fa {
@@ -236,9 +235,9 @@
 .lg-sub-html a:hover > .fa {
   left: 11.25px;
 }
-@media (max-width: 840px) {
+@media (max-width: 960px) {
   .lg-sub-html p {
-    padding: 0 1em;
+    padding: 0 20px;
   }
 }
 
@@ -432,13 +431,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   cursor: pointer;
 }
 .lg-outer .lg-has-vimeo .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/vimeo-play.png") no-repeat scroll 0 0 transparent;
 }
 .lg-outer .lg-has-vimeo:hover .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+  background: url("../images/vimeo-play.png") no-repeat scroll 0 -58px transparent;
 }
 .lg-outer .lg-has-html5 .lg-video-play {
-  background: transparent url("../img/video-play.png") no-repeat scroll 0 0;
+  background: transparent url("../images/video-play.png") no-repeat scroll 0 0;
   height: 64px;
   margin-left: -32px;
   margin-top: -32px;
@@ -449,10 +448,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 1;
 }
 .lg-outer .lg-has-youtube .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/youtube-play.png") no-repeat scroll 0 0 transparent;
 }
 .lg-outer .lg-has-youtube:hover .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent;
+  background: url("../images/youtube-play.png") no-repeat scroll 0 -60px transparent;
 }
 .lg-outer .lg-video-object {
   width: 100% !important;

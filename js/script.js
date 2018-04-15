@@ -1,14 +1,14 @@
 // !Menu
 $('#hamburger').click(function() {
 	$(this).toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
-	$('nav').toggleClass('rectangle-deroulant');
+	$('header').toggleClass('rectangle-deroulant');
 });
 $('nav a').click(function() {
 	$('#hamburger.ouvert').toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
 	$('.rectangle-deroulant').toggleClass('rectangle-deroulant');
 });
 if (matchMedia) {
-	var mq = window.matchMedia("(min-width: 840px)");
+	var mq = window.matchMedia("(min-width: 960px)");
 	mq.addListener(WidthChange);
 	WidthChange(mq);
 }
@@ -36,7 +36,7 @@ $(function() {
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
-var navbarHeight = $('nav').outerHeight();
+var navbarHeight = $('header').outerHeight();
 $(window).scroll(function(event) {
 	didScroll = true;
 });
@@ -51,10 +51,10 @@ function hasScrolled() {
 	var st = $(this).scrollTop();
 	if (Math.abs(lastScrollTop - st) <= delta) return;
 	if (st > lastScrollTop && st > navbarHeight) {
-		$('nav').removeClass('menu-visible').addClass('menu-invisible');
+		$('header').removeClass('menu-visible').addClass('menu-invisible');
 	} else {
 		if (st + $(window).height() < $(document).height()) {
-			$('nav').removeClass('menu-invisible').addClass('menu-visible');
+			$('header').removeClass('menu-invisible').addClass('menu-visible');
 		}
 	}
 	lastScrollTop = st;
@@ -62,16 +62,16 @@ function hasScrolled() {
 $(window).scroll(function(e) {
 	var s1 = $('#thomas'),
 		s2 = $('#parcours'),
-		menu = $('nav'),
+		menu = $('header'),
 		diff = s1[0].offsetTop - window.pageYOffset;
 	diff2 = s2[0].offsetTop - window.pageYOffset;
 	if (diff < 60) {
-		$("nav").addClass("menu-texte");
-		$("nav").removeClass("menu-rectangle");
+		$("header").addClass("menu-texte");
+		$("header").removeClass("menu-rectangle");
 	}
 	if (diff2 < 60) {
-		$("nav").addClass("menu-rectangle");
-		$("nav").removeClass("menu-texte");
+		$("header").addClass("menu-rectangle");
+		$("header").removeClass("menu-texte");
 	}
 });
 // !Bulles
@@ -115,10 +115,10 @@ $('#michelin').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/michelin/01.jpg',
+			'src': 'images/realisations/michelin/maquette-1.jpg',
 			'subHtml': '<p>Ultrō : intégration de contenu et design de vignettes pour le site Michelin Brands Center.</p>'
 		}, {
-			'src': 'img/realisations/michelin/02.jpg',
+			'src': 'images/realisations/michelin/maquette-2.jpg',
 			'subHtml': '<p>Ultrō : design du module de téléchargement pour le site Michelin Brands Center.</p>'
 		}],
 		speed: 500,
@@ -128,11 +128,24 @@ $('#horse-pilot').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/horse-pilot/01.jpg',
-			'subHtml': '<p>Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'src': 'images/realisations/horse-pilot/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : intégration d’une landing page Horse Pilot. <a href="https://www.horsepilot.com/rain-free" target="_blank">Voir la page<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
-			'src': 'img/realisations/horse-pilot/02.jpg',
+			'src': 'images/realisations/horse-pilot/maquette-2.jpg',
 			'subHtml': '<p>Ultrō : design et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}, {
+			'src': 'images/realisations/horse-pilot/maquette-3.jpg',
+			'subHtml': '<p>Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#1991').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/1991/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design et intégration du site 19.91. <a href="http://1991denim.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -141,8 +154,8 @@ $('#hudi').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/hudi/01.jpg',
-			'subHtml': '<p>Ultrō : intégration du site Hudi. <a href="https://hudi.fr" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'src': 'images/realisations/hudi/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design et intégration de pages du site Hudi. <a href="https://hudi.fr" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -151,7 +164,7 @@ $('#flagship').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/flagship/01.jpg',
+			'src': 'images/realisations/flagship/maquette-1.jpg',
 			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship d’Ultrō. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
@@ -161,36 +174,8 @@ $('#thematis-conseil').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/thematis-conseil/01.jpg',
+			'src': 'images/realisations/thematis-conseil/maquette-1.jpg',
 			'subHtml': '<p>Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}, {
-			'src': 'img/realisations/thematis-conseil/02.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/03.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/04.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/05.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/06.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/07.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/08.jpg'
-		}, {
-			'src': 'img/realisations/thematis-conseil/09.jpg'
-		}],
-		speed: 500,
-	})
-});
-$('#bron').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'img/realisations/bron/01.jpg',
-			'subHtml': '<p>Agence 1989 : design du site de la ville de Bron.</p>'
-		}, {
-			'src': 'img/realisations/bron/02.jpg'
 		}],
 		speed: 500,
 	})
@@ -199,58 +184,30 @@ $('#midi-life').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/midi-life/01.jpg',
+			'src': 'images/realisations/midi-life/maquette-1.jpg',
 			'subHtml': '<p>Hackathon Midi libre : design de l’application Midi Life.</p>'
 		}, {
-			'src': 'img/realisations/midi-life/02.jpg'
+			'src': 'images/realisations/midi-life/maquette-2.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/03.jpg'
+			'src': 'images/realisations/midi-life/maquette-3.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/04.jpg'
+			'src': 'images/realisations/midi-life/maquette-4.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/05.jpg'
+			'src': 'images/realisations/midi-life/maquette-5.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/06.jpg'
+			'src': 'images/realisations/midi-life/maquette-6.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/07.jpg'
+			'src': 'images/realisations/midi-life/maquette-7.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/08.jpg'
+			'src': 'images/realisations/midi-life/maquette-8.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/09.jpg'
+			'src': 'images/realisations/midi-life/maquette-9.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/10.jpg'
+			'src': 'images/realisations/midi-life/maquette-10.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/11.jpg'
+			'src': 'images/realisations/midi-life/maquette-11.jpg'
 		}, {
-			'src': 'img/realisations/midi-life/12.jpg'
-		}],
-		speed: 500,
-	})
-});
-$('#higgins').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'img/realisations/higgins/01.jpg',
-			'subHtml': '<p>CPME Camp : design de l’application de menu numérique et d’assistant personnel Higgins.</p>'
-		}, {
-			'src': 'img/realisations/higgins/02.jpg'
-		}, {
-			'src': 'img/realisations/higgins/03.jpg'
-		}, {
-			'src': 'img/realisations/higgins/04.jpg'
-		}],
-		speed: 500,
-	})
-});
-$('#stella-babyfoot').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'img/realisations/stella-babyfoot/01.jpg',
-			'subHtml': '<p>Projet : design du site Stella Baby-Foot.</p>'
-		}, {
-			'src': 'img/realisations/stella-babyfoot/02.jpg'
+			'src': 'images/realisations/midi-life/maquette-12.jpg'
 		}],
 		speed: 500,
 	})
@@ -259,22 +216,48 @@ $('#wheel').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/wheel/01.jpg',
+			'src': 'images/realisations/wheel/maquette-1.jpg',
 			'subHtml': '<p>Projet : design du site et de l’application Wheel.</p>'
 		}, {
-			'src': 'img/realisations/wheel/02.jpg'
+			'src': 'images/realisations/wheel/maquette-2.jpg'
 		}, {
-			'src': 'img/realisations/wheel/03.jpg'
+			'src': 'images/realisations/wheel/maquette-3.jpg'
 		}, {
-			'src': 'img/realisations/wheel/04.jpg'
+			'src': 'images/realisations/wheel/maquette-4.jpg'
 		}, {
-			'src': 'img/realisations/wheel/05.jpg'
+			'src': 'images/realisations/wheel/maquette-5.jpg'
 		}, {
-			'src': 'img/realisations/wheel/06.jpg'
+			'src': 'images/realisations/wheel/maquette-6.jpg'
 		}, {
-			'src': 'img/realisations/wheel/07.jpg'
+			'src': 'images/realisations/wheel/maquette-7.jpg'
 		}, {
-			'src': 'img/realisations/wheel/08.jpg'
+			'src': 'images/realisations/wheel/maquette-8.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#higgins').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/higgins/maquette-1.jpg',
+			'subHtml': '<p>CPME Camp : design de l’application de menu numérique et d’assistant personnel Higgins.</p>'
+		}, {
+			'src': 'images/realisations/higgins/maquette-2.jpg'
+		}, {
+			'src': 'images/realisations/higgins/maquette-3.jpg'
+		}, {
+			'src': 'images/realisations/higgins/maquette-4.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#stella-babyfoot').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/stella-babyfoot/maquette-1.jpg',
+			'subHtml': '<p>Projet : design du site Stella Baby-Foot.</p>'
 		}],
 		speed: 500,
 	})
@@ -283,16 +266,8 @@ $('#musee-de-la-mine').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/musee-de-la-mine/01.jpg',
+			'src': 'images/realisations/musee-de-la-mine/maquette-1.jpg',
 			'subHtml': '<p>Projet : prototypage, design et développement du site du Musée de la mine de Gréasque. <a href="sites/musee-de-la-mine" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}, {
-			'src': 'img/realisations/musee-de-la-mine/02.jpg'
-		}, {
-			'src': 'img/realisations/musee-de-la-mine/03.jpg'
-		}, {
-			'src': 'img/realisations/musee-de-la-mine/04.jpg'
-		}, {
-			'src': 'img/realisations/musee-de-la-mine/05.jpg'
 		}],
 		speed: 500,
 	})
@@ -301,12 +276,12 @@ $('#arize-leze').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'img/realisations/arize-leze/01.jpg',
+			'src': 'images/realisations/arize-leze/maquette-1.jpg',
 			'subHtml': '<p>Projet : design et intégration de la web app de l’office de tourisme Arize-Lèze. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
-			'src': 'img/realisations/arize-leze/02.jpg'
+			'src': 'images/realisations/arize-leze/maquette-2.jpg'
 		}, {
-			'src': 'img/realisations/arize-leze/03.jpg'
+			'src': 'images/realisations/arize-leze/maquette-3.jpg'
 		}],
 		speed: 500,
 	})

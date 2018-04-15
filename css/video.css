@@ -62,12 +62,12 @@
 	left:0;
 	top:-2em;
 	text-decoration:none;
-	font-weight:600;
+	font-weight:500;
 	color:#fff;
 }
 
 .close-video-modal .fa {
-	position: relative;
+	position:relative;
 	right:5px;
 	-webkit-transition:right .15s;
 	-moz-transition:right .15s;
@@ -110,8 +110,9 @@ iframe#youtube {
 	-webkit-transform:translate(0%,0%);
 }
 
-@media (max-width:840px) {
+@media (max-width:960px) {
 	.video-modal-content {
-		width:calc(100% - 2em);
+		width:100%;
+		margin:0 20px;
 	}
 }
