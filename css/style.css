@@ -30,7 +30,7 @@ h3 {
 
 h4 {
 	font-size:20px;
-	font-weight:600;
+	font-weight:500;
 	margin:0 0 5px;
 }
 
@@ -43,6 +43,7 @@ p {
 	max-width:960px;
 	margin:0 auto;
 	padding:60px 40px;
+	box-sizing:border-box;
 }
 
 .row {
@@ -87,7 +88,7 @@ header .container {
 header a {
 	line-height:80px;
 	font-size:18px;
-	font-weight:600;
+	font-weight:500;
 	text-decoration:none;
 	color:#fff;
 	-webkit-transition:line-height 1s;
@@ -250,21 +251,94 @@ header.menu-invisible {
 	transition:all .5s;
 }
 
+/* !Vidéo */
+.video-modal,.video-modal .overlay {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:100;
+}
+
+.video-modal video {
+	max-width:100%;
+	max-height:100%;
+	height:auto;
+}
+
+.video-modal {
+	max-width:100%;
+	overflow:hidden;
+	position:fixed;
+	opacity:0;
+	-webkit-transform:translate(500%,0%);
+	transform:translate(500%,0%);
+}
+
+.video-modal .overlay {
+	z-index:0;
+	background-color:#000;
+}
+
+.video-modal .container {
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+	-webkit-transform:translateY(-50%);
+	z-index:1;
+	width:100%;
+	max-height:100%;
+	padding-top:0;
+	padding-bottom:0;
+	margin:0 auto;
+}
+
+.close-video-modal {
+	position:absolute;
+	top:-30px;
+	text-decoration:none;
+	font-weight:500;
+	color:#fff;
+}
+
+.close-video-modal .fa {
+	position:relative;
+	right:5px;
+	-webkit-transition:right .15s;
+	-moz-transition:right .15s;
+	-o-transition:right .15s;
+	transition:right .15s;
+}
+
+.close-video-modal:hover > .fa {
+	right:10px;
+}
+
+.show-video-modal .video-modal {
+	opacity:1;
+	transform:translate(0%,0%);
+	-webkit-transform:translate(0%,0%);
+}
+
+.show-video-modal .video-modal .overlay {
+	opacity:1;
+}
+
 /* !Sections */
 section#thomas {
 	width:100%;
 	height:100%;
-	position:relative;
 	overflow:hidden;
+	color:#fff;
 	background-color:#31185a;
 }
 
 section#thomas .container {
-	color:#fff;
 	position:relative;
 	top:50%;
 	transform:translateY(-50%);
-	padding:0 2em;
+	-webkit-transform:translateY(-50%);
 }
 
 section#thomas img {
@@ -276,7 +350,6 @@ section#thomas img {
 
 section#thomas p {
 	font-size:24px;
-	color:#fff;
 	font-weight:500;
 	margin-bottom:24px;
 }
@@ -316,7 +389,7 @@ section#parcours img {
 }
 
 section#parcours .date {
-	font-weight:600;
+	font-weight:500;
 	color:#444;
 	margin-bottom:10px;
 }
@@ -338,15 +411,15 @@ section#outils {
 }
 
 section#outils .container {
-	padding-bottom:40px;
+	padding-bottom:20px;
 }
 
 section#outils figure {
 	float:left;
 	text-align:center;
 	margin:0;
-	padding-bottom:20px;
-	width:14.28%;
+	padding-bottom:40px;
+	width:14.285714%;
 	vertical-align:top;
 }
 
@@ -357,7 +430,7 @@ section#outils figcaption {
 
 section#outils img {
 	width:60px;
-	padding:20px;
+	padding-bottom:20px;
 }
 
 section#realisations .container {
@@ -404,6 +477,7 @@ section#plus p {
 
 section#plus li:before {
 	font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
+	font-size:20px;
 	display:block;
 	float:left;
 	width:32px;
@@ -459,9 +533,9 @@ footer p {
 }
 
 /* !Media queries */
-@media (max-width:960px) {
+@media (max-width:991px) {
 	h1 {
-		font-size:36px;
+		font-size:42px;
 	}
 	
 	h2 {
@@ -481,20 +555,25 @@ footer p {
 	}
 	
 	.container {
-		padding:40px 20px;
+		max-width:720px;
+		padding:40px 15px;
 	}
 	
 	.row {
-		margin:0 -10px;
+		margin:0 -7.5px;
 	}
 	
 	.col-6 {
 		width:100%;
-		padding:0 10px;
+		padding:0 7.5px;
 	}
 	
 	.col-4 {
-		padding:0 10px;
+		padding:0 7.5px;
+	}
+	
+	.col-6-mobile {
+		width:50%;
 	}
 	
 	header {
@@ -503,7 +582,7 @@ footer p {
 	}
 	
 	header .container {
-		padding:10px 20px;
+		padding:7.5px 15px;
 	}
 	
 	header nav {
@@ -520,18 +599,16 @@ footer p {
 		display:block;
 	}
 	
+	header.menu-rectangle a {
+		line-height:45px;
+	}
+	
 	header #hamburger {
 		display:block;
 	}
 	
-	section#thomas {
-		text-align:center;
-	}
-	
 	section#thomas img {
-		width:130px;
-		float:none;
-		margin:0 0 20px;
+		width:160px;
 	}
 	
 	section#thomas p {
@@ -555,6 +632,10 @@ footer p {
 		padding-right:env(safe-area-inset-right);
 	}
 	
+	section#parcours .container {
+		padding-bottom:10px;
+	}
+	
 	section#parcours img {
 		width:40px;
 	}
@@ -564,9 +645,13 @@ footer p {
 		padding-right:env(safe-area-inset-right);
 	}
 	
+	section#outils .container {
+		padding-bottom:10px;
+	}
+	
 	section#outils figure {
-		width:16.66%;
-		height:130px;
+		padding-bottom:30px;
+		width:16.666667%;
 	}
 	
 	section#outils figcaption {
@@ -579,11 +664,11 @@ footer p {
 	}
 	
 	section#realisations .container {
-		padding-bottom:40px;
+		padding-bottom:25px;
 	}
 	
 	section#realisations .col-4 {
-		padding-bottom:20px;
+		padding-bottom:15px;
 	}
 	
 	section#plus {
@@ -591,7 +676,15 @@ footer p {
 		padding-right:env(safe-area-inset-right);
 	}
 	
+	section#plus .container {
+		padding-bottom:20px;
+	}
+	
 	section#plus p {
+		font-size:18px;
+	}
+	
+	section#plus li:before {
 		font-size:18px;
 	}
 	
@@ -600,7 +693,7 @@ footer p {
 	}
 	
 	footer .container {
-		padding:40px 20px;
+		padding:30px 15px;
 	}
 	
 	footer nav {
@@ -613,22 +706,32 @@ footer p {
 	}
 }
 
-@media (max-width:530px) {
+@media (max-width:767px) {
 	h1 {
-		font-size:32px;
+		font-size:36px;
 	}
 	
-	.col-4 {
-		width:100%;
+	.container {
+		max-width:540px;
+	}
+	
+	section#thomas {
+		text-align:center;
+	}
+	
+	section#thomas img {
+		width:130px;
+		float:none;
+		margin:0 0 20px;
 	}
 	
 	section#outils figure {
-		width:33.33%;
+		width:25%;
 	}
 	
 	section#outils img {
 		width:55px;
-		padding:10px;
+		padding-bottom:10px;
 	}
 	
 	footer {
@@ -637,5 +740,15 @@ footer p {
 	
 	footer nav {
 		float:none;
+	}
+}
+
+@media (max-width:575px) {
+	h1 {
+		font-size:30px;
+	}
+	
+	section#outils figure {
+		width:33.333333%;
 	}
 }

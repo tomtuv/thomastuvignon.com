@@ -8,7 +8,7 @@ $('nav a').click(function() {
 	$('.rectangle-deroulant').toggleClass('rectangle-deroulant');
 });
 if (matchMedia) {
-	var mq = window.matchMedia("(min-width: 960px)");
+	var mq = window.matchMedia("(min-width:992px)");
 	mq.addListener(WidthChange);
 	WidthChange(mq);
 }
@@ -88,24 +88,16 @@ function parallaxScroll() {
 }
 // !Vidéo
 $(document).ready(function() {
-	$('#thomas a').click(function() {
-		var id = $(this).attr('data-youtube-id');
-		var autoplay = '?autoplay=1';
-		var related_no = '&rel=0';
-		var src = '//www.youtube.com/embed/' + id + autoplay + related_no;
-		$("#youtube").attr('src', src);
-		return false;
-	});
-
 	function toggle_video_modal() {
 		$(".js-trigger-modal").on("click", function(event) {
 			event.preventDefault();
 			$("body").addClass("show-video-modal");
+			$("video")[0].play();
 		});
 		$('body').on('click', 'body, .close-video-modal, .video-modal .overlay', function(event) {
 			event.preventDefault();
 			$("body").removeClass("show-video-modal");
-			$("#youtube").attr('src', '');
+			$("video")[0].pause();
 		});
 	}
 	toggle_video_modal();
