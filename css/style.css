@@ -262,9 +262,7 @@ header.menu-invisible {
 }
 
 .video-modal video {
-	max-width:100%;
-	max-height:100%;
-	height:auto;
+	width:100%;
 }
 
 .video-modal {
@@ -288,7 +286,7 @@ header.menu-invisible {
 	-webkit-transform:translateY(-50%);
 	z-index:1;
 	width:100%;
-	max-height:100%;
+	max-height:calc(100% - 100px);
 	padding-top:0;
 	padding-bottom:0;
 	margin:0 auto;
@@ -334,34 +332,34 @@ section#thomas {
 	background-color:#31185a;
 }
 
-section#thomas .container {
+section#thomas #intro {
 	position:relative;
 	top:50%;
 	transform:translateY(-50%);
 	-webkit-transform:translateY(-50%);
 }
 
-section#thomas img {
+section#thomas #intro img {
 	width:180px;
 	border-radius:100%;
 	margin-right:40px;
 	float:left;
 }
 
-section#thomas p {
+section#thomas #intro p {
 	font-size:24px;
 	font-weight:500;
 	margin-bottom:24px;
 }
 
-section#thomas a {
+section#thomas #intro a {
 	color:#fff;
 	font-size:20px;
 	font-weight:500;
 	text-decoration:none;
 }
 
-section#thomas .fa {
+section#thomas #intro .fa {
 	position:relative;
 	left:7.5px;
 	-webkit-transition:left .15s;
@@ -370,7 +368,7 @@ section#thomas .fa {
 	transition:left .15s;
 }
 
-section#thomas a:hover > .fa {
+section#thomas #intro a:hover > .fa {
 	left:15px;
 }
 
@@ -512,7 +510,7 @@ footer .container {
 	padding:40px;
 }
 
-footer nav {
+footer #contact {
 	float:right;
 	margin:0 -20px;
 	cursor:default;
@@ -607,23 +605,23 @@ footer p {
 		display:block;
 	}
 	
-	section#thomas img {
+	section#thomas #intro img {
 		width:160px;
 	}
 	
-	section#thomas p {
+	section#thomas #intro p {
 		font-size:20px;
 	}
 	
-	section#thomas a {
+	section#thomas #intro a {
 		font-size:18px;
 	}
 	
-	section#thomas .fa {
+	section#thomas #intro .fa {
 		left:6.25px;
 	}
 	
-	section#thomas a:hover > .fa {
+	section#thomas #intro a:hover > .fa {
 		left:12.5px;
 	}
 	
@@ -696,7 +694,7 @@ footer p {
 		padding:30px 15px;
 	}
 	
-	footer nav {
+	footer #contact {
 		margin:0 -10px;
 	}
 	
@@ -715,11 +713,11 @@ footer p {
 		max-width:540px;
 	}
 	
-	section#thomas {
+	section#thomas #intro {
 		text-align:center;
 	}
 	
-	section#thomas img {
+	section#thomas #intro img {
 		width:130px;
 		float:none;
 		margin:0 0 20px;
@@ -738,7 +736,7 @@ footer p {
 		text-align:center;
 	}
 	
-	footer nav {
+	footer #contact {
 		float:none;
 	}
 }
