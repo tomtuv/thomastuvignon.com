@@ -94,7 +94,7 @@ $(document).ready(function() {
 			$("body").addClass("show-video-modal");
 			$("video")[0].play();
 		});
-		$('body').on('click', 'body, .close-video-modal, .video-modal .overlay', function(event) {
+		$('body').on('click', 'body, .close-video-modal, #video .overlay', function(event) {
 			event.preventDefault();
 			$("body").removeClass("show-video-modal");
 			$("video")[0].pause();
