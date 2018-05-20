@@ -1670,15 +1670,11 @@ ol p {
 }
 
 #carte {
-	display: inline;
-}
-
-.simplemap {
 	float: right;
 	display: inline-block;
+	box-sizing: border-box;
 	width: 40%;
 	margin-right: 72px;
-	margin-bottom: 24px;
 }
 
 #galerie {
@@ -3744,7 +3740,9 @@ ol a:hover {
 	}
 	
 	#carte {
-		display: none;
+		width: 100%;
+		margin: 0;
+		padding: 0 20px;
 	}
 	
 	#galerie {
@@ -4736,7 +4734,7 @@ ol a:hover {
 		padding-left: 144px;
 	}
 	
-	.simplemap {
+	#carte {
 		margin-right: 144px;
 	}
 	
@@ -4892,7 +4890,7 @@ ol a:hover {
 		padding-left: 216px;
 	}
 	
-	.simplemap {
+	#carte {
 		margin-right: 216px;
 	}
 	
@@ -4942,7 +4940,7 @@ ol a:hover {
 		padding-left: 288px;
 	}
 	
-	.simplemap {
+	#carte {
 		margin-right: 288px;
 	}
 	
