@@ -116,6 +116,26 @@ $('#michelin').on('click', function() {
 		speed: 500,
 	})
 });
+$('#solex').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/solex/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design de pages et développement du site Solex. <a href="https://solex.world" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#matra').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/matra/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design de pages et développement du site Matra. <a href="http://matra.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
 $('#horse-pilot').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
@@ -269,7 +289,7 @@ $('#arize-leze').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'images/realisations/arize-leze/maquette-1.jpg',
-			'subHtml': '<p>Projet : design et intégration de la web app de l’office de tourisme Arize-Lèze. <a href="sites/arize-leze" target="_blank">Voir le prototype HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Projet : design et intégration de la web app de l’office de tourisme d’Arize-Lèze. <a href="sites/arize-leze" target="_blank">Voir la découpe HTML<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'images/realisations/arize-leze/maquette-2.jpg'
 		}, {
