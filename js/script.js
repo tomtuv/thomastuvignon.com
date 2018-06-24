@@ -116,26 +116,6 @@ $('#michelin').on('click', function() {
 		speed: 500,
 	})
 });
-$('#solex').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'images/realisations/solex/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : design de pages et développement du site Solex. <a href="https://solex.world" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}],
-		speed: 500,
-	})
-});
-$('#matra').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'images/realisations/matra/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : design de pages et développement du site Matra. <a href="http://matra.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}],
-		speed: 500,
-	})
-});
 $('#horse-pilot').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
@@ -172,12 +152,22 @@ $('#hudi').on('click', function() {
 		speed: 500,
 	})
 });
-$('#flagship').on('click', function() {
+$('#matra').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
-			'src': 'images/realisations/flagship/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship d’Ultrō. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'src': 'images/realisations/matra/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design de pages et développement du site Matra. <a href="http://matra.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#solex').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/solex/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design de pages et développement du site Solex. <a href="https://solex.world" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -188,6 +178,16 @@ $('#thematis-conseil').on('click', function() {
 		dynamicEl: [{
 			'src': 'images/realisations/thematis-conseil/maquette-1.jpg',
 			'subHtml': '<p>Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#flagship').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/flagship/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : intégration du site de présentation du programme Flagship d’Ultrō. <a href="https://flagship.solutions/presentation" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -220,6 +220,16 @@ $('#midi-life').on('click', function() {
 			'src': 'images/realisations/midi-life/maquette-11.jpg'
 		}, {
 			'src': 'images/realisations/midi-life/maquette-12.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#stella-babyfoot').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/stella-babyfoot/maquette-1.jpg',
+			'subHtml': '<p>Projet : design du site Stella Baby-Foot.</p>'
 		}],
 		speed: 500,
 	})
@@ -260,16 +270,6 @@ $('#higgins').on('click', function() {
 			'src': 'images/realisations/higgins/maquette-3.jpg'
 		}, {
 			'src': 'images/realisations/higgins/maquette-4.jpg'
-		}],
-		speed: 500,
-	})
-});
-$('#stella-babyfoot').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'images/realisations/stella-babyfoot/maquette-1.jpg',
-			'subHtml': '<p>Projet : design du site Stella Baby-Foot.</p>'
 		}],
 		speed: 500,
 	})
