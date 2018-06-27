@@ -234,6 +234,42 @@ $('#stella-babyfoot').on('click', function() {
 		speed: 500,
 	})
 });
+$('#paips').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/paips/maquette-1.jpg',
+			'subHtml': '<p>Projet : design et prototypage de l’application Paips pour sourds et malentendants. <a href="https://sketch.cloud/s/12AJy/all/page-1/paips-splash-screen/play" target="_blank">Voir le prototype<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}, {
+			'src': 'images/realisations/paips/maquette-2.jpg'
+		}, {
+			'src': 'images/realisations/paips/maquette-3.jpg'
+		}, {
+			'src': 'images/realisations/paips/maquette-4.jpg'
+		}, {
+			'src': 'images/realisations/paips/maquette-5.jpg'
+		}, {
+			'src': 'images/realisations/paips/maquette-6.jpg'
+		}],
+		speed: 500,
+	})
+});
+$('#higgins').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/higgins/maquette-1.jpg',
+			'subHtml': '<p>CPME Camp : design de l’application de menu numérique et d’assistant personnel Higgins.</p>'
+		}, {
+			'src': 'images/realisations/higgins/maquette-2.jpg'
+		}, {
+			'src': 'images/realisations/higgins/maquette-3.jpg'
+		}, {
+			'src': 'images/realisations/higgins/maquette-4.jpg'
+		}],
+		speed: 500,
+	})
+});
 $('#wheel').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
@@ -254,22 +290,6 @@ $('#wheel').on('click', function() {
 			'src': 'images/realisations/wheel/maquette-7.jpg'
 		}, {
 			'src': 'images/realisations/wheel/maquette-8.jpg'
-		}],
-		speed: 500,
-	})
-});
-$('#higgins').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'images/realisations/higgins/maquette-1.jpg',
-			'subHtml': '<p>CPME Camp : design de l’application de menu numérique et d’assistant personnel Higgins.</p>'
-		}, {
-			'src': 'images/realisations/higgins/maquette-2.jpg'
-		}, {
-			'src': 'images/realisations/higgins/maquette-3.jpg'
-		}, {
-			'src': 'images/realisations/higgins/maquette-4.jpg'
 		}],
 		speed: 500,
 	})
