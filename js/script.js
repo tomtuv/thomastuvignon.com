@@ -177,7 +177,7 @@ $('#thematis-conseil').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'images/realisations/thematis-conseil/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="http://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : gestion de projet, prototypage, design et intégration du site Thematis Conseil. <a href="https://www.thematisconseil.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
