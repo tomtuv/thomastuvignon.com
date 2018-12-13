@@ -124,7 +124,7 @@ $('#horse-pilot').on('click', function() {
 			'subHtml': '<p>Ultrō : intégration d’une landing page Horse Pilot. <a href="https://www.horsepilot.com/rain-free" target="_blank">Voir la page<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'images/realisations/horse-pilot/maquette-2.jpg',
-			'subHtml': '<p>Ultrō : design et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : design et intégration de l’agenda Facebook Horse Pilot. <a href="https://www.horsepilot.com/blog/fr/evenement" target="_blank">Voir l’agenda<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}, {
 			'src': 'images/realisations/horse-pilot/maquette-3.jpg',
 			'subHtml': '<p>Ultrō : intégration de la newsletter Horse Pilot. <a href="https://www.horsepilot.com/newsletter.html" target="_blank">Voir la newsletter<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
@@ -137,7 +137,7 @@ $('#1991').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'images/realisations/1991/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : design et intégration du site 19.91. <a href="http://1991denim.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : design et intégration de la première version du site 19.91. <a href="http://1991.webflow.io" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
@@ -157,7 +157,7 @@ $('#matra').on('click', function() {
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'images/realisations/matra/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : design de pages et développement du site Matra. <a href="http://matra.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+			'subHtml': '<p>Ultrō : design de pages et développement du site Matra. <a href="https://matra.com" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
