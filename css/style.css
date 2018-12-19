@@ -25,7 +25,7 @@ h2 {
 h3 {
 	font-size:24px;
 	font-weight:600;
-	margin:0 0 30px;
+	margin:20px 0 30px;
 }
 
 h4 {
@@ -265,7 +265,8 @@ section#thomas #intro a:hover > .fa {
 
 section#realisations {
 	text-align:center;
-	padding:90px 0 50px;
+	padding-top:90px;
+	margin-bottom:-40px;
 }
 
 section#realisations img {
@@ -274,18 +275,24 @@ section#realisations img {
 	margin-bottom:40px;
 	border-radius:4px;
 	cursor:pointer;
-	-webkit-transition:box-shadow .15s linear;
-	-moz-transition:box-shadow .15s linear;
-	-o-transition:box-shadow .15s linear;
-	transition:box-shadow .15s linear;
+	-webkit-transition:all .15s linear;
+	-moz-transition:all .15s linear;
+	-o-transition:all .15s linear;
+	transition:all .15s linear;
 }
 
 section#realisations img:hover {
 	box-shadow:0 45px 100px rgba(14,21,47,0.2),0 16px 40px rgba(14,21,47,0.2);
+	-webkit-transform:scale(1.05);
+	-moz-transform:scale(1.05);
+	-ms-transform:scale(1.05);
+	-o-transform:scale(1.05);
+	transform:scale(1.05);
 }
 
 section#parcours {
-	padding-bottom:50px;
+	padding-top:90px;
+	margin-bottom:-40px;
 }
 
 section#parcours article {
@@ -326,6 +333,7 @@ footer {
 	color:#000;
 	text-align:center;
 	padding:90px 0 70px;
+	margin-top:90px;
 }
 
 footer ul {
@@ -339,7 +347,7 @@ footer #contact {
 }
 
 footer a {
-	color:#222;
+	color:#000;
 }
 
 footer .fa {
@@ -435,6 +443,10 @@ footer .fa {
 		font-size:36px;
 	}
 	
+	h3 {
+		margin-top:0;
+	}
+	
 	section#thomas #intro {
 		text-align:center;
 	}
@@ -446,7 +458,8 @@ footer .fa {
 	}
 	
 	section#realisations {
-		padding:60px 0 40px;
+		padding-top:60px;
+		margin-bottom:-20px;
 	}
 	
 	section#realisations img {
@@ -454,11 +467,13 @@ footer .fa {
 	}
 	
 	section#parcours {
-		padding-bottom:20px;
+		padding-top:60px;
+		margin-bottom:-40px;
 	}
 	
 	footer {
 		padding:60px 0 40px;
+		margin-top:60px;
 	}
 }
 
