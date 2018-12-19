@@ -357,11 +357,16 @@ footer .fa {
 }
 
 /* !Media queries */
-@media (max-width:991px) {
+@media (max-width: 1199px) {
 	h1 {
-		font-size:42px;
+		font-size: 42px;
 	}
 	
+	section#thomas #intro img {
+		width:170px;
+	}
+}
+@media (max-width:991px) {	
 	h2 {
 		font-size:30px;
 	}
