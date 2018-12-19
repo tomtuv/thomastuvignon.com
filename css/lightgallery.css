@@ -45,14 +45,12 @@
 }
 .lg-actions .lg-next {
   right: 20px;
-  margin-right: env(safe-area-inset-right);
 }
 .lg-actions .lg-next:before {
   content: "\e095";
 }
 .lg-actions .lg-prev {
   left: 20px;
-  margin-left: env(safe-area-inset-left);
 }
 .lg-actions .lg-prev:after {
   content: "\e094";
@@ -166,8 +164,6 @@
   top: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 }
 .lg-toolbar .lg-icon {
   color: #000;
@@ -205,8 +201,6 @@
   right: 0;
   text-align: center;
   z-index: 1080;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 }
 .lg-sub-html h4 {
   margin: 0;

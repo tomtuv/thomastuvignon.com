@@ -4,13 +4,14 @@
 <head>
 	<title>Thomas Tuvignon – Web designer et intégrateur</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Actuellement en alternance chez Ultrō, je me spécialise dans le web design et l'intégration web.">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="icon" href="images/favicon.png">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bulles.css">
 	<link rel="stylesheet" href="css/video.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
 	<link rel="stylesheet" href="css/lightgallery.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
 	
@@ -26,29 +27,25 @@
 
 <body>
 	<header class="menu-visible">
-		<div class="container">
-			<a href="#thomas">Thomas Tuvignon</a>
-	
-			<nav>
-				<a href="#parcours">Parcours</a>
-				<a href="#outils">Outils</a>
-				<a href="#realisations">Réalisations</a>
-				<a href="#plus">Plus d’informations</a>
-			</nav>
-			
-			<div id="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-	
-			<nav id="menu-mobile">
-				<a href="#parcours">Parcours</a>
-				<a href="#outils">Outils</a>
-				<a href="#realisations">Réalisations</a>
-				<a href="#plus">Plus d’informations</a>
-			</nav>
+		<a href="#thomas">Thomas Tuvignon</a>
+
+		<nav>
+			<a href="#realisations">Mes réalisations</a>
+			<a href="#parcours">Mon parcours</a>
+			<a href="#plus">Plus d’informations</a>
+		</nav>
+		
+		<div id="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
+
+		<nav id="menu-mobile">
+			<a href="#realisations">Mes réalisations</a>
+			<a href="#parcours">Mon parcours</a>
+			<a href="#plus">Plus d’informations</a>
+		</nav>
 	</header>
 
 	<section id="thomas">
@@ -116,239 +113,182 @@
 		
 		<div id="intro">
 			<div class="container">
-				<img src="images/photo.jpg" alt="Thomas Tuvignon">
-			 
-				<h1>Thomas Tuvignon</h1>
-				 
-				<p>Web designer et intégrateur</p>
-				  
-				<a href="#" class="js-trigger-modal">Voir le CV vidéo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<div class="row">
+					<div class="col-xl-8 offset-xl-2">
+						<img src="images/thomas.jpg" alt="Thomas Tuvignon">
+					 
+						<h1>Thomas Tuvignon</h1>
+						 
+						<p>Web designer et intégrateur</p>
+						  
+						<a href="#" class="js-trigger-modal">Voir le CV vidéo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		
 		<div id="video">
 			<div class="container">
-				<a href="#" class="close-video-modal"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Retour au site</span></a>
-				
-				<video controls playsinline preload="none" poster="video/cv.jpg">
-					<source src="video/cv.mp4" type="video/mp4">
-				</video>
+				<div class="row">
+					<div class="col-xl-10 offset-xl-1">
+						<a href="#" class="close-video-modal"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Retour au site</span></a>
+						
+						<video controls playsinline preload="none" poster="video/cv.jpg">
+							<source src="video/cv.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
 			</div>
 	
 			<div class="overlay"></div>
 		</div>
 	</section>
-
-	<section id="parcours">
-		<div class="container">
-			<h2>Parcours</h2>
-			
-			<div class="row">
-				<div class="col-6">
-					<h3>Expérience</h3>
-					
-					<img src="images/parcours/ultro.jpg" alt="Ultrō">
-					<div class="description">
-						<h4>Chargé de projet chez Ultrō</h4>
-						<p class="date">Octobre 2017 – aujourd’hui</p>
-						<p>Gestion de projet. Design graphique. Prototypage. Intégration web. Référencement.</p>
-					</div>
-						
-					<img src="images/parcours/ultro.jpg" alt="Ultrō">
-					<div class="description">					
-						<h4>Chargé de projet chez Ultrō</h4>
-						<p class="date">Avril 2017 – août 2017</p>
-						<p>Stage (4 mois). Gestion de projet. Design graphique. Intégration web.</p>
-					</div>
-					
-					<img src="images/parcours/1989.jpg" alt="Agence 1989">
-					<div class="description">
-						<h4>Assistant chef de projet chez Agence 1989</h4>
-						<p class="date">Mai 2016 – août 2016</p>
-						<p>Stage (4 mois). Design graphique. Prototypage. Intégration web.</p>
-					</div>
-					
-					<img src="images/parcours/fuveau.jpg" alt="Office de tourisme de Fuveau">
-					<div class="description">
-						<h4>Chargé d’accueil à l’office de tourisme de Fuveau</h4>
-						<p class="date">Janvier 2015 – février 2015</p>
-						<p>Stage (1 mois). Accueil touristique. Gestion de communauté.</p>
-					</div>
-					
-					<img src="images/parcours/musee.jpg" alt="Musée de la mine">
-					<div class="description">
-						<h4>Guide culturel au Musée de la mine de Gréasque</h4>
-						<p class="date">Mai 2014 – juillet 2014</p>
-						<p>Stage (2 mois). Guidage touristique. Traduction. Design graphique.</p>
-					</div>
-				</div>
 	
-				<div class="col-6">
-					<h3>Formation</h3>
-					
-					<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
-					<div class="description">
-						<h4>Digital Campus, Lyon</h4>
-						<p class="date">2017 - 2019</p>
-						<p>Mastère Expert en stratégie digitale. Spécialisation UX design.</p>
-					</div>
-					
-					<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
-					<div class="description">
-						<h4>Digital Campus, Montpellier</h4>
-						<p class="date">2016 – 2017</p>
-						<p>Passerelle Conduite de projet web.</p>
-					</div>
-					
-					<img src="images/parcours/universite-toulouse.jpg" alt="Université de Toulouse-Jean-Jaurès">
-					<div class="description">
-						<h4>Université Toulouse-Jean-Jaurès, Foix</h4>
-						<p class="date">2015 – 2016</p>
-						<p>Licence professionnelle NTIC appliquées au tourisme.</p>
-					</div>
-					
-					<img src="images/parcours/clovis-hugues.jpg" alt="Lycée Clovis Hugues">
-					<div class="description">
-						<h4>Lycée Clovis Hugues, Aix-en-Provence</h4>
-						<p class="date">2013 – 2015</p>
-						<p>BTS Tourisme.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="outils">
-		<div class="container">
-			<h2>Outils</h2>
-			
-			<figure>
-				<img src="images/outils/photoshop.png" alt="Photoshop">
-				<figcaption>Photoshop</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/illustrator.png" alt="Illustrator">
-				<figcaption>Illustrator</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/indesign.png" alt="InDesign">
-				<figcaption>InDesign</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/after-effects.png" alt="After Effects">
-				<figcaption>After Effects</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/xd.png" alt="XD">
-				<figcaption>XD</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/sketch.png" alt="Sketch">
-				<figcaption>Sketch</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/axure-rp.png" alt="Axure RP">
-				<figcaption>Axure RP</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/html.png" alt="HTML">
-				<figcaption>HTML</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/css.png" alt="CSS">
-				<figcaption>CSS</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/javascript.png" alt="JavaScript">
-				<figcaption>JavaScript</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/wordpress.png" alt="WordPress">
-				<figcaption>WordPress</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/kirby.png" alt="Kirby">
-				<figcaption>Kirby</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/webflow.png" alt="Webflow">
-				<figcaption>Webflow</figcaption>
-			</figure>
-			
-			<figure>
-				<img src="images/outils/squarespace.png" alt="Squarespace">
-				<figcaption>Squarespace</figcaption>
-			</figure>
-		</div>
-	</section>
-
 	<section id="realisations">
 		<div class="container">
-			<h2>Réalisations</h2>
+			<h2>Mes réalisations</h2>
 			
 			<div class="row">
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/michelin/vignette.png" alt="Michelin" id="michelin">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/horse-pilot/vignette.png" alt="Horse Pilot" id="horse-pilot">
 				</div>
-				<div class="col-4 col-6-mobile">
-					<img src="images/realisations/1991/vignette.png" alt="19.91" id="1991">
-				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/hudi/vignette.png" alt="Hudi" id="hudi">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
+					<img src="images/realisations/1991/vignette.png" alt="19.91" id="1991">
+				</div>
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/matra/vignette.png" alt="Matra" id="matra">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/solex/vignette.png" alt="Solex" id="solex">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/thematis-conseil/vignette.png" alt="Thematis Conseil" id="thematis-conseil">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/flagship/vignette.png" alt="Flagship" id="flagship">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/midi-life/vignette.png" alt="Midi Life" id="midi-life">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/stella-babyfoot/vignette.png" alt="Stella Babyfoot" id="stella-babyfoot">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/paips/vignette.png" alt="Paips" id="paips">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/higgins/vignette.png" alt="Higgins" id="higgins">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/wheel/vignette.png" alt="Wheel" id="wheel">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/musee-de-la-mine/vignette.png" alt="Musée de la mine" id="musee-de-la-mine">
 				</div>
-				<div class="col-4 col-6-mobile">
+				<div class="col-lg-4 col-6">
 					<img src="images/realisations/arize-leze/vignette.png" alt="Arize-Lèze" id="arize-leze">
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="plus">
+	<section id="parcours">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<h2>Mon parcours</h2>
+					
+					<h3>Expérience</h3>
+					
+					<div class="row">
+						<div class="col-md-6">
+							<img src="images/parcours/ultro.jpg" alt="Ultrō">
+							<div class="description">
+								<h4>Chargé de projet chez Ultrō</h4>
+								<p class="date">Avril 2017 – aujourd’hui</p>
+								<p>Design graphique. Prototypage. Intégration web. Gestion de projet. Référencement.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">	
+							<img src="images/parcours/1989.jpg" alt="Agence 1989">
+							<div class="description">
+								<h4>Assistant chef de projet chez Agence 1989</h4>
+								<p class="date">Mai 2016 – août 2016</p>
+								<p>Stage (4 mois). Design graphique. Prototypage. Intégration web.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">	
+							<img src="images/parcours/fuveau.jpg" alt="Office de tourisme de Fuveau">
+							<div class="description">
+								<h4>Chargé d’accueil à l’office de tourisme de Fuveau</h4>
+								<p class="date">Janvier 2015 – février 2015</p>
+								<p>Stage (1 mois). Accueil touristique. Gestion de communauté.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">	
+							<img src="images/parcours/musee.jpg" alt="Musée de la mine">
+							<div class="description">
+								<h4>Guide culturel au Musée de la mine de Gréasque</h4>
+								<p class="date">Mai 2014 – juillet 2014</p>
+								<p>Stage (2 mois). Guidage touristique. Traduction. Design graphique.</p>
+							</div>
+						</div>
+					</div>
+					
+					<h3>Formation</h3>
+							
+					<div class="row">
+						<div class="col-md-6">
+							<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
+							<div class="description">
+								<h4>Digital Campus, Lyon</h4>
+								<p class="date">2017 - 2019</p>
+								<p>Mastère Expert en stratégie digitale. Spécialisation UX design.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
+							<div class="description">
+								<h4>Digital Campus, Montpellier</h4>
+								<p class="date">2016 – 2017</p>
+								<p>Passerelle Conduite de projet web.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<img src="images/parcours/universite-toulouse.jpg" alt="Université de Toulouse-Jean-Jaurès">
+							<div class="description">
+								<h4>Université Toulouse-Jean-Jaurès, Foix</h4>
+								<p class="date">2015 – 2016</p>
+								<p>Licence professionnelle NTIC appliquées au tourisme.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<img src="images/parcours/clovis-hugues.jpg" alt="Lycée Clovis Hugues">
+							<div class="description">
+								<h4>Lycée Clovis Hugues, Aix-en-Provence</h4>
+								<p class="date">2013 – 2015</p>
+								<p>BTS Tourisme.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer id="plus">
 		<div class="container">
 			<h2>Plus d’informations</h2>
 			
@@ -358,11 +298,7 @@
 				<li><p>J’ai beaucoup voyagé : Amériques, Europe centrale, Afrique, etc.</p></li>
 				<li><p>Je suis passionné par les nouvelles technologies et la photographie.</p></li>
 			</ul>
-		</div>
-	</section>
-
-	<footer>
-		<div class="container">
+			
 			<div id="contact">
 				<a href="https://www.linkedin.com/in/thomastuvignon" target="_blank" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 				<a href="https://github.com/tomtuv" target="_blank" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -371,9 +307,7 @@
 				<a href="mailto:contact@thomastuvignon.com" title="E-mail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
 			</div>
 			
-			<div id="credits">
-				<p>© 2018 Thomas Tuvignon</p>
-			</div>
+			<p>© 2018 Thomas Tuvignon</p>
 		</div>
 	</footer>
 	

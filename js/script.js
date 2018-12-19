@@ -61,7 +61,7 @@ function hasScrolled() {
 }
 $(window).scroll(function(e) {
 	var s1 = $('#thomas'),
-		s2 = $('#parcours'),
+		s2 = $('#realisations'),
 		menu = $('header'),
 		diff = s1[0].offsetTop - window.pageYOffset;
 	diff2 = s2[0].offsetTop - window.pageYOffset;
@@ -132,22 +132,22 @@ $('#horse-pilot').on('click', function() {
 		speed: 500,
 	})
 });
-$('#1991').on('click', function() {
-	$(this).lightGallery({
-		dynamic: true,
-		dynamicEl: [{
-			'src': 'images/realisations/1991/maquette-1.jpg',
-			'subHtml': '<p>Ultrō : design et intégration de la première version du site 19.91. <a href="http://1991.webflow.io" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
-		}],
-		speed: 500,
-	})
-});
 $('#hudi').on('click', function() {
 	$(this).lightGallery({
 		dynamic: true,
 		dynamicEl: [{
 			'src': 'images/realisations/hudi/maquette-1.jpg',
 			'subHtml': '<p>Ultrō : design et intégration de pages du site Hudi. <a href="https://hudi.fr" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
+		}],
+		speed: 500,
+	})
+});
+$('#1991').on('click', function() {
+	$(this).lightGallery({
+		dynamic: true,
+		dynamicEl: [{
+			'src': 'images/realisations/1991/maquette-1.jpg',
+			'subHtml': '<p>Ultrō : design et intégration de la première version du site 19.91. <a href="http://1991.webflow.io" target="_blank">Voir le site web<i class="fa fa-angle-right" aria-hidden="true"></i></a></p>'
 		}],
 		speed: 500,
 	})
