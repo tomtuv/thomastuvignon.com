@@ -275,10 +275,10 @@ section#realisations img {
 	margin-bottom:40px;
 	border-radius:4px;
 	cursor:pointer;
-	-webkit-transition:all .20s;
-	-moz-transition:all .20s;
-	-o-transition:all .20s;
-	transition:all .20s;
+	-webkit-transition:all .2s;
+	-moz-transition:all .2s;
+	-o-transition:all .2s;
+	transition:all .2s;
 }
 
 section#realisations img:hover {
@@ -359,16 +359,17 @@ footer .fa {
 /* !Media queries */
 @media (max-width: 1199px) {
 	h1 {
-		font-size: 42px;
+		font-size:42px;
 	}
 	
 	section#thomas #intro img {
 		width:170px;
 	}
 }
-@media (max-width:991px) {	
+
+@media (max-width:991px) {
 	h2 {
-		font-size:30px;
+		font-size:26px;
 	}
 	
 	h3 {
