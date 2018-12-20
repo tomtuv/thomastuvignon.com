@@ -19,13 +19,13 @@ h1 {
 h2 {
 	font-size:36px;
 	font-weight:700;
-	margin:0 0 30px;
+	margin:0 0 40px;
 }
 
 h3 {
 	font-size:24px;
 	font-weight:600;
-	margin:20px 0 30px;
+	margin:20px 0 40px;
 }
 
 h4 {
@@ -320,7 +320,7 @@ section#parcours #experience h5,section#parcours #formation h4 {
 
 section#parcours .description {
 	overflow:hidden;
-	margin-bottom:10px;
+	margin-bottom:20px;
 }
 
 section#plus {
@@ -334,11 +334,6 @@ footer {
 	text-align:center;
 	padding:90px 0 70px;
 	margin-top:90px;
-}
-
-footer ul {
-	list-style:none;
-	padding:0;
 }
 
 footer #contact {
@@ -449,8 +444,12 @@ footer .fa {
 		font-size:36px;
 	}
 	
+	h2 {
+		margin-bottom: 30px;
+	}
+	
 	h3 {
-		margin-top:10px;
+		margin: 10px 0 30px;
 	}
 	
 	section#thomas #intro {
@@ -475,6 +474,10 @@ footer .fa {
 	section#parcours {
 		padding-top:60px;
 		margin-bottom:-40px;
+	}
+	
+	section#parcours .description {
+		margin-bottom:10px;
 	}
 	
 	footer {
