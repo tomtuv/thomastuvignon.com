@@ -1,11 +1,11 @@
 // !Menu
-if ($('header').hasClass('header-accueil')) {
-	$('#hamburger').click(function() {
-		$(this).toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
+if ($('header').hasClass('menu')) {
+	$('.hamburger').click(function() {
+		$(this).toggleClass('hamburger-ouvert').siblings('.menu-mobile').slideToggle();
 		$('header').toggleClass('rectangle-deroulant');
 	});
 	$('nav a').click(function() {
-		$('#hamburger.ouvert').toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
+		$('.hamburger-ouvert').toggleClass('hamburger-ouvert').siblings('.menu-mobile').slideToggle();
 		$('.rectangle-deroulant').toggleClass('rectangle-deroulant');
 	});
 	if (matchMedia) {
@@ -16,7 +16,7 @@ if ($('header').hasClass('header-accueil')) {
 	
 	function WidthChange(mq) {
 		if (mq.matches) {
-			$('#hamburger.ouvert').toggleClass('ouvert').siblings('#menu-mobile').slideToggle();
+			$('.hamburger-ouvert').toggleClass('hamburger-ouvert').siblings('.menu-mobile').slideToggle();
 			$('.rectangle-deroulant').toggleClass('rectangle-deroulant');
 		}
 	}

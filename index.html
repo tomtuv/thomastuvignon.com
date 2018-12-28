@@ -8,11 +8,10 @@
 	<meta name="description" content="Actuellement en alternance chez Ultrō, je me spécialise dans le web design et l'intégration web.">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="icon" href="images/favicon.png">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bulles.css">
 	<link rel="stylesheet" href="css/video.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.css">
-	<link rel="stylesheet" href="css/lightgallery.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
 	
 	<script>
@@ -26,7 +25,7 @@
 </head>
 
 <body>
-	<header class="header-accueil menu-visible">
+	<header class="menu menu-visible">
 		<a href="#thomas">Thomas Tuvignon</a>
 
 		<nav>
@@ -35,13 +34,13 @@
 			<a href="#plus">Plus d’informations</a>
 		</nav>
 		
-		<div id="hamburger">
+		<div class="hamburger">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
 
-		<nav id="menu-mobile">
+		<nav class="menu-mobile">
 			<a href="#realisations">Mes réalisations</a>
 			<a href="#parcours">Mon parcours</a>
 			<a href="#plus">Plus d’informations</a>
@@ -49,7 +48,7 @@
 	</header>
 
 	<section id="thomas">
-		<div id="bulles">
+		<div class="bulles">
 			<div id="parallax-1">
 			    <div id="bulle-1-1" class="bulle taille4 jaune">&nbsp;</div>
 			    <div id="bulle-1-2" class="bulle taille3 jaune">&nbsp;</div>
@@ -111,7 +110,7 @@
 			</div>
 		</div>
 		
-		<div id="intro">
+		<div class="intro">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2">
@@ -121,17 +120,17 @@
 						 
 						<p>Web designer et intégrateur</p>
 						  
-						<a href="#" class="js-trigger-modal">Voir le CV vidéo<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="lien js-trigger-modal">Voir le CV vidéo</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<div id="video">
+		<div class="video">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-10 offset-xl-1">
-						<a href="#" class="close-video-modal"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Retour au site</span></a>
+						<a href="#" class="retour close-video-modal">Retour au site</a>
 						
 						<video controls playsinline preload="none" poster="video/cv.jpg">
 							<source src="video/cv.mp4" type="video/mp4">
@@ -150,49 +149,49 @@
 			
 			<div class="row">
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/michelin/vignette.png" alt="Michelin" id="michelin">
+					<img src="images/michelin.png" alt="Michelin">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/horse-pilot/vignette.png" alt="Horse Pilot" id="horse-pilot">
+					<img src="images/horse-pilot.png" alt="Horse Pilot">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/hudi/vignette.png" alt="Hudi" id="hudi">
+					<img src="images/hudi.png" alt="Hudi">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/1991/vignette.png" alt="19.91" id="1991">
+					<img src="images/1991.png" alt="19.91">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/matra/vignette.png" alt="Matra" id="matra">
+					<img src="images/matra.png" alt="Matra">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/solex/vignette.png" alt="Solex" id="solex">
+					<img src="images/solex.png" alt="Solex">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/thematis-conseil/vignette.png" alt="Thematis Conseil" id="thematis-conseil">
+					<img src="images/thematis-conseil.png" alt="Thematis Conseil">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/flagship/vignette.png" alt="Flagship" id="flagship">
+					<img src="images/flagship.png" alt="Flagship">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/midi-life/vignette.png" alt="Midi Life" id="midi-life">
+					<img src="images/midi-life.png" alt="Midi Life">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/stella-babyfoot/vignette.png" alt="Stella Babyfoot" id="stella-babyfoot">
+					<img src="images/stella-babyfoot.png" alt="Stella Babyfoot">
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/paips/vignette.png" alt="Paips" id="paips">
+					<a href="realisations/paips"><img src="images/paips.png" alt="Paips"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/higgins/vignette.png" alt="Higgins" id="higgins">
+					<a href="realisations/higgins"><img src="images/higgins.png" alt="Higgins"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/wheel/vignette.png" alt="Wheel" id="wheel">
+					<a href="realisations/wheel"><img src="images/wheel.png" alt="Wheel"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="musee-de-la-mine.html"><img src="images/realisations/musee-de-la-mine/vignette.png" alt="Musée de la mine"></a>
+					<a href="realisations/musee-de-la-mine"><img src="images/musee-de-la-mine.png" alt="Musée de la mine"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<img src="images/realisations/arize-leze/vignette.png" alt="Arize-Lèze" id="arize-leze">
+					<a href="realisations/arize-leze"><img src="images/arize-leze.png" alt="Arize-Lèze"></a>
 				</div>
 			</div>
 		</div>
@@ -208,37 +207,37 @@
 					
 					<div class="row">
 						<div class="col-md-6">
-							<img src="images/parcours/ultro.jpg" alt="Ultrō">
+							<img src="images/ultro.jpg" alt="Ultrō">
 							<div class="description">
 								<h4>Chargé de projet chez Ultrō</h4>
-								<p class="date">Avril 2017 – aujourd’hui</p>
+								<h5>Avril 2017 – aujourd’hui</h5>
 								<p>Design graphique. Prototypage. Intégration web. Gestion de projet. Référencement.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">	
-							<img src="images/parcours/1989.jpg" alt="Agence 1989">
+							<img src="images/1989.jpg" alt="Agence 1989">
 							<div class="description">
 								<h4>Assistant chef de projet chez Agence 1989</h4>
-								<p class="date">Mai 2016 – août 2016</p>
+								<h5>Mai 2016 – août 2016</h5>
 								<p>Stage (4 mois). Design graphique. Prototypage. Intégration web.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">	
-							<img src="images/parcours/fuveau.jpg" alt="Office de tourisme de Fuveau">
+							<img src="images/fuveau.jpg" alt="Office de tourisme de Fuveau">
 							<div class="description">
 								<h4>Chargé d’accueil à l’office de tourisme de Fuveau</h4>
-								<p class="date">Janvier 2015 – février 2015</p>
+								<h5>Janvier 2015 – février 2015</h5>
 								<p>Stage (1 mois). Accueil touristique. Gestion de communauté.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">	
-							<img src="images/parcours/musee.jpg" alt="Musée de la mine">
+							<img src="images/musee.jpg" alt="Musée de la mine">
 							<div class="description">
 								<h4>Guide culturel au Musée de la mine de Gréasque</h4>
-								<p class="date">Mai 2014 – juillet 2014</p>
+								<h5>Mai 2014 – juillet 2014</h5>
 								<p>Stage (2 mois). Guidage touristique. Traduction. Design graphique.</p>
 							</div>
 						</div>
@@ -248,37 +247,37 @@
 							
 					<div class="row">
 						<div class="col-md-6">
-							<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
+							<img src="images/digital-campus.jpg" alt="Digital Campus">
 							<div class="description">
 								<h4>Digital Campus, Lyon</h4>
-								<p class="date">2017 - 2019</p>
+								<h5>2017 - 2019</h5>
 								<p>Mastère Expert en stratégie digitale. Spécialisation UX design.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<img src="images/parcours/digital-campus.jpg" alt="Digital Campus">
+							<img src="images/digital-campus.jpg" alt="Digital Campus">
 							<div class="description">
 								<h4>Digital Campus, Montpellier</h4>
-								<p class="date">2016 – 2017</p>
+								<h5>2016 – 2017</h5>
 								<p>Passerelle Conduite de projet web.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<img src="images/parcours/universite-toulouse.jpg" alt="Université de Toulouse-Jean-Jaurès">
+							<img src="images/universite-toulouse.jpg" alt="Université de Toulouse-Jean-Jaurès">
 							<div class="description">
 								<h4>Université Toulouse-Jean-Jaurès, Foix</h4>
-								<p class="date">2015 – 2016</p>
+								<h5>2015 – 2016</h5>
 								<p>Licence professionnelle NTIC appliquées au tourisme.</p>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
-							<img src="images/parcours/clovis-hugues.jpg" alt="Lycée Clovis Hugues">
+							<img src="images/clovis-hugues.jpg" alt="Lycée Clovis Hugues">
 							<div class="description">
 								<h4>Lycée Clovis Hugues, Aix-en-Provence</h4>
-								<p class="date">2013 – 2015</p>
+								<h5>2013 – 2015</h5>
 								<p>BTS Tourisme.</p>
 							</div>
 						</div>
@@ -297,7 +296,7 @@
 			<p>J’ai beaucoup voyagé : Amériques, Europe centrale, Afrique, etc.</p>
 			<p>Je suis passionné par les nouvelles technologies et la photographie.</p>
 			
-			<div id="contact">
+			<div class="contact">
 				<a href="https://www.linkedin.com/in/thomastuvignon" target="_blank" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 				<a href="https://github.com/tomtuv" target="_blank" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
 				<a href="https://dribbble.com/tomtuv" target="_blank" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
@@ -311,8 +310,6 @@
 	
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/lightgallery.min.js"></script>
-	<script src="js/lg-zoom.min.js"></script>
 	<script src="https://use.fontawesome.com/8a847f2d70.js"></script>
 </body>
 </html>
