@@ -81,7 +81,7 @@ li {
 	color:#fff;
 	font-weight:500;
 	text-decoration:none;
-	margin-left:8px;
+	padding-left:8px;
 }
 
 .retour:before {
@@ -476,6 +476,10 @@ li {
 	
 	.titre-4 {
 		font-size:18px;
+	}
+	
+	.sous-titre {
+		font-size:16px;
 	}
 	
 	.lien {
