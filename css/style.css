@@ -540,8 +540,12 @@ li {
 		width:40px;
 	}
 	
+	.footer-page {
+		padding:30px 0 40px;
+	}
+	
 	.contact {
-		padding:40px 0 20px;
+		padding:30px 0 20px;
 	}
 	
 	.contact .fa {
@@ -625,8 +629,12 @@ li {
 	}
 	
 	.footer-page {
-		padding:20px 0 40px;
+		padding:40px 0 40px;
 		margin-top:60px;
+	}
+	
+	.contact {
+		padding:20px 0 20px;
 	}
 }
 
