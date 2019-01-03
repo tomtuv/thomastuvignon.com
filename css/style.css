@@ -406,6 +406,7 @@ li {
 
 /* !Page */
 .header-page {
+	text-align:center;
 	width:100%;
 	padding:90px 0 50px;
 	overflow:hidden;
