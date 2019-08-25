@@ -2,15 +2,16 @@
 
 <html lang="fr">
 <head>
-	<title>Thomas Tuvignon – Web designer et intégrateur</title>
+	<title>Thomas Tuvignon</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Actuellement en alternance chez Ultrō, je me spécialise dans le web design et l'intégration web.">
-	<meta property="og:title" content="Thomas Tuvignon – Web designer et intégrateur">
-	<meta property="og:description" content="Actuellement en alternance chez Ultrō, je me spécialise dans le web design et l'intégration web.">
-	<meta property="og:image" content="https://thomastuvignon.com/videos/cv-video.jpg">
-	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-	<link rel="icon" href="/images/favicon.png">
+	<meta name="description" content="Intégrateur web chez Ultrō.">
+	<meta property="og:title" content="Thomas Tuvignon">
+	<meta property="og:description" content="Intégrateur web chez Ultrō.">
+	<meta property="og:image" content="https://thomastuvignon.com/images/cv.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="icon" href="images/favicon.png">
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bulles.css">
@@ -28,29 +29,7 @@
 </head>
 
 <body>
-	<header class="menu menu-visible">
-		<a href="#thomas">Thomas Tuvignon</a>
-
-		<nav>
-			<a href="#realisations">Mes réalisations</a>
-			<a href="#parcours">Mon parcours</a>
-			<a href="#plus">Plus d’informations</a>
-		</nav>
-		
-		<div class="hamburger">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-
-		<nav class="menu-mobile">
-			<a href="#realisations">Mes réalisations</a>
-			<a href="#parcours">Mon parcours</a>
-			<a href="#plus">Plus d’informations</a>
-		</nav>
-	</header>
-
-	<section id="thomas">
+	<header>
 		<div class="bulles">
 			<div id="parallax-1">
 			    <div id="bulle-1-1" class="bulle taille-3 violet">&nbsp;</div>
@@ -113,16 +92,13 @@
 			</div>
 		</div>
 		
-		<div class="intro">
-			<div class="container">
+		<div class="container">
+			<div class="intro">
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2">
 						<img src="images/thomas.jpg" alt="Thomas Tuvignon">
-						
 						<h1 class="titre-1">Thomas Tuvignon</h1>
-						
-						<p>Web designer et intégrateur</p>
-						
+						<p>Intégrateur web chez Ultrō</p>
 						<a href="#" class="lien js-trigger-modal">Voir le CV vidéo</a>
 					</div>
 				</div>
@@ -135,8 +111,8 @@
 					<div class="col-xl-10 offset-xl-1">
 						<a href="#" class="retour close-video-modal">Retour au site</a>
 						
-						<video controls playsinline preload="none" poster="videos/cv-video.jpg">
-							<source src="videos/cv-video.mp4" type="video/mp4">
+						<video controls playsinline preload="none" poster="images/cv.jpg">
+							<source src="videos/cv.mp4" type="video/mp4">
 						</video>
 					</div>
 				</div>
@@ -144,167 +120,68 @@
 	
 			<div class="overlay"></div>
 		</div>
-	</section>
+	</header>
 	
-	<section id="realisations">
+	<section>
 		<div class="container">
-			<h2 class="titre-2">Mes réalisations</h2>
-			
 			<div class="row">
 				<div class="col-lg-4 col-6">
-					<a href="realisations/easybike-group"><img src="images/easybike-group.png" alt="Easybike Group"></a>
+					<a href="realisations/easybike-group" class="vignette"><img src="images/easybike-group.png" alt="Easybike Group"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/matra"><img src="images/matra.png" alt="Matra"></a>
+					<a href="realisations/matra" class="vignette"><img src="images/matra.png" alt="Matra"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/solex"><img src="images/solex.png" alt="Solex"></a>
+					<a href="realisations/solex" class="vignette"><img src="images/solex.png" alt="Solex"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/hudi"><img src="images/hudi.png" alt="Hudi"></a>
+					<a href="realisations/hudi" class="vignette"><img src="images/hudi.png" alt="Hudi"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/1991"><img src="images/1991.png" alt="19.91"></a>
+					<a href="realisations/1991" class="vignette"><img src="images/1991.png" alt="19.91"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/qetzal"><img src="images/qetzal.png" alt="Qetzal"></a>
+					<a href="realisations/qetzal" class="vignette"><img src="images/qetzal.png" alt="Qetzal"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/michelin"><img src="images/michelin.png" alt="Michelin"></a>
+					<a href="realisations/michelin" class="vignette"><img src="images/michelin.png" alt="Michelin"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/horse-pilot"><img src="images/horse-pilot.png" alt="Horse Pilot"></a>
+					<a href="realisations/horse-pilot" class="vignette"><img src="images/horse-pilot.png" alt="Horse Pilot"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/inemotion"><img src="images/inemotion.png" alt="In&motion"></a>
+					<a href="realisations/inemotion" class="vignette"><img src="images/inemotion.png" alt="In&motion"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/flagship"><img src="images/flagship.png" alt="Flagship"></a>
+					<a href="realisations/flagship" class="vignette"><img src="images/flagship.png" alt="Flagship"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/midi-life"><img src="images/midi-life.png" alt="Midi Life"></a>
+					<a href="realisations/midi-life" class="vignette"><img src="images/midi-life.png" alt="Midi Life"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/stella-babyfoot"><img src="images/stella-babyfoot.png" alt="Stella Babyfoot"></a>
+					<a href="realisations/stella-babyfoot" class="vignette"><img src="images/stella-babyfoot.png" alt="Stella Babyfoot"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/paips"><img src="images/paips.png" alt="Paips"></a>
+					<a href="realisations/paips" class="vignette"><img src="images/paips.png" alt="Paips"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/higgins"><img src="images/higgins.png" alt="Higgins"></a>
+					<a href="realisations/higgins" class="vignette"><img src="images/higgins.png" alt="Higgins"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/wheel"><img src="images/wheel.png" alt="Wheel"></a>
+					<a href="realisations/wheel" class="vignette"><img src="images/wheel.png" alt="Wheel"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/musee-de-la-mine"><img src="images/musee-de-la-mine.png" alt="Musée de la Mine"></a>
+					<a href="realisations/musee-de-la-mine" class="vignette"><img src="images/musee-de-la-mine.png" alt="Musée de la Mine"></a>
 				</div>
 				<div class="col-lg-4 col-6">
-					<a href="realisations/arize-leze"><img src="images/arize-leze.png" alt="Arize-Lèze"></a>
+					<a href="realisations/arize-leze" class="vignette"><img src="images/arize-leze.png" alt="Arize-Lèze"></a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="parcours">
+	<footer>
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<h2 class="titre-2">Mon parcours</h2>
-					
-					<h3 class="titre-3">Expérience</h3>
-					
-					<div class="row">
-						<div class="col-md-6">
-							<img src="images/ultro.jpg" alt="Ultrō">
-							<div class="description">
-								<h4 class="titre-4">Chargé de projet chez Ultrō</h4>
-								<p class="sous-titre">Avril 2017 – aujourd’hui</p>
-								<p>Design graphique. Prototypage. Intégration web. Gestion de projet. Référencement.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">	
-							<img src="images/1989.jpg" alt="Agence 1989">
-							<div class="description">
-								<h4 class="titre-4">Assistant chef de projet chez Agence 1989</h4>
-								<p class="sous-titre">Mai 2016 – août 2016</p>
-								<p>Stage (4 mois). Design graphique. Prototypage. Intégration web.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">	
-							<img src="images/fuveau.jpg" alt="Office de tourisme de Fuveau">
-							<div class="description">
-								<h4 class="titre-4">Chargé d’accueil à l’office de tourisme de Fuveau</h4>
-								<p class="sous-titre">Janvier 2015 – février 2015</p>
-								<p>Stage (1 mois). Accueil touristique. Gestion de communauté.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">	
-							<img src="images/musee.jpg" alt="Musée de la mine">
-							<div class="description">
-								<h4 class="titre-4">Guide culturel au Musée de la mine de Gréasque</h4>
-								<p class="sous-titre">Mai 2014 – juillet 2014</p>
-								<p>Stage (2 mois). Guidage touristique. Traduction. Design graphique.</p>
-							</div>
-						</div>
-					</div>
-					
-					<h3 class="titre-3">Formation</h3>
-							
-					<div class="row">
-						<div class="col-md-6">
-							<img src="images/digital-campus.jpg" alt="Digital Campus">
-							<div class="description">
-								<h4 class="titre-4">Digital Campus, Lyon</h4>
-								<p class="sous-titre">2017 - 2019</p>
-								<p>Mastère Expert en stratégie digitale. Spécialisation UX design.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">
-							<img src="images/digital-campus.jpg" alt="Digital Campus">
-							<div class="description">
-								<h4 class="titre-4">Digital Campus, Montpellier</h4>
-								<p class="sous-titre">2016 – 2017</p>
-								<p>Prépa Mastère digital.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">
-							<img src="images/universite-toulouse.jpg" alt="Université de Toulouse-Jean-Jaurès">
-							<div class="description">
-								<h4 class="titre-4">Université Toulouse-Jean-Jaurès, Foix</h4>
-								<p class="sous-titre">2015 – 2016</p>
-								<p>Licence professionnelle NTIC appliquées au tourisme.</p>
-							</div>
-						</div>
-						
-						<div class="col-md-6">
-							<img src="images/clovis-hugues.jpg" alt="Lycée Clovis Hugues">
-							<div class="description">
-								<h4 class="titre-4">Lycée Clovis Hugues, Aix-en-Provence</h4>
-								<p class="sous-titre">2013 – 2015</p>
-								<p>BTS Tourisme.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<footer id="plus">
-		<div class="container">
-			<h2 class="titre-2">Plus d’informations</h2>
-			
-			<p>Je suis né le 26 janvier 1993 à Sèvres, Île-de-France.</p>
-			<p>J’ai un niveau courant en anglais et en espagnol.</p>
-			<p>J’ai beaucoup voyagé : Amériques, Europe centrale, Afrique, etc.</p>
-			<p>Je suis passionné par les nouvelles technologies et les arts visuels.</p>
-			
 			<div class="contact">
 				<a href="https://www.linkedin.com/in/thomastuvignon" target="_blank" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 				<a href="https://github.com/tomtuv" target="_blank" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>

@@ -1,50 +1,50 @@
 .video, .overlay {
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	z-index:100;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
 }
 
 .video video {
-	width:100%;
+	width: 100%;
 }
 
 .video {
-	max-width:100%;
-	overflow:hidden;
-	position:fixed;
-	opacity:0;
-	-webkit-transform:translate(500%,0%);
-	transform:translate(500%,0%);
+	max-width: 100%;
+	overflow: hidden;
+	position: fixed;
+	opacity: 0;
+	-webkit-transform: translate(500%,0%);
+	transform: translate(500%,0%);
 }
 
 .video .overlay {
-	z-index:0;
-	background-color:#000;
+	z-index: 0;
+	background-color: #000;
 }
 
 .video .container {
-	position:relative;
-	top:50%;
-	transform:translateY(-50%);
-	-webkit-transform:translateY(-50%);
-	z-index:1;
-	max-height:calc(100% - 100px);
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	z-index: 1;
+	max-height: calc(100% - 100px);
 }
 
 .close-video-modal {
-	position:absolute;
-	top:-40px;
+	position: absolute;
+	top: -40px;
 }
 
 .show-video-modal .video {
-	opacity:1;
-	transform:translate(0%,0%);
-	-webkit-transform:translate(0%,0%);
+	opacity: 1;
+	transform: translate(0%,0%);
+	-webkit-transform: translate(0%,0%);
 }
 
 .show-video-modal .video .overlay {
-	opacity:1;
+	opacity: 1;
 }
