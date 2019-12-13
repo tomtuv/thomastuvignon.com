@@ -203,6 +203,11 @@ footer .contact {
 
 footer .contact a {
 	color: #000;
+	transition: opacity 250ms;
+}
+
+footer .contact a:hover {
+	opacity: 0.6;
 }
 
 footer .contact .fa {
