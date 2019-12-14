@@ -29,16 +29,13 @@
 	a {
 		display: block;
 		
-		figure {
-			transition: transform .2s;
-		}
-		
-		&:hover figure {
+		&:hover img {
 			transform: scale(1.05);
 		}
 		
 		img {
 			border-radius: 8px;
+			transition: transform 250ms;
 			
 			@media (max-width: 767.98px) {
 				border-radius: 4px;
