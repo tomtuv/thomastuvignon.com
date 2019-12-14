@@ -1,0 +1,23 @@
+.container {
+	padding: 0 48px;
+	
+	@media (max-width: 767.98px) {
+		padding: 0 24px;
+	}
+}
+
+.row {
+	margin: 0 -24px;
+	
+	@media (max-width: 767.98px) {
+		margin: 0 -12px;
+	}
+}
+
+[class*="col-"] {
+	padding: 0 24px;
+	
+	@media (max-width: 767.98px) {
+		padding: 0 12px;
+	}
+}
