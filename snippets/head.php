@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="<?php echo $root; ?>css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="<?php echo $root; ?>css/aos.css">
 		<link rel="stylesheet" href="<?php echo $root; ?>css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
 		<script src="https://use.fontawesome.com/8a847f2d70.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83807816-2"></script>
 		<script>
