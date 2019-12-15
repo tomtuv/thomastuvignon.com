@@ -33,14 +33,20 @@
 			&:hover {
 				opacity: 0.6;
 			}
-		}
-		
-		.fa {
-			font-size: 28px;
-			vertical-align: middle;
 			
-			@media (max-width: 767.98px) {
-				font-size: 24px;
+			.fa {
+				font-size: 28px;
+				vertical-align: middle;
+				
+				@media (max-width: 767.98px) {
+					font-size: 24px;
+				}
+			}
+			
+			span {
+				display: inline-block;
+				white-space: nowrap;
+				text-indent: -9999px;
 			}
 		}
 	}

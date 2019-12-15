@@ -1,5 +1,7 @@
 // animations
-AOS.init();
+AOS.init({
+	offset: 50
+});
 
 // bubbles
 $(window).bind('scroll', function() {
