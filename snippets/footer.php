@@ -22,7 +22,7 @@
 			</div>
 		</footer>
 		
-		<script src="<?php echo $root ?>js/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo $root ?>js/jquery-3.4.1.min.js"></script>
 		<script src="<?php echo $root ?>js/aos.js"></script>
 		<script src="<?php echo $root ?>js/script.js"></script>
 	</body>
