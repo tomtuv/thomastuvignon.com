@@ -1,6 +1,6 @@
 <?php include 'snippets/head.php'; ?>
 
-<header class="header intro">
+<header class="intro">
 	<?php include 'snippets/bubbles.php'; ?>
 	
 	<div class="container">
@@ -33,7 +33,7 @@
 	</div>
 </header>
 
-<section class="section">
+<section>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-6">

@@ -6,7 +6,7 @@ $description = 'Wireframe, maquette graphique et développement web.';
 
 <?php include $root . 'snippets/head.php'; ?>
 
-<header class="header">
+<header>
 	<?php include $root . 'snippets/bubbles.php'; ?>
 	
 	<div class="container">
@@ -19,7 +19,7 @@ $description = 'Wireframe, maquette graphique et développement web.';
 	</div>
 </header>
 	
-<section class="section">
+<section>
 	<div class="container">
 		<article>
 			<div class="row">
@@ -48,9 +48,7 @@ $description = 'Wireframe, maquette graphique et développement web.';
 			</div>
 		</article>
 				
-		<footer>
-			<a href="<?php echo $root; ?>" class="back">Retour</a>
-		</footer>
+		<p><a href="<?php echo $root; ?>" class="back">Retour</a></p>
 	</div>
 </section>
 

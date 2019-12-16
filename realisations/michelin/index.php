@@ -6,7 +6,7 @@ $description = 'Site de ressources marketing Michelin Brands Center.';
 
 <?php include $root . 'snippets/head.php'; ?>
 
-<header class="header">
+<header>
 	<?php include $root . 'snippets/bubbles.php'; ?>
 	
 	<div class="container">
@@ -19,7 +19,7 @@ $description = 'Site de ressources marketing Michelin Brands Center.';
 	</div>
 </header>
 	
-<section class="section">
+<section>
 	<div class="container">
 		<article>
 			<div class="row">
@@ -62,9 +62,7 @@ $description = 'Site de ressources marketing Michelin Brands Center.';
 			</div>
 		</article>
 				
-		<footer>
-			<a href="<?php echo $root; ?>" class="back">Retour</a>
-		</footer>
+		<p><a href="<?php echo $root; ?>" class="back">Retour</a></p>
 	</div>
 </section>
 

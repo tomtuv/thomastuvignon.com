@@ -1,4 +1,4 @@
-.section {
+section {
 	padding: 104px 0 56px;
 	
 	@media (max-width: 767.98px) {
@@ -69,14 +69,14 @@
 				margin-bottom: 24px;
 			}
 		}
-	}
-	
-	footer {
-		text-align: center;
-		padding-bottom: 48px;
 		
-		@media (max-width: 767.98px) {
-			padding-bottom: 24px;
+		+ p {
+			text-align: center;
+			padding-bottom: 48px;
+			
+			@media (max-width: 767.98px) {
+				padding-bottom: 24px;
+			}			
 		}
 	}
 }

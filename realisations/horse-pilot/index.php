@@ -6,7 +6,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 
 <?php include $root . 'snippets/head.php'; ?>
 
-<header class="header">
+<header>
 	<?php include $root . 'snippets/bubbles.php'; ?>
 	
 	<div class="container">
@@ -19,7 +19,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 	</div>
 </header>
 	
-<section class="section">
+<section>
 	<div class="container">
 		<article>
 			<div class="row">
@@ -85,9 +85,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 			</div>
 		</article>
 				
-		<footer>
-			<a href="<?php echo $root; ?>" class="back">Retour</a>
-		</footer>
+		<p><a href="<?php echo $root; ?>" class="back">Retour</a></p>
 	</div>
 </section>
 

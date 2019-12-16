@@ -1,4 +1,4 @@
-		<footer class="footer">
+		<footer>
 			<div class="container">
 				<ul>
 					<li>
