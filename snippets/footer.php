@@ -16,7 +16,7 @@
 					<li>
 						<a href="mailto:contact@thomastuvignon.com"><i class="fa fa-envelope" aria-hidden="true"></i><span>E-mail</span></a>
 					</li>
-				</div>
+				</ul>
 				
 				<p>© 2019 Thomas Tuvignon</p>
 			</div>
