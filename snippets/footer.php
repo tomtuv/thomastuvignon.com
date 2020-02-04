@@ -18,7 +18,7 @@
 					</li>
 				</ul>
 				
-				<p>© 2019 Thomas Tuvignon</p>
+				<p>© 2020 Thomas Tuvignon</p>
 			</div>
 		</footer>
 		
