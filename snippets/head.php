@@ -11,8 +11,8 @@
 		<meta property="og:image" content="https://thomastuvignon.com/images/cv.jpg">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="<?php if (isset($title)) echo $title . ' | Thomas Tuvignon – Intégrateur web chez Ultrō'; else echo 'Thomas Tuvignon – Intégrateur web chez Ultrō'; ?>">
-		<meta property="twitter:description" content="<?php if (isset($description)) echo $description; else echo 'Intégration web. Design graphique. Motion design. Prototypage.'; ?>">
-		<meta property="twitter:image" content="https://thomastuvignon.com/images/cv.jpg">
+		<meta name="twitter:description" content="<?php if (isset($description)) echo $description; else echo 'Intégration web. Design graphique. Motion design. Prototypage.'; ?>">
+		<meta name="twitter:image" content="https://thomastuvignon.com/images/cv.jpg">
 		<link rel="apple-touch-icon" href="<?php echo $root; ?>images/apple-touch-icon.png">
 		<link rel="icon" href="<?php echo $root ?>images/favicon.png">
 		<link rel="stylesheet" href="<?php echo $root; ?>css/bootstrap-grid.min.css">
