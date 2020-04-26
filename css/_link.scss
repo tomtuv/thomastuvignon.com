@@ -4,8 +4,13 @@ a {
 	font-weight: 500;
 	text-decoration: none;
 	
-	@media (max-width: 991.98px) {
+	@include media-breakpoint-down(lg) {
 		font-size: 16px;
+	}
+	
+	&:hover {
+		color: unset;
+		text-decoration: none;
 	}
 }
 
@@ -42,7 +47,7 @@ a {
 		right: 14px;
 	}
 	
-	@media (max-width: 991.98px) {
+	@include media-breakpoint-down(lg) {
 		font-size: 16px;
 	}
 }

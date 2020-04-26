@@ -1,0 +1,17 @@
+{
+  "name": "thomas-tuvignon",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtuv/thomas-tuvignon.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

@@ -1,7 +1,7 @@
 .container {
 	padding: 0 48px;
 	
-	@media (max-width: 767.98px) {
+	@include media-breakpoint-down(md) {
 		padding: 0 24px;
 	}
 }
@@ -9,7 +9,7 @@
 .row {
 	margin: 0 -24px;
 	
-	@media (max-width: 767.98px) {
+	@include media-breakpoint-down(md) {
 		margin: 0 -12px;
 	}
 }
@@ -17,7 +17,7 @@
 [class*="col-"] {
 	padding: 0 24px;
 	
-	@media (max-width: 767.98px) {
+	@include media-breakpoint-down(md) {
 		padding: 0 12px;
 	}
 }

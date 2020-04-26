@@ -22,8 +22,6 @@
 			</div>
 		</footer>
 		
-		<script src="<?php echo $root ?>js/jquery-3.4.1.min.js"></script>
-		<script src="<?php echo $root ?>js/aos.js"></script>
-		<script src="<?php echo $root ?>js/script.js"></script>
+		<script src="<?php echo $root ?>js/bundle.js"></script>
 	</body>
 </html>

@@ -15,11 +15,7 @@
 		<meta name="twitter:image" content="https://thomastuvignon.com/images/cv.jpg">
 		<link rel="apple-touch-icon" href="<?php echo $root; ?>images/apple-touch-icon.png">
 		<link rel="icon" href="<?php echo $root ?>images/favicon.png">
-		<link rel="stylesheet" href="<?php echo $root; ?>css/bootstrap-grid.min.css">
-		<link rel="stylesheet" href="<?php echo $root; ?>css/aos.css">
 		<link rel="stylesheet" href="<?php echo $root; ?>css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
-		<script src="https://use.fontawesome.com/8a847f2d70.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83807816-2"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
