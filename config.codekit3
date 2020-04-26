@@ -9,21 +9,11 @@
 	],
 "creatorBuild": "32001",
 "files": {
-	"/.nova/Configuration.json": {
-		"ft": 524288,
+	"/.nova": {
+		"ft": 65536,
 		"oA": 1,
-		"oAP": "/.nova/Configuration-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/.nova/Publishing/Thomas Tuvignon.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/.nova/Publishing/Thomas Tuvignon-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
+		"oAP": "/build/.nova",
+		"oF": 0
 		},
 	"/css/_base.scss": {
 		"aP": 0,
@@ -228,6 +218,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/easybike.png": {
+		"ft": 32768,
+		"iS": 20908,
+		"oA": 0,
+		"oAP": "/images/easybike.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1473,6 +1474,25 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/realisations/easybike-group/index.php",
+		"oF": 0
+		},
+	"/realisations/easybike/easybike-1.jpg": {
+		"ft": 16384,
+		"iS": 2950573,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/realisations/easybike/Easybike (2020-04-26 21-05-57).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/realisations/easybike/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/realisations/easybike/index.php",
 		"oF": 0
 		},
 	"/realisations/horse-pilot/horse-pilot-1.jpg": {
@@ -43515,7 +43535,7 @@
 	"rollupExternals": "",
 	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
 	"rollupTreeshakingEnabled": 1,
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules, /.nova",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,

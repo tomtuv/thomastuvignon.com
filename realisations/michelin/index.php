@@ -25,7 +25,7 @@ $description = 'Site de ressources marketing Michelin Brands Center.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Site de ressources marketing Michelin Brands Center</h2>
-					<p>Alternance chez Ultrō, 2017-2018</p>
+					<p>Ultrō, 2017-2020</p>
 					<ul>
 						<li>WordPress : saisie de contenu.</li>
 						<li>Photoshop : création de vignettes.</li>
@@ -46,7 +46,7 @@ $description = 'Site de ressources marketing Michelin Brands Center.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Module de téléchargement du site Michelin Brands Center</h2>
-					<p>Alternance chez Ultrō, 2018</p>
+					<p>Ultrō, 2018</p>
 					<ul>
 						<li>Sketch : maquette graphique.</li>
 					</ul>

@@ -25,7 +25,7 @@ $description = 'Site one-page de la marque de jeans 19.91.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Site de la marque de jeans 19.91</h2>
-					<p>Alternance chez Ultrō, 2018</p>
+					<p>Ultrō, 2018</p>
 					<ul>
 						<li>Webflow : intégration web.</li>
 					</ul>

@@ -25,7 +25,7 @@ $description = 'Site du groupe Easybike.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Site du groupe Easybike</h1>
-					<p>Alternance chez Ultrō, 2019</p>
+					<p>Ultrō, 2019</p>
 					<ul>
 						<li>Kirby : développement web.</li>
 					</ul>

@@ -25,7 +25,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Landing page Horse Pilot</h2>
-					<p>Alternance chez Ultrō, 2018</p>
+					<p>Ultrō, 2018</p>
 					<ul>
 						<li>Webflow : intégration web.</li>
 					</ul>
@@ -46,7 +46,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Agenda Facebook Horse Pilot</h2>
-					<p>Alternance chez Ultrō, 2017</p>
+					<p>Ultrō, 2017</p>
 					<ul>
 						<li>Photoshop : maquette graphique.</li>
 						<li>WordPress : développement web.</li>
@@ -68,7 +68,7 @@ $description = 'Site de la marque de vêtements d’équitation Horse Pilot.';
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2">
 					<h2>Newsletter Horse Pilot</h2>
-					<p>Alternance chez Ultrō, 2017</p>
+					<p>Ultrō, 2017</p>
 					<ul>
 						<li>MailChimp : intégration web.</li>
 					</ul>

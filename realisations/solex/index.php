@@ -25,7 +25,7 @@ $description = 'Site de la marque de vélos Solex.';
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<h2>Site de la marque de vélos Solex</h1>
-					<p>Alternance chez Ultrō, 2018</p>
+					<p>Ultrō, 2018</p>
 					<ul>
 						<li>Kirby : développement web.</li>
 					</ul>

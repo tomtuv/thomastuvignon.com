@@ -1,7 +1,7 @@
 <?php
 $root = '../../';
-$title = 'Matra';
-$description = 'Site de la marque de vélos Matra.';
+$title = 'Easybike';
+$description = 'Site de la marque de vélos Easybike.';
 ?>
 
 <?php include $root . 'snippets/head.php'; ?>
@@ -24,19 +24,19 @@ $description = 'Site de la marque de vélos Matra.';
 		<article>
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					<h2>Site de la marque de vélos Matra</h1>
-					<p>Ultrō, 2018</p>
+					<h2>Site de la marque de vélos Easybike</h1>
+					<p>Ultrō, 2019</p>
 					<ul>
 						<li>Kirby : développement web.</li>
 					</ul>
-					<a href="https://matra.com" target="_blank" class="link">Voir le site web</a>
+					<a href="https://www.easybike.fr" target="_blank" class="link">Voir le site web</a>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-12">
 					<figure data-aos="fade-up">
-						<img src="matra-1.jpg">
+						<img src="easybike-1.jpg">
 					</figure>
 				</div>
 			</div>

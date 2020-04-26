@@ -61,6 +61,14 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
+				<a href="realisations/easybike">
+					<figure data-aos="fade-up">
+						<img src="images/easybike.png" alt="Easybike">
+					</figure>
+				</a>
+			</div>
+			
+			<div class="col-lg-4 col-6">
 				<a href="realisations/easybike-group">
 					<figure data-aos="fade-up">
 						<img src="images/easybike-group.png" alt="Easybike Group">
