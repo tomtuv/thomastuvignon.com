@@ -2,7 +2,7 @@
 
 $root = '../../';
 $title = 'Cikaba';
-$description = 'Site de la startup Cikaba.';
+$description = 'Site de la start-up Cikaba.';
 
 ?>
 
@@ -26,7 +26,7 @@ $description = 'Site de la startup Cikaba.';
 		<article>
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					<h2>Site de la startup Cikaba</h1>
+					<h2>Site de la start-up Cikaba</h1>
 					<p>Ultrō, 2020</p>
 					<ul>
 						<li>Kirby : intégration et développement web.</li>
