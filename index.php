@@ -37,7 +37,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-6">
-				<a href="realisations/easy-snowboards">
+				<a href="projects/cikaba">
+					<figure data-aos="fade-up">
+						<img src="images/cikaba.png" alt="Cikaba">
+					</figure>
+				</a>
+			</div>
+		
+			<div class="col-lg-4 col-6">
+				<a href="projects/easy-snowboards">
 					<figure data-aos="fade-up">
 						<img src="images/easy-snowboards.png" alt="Easy Snowboards">
 					</figure>
@@ -45,23 +53,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/matra">
-					<figure data-aos="fade-up">
-						<img src="images/matra.png" alt="Matra">
-					</figure>
-				</a>
-			</div>
-			
-			<div class="col-lg-4 col-6">
-				<a href="realisations/solex">
-					<figure data-aos="fade-up">
-						<img src="images/solex.png" alt="Solex">
-					</figure>
-				</a>
-			</div>
-			
-			<div class="col-lg-4 col-6">
-				<a href="realisations/easybike">
+				<a href="projects/easybike">
 					<figure data-aos="fade-up">
 						<img src="images/easybike.png" alt="Easybike">
 					</figure>
@@ -69,7 +61,23 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/easybike-group">
+				<a href="projects/solex">
+					<figure data-aos="fade-up">
+						<img src="images/solex.png" alt="Solex">
+					</figure>
+				</a>
+			</div>
+			
+			<div class="col-lg-4 col-6">
+				<a href="projects/matra">
+					<figure data-aos="fade-up">
+						<img src="images/matra.png" alt="Matra">
+					</figure>
+				</a>
+			</div>
+			
+			<div class="col-lg-4 col-6">
+				<a href="projects/easybike-group">
 					<figure data-aos="fade-up">
 						<img src="images/easybike-group.png" alt="Easybike Group">
 					</figure>
@@ -77,7 +85,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/1991">
+				<a href="projects/1991">
 					<figure data-aos="fade-up">
 						<img src="images/1991.png" alt="19.91">
 					</figure>
@@ -85,7 +93,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/hudi">
+				<a href="projects/hudi">
 					<figure data-aos="fade-up">
 						<img src="images/hudi.png" alt="Hudi">
 					</figure>
@@ -93,7 +101,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/michelin">
+				<a href="projects/michelin">
 					<figure data-aos="fade-up">
 						<img src="images/michelin.png" alt="Michelin">
 					</figure>
@@ -101,7 +109,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/horse-pilot">
+				<a href="projects/horse-pilot">
 					<figure data-aos="fade-up">
 						<img src="images/horse-pilot.png" alt="Horse Pilot">
 					</figure>
@@ -109,7 +117,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/midi-life">
+				<a href="projects/midi-life">
 					<figure data-aos="fade-up">
 						<img src="images/midi-life.png" alt="Midi Life">
 					</figure>
@@ -117,7 +125,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/paips">
+				<a href="projects/paips">
 					<figure data-aos="fade-up">
 						<img src="images/paips.png" alt="Paips">
 					</figure>
@@ -125,7 +133,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/musee-de-la-mine">
+				<a href="projects/musee-de-la-mine">
 					<figure data-aos="fade-up">
 						<img src="images/musee-de-la-mine.png" alt="Musée de la Mine">
 					</figure>
@@ -133,7 +141,7 @@
 			</div>
 			
 			<div class="col-lg-4 col-6">
-				<a href="realisations/arize-leze">
+				<a href="projects/arize-leze">
 					<figure data-aos="fade-up">
 						<img src="images/arize-leze.png" alt="Arize-Lèze">
 					</figure>

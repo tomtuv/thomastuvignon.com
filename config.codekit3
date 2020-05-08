@@ -161,8 +161,8 @@
 		"oA": 0,
 		"oAP": "/images/1991.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -172,8 +172,8 @@
 		"oA": 0,
 		"oAP": "/images/apple-touch-icon.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -183,8 +183,19 @@
 		"oA": 0,
 		"oAP": "/images/arize-leze.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/cikaba.png": {
+		"ft": 32768,
+		"iS": 24846,
+		"oA": 0,
+		"oAP": "/images/cikaba.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -196,7 +207,7 @@
 		"oAP": "/images/cv.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/images/easy-snowboards.png": {
@@ -216,8 +227,8 @@
 		"oA": 0,
 		"oAP": "/images/easybike-group.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -238,8 +249,8 @@
 		"oA": 0,
 		"oAP": "/images/favicon.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -249,8 +260,8 @@
 		"oA": 0,
 		"oAP": "/images/horse-pilot.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -260,8 +271,8 @@
 		"oA": 0,
 		"oAP": "/images/hudi.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -271,8 +282,8 @@
 		"oA": 0,
 		"oAP": "/images/matra.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -282,8 +293,8 @@
 		"oA": 0,
 		"oAP": "/images/michelin.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -293,8 +304,8 @@
 		"oA": 0,
 		"oAP": "/images/midi-life.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -304,8 +315,8 @@
 		"oA": 0,
 		"oAP": "/images/musee-de-la-mine.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -326,8 +337,8 @@
 		"oA": 0,
 		"oAP": "/images/solex.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -339,7 +350,7 @@
 		"oAP": "/images/thomas.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/index.php": {
@@ -489,32 +500,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/node_modules/bootstrap/scss/_reboot.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/_type.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_type.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/_utilities.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_utilities.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -935,227 +920,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/node_modules/bootstrap/scss/utilities/_align.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_align.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_background.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_background.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_borders.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_borders.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_clearfix.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_clearfix.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_display.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_display.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_embed.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_embed.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_flex.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_flex.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_float.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_float.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_overflow.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_overflow.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_position.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_position.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_screenreaders.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_screenreaders.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_shadows.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_shadows.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_sizing.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_sizing.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_spacing.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_spacing.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_stretched-link.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_stretched-link.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_text.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_text.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/node_modules/bootstrap/scss/utilities/_visibility.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/utilities/_visibility.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/node_modules/bootstrap/scss/vendor/_rfs.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1378,460 +1142,479 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"/realisations/1991/1991-1.jpg": {
+	"/projects/1991/1991-1.jpg": {
 		"ft": 16384,
 		"iS": 7264392,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/1991/1991-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/realisations/1991/index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/realisations/1991/index.php",
-		"oF": 0
-		},
-	"/realisations/arize-leze/arize-leze-1.jpg": {
-		"ft": 16384,
-		"iS": 229869,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/realisations/arize-leze/arize-leze-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/realisations/arize-leze/arize-leze-2.jpg": {
-		"ft": 16384,
-		"iS": 265749,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/realisations/arize-leze/arize-leze-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/realisations/arize-leze/arize-leze-3.jpg": {
-		"ft": 16384,
-		"iS": 183429,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/realisations/arize-leze/arize-leze-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/realisations/arize-leze/index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/realisations/arize-leze/index.php",
-		"oF": 0
-		},
-	"/realisations/easy-snowboards/easy-snowboards-1.jpg": {
-		"ft": 16384,
-		"iS": 3034133,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/realisations/easy-snowboards/easy-snowboards-1.jpg",
+		"oAP": "/projects/1991/1991-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
 		"q": 100
 		},
-	"/realisations/easy-snowboards/index.php": {
+	"/projects/1991/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/easy-snowboards/index.php",
+		"oAP": "/projects/1991/index.php",
 		"oF": 0
 		},
-	"/realisations/easybike-group/easybike-group-1.jpg": {
+	"/projects/arize-leze/arize-leze-1.jpg": {
+		"ft": 16384,
+		"iS": 229869,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/projects/arize-leze/arize-leze-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/projects/arize-leze/arize-leze-2.jpg": {
+		"ft": 16384,
+		"iS": 265749,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/projects/arize-leze/arize-leze-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/projects/arize-leze/arize-leze-3.jpg": {
+		"ft": 16384,
+		"iS": 183429,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/projects/arize-leze/arize-leze-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/projects/arize-leze/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/projects/arize-leze/index.php",
+		"oF": 0
+		},
+	"/projects/cikaba/cikaba-1.jpg": {
+		"ft": 16384,
+		"iS": 5438747,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/projects/cikaba/cikaba-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/projects/cikaba/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/projects/cikaba/index.php",
+		"oF": 0
+		},
+	"/projects/easy-snowboards/easy-snowboards-1.jpg": {
 		"ft": 16384,
 		"iS": 3034133,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/easybike-group/easybike-group-1.jpg",
+		"oAP": "/projects/easy-snowboards/easy-snowboards-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/easybike-group/index.php": {
+	"/projects/easy-snowboards/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/easybike-group/index.php",
+		"oAP": "/projects/easy-snowboards/index.php",
 		"oF": 0
 		},
-	"/realisations/easybike/easybike-1.jpg": {
+	"/projects/easybike-group/easybike-group-1.jpg": {
+		"ft": 16384,
+		"iS": 3034133,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/projects/easybike-group/easybike-group-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/projects/easybike-group/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/projects/easybike-group/index.php",
+		"oF": 0
+		},
+	"/projects/easybike/easybike-1.jpg": {
 		"ft": 16384,
 		"iS": 2950573,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/easybike/Easybike (2020-04-26 21-05-57).jpg",
+		"oAP": "/projects/easybike/easybike-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/easybike/index.php": {
+	"/projects/easybike/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/easybike/index.php",
+		"oAP": "/projects/easybike/index.php",
 		"oF": 0
 		},
-	"/realisations/horse-pilot/horse-pilot-1.jpg": {
+	"/projects/horse-pilot/horse-pilot-1.jpg": {
 		"ft": 16384,
 		"iS": 4305503,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/horse-pilot/horse-pilot-1.jpg",
+		"oAP": "/projects/horse-pilot/horse-pilot-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/horse-pilot/horse-pilot-2.jpg": {
+	"/projects/horse-pilot/horse-pilot-2.jpg": {
 		"ft": 16384,
 		"iS": 618634,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/horse-pilot/horse-pilot-2.jpg",
+		"oAP": "/projects/horse-pilot/horse-pilot-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/horse-pilot/horse-pilot-3.jpg": {
+	"/projects/horse-pilot/horse-pilot-3.jpg": {
 		"ft": 16384,
 		"iS": 1081239,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/horse-pilot/horse-pilot-3.jpg",
+		"oAP": "/projects/horse-pilot/horse-pilot-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/horse-pilot/index.php": {
+	"/projects/horse-pilot/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/horse-pilot/index.php",
+		"oAP": "/projects/horse-pilot/index.php",
 		"oF": 0
 		},
-	"/realisations/hudi/hudi-1.jpg": {
+	"/projects/hudi/hudi-1.jpg": {
 		"ft": 16384,
 		"iS": 1756959,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/hudi/hudi-1.jpg",
+		"oAP": "/projects/hudi/hudi-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/hudi/index.php": {
+	"/projects/hudi/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/hudi/index.php",
+		"oAP": "/projects/hudi/index.php",
 		"oF": 0
 		},
-	"/realisations/matra/index.php": {
+	"/projects/matra/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/matra/index.php",
+		"oAP": "/projects/matra/index.php",
 		"oF": 0
 		},
-	"/realisations/matra/matra-1.jpg": {
+	"/projects/matra/matra-1.jpg": {
 		"ft": 16384,
 		"iS": 1758245,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/matra/matra-1.jpg",
+		"oAP": "/projects/matra/matra-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/michelin/index.php": {
+	"/projects/michelin/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/michelin/index.php",
+		"oAP": "/projects/michelin/index.php",
 		"oF": 0
 		},
-	"/realisations/michelin/michelin-1.jpg": {
+	"/projects/michelin/michelin-1.jpg": {
 		"ft": 16384,
 		"iS": 809102,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/michelin/michelin-1.jpg",
+		"oAP": "/projects/michelin/michelin-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/michelin/michelin-2.jpg": {
+	"/projects/michelin/michelin-2.jpg": {
 		"ft": 16384,
 		"iS": 962596,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/michelin/michelin-2.jpg",
+		"oAP": "/projects/michelin/michelin-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/index.php": {
+	"/projects/midi-life/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/index.php",
+		"oAP": "/projects/midi-life/index.php",
 		"oF": 0
 		},
-	"/realisations/midi-life/midi-life-1.jpg": {
+	"/projects/midi-life/midi-life-1.jpg": {
 		"ft": 16384,
 		"iS": 137718,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-1.jpg",
+		"oAP": "/projects/midi-life/midi-life-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-2.jpg": {
+	"/projects/midi-life/midi-life-2.jpg": {
 		"ft": 16384,
 		"iS": 175004,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-2.jpg",
+		"oAP": "/projects/midi-life/midi-life-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-3.jpg": {
+	"/projects/midi-life/midi-life-3.jpg": {
 		"ft": 16384,
 		"iS": 166007,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-3.jpg",
+		"oAP": "/projects/midi-life/midi-life-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-4.jpg": {
+	"/projects/midi-life/midi-life-4.jpg": {
 		"ft": 16384,
 		"iS": 164247,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-4.jpg",
+		"oAP": "/projects/midi-life/midi-life-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-5.jpg": {
+	"/projects/midi-life/midi-life-5.jpg": {
 		"ft": 16384,
 		"iS": 207484,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-5.jpg",
+		"oAP": "/projects/midi-life/midi-life-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-6.jpg": {
+	"/projects/midi-life/midi-life-6.jpg": {
 		"ft": 16384,
 		"iS": 245524,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-6.jpg",
+		"oAP": "/projects/midi-life/midi-life-6.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-7.jpg": {
+	"/projects/midi-life/midi-life-7.jpg": {
 		"ft": 16384,
 		"iS": 153778,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-7.jpg",
+		"oAP": "/projects/midi-life/midi-life-7.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-8.jpg": {
+	"/projects/midi-life/midi-life-8.jpg": {
 		"ft": 16384,
 		"iS": 81800,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-8.jpg",
+		"oAP": "/projects/midi-life/midi-life-8.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/midi-life/midi-life-9.jpg": {
+	"/projects/midi-life/midi-life-9.jpg": {
 		"ft": 16384,
 		"iS": 198955,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/midi-life/midi-life-9.jpg",
+		"oAP": "/projects/midi-life/midi-life-9.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/musee-de-la-mine/index.php": {
+	"/projects/musee-de-la-mine/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/musee-de-la-mine/index.php",
+		"oAP": "/projects/musee-de-la-mine/index.php",
 		"oF": 0
 		},
-	"/realisations/musee-de-la-mine/musee-de-la-mine-1.jpg": {
+	"/projects/musee-de-la-mine/musee-de-la-mine-1.jpg": {
 		"ft": 16384,
 		"iS": 1692705,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/musee-de-la-mine/musee-de-la-mine-1.jpg",
+		"oAP": "/projects/musee-de-la-mine/musee-de-la-mine-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/musee-de-la-mine/musee-de-la-mine-2.jpg": {
+	"/projects/musee-de-la-mine/musee-de-la-mine-2.jpg": {
 		"ft": 16384,
 		"iS": 844644,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/musee-de-la-mine/musee-de-la-mine-2.jpg",
+		"oAP": "/projects/musee-de-la-mine/musee-de-la-mine-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/index.php": {
+	"/projects/paips/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/index.php",
+		"oAP": "/projects/paips/index.php",
 		"oF": 0
 		},
-	"/realisations/paips/paips-1.jpg": {
+	"/projects/paips/paips-1.jpg": {
 		"ft": 16384,
 		"iS": 81528,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-1.jpg",
+		"oAP": "/projects/paips/paips-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/paips-2.jpg": {
+	"/projects/paips/paips-2.jpg": {
 		"ft": 16384,
 		"iS": 91908,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-2.jpg",
+		"oAP": "/projects/paips/paips-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/paips-3.jpg": {
+	"/projects/paips/paips-3.jpg": {
 		"ft": 16384,
 		"iS": 110526,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-3.jpg",
+		"oAP": "/projects/paips/paips-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/paips-4.jpg": {
+	"/projects/paips/paips-4.jpg": {
 		"ft": 16384,
 		"iS": 116989,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-4.jpg",
+		"oAP": "/projects/paips/paips-4.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/paips-5.jpg": {
+	"/projects/paips/paips-5.jpg": {
 		"ft": 16384,
 		"iS": 79918,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-5.jpg",
+		"oAP": "/projects/paips/paips-5.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/paips/paips-6.jpg": {
+	"/projects/paips/paips-6.jpg": {
 		"ft": 16384,
 		"iS": 69607,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/paips/paips-6.jpg",
+		"oAP": "/projects/paips/paips-6.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
-	"/realisations/solex/index.php": {
+	"/projects/solex/index.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/realisations/solex/index.php",
+		"oAP": "/projects/solex/index.php",
 		"oF": 0
 		},
-	"/realisations/solex/solex-1.jpg": {
+	"/projects/solex/solex-1.jpg": {
 		"ft": 16384,
 		"iS": 2162757,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/realisations/solex/solex-1.jpg",
+		"oAP": "/projects/solex/solex-1.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/sites/arize-leze/.nova/Configuration.json": {
