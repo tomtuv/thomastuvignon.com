@@ -1,8 +1,0 @@
-# Ignorer tout
-*
-
-# Exceptions
-!.gitignore
-!/wp-content/themes/museedelamine/
-!/wp-content/themes/museedelamine/*
-!/wp-content/themes/museedelamine/*/*

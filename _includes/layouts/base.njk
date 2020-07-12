@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <title>{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+    <meta property="og:description" content="{{ description or metadata.description }}">
+    <meta property="og:image" content="https://thomastuvignon.com/images/cv.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+    <meta name="twitter:description" content="{{ description or metadata.description }}">
+    <meta name="twitter:image" content="https://thomastuvignon.com/images/cv.jpg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png' | url }}">
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83807816-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-83807816-2');
+    </script>
+  </head>
+
+  <body>
+    {{ content | safe }}
+
+    <footer>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/thomastuvignon" target="_blank" rel="noopener"><i class="fa fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/tomtuv" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/tomtuv" target="_blank" rel="noopener"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+          </li>
+          <li>
+            <a href="https://github.com/tomtuv" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+          </li>
+          <li>
+            <a href="mailto:contact@thomastuvignon.com"><i class="fa fa-envelope" aria-hidden="true"></i><span>E-mail</span></a>
+          </li>
+        </ul>
+
+        <p>© {% year %} Thomas Tuvignon</p>
+      </div>
+    </footer>
+
+    <script src="/js/bundle.js"></script>
+  </body>
+</html>

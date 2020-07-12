@@ -1,0 +1,69 @@
+header {
+  text-align: center;
+  padding: 120px 0;
+  overflow: hidden;
+  color: #fff;
+  background-color: #31185a;
+
+  @include media-breakpoint-down(md) {
+    padding: 56px 0;
+  }
+
+  a {
+    color: #fff;
+
+    + h1 {
+      margin: 20px 0 0;
+    }
+  }
+
+  figure {
+    width: 170px;
+    margin-right: 40px;
+    float: left;
+
+    @include media-breakpoint-down(lg) {
+      width: 160px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 130px;
+      float: none;
+      margin: 0 auto 24px;
+    }
+  }
+
+  img {
+    border-radius: 100%;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 18px;
+    }
+  }
+
+  &.intro {
+    padding: 160px 0;
+    text-align: left;
+
+    @include media-breakpoint-down(md) {
+      padding: 104px 0;
+      text-align: center;
+    }
+  }
+}
