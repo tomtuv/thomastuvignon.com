@@ -1,0 +1,44 @@
+.video,
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.video {
+  max-width: 100%;
+  overflow: hidden;
+  position: fixed;
+  display: none;
+
+  video {
+    width: 100%;
+  }
+
+  .overlay {
+    z-index: 0;
+    background-color: #000;
+  }
+
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-35%);
+    z-index: 1;
+    transition: transform 250ms;
+  }
+
+  .close-video-modal {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.show-video-modal .video .container {
+  transform: translateY(-50%);
+}

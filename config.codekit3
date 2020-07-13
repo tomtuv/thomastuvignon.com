@@ -13,9 +13,9 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/.editorconfig",
-		"oF": 0
+		"oA": 1,
+		"oAP": "/dist/.editorconfig",
+		"oF": 1
 		},
 	"/.eleventy.js": {
 		"bF": 0,
@@ -23,7 +23,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/.eleventy-min.js",
+		"oAP": "/dist/bundle.js",
 		"oF": 1,
 		"sC": 3,
 		"tS": 0
@@ -32,1751 +32,27 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/.gitignore",
-		"oF": 0
+		"oA": 1,
+		"oAP": "/dist/.gitignore",
+		"oF": 1
 		},
 	"/.nova": {
 		"ft": 65536,
 		"oA": 1,
-		"oAP": "/build/.nova",
+		"oAP": "/dist/.nova",
 		"oF": 0
 		},
-	"/_data/metadata.json": {
-		"ft": 524288,
+	"/dist": {
+		"ft": 65536,
 		"oA": 1,
-		"oAP": "/_data/metadata-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/_includes/bubbles.njk": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/bubbles.njk",
+		"oAP": "/dist/dist",
 		"oF": 0
-		},
-	"/_includes/layouts/base.njk": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/layouts/base.njk",
-		"oF": 0
-		},
-	"/_includes/layouts/home.njk": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/layouts/home.njk",
-		"oF": 0
-		},
-	"/_includes/layouts/project.njk": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_includes/layouts/project.njk",
-		"oF": 0
-		},
-	"/_site/css/_base.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_base.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_bubbles.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_bubbles.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_footer.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_footer.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_header.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_header.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_link.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_link.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_section.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_section.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_variables.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/_video.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_site/css/_video.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/css/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_site/css/style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/_site/css/style.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/_site/css/style.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/_site/fonts/fontawesome-webfont.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/fonts/fontawesome-webfont.eot",
-		"oF": 0
-		},
-	"/_site/fonts/fontawesome-webfont.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/_site/fonts/fontawesome-webfont.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/_site/fonts/fontawesome-webfont.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/fonts/fontawesome-webfont.ttf",
-		"oF": 0
-		},
-	"/_site/fonts/fontawesome-webfont.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/fonts/fontawesome-webfont.woff",
-		"oF": 0
-		},
-	"/_site/fonts/fontawesome-webfont.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/fonts/fontawesome-webfont.woff2",
-		"oF": 0
-		},
-	"/_site/fonts/FontAwesome.otf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/fonts/FontAwesome.otf",
-		"oF": 0
-		},
-	"/_site/images/1991-1.jpg": {
-		"ft": 16384,
-		"iS": 7081864,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/1991-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/1991.png": {
-		"ft": 32768,
-		"iS": 6114,
-		"oA": 0,
-		"oAP": "/_site/images/1991.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/apple-touch-icon.png": {
-		"ft": 32768,
-		"iS": 2756,
-		"oA": 0,
-		"oAP": "/_site/images/apple-touch-icon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/arize-leze-1.jpg": {
-		"ft": 16384,
-		"iS": 205564,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/arize-leze-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/arize-leze-2.jpg": {
-		"ft": 16384,
-		"iS": 243847,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/arize-leze-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/arize-leze-3.jpg": {
-		"ft": 16384,
-		"iS": 167427,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/arize-leze-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/arize-leze.png": {
-		"ft": 32768,
-		"iS": 133975,
-		"oA": 0,
-		"oAP": "/_site/images/arize-leze.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/cikaba-1.jpg": {
-		"ft": 16384,
-		"iS": 3735210,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/cikaba-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/cikaba.png": {
-		"ft": 32768,
-		"iS": 10455,
-		"oA": 0,
-		"oAP": "/_site/images/cikaba.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/cv.jpg": {
-		"ft": 16384,
-		"iS": 59188,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/cv.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/easy-snowboards-1.jpg": {
-		"ft": 16384,
-		"iS": 1506264,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/easy-snowboards-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/easy-snowboards.png": {
-		"ft": 32768,
-		"iS": 9250,
-		"oA": 0,
-		"oAP": "/_site/images/easy-snowboards.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/easybike-1.jpg": {
-		"ft": 16384,
-		"iS": 2769017,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/easybike-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/easybike-group-1.jpg": {
-		"ft": 16384,
-		"iS": 2871737,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/easybike-group-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/easybike-group.png": {
-		"ft": 32768,
-		"iS": 4134,
-		"oA": 0,
-		"oAP": "/_site/images/easybike-group.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/easybike.png": {
-		"ft": 32768,
-		"iS": 8343,
-		"oA": 0,
-		"oAP": "/_site/images/easybike.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/favicon.png": {
-		"ft": 32768,
-		"iS": 1069,
-		"oA": 0,
-		"oAP": "/_site/images/favicon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/horse-pilot-1.jpg": {
-		"ft": 16384,
-		"iS": 3057641,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/horse-pilot-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/horse-pilot-2.jpg": {
-		"ft": 16384,
-		"iS": 582511,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/horse-pilot-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/horse-pilot-3.jpg": {
-		"ft": 16384,
-		"iS": 1033052,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/horse-pilot-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/horse-pilot.png": {
-		"ft": 32768,
-		"iS": 5534,
-		"oA": 0,
-		"oAP": "/_site/images/horse-pilot.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/hudi-1.jpg": {
-		"ft": 16384,
-		"iS": 1639047,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/hudi-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/hudi.png": {
-		"ft": 32768,
-		"iS": 3472,
-		"oA": 0,
-		"oAP": "/_site/images/hudi.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/matra-1.jpg": {
-		"ft": 16384,
-		"iS": 1689399,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/matra-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/matra.png": {
-		"ft": 32768,
-		"iS": 8351,
-		"oA": 0,
-		"oAP": "/_site/images/matra.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/michelin-1.jpg": {
-		"ft": 16384,
-		"iS": 669087,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/michelin-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/michelin-2.jpg": {
-		"ft": 16384,
-		"iS": 820912,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/michelin-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/michelin.png": {
-		"ft": 32768,
-		"iS": 13553,
-		"oA": 0,
-		"oAP": "/_site/images/michelin.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/midi-life-1.jpg": {
-		"ft": 16384,
-		"iS": 132453,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-2.jpg": {
-		"ft": 16384,
-		"iS": 170504,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-3.jpg": {
-		"ft": 16384,
-		"iS": 161573,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-4.jpg": {
-		"ft": 16384,
-		"iS": 160041,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-5.jpg": {
-		"ft": 16384,
-		"iS": 201878,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-6.jpg": {
-		"ft": 16384,
-		"iS": 236353,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-6.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-7.jpg": {
-		"ft": 16384,
-		"iS": 149862,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-7.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-8.jpg": {
-		"ft": 16384,
-		"iS": 74965,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-8.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life-9.jpg": {
-		"ft": 16384,
-		"iS": 190686,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life-9.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/midi-life.png": {
-		"ft": 32768,
-		"iS": 9699,
-		"oA": 0,
-		"oAP": "/_site/images/midi-life.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/musee-de-la-mine-1.jpg": {
-		"ft": 16384,
-		"iS": 1627970,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/musee-de-la-mine-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/musee-de-la-mine-2.jpg": {
-		"ft": 16384,
-		"iS": 805577,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/musee-de-la-mine-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/musee-de-la-mine.png": {
-		"ft": 32768,
-		"iS": 12617,
-		"oA": 0,
-		"oAP": "/_site/images/musee-de-la-mine.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/paips-1.jpg": {
-		"ft": 16384,
-		"iS": 73611,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips-2.jpg": {
-		"ft": 16384,
-		"iS": 83553,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips-3.jpg": {
-		"ft": 16384,
-		"iS": 101498,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips-4.jpg": {
-		"ft": 16384,
-		"iS": 113512,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips-5.jpg": {
-		"ft": 16384,
-		"iS": 72141,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips-6.jpg": {
-		"ft": 16384,
-		"iS": 62615,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/paips-6.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/paips.png": {
-		"ft": 32768,
-		"iS": 12365,
-		"oA": 0,
-		"oAP": "/_site/images/paips.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/solex-1.jpg": {
-		"ft": 16384,
-		"iS": 2053377,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/solex-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/images/solex.png": {
-		"ft": 32768,
-		"iS": 12977,
-		"oA": 0,
-		"oAP": "/_site/images/solex.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/_site/images/thomas.jpg": {
-		"ft": 16384,
-		"iS": 45181,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/_site/images/thomas.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/_site/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/index.html",
-		"oF": 0
-		},
-	"/_site/js/bundle.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/_site/js/bundle.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/_site/js/main.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/_site/js/bundle.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/_site/projects/1991/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/1991/index.html",
-		"oF": 0
-		},
-	"/_site/projects/arize-leze/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/arize-leze/index.html",
-		"oF": 0
-		},
-	"/_site/projects/cikaba/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/cikaba/index.html",
-		"oF": 0
-		},
-	"/_site/projects/easy-snowboards/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/easy-snowboards/index.html",
-		"oF": 0
-		},
-	"/_site/projects/easybike-group/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/easybike-group/index.html",
-		"oF": 0
-		},
-	"/_site/projects/easybike/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/easybike/index.html",
-		"oF": 0
-		},
-	"/_site/projects/horse-pilot/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/horse-pilot/index.html",
-		"oF": 0
-		},
-	"/_site/projects/hudi/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/hudi/index.html",
-		"oF": 0
-		},
-	"/_site/projects/matra/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/matra/index.html",
-		"oF": 0
-		},
-	"/_site/projects/michelin/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/michelin/index.html",
-		"oF": 0
-		},
-	"/_site/projects/midi-life/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/midi-life/index.html",
-		"oF": 0
-		},
-	"/_site/projects/musee-de-la-mine/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/musee-de-la-mine/index.html",
-		"oF": 0
-		},
-	"/_site/projects/paips/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/paips/index.html",
-		"oF": 0
-		},
-	"/_site/projects/solex/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/projects/solex/index.html",
-		"oF": 0
-		},
-	"/_site/sitemap.xml": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/sitemap.xml",
-		"oF": 0
-		},
-	"/_site/videos/cv.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/_site/videos/cv.mp4",
-		"oF": 0
-		},
-	"/css/_base.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_base.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_bubbles.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_bubbles.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_footer.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_footer.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_header.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_header.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_link.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_link.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_section.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_section.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_variables.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/_video.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/_video.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/css/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/css/style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/css/style.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/css/style.css",
-		"oF": 0,
-		"oS": 3,
-		"sct": 1
-		},
-	"/fonts/fontawesome-webfont.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/fonts/fontawesome-webfont.eot",
-		"oF": 0
-		},
-	"/fonts/fontawesome-webfont.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/fonts/fontawesome-webfont.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/fonts/fontawesome-webfont.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/fonts/fontawesome-webfont.ttf",
-		"oF": 0
-		},
-	"/fonts/fontawesome-webfont.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/fonts/fontawesome-webfont.woff",
-		"oF": 0
-		},
-	"/fonts/fontawesome-webfont.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/fonts/fontawesome-webfont.woff2",
-		"oF": 0
-		},
-	"/fonts/FontAwesome.otf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/fonts/FontAwesome.otf",
-		"oF": 0
-		},
-	"/images/1991-1.jpg": {
-		"ft": 16384,
-		"iS": 7264392,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/1991-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/1991.png": {
-		"ft": 32768,
-		"iS": 11631,
-		"oA": 0,
-		"oAP": "/images/1991.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/apple-touch-icon.png": {
-		"ft": 32768,
-		"iS": 3826,
-		"oA": 0,
-		"oAP": "/images/apple-touch-icon.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/arize-leze-1.jpg": {
-		"ft": 16384,
-		"iS": 229869,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/arize-leze-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/arize-leze-2.jpg": {
-		"ft": 16384,
-		"iS": 265749,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/arize-leze-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/arize-leze-3.jpg": {
-		"ft": 16384,
-		"iS": 183429,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/arize-leze-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/arize-leze.png": {
-		"ft": 32768,
-		"iS": 177845,
-		"oA": 0,
-		"oAP": "/images/arize-leze.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/cikaba-1.jpg": {
-		"ft": 16384,
-		"iS": 5438747,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/cikaba-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/cikaba.png": {
-		"ft": 32768,
-		"iS": 24846,
-		"oA": 0,
-		"oAP": "/images/cikaba.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/cv.jpg": {
-		"ft": 16384,
-		"iS": 79146,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/cv.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"/images/easy-snowboards-1.jpg": {
-		"ft": 16384,
-		"iS": 3034133,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/easy-snowboards-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/easy-snowboards.png": {
-		"ft": 32768,
-		"iS": 21735,
-		"oA": 0,
-		"oAP": "/images/easy-snowboards.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/easybike-1.jpg": {
-		"ft": 16384,
-		"iS": 1758245,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/easybike-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/easybike-group-1.jpg": {
-		"ft": 16384,
-		"iS": 3034133,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/easybike-group-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/easybike-group.png": {
-		"ft": 32768,
-		"iS": 9758,
-		"oA": 0,
-		"oAP": "/images/easybike-group.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/easybike.png": {
-		"ft": 32768,
-		"iS": 20908,
-		"oA": 0,
-		"oAP": "/images/easybike.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/favicon.png": {
-		"ft": 32768,
-		"iS": 1069,
-		"oA": 0,
-		"oAP": "/images/favicon.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/horse-pilot-1.jpg": {
-		"ft": 16384,
-		"iS": 4305503,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/horse-pilot-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/horse-pilot-2.jpg": {
-		"ft": 16384,
-		"iS": 618634,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/horse-pilot-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/horse-pilot-3.jpg": {
-		"ft": 16384,
-		"iS": 1081239,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/horse-pilot-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/horse-pilot.png": {
-		"ft": 32768,
-		"iS": 10101,
-		"oA": 0,
-		"oAP": "/images/horse-pilot.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/hudi-1.jpg": {
-		"ft": 16384,
-		"iS": 1756959,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/hudi-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/hudi.png": {
-		"ft": 32768,
-		"iS": 6186,
-		"oA": 0,
-		"oAP": "/images/hudi.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/matra-1.jpg": {
-		"ft": 16384,
-		"iS": 1758245,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/matra-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/matra.png": {
-		"ft": 32768,
-		"iS": 14195,
-		"oA": 0,
-		"oAP": "/images/matra.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/michelin-1.jpg": {
-		"ft": 16384,
-		"iS": 809102,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/michelin-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/michelin-2.jpg": {
-		"ft": 16384,
-		"iS": 962596,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/michelin-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/michelin.png": {
-		"ft": 32768,
-		"iS": 28010,
-		"oA": 0,
-		"oAP": "/images/michelin.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/midi-life-1.jpg": {
-		"ft": 16384,
-		"iS": 137718,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-2.jpg": {
-		"ft": 16384,
-		"iS": 175004,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-3.jpg": {
-		"ft": 16384,
-		"iS": 166007,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-4.jpg": {
-		"ft": 16384,
-		"iS": 164247,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-5.jpg": {
-		"ft": 16384,
-		"iS": 207484,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-6.jpg": {
-		"ft": 16384,
-		"iS": 245524,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-6.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-7.jpg": {
-		"ft": 16384,
-		"iS": 153778,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-7.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-8.jpg": {
-		"ft": 16384,
-		"iS": 81800,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-8.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life-9.jpg": {
-		"ft": 16384,
-		"iS": 198955,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/midi-life-9.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/midi-life.png": {
-		"ft": 32768,
-		"iS": 19580,
-		"oA": 0,
-		"oAP": "/images/midi-life.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/musee-de-la-mine-1.jpg": {
-		"ft": 16384,
-		"iS": 1692705,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/musee-de-la-mine-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/musee-de-la-mine-2.jpg": {
-		"ft": 16384,
-		"iS": 844644,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/musee-de-la-mine-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/musee-de-la-mine.png": {
-		"ft": 32768,
-		"iS": 21572,
-		"oA": 0,
-		"oAP": "/images/musee-de-la-mine.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/paips-1.jpg": {
-		"ft": 16384,
-		"iS": 81528,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips-2.jpg": {
-		"ft": 16384,
-		"iS": 91908,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips-3.jpg": {
-		"ft": 16384,
-		"iS": 110526,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips-4.jpg": {
-		"ft": 16384,
-		"iS": 116989,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips-5.jpg": {
-		"ft": 16384,
-		"iS": 79918,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips-6.jpg": {
-		"ft": 16384,
-		"iS": 69607,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/paips-6.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/paips.png": {
-		"ft": 32768,
-		"iS": 33120,
-		"oA": 0,
-		"oAP": "/images/paips.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/solex-1.jpg": {
-		"ft": 16384,
-		"iS": 2162757,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/solex-1.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/images/solex.png": {
-		"ft": 32768,
-		"iS": 25241,
-		"oA": 0,
-		"oAP": "/images/solex.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"/images/thomas.jpg": {
-		"ft": 16384,
-		"iS": 50202,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/images/thomas.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"/index.njk": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/index.njk",
-		"oF": 0
-		},
-	"/js/bundle.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/bundle-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/js/main.js": {
-		"bF": 6,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/bundle.js",
-		"oF": 3,
-		"sC": 3,
-		"tS": 0
 		},
 	"/node_modules": {
 		"ft": 65536,
-		"oA": 2,
-		"oAP": "/build/node_modules",
-		"oF": 0
+		"oA": 1,
+		"oAP": "/dist/node_modules",
+		"oF": 1
 		},
 	"/node_modules/aos/dist/aos.js": {
 		"bF": 0,
@@ -1784,725 +60,10 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/node_modules/aos/dist/aos-min.js",
+		"oAP": "/dist/node_modules/aos/dist/bundle.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
-		},
-	"/node_modules/aos/src/sass/_animations.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/aos/src/sass/_animations.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/aos/src/sass/_core.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/aos/src/sass/_core.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/aos/src/sass/_easing.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/aos/src/sass/_easing.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/aos/src/sass/aos.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/aos/src/sass/aos.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/_functions.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_functions.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/_mixins.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_mixins.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/_reboot.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_reboot.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/_variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/_variables.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_alert.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_alert.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_background-variant.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_background-variant.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_badge.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_badge.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_border-radius.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_border-radius.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_box-shadow.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_box-shadow.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_breakpoints.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_breakpoints.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_buttons.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_buttons.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_caret.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_caret.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_clearfix.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_clearfix.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_deprecate.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_deprecate.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_float.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_float.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_forms.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_forms.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_gradients.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_gradients.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_grid-framework.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_grid-framework.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_hover.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_hover.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_image.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_image.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_list-group.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_list-group.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_lists.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_lists.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_nav-divider.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_nav-divider.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_pagination.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_pagination.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_reset-text.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_reset-text.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_resize.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_resize.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_screen-reader.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_screen-reader.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_size.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_size.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_table-row.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_table-row.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_text-emphasis.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_text-emphasis.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_text-hide.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_text-hide.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_text-truncate.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_text-truncate.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_transition.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_transition.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/mixins/_visibility.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/mixins/_visibility.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/bootstrap/scss/vendor/_rfs.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/bootstrap/scss/vendor/_rfs.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_animated.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_animated.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_bordered-pulled.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_bordered-pulled.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_core.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_core.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_fixed-width.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_fixed-width.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_icons.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_icons.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_larger.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_larger.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_list.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_list.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_mixins.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_mixins.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_path.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_path.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_rotated-flipped.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_rotated-flipped.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_screen-reader.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_screen-reader.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_stacked.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_stacked.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/_variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/_variables.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/node_modules/font-awesome/scss/font-awesome.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/node_modules/font-awesome/scss/font-awesome.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
 		},
 	"/node_modules/jquery/dist/jquery.js": {
 		"bF": 0,
@@ -2510,7 +71,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/node_modules/jquery/dist/jquery-min.js",
+		"oAP": "/dist/node_modules/jquery/dist/bundle.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2518,7 +79,7 @@
 	"/package-lock.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "/package-lock-min.json",
+		"oAP": "/dist/package-lock-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -2526,137 +87,937 @@
 	"/package.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "/package-min.json",
+		"oAP": "/dist/package-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
 		},
-	"/projects/1991.njk": {
+	"/src/_data/metadata.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/dist/_data/metadata-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/src/_includes/bubbles.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/1991.njk",
+		"oA": 1,
+		"oAP": "/dist/_includes/bubbles.njk",
 		"oF": 0
 		},
-	"/projects/arize-leze.njk": {
+	"/src/_includes/layouts/base.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/arize-leze.njk",
+		"oA": 1,
+		"oAP": "/dist/_includes/layouts/base.njk",
 		"oF": 0
 		},
-	"/projects/cikaba.njk": {
+	"/src/_includes/layouts/home.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/cikaba.njk",
+		"oA": 1,
+		"oAP": "/dist/_includes/layouts/home.njk",
 		"oF": 0
 		},
-	"/projects/easy-snowboards.njk": {
+	"/src/_includes/layouts/project.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/easy-snowboards.njk",
+		"oA": 1,
+		"oAP": "/dist/_includes/layouts/project.njk",
 		"oF": 0
 		},
-	"/projects/easybike-group.njk": {
+	"/src/css/_base.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_base.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_bubbles.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_bubbles.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_footer.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_grid.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_grid.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_link.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_link.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_main.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_main.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_variables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/_video.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/css/_video.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/css/style.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/dist/css/style.css",
+		"oF": 0,
+		"oS": 3,
+		"sct": 1
+		},
+	"/src/fonts/fontawesome-webfont.eot": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/projects/easybike-group.njk",
+		"oAP": "/dist/fonts/fontawesome-webfont.eot",
 		"oF": 0
 		},
-	"/projects/easybike.njk": {
+	"/src/fonts/fontawesome-webfont.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/dist/fonts/fontawesome-webfont.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/src/fonts/fontawesome-webfont.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/projects/easybike.njk",
+		"oAP": "/dist/fonts/fontawesome-webfont.ttf",
 		"oF": 0
 		},
-	"/projects/horse-pilot.njk": {
+	"/src/fonts/fontawesome-webfont.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/projects/horse-pilot.njk",
+		"oAP": "/dist/fonts/fontawesome-webfont.woff",
 		"oF": 0
 		},
-	"/projects/hudi.njk": {
+	"/src/fonts/fontawesome-webfont.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/projects/hudi.njk",
+		"oAP": "/dist/fonts/fontawesome-webfont.woff2",
 		"oF": 0
 		},
-	"/projects/matra.njk": {
+	"/src/fonts/FontAwesome.otf": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/projects/matra.njk",
+		"oAP": "/dist/fonts/FontAwesome.otf",
 		"oF": 0
 		},
-	"/projects/michelin.njk": {
+	"/src/images/1991-1.jpg": {
+		"ft": 16384,
+		"iS": 7264392,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/1991-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/1991.png": {
+		"ft": 32768,
+		"iS": 11631,
+		"oA": 0,
+		"oAP": "/dist/images/1991.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/apple-touch-icon.png": {
+		"ft": 32768,
+		"iS": 3826,
+		"oA": 0,
+		"oAP": "/dist/images/apple-touch-icon.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/arize-leze-1.jpg": {
+		"ft": 16384,
+		"iS": 229869,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/arize-leze-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/arize-leze-2.jpg": {
+		"ft": 16384,
+		"iS": 265749,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/arize-leze-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/arize-leze-3.jpg": {
+		"ft": 16384,
+		"iS": 183429,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/arize-leze-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/arize-leze.png": {
+		"ft": 32768,
+		"iS": 177845,
+		"oA": 0,
+		"oAP": "/dist/images/arize-leze.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/cikaba-1.jpg": {
+		"ft": 16384,
+		"iS": 5438747,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/cikaba-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/cikaba.png": {
+		"ft": 32768,
+		"iS": 24846,
+		"oA": 0,
+		"oAP": "/dist/images/cikaba.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/cv.jpg": {
+		"ft": 16384,
+		"iS": 79146,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/cv.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/easy-snowboards-1.jpg": {
+		"ft": 16384,
+		"iS": 3034133,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/easy-snowboards-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/easy-snowboards.png": {
+		"ft": 32768,
+		"iS": 21735,
+		"oA": 0,
+		"oAP": "/dist/images/easy-snowboards.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/easybike-1.jpg": {
+		"ft": 16384,
+		"iS": 1758245,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/easybike-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/easybike-group-1.jpg": {
+		"ft": 16384,
+		"iS": 3034133,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/easybike-group-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/easybike-group.png": {
+		"ft": 32768,
+		"iS": 9758,
+		"oA": 0,
+		"oAP": "/dist/images/easybike-group.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/easybike.png": {
+		"ft": 32768,
+		"iS": 20908,
+		"oA": 0,
+		"oAP": "/dist/images/easybike.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/favicon.png": {
+		"ft": 32768,
+		"iS": 1069,
+		"oA": 0,
+		"oAP": "/dist/images/favicon.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/horse-pilot-1.jpg": {
+		"ft": 16384,
+		"iS": 4305503,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/horse-pilot-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/horse-pilot-2.jpg": {
+		"ft": 16384,
+		"iS": 618634,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/horse-pilot-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/horse-pilot-3.jpg": {
+		"ft": 16384,
+		"iS": 1081239,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/horse-pilot-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/horse-pilot.png": {
+		"ft": 32768,
+		"iS": 10101,
+		"oA": 0,
+		"oAP": "/dist/images/horse-pilot.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/hudi-1.jpg": {
+		"ft": 16384,
+		"iS": 1756959,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/hudi-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/hudi.png": {
+		"ft": 32768,
+		"iS": 6186,
+		"oA": 0,
+		"oAP": "/dist/images/hudi.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/matra-1.jpg": {
+		"ft": 16384,
+		"iS": 1758245,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/matra-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/matra.png": {
+		"ft": 32768,
+		"iS": 14195,
+		"oA": 0,
+		"oAP": "/dist/images/matra.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/michelin-1.jpg": {
+		"ft": 16384,
+		"iS": 809102,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/michelin-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/michelin-2.jpg": {
+		"ft": 16384,
+		"iS": 962596,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/michelin-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/michelin.png": {
+		"ft": 32768,
+		"iS": 28010,
+		"oA": 0,
+		"oAP": "/dist/images/michelin.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-1.jpg": {
+		"ft": 16384,
+		"iS": 137718,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-2.jpg": {
+		"ft": 16384,
+		"iS": 175004,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-3.jpg": {
+		"ft": 16384,
+		"iS": 166007,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-4.jpg": {
+		"ft": 16384,
+		"iS": 164247,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-5.jpg": {
+		"ft": 16384,
+		"iS": 207484,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-6.jpg": {
+		"ft": 16384,
+		"iS": 245524,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-7.jpg": {
+		"ft": 16384,
+		"iS": 153778,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-7.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-8.jpg": {
+		"ft": 16384,
+		"iS": 81800,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-8.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life-9.jpg": {
+		"ft": 16384,
+		"iS": 198955,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life-9.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/midi-life.png": {
+		"ft": 32768,
+		"iS": 19580,
+		"oA": 0,
+		"oAP": "/dist/images/midi-life.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/musee-de-la-mine-1.jpg": {
+		"ft": 16384,
+		"iS": 1692705,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/musee-de-la-mine-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/musee-de-la-mine-2.jpg": {
+		"ft": 16384,
+		"iS": 844644,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/musee-de-la-mine-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/musee-de-la-mine.png": {
+		"ft": 32768,
+		"iS": 21572,
+		"oA": 0,
+		"oAP": "/dist/images/musee-de-la-mine.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/paips-1.jpg": {
+		"ft": 16384,
+		"iS": 81528,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips-2.jpg": {
+		"ft": 16384,
+		"iS": 91908,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips-3.jpg": {
+		"ft": 16384,
+		"iS": 110526,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips-4.jpg": {
+		"ft": 16384,
+		"iS": 116989,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips-5.jpg": {
+		"ft": 16384,
+		"iS": 79918,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips-6.jpg": {
+		"ft": 16384,
+		"iS": 69607,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/paips-6.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/paips.png": {
+		"ft": 32768,
+		"iS": 33120,
+		"oA": 0,
+		"oAP": "/dist/images/paips.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/solex-1.jpg": {
+		"ft": 16384,
+		"iS": 2162757,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/solex-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/images/solex.png": {
+		"ft": 32768,
+		"iS": 25241,
+		"oA": 0,
+		"oAP": "/dist/images/solex.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/src/images/thomas.jpg": {
+		"ft": 16384,
+		"iS": 50202,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/dist/images/thomas.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/src/index.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/michelin.njk",
+		"oA": 1,
+		"oAP": "/dist/index.njk",
 		"oF": 0
 		},
-	"/projects/midi-life.njk": {
+	"/src/js/script.js": {
+		"bF": 6,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/dist/js/script.js",
+		"oF": 3,
+		"sC": 3,
+		"tS": 0
+		},
+	"/src/projects/1991.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/midi-life.njk",
+		"oA": 1,
+		"oAP": "/dist/projects/1991.njk",
 		"oF": 0
 		},
-	"/projects/musee-de-la-mine.njk": {
+	"/src/projects/arize-leze.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/musee-de-la-mine.njk",
+		"oA": 1,
+		"oAP": "/dist/projects/arize-leze.njk",
 		"oF": 0
 		},
-	"/projects/paips.njk": {
+	"/src/projects/cikaba.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/paips.njk",
+		"oA": 1,
+		"oAP": "/dist/projects/cikaba.njk",
 		"oF": 0
 		},
-	"/projects/solex.njk": {
+	"/src/projects/easy-snowboards.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/projects/solex.njk",
+		"oA": 1,
+		"oAP": "/dist/projects/easy-snowboards.njk",
 		"oF": 0
 		},
-	"/sitemap.xml.njk": {
+	"/src/projects/easybike-group.njk": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
-		"oAP": "/sitemap.xml.njk",
+		"oA": 1,
+		"oAP": "/dist/projects/easybike-group.njk",
 		"oF": 0
 		},
-	"/videos/cv.mp4": {
+	"/src/projects/easybike.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/easybike.njk",
+		"oF": 0
+		},
+	"/src/projects/horse-pilot.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/horse-pilot.njk",
+		"oF": 0
+		},
+	"/src/projects/hudi.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/hudi.njk",
+		"oF": 0
+		},
+	"/src/projects/matra.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/matra.njk",
+		"oF": 0
+		},
+	"/src/projects/michelin.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/michelin.njk",
+		"oF": 0
+		},
+	"/src/projects/midi-life.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/midi-life.njk",
+		"oF": 0
+		},
+	"/src/projects/musee-de-la-mine.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/musee-de-la-mine.njk",
+		"oF": 0
+		},
+	"/src/projects/paips.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/paips.njk",
+		"oF": 0
+		},
+	"/src/projects/solex.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/projects/solex.njk",
+		"oF": 0
+		},
+	"/src/sitemap.xml.njk": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/dist/sitemap.xml.njk",
+		"oF": 0
+		},
+	"/src/videos/cv.mp4": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/videos/cv.mp4",
+		"oAP": "/dist/videos/cv.mp4",
 		"oF": 0
 		}
 	},
@@ -2668,8 +1029,9 @@
 	"creationDate": 596365610,
 	"displayValue": "Thomas Tuvignon",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "/_site/images/apple-touch-icon.png",
-	"iconImageWasSetByUser": 0
+	"iconImageName": "/src/images/apple-touch-icon.png",
+	"iconImageWasSetByUser": 0,
+	"lastBuiltDate": 616334658.82274795
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2963,8 +1325,8 @@
 	"bowerUseExactVersion": 0,
 	"browserRefreshDelay": 0,
 	"browserslistString": ">0.2%, last 2 versions, Firefox ESR, not dead",
-	"buildFolderActive": 0,
-	"buildFolderName": "build",
+	"buildFolderActive": 1,
+	"buildFolderName": "dist",
 	"cleanBuild": 1,
 	"coffeeLintFlags2": {
 		"arrow_spacing": {
@@ -3107,11 +1469,11 @@
 	"environmentVariablesString": "NODE_ENV:::production",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
-	"esLintEnvironmentsMask": 8193,
+	"esLintEnvironmentsMask": 1,
 	"esLintRules": {
 		"accessor-pairs": {
 			"active": 0,
-			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
+			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false, 'enforceForClassMembers': true}"
 			},
 		"array-bracket-newline": {
 			"active": 0,
@@ -3159,7 +1521,7 @@
 			},
 		"camelcase": {
 			"active": 0,
-			"optionString": "{'properties': 'always'}"
+			"optionString": "{'properties': 'always', 'ignoreDestructuring': false, 'ignoreImports': false}"
 			},
 		"capitalized-comments": {
 			"active": 0,
@@ -3187,7 +1549,7 @@
 			},
 		"computed-property-spacing": {
 			"active": 0,
-			"optionString": "'never'"
+			"optionString": "'never', {'enforceForClassMembers': true}"
 			},
 		"consistent-return": {
 			"active": 0,
@@ -3243,11 +1605,11 @@
 			},
 		"func-name-matching": {
 			"active": 0,
-			"optionString": "'always', {'includeCommonJSModuleExports': false}"
+			"optionString": "'always', {'considerPropertyDescriptor': false, 'includeCommonJSModuleExports': false}"
 			},
 		"func-names": {
 			"active": 0,
-			"optionString": "'always'"
+			"optionString": "'always', {'generators': 'always'}"
 			},
 		"func-style": {
 			"active": 0,
@@ -3291,7 +1653,7 @@
 			},
 		"id-match": {
 			"active": 0,
-			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true, 'ignoreDestructuring': false}"
 			},
 		"implicit-arrow-linebreak": {
 			"active": 0,
@@ -3383,7 +1745,7 @@
 			},
 		"new-parens": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "'always'"
 			},
 		"newline-per-chained-call": {
 			"active": 0,
@@ -3435,7 +1797,7 @@
 			},
 		"no-confusing-arrow": {
 			"active": 0,
-			"optionString": "{'allowParens': false}"
+			"optionString": "{'allowParens': true}"
 			},
 		"no-console": {
 			"active": 1,
@@ -3543,7 +1905,7 @@
 			},
 		"no-extra-parens": {
 			"active": 0,
-			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false}"
+			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false, 'enforceForSequenceExpressions': false, 'enforceForNewInMemberExpressions': false}"
 			},
 		"no-extra-semi": {
 			"active": 1,
@@ -3595,7 +1957,7 @@
 			},
 		"no-invalid-this": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'capIsConstructor': true}"
 			},
 		"no-irregular-whitespace": {
 			"active": 1,
@@ -3783,7 +2145,7 @@
 			},
 		"no-self-assign": {
 			"active": 1,
-			"optionString": "{'props': false}"
+			"optionString": "{'props': true}"
 			},
 		"no-self-compare": {
 			"active": 0,
@@ -3815,7 +2177,7 @@
 			},
 		"no-tabs": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{allowIndentationTabs: false}"
 			},
 		"no-template-curly-in-string": {
 			"active": 0,
@@ -3838,7 +2200,7 @@
 			"optionString": "{'skipBlankLines': false, 'ignoreComments': false}"
 			},
 		"no-undef": {
-			"active": 0,
+			"active": 1,
 			"optionString": "{'typeof': false}"
 			},
 		"no-undef-init": {
@@ -3851,7 +2213,7 @@
 			},
 		"no-underscore-dangle": {
 			"active": 0,
-			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'enforceInMethodNames': false}"
+			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'allowAfterThisConstructor': false, 'enforceInMethodNames': false}"
 			},
 		"no-unexpected-multiline": {
 			"active": 1,
@@ -3875,7 +2237,7 @@
 			},
 		"no-unsafe-negation": {
 			"active": 1,
-			"optionString": ""
+			"optionString": "{'enforceForOrderingRelations': false}"
 			},
 		"no-unused-expressions": {
 			"active": 0,
@@ -3907,7 +2269,7 @@
 			},
 		"no-useless-computed-key": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'enforceForClassMembers': false}"
 			},
 		"no-useless-concat": {
 			"active": 0,
@@ -3935,7 +2297,7 @@
 			},
 		"no-void": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'allowAsStatement': false}"
 			},
 		"no-warning-comments": {
 			"active": 0,
@@ -3955,7 +2317,7 @@
 			},
 		"object-curly-newline": {
 			"active": 0,
-			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
+			"optionString": "{'ObjectExpression': {'multiline': true, 'consistent': true}, 'ObjectPattern': {'multiline': true, 'consistent': true}}"
 			},
 		"object-curly-spacing": {
 			"active": 0,
@@ -4095,7 +2457,7 @@
 			},
 		"sort-keys": {
 			"active": 0,
-			"optionString": "'asc', {'caseSensitive': true, 'natural': false}"
+			"optionString": "'asc', {'caseSensitive': true, 'natural': false, 'minKeys': 2}"
 			},
 		"sort-vars": {
 			"active": 0,
@@ -4151,7 +2513,7 @@
 			},
 		"use-isnan": {
 			"active": 1,
-			"optionString": ""
+			"optionString": "{'enforceForSwitchCase': true, 'enforceForIndexOf': false}"
 			},
 		"valid-jsdoc": {
 			"active": 0,
@@ -4183,8 +2545,8 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://macbook-pro-de-thomas.local/~thomas/thomas-tuvignon/",
-	"gitIgnoreBuildFolder": 1,
+	"externalServerAddress": "http://localhost:8080",
+	"gitIgnoreBuildFolder": 0,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
@@ -4601,7 +2963,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"bundleFormat": 0,
+		"bundleFormat": 6,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"syntaxCheckerStyle": 3,
@@ -4705,12 +3067,12 @@
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
-		"compilerType": 1,
+		"compilerType": 0,
 		"createSourceMap": 0,
 		"decimalPrecision": 10,
 		"emitCharset": 1,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
 	"languageDefaultsSLIM": {
@@ -4750,7 +3112,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"pluginMask": 3758088159
+		"pluginMask": 52780316221407
 		},
 	"languageDefaultsTS": {
 		"autoOutputAction": 0,
@@ -4768,6 +3130,17 @@
 		"targetECMAVersion": 0
 		},
 	"languageDefaultsUserDefined": [
+		{
+			"autoOutputAction": 1,
+			"autoOutputPathFilenamePattern": "*.njk",
+			"autoOutputPathRelativePath": "",
+			"autoOutputPathReplace1": "",
+			"autoOutputPathReplace2": "",
+			"autoOutputPathStyle": 0,
+			"fileExtension": "njk",
+			"shouldRunCacheBuster": 0,
+			"shouldRunHTMLMinifier": 0
+			}
 		],
 	"npmAbbreviatedPath": "",
 	"npmCreatePackageLock": 1,
@@ -4779,8 +3152,8 @@
 	"rollupExternals": "",
 	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
 	"rollupTreeshakingEnabled": 1,
-	"skippedFoldersString": "/storage/framework/sessions,/sites,/.nova,node_modules,_logs,logs,log,.idea,_cache,cache",
-	"sourceFolderName": "source",
+	"skippedFoldersString": "/storage/framework/sessions,/.nova,node_modules,_logs,logs,log,.idea,_cache,cache",
+	"sourceFolderName": "src",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,
 	"tsAllowUnreachableCode": 0,
@@ -4863,7 +3236,7 @@
 			"flagValue": -1
 			},
 		"dead_code": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"directives": {
@@ -4895,7 +3268,7 @@
 			"flagValue": -1
 			},
 		"hoist_funs": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"hoist_props": {
@@ -4939,7 +3312,7 @@
 			"flagValue": -1
 			},
 		"keep_fargs": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"keep_fnames": {
@@ -5067,7 +3440,7 @@
 			"flagValue": -1
 			},
 		"unused": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"warnings": {
@@ -5084,8 +3457,8 @@
 			}
 		},
 	"uglifyMangleNames": 1,
-	"uglifyReservedNamesString": "$",
-	"websiteRelativeRoot": ""
+	"uglifyReservedNamesString": "$,exports,require",
+	"websiteRelativeRoot": "/dist"
 	},
 "settingsFileVersion": "3"
 }

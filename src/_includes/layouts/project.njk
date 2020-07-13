@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 
-<header class="intro">
+<header class="header">
   <div class="bubbles">
     <div id="parallax-1">
       <div id="bubble-1-1" class="bubble size-3 purple">&nbsp;</div>
@@ -67,36 +67,18 @@ layout: layouts/base.njk
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-        <figure>
-          <img src="images/thomas.jpg" alt="Thomas Tuvignon">
-        </figure>
-        <h1 class="titre-1">Thomas Tuvignon</h1>
-        <p>Intégrateur web</p>
-        <a href="#" class="link js-trigger-modal">Voir le CV vidéo</a>
+      <div class="col-lg-10 offset-lg-1">
+        <a href="/" class="back">Thomas Tuvignon</a>
+        <h1>{{ renderData.title or title or metadata.title }}</h1>
       </div>
     </div>
-  </div>
-
-  <div class="video">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-10 offset-xl-1">
-          <a href="#" class="back close-video-modal">Retour</a>
-
-          <video controls playsinline preload="none" poster="images/cv.jpg">
-            <source src="videos/cv.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-
-    <div class="overlay"></div>
   </div>
 </header>
 
-<section>
+<main class="main">
   <div class="container">
     {{ content | safe }}
+
+    <p><a href="/" class="back">Retour</a></p>
   </div>
-</section>
+</main>

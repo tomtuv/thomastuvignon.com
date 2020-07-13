@@ -1,4 +1,4 @@
-header {
+.header {
   text-align: center;
   padding: 120px 0;
   overflow: hidden;
@@ -57,7 +57,7 @@ header {
     }
   }
 
-  &.intro {
+  &-home {
     padding: 160px 0;
     text-align: left;
 
