@@ -26,19 +26,14 @@
   .container {
     position: relative;
     top: 50%;
-    transform: translateY(-35%);
+    transform: translateY(-50%);
     z-index: 1;
-    transition: transform 250ms;
   }
 
-  .close-video-modal {
+  .link-backward {
     position: absolute;
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
   }
-}
-
-.show-video-modal .video .container {
-  transform: translateY(-50%);
 }

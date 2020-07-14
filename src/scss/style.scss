@@ -4,11 +4,8 @@
 
 @import "variables";
 
-@import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/grid";
-
 @import "../node_modules/aos/src/sass/aos";
-
 @import "../node_modules/font-awesome/scss/font-awesome";
 
 @import "base";
@@ -16,6 +13,6 @@
 @import "grid";
 @import "header";
 @import "footer";
-@import "main";
+@import "content";
 @import "bubbles";
 @import "video";

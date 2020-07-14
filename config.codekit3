@@ -25,7 +25,7 @@
 		"oA": 1,
 		"oAP": "/dist/bundle.js",
 		"oF": 1,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"/.gitignore": {
@@ -55,7 +55,7 @@
 		"oF": 1
 		},
 	"/node_modules/aos/dist/aos.js": {
-		"bF": 0,
+		"bF": 6,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -131,136 +131,6 @@
 		"oA": 1,
 		"oAP": "/dist/_includes/layouts/project.njk",
 		"oF": 0
-		},
-	"/src/css/_base.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_base.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_bubbles.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_bubbles.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_footer.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_footer.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_grid.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_grid.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_header.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_header.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_link.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_link.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_main.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_main.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_variables.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_variables.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/_video.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/dist/css/_video.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 1
-		},
-	"/src/css/style.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/dist/css/style.css",
-		"oF": 0,
-		"oS": 3,
-		"sct": 1
 		},
 	"/src/fonts/fontawesome-webfont.eot": {
 		"cB": 0,
@@ -888,7 +758,7 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/dist/js/script.js",
-		"oF": 3,
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
 		},
@@ -1004,6 +874,136 @@
 		"oAP": "/dist/projects/solex.njk",
 		"oF": 0
 		},
+	"/src/scss/_base.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_base.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_bubbles.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_bubbles.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_content.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_content.css",
+		"oF": 0,
+		"oS": 3,
+		"sct": 0
+		},
+	"/src/scss/_footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_footer.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_grid.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_grid.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_link.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_link.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_variables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/_video.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/dist/scss/_video.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 1
+		},
+	"/src/scss/style.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/dist/css/style.css",
+		"oF": 2,
+		"oS": 3,
+		"sct": 1
+		},
 	"/src/sitemap.xml.njk": {
 		"cB": 0,
 		"ft": 8192,
@@ -1031,7 +1031,7 @@
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "/src/images/apple-touch-icon.png",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 616334658.82274795
+	"lastBuiltDate": 616413296.99643099
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -1532,7 +1532,7 @@
 			"optionString": "{'exceptMethods': []}"
 			},
 		"comma-dangle": {
-			"active": 1,
+			"active": 0,
 			"optionString": "'never'"
 			},
 		"comma-spacing": {
@@ -3130,6 +3130,28 @@
 		"targetECMAVersion": 0
 		},
 	"languageDefaultsUserDefined": [
+		{
+			"autoOutputAction": 1,
+			"autoOutputPathFilenamePattern": "*.html",
+			"autoOutputPathRelativePath": "",
+			"autoOutputPathReplace1": "",
+			"autoOutputPathReplace2": "",
+			"autoOutputPathStyle": 0,
+			"fileExtension": "html",
+			"shouldRunCacheBuster": 0,
+			"shouldRunHTMLMinifier": 0
+			},
+		{
+			"autoOutputAction": 1,
+			"autoOutputPathFilenamePattern": "*.liquid",
+			"autoOutputPathRelativePath": "",
+			"autoOutputPathReplace1": "",
+			"autoOutputPathReplace2": "",
+			"autoOutputPathStyle": 0,
+			"fileExtension": "liquid",
+			"shouldRunCacheBuster": 0,
+			"shouldRunHTMLMinifier": 0
+			},
 		{
 			"autoOutputAction": 1,
 			"autoOutputPathFilenamePattern": "*.njk",

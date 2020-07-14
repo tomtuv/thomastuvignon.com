@@ -73,7 +73,7 @@ layout: layouts/base.njk
         </figure>
         <h1 class="titre-1">Thomas Tuvignon</h1>
         <p>Intégrateur web</p>
-        <a href="#" class="link js-trigger-modal">Voir le CV vidéo</a>
+        <a href="#" class="link-forward" data-open-modal>Voir le CV vidéo</a>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@ layout: layouts/base.njk
     <div class="container">
       <div class="row">
         <div class="col-xl-10 offset-xl-1">
-          <a href="#" class="back close-video-modal">Retour</a>
+          <a href="#" class="link-backward" data-close-modal>Retour</a>
 
           <video controls playsinline preload="none" poster="images/cv.jpg">
             <source src="videos/cv.mp4" type="video/mp4">
@@ -95,7 +95,7 @@ layout: layouts/base.njk
   </div>
 </header>
 
-<main class="main">
+<main class="content">
   <div class="container">
     {{ content | safe }}
   </div>

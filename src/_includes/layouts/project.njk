@@ -68,17 +68,17 @@ layout: layouts/base.njk
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <a href="/" class="back">Thomas Tuvignon</a>
+        <a href="/" class="link-backward">Thomas Tuvignon</a>
         <h1>{{ renderData.title or title or metadata.title }}</h1>
       </div>
     </div>
   </div>
 </header>
 
-<main class="main">
+<main class="content">
   <div class="container">
     {{ content | safe }}
 
-    <p><a href="/" class="back">Retour</a></p>
+    <p><a href="/" class="link-backward">Retour</a></p>
   </div>
 </main>

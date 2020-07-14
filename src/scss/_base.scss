@@ -1,6 +1,14 @@
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
+  margin: 0;
+  font-family: "Poppins", $font-family-sans-serif;
   font-size: 18px;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
