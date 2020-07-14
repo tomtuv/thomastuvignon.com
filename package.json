@@ -1,15 +1,18 @@
 {
   "name": "thomas-tuvignon",
+  "description": "Thomas Tuvignon – Intégrateur web chez Ultrō",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomtuv/thomas-tuvignon.git"
+    "url": "https://github.com/tomtuv/thomas-tuvignon.git"
   },
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
     "aos": "^2.3.4",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "luxon": "^1.21.3"
   }
 }

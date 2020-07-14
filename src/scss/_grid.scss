@@ -1,0 +1,18 @@
+.container {
+  @include media-breakpoint-down(md) {
+    padding: 0 24px;
+  }
+}
+
+.row {
+  @include media-breakpoint-down(md) {
+    margin: 0 -12px;
+  }
+}
+
+.col,
+[class*="col-"] {
+  @include media-breakpoint-down(md) {
+    padding: 0 12px;
+  }
+}
