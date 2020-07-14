@@ -54,36 +54,6 @@
 		"oAP": "/dist/node_modules",
 		"oF": 1
 		},
-	"/node_modules/aos/dist/aos.js": {
-		"bF": 6,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/dist/node_modules/aos/dist/bundle.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/node_modules/jquery/dist/jquery.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/dist/node_modules/jquery/dist/bundle.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/package-lock.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/dist/package-lock-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"/package.json": {
 		"ft": 524288,
 		"oA": 1,
