@@ -1,4 +1,4 @@
-dist/
+public/
 src/css/
 src/js/
 node_modules/
