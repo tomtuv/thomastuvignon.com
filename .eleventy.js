@@ -7,8 +7,6 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
-  eleventyConfig.setUseGitIgnore(false);
-
   eleventyConfig.addWatchTarget("./src/styles");
   eleventyConfig.addWatchTarget("./src/scripts");
 
