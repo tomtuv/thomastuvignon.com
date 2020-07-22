@@ -2,12 +2,18 @@
   "name": "thomas-tuvignon",
   "version": "1.0.0",
   "description": "Thomas Tuvignon",
-  "homepage": "https://thomastuvignon.com",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tomtuv/thomas-tuvignon.git"
   },
   "license": "ISC",
+  "homepage": "https://thomastuvignon.com",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "aos": "^2.3.4",
