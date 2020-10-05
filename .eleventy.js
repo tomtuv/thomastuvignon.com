@@ -7,11 +7,11 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
-  eleventyConfig.addWatchTarget("./src/styles");
-  eleventyConfig.addWatchTarget("./src/scripts");
+  eleventyConfig.addWatchTarget("./src/js");
+  eleventyConfig.addWatchTarget("./src/scss");
 
+  eleventyConfig.addPassthroughCopy("./src/js/bundle.js");
   eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/videos");
