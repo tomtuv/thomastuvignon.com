@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "variables";
+
+@import "~bootstrap/scss/grid";
+@import "~aos/src/sass/aos";
+@import "~font-awesome/scss/font-awesome";
+
+@import "base";
+@import "link";
+@import "grid";
+@import "header";
+@import "footer";
+@import "content";
+@import "bubbles";
+@import "video";

@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "description": "Thomas Tuvignon",
   "scripts": {
-    "js": "rollup -c",
-    "sass": "node-sass src/scss -o src/css",
-    "css": "postcss src/css/*.css -u autoprefixer cssnano -r --no-map",
-    "build": "npm run js && npm run sass && eleventy && npm run css",
-    "watch:js": "rollup -c -w",
-    "watch:sass": "node-sass --watch src/scss -o src/css",
+    "build": "webpack && eleventy",
+    "watch:webpack": "webpack --watch",
     "watch:eleventy": "eleventy --watch",
     "serve": "eleventy --serve",
     "debug": "DEBUG=* eleventy"
@@ -22,20 +18,22 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@babel/core": "^7.11.6",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-commonjs": "^15.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@babel/preset-env": "^7.11.5",
     "aos": "^2.3.4",
     "autoprefixer": "^10.0.1",
+    "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.2",
-    "cssnano": "^4.1.10",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "luxon": "^1.25.0",
-    "node-sass": "^4.14.1",
+    "mini-css-extract-plugin": "^1.0.0",
     "postcss": "^8.1.1",
-    "postcss-cli": "^8.0.0",
-    "rollup": "^2.28.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "postcss-loader": "^4.0.4",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }

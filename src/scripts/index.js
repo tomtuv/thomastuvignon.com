@@ -1,9 +1,5 @@
-// Imports
-
 import $ from "jquery";
 import AOS from "aos";
-
-// Animations
 
 AOS.init({
   offset: 60,
@@ -11,9 +7,7 @@ AOS.init({
   easing: "ease-in-out",
 });
 
-// Bubbles
-
-$(window).bind("scroll", function () {
+$(window).on("scroll", function () {
   var scrolled = $(window).scrollTop();
 
   $("#parallax-1").css("top", 0 - scrolled * 0.1 + "px");
@@ -21,8 +15,6 @@ $(window).bind("scroll", function () {
   $("#parallax-3").css("top", 0 - scrolled * 0.3 + "px");
   $("#parallax-4").css("top", 0 - scrolled * 0.4 + "px");
 });
-
-// Video
 
 $("[data-open-modal]").on("click", function (event) {
   event.preventDefault();
