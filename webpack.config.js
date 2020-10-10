@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -8,8 +7,12 @@ module.exports = {
   output: {
     filename: "js/scripts.js",
     path: path.resolve(__dirname, "src"),
-    publicPath: "/",
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/styles.css",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -47,18 +50,14 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "../fonts/",
+              outputPath: "/src/fonts",
+              publicPath: "../fonts",
             },
           },
         ],
       },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "css/styles.css",
-    }),
-  ],
   performance: {
     hints: false,
   },
