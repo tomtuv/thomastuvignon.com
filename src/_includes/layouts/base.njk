@@ -12,11 +12,11 @@
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
     <meta property="og:description" content="{{ description or metadata.description }}">
     <meta property="og:image" content="{{ metadata.url }}/images/cv.jpg">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ metadata.url }}">
-    <meta property="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
-    <meta property="twitter:description" content="{{ description or metadata.description }}">
-    <meta property="twitter:image" content="{{ metadata.url }}/images/cv.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ metadata.url }}">
+    <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+    <meta name="twitter:description" content="{{ description or metadata.description }}">
+    <meta name="twitter:image" content="{{ metadata.url }}/images/cv.jpg">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
