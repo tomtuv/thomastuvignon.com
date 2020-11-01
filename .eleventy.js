@@ -7,6 +7,8 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
+  eleventyConfig.setWatchThrottleWaitTime(3000);
+
   eleventyConfig.addWatchTarget("./src/scripts");
   eleventyConfig.addWatchTarget("./src/styles");
 

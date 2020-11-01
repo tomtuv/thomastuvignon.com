@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "Thomas Tuvignon",
   "scripts": {
-    "build": "webpack && eleventy",
-    "watch:webpack": "webpack --watch",
-    "watch:eleventy": "eleventy --watch",
-    "serve": "eleventy --serve",
+    "build": "webpack --progress && eleventy",
+    "watch": "concurrently \"webpack --watch\" \"eleventy --serve --quiet\"",
     "debug": "DEBUG=* eleventy"
   },
   "repository": {

@@ -1,5 +1,7 @@
 const path = require("path");
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -11,6 +13,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
     }),
   ],
   module: {
@@ -31,7 +37,10 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: { url: false },
+          },
           {
             loader: "postcss-loader",
             options: {
@@ -43,27 +52,22 @@ module.exports = {
           "sass-loader",
         ],
       },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts",
-              publicPath: "../fonts",
-            },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
           },
-        ],
-      },
+        },
+        extractComments: false,
+      }),
     ],
   },
   performance: {
     hints: false,
   },
-  stats: {
-    assets: false,
-    children: false,
-    entrypoints: false,
-  },
+  stats: "minimal",
 };
