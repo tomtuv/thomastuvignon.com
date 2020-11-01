@@ -62,8 +62,8 @@
 
     a {
       display: inline-block;
-      vertical-align: top;
       margin-bottom: 8px;
+      vertical-align: top;
 
       @include media-breakpoint-down(md) {
         margin-bottom: 24px;
@@ -71,8 +71,8 @@
     }
 
     + p {
-      text-align: center;
       padding-bottom: 48px;
+      text-align: center;
 
       @include media-breakpoint-down(md) {
         padding-bottom: 24px;

@@ -9,10 +9,10 @@
 }
 
 .video {
-  max-width: 100%;
-  overflow: hidden;
   position: fixed;
   display: none;
+  max-width: 100%;
+  overflow: hidden;
 
   video {
     width: 100%;
@@ -26,8 +26,8 @@
   .container {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
     z-index: 1;
+    transform: translateY(-50%);
   }
 
   .link-backward {

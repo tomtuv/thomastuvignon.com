@@ -1,17 +1,17 @@
 .footer {
-  background-color: #eee;
+  padding: 80px 0;
   color: #000;
   text-align: center;
-  padding: 80px 0;
+  background-color: #eee;
 
   @include media-breakpoint-down(md) {
     padding: 48px 0;
   }
 
   ul {
-    list-style: none;
     padding: 0;
     margin-bottom: 32px;
+    list-style: none;
     cursor: default;
 
     @include media-breakpoint-down(md) {
@@ -49,8 +49,8 @@
 
       span {
         display: inline-block;
-        white-space: nowrap;
         text-indent: -9999px;
+        white-space: nowrap;
       }
     }
   }

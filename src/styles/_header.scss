@@ -1,8 +1,8 @@
 .header {
-  text-align: center;
   padding: 120px 0;
   overflow: hidden;
   color: #fff;
+  text-align: center;
   background-color: #31185a;
 
   @include media-breakpoint-down(md) {
@@ -18,17 +18,17 @@
   }
 
   figure {
+    float: left;
     width: 170px;
     margin-right: 40px;
-    float: left;
 
     @include media-breakpoint-down(lg) {
       width: 160px;
     }
 
     @include media-breakpoint-down(md) {
-      width: 130px;
       float: none;
+      width: 130px;
       margin: 0 auto 24px;
     }
   }
@@ -38,9 +38,9 @@
   }
 
   p {
+    margin-bottom: 24px;
     font-size: 24px;
     font-weight: 500;
-    margin-bottom: 24px;
 
     @include media-breakpoint-down(lg) {
       font-size: 20px;
