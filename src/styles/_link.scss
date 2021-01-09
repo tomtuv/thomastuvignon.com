@@ -1,11 +1,11 @@
 a {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #222;
   text-decoration: none;
 
-  @include media-breakpoint-down(lg) {
-    font-size: 16px;
+  @include media-breakpoint-up(xl) {
+    font-size: 18px;
   }
 }
 

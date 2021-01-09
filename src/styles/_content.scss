@@ -1,24 +1,24 @@
 .content {
-  padding: 104px 0 56px;
+  padding: 56px 0 32px;
 
-  @include media-breakpoint-down(md) {
-    padding: 56px 0 32px;
+  @include media-breakpoint-up(lg) {
+    padding: 104px 0 56px;
   }
 
   [class*="col-"] {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 
-    @include media-breakpoint-down(md) {
-      margin-bottom: 24px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 48px;
     }
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 
-    @include media-breakpoint-down(lg) {
-      font-size: 18px;
+    @include media-breakpoint-up(xl) {
+      font-size: 20px;
     }
   }
 
@@ -32,50 +32,50 @@
     }
 
     img {
-      border-radius: 8px;
+      border-radius: 4px;
       transition: transform 250ms;
 
-      @include media-breakpoint-down(md) {
-        border-radius: 4px;
+      @include media-breakpoint-up(lg) {
+        border-radius: 8px;
       }
     }
   }
 
   article {
-    margin-bottom: 56px;
+    margin-bottom: 32px;
 
-    @include media-breakpoint-down(md) {
-      margin-bottom: 32px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 56px;
     }
 
     ul {
       margin: 32px 0;
 
       &:last-child {
-        margin-bottom: 8px;
+        margin-bottom: 24px;
 
-        @include media-breakpoint-down(md) {
-          margin-bottom: 24px;
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 8px;
         }
       }
     }
 
     a {
       display: inline-block;
-      margin-bottom: 8px;
+      margin-bottom: 24px;
       vertical-align: top;
 
-      @include media-breakpoint-down(md) {
-        margin-bottom: 24px;
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 8px;
       }
     }
 
     + p {
-      padding-bottom: 48px;
+      padding-bottom: 24px;
       text-align: center;
 
-      @include media-breakpoint-down(md) {
-        padding-bottom: 24px;
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 48px;
       }
     }
   }

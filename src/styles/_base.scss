@@ -2,20 +2,22 @@
 * ::before,
 * ::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: inherit;
 }
 
 html,
 body {
-  height: 100%;
-  margin: 0;
   font-family: "Poppins", $font-family-sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba($black, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include media-breakpoint-down(lg) {
-    font-size: 16px;
+  @include media-breakpoint-up(xl) {
+    font-size: 18px;
   }
 }
 
@@ -30,31 +32,31 @@ ul {
 
 h1 {
   margin: 0 0 24px;
-  font-size: 42px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.25;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-up(md) {
     font-size: 36px;
   }
 
-  @include media-breakpoint-down(sm) {
-    font-size: 30px;
+  @include media-breakpoint-up(lg) {
+    font-size: 42px;
   }
 }
 
 h2 {
   margin: 0 0 8px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-up(md) {
     font-size: 22px;
   }
 
-  @include media-breakpoint-down(sm) {
-    font-size: 20px;
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
   }
 }
 
@@ -65,4 +67,18 @@ figure {
 img {
   display: block;
   width: 100%;
+}
+
+button {
+  display: inline;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
 }

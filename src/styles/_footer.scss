@@ -1,31 +1,31 @@
 .footer {
-  padding: 80px 0;
+  padding: 48px 0;
   color: #000;
   text-align: center;
   background-color: #eee;
 
-  @include media-breakpoint-down(md) {
-    padding: 48px 0;
+  @include media-breakpoint-up(lg) {
+    padding: 80px 0;
   }
 
   ul {
     padding: 0;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     list-style: none;
     cursor: default;
 
-    @include media-breakpoint-down(md) {
-      margin-bottom: 24px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 32px;
     }
 
     li {
       display: inline-block;
 
       + li {
-        margin-left: 32px;
+        margin-left: 24px;
 
-        @include media-breakpoint-down(md) {
-          margin-left: 24px;
+        @include media-breakpoint-up(lg) {
+          margin-left: 32px;
         }
       }
     }
@@ -39,11 +39,11 @@
       }
 
       .fa {
-        font-size: 28px;
+        font-size: 24px;
         vertical-align: middle;
 
-        @include media-breakpoint-down(md) {
-          font-size: 24px;
+        @include media-breakpoint-up(lg) {
+          font-size: 28px;
         }
       }
 
