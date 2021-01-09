@@ -1,13 +1,17 @@
 export default function Modal() {
-  $("[data-open-modal]").on("click", function (event) {
-    event.preventDefault();
-    $(".video").fadeIn(250);
-    $("video")[0].play();
-  });
+  document
+    .querySelector("[data-open-modal]")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector(".video").classList.add("active");
+      document.querySelector("video").play();
+    });
 
-  $("[data-close-modal]").on("click", function (event) {
-    event.preventDefault();
-    $(".video").fadeOut(250);
-    $("video")[0].pause();
-  });
+  document
+    .querySelector("[data-close-modal]")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.querySelector(".video").classList.remove("active");
+      document.querySelector("video").pause();
+    });
 }

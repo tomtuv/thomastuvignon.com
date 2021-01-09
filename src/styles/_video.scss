@@ -10,9 +10,11 @@
 
 .video {
   position: fixed;
-  display: none;
   max-width: 100%;
   overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
 
   video {
     width: 100%;
@@ -35,5 +37,10 @@
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
   }
 }
