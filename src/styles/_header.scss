@@ -18,16 +18,16 @@
   }
 
   figure {
-    max-width: 130px;
+    width: 130px;
     margin-bottom: 24px;
 
     @include media-breakpoint-up(lg) {
-      max-width: 160px;
+      width: 160px;
       margin: 0 40px 0 0;
     }
 
     @include media-breakpoint-up(xl) {
-      max-width: 170px;
+      width: 170px;
     }
   }
 

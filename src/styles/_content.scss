@@ -22,16 +22,19 @@
     }
   }
 
-  img {
+  figure {
+    overflow: hidden;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
   }
 
   a {
-    &:hover img {
+    display: block;
+
+    &:hover figure {
       transform: scale(1.05);
     }
 
-    img {
+    figure {
       border-radius: 4px;
       transition: transform 250ms;
 
