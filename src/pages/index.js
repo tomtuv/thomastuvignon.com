@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import { graphql } from "gatsby";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -96,7 +95,7 @@ export const query = graphql`
       title
       jobTitle
       profilePicture {
-        fluid(maxHeight: 170, quality: 80) {
+        fluid(maxWidth: 170, quality: 80) {
           ...GatsbyContentfulFluid_withWebp
         }
         title
@@ -108,7 +107,7 @@ export const query = graphql`
       }
       projects {
         thumbnail {
-          fluid(maxHeight: 330, quality: 80) {
+          fluid(maxWidth: 330, quality: 80) {
             ...GatsbyContentfulFluid_withWebp
           }
           title

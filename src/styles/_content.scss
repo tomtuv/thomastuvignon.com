@@ -5,7 +5,15 @@
     padding: 104px 0 56px;
   }
 
-  [class*="col-"] {
+  .row:not(:first-child):nth-child(odd) {
+    margin-top: 32px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 56px;
+    }
+  }
+
+  [class^="col"] {
     margin-bottom: 24px;
 
     @include media-breakpoint-up(lg) {

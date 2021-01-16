@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Img from "gatsby-image";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Bubbles from "../components/bubbles";
@@ -33,31 +34,28 @@ const ProjectTemplate = ({ data }) => {
         <div className="container">
           <article>
             {project.content.map((block, i) => (
-              <>
-                {block.content ? (
-                  <div className="row" key={i}>
-                    <div className="col-lg-10 offset-lg-1">
-                      <h2>{block.title}</h2>
-                      <h3>{block.subtitle}</h3>
-                      {block.content &&
-                        documentToReactComponents(block.content.json)}
-                      {block.link && (
-                        <a
-                          href={block.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="link-forward"
-                        >
-                          Voir le site web
-                        </a>
-                      )}
-                    </div>
+              <div className="row" key={i}>
+                {block.body ? (
+                  <div className="col-lg-10 offset-lg-1">
+                    <h2>{block.title}</h2>
+                    <h3>{block.subtitle}</h3>
+                    {block.body && renderRichText(block.body  )}
+                    {block.link && (
+                      <a
+                        href={block.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link-forward"
+                      >
+                        Voir le site web
+                      </a>
+                    )}
                   </div>
                 ) : (
-                  <div class="row" key={i}>
+                  <>
                     {block.images.map((image, i) => (
                       <div
-                        class={
+                        className={
                           block.layout === "2 columns"
                             ? "col-md-6"
                             : block.layout === "3 columns"
@@ -67,13 +65,13 @@ const ProjectTemplate = ({ data }) => {
                         key={i}
                       >
                         <figure data-aos="fade-up">
-                          <img src={image.file.url} alt="ACE Hôtel" />
+                          <Img fluid={image.fluid} alt={project.title} />
                         </figure>
                       </div>
                     ))}
-                  </div>
+                  </>
                 )}
-              </>
+              </div>
             ))}
           </article>
           <p>
@@ -100,16 +98,16 @@ export const pageQuery = graphql`
         ... on ContentfulText {
           title
           subtitle
-          content {
-            json
+          body {
+            raw
           }
           link
         }
         ... on ContentfulMedia {
           layout
           images {
-            file {
-              url
+            fluid(maxWidth: 1140, quality: 80) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
