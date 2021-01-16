@@ -1,48 +1,42 @@
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const Promise = require("bluebird");
+const path = require("path");
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: `/projects${slug}`,
-    });
-  }
-};
-
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  const result = await graphql(`
-    query {
-      allMdx {
-        edges {
-          node {
-            id
-            fields {
-              slug
+
+  return new Promise((resolve, reject) => {
+    const project = path.resolve("./src/templates/project.js");
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulProject {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
             }
           }
+        `
+      ).then((result) => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
         }
-      }
-    }
-  `);
 
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges;
-  // you'll call `createPage` for each result
-  posts.forEach(({ node }, index) => {
-    createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
-      path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve(`./src/components/project.js`),
-      // You can use the values in this context in
-      // our page layout component
-      context: { id: node.id },
-    });
+        const posts = result.data.allContentfulProject.edges;
+        posts.forEach((post) => {
+          createPage({
+            path: `/projects/${post.node.slug}/`,
+            component: project,
+            context: {
+              slug: post.node.slug,
+            },
+          });
+        });
+      })
+    );
   });
 };

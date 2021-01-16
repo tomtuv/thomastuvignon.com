@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "Thomas Tuvignon",
@@ -16,24 +20,17 @@ module.exports = {
         trackingId: "UA-83807816-2",
       },
     },
-    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-remark-images",
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-source-contentful",
       options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -49,14 +46,6 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "projects",
-        path: "./src/projects/",
-      },
-      __key: "projects",
     },
     {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
