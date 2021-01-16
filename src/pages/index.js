@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Bubbles from "../components/bubbles";
 
 const IndexPage = ({ data }) => {
+  const page = data.contentfulHomePage;
   const [modal, setModal] = useState("");
   const video = useRef(null);
 
@@ -26,13 +27,13 @@ const IndexPage = ({ data }) => {
               <div className="d-flex flex-column flex-lg-row align-items-center">
                 <figure>
                   <Img
-                    fluid={data.thomas.childImageSharp.fluid}
-                    alt="Thomas Tuvignon"
+                    fluid={page.profilePicture.fluid}
+                    alt={page.profilePicture.title}
                   />
                 </figure>
                 <div>
-                  <h1>Thomas Tuvignon</h1>
-                  <p>Intégrateur web</p>
+                  <h1>{page.title}</h1>
+                  <p>{page.jobTitle}</p>
                   <button className="link-forward" onClick={toggleModal}>
                     Voir le CV vidéo
                   </button>
@@ -54,10 +55,10 @@ const IndexPage = ({ data }) => {
                   controls
                   playsInline
                   preload="none"
-                  poster="cv.jpg"
                   ref={video}
+                  poster="cv.jpg"
                 >
-                  <source src="cv.mp4" type="video/mp4" />
+                  <source src={page.video.file.url} type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -70,155 +71,18 @@ const IndexPage = ({ data }) => {
       <main className="content">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/ace-hotel">
-                <figure>
-                  <Img
-                    fluid={data.aceHotel.childImageSharp.fluid}
-                    alt="ACE Hôtel"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/cikaba">
-                <figure>
-                  <Img fluid={data.cikaba.childImageSharp.fluid} alt="Cikaba" />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/easy-snowboards">
-                <figure>
-                  <Img
-                    fluid={data.easySnowboards.childImageSharp.fluid}
-                    alt="Easy Snowboards"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/easybike">
-                <figure>
-                  <Img
-                    fluid={data.easybike.childImageSharp.fluid}
-                    alt="Easybike"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/solex">
-                <figure>
-                  <Img fluid={data.solex.childImageSharp.fluid} alt="Solex" />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/matra">
-                <figure>
-                  <Img fluid={data.matra.childImageSharp.fluid} alt="Matra" />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/easybike-group">
-                <figure>
-                  <Img
-                    fluid={data.easybikeGroup.childImageSharp.fluid}
-                    alt="Easybike Group"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/1991">
-                <figure>
-                  <Img
-                    fluid={data.oneNineNineOne.childImageSharp.fluid}
-                    alt="1991"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/hudi">
-                <figure>
-                  <Img fluid={data.hudi.childImageSharp.fluid} alt="Hudi" />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/michelin">
-                <figure>
-                  <Img
-                    fluid={data.michelin.childImageSharp.fluid}
-                    alt="Michelin"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/horse-pilot">
-                <figure>
-                  <Img
-                    fluid={data.horsePilot.childImageSharp.fluid}
-                    alt="Horse Pilot"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/midi-life">
-                <figure>
-                  <Img
-                    fluid={data.midiLife.childImageSharp.fluid}
-                    alt="Midi Life"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/paips">
-                <figure>
-                  <Img fluid={data.paips.childImageSharp.fluid} alt="Paips" />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/musee-de-la-mine">
-                <figure>
-                  <Img
-                    fluid={data.museeDeLaMine.childImageSharp.fluid}
-                    alt="Musée de la Mine"
-                  />
-                </figure>
-              </Link>
-            </div>
-
-            <div className="col-lg-4 col-6" data-aos="fade-up">
-              <Link to="/projects/arize-leze">
-                <figure>
-                  <Img
-                    fluid={data.arizeLeze.childImageSharp.fluid}
-                    alt="Arize-Lèze"
-                  />
-                </figure>
-              </Link>
-            </div>
+            {page.projects.map((project, i) => (
+              <div className="col-lg-4 col-6" data-aos="fade-up" key={i}>
+                <Link to={`/projects/${project.slug}`}>
+                  <figure>
+                    <Img
+                      fluid={project.thumbnail.fluid}
+                      alt={project.thumbnail.title}
+                    />
+                  </figure>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </main>
@@ -228,116 +92,28 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    thomas: file(relativePath: { eq: "thomas.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 170) {
-          ...GatsbyImageSharpFluid
+    contentfulHomePage {
+      title
+      jobTitle
+      profilePicture {
+        fluid(maxHeight: 170, quality: 80) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+      }
+      video {
+        file {
+          url
         }
       }
-    }
-    aceHotel: file(relativePath: { eq: "ace-hotel.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
+      projects {
+        thumbnail {
+          fluid(maxHeight: 330, quality: 80) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+          title
         }
-      }
-    }
-    cikaba: file(relativePath: { eq: "cikaba.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    easySnowboards: file(relativePath: { eq: "easy-snowboards.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    easybike: file(relativePath: { eq: "easybike.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    solex: file(relativePath: { eq: "solex.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    matra: file(relativePath: { eq: "matra.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    easybikeGroup: file(relativePath: { eq: "easybike-group.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    oneNineNineOne: file(relativePath: { eq: "1991.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    hudi: file(relativePath: { eq: "hudi.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    michelin: file(relativePath: { eq: "michelin.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    horsePilot: file(relativePath: { eq: "horse-pilot.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    midiLife: file(relativePath: { eq: "midi-life.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    paips: file(relativePath: { eq: "paips.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    museeDeLaMine: file(relativePath: { eq: "musee-de-la-mine.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    arizeLeze: file(relativePath: { eq: "arize-leze.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
+        slug
       }
     }
   }

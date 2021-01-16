@@ -1,38 +1,9 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Bubbles from "../components/bubbles";
-import useContentfulImage from "../hook/useContentfulImage";
-
-const options = {
-  renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      const fluid = useContentfulImage(node.data.target.fields.file["fr"].url);
-      return <Img className="my-8" fluid={fluid} />;
-    },
-    [INLINES.HYPERLINK]: (node, children) => {
-      return (
-        <a
-          className="link-forward"
-          href={node.data.uri}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {children}
-        </a>
-      );
-    },
-    [INLINES.ENTRY_HYPERLINK]: (node, children) => {
-      return (
-        <Link to={`/${node.data.target.fields.slug["fr"]}`}>{children}</Link>
-      );
-    },
-  },
-};
 
 const ProjectTemplate = ({ data }) => {
   const project = data.contentfulProject;
@@ -61,14 +32,55 @@ const ProjectTemplate = ({ data }) => {
       <main className="content">
         <div className="container">
           <article>
-            {project.content &&
-              documentToReactComponents(project.content.json, options)}
-            <p>
-              <Link to="/" className="link-backward">
-                Retour
-              </Link>
-            </p>
+            {project.content.map((block, i) => (
+              <>
+                {block.content ? (
+                  <div className="row" key={i}>
+                    <div className="col-lg-10 offset-lg-1">
+                      <h2>{block.title}</h2>
+                      <h3>{block.subtitle}</h3>
+                      {block.content &&
+                        documentToReactComponents(block.content.json)}
+                      {block.link && (
+                        <a
+                          href={block.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="link-forward"
+                        >
+                          Voir le site web
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div class="row" key={i}>
+                    {block.images.map((image, i) => (
+                      <div
+                        class={
+                          block.layout === "2 columns"
+                            ? "col-md-6"
+                            : block.layout === "3 columns"
+                            ? "col-md-4"
+                            : "col"
+                        }
+                        key={i}
+                      >
+                        <figure data-aos="fade-up">
+                          <img src={image.file.url} alt="ACE Hôtel" />
+                        </figure>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            ))}
           </article>
+          <p>
+            <Link to="/" className="link-backward">
+              Retour
+            </Link>
+          </p>
         </div>
       </main>
     </Layout>
@@ -85,7 +97,22 @@ export const pageQuery = graphql`
         description
       }
       content {
-        json
+        ... on ContentfulText {
+          title
+          subtitle
+          content {
+            json
+          }
+          link
+        }
+        ... on ContentfulMedia {
+          layout
+          images {
+            file {
+              url
+            }
+          }
+        }
       }
     }
   }

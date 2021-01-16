@@ -13,15 +13,6 @@
     }
   }
 
-  p {
-    font-size: 18px;
-    font-weight: 500;
-
-    @include media-breakpoint-up(xl) {
-      font-size: 20px;
-    }
-  }
-
   figure {
     overflow: hidden;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
