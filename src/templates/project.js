@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Bubbles from "../components/bubbles";
+import Header from "../components/header";
 
 const ProjectTemplate = ({ data }) => {
   const project = data.contentfulProject;
@@ -15,70 +15,69 @@ const ProjectTemplate = ({ data }) => {
         title={project.title}
         description={project.description.description}
       />
-      <header className="header">
-        <Bubbles />
-
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-10 offset-lg-1">
-              <Link to="/" className="link-backward">
-                Thomas Tuvignon
-              </Link>
-              <h1>{project.title}</h1>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header project={project} />
 
       <main className="content">
         <div className="container">
           <article>
-            {project.content.map((block, i) => (
-              <div className="row" key={i}>
-                {block.body ? (
-                  <div className="col-lg-10 offset-lg-1">
-                    <h2>{block.title}</h2>
-                    <h3>{block.subtitle}</h3>
-                    {block.body && renderRichText(block.body  )}
-                    {block.link && (
-                      <a
-                        href={block.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="link-forward"
-                      >
-                        Voir le site web
-                      </a>
-                    )}
-                  </div>
-                ) : (
-                  <>
-                    {block.images.map((image, i) => (
-                      <div
-                        className={
-                          block.layout === "2 columns"
-                            ? "col-md-6"
-                            : block.layout === "3 columns"
-                            ? "col-md-4"
-                            : "col"
-                        }
-                        key={i}
-                      >
-                        <figure data-aos="fade-up">
-                          <Img fluid={image.fluid} alt={project.title} />
-                        </figure>
-                      </div>
-                    ))}
-                  </>
-                )}
-              </div>
+            {project.blocks.map((block, i) => (
+              <section key={i}>
+                <div className="row">
+                  {block.internal.type === "ContentfulText" ? (
+                    <div className="col-lg-10 offset-lg-1">
+                      <h2>{block.title}</h2>
+                      <p>{block.subtitle}</p>
+                      {block.body && renderRichText(block.body)}
+                      {block.link && (
+                        <a
+                          href={block.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="link"
+                        >
+                          Voir le site web
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <>
+                      {block.images.map((image, i) => (
+                        <div
+                          className={
+                            block.layout === "2 columns"
+                              ? "col-md-6"
+                              : block.layout === "3 columns"
+                              ? "col-md-4"
+                              : "col"
+                          }
+                          data-aos="fade-up"
+                          key={i}
+                        >
+                          <figure>
+                            <Img
+                              fixed={image.fixed}
+                              alt={project.title}
+                              style={{
+                                display: "block",
+                                width: "100%",
+                                height: "auto",
+                              }}
+                              placeholderStyle={{ position: "static" }}
+                            />
+                          </figure>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div>
+              </section>
             ))}
           </article>
-          <p>
-            <Link to="/" className="link-backward">
+          <aside>
+            <Link to="/" className="link link-back">
               Retour
             </Link>
-          </p>
+          </aside>
         </div>
       </main>
     </Layout>
@@ -94,7 +93,7 @@ export const pageQuery = graphql`
       description {
         description
       }
-      content {
+      blocks {
         ... on ContentfulText {
           title
           subtitle
@@ -102,13 +101,19 @@ export const pageQuery = graphql`
             raw
           }
           link
+          internal {
+            type
+          }
         }
         ... on ContentfulMedia {
           layout
           images {
-            fluid(maxWidth: 1140, quality: 80) {
-              ...GatsbyContentfulFluid_withWebp
+            fixed(width: 2200, quality: 0) {
+              ...GatsbyContentfulFixed_withWebp
             }
+          }
+          internal {
+            type
           }
         }
       }

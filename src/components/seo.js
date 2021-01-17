@@ -30,8 +30,6 @@ const SEO = ({ title, description, image, article }) => {
       titleTemplate={pathname !== "/" ? titleTemplate : seo.title}
       htmlAttributes={{ lang: "fr" }}
     >
-      <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-      <link rel="icon" href="favicon.png" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -50,6 +48,8 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="icon" href="/favicon.png" />
     </Helmet>
   );
 };
