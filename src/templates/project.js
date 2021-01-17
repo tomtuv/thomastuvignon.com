@@ -62,7 +62,8 @@ const ProjectTemplate = ({ data }) => {
                                 width: "100%",
                                 height: "auto",
                               }}
-                              placeholderStyle={{ position: "static" }}
+                              imgStyle={{ position: "relative" }}
+                              placeholderStyle={{ position: "absolute" }}
                             />
                           </figure>
                         </div>
