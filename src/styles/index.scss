@@ -11,10 +11,11 @@
 @import "~font-awesome/scss/font-awesome";
 
 @import "base";
-@import "link";
+@import "bubbles";
+@import "content";
+@import "footer";
 @import "grid";
 @import "header";
-@import "footer";
-@import "content";
-@import "bubbles";
+@import "link";
 @import "video";
+@import "wrapper";

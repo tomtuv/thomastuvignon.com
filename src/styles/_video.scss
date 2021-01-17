@@ -13,16 +13,12 @@
   max-width: 100%;
   overflow: hidden;
   visibility: hidden;
+  background-color: #000;
   opacity: 0;
   transition: visibility 0.2s ease, opacity 0.2s ease;
 
   video {
     width: 100%;
-  }
-
-  .overlay {
-    z-index: 0;
-    background-color: #000;
   }
 
   .container {

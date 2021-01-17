@@ -10,26 +10,29 @@ a {
 }
 
 .link {
-  &-forward {
-    display: inline-block;
-    padding-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  padding-right: 8px;
 
-    &::after {
-      position: relative;
-      left: 8px;
-      font-family: "FontAwesome";
-      content: "\f105";
-      transition: left 0.15s;
-    }
-
-    &:hover::after {
-      left: 14px;
-    }
+  &::after {
+    position: relative;
+    left: 8px;
+    font-family: "FontAwesome";
+    content: "\f105";
+    transition: left 0.15s;
   }
 
-  &-backward {
-    display: inline-block;
+  &:hover::after {
+    left: 14px;
+  }
+
+  &-back {
+    padding-right: 0;
     padding-left: 8px;
+
+    &::after {
+      content: none;
+    }
 
     &::before {
       position: relative;

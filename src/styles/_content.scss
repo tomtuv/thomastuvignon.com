@@ -5,7 +5,7 @@
     padding: 104px 0 56px;
   }
 
-  [class*="col-"] {
+  [class^="col"] {
     margin-bottom: 24px;
 
     @include media-breakpoint-up(lg) {
@@ -13,25 +13,19 @@
     }
   }
 
-  p {
-    font-size: 18px;
-    font-weight: 500;
-
-    @include media-breakpoint-up(xl) {
-      font-size: 20px;
-    }
-  }
-
-  img {
+  figure {
+    overflow: hidden;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
   }
 
   a {
-    &:hover img {
+    display: block;
+
+    &:hover figure {
       transform: scale(1.05);
     }
 
-    img {
+    figure {
       border-radius: 4px;
       transition: transform 250ms;
 
@@ -47,36 +41,69 @@
     @include media-breakpoint-up(lg) {
       margin-bottom: 56px;
     }
+  }
+
+  section {
+    h2 + p {
+      font-size: 18px;
+      font-weight: 500;
+
+      @include media-breakpoint-up(xl) {
+        font-size: 20px;
+      }
+    }
 
     ul {
-      margin: 32px 0;
-
-      &:last-child {
-        margin-bottom: 24px;
-
-        @include media-breakpoint-up(lg) {
-          margin-bottom: 8px;
-        }
-      }
+      margin-top: 32px;
     }
 
     a {
-      display: inline-block;
-      margin-bottom: 24px;
-      vertical-align: top;
+      display: inline-flex;
+      margin-top: 32px;
+    }
+
+    &:nth-child(even) {
+      margin-top: 24px;
 
       @include media-breakpoint-up(lg) {
-        margin-bottom: 8px;
+        margin-top: 8px;
       }
     }
 
-    + p {
-      padding-bottom: 24px;
-      text-align: center;
+    &:nth-child(odd) {
+      margin-top: 32px;
 
       @include media-breakpoint-up(lg) {
-        padding-bottom: 48px;
+        margin-top: 56px;
       }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  aside {
+    padding-bottom: 24px;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 48px;
+    }
+  }
+
+  &-404 {
+    display: flex;
+    align-items: center;
+    padding: 56px 0;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      padding: 104px 0;
+    }
+
+    h2 + p {
+      margin-top: 24px;
     }
   }
 }
