@@ -27,7 +27,7 @@
 
     figure {
       border-radius: 4px;
-      transition: transform 250ms;
+      transition: transform 0.2s ease;
 
       @include media-breakpoint-up(lg) {
         border-radius: 8px;

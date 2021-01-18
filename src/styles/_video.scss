@@ -1,17 +1,10 @@
-.video,
-.overlay {
-  position: absolute;
+.video {
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
-}
-
-.video {
-  position: fixed;
-  max-width: 100%;
-  overflow: hidden;
+  z-index: 1;
   visibility: hidden;
   background-color: #000;
   opacity: 0;

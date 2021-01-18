@@ -9,17 +9,18 @@
   }
 
   ul {
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin-bottom: 24px;
     list-style: none;
-    cursor: default;
 
     @include media-breakpoint-up(lg) {
       margin-bottom: 32px;
     }
 
     li {
-      display: inline-block;
+      line-height: 0;
 
       + li {
         margin-left: 24px;
@@ -31,18 +32,20 @@
     }
 
     a {
+      line-height: 0;
       color: #000;
-      transition: opacity 250ms;
+      transition: opacity 0.2s ease;
 
       &:hover {
         opacity: 0.6;
       }
 
       .fa {
+        width: 24px;
         font-size: 24px;
-        vertical-align: middle;
 
         @include media-breakpoint-up(lg) {
+          width: 28px;
           font-size: 28px;
         }
       }
