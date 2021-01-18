@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
+export const pageQuery = graphql`
   query {
     contentfulHomePage {
       title
@@ -49,12 +49,12 @@ export const query = graphql`
       }
       projects {
         title
+        slug
         thumbnail {
           fluid(maxWidth: 330, quality: 0) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
-        slug
       }
     }
   }
