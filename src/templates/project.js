@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Header from "../components/header";
+import Text from "../components/text";
+import Media from "../components/media";
 
 const ProjectTemplate = ({ data }) => {
   const project = data.contentfulProject;
@@ -24,48 +24,15 @@ const ProjectTemplate = ({ data }) => {
               <section key={i}>
                 <div className="row">
                   {block.internal.type === "ContentfulText" ? (
-                    <div className="col-lg-10 offset-lg-1">
-                      <h2>{block.title}</h2>
-                      <p>{block.subtitle}</p>
-                      {block.body && renderRichText(block.body)}
-                      {block.link && (
-                        <a
-                          href={block.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="link"
-                        >
-                          Voir le site web
-                        </a>
-                      )}
-                    </div>
+                    <Text block={block} />
                   ) : (
                     block.images.map((image, i) => (
-                      <div
-                        className={
-                          block.layout === "2 columns"
-                            ? "col-md-6"
-                            : block.layout === "3 columns"
-                            ? "col-md-4"
-                            : "col"
-                        }
-                        data-aos="fade-up"
+                      <Media
+                        project={project}
+                        block={block}
+                        image={image}
                         key={i}
-                      >
-                        <figure>
-                          <Img
-                            fixed={image.fixed}
-                            alt={project.title}
-                            style={{
-                              display: "block",
-                              width: "100%",
-                              height: "auto",
-                            }}
-                            imgStyle={{ position: "relative" }}
-                            placeholderStyle={{ position: "absolute" }}
-                          />
-                        </figure>
-                      </div>
+                      />
                     ))
                   )}
                 </div>
