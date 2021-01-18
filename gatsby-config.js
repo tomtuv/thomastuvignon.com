@@ -32,14 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
-    {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [`poppins\:400,500,600,700`],
