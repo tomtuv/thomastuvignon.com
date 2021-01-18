@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <Layout>
       <SEO title="Page introuvable" />
       <Header />
-      <main className="content-404">
+      <main className="content content-404">
         <div className="container">
           <h2>Oups, il n’y a rien à voir ici…</h2>
           <p>
