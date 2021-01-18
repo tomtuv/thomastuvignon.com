@@ -23,7 +23,7 @@ const Header = ({ homePage, project }) => {
                 <figure>
                   <Img
                     fluid={homePage.profilePicture.fluid}
-                    alt={homePage.profilePicture.title}
+                    alt={homePage.title}
                   />
                 </figure>
                 <div>

@@ -20,10 +20,7 @@ const IndexPage = ({ data }) => {
               <div className="col-lg-4 col-6" data-aos="fade-up" key={i}>
                 <Link to={`/projects/${project.slug}`}>
                   <figure>
-                    <Img
-                      fluid={project.thumbnail.fluid}
-                      alt={project.thumbnail.title}
-                    />
+                    <Img fluid={project.thumbnail.fluid} alt={project.title} />
                   </figure>
                 </Link>
               </div>
@@ -44,7 +41,6 @@ export const query = graphql`
         fluid(maxWidth: 170, quality: 0) {
           ...GatsbyContentfulFluid_withWebp
         }
-        title
       }
       video {
         file {
@@ -52,11 +48,11 @@ export const query = graphql`
         }
       }
       projects {
+        title
         thumbnail {
           fluid(maxWidth: 330, quality: 0) {
             ...GatsbyContentfulFluid_withWebp
           }
-          title
         }
         slug
       }
