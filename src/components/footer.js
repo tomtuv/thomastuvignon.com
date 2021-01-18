@@ -44,7 +44,7 @@ const Footer = () => (
         </li>
       </ul>
 
-      <p>© 2021 Thomas Tuvignon</p>
+      <p>© {new Date().getFullYear()} Thomas Tuvignon</p>
     </div>
   </footer>
 );
