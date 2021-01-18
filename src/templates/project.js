@@ -26,14 +26,7 @@ const ProjectTemplate = ({ data }) => {
                   {block.internal.type === "ContentfulText" ? (
                     <Text block={block} />
                   ) : (
-                    block.images.map((image, i) => (
-                      <Media
-                        project={project}
-                        block={block}
-                        image={image}
-                        key={i}
-                      />
-                    ))
+                    <Media project={project} block={block} />
                   )}
                 </div>
               </section>
