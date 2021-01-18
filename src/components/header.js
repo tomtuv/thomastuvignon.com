@@ -51,7 +51,7 @@ const Header = ({ homePage, project }) => {
                   playsInline
                   preload="none"
                   ref={video}
-                  poster="cv.jpg"
+                  poster="og-image.jpg"
                 >
                   <source src={homePage.video.file.url} type="video/mp4" />
                 </video>

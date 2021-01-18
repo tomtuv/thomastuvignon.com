@@ -9,7 +9,7 @@ module.exports = {
     description:
       "Intégration web. Design graphique. Motion design. Prototypage.",
     siteUrl: "https://thomastuvignon.com",
-    image: "/cv.jpg",
+    image: "/og-image.jpg",
     twitterUsername: "@tomtuv",
   },
   plugins: [
