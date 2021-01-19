@@ -13,7 +13,7 @@ const NotFoundPage = () => {
         <div className="container">
           <h2>Oups, il n’y a rien à voir ici…</h2>
           <p>
-            <Link to="/" className="link-back">
+            <Link to="/" className="link link-back">
               Retourner à l’accueil
             </Link>
           </p>
