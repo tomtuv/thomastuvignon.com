@@ -32,6 +32,8 @@ const IndexPage = ({ data }) => {
   );
 };
 
+export default IndexPage;
+
 export const pageQuery = graphql`
   query {
     contentfulHomePage {
@@ -59,5 +61,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default IndexPage;
