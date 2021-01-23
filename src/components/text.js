@@ -3,7 +3,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 const Text = ({ block }) => (
   <section className="grid">
-    <div className="grid-col grid-col-lg-10 grid-start-lg-2">
+    <div className="grid-col-12 grid-col-lg-10 grid-start-lg-2">
       <h2>{block.title}</h2>
       <p>{block.subtitle}</p>
       {renderRichText(block.body)}

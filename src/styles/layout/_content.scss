@@ -1,7 +1,7 @@
 .content {
   padding: 56px 0;
 
-  @include media-breakpoint(lg) {
+  @include min-width(lg) {
     padding: 104px 0;
   }
 
@@ -21,7 +21,7 @@
       border-radius: 4px;
       transition: transform 0.2s ease;
 
-      @include media-breakpoint(lg) {
+      @include min-width(lg) {
         border-radius: 8px;
       }
     }
@@ -32,7 +32,7 @@
       font-size: 18px;
       font-weight: 500;
 
-      @include media-breakpoint(xl) {
+      @include min-width(xl) {
         font-size: 20px;
       }
     }
@@ -49,7 +49,7 @@
     &:nth-child(even) {
       margin-top: 48px;
 
-      @include media-breakpoint(lg) {
+      @include min-width(lg) {
         margin-top: 56px;
       }
     }
@@ -57,7 +57,7 @@
     &:nth-child(odd) {
       margin-top: 56px;
 
-      @include media-breakpoint(lg) {
+      @include min-width(lg) {
         margin-top: 104px;
       }
     }
@@ -71,7 +71,7 @@
     margin-top: 56px;
     text-align: center;
 
-    @include media-breakpoint(lg) {
+    @include min-width(lg) {
       margin-top: 104px;
     }
   }

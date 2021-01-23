@@ -4,7 +4,7 @@
   text-align: center;
   background-color: #eee;
 
-  @include media-breakpoint(lg) {
+  @include min-width(lg) {
     padding: 80px 0;
   }
 
@@ -15,7 +15,7 @@
     margin-bottom: 24px;
     list-style: none;
 
-    @include media-breakpoint(lg) {
+    @include min-width(lg) {
       margin-bottom: 32px;
     }
 
@@ -25,7 +25,7 @@
       + li {
         margin-left: 24px;
 
-        @include media-breakpoint(lg) {
+        @include min-width(lg) {
           margin-left: 32px;
         }
       }
@@ -44,7 +44,7 @@
         width: 24px;
         font-size: 24px;
 
-        @include media-breakpoint(lg) {
+        @include min-width(lg) {
           width: 28px;
           font-size: 28px;
         }

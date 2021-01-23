@@ -4,7 +4,7 @@ a {
   color: #222;
   text-decoration: none;
 
-  @include media-breakpoint(xl) {
+  @include min-width(xl) {
     font-size: 18px;
   }
 }

@@ -1,9 +1,11 @@
 $breakpoints: (
+  "xs": 0,
   "sm": 560px,
   "md": 768px,
   "lg": 1024px,
   "xl": 1200px,
 );
 
-$grid-gutter-width: 24px;
+$columns: 12;
+
 $aos-distance: 24px;

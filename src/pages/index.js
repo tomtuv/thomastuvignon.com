@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO homePage={homePage} />
+      <SEO />
       <Header homePage={homePage} />
 
       <main className="content">

@@ -5,7 +5,7 @@
   text-align: center;
   background-color: #31185a;
 
-  @include media-breakpoint(lg) {
+  @include min-width(lg) {
     padding: 120px 0;
   }
 
@@ -14,28 +14,23 @@
   }
 
   figure {
-    grid-column: span 12;
     justify-self: center;
     width: 130px;
 
-    @include media-breakpoint(lg) {
-      grid-column: span 4;
+    @include min-width(lg) {
       justify-self: end;
       width: 160px;
     }
 
-    @include media-breakpoint(xl) {
+    @include min-width(xl) {
       width: 170px;
     }
   }
 
   article {
-    grid-column: span 12;
-
-    @include media-breakpoint(lg) {
+    @include min-width(lg) {
       display: flex;
       flex-direction: column;
-      grid-column: span 8;
       align-items: flex-start;
       justify-content: center;
     }
@@ -58,7 +53,7 @@
     font-size: 20px;
     font-weight: 500;
 
-    @include media-breakpoint(xl) {
+    @include min-width(xl) {
       font-size: 24px;
     }
   }
@@ -68,7 +63,7 @@
     font-weight: 500;
     text-decoration: none;
 
-    @include media-breakpoint(xl) {
+    @include min-width(xl) {
       font-size: 20px;
     }
   }
@@ -77,7 +72,7 @@
     padding: 104px 0;
     text-align: center;
 
-    @include media-breakpoint(lg) {
+    @include min-width(lg) {
       padding: 160px 0;
       text-align: left;
     }

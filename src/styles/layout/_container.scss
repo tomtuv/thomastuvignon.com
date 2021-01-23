@@ -2,20 +2,20 @@
   padding: 0 24px;
   margin: 0 auto;
 
-  @include media-breakpoint(sm) {
+  @include min-width(sm) {
     max-width: 540px;
     padding: 0 40px;
   }
 
-  @include media-breakpoint(md) {
+  @include min-width(md) {
     max-width: 720px;
   }
 
-  @include media-breakpoint(lg) {
+  @include min-width(lg) {
     max-width: 960px;
   }
 
-  @include media-breakpoint(xl) {
+  @include min-width(xl) {
     max-width: 1140px;
   }
 }
