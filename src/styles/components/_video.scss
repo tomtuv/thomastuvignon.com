@@ -5,6 +5,9 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
   visibility: hidden;
   background-color: #000;
   opacity: 0;
@@ -14,18 +17,8 @@
     width: 100%;
   }
 
-  .container {
-    position: relative;
-    top: 50%;
-    z-index: 1;
-    transform: translateY(-50%);
-  }
-
   button {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 24px;
   }
 
   &.active {

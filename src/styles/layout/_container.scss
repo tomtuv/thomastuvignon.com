@@ -1,0 +1,21 @@
+.container {
+  padding: 0 24px;
+  margin: 0 auto;
+
+  @include media-breakpoint(sm) {
+    max-width: 540px;
+    padding: 0 40px;
+  }
+
+  @include media-breakpoint(md) {
+    max-width: 720px;
+  }
+
+  @include media-breakpoint(lg) {
+    max-width: 960px;
+  }
+
+  @include media-breakpoint(xl) {
+    max-width: 1140px;
+  }
+}

@@ -1,35 +1,34 @@
 import React from "react";
 import Img from "gatsby-image";
 
-const Media = ({ project, block }) =>
-  block.images.map((image, i) => {
-    return (
-      <div
+const Media = ({ project, block }) => (
+  <section className="grid">
+    {block.images.map((image, i) => (
+      <figure
         className={
           block.layout === "2 columns"
-            ? "col-md-6"
+            ? "grid-col-6"
             : block.layout === "3 columns"
-            ? "col-md-4"
-            : "col"
+            ? "grid-col-4"
+            : "grid-col"
         }
         data-aos="fade-up"
         key={i}
       >
-        <figure>
-          <Img
-            fixed={image.fixed}
-            alt={project.title}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-            }}
-            imgStyle={{ position: "relative" }}
-            placeholderStyle={{ position: "absolute" }}
-          />
-        </figure>
-      </div>
-    );
-  });
+        <Img
+          fixed={image.fixed}
+          alt={project.title}
+          style={{
+            display: "block",
+            width: "100%",
+            height: "auto",
+          }}
+          imgStyle={{ position: "relative" }}
+          placeholderStyle={{ position: "absolute" }}
+        />
+      </figure>
+    ))}
+  </section>
+);
 
 export default Media;

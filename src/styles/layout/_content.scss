@@ -1,16 +1,8 @@
 .content {
-  padding: 56px 0 32px;
+  padding: 80px 0;
 
-  @include media-breakpoint-up(lg) {
-    padding: 104px 0 56px;
-  }
-
-  [class^="col"] {
-    margin-bottom: 24px;
-
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 48px;
-    }
+  @include media-breakpoint(lg) {
+    padding: 104px 0;
   }
 
   figure {
@@ -29,17 +21,9 @@
       border-radius: 4px;
       transition: transform 0.2s ease;
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint(lg) {
         border-radius: 8px;
       }
-    }
-  }
-
-  article {
-    margin-bottom: 32px;
-
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 56px;
     }
   }
 
@@ -48,7 +32,7 @@
       font-size: 18px;
       font-weight: 500;
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint(xl) {
         font-size: 20px;
       }
     }
@@ -63,18 +47,18 @@
     }
 
     &:nth-child(even) {
-      margin-top: 24px;
+      margin-top: 48px;
 
-      @include media-breakpoint-up(lg) {
-        margin-top: 8px;
+      @include media-breakpoint(lg) {
+        margin-top: 56px;
       }
     }
 
     &:nth-child(odd) {
-      margin-top: 32px;
+      margin-top: 56px;
 
-      @include media-breakpoint-up(lg) {
-        margin-top: 56px;
+      @include media-breakpoint(lg) {
+        margin-top: 104px;
       }
     }
 
@@ -84,23 +68,18 @@
   }
 
   aside {
-    padding-bottom: 24px;
+    margin-top: 56px;
     text-align: center;
 
-    @include media-breakpoint-up(lg) {
-      padding-bottom: 48px;
+    @include media-breakpoint(lg) {
+      margin-top: 104px;
     }
   }
 
   &-404 {
     display: flex;
     align-items: center;
-    padding: 56px 0;
     text-align: center;
-
-    @include media-breakpoint-up(lg) {
-      padding: 104px 0;
-    }
 
     h2 + p {
       margin-top: 24px;

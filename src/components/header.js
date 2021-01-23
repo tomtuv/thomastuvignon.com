@@ -17,31 +17,24 @@ const Header = ({ homePage, project }) => {
       <header className="header header-home">
         <Bubbles />
         <div className="container">
-          <div className="row">
-            <div className="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-              <div className="d-flex flex-column flex-lg-row align-items-center">
-                <figure>
-                  <Img
-                    fluid={homePage.profilePicture.fluid}
-                    alt={homePage.title}
-                  />
-                </figure>
-                <div>
-                  <h1>{homePage.title}</h1>
-                  <p>{homePage.jobTitle}</p>
-                  <button className="link" onClick={toggleModal}>
-                    Voir le CV vidéo
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className="grid">
+            <figure>
+              <Img fluid={homePage.profilePicture.fluid} alt={homePage.title} />
+            </figure>
+            <article>
+              <h1>{homePage.title}</h1>
+              <p>{homePage.jobTitle}</p>
+              <button className="link" onClick={toggleModal}>
+                Voir le CV vidéo
+              </button>
+            </article>
           </div>
         </div>
 
         <div className={`video${modal}`} role="dialog">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-10 offset-xl-1">
+            <div className="grid">
+              <div className="grid-col-10 grid-start-2">
                 <button className="link link-back" onClick={toggleModal}>
                   Retour
                 </button>
@@ -51,7 +44,7 @@ const Header = ({ homePage, project }) => {
                   playsInline
                   preload="none"
                   ref={video}
-                  poster="og-image.jpg"
+                  poster="/og-image.jpg"
                 >
                   <source src={homePage.video.file.url} type="video/mp4" />
                 </video>
@@ -67,14 +60,10 @@ const Header = ({ homePage, project }) => {
         <Bubbles />
 
         <div className="container">
-          <div className="row">
-            <div className="col-lg-10 offset-lg-1">
-              <Link to="/" className="link link-back">
-                Thomas Tuvignon
-              </Link>
-              <h1>{project ? project.title : "Page introuvable"}</h1>
-            </div>
-          </div>
+          <Link to="/" className="link link-back">
+            Thomas Tuvignon
+          </Link>
+          <h1>{project ? project.title : "Page introuvable"}</h1>
         </div>
       </header>
     );

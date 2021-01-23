@@ -1,0 +1,89 @@
+.header {
+  padding: 56px 0;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  background-color: #31185a;
+
+  @include media-breakpoint(lg) {
+    padding: 120px 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  figure {
+    grid-column: span 12;
+    justify-self: center;
+    width: 130px;
+
+    @include media-breakpoint(lg) {
+      grid-column: span 4;
+      justify-self: end;
+      width: 160px;
+    }
+
+    @include media-breakpoint(xl) {
+      width: 170px;
+    }
+  }
+
+  article {
+    grid-column: span 12;
+
+    @include media-breakpoint(lg) {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 8;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  img {
+    border-radius: 100%;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  h1 {
+    margin: 20px 0 0;
+  }
+
+  p {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 500;
+
+    @include media-breakpoint(xl) {
+      font-size: 24px;
+    }
+  }
+
+  button {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+
+    @include media-breakpoint(xl) {
+      font-size: 20px;
+    }
+  }
+
+  &-home {
+    padding: 120px 0;
+    text-align: center;
+
+    @include media-breakpoint(lg) {
+      padding: 160px 0;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+    }
+  }
+}

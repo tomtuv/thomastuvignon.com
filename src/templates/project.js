@@ -20,17 +20,13 @@ const ProjectTemplate = ({ data }) => {
       <main className="content">
         <div className="container">
           <article>
-            {project.blocks.map((block, i) => (
-              <section key={i}>
-                <div className="row">
-                  {block.internal.type === "ContentfulText" ? (
-                    <Text block={block} />
-                  ) : (
-                    <Media project={project} block={block} />
-                  )}
-                </div>
-              </section>
-            ))}
+            {project.blocks.map((block, i) => {
+              if (block.__typename === "ContentfulText") {
+                return <Text block={block} key={i} />;
+              } else {
+                return <Media project={project} block={block} key={i} />;
+              }
+            })}
           </article>
           <aside>
             <Link to="/" className="link link-back">
@@ -54,25 +50,21 @@ export const pageQuery = graphql`
       }
       blocks {
         ... on ContentfulText {
+          __typename
           title
           subtitle
           body {
             raw
           }
           link
-          internal {
-            type
-          }
         }
         ... on ContentfulMedia {
+          __typename
           layout
           images {
             fixed(width: 2200, quality: 0) {
               ...GatsbyContentfulFixed_withWebp
             }
-          }
-          internal {
-            type
           }
         }
       }

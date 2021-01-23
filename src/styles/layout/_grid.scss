@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+
+  @include media-breakpoint(lg) {
+    gap: 48px;
+  }
+
+  &-col {
+    grid-column: auto / span 12;
+
+    &-10 {
+      grid-column: auto / span 12;
+
+      @include media-breakpoint(lg) {
+        grid-column: auto / span 10;
+      }
+    }
+
+    &-6 {
+      grid-column: auto / span 6;
+    }
+
+    &-4 {
+      grid-column: auto / span 6;
+
+      @include media-breakpoint(lg) {
+        grid-column: auto / span 4;
+      }
+    }
+  }
+
+  &-start-2 {
+    @include media-breakpoint(lg) {
+      grid-column-start: 2;
+    }
+  }
+}

@@ -8,14 +8,14 @@
 }
 
 body {
-  font-family: "Poppins", $font-family-sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba($black, 0);
+  -webkit-tap-highlight-color: rgba(#000, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint(xl) {
     font-size: 18px;
   }
 }
@@ -35,11 +35,11 @@ h1 {
   font-weight: 700;
   line-height: 1.25;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint(md) {
     font-size: 36px;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint(lg) {
     font-size: 42px;
   }
 }
@@ -50,11 +50,11 @@ h2 {
   font-weight: 600;
   line-height: 1.4;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint(md) {
     font-size: 22px;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint(lg) {
     font-size: 24px;
   }
 }

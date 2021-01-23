@@ -10,20 +10,23 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO homePage={homePage} />
       <Header homePage={homePage} />
 
       <main className="content">
         <div className="container">
-          <div className="row">
+          <div className="grid">
             {homePage.projects.map((project, i) => (
-              <div className="col-lg-4 col-6" data-aos="fade-up" key={i}>
-                <Link to={`/projects/${project.slug}`}>
-                  <figure>
-                    <Img fluid={project.thumbnail.fluid} alt={project.title} />
-                  </figure>
-                </Link>
-              </div>
+              <Link
+                className="grid-col-4"
+                data-aos="fade-up"
+                key={i}
+                to={`/projects/${project.slug}`}
+              >
+                <figure>
+                  <Img fluid={project.thumbnail.fluid} alt={project.title} />
+                </figure>
+              </Link>
             ))}
           </div>
         </div>

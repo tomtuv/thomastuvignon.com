@@ -4,7 +4,7 @@ a {
   color: #222;
   text-decoration: none;
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint(xl) {
     font-size: 18px;
   }
 }
