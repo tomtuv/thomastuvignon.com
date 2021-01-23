@@ -5,13 +5,13 @@ const Media = ({ project, block }) => (
   <section className="grid">
     {block.images.map((image, i) => (
       <figure
-        className={
+        className={`grid-col${
           block.layout === "2 columns"
-            ? "grid-col-6"
+            ? " grid-col-md-6"
             : block.layout === "3 columns"
-            ? "grid-col-4"
-            : "grid-col"
-        }
+            ? " grid-col-md-6 grid-col-lg-4"
+            : ""
+        }`}
         data-aos="fade-up"
         key={i}
       >

@@ -34,7 +34,7 @@ const Header = ({ homePage, project }) => {
         <div className={`video${modal}`} role="dialog">
           <div className="container">
             <div className="grid">
-              <div className="grid-col-10 grid-start-2">
+              <div className="grid-col grid-col-lg-10 grid-start-lg-2">
                 <button className="link link-back" onClick={toggleModal}>
                   Retour
                 </button>

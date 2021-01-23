@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
           <div className="grid">
             {homePage.projects.map((project, i) => (
               <Link
-                className="grid-col-4"
+                className="grid-col-6 grid-col-lg-4"
                 data-aos="fade-up"
                 key={i}
                 to={`/projects/${project.slug}`}
