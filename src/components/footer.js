@@ -1,5 +1,4 @@
 import React from "react";
-
 import Linkedin from "./linkedin";
 import Twitter from "./twitter";
 import Facebook from "./facebook";
@@ -12,62 +11,22 @@ const Footer = () => (
     <div className="container">
       <ul>
         <li>
-          <a
-            className="icon icon-linkedin"
-            href="https://www.linkedin.com/in/thomastuvignon"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Linkedin />
-          </a>
+          <Linkedin />
         </li>
         <li>
-          <a
-            className="icon icon-twitter"
-            href="https://twitter.com/tomtuv"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Twitter />
-          </a>
+          <Twitter />
         </li>
         <li>
-          <a
-            className="icon icon-facebook"
-            href="https://www.facebook.com/thomas.tuvignon"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Facebook />
-          </a>
+          <Facebook />
         </li>
         <li>
-          <a
-            className="icon icon-instagram"
-            href="https://www.instagram.com/tomtuv"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram />
-          </a>
+          <Instagram />
         </li>
         <li>
-          <a
-            className="icon icon-github"
-            href="https://github.com/tomtuv"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github />
-          </a>
+          <Github />
         </li>
         <li>
-          <a
-            className="icon icon-mail"
-            href="mailto:contact@thomastuvignon.com"
-          >
-            <Mail />
-          </a>
+          <Mail />
         </li>
       </ul>
 
