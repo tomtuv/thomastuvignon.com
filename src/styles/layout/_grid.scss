@@ -8,5 +8,9 @@
     gap: 48px;
   }
 
-  @include grid();
+  &-column {
+    grid-column: auto / span $columns;
+
+    @include grid();
+  }
 }
