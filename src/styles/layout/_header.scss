@@ -14,7 +14,7 @@
   }
 
   h1 {
-    margin: 16px 0 0;
+    margin: 20px 0 0;
   }
 
   img {
@@ -62,9 +62,13 @@
       }
 
       p {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         font-size: 22px;
         font-weight: 500;
+
+        @include min-width(lg) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
