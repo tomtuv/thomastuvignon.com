@@ -9,8 +9,6 @@
   }
 
   &-column {
-    grid-column: auto / span $columns;
-
     @include grid();
   }
 }

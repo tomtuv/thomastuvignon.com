@@ -18,10 +18,14 @@ const Header = ({ homePage, project }) => {
         <Bubbles />
         <div className="container">
           <div className="grid">
-            <figure className="grid-column" data-column-lg="4">
+            <figure className="grid-column" data-column="12" data-column-lg="4">
               <Img fluid={homePage.profilePicture.fluid} alt={homePage.title} />
             </figure>
-            <article className="grid-column" data-column-lg="8">
+            <article
+              className="grid-column"
+              data-column="12"
+              data-column-lg="8"
+            >
               <h1>{homePage.title}</h1>
               <p>{homePage.jobTitle}</p>
               <button className="link" onClick={toggleModal}>
@@ -36,6 +40,7 @@ const Header = ({ homePage, project }) => {
             <div className="grid">
               <div
                 className="grid-column"
+                data-column="12"
                 data-column-lg="10"
                 data-start-lg="2"
               >

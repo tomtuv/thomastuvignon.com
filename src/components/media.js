@@ -6,6 +6,7 @@ const Media = ({ project, block }) => (
     {block.images.map((image, i) => (
       <figure
         className="grid-column"
+        data-column="12"
         {...(block.layout === "2 columns"
           ? { "data-column-md": "6" }
           : block.layout === "3 columns" && {
