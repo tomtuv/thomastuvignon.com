@@ -11,8 +11,11 @@
   }
 
   a {
-    &:hover figure {
-      transform: scale(1.05);
+    &:hover,
+    &:focus {
+      figure {
+        transform: scale(1.05);
+      }
     }
 
     figure {

@@ -14,27 +14,45 @@
     }
   }
 
-  &-linkedin:hover {
-    color: #0073b1;
+  &-linkedin {
+    &:hover,
+    &:focus {
+      color: #0073b1;
+    }
   }
 
-  &-twitter:hover {
-    color: #1da1f2;
+  &-twitter {
+    &:hover,
+    &:focus {
+      color: #1da1f2;
+    }
   }
 
-  &-facebook:hover {
-    color: #1877f2;
+  &-facebook {
+    &:hover,
+    &:focus {
+      color: #1877f2;
+    }
   }
 
-  &-instagram:hover {
-    color: #b900b4;
+  &-instagram {
+    &:hover,
+    &:focus {
+      color: #b900b4;
+    }
   }
 
-  &-github:hover {
-    color: #0366d6;
+  &-github {
+    &:hover,
+    &:focus {
+      color: #0366d6;
+    }
   }
 
-  &-mail:hover {
-    color: #666;
+  &-mail {
+    &:hover,
+    &:focus {
+      color: #666;
+    }
   }
 }
