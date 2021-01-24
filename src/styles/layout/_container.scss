@@ -6,5 +6,9 @@
     padding: 0 40px;
   }
 
-  @include containers;
+  @each $breakpoint, $max-width in $max-widths {
+    @include min-width($breakpoint) {
+      max-width: $max-width;
+    }
+  }
 }

@@ -9,6 +9,26 @@
   }
 
   &-column {
-    @include columns();
+    @each $breakpoint in map-keys($breakpoints) {
+      $suffix: if(
+        map-get($breakpoints, $breakpoint) == 0,
+        "",
+        "-#{$breakpoint}"
+      );
+
+      @include min-width($breakpoint) {
+        @for $i from 1 through $columns {
+          &[data-column#{$suffix}="#{$i}"] {
+            grid-column: auto / span $i;
+          }
+        }
+
+        @for $i from 0 through ($columns - 1) {
+          &[data-start#{$suffix}="#{$i}"] {
+            grid-column-start: $i;
+          }
+        }
+      }
+    }
   }
 }
