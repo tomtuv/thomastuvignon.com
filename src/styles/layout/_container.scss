@@ -3,19 +3,8 @@
   margin: 0 auto;
 
   @include min-width(sm) {
-    max-width: 540px;
     padding: 0 40px;
   }
 
-  @include min-width(md) {
-    max-width: 720px;
-  }
-
-  @include min-width(lg) {
-    max-width: 960px;
-  }
-
-  @include min-width(xl) {
-    max-width: 1140px;
-  }
+  @include containers;
 }

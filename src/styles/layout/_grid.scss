@@ -9,6 +9,6 @@
   }
 
   &-column {
-    @include grid();
+    @include columns();
   }
 }
