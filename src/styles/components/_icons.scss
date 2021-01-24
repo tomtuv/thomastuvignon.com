@@ -1,0 +1,40 @@
+.icon {
+  display: block;
+  line-height: 0;
+  color: #000;
+  transition: color 0.2s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    @include min-width(lg) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &-linkedin:hover {
+    color: #0073b1;
+  }
+
+  &-twitter:hover {
+    color: #1da1f2;
+  }
+
+  &-facebook:hover {
+    color: #1877f2;
+  }
+
+  &-instagram:hover {
+    color: #b900b4;
+  }
+
+  &-github:hover {
+    color: #0366d6;
+  }
+
+  &-mail:hover {
+    color: #666;
+  }
+}

@@ -1,13 +1,11 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-@import "~aos/src/sass/aos";
-@import "~font-awesome/scss/font-awesome";
-
 @import "base/base";
 
 @import "components/bubbles";
-@import "components/link";
+@import "components/icons";
+@import "components/links";
 @import "components/video";
 
 @import "layout/container";
@@ -16,3 +14,5 @@
 @import "layout/grid";
 @import "layout/header";
 @import "layout/wrapper";
+
+@import "~aos/src/sass/aos";

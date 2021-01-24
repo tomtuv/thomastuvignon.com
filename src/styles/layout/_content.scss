@@ -11,8 +11,6 @@
   }
 
   a {
-    display: block;
-
     &:hover figure {
       transform: scale(1.05);
     }
@@ -28,12 +26,16 @@
   }
 
   section {
-    h2 + p {
-      font-size: 18px;
-      font-weight: 500;
+    h2 {
+      margin: 0 0 8px;
 
-      @include min-width(xl) {
-        font-size: 20px;
+      + p {
+        font-size: 18px;
+        font-weight: 500;
+
+        @include min-width(xl) {
+          font-size: 20px;
+        }
       }
     }
 
