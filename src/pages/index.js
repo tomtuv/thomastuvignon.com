@@ -18,7 +18,6 @@ const IndexPage = ({ data }) => {
           <div className="grid">
             {homePage.projects.map((project, i) => (
               <Link
-                className="grid-column"
                 data-column="6"
                 data-column-lg="4"
                 data-aos="fade-up"
