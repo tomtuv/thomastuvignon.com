@@ -18,7 +18,7 @@
         }
       }
 
-      @for $i from 0 through ($columns - 1) {
+      @for $i from 1 through ($columns - 1) {
         [data-start#{$suffix}="#{$i}"] {
           grid-column-start: $i;
         }
