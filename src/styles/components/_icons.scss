@@ -5,12 +5,12 @@
   transition: color 0.2s ease;
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: rem(24);
+    height: rem(24);
 
     @include min-width(lg) {
-      width: 28px;
-      height: 28px;
+      width: rem(28);
+      height: rem(28);
     }
   }
 

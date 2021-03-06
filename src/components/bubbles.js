@@ -1,27 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 const Bubbles = () => {
   useEffect(() => {
     window.addEventListener("scroll", function () {
       const scrolled =
-        window.scrollY ||
-        window.scrollTop ||
-        document.querySelector("html").scrollTop;
+        window.scrollY || window.scrollTop || document.documentElement.scrollTop
+      const parallax1 = document.querySelector(".bubbles-parallax-1")
+      const parallax2 = document.querySelector(".bubbles-parallax-2")
+      const parallax3 = document.querySelector(".bubbles-parallax-3")
+      const parallax4 = document.querySelector(".bubbles-parallax-4")
 
-      document.querySelector(".bubbles-parallax-1").style = `top: ${
-        0 - scrolled * 0.1
-      }px`;
-      document.querySelector(".bubbles-parallax-2").style = `top: ${
-        0 - scrolled * 0.2
-      }px`;
-      document.querySelector(".bubbles-parallax-3").style = `top: ${
-        0 - scrolled * 0.3
-      }px`;
-      document.querySelector(".bubbles-parallax-4").style = `top: ${
-        0 - scrolled * 0.4
-      }px`;
-    });
-  }, []);
+      parallax1 && (parallax1.style.top = `${0 - scrolled * 0.1}px`)
+      parallax2 && (parallax2.style.top = `${0 - scrolled * 0.2}px`)
+      parallax3 && (parallax3.style.top = `${0 - scrolled * 0.3}px`)
+      parallax4 && (parallax4.style.top = `${0 - scrolled * 0.4}px`)
+    })
+  })
 
   return (
     <div className="bubbles" aria-hidden="true">
@@ -85,7 +79,7 @@ const Bubbles = () => {
         <div className="bubbles-item bubbles-item-48">&nbsp;</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Bubbles;
+export default Bubbles

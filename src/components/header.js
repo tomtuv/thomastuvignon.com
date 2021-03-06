@@ -1,15 +1,16 @@
-import React, { useRef, useState } from "react";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import Bubbles from "./bubbles";
+import React, { useRef, useState } from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useIntl, Link } from "gatsby-plugin-intl"
+import Bubbles from "./bubbles"
 
 const Header = ({ homePage, project }) => {
-  const [modal, setModal] = useState("");
-  const video = useRef(null);
+  const [modal, setModal] = useState("")
+  const video = useRef(null)
+  const intl = useIntl()
 
   function toggleModal() {
-    setModal(modal === "" ? " active" : "");
-    modal === "" ? video.current.play() : video.current.pause();
+    setModal(modal === "" ? " active" : "")
+    modal === "" ? video.current.play() : video.current.pause()
   }
 
   if (homePage) {
@@ -19,26 +20,28 @@ const Header = ({ homePage, project }) => {
         <div className="container">
           <div className="grid">
             <figure data-column="12" data-column-lg="4">
-              <Img fluid={homePage.profilePicture.fluid} alt={homePage.title} />
+              <GatsbyImage
+                image={homePage.profilePicture.gatsbyImageData}
+                alt={homePage.title}
+                style={{ display: "block" }}
+              />
             </figure>
             <article data-column="12" data-column-lg="8">
               <h1>{homePage.title}</h1>
               <p>{homePage.jobTitle}</p>
               <button className="link" onClick={toggleModal}>
-                Voir le CV vidéo
+                {intl.formatMessage({ id: "modal.button" })}
               </button>
             </article>
           </div>
         </div>
-
         <div className={`video${modal}`} role="dialog">
           <div className="container">
             <div className="grid">
               <div data-column="12" data-column-lg="10" data-start-lg="2">
                 <button className="link link-back" onClick={toggleModal}>
-                  Retour
+                  {intl.formatMessage({ id: "general.back" })}
                 </button>
-
                 <video // eslint-disable-line jsx-a11y/media-has-caption
                   controls
                   playsInline
@@ -53,21 +56,24 @@ const Header = ({ homePage, project }) => {
           </div>
         </div>
       </header>
-    );
+    )
   } else {
     return (
       <header className="header">
         <Bubbles />
-
         <div className="container">
-          <Link to="/" className="link link-back">
+          <Link
+            to="/"
+            className="link link-back"
+            aria-label={intl.formatMessage({ id: "general.back" })}
+          >
             Thomas Tuvignon
           </Link>
           <h1>{project ? project.title : "Page introuvable"}</h1>
         </div>
       </header>
-    );
+    )
   }
-};
+}
 
-export default Header;
+export default Header

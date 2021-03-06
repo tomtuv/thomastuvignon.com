@@ -1,5 +1,5 @@
-import React from "react";
-import Img from "gatsby-image";
+import React from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const Media = ({ project, block }) => (
   <section className="grid">
@@ -15,20 +15,14 @@ const Media = ({ project, block }) => (
         data-aos="fade-up"
         key={i}
       >
-        <Img
-          fixed={image.fixed}
+        <GatsbyImage
+          image={image.gatsbyImageData}
           alt={project.title}
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-          }}
-          imgStyle={{ position: "relative" }}
-          placeholderStyle={{ position: "absolute" }}
+          style={{ display: "block" }}
         />
       </figure>
     ))}
   </section>
-);
+)
 
-export default Media;
+export default Media

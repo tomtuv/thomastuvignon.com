@@ -1,35 +1,16 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
     title: `Thomas Tuvignon`,
     titleTemplate: `%s | Thomas Tuvignon`,
-    description: `Intégration web. Design graphique. Motion design. Prototypage.`,
     siteUrl: `https://thomastuvignon.com`,
     image: `/og-image.jpg`,
     twitterUsername: `@tomtuv`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-83807816-2`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
     {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
@@ -41,5 +22,50 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`fr`, `en`],
+        defaultLanguage: `fr`,
+        redirect: true,
+        redirectComponent: require.resolve(`./src/components/seo.js`),
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Thomas Tuvignon`,
+        short_name: `Thomas Tuvignon`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#31185a`,
+        display: `minimal-ui`,
+        icon: `static/icon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+      },
+    },
   ],
-};
+}

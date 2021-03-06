@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Github = () => (
   <a
@@ -15,6 +15,6 @@ const Github = () => (
       />
     </svg>
   </a>
-);
+)
 
-export default Github;
+export default Github

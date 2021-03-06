@@ -1,18 +1,18 @@
 $breakpoints: (
   "xs": 0,
-  "sm": 560px,
-  "md": 768px,
-  "lg": 1024px,
-  "xl": 1200px,
+  "sm": 35em,
+  "md": 48em,
+  "lg": 64em,
+  "xl": 75em,
 );
 
 $max-widths: (
-  "sm": 540px,
-  "md": 720px,
-  "lg": 960px,
-  "xl": 1140px,
+  "sm": rem(560),
+  "md": rem(720),
+  "lg": rem(960),
+  "xl": rem(1120),
 );
 
 $columns: 12;
 
-$aos-distance: 24px;
+$aos-distance: rem(24);

@@ -1,14 +1,15 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Header from "../components/header";
-import Text from "../components/text";
-import Media from "../components/media";
+import React from "react"
+import { graphql } from "gatsby"
+import { useIntl, Link } from "gatsby-plugin-intl"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Header from "../components/header"
+import Text from "../components/text"
+import Media from "../components/media"
 
 const ProjectTemplate = ({ data }) => {
-  const project = data.contentfulProject;
-
+  const intl = useIntl()
+  const project = data.contentfulProject
   return (
     <Layout>
       <SEO
@@ -16,34 +17,33 @@ const ProjectTemplate = ({ data }) => {
         description={project.description.description}
       />
       <Header project={project} />
-
       <main className="content">
         <div className="container">
           <article>
             {project.blocks.map((block, i) => {
               if (block.__typename === "ContentfulText") {
-                return <Text block={block} key={i} />;
+                return <Text block={block} key={i} />
               } else {
-                return <Media project={project} block={block} key={i} />;
+                return <Media project={project} block={block} key={i} />
               }
             })}
           </article>
           <aside>
             <Link to="/" className="link link-back">
-              Retour
+              {intl.formatMessage({ id: "general.back" })}
             </Link>
           </aside>
         </div>
       </main>
     </Layout>
-  );
-};
+  )
+}
 
-export default ProjectTemplate;
+export default ProjectTemplate
 
-export const pageQuery = graphql`
-  query ProjectBySlug($slug: String!) {
-    contentfulProject(slug: { eq: $slug }) {
+export const query = graphql`
+  query($slug: String!, $locale: String!) {
+    contentfulProject(slug: { eq: $slug }, node_locale: { eq: $locale }) {
       title
       description {
         description
@@ -62,12 +62,10 @@ export const pageQuery = graphql`
           __typename
           layout
           images {
-            fixed(width: 2200, quality: 0) {
-              ...GatsbyContentfulFixed_withWebp
-            }
+            gatsbyImageData(quality: 80, placeholder: DOMINANT_COLOR)
           }
         }
       }
     }
   }
-`;
+`

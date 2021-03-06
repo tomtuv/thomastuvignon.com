@@ -1,13 +1,13 @@
 .content {
-  padding: 56px 0;
+  padding: rem(56) 0;
 
   @include min-width(lg) {
-    padding: 104px 0;
+    padding: rem(104) 0;
   }
 
   figure {
     overflow: hidden;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 rem(10) rem(40) 0 rgba(0, 0, 0, 0.1);
   }
 
   a {
@@ -19,54 +19,55 @@
     }
 
     figure {
-      border-radius: 4px;
+      border-radius: rem(4);
       transition: transform 0.2s ease;
+      transform: translate(0);
 
       @include min-width(lg) {
-        border-radius: 8px;
+        border-radius: rem(8);
       }
     }
   }
 
   section {
     h2 {
-      margin: 0 0 8px;
+      margin: 0 0 rem(8);
 
       + p {
-        font-size: 18px;
+        font-size: rem(18);
         font-weight: 500;
 
         @include min-width(xl) {
-          font-size: 20px;
+          font-size: rem(20);
         }
       }
     }
 
     ul {
-      margin-top: 32px;
+      margin-top: rem(32);
     }
 
     li + li {
-      margin-top: 8px;
+      margin-top: rem(8);
     }
 
     a {
-      margin-top: 32px;
+      margin-top: rem(32);
     }
 
     &:nth-child(even) {
-      margin-top: 48px;
+      margin-top: rem(48);
 
       @include min-width(lg) {
-        margin-top: 56px;
+        margin-top: rem(56);
       }
     }
 
     &:nth-child(odd) {
-      margin-top: 56px;
+      margin-top: rem(56);
 
       @include min-width(lg) {
-        margin-top: 104px;
+        margin-top: rem(104);
       }
     }
 
@@ -76,11 +77,11 @@
   }
 
   aside {
-    margin-top: 56px;
+    margin-top: rem(56);
     text-align: center;
 
     @include min-width(lg) {
-      margin-top: 104px;
+      margin-top: rem(104);
     }
   }
 
@@ -90,7 +91,7 @@
     text-align: center;
 
     h2 + p {
-      margin-top: 24px;
+      margin-top: rem(24);
     }
   }
 }

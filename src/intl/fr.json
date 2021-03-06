@@ -1,0 +1,19 @@
+{
+  "general": {
+    "description": "Intégration web. Design graphique. Motion design. Prototypage.",
+    "back": "Retour"
+  },
+  "modal": {
+    "button": "Voir le CV vidéo"
+  },
+  "footer": {
+    "email": "E-mail"
+  },
+  "project": {
+    "link": "Voir le site web"
+  },
+  "404": {
+    "title": "Oups, il n’y a rien à voir ici…",
+    "link": "Retour à l’accueil"
+  }
+}

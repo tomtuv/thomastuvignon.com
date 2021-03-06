@@ -1,12 +1,12 @@
 .header {
-  padding: 56px 0;
+  padding: rem(56) 0;
   overflow: hidden;
   color: #fff;
   text-align: center;
   background-color: #31185a;
 
   @include min-width(lg) {
-    padding: 120px 0;
+    padding: rem(120) 0;
   }
 
   .container {
@@ -14,11 +14,7 @@
   }
 
   h1 {
-    margin: 20px 0 0;
-  }
-
-  img {
-    border-radius: 100%;
+    margin: rem(20) 0 0;
   }
 
   .link {
@@ -32,25 +28,28 @@
   }
 
   &-home {
-    padding: 104px 0;
+    padding: rem(104) 0;
     text-align: center;
 
     @include min-width(lg) {
-      padding: 160px 0;
+      padding: rem(160) 0;
       text-align: left;
     }
 
     figure {
       justify-self: center;
-      width: 130px;
+      width: rem(130);
+      overflow: hidden;
+      border-radius: 50%;
+      transform: translate(0);
 
       @include min-width(lg) {
         justify-self: end;
-        width: 160px;
+        width: rem(160);
       }
 
       @include min-width(xl) {
-        width: 170px;
+        width: rem(170);
       }
     }
 
@@ -58,16 +57,16 @@
       align-self: center;
 
       h1 {
-        margin: 0 0 20px;
+        margin: 0 0 rem(20);
       }
 
       p {
-        margin-bottom: 24px;
-        font-size: 22px;
+        margin-bottom: rem(24);
+        font-size: rem(22);
         font-weight: 500;
 
         @include min-width(lg) {
-          margin-bottom: 20px;
+          margin-bottom: rem(20);
         }
       }
     }

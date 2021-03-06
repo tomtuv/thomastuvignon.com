@@ -1,11 +1,22 @@
-const Promise = require("bluebird");
-const path = require("path");
+const Promise = require("bluebird")
+const path = require("path")
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      locale: page.context.intl.language,
+    },
+  })
+}
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const projectTemplate = path.resolve("./src/templates/project.js");
+    const projectTemplate = path.resolve("./src/templates/project.js")
     resolve(
       graphql(
         `
@@ -17,23 +28,23 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then((result) => {
+      ).then(result => {
         if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
+          console.log(result.errors)
+          reject(result.errors)
         }
 
-        const projects = result.data.allContentfulProject.nodes;
-        projects.forEach((project) => {
+        const projects = result.data.allContentfulProject.nodes
+        projects.forEach(project => {
           createPage({
             path: `/projects/${project.slug}/`,
             component: projectTemplate,
             context: {
               slug: project.slug,
             },
-          });
-        });
+          })
+        })
       })
-    );
-  });
-};
+    )
+  })
+}

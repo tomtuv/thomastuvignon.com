@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Linkedin = () => (
   <a
@@ -15,6 +15,6 @@ const Linkedin = () => (
       />
     </svg>
   </a>
-);
+)
 
-export default Linkedin;
+export default Linkedin
