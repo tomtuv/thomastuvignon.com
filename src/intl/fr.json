@@ -13,7 +13,8 @@
     "link": "Voir le site web"
   },
   "404": {
-    "title": "Oups, il n’y a rien à voir ici…",
+    "title": "Page introuvable",
+    "text": "Oups, il n’y a rien à voir ici…",
     "link": "Retour à l’accueil"
   }
 }

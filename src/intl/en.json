@@ -13,7 +13,8 @@
     "link": "See the website"
   },
   "404": {
-    "title": "Oops, nothing to see here…",
+    "title": "Page not found",
+    "text": "Oops, nothing to see here…",
     "link": "Back to home page"
   }
 }

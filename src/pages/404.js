@@ -8,11 +8,14 @@ const NotFoundPage = () => {
   const intl = useIntl()
   return (
     <Layout>
-      <SEO title="Page introuvable" />
+      <SEO
+        title={intl.formatMessage({ id: "404.title" })}
+        titleTemplate="%s | Thomas Tuvignon"
+      />
       <Header />
       <main className="content content-404">
         <div className="container">
-          <h2>{intl.formatMessage({ id: "404.title" })}</h2>
+          <h2>{intl.formatMessage({ id: "404.text" })}</h2>
           <p>
             <Link to="/" className="link link-back">
               {intl.formatMessage({ id: "404.link" })}

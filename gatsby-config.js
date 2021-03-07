@@ -5,7 +5,6 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Thomas Tuvignon`,
-    titleTemplate: `%s | Thomas Tuvignon`,
     siteUrl: `https://thomastuvignon.com`,
     image: `/og-image.jpg`,
     twitterUsername: `@tomtuv`,
