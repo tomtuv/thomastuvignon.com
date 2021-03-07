@@ -21,11 +21,17 @@ const ProjectTemplate = ({ data }) => {
       <main className="content">
         <div className="container">
           <article>
-            {project.blocks.map((block, i) => {
+            {project.blocks.map(block => {
               if (block.__typename === "ContentfulText") {
-                return <Text block={block} key={i} />
+                return <Text block={block} key={block.contentful_id} />
               } else {
-                return <Media project={project} block={block} key={i} />
+                return (
+                  <Media
+                    project={project}
+                    block={block}
+                    key={block.contentful_id}
+                  />
+                )
               }
             })}
           </article>
@@ -51,6 +57,7 @@ export const query = graphql`
       }
       blocks {
         ... on ContentfulText {
+          contentful_id
           __typename
           title
           subtitle
@@ -60,9 +67,11 @@ export const query = graphql`
           link
         }
         ... on ContentfulMedia {
+          contentful_id
           __typename
           layout
           images {
+            id
             localFile {
               childImageSharp {
                 gatsbyImageData(

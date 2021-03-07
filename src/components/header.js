@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useIntl, Link } from "gatsby-plugin-intl"
 import Bubbles from "./bubbles"
@@ -12,6 +13,14 @@ const Header = ({ homePage, project }) => {
     setModal(modal === "" ? " active" : "")
     modal === "" ? video.current.play() : video.current.pause()
   }
+
+  const data = useStaticQuery(graphql`
+    query {
+      poster: file(absolutePath: { regex: "/og-image.jpg/" }) {
+        publicURL
+      }
+    }
+  `)
 
   if (homePage) {
     return (
@@ -50,7 +59,7 @@ const Header = ({ homePage, project }) => {
                   playsInline
                   preload="none"
                   ref={video}
-                  poster="/og-image.jpg"
+                  poster={data.poster.publicURL}
                 >
                   <source
                     src={homePage.video.localFile.publicURL}

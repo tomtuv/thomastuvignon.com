@@ -15,12 +15,12 @@ const IndexPage = ({ data }) => {
       <main className="content">
         <div className="container">
           <div className="grid">
-            {homePage.projects.map((project, i) => (
+            {homePage.projects.map(project => (
               <Link
                 data-column="6"
                 data-column-lg="4"
                 data-aos="fade-up"
-                key={i}
+                key={project.contentful_id}
                 to={`/projects/${project.slug}`}
               >
                 <figure>
@@ -67,6 +67,7 @@ export const query = graphql`
         }
       }
       projects {
+        contentful_id
         title
         slug
         thumbnail {
@@ -82,6 +83,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    image: file(absolutePath: { regex: "/og-image.jpg/" }) {
+      publicURL
     }
   }
 `
