@@ -7,15 +7,16 @@ import { useIntl } from "gatsby-plugin-intl"
 const SEO = ({ title, titleTemplate, description }) => {
   const { pathname } = useLocation()
   const intl = useIntl()
-  const { site } = useStaticQuery(query)
-  const { defaultTitle, siteUrl, image, twitterUsername } = site.siteMetadata
+  const { site, image } = useStaticQuery(query)
+  const { defaultTitle, siteUrl, twitterUsername } = site.siteMetadata
   const defaultDescription = intl.formatMessage({ id: "general.description" })
+  const defaultImage = image.publicURL
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     url: siteUrl + pathname,
-    image: siteUrl + image,
+    image: siteUrl + defaultImage,
   }
 
   return (
@@ -52,9 +53,11 @@ const query = graphql`
       siteMetadata {
         defaultTitle: title
         siteUrl
-        image
         twitterUsername
       }
+    }
+    image: file(absolutePath: { regex: "/og-image.jpg/" }) {
+      publicURL
     }
   }
 `

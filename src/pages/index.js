@@ -25,7 +25,10 @@ const IndexPage = ({ data }) => {
               >
                 <figure>
                   <GatsbyImage
-                    image={project.thumbnail.gatsbyImageData}
+                    image={
+                      project.thumbnail.localFile.childImageSharp
+                        .gatsbyImageData
+                    }
                     alt={project.title}
                     style={{ display: "block" }}
                   />
@@ -47,30 +50,36 @@ export const query = graphql`
       title
       jobTitle
       profilePicture {
-        gatsbyImageData(
-          width: 170
-          height: 170
-          quality: 80
-          resizingBehavior: FILL
-          placeholder: DOMINANT_COLOR
-        )
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              width: 170
+              height: 170
+              quality: 80
+              transformOptions: { cropFocus: CENTER }
+            )
+          }
+        }
       }
       video {
-        file {
-          url
+        localFile {
+          publicURL
         }
       }
       projects {
         title
         slug
         thumbnail {
-          gatsbyImageData(
-            width: 400
-            height: 300
-            quality: 80
-            resizingBehavior: FILL
-            placeholder: DOMINANT_COLOR
-          )
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                height: 300
+                quality: 80
+                transformOptions: { cropFocus: CENTER }
+              )
+            }
+          }
         }
       }
     }

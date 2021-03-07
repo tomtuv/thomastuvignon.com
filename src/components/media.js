@@ -16,7 +16,7 @@ const Media = ({ project, block }) => (
         key={i}
       >
         <GatsbyImage
-          image={image.gatsbyImageData}
+          image={image.localFile.childImageSharp.gatsbyImageData}
           alt={project.title}
           style={{ display: "block" }}
         />

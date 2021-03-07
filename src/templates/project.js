@@ -63,11 +63,15 @@ export const query = graphql`
           __typename
           layout
           images {
-            gatsbyImageData(
-              height: 4000
-              quality: 80
-              placeholder: DOMINANT_COLOR
-            )
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 1040
+                  quality: 80
+                  placeholder: DOMINANT_COLOR
+                )
+              }
+            }
           }
         }
       }

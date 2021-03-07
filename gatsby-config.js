@@ -6,7 +6,6 @@ module.exports = {
   siteMetadata: {
     title: `Thomas Tuvignon`,
     siteUrl: `https://thomastuvignon.com`,
-    image: `/og-image.jpg`,
     twitterUsername: `@tomtuv`,
   },
   plugins: [
@@ -36,11 +35,19 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: process.env.CONTENTFUL_HOST,
+        downloadLocal: true,
       },
     },
     `gatsby-plugin-sharp`,
@@ -54,7 +61,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#31185a`,
         display: `minimal-ui`,
-        icon: `static/icon.png`,
+        icon: `src/images/icon.png`,
         icon_options: {
           purpose: `any maskable`,
         },

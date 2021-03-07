@@ -21,7 +21,10 @@ const Header = ({ homePage, project }) => {
           <div className="grid">
             <figure data-column="12" data-column-lg="4">
               <GatsbyImage
-                image={homePage.profilePicture.gatsbyImageData}
+                image={
+                  homePage.profilePicture.localFile.childImageSharp
+                    .gatsbyImageData
+                }
                 alt={homePage.title}
                 style={{ display: "block" }}
               />
@@ -49,7 +52,10 @@ const Header = ({ homePage, project }) => {
                   ref={video}
                   poster="/og-image.jpg"
                 >
-                  <source src={homePage.video.file.url} type="video/mp4" />
+                  <source
+                    src={homePage.video.localFile.publicURL}
+                    type="video/mp4"
+                  />
                 </video>
               </div>
             </div>
