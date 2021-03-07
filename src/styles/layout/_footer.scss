@@ -9,17 +9,41 @@
   }
 
   ul {
-    display: grid;
-    grid-template: auto / repeat(6, auto);
-    gap: rem(24);
+    display: flex;
     justify-content: center;
     padding: 0;
     margin-bottom: rem(24);
     list-style: none;
 
     @include min-width(lg) {
-      gap: rem(32);
       margin-bottom: rem(32);
+    }
+
+    li + li {
+      margin-left: rem(24);
+
+      @include min-width(lg) {
+        margin-left: rem(32);
+      }
+    }
+
+    button {
+      font-weight: 500;
+      transition: color 0.2s, border-color 0.2s;
+
+      &:hover,
+      &:focus {
+        color: #666;
+      }
+
+      &.active {
+        border-bottom: rem(2) solid #000;
+
+        &:hover,
+        &:focus {
+          border-color: #666;
+        }
+      }
     }
   }
 }

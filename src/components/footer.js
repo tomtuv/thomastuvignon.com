@@ -5,11 +5,12 @@ import Facebook from "./facebook"
 import Instagram from "./instagram"
 import Github from "./github"
 import Mail from "./mail"
+import Languages from "./languages"
 
 const Footer = () => (
   <footer className="footer">
     <div className="container">
-      <ul>
+      <ul className="footer-social">
         <li>
           <Linkedin />
         </li>
@@ -29,6 +30,7 @@ const Footer = () => (
           <Mail />
         </li>
       </ul>
+      <Languages />
       <p>© {new Date().getFullYear()} Thomas Tuvignon</p>
     </div>
   </footer>

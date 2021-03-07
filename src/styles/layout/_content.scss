@@ -20,7 +20,7 @@
 
     figure {
       border-radius: rem(4);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s;
       transform: translate(0);
 
       @include min-width(lg) {

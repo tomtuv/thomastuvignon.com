@@ -11,7 +11,7 @@
   visibility: hidden;
   background-color: #000;
   opacity: 0;
-  transition: visibility 0.2s ease, opacity 0.2s ease;
+  transition: visibility 0.2s, opacity 0.2s;
 
   .grid > div {
     display: grid;
