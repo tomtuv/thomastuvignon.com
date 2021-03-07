@@ -84,7 +84,9 @@ const Header = ({ homePage, project }) => {
           >
             Thomas Tuvignon
           </Link>
-          <h1>{project ? project.title : "Page introuvable"}</h1>
+          <h1>
+            {project ? project.title : intl.formatMessage({ id: "404.title" })}
+          </h1>
         </div>
       </header>
     )
