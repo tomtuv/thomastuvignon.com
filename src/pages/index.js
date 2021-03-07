@@ -84,8 +84,5 @@ export const query = graphql`
         }
       }
     }
-    image: file(absolutePath: { regex: "/og-image.jpg/" }) {
-      publicURL
-    }
   }
 `
