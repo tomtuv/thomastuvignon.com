@@ -14,7 +14,6 @@ const ProjectTemplate = ({ data }) => {
     <Layout>
       <SEO
         title={project.title}
-        titleTemplate="%s | Thomas Tuvignon"
         description={project.description.description}
       />
       <Header project={project} />
