@@ -32,9 +32,9 @@ const SEO = ({ title, titleTemplate, description }) => {
         dir: "ltr",
       }}
     >
-      <link rel="alternate" hreflang={intl.locale} href={seo.url} />
-      <link rel="alternate" hreflang={alternate} href={seo.alternateUrl} />
-      <link rel="alternate" hreflang="x-default" href={seo.defaultUrl} />
+      <link rel="alternate" hrefLang={intl.locale} href={seo.url} />
+      <link rel="alternate" hrefLang={alternate} href={seo.alternateUrl} />
+      <link rel="alternate" hrefLang="x-default" href={seo.defaultUrl} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
