@@ -71,6 +71,9 @@ const SEO = ({ title, description }) => {
           <meta name="twitter:title" content={seo.title} />
           <meta name="twitter:description" content={seo.description} />
           <meta name="twitter:image" content={seo.image} />
+          {pathname.includes("/404/") && (
+            <meta property="robots" content="noindex" />
+          )}
         </Helmet>
       )}
     </IntlContextConsumer>
