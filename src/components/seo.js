@@ -45,11 +45,6 @@ const SEO = ({ title, description }) => {
               key={language}
             />
           ))}
-          <link
-            rel="alternate"
-            hrefLang="x-default"
-            href={seo.url.replace(`/${currentLocale}/`, "/")}
-          />
           <meta name="description" content={seo.description} />
           <meta name="image" content={seo.image} />
           <meta property="og:url" content={seo.url} />
