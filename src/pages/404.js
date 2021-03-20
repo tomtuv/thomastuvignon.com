@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   const intl = useIntl()
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "404.title" })} />
+      <SEO title={intl.formatMessage({ id: "404.title" })} noIndex />
       <Header />
       <main className="content content-404">
         <div className="container">

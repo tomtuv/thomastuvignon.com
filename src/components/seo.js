@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { IntlContextConsumer, useIntl } from "gatsby-plugin-intl"
 
-const SEO = ({ title, description }) => {
+const SEO = ({ title, description, noIndex }) => {
   const { pathname } = useLocation()
   const intl = useIntl()
   const { site, image } = useStaticQuery(query)
@@ -66,9 +66,7 @@ const SEO = ({ title, description }) => {
           <meta name="twitter:title" content={seo.title} />
           <meta name="twitter:description" content={seo.description} />
           <meta name="twitter:image" content={seo.image} />
-          {pathname.includes("/404/") && (
-            <meta property="robots" content="noindex" />
-          )}
+          {noIndex && <meta property="robots" content="noindex" />}
         </Helmet>
       )}
     </IntlContextConsumer>
