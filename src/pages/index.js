@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
                 data-column-lg="4"
                 data-aos="fade-up"
                 key={project.contentful_id}
-                to={`/projects/${project.slug}`}
+                to={`/projects/${project.slug}/`}
               >
                 <figure>
                   <GatsbyImage
