@@ -41,7 +41,9 @@ const Seo = ({ title, description, noIndex }) => {
             <link
               rel="alternate"
               hrefLang={language}
-              href={seo.url.replace(`/${currentLocale}/`, `/${language}/`)}
+              href={`${siteUrl}${
+                language === "en" ? "/en" : ""
+              }${pathname.replace("/en", "")}`}
               key={language}
             />
           ))}
