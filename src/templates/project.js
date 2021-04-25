@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { useIntl, Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Header from "../components/header"
 import Text from "../components/text"
 import Media from "../components/media"
@@ -12,7 +12,7 @@ const ProjectTemplate = ({ data }) => {
   const project = data.contentfulProject
   return (
     <Layout>
-      <SEO
+      <Seo
         title={project.title}
         description={project.description.description}
       />

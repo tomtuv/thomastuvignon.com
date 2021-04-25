@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { IntlContextConsumer, useIntl } from "gatsby-plugin-react-intl"
 
-const SEO = ({ title, description, noIndex }) => {
+const Seo = ({ title, description, noIndex }) => {
   const { pathname } = useLocation()
   const intl = useIntl()
   const { site, image } = useStaticQuery(query)
@@ -73,7 +73,7 @@ const SEO = ({ title, description, noIndex }) => {
   )
 }
 
-export default SEO
+export default Seo
 
 const query = graphql`
   query {

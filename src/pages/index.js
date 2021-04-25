@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Header from "../components/header"
 
 const IndexPage = ({ data }) => {
   const homePage = data.contentfulHomePage
   return (
     <Layout>
-      <SEO />
+      <Seo />
       <Header homePage={homePage} />
       <main className="content">
         <div className="container">
