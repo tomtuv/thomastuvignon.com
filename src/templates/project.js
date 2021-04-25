@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { useIntl, Link } from "gatsby-plugin-intl"
+import { useIntl, Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header"

@@ -24,13 +24,13 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: [`fr`, `en`],
         defaultLanguage: `fr`,
         redirect: true,
-        redirectComponent: require.resolve(`./src/components/seo.js`),
+        redirectDefaultLanguageToRoot: true,
       },
     },
     `gatsby-plugin-image`,
@@ -76,14 +76,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/*/404`, `/*/offline-plugin-app-shell-fallback`],
+        exclude: [`/en/404`, `/*/offline-plugin-app-shell-fallback`],
         query: `{
           site {
             siteMetadata {
               siteUrl
             }
           }
-          allSitePage(filter: {context: {intl: {routed: {eq: true}}}}) {
+          allSitePage {
             nodes {
               path
             }

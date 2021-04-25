@@ -1,5 +1,5 @@
 import React from "react"
-import { useIntl } from "gatsby-plugin-intl"
+import { useIntl } from "gatsby-plugin-react-intl"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const Text = ({ block }) => {

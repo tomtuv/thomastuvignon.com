@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { useIntl, Link } from "gatsby-plugin-intl"
+import { useIntl, Link } from "gatsby-plugin-react-intl"
 import Bubbles from "./bubbles"
 
 const Header = ({ homePage, project }) => {

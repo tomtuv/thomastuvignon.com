@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import { IntlContextConsumer, useIntl } from "gatsby-plugin-intl"
+import { IntlContextConsumer, useIntl } from "gatsby-plugin-react-intl"
 
 const SEO = ({ title, description, noIndex }) => {
   const { pathname } = useLocation()
