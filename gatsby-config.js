@@ -76,27 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/en/404`, `/*/offline-plugin-app-shell-fallback`],
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }`,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.nodes.map(node => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${node.path}`,
-              changefreq: `daily`,
-              priority: 0.7,
-            }
-          }),
+        excludes: [`/en/404`, `/*/offline-plugin-app-shell-fallback`],
       },
     },
     `gatsby-plugin-offline`,
