@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`/en/404`, `/*/offline-plugin-app-shell-fallback`],
+        excludes: [`/*/404`, `/*/offline-plugin-app-shell-fallback`],
       },
     },
     `gatsby-plugin-offline`,
