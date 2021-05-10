@@ -28,7 +28,7 @@
     "sass": "^1.32.12"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   },
   "homepage": "https://thomastuvignon.com/",
   "keywords": [
