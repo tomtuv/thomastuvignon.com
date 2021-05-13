@@ -1,8 +1,8 @@
 .footer {
   padding: rem(48) 0;
-  color: #000;
+  color: black;
   text-align: center;
-  background-color: #eee;
+  background-color: var(--light-gray);
 
   @include min-width(lg) {
     padding: rem(80) 0;
@@ -33,15 +33,15 @@
 
       &:hover,
       &:focus {
-        color: #666;
+        color: var(--gray);
       }
 
       &.active {
-        border-bottom: rem(2) solid #000;
+        border-bottom: rem(2) solid black;
 
         &:hover,
         &:focus {
-          border-color: #666;
+          border-color: var(--gray);
         }
       }
     }

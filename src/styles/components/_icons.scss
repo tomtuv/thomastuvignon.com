@@ -1,7 +1,7 @@
 .icon {
   display: block;
   line-height: 0;
-  color: #000;
+  color: black;
   transition: color 0.2s;
 
   svg {
@@ -15,44 +15,54 @@
   }
 
   &-linkedin {
+    --blue: #0073b1;
+
     &:hover,
     &:focus {
-      color: #0073b1;
+      color: var(--blue);
     }
   }
 
   &-twitter {
+    --blue: #1da1f2;
+
     &:hover,
     &:focus {
-      color: #1da1f2;
+      color: var(--blue);
     }
   }
 
   &-facebook {
+    --blue: #1877f2;
+
     &:hover,
     &:focus {
-      color: #1877f2;
+      color: var(--blue);
     }
   }
 
   &-instagram {
+    --pink: #b900b4;
+
     &:hover,
     &:focus {
-      color: #b900b4;
+      color: var(--pink);
     }
   }
 
   &-github {
+    --blue: #0366d6;
+
     &:hover,
     &:focus {
-      color: #0366d6;
+      color: var(--blue);
     }
   }
 
   &-mail {
     &:hover,
     &:focus {
-      color: #666;
+      color: var(--gray);
     }
   }
 }

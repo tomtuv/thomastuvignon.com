@@ -1,9 +1,9 @@
 .header {
   padding: rem(56) 0;
   overflow: hidden;
-  color: #fff;
+  color: white;
   text-align: center;
-  background-color: #31185a;
+  background-color: var(--dark-violet);
 
   @include min-width(lg) {
     padding: rem(120) 0;
