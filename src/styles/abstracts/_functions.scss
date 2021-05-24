@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function rem($pixels) {
-  @return #{$pixels/16}rem;
+  @return #{math.div($pixels, 16)}rem;
 }
