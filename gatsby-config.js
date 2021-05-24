@@ -22,6 +22,19 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        purgeCSSOptions: {
+          safelist: [
+            `aos-animate`,
+            `data-aos-duration`,
+            `data-aos-easing`,
+            `fade-up`,
+          ],
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-intl`,
