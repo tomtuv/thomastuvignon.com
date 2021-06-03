@@ -9,16 +9,36 @@ module.exports = {
     siteUrl: `https://thomastuvignon.com`,
     twitterUsername: `@tomtuv`,
   },
+  flags: {
+    FAST_DEV: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-fonts-with-attributes`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        fonts: [`poppins\:400,500,600,700`],
-        display: `swap`,
-        attributes: {
-          rel: `stylesheet preload prefetch`,
-          as: `style`,
-        },
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
+        downloadLocal: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`fr`, `en`],
+        defaultLanguage: `fr`,
+        redirect: true,
+        redirectDefaultLanguageToRoot: true,
       },
     },
     `gatsby-plugin-sass`,
@@ -35,34 +55,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-react-intl`,
-      options: {
-        path: `${__dirname}/src/intl`,
-        languages: [`fr`, `en`],
-        defaultLanguage: `fr`,
-        redirect: true,
-        redirectDefaultLanguageToRoot: true,
-      },
-    },
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: process.env.CONTENTFUL_HOST,
-        downloadLocal: true,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -80,6 +73,18 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts-with-attributes`,
+      options: {
+        fonts: [`poppins\:400,500,600,700`],
+        display: `swap`,
+        attributes: {
+          rel: `stylesheet preload prefetch`,
+          as: `style`,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -89,7 +94,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`/*/404`, `/*/offline-plugin-app-shell-fallback`],
+        excludes: [`/en/404`, `/en/404.html`],
       },
     },
     `gatsby-plugin-offline`,
