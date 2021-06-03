@@ -2,7 +2,8 @@ const Promise = require("bluebird")
 const path = require("path")
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage } = actions
+  const { createPage, deletePage } = actions
+
   createPage({
     ...page,
     context: {
@@ -10,6 +11,10 @@ exports.onCreatePage = ({ page, actions }) => {
       locale: page.context.intl.language,
     },
   })
+
+  if (page.path === "/en/offline-plugin-app-shell-fallback/") {
+    deletePage(page)
+  }
 }
 
 exports.createPages = ({ graphql, actions }) => {
