@@ -3,35 +3,35 @@ import { graphql } from "gatsby"
 import { useIntl, Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Header from "../components/header"
 import Text from "../components/text"
 import Media from "../components/media"
 
 const ProjectTemplate = ({ data }) => {
   const intl = useIntl()
   const project = data.contentfulProject
+
   return (
     <Layout>
       <Seo
         title={project.title}
         description={project.description.description}
+        bodyClass="project"
       />
-      <Header project={project} />
       <main className="content">
         <div className="container">
           <article>
             {project.blocks.map(block => {
               if (block.__typename === "ContentfulText") {
                 return <Text block={block} key={block.contentful_id} />
-              } else {
-                return (
-                  <Media
-                    project={project}
-                    block={block}
-                    key={block.contentful_id}
-                  />
-                )
               }
+
+              return (
+                <Media
+                  project={project}
+                  block={block}
+                  key={block.contentful_id}
+                />
+              )
             })}
           </article>
           <aside>
@@ -48,7 +48,10 @@ const ProjectTemplate = ({ data }) => {
 export default ProjectTemplate
 
 export const query = graphql`
-  query($slug: String!, $locale: String!) {
+  query ($slug: String!, $locale: String!) {
+    contentfulHomePage(node_locale: { eq: $locale }) {
+      title
+    }
     contentfulProject(slug: { eq: $slug }, node_locale: { eq: $locale }) {
       title
       description {

@@ -32,7 +32,8 @@
       transition: color 0.2s, border-color 0.2s;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
         color: var(--gray);
       }
 
@@ -40,7 +41,8 @@
         border-bottom: rem(2) solid black;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &:active {
           border-color: var(--gray);
         }
       }

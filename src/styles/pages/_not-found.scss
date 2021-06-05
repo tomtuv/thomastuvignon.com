@@ -1,0 +1,11 @@
+.not-found {
+  .content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    h2 + p {
+      margin-top: rem(24);
+    }
+  }
+}

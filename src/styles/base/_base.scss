@@ -67,17 +67,8 @@ button {
   background: none;
   border: none;
   -webkit-appearance: none;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 figure {
   margin: 0;
-}
-
-img {
-  display: block;
-  width: 100%;
 }

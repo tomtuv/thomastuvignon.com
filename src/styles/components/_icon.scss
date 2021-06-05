@@ -18,7 +18,8 @@
     --blue: #0073b1;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--blue);
     }
   }
@@ -27,7 +28,8 @@
     --blue: #1da1f2;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--blue);
     }
   }
@@ -36,7 +38,8 @@
     --blue: #1877f2;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--blue);
     }
   }
@@ -45,7 +48,8 @@
     --pink: #b900b4;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--pink);
     }
   }
@@ -54,14 +58,16 @@
     --blue: #0366d6;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--blue);
     }
   }
 
   &-mail {
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: var(--gray);
     }
   }

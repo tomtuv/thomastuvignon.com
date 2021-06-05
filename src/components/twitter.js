@@ -6,6 +6,7 @@ const Twitter = () => (
     href="https://twitter.com/tomtuv"
     target="_blank"
     rel="noreferrer"
+    aria-label="Twitter"
   >
     <svg viewBox="0 0 24 24">
       <title>Twitter</title>

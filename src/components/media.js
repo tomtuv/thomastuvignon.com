@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 const Media = ({ project, block }) => (
   <section className="grid">
     {block.images.map(image => (
-      <figure
+      <div
         data-column="12"
         {...(block.layout === "2 columns"
           ? { "data-column-md": "6" }
@@ -18,9 +18,8 @@ const Media = ({ project, block }) => (
         <GatsbyImage
           image={image.localFile.childImageSharp.gatsbyImageData}
           alt={project.title}
-          style={{ display: "block" }}
         />
-      </figure>
+      </div>
     ))}
   </section>
 )

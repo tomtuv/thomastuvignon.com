@@ -1,16 +1,20 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { useIntl, Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Header from "../components/header"
 
 const NotFoundPage = () => {
   const intl = useIntl()
+
   return (
     <Layout>
-      <Seo title={intl.formatMessage({ id: "404.title" })} noIndex />
-      <Header />
-      <main className="content content-404">
+      <Seo
+        title={intl.formatMessage({ id: "404.title" })}
+        noIndex
+        bodyClass="not-found"
+      />
+      <main className="content">
         <div className="container">
           <h2>{intl.formatMessage({ id: "404.text" })}</h2>
           <p>
@@ -25,3 +29,11 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
+
+export const query = graphql`
+  query ($locale: String!) {
+    contentfulHomePage(node_locale: { eq: $locale }) {
+      title
+    }
+  }
+`

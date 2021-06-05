@@ -1,96 +1,77 @@
-import React, { useRef, useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useRef, useState, useContext, useEffect } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useIntl, Link } from "gatsby-plugin-react-intl"
+import Context from "./context"
 import Bubbles from "./bubbles"
+import Modal from "./modal"
 
-const Header = ({ homePage, project }) => {
+const Header = ({ isHomePage }) => {
   const [modal, setModal] = useState("")
   const video = useRef(null)
+  const { data } = useContext(Context)
   const intl = useIntl()
+  const homePage = data.contentfulHomePage
+  const project = data.contentfulProject
+  const pageTitle = project?.title || intl.formatMessage({ id: "404.title" })
 
   function toggleModal() {
     setModal(modal === "" ? " active" : "")
     modal === "" ? video.current.play() : video.current.pause()
   }
 
-  const data = useStaticQuery(graphql`
-    query {
-      poster: file(absolutePath: { regex: "/og-image.jpg/" }) {
-        publicURL
+  useEffect(() => {
+    function closeModal(event) {
+      if (modal === " active" && event.key === "Escape") {
+        setModal("")
+        video.current.pause()
       }
     }
-  `)
 
-  if (homePage) {
-    return (
-      <header className="header header-home">
-        <Bubbles />
-        <div className="container">
+    window.addEventListener("keydown", closeModal)
+    return () => window.removeEventListener("keydown", closeModal)
+  }, [modal])
+
+  return (
+    <header className="header">
+      <Bubbles />
+      <div className="container">
+        {isHomePage ? (
           <div className="grid">
-            <figure data-column="12" data-column-lg="4">
+            <div data-column="12" data-column-lg="4">
               <GatsbyImage
                 image={
                   homePage.profilePicture.localFile.childImageSharp
                     .gatsbyImageData
                 }
                 alt={homePage.title}
-                style={{ display: "block" }}
               />
-            </figure>
-            <article data-column="12" data-column-lg="8">
+            </div>
+            <div data-column="12" data-column-lg="8">
               <h1>{homePage.title}</h1>
               <p>{homePage.jobTitle}</p>
               <button className="link" onClick={toggleModal}>
                 {intl.formatMessage({ id: "modal.button" })}
               </button>
-            </article>
-          </div>
-        </div>
-        <div className={`video${modal}`} role="dialog">
-          <div className="container">
-            <div className="grid">
-              <div data-column="12" data-column-lg="10" data-start-lg="2">
-                <button className="link link-back" onClick={toggleModal}>
-                  {intl.formatMessage({ id: "general.back" })}
-                </button>
-                <video // eslint-disable-line jsx-a11y/media-has-caption
-                  controls
-                  playsInline
-                  preload="none"
-                  ref={video}
-                  poster={data.poster.publicURL}
-                >
-                  <source
-                    src={homePage.video.localFile.publicURL}
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
             </div>
           </div>
-        </div>
-      </header>
-    )
-  } else {
-    return (
-      <header className="header">
-        <Bubbles />
-        <div className="container">
-          <Link
-            to="/"
-            className="link link-back"
-            aria-label={intl.formatMessage({ id: "general.back" })}
-          >
-            Thomas Tuvignon
-          </Link>
-          <h1>
-            {project ? project.title : intl.formatMessage({ id: "404.title" })}
-          </h1>
-        </div>
-      </header>
-    )
-  }
+        ) : (
+          <>
+            <Link
+              to="/"
+              className="link link-back"
+              aria-label={intl.formatMessage({ id: "general.back" })}
+            >
+              {homePage.title}
+            </Link>
+            <h1>{pageTitle}</h1>
+          </>
+        )}
+      </div>
+      {isHomePage && (
+        <Modal modal={modal} toggleModal={toggleModal} video={video} />
+      )}
+    </header>
+  )
 }
 
 export default Header

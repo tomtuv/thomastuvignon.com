@@ -4,14 +4,13 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-plugin-react-intl"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Header from "../components/header"
 
 const IndexPage = ({ data }) => {
   const homePage = data.contentfulHomePage
+
   return (
-    <Layout>
-      <Seo />
-      <Header homePage={homePage} />
+    <Layout isHomePage>
+      <Seo bodyClass="home" />
       <main className="content">
         <div className="container">
           <div className="grid">
@@ -20,19 +19,15 @@ const IndexPage = ({ data }) => {
                 data-column="6"
                 data-column-lg="4"
                 data-aos="fade-up"
-                key={project.contentful_id}
                 to={`/projects/${project.slug}/`}
+                key={project.contentful_id}
               >
-                <figure>
-                  <GatsbyImage
-                    image={
-                      project.thumbnail.localFile.childImageSharp
-                        .gatsbyImageData
-                    }
-                    alt={project.title}
-                    style={{ display: "block" }}
-                  />
-                </figure>
+                <GatsbyImage
+                  image={
+                    project.thumbnail.localFile.childImageSharp.gatsbyImageData
+                  }
+                  alt={project.title}
+                />
               </Link>
             ))}
           </div>
@@ -45,7 +40,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query($locale: String!) {
+  query ($locale: String!) {
     contentfulHomePage(node_locale: { eq: $locale }) {
       title
       jobTitle

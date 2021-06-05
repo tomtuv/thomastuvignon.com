@@ -4,21 +4,17 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { IntlContextConsumer, useIntl } from "gatsby-plugin-react-intl"
 
-const Seo = ({ title, description, noIndex }) => {
+const Seo = ({ title, description, noIndex, bodyClass }) => {
   const { pathname } = useLocation()
-  const intl = useIntl()
   const { site, image } = useStaticQuery(query)
-  const {
-    defaultTitle,
-    titleTemplate,
-    siteUrl,
-    twitterUsername,
-  } = site.siteMetadata
+  const intl = useIntl()
+  const { defaultTitle, titleTemplate, siteUrl, twitterUsername } =
+    site.siteMetadata
   const defaultDescription = intl.formatMessage({ id: "general.description" })
   const defaultImage = image.publicURL
 
   const seo = {
-    title: title ? `${title} | ${defaultTitle}` : defaultTitle,
+    title: title || defaultTitle,
     description: description || defaultDescription,
     image: siteUrl + defaultImage,
     url: siteUrl + pathname,
@@ -34,6 +30,9 @@ const Seo = ({ title, description, noIndex }) => {
           htmlAttributes={{
             lang: currentLocale,
             dir: "ltr",
+          }}
+          bodyAttributes={{
+            class: bodyClass,
           }}
         >
           <link rel="canonical" href={seo.url} />

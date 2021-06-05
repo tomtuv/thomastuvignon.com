@@ -1,8 +1,9 @@
 import React, { useEffect } from "react"
 import AOS from "aos"
+import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ isHomePage, children }) => {
   useEffect(() => {
     AOS.init({
       offset: 60,
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="wrapper">
+      <Header isHomePage={isHomePage} />
       {children}
       <Footer />
     </div>

@@ -3,8 +3,13 @@ import { useIntl } from "gatsby-plugin-react-intl"
 
 const Mail = () => {
   const intl = useIntl()
+
   return (
-    <a className="icon icon-mail" href="mailto:contact@thomastuvignon.com">
+    <a
+      className="icon icon-mail"
+      href="mailto:contact@thomastuvignon.com"
+      aria-label={intl.formatMessage({ id: "footer.email" })}
+    >
       <svg viewBox="0 0 24 24">
         <title>{intl.formatMessage({ id: "footer.email" })}</title>
         <path
