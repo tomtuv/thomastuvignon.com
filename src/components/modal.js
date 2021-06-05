@@ -10,9 +10,9 @@ const Modal = ({ modal, toggleModal, video }) => {
 
   return (
     <div
-      className={`modal${modal}`}
+      className="modal"
       role="dialog"
-      aria-hidden={modal === "" ? true : null}
+      hidden={!modal ? true : null}
       tabIndex="-1"
     >
       <div className="container">

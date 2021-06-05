@@ -6,7 +6,7 @@ import Bubbles from "./bubbles"
 import Modal from "./modal"
 
 const Header = ({ isHomePage }) => {
-  const [modal, setModal] = useState("")
+  const [modal, setModal] = useState(false)
   const video = useRef(null)
   const { data } = useContext(Context)
   const intl = useIntl()
@@ -15,14 +15,14 @@ const Header = ({ isHomePage }) => {
   const pageTitle = project?.title || intl.formatMessage({ id: "404.title" })
 
   function toggleModal() {
-    setModal(modal === "" ? " active" : "")
-    modal === "" ? video.current.play() : video.current.pause()
+    setModal(!modal ? true : false)
+    !modal ? video.current.play() : video.current.pause()
   }
 
   useEffect(() => {
     function closeModal(event) {
-      if (modal === " active" && event.key === "Escape") {
-        setModal("")
+      if (modal && event.key === "Escape") {
+        setModal(false)
         video.current.pause()
       }
     }
