@@ -47,12 +47,12 @@ module.exports = {
       options: {
         purgeCSSOptions: {
           safelist: [
-            /^bubbles/,
-            `gatsby-image-wrapper`,
-            `aos-animate`,
-            `data-aos-duration`,
-            `data-aos-easing`,
-            `fade-up`,
+            /data-bubble/,
+            /gatsby-image-wrapper/,
+            /aos-animate/,
+            /data-aos-duration/,
+            /data-aos-easing/,
+            /fade-up/,
           ],
         },
       },
