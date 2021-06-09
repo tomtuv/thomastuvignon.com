@@ -20,7 +20,7 @@
     "gatsby-plugin-sass": "^4.7.0",
     "gatsby-plugin-sharp": "^3.7.0",
     "gatsby-plugin-sitemap": "^4.3.0",
-    "gatsby-source-contentful": "^5.6.1",
+    "gatsby-source-contentful": "^5.7.0",
     "gatsby-source-filesystem": "^3.7.0",
     "gatsby-transformer-sharp": "^3.7.0",
     "react": "^17.0.2",
