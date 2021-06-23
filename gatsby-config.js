@@ -9,10 +9,6 @@ module.exports = {
     siteUrl: `https://thomastuvignon.com`,
     twitterUsername: `@tomtuv`,
   },
-  flags: {
-    FAST_DEV: true,
-    PRESERVE_WEBPACK_CACHE: true,
-  },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
@@ -87,9 +83,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingIds: [process.env.GA4_TRACKING_ID, process.env.UA_TRACKING_ID],
       },
     },
     {
