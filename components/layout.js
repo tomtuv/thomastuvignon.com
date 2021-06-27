@@ -1,12 +1,22 @@
-import Footer from "../components/footer";
-import Meta from "../components/meta";
+import { useEffect } from "react";
+import AOS from "aos";
+import Header from "./header";
+import Footer from "./footer";
 
-export default function Layout({ children }) {
+export default function Layout({ isHomePage, children }) {
+  useEffect(() => {
+    AOS.init({
+      offset: 60,
+      duration: 500,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <>
-      <Meta />
-      <main>{children}</main>
+    <div className="wrapper">
+      <Header isHomePage={isHomePage} />
+      {children}
       <Footer />
-    </>
+    </div>
   );
 }
