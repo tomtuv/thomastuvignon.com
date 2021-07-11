@@ -1,33 +1,33 @@
 .page-home {
   .header {
-    padding: rem(104) 0;
+    padding: 6.5rem 0;
     text-align: center;
 
     @include min-width(lg) {
-      padding: rem(160) 0;
+      padding: 10rem 0;
       text-align: left;
     }
 
     .grid {
-      row-gap: rem(32);
+      row-gap: 2rem;
     }
 
     > .container {
       [data-column] {
         &:first-child {
           justify-self: center;
-          width: rem(130);
+          width: 8.125rem;
           overflow: hidden;
           border-radius: 50%;
           transform: translate(0);
 
           @include min-width(lg) {
             justify-self: end;
-            width: rem(160);
+            width: 10rem;
           }
 
           @include min-width(xl) {
-            width: rem(170);
+            width: 10.625rem;
           }
         }
 
@@ -38,16 +38,16 @@
     }
 
     h1 {
-      margin: 0 0 rem(20);
+      margin: 0 0 1.25rem;
     }
 
     p {
-      margin-bottom: rem(24);
-      font-size: rem(22);
+      margin-bottom: 1.5rem;
+      font-size: 1.375rem;
       font-weight: 500;
 
       @include min-width(lg) {
-        margin-bottom: rem(20);
+        margin-bottom: 1.25rem;
       }
     }
   }
@@ -64,11 +64,11 @@
 
       figure {
         overflow: hidden;
-        border-radius: rem(4);
+        border-radius: 0.25rem;
         transition: transform 0.2s;
 
         @include min-width(lg) {
-          border-radius: rem(8);
+          border-radius: 0.5rem;
         }
       }
     }

@@ -7,12 +7,12 @@ $breakpoints: (
 );
 
 $max-widths: (
-  "sm": rem(560),
-  "md": rem(720),
-  "lg": rem(960),
-  "xl": rem(1120),
+  "sm": 560px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1120px,
 );
 
 $columns: 12;
 
-$aos-distance: rem(24);
+$aos-distance: 1.5rem;

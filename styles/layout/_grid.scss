@@ -4,10 +4,10 @@
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat($columns, 1fr);
-  gap: rem(24);
+  gap: 1.5rem;
 
   @include min-width(lg) {
-    gap: rem(48);
+    gap: 3rem;
   }
 
   @each $breakpoint in map-keys($breakpoints) {

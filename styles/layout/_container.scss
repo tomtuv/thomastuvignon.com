@@ -1,9 +1,9 @@
 .container {
-  padding: 0 rem(24);
+  padding: 0 1.5rem;
   margin: 0 auto;
 
   @include min-width(sm) {
-    padding: 0 rem(40);
+    padding: 0 2.5rem;
   }
 
   @each $breakpoint, $max-width in $max-widths {

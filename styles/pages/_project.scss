@@ -1,18 +1,18 @@
 .page-project {
   section {
     &:nth-child(even) {
-      margin-top: rem(48);
+      margin-top: 3rem;
 
       @include min-width(lg) {
-        margin-top: rem(56);
+        margin-top: 3.5rem;
       }
     }
 
     &:nth-child(odd) {
-      margin-top: rem(56);
+      margin-top: 3.5rem;
 
       @include min-width(lg) {
-        margin-top: rem(104);
+        margin-top: 6.5rem;
       }
     }
 
@@ -21,37 +21,37 @@
     }
 
     h2 {
-      margin: 0 0 rem(8);
+      margin: 0 0 0.5rem;
 
       + p {
-        font-size: rem(18);
+        font-size: 1.125rem;
         font-weight: 500;
 
         @include min-width(xl) {
-          font-size: rem(20);
+          font-size: 1.25rem;
         }
       }
     }
 
     ul {
-      margin-top: rem(32);
+      margin-top: 2rem;
     }
 
     li + li {
-      margin-top: rem(8);
+      margin-top: 0.5rem;
     }
 
     a {
-      margin-top: rem(32);
+      margin-top: 2rem;
     }
   }
 
   aside {
-    margin-top: rem(56);
+    margin-top: 3.5rem;
     text-align: center;
 
     @include min-width(lg) {
-      margin-top: rem(104);
+      margin-top: 6.5rem;
     }
   }
 }

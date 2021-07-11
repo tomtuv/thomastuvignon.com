@@ -1,11 +1,11 @@
 .content {
-  padding: rem(56) 0;
+  padding: 3.5rem 0;
 
   @include min-width(lg) {
-    padding: rem(104) 0;
+    padding: 6.5rem 0;
   }
 
   figure {
-    box-shadow: 0 rem(10) rem(40) 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.625rem 2.5rem 0 rgba(0, 0, 0, 0.1);
   }
 }

@@ -1,7 +1,7 @@
 .bubbles {
   position: relative;
   z-index: 0;
-  width: rem(540);
+  width: 540px;
   margin: 0 auto;
 
   [data-bubble-group] {
@@ -31,386 +31,386 @@
   }
 
   [data-bubble="1"] {
-    top: rem(20);
-    left: rem(-200);
-    width: rem(125);
-    height: rem(125);
+    top: 20px;
+    left: -200px;
+    width: 125px;
+    height: 125px;
     background-color: var(--violet);
   }
 
   [data-bubble="2"] {
-    top: rem(200);
-    left: rem(720);
-    width: rem(125);
-    height: rem(125);
+    top: 200px;
+    left: 720px;
+    width: 125px;
+    height: 125px;
     background-color: var(--yellow);
   }
 
   [data-bubble="3"] {
-    top: rem(450);
-    left: rem(-50);
-    width: rem(100);
-    height: rem(100);
+    top: 450px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="4"] {
-    top: rem(200);
-    left: rem(-450);
-    width: rem(125);
-    height: rem(125);
+    top: 200px;
+    left: -450px;
+    width: 125px;
+    height: 125px;
     background-color: var(--blue);
   }
 
   [data-bubble="5"] {
-    top: rem(100);
-    left: rem(480);
-    width: rem(100);
-    height: rem(100);
+    top: 100px;
+    left: 480px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="6"] {
-    top: rem(800);
-    left: rem(700);
-    width: rem(100);
-    height: rem(100);
+    top: 800px;
+    left: 700px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="7"] {
-    top: rem(650);
-    left: rem(-100);
-    width: rem(100);
-    height: rem(100);
+    top: 650px;
+    left: -100px;
+    width: 100px;
+    height: 100px;
     background-color: var(--orange);
   }
 
   [data-bubble="8"] {
-    top: rem(-20);
-    left: rem(800);
-    width: rem(125);
-    height: rem(125);
+    top: -20px;
+    left: 800px;
+    width: 125px;
+    height: 125px;
     background-color: var(--blue);
   }
 
   [data-bubble="9"] {
-    top: rem(1250);
-    left: rem(-100);
-    width: rem(100);
-    height: rem(100);
+    top: 1250px;
+    left: -100px;
+    width: 100px;
+    height: 100px;
     background-color: var(--orange);
   }
 
   [data-bubble="10"] {
-    top: rem(1350);
-    left: rem(450);
-    width: rem(125);
-    height: rem(125);
+    top: 1350px;
+    left: 450px;
+    width: 125px;
+    height: 125px;
     background-color: var(--blue);
   }
 
   [data-bubble="11"] {
-    top: rem(750);
-    left: rem(-600);
-    width: rem(150);
-    height: rem(150);
+    top: 750px;
+    left: -600px;
+    width: 150px;
+    height: 150px;
     background-color: var(--yellow);
   }
 
   [data-bubble="12"] {
-    top: rem(900);
-    left: rem(400);
-    width: rem(125);
-    height: rem(125);
+    top: 900px;
+    left: 400px;
+    width: 125px;
+    height: 125px;
     background-color: var(--yellow);
   }
 
   [data-bubble="13"] {
-    top: rem(-80);
-    left: rem(-350);
-    width: rem(75);
-    height: rem(75);
+    top: -80px;
+    left: -350px;
+    width: 75px;
+    height: 75px;
     background-color: var(--blue);
   }
 
   [data-bubble="14"] {
-    top: rem(800);
-    left: rem(220);
-    width: rem(150);
-    height: rem(150);
+    top: 800px;
+    left: 220px;
+    width: 150px;
+    height: 150px;
     background-color: var(--blue);
   }
 
   [data-bubble="15"] {
-    top: rem(100);
-    left: rem(70);
-    width: rem(125);
-    height: rem(125);
+    top: 100px;
+    left: 70px;
+    width: 125px;
+    height: 125px;
     background-color: var(--blue);
   }
 
   [data-bubble="16"] {
-    top: rem(250);
-    left: rem(-360);
-    width: rem(100);
-    height: rem(100);
+    top: 250px;
+    left: -360px;
+    width: 100px;
+    height: 100px;
     background-color: var(--violet);
   }
 
   [data-bubble="17"] {
-    top: rem(500);
-    left: rem(700);
-    width: rem(75);
-    height: rem(75);
+    top: 500px;
+    left: 700px;
+    width: 75px;
+    height: 75px;
     background-color: var(--green);
   }
 
   [data-bubble="18"] {
-    top: rem(350);
-    left: rem(300);
-    width: rem(100);
-    height: rem(100);
+    top: 350px;
+    left: 300px;
+    width: 100px;
+    height: 100px;
     background-color: var(--green);
   }
 
   [data-bubble="19"] {
-    top: rem(600);
-    left: rem(-400);
-    width: rem(75);
-    height: rem(75);
+    top: 600px;
+    left: -400px;
+    width: 75px;
+    height: 75px;
     background-color: var(--yellow);
   }
 
   [data-bubble="20"] {
-    top: rem(800);
-    left: rem(-300);
-    width: rem(150);
-    height: rem(150);
+    top: 800px;
+    left: -300px;
+    width: 150px;
+    height: 150px;
     background-color: var(--green);
   }
 
   [data-bubble="21"] {
-    top: rem(1400);
-    left: rem(-300);
-    width: rem(125);
-    height: rem(125);
+    top: 1400px;
+    left: -300px;
+    width: 125px;
+    height: 125px;
     background-color: var(--yellow);
   }
 
   [data-bubble="22"] {
-    top: rem(1200);
-    left: rem(100);
-    width: rem(100);
-    height: rem(100);
+    top: 1200px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
     background-color: var(--green);
   }
 
   [data-bubble="23"] {
-    top: rem(250);
-    left: rem(800);
-    width: rem(75);
-    height: rem(75);
+    top: 250px;
+    left: 800px;
+    width: 75px;
+    height: 75px;
     background-color: var(--blue);
   }
 
   [data-bubble="24"] {
-    top: rem(600);
-    left: rem(900);
-    width: rem(150);
-    height: rem(150);
+    top: 600px;
+    left: 900px;
+    width: 150px;
+    height: 150px;
     background-color: var(--blue);
   }
 
   [data-bubble="25"] {
-    top: rem(600);
-    left: rem(300);
-    width: rem(100);
-    height: rem(100);
+    top: 600px;
+    left: 300px;
+    width: 100px;
+    height: 100px;
     background-color: var(--blue);
   }
 
   [data-bubble="26"] {
-    top: rem(80);
-    left: rem(300);
-    width: rem(75);
-    height: rem(75);
+    top: 80px;
+    left: 300px;
+    width: 75px;
+    height: 75px;
     background-color: var(--violet);
   }
 
   [data-bubble="27"] {
-    top: rem(1000);
-    left: rem(100);
-    width: rem(100);
-    height: rem(100);
+    top: 1000px;
+    left: 100px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="28"] {
-    top: rem(1100);
-    left: rem(360);
-    width: rem(100);
-    height: rem(100);
+    top: 1100px;
+    left: 360px;
+    width: 100px;
+    height: 100px;
     background-color: var(--green);
   }
 
   [data-bubble="29"] {
-    top: rem(750);
-    left: rem(480);
-    width: rem(125);
-    height: rem(125);
+    top: 750px;
+    left: 480px;
+    width: 125px;
+    height: 125px;
     background-color: var(--orange);
   }
 
   [data-bubble="30"] {
-    top: rem(500);
-    left: rem(500);
-    width: rem(75);
-    height: rem(75);
+    top: 500px;
+    left: 500px;
+    width: 75px;
+    height: 75px;
     background-color: var(--orange);
   }
 
   [data-bubble="31"] {
-    top: rem(700);
-    left: rem(150);
-    width: rem(125);
-    height: rem(125);
+    top: 700px;
+    left: 150px;
+    width: 125px;
+    height: 125px;
     background-color: var(--violet);
   }
 
   [data-bubble="32"] {
-    top: rem(-110);
-    left: rem(300);
-    width: rem(75);
-    height: rem(75);
+    top: -110px;
+    left: 300px;
+    width: 75px;
+    height: 75px;
     background-color: var(--orange);
   }
 
   [data-bubble="33"] {
-    top: rem(1050);
-    left: rem(-100);
-    width: rem(125);
-    height: rem(125);
+    top: 1050px;
+    left: -100px;
+    width: 125px;
+    height: 125px;
     background-color: var(--violet);
   }
 
   [data-bubble="34"] {
-    top: rem(1400);
-    left: rem(300);
-    width: rem(75);
-    height: rem(75);
+    top: 1400px;
+    left: 300px;
+    width: 75px;
+    height: 75px;
     background-color: var(--orange);
   }
 
   [data-bubble="35"] {
-    top: rem(700);
-    left: rem(-600);
-    width: rem(100);
-    height: rem(100);
+    top: 700px;
+    left: -600px;
+    width: 100px;
+    height: 100px;
     background-color: var(--blue);
   }
 
   [data-bubble="36"] {
-    top: rem(900);
-    left: rem(900);
-    width: rem(75);
-    height: rem(75);
+    top: 900px;
+    left: 900px;
+    width: 75px;
+    height: 75px;
     background-color: var(--violet);
   }
 
   [data-bubble="37"] {
-    top: rem(50);
-    left: rem(500);
-    width: rem(125);
-    height: rem(125);
+    top: 50px;
+    left: 500px;
+    width: 125px;
+    height: 125px;
     background-color: var(--green);
   }
 
   [data-bubble="38"] {
-    top: rem(500);
-    left: rem(530);
-    width: rem(100);
-    height: rem(100);
+    top: 500px;
+    left: 530px;
+    width: 100px;
+    height: 100px;
     background-color: var(--violet);
   }
 
   [data-bubble="39"] {
-    top: rem(450);
-    left: rem(150);
-    width: rem(75);
-    height: rem(75);
+    top: 450px;
+    left: 150px;
+    width: 75px;
+    height: 75px;
     background-color: var(--orange);
   }
 
   [data-bubble="40"] {
-    top: rem(200);
-    left: rem(-100);
-    width: rem(150);
-    height: rem(150);
+    top: 200px;
+    left: -100px;
+    width: 150px;
+    height: 150px;
     background-color: var(--green);
   }
 
   [data-bubble="41"] {
-    top: rem(10);
-    left: rem(-550);
-    width: rem(75);
-    height: rem(75);
+    top: 10px;
+    left: -550px;
+    width: 75px;
+    height: 75px;
     background-color: var(--green);
   }
 
   [data-bubble="42"] {
-    top: rem(600);
-    left: rem(-200);
-    width: rem(125);
-    height: rem(125);
+    top: 600px;
+    left: -200px;
+    width: 125px;
+    height: 125px;
     background-color: var(--blue);
   }
 
   [data-bubble="43"] {
-    top: rem(250);
-    left: rem(400);
-    width: rem(75);
-    height: rem(75);
+    top: 250px;
+    left: 400px;
+    width: 75px;
+    height: 75px;
     background-color: var(--blue);
   }
 
   [data-bubble="44"] {
-    top: rem(-80);
-    left: rem(-20);
-    width: rem(100);
-    height: rem(100);
+    top: -80px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="45"] {
-    top: rem(1600);
-    left: rem(50);
-    width: rem(150);
-    height: rem(150);
+    top: 1600px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
     background-color: var(--blue);
   }
 
   [data-bubble="46"] {
-    top: rem(1700);
-    left: rem(400);
-    width: rem(100);
-    height: rem(100);
+    top: 1700px;
+    left: 400px;
+    width: 100px;
+    height: 100px;
     background-color: var(--yellow);
   }
 
   [data-bubble="47"] {
-    top: rem(100);
-    left: rem(900);
-    width: rem(125);
-    height: rem(125);
+    top: 100px;
+    left: 900px;
+    width: 125px;
+    height: 125px;
     background-color: var(--green);
   }
 
   [data-bubble="48"] {
-    top: rem(450);
-    left: rem(-600);
-    width: rem(100);
-    height: rem(100);
+    top: 450px;
+    left: -600px;
+    width: 100px;
+    height: 100px;
     background-color: var(--violet);
   }
 }

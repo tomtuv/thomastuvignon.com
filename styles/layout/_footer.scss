@@ -1,29 +1,29 @@
 .footer {
-  padding: rem(48) 0;
+  padding: 3rem 0;
   color: black;
   text-align: center;
   background-color: var(--light-gray);
 
   @include min-width(lg) {
-    padding: rem(80) 0;
+    padding: 5rem 0;
   }
 
   ul {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: rem(24);
+    margin-bottom: 1.5rem;
     list-style: none;
 
     @include min-width(lg) {
-      margin-bottom: rem(32);
+      margin-bottom: 2rem;
     }
 
     li + li {
-      margin-left: rem(24);
+      margin-left: 1.5rem;
 
       @include min-width(lg) {
-        margin-left: rem(32);
+        margin-left: 2rem;
       }
     }
   }
@@ -40,7 +40,7 @@
       }
 
       &.active {
-        border-bottom: rem(2) solid black;
+        border-bottom: 0.125rem solid black;
 
         &:hover,
         &:focus,
