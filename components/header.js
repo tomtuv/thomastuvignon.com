@@ -9,27 +9,27 @@ import Modal from "./modal";
 export default function Header({ isHomePage }) {
   const data = useAppContext();
   const intl = useIntl();
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(null);
   const video = useRef(null);
   const homePage = data.homePage;
   const project = data.project;
 
-  function toggleModal() {
-    setModal(!modal ? true : false);
+  function handleClick() {
+    setModal(!modal ? true : null);
     !modal ? video.current.play() : video.current.pause();
   }
 
   useEffect(() => {
-    function closeModal(event) {
-      if (modal && event.key === "Escape") {
-        setModal(false);
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setModal(null);
         video.current.pause();
       }
     }
 
-    window.addEventListener("keydown", closeModal);
-    return () => window.removeEventListener("keydown", closeModal);
-  }, [modal]);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <header className="header">
@@ -50,7 +50,11 @@ export default function Header({ isHomePage }) {
             <div data-column="12" data-column-lg="8">
               <h1>{homePage.title}</h1>
               <p>{homePage.jobTitle}</p>
-              <button className="link" onClick={toggleModal}>
+              <button
+                className="link"
+                onClick={handleClick}
+                aria-controls="modal"
+              >
                 {intl.formatMessage({ id: "modalButton" })}
               </button>
             </div>
@@ -67,7 +71,7 @@ export default function Header({ isHomePage }) {
       {isHomePage && (
         <Modal
           modal={modal}
-          toggleModal={toggleModal}
+          handleClick={handleClick}
           video={video}
           videoUrl={homePage.video.url}
         />

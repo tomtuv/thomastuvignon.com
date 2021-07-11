@@ -1,19 +1,20 @@
 import { useIntl } from "react-intl";
 
-export default function Modal({ modal, toggleModal, video, videoUrl }) {
+export default function Modal({ modal, handleClick, video, videoUrl }) {
   const intl = useIntl();
 
   return (
     <div
+      id="modal"
       className="modal"
-      role="dialog"
-      hidden={!modal ? true : null}
-      tabIndex="-1"
+      aria-modal={modal}
+      tabIndex={-1}
+      role={modal ? "dialog" : null}
     >
       <div className="container">
         <div className="grid">
           <div data-column="12" data-column-lg="10" data-start-lg="2">
-            <button className="link link-back" onClick={toggleModal}>
+            <button className="link link-back" onClick={handleClick}>
               {intl.formatMessage({ id: "back" })}
             </button>
             <video

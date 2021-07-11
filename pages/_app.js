@@ -5,10 +5,7 @@ import fr from "../lang/fr.json";
 import en from "../lang/en.json";
 import "../styles/index.scss";
 
-const messages = {
-  fr: fr,
-  en: en,
-};
+const messages = { fr, en };
 
 function MyApp({ Component, pageProps }) {
   const { locale, defaultLocale } = useRouter();
