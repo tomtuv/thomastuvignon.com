@@ -36,7 +36,7 @@ export default function Index({ homePage }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const homePage = (await getHomePage(locale)) ?? [];
+  const homePage = await getHomePage(locale);
 
   return {
     props: { homePage },

@@ -47,16 +47,16 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export async function getStaticPaths({ locales }) {
-  const allPosts = await getAllProjectsWithSlug();
+  const allProjects = await getAllProjectsWithSlug();
 
   const paths = locales.reduce(
-    (accumulator, currentValue) => [
-      ...accumulator,
-      ...allPosts.map(({ slug }) => ({
+    (acc, locale) => [
+      ...acc,
+      ...allProjects.map(({ slug }) => ({
         params: {
           slug,
         },
-        locale: currentValue,
+        locale,
       })),
     ],
     []
