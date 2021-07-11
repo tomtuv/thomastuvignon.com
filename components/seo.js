@@ -1,12 +1,14 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useIntl } from "react-intl";
 
 export default function Seo({ title, description, noIndex, bodyClass }) {
   const { pathname } = useRouter();
+  const intl = useIntl();
   const siteUrl = "https://thomastuvignon.com";
   const twitterUsername = "@tomtuv";
   const defaultTitle = "Thomas Tuvignon";
-  const defaultDescription = `intl.formatMessage({ id: "general.description" })`;
+  const defaultDescription = intl.formatMessage({ id: "description" });
   const defaultImage = `image.publicURL`;
 
   const seo = {

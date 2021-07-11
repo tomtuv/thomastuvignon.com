@@ -26,8 +26,10 @@
         margin-left: rem(32);
       }
     }
+  }
 
-    button {
+  &-languages {
+    a {
       font-weight: 500;
       transition: color 0.2s, border-color 0.2s;
 

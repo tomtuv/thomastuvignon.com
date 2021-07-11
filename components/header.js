@@ -1,14 +1,18 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useIntl } from "react-intl";
+import { useAppContext } from "./context";
 import Bubbles from "./bubbles";
 import Modal from "./modal";
 
 export default function Header({ isHomePage }) {
+  const data = useAppContext();
+  const intl = useIntl();
   const [modal, setModal] = useState(false);
   const video = useRef(null);
-  const pageTitle =
-    `project?.title` || `intl.formatMessage({ id: "404.title" })`;
+  const homePage = data.homePage;
+  const project = data.project;
 
   function toggleModal() {
     setModal(!modal ? true : false);
@@ -34,16 +38,18 @@ export default function Header({ isHomePage }) {
         {isHomePage ? (
           <div className="grid">
             <div data-column="12" data-column-lg="4">
-              {/* <Image
-                src={`homePage.profilePicture.url`}
-                alt={`homePage.title`}
-              /> */}
+              <Image
+                src={homePage.profilePicture.url}
+                alt={homePage.title}
+                width={170}
+                height={170}
+              />
             </div>
             <div data-column="12" data-column-lg="8">
-              <h1>{`homePage.title`}</h1>
-              <p>{`homePage.jobTitle`}</p>
+              <h1>{homePage.title}</h1>
+              <p>{homePage.jobTitle}</p>
               <button className="link" onClick={toggleModal}>
-                {`intl.formatMessage({ id: "modal.button" })`}
+                {intl.formatMessage({ id: "modalButton" })}
               </button>
             </div>
           </div>
@@ -52,16 +58,21 @@ export default function Header({ isHomePage }) {
             <Link
               href="/"
               className="link link-back"
-              aria-label={`intl.formatMessage({ id: "general.back" })`}
+              aria-label={intl.formatMessage({ id: "back" })}
             >
-              <a>{`homePage.title`}</a>
+              <a>Thomas Tuvignon</a>
             </Link>
-            <h1>{pageTitle}</h1>
+            <h1>{project.title}</h1>
           </>
         )}
       </div>
       {isHomePage && (
-        <Modal modal={modal} toggleModal={toggleModal} video={video} />
+        <Modal
+          modal={modal}
+          toggleModal={toggleModal}
+          video={video}
+          videoUrl={homePage.video.url}
+        />
       )}
     </header>
   );

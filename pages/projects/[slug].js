@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useIntl } from "react-intl";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Text from "../../components/text";
@@ -6,6 +7,8 @@ import Media from "../../components/media";
 import { getAllProjectsWithSlug, getProject } from "../../lib/api";
 
 export default function Project({ project }) {
+  const intl = useIntl();
+
   return (
     <Layout>
       <Seo
@@ -32,7 +35,7 @@ export default function Project({ project }) {
           </article>
           <aside>
             <Link href="/" className="link link-back">
-              <a>{`intl.formatMessage({ id: "general.back" })`}</a>
+              <a>{intl.formatMessage({ id: "back" })}</a>
             </Link>
           </aside>
         </div>

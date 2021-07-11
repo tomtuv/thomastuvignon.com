@@ -4,6 +4,7 @@ import Facebook from "./facebook";
 import Instagram from "./instagram";
 import Github from "./github";
 import Mail from "./mail";
+import Languages from "./languages";
 
 export default function Footer() {
   return (
@@ -29,6 +30,7 @@ export default function Footer() {
             <Mail />
           </li>
         </ul>
+        <Languages />
         <p>© {new Date().getFullYear()} Thomas Tuvignon</p>
       </div>
     </footer>

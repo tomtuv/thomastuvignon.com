@@ -1,4 +1,8 @@
-export default function Modal({ modal, toggleModal, video }) {
+import { useIntl } from "react-intl";
+
+export default function Modal({ modal, toggleModal, video, videoUrl }) {
+  const intl = useIntl();
+
   return (
     <div
       className="modal"
@@ -10,7 +14,7 @@ export default function Modal({ modal, toggleModal, video }) {
         <div className="grid">
           <div data-column="12" data-column-lg="10" data-start-lg="2">
             <button className="link link-back" onClick={toggleModal}>
-              {`intl.formatMessage({ id: "general.back" })`}
+              {intl.formatMessage({ id: "back" })}
             </button>
             <video
               width="1920"
@@ -18,13 +22,9 @@ export default function Modal({ modal, toggleModal, video }) {
               controls
               playsInline
               preload="none"
-              poster={`poster.publicURL`}
               ref={video}
             >
-              <source
-                src={`data.contentfulHomePage.video.localFile.publicURL`}
-                type="video/mp4"
-              />
+              <source src={videoUrl} type="video/mp4" />
             </video>
           </div>
         </div>
