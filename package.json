@@ -3,17 +3,16 @@
   "description": "Thomas Tuvignon",
   "version": "1.0.0",
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "14.1.1",
+    "@contentful/rich-text-react-renderer": "15.0.0",
     "aos": "^2.3.4",
-    "classnames": "2.2.6",
-    "date-fns": "2.14.0",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.35.1"
+    "react-intl": "^5.20.4",
+    "sass": "^1.35.2"
   },
   "devDependencies": {
-    "eslint": "^7.29.0",
+    "eslint": "^7.30.0",
     "eslint-config-next": "^11.0.1"
   },
   "private": true,
