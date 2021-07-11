@@ -1,0 +1,76 @@
+.page-home {
+  .header {
+    padding: rem(104) 0;
+    text-align: center;
+
+    @include min-width(lg) {
+      padding: rem(160) 0;
+      text-align: left;
+    }
+
+    .grid {
+      row-gap: rem(32);
+    }
+
+    > .container {
+      [data-column] {
+        &:first-child {
+          justify-self: center;
+          width: rem(130);
+          overflow: hidden;
+          border-radius: 50%;
+          transform: translate(0);
+
+          @include min-width(lg) {
+            justify-self: end;
+            width: rem(160);
+          }
+
+          @include min-width(xl) {
+            width: rem(170);
+          }
+        }
+
+        &:last-child {
+          align-self: center;
+        }
+      }
+    }
+
+    h1 {
+      margin: 0 0 rem(20);
+    }
+
+    p {
+      margin-bottom: rem(24);
+      font-size: rem(22);
+      font-weight: 500;
+
+      @include min-width(lg) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  .content {
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        figure {
+          transform: scale(1.05);
+        }
+      }
+
+      figure {
+        overflow: hidden;
+        border-radius: rem(4);
+        transition: transform 0.2s;
+
+        @include min-width(lg) {
+          border-radius: rem(8);
+        }
+      }
+    }
+  }
+}

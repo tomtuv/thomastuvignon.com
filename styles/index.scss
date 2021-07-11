@@ -1,0 +1,24 @@
+@import "abstracts/functions";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/fonts";
+@import "base/root";
+@import "base/base";
+
+@import "components/bubbles";
+@import "components/icon";
+@import "components/link";
+@import "components/modal";
+
+@import "layout/container";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/page";
+@import "pages/home";
+@import "pages/project";
+
+@import "~aos/src/sass/aos";

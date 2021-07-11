@@ -2,51 +2,23 @@
   "name": "thomastuvignon",
   "description": "Thomas Tuvignon",
   "version": "1.0.0",
-  "author": "Thomas Tuvignon",
   "dependencies": {
-    "@reach/router": "^1.3.4",
+    "@contentful/rich-text-react-renderer": "15.0.0",
     "aos": "^2.3.4",
-    "gatsby": "^3.8.0",
-    "gatsby-plugin-google-fonts-with-attributes": "^1.0.8",
-    "gatsby-plugin-google-gtag": "^3.8.0",
-    "gatsby-plugin-image": "^1.8.0",
-    "gatsby-plugin-manifest": "^3.8.0",
-    "gatsby-plugin-netlify": "^3.8.0",
-    "gatsby-plugin-offline": "^4.8.0",
-    "gatsby-plugin-purgecss": "^6.0.2",
-    "gatsby-plugin-react-helmet": "^4.8.0",
-    "gatsby-plugin-react-intl": "^3.0.0",
-    "gatsby-plugin-sass": "^4.8.0",
-    "gatsby-plugin-sharp": "^3.8.0",
-    "gatsby-plugin-sitemap": "^4.4.0",
-    "gatsby-source-contentful": "^5.8.0",
-    "gatsby-source-filesystem": "^3.8.0",
-    "gatsby-transformer-sharp": "^3.8.0",
+    "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.35.1"
+    "react-intl": "^5.20.4",
+    "sass": "^1.35.2"
   },
   "devDependencies": {
-    "prettier": "^2.3.1"
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1"
   },
-  "homepage": "https://thomastuvignon.com/",
-  "keywords": [
-    "contentful",
-    "gatsby"
-  ],
-  "license": "UNLICENSED",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tomtuv/thomas-tuvignon.git"
-  },
   "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "serve": "gatsby serve",
-    "start": "npm run develop"
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
   }
 }

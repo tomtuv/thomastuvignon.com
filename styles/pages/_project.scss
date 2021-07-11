@@ -1,0 +1,57 @@
+.page-project {
+  section {
+    &:nth-child(even) {
+      margin-top: rem(48);
+
+      @include min-width(lg) {
+        margin-top: rem(56);
+      }
+    }
+
+    &:nth-child(odd) {
+      margin-top: rem(56);
+
+      @include min-width(lg) {
+        margin-top: rem(104);
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 rem(8);
+
+      + p {
+        font-size: rem(18);
+        font-weight: 500;
+
+        @include min-width(xl) {
+          font-size: rem(20);
+        }
+      }
+    }
+
+    ul {
+      margin-top: rem(32);
+    }
+
+    li + li {
+      margin-top: rem(8);
+    }
+
+    a {
+      margin-top: rem(32);
+    }
+  }
+
+  aside {
+    margin-top: rem(56);
+    text-align: center;
+
+    @include min-width(lg) {
+      margin-top: rem(104);
+    }
+  }
+}

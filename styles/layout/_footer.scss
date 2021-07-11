@@ -1,0 +1,53 @@
+.footer {
+  padding: rem(48) 0;
+  color: black;
+  text-align: center;
+  background-color: var(--light-gray);
+
+  @include min-width(lg) {
+    padding: rem(80) 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: rem(24);
+    list-style: none;
+
+    @include min-width(lg) {
+      margin-bottom: rem(32);
+    }
+
+    li + li {
+      margin-left: rem(24);
+
+      @include min-width(lg) {
+        margin-left: rem(32);
+      }
+    }
+  }
+
+  &-languages {
+    a {
+      font-weight: 500;
+      transition: color 0.2s, border-color 0.2s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--gray);
+      }
+
+      &.active {
+        border-bottom: rem(2) solid black;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-color: var(--gray);
+        }
+      }
+    }
+  }
+}
