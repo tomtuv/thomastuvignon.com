@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Text from "../../components/text";
 import Media from "../../components/media";
-import { getAllProjectsWithSlug, getProject } from "../../lib/api";
+import { getProject, getAllProjectsWithSlug } from "../../lib/api";
 
 export default function Project({ project }) {
   const intl = useIntl();
