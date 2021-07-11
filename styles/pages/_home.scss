@@ -1,4 +1,4 @@
-.home {
+.page-home {
   .header {
     padding: rem(104) 0;
     text-align: center;
@@ -57,15 +57,15 @@
       &:hover,
       &:focus,
       &:active {
-        .gatsby-image-wrapper {
+        figure {
           transform: scale(1.05);
         }
       }
 
-      .gatsby-image-wrapper {
+      figure {
+        overflow: hidden;
         border-radius: rem(4);
         transition: transform 0.2s;
-        transform: translate(0);
 
         @include min-width(lg) {
           border-radius: rem(8);

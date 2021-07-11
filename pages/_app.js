@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
-import { AppWrapper } from "../components/context";
+import { AppProvider } from "../context/app-context";
 import fr from "../lang/fr.json";
 import en from "../lang/en.json";
 import "../styles/index.scss";
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   const { locale, defaultLocale } = useRouter();
 
   return (
-    <AppWrapper value={pageProps}>
+    <AppProvider value={pageProps}>
       <IntlProvider
         locale={locale}
         defaultLocale={defaultLocale}
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       >
         <Component {...pageProps} />
       </IntlProvider>
-    </AppWrapper>
+    </AppProvider>
   );
 }
 

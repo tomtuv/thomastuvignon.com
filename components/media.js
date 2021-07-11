@@ -13,9 +13,16 @@ export default function Media({ project, block }) {
                 "data-column-lg": "4",
               })}
           data-aos="fade-up"
-          key={image.id}
+          key={image.sys.id}
         >
-          <Image src={image.url} alt={project.title} layout="fill" />
+          <figure>
+            <Image
+              src={image.url}
+              alt={project.title}
+              width={image.width}
+              height={image.height}
+            />
+          </figure>
         </div>
       ))}
     </section>

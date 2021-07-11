@@ -22,6 +22,7 @@ export default function Modal({ modal, toggleModal, video, videoUrl }) {
               controls
               playsInline
               preload="none"
+              poster="/og-image.jpg"
               ref={video}
             >
               <source src={videoUrl} type="video/mp4" />

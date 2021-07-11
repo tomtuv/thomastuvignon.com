@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useIntl } from "react-intl";
-import { useAppContext } from "./context";
+import { useAppContext } from "../context/app-context";
 import Bubbles from "./bubbles";
 import Modal from "./modal";
 
@@ -38,12 +38,14 @@ export default function Header({ isHomePage }) {
         {isHomePage ? (
           <div className="grid">
             <div data-column="12" data-column-lg="4">
-              <Image
-                src={homePage.profilePicture.url}
-                alt={homePage.title}
-                width={170}
-                height={170}
-              />
+              <figure>
+                <Image
+                  src={homePage.profilePicture.url}
+                  alt={homePage.title}
+                  width={homePage.profilePicture.width}
+                  height={homePage.profilePicture.height}
+                />
+              </figure>
             </div>
             <div data-column="12" data-column-lg="8">
               <h1>{homePage.title}</h1>
@@ -55,12 +57,8 @@ export default function Header({ isHomePage }) {
           </div>
         ) : (
           <>
-            <Link
-              href="/"
-              className="link link-back"
-              aria-label={intl.formatMessage({ id: "back" })}
-            >
-              <a>Thomas Tuvignon</a>
+            <Link href="/" aria-label={intl.formatMessage({ id: "back" })}>
+              <a className="link link-back">Thomas Tuvignon</a>
             </Link>
             <h1>{project.title}</h1>
           </>

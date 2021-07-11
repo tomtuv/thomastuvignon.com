@@ -11,11 +11,7 @@ export default function Project({ project }) {
 
   return (
     <Layout>
-      <Seo
-        title={project.title}
-        description={project.description.description}
-        bodyClass="project"
-      />
+      <Seo title={project.title} description={project.description} />
       <main className="content">
         <div className="container">
           <article>
@@ -25,17 +21,15 @@ export default function Project({ project }) {
               }
 
               return (
-                <Media
-                  project={project}
-                  block={block}
-                  key={block.contentful_id}
-                />
+                <Media project={project} block={block} key={block.sys.id} />
               );
             })}
           </article>
           <aside>
-            <Link href="/" className="link link-back">
-              <a>{intl.formatMessage({ id: "back" })}</a>
+            <Link href="/">
+              <a className="link link-back">
+                {intl.formatMessage({ id: "back" })}
+              </a>
             </Link>
           </aside>
         </div>

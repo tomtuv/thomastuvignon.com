@@ -1,41 +1,25 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useIntl } from "react-intl";
 
-export default function Seo({ title, description, noIndex, bodyClass }) {
-  const { pathname } = useRouter();
-  const intl = useIntl();
-  const siteUrl = "https://thomastuvignon.com";
-  const twitterUsername = "@tomtuv";
-  const defaultTitle = "Thomas Tuvignon";
-  const defaultDescription = intl.formatMessage({ id: "description" });
-  const defaultImage = `image.publicURL`;
-
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: siteUrl + defaultImage,
-    url: siteUrl + pathname,
-  };
+export default function Seo({ title, description }) {
+  const siteTitle = "Thomas Tuvignon";
+  const image = "https://thomastuvignon.com/og-image.jpg";
+  const twitter = "@tomtuv";
 
   return (
     <Head>
-      <title>{seo.title}</title>
-      <link rel="canonical" href={seo.url} />
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:site_name" content={defaultTitle} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
+      <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+      <meta name="description" content={description} />
+      <meta name="image" content={image} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={siteTitle} />
+      <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={twitterUsername} />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      {noIndex && <meta property="robots" content="noindex" />}
-      <body className={bodyClass} />
+      <meta name="twitter:creator" content={twitter} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
     </Head>
   );
 }

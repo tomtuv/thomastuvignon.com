@@ -71,4 +71,8 @@ button {
 
 figure {
   margin: 0;
+
+  > div {
+    display: block !important;
+  }
 }
