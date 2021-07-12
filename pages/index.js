@@ -23,6 +23,8 @@ export default function Index({ homePage }) {
                       alt={project.title}
                       width={project.thumbnail.width}
                       height={project.thumbnail.height}
+                      layout="responsive"
+                      sizes="(min-width: 48em) 315px, 50vw"
                     />
                   </figure>
                 </a>

@@ -21,6 +21,8 @@ export default function Media({ project, block }) {
               alt={project.title}
               width={image.width}
               height={image.height}
+              layout="responsive"
+              sizes="(min-width: 64em) 1040px, 100vw"
             />
           </figure>
         </div>

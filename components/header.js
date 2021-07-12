@@ -44,6 +44,7 @@ export default function Header({ isHomePage }) {
                   alt={homePage.title}
                   width={homePage.profilePicture.width}
                   height={homePage.profilePicture.height}
+                  priority
                 />
               </figure>
             </div>
