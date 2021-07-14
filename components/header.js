@@ -11,8 +11,7 @@ export default function Header({ isHomePage }) {
   const intl = useIntl();
   const [modal, setModal] = useState(null);
   const video = useRef(null);
-  const homePage = data.homePage;
-  const project = data.project;
+  const { homePage, project, page } = data;
 
   function handleClick() {
     setModal(!modal ? true : null);
@@ -69,7 +68,7 @@ export default function Header({ isHomePage }) {
             <Link href="/" aria-label={intl.formatMessage({ id: "back" })}>
               <a className="link link-back">Thomas Tuvignon</a>
             </Link>
-            <h1>{project.title}</h1>
+            <h1>{project ? project.title : page.title}</h1>
           </>
         )}
       </div>
