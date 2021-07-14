@@ -4,14 +4,12 @@
   min-height: 100vh;
 
   article {
-    h2 {
-      + p {
-        font-size: 1.125rem;
-        font-weight: 500;
+    h2 + p {
+      font-size: 1.125rem;
+      font-weight: 500;
 
-        @include min-width(xl) {
-          font-size: 1.25rem;
-        }
+      @include min-width(xl) {
+        font-size: 1.25rem;
       }
     }
 

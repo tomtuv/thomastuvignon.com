@@ -20,7 +20,11 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 3.5rem 0 0.5rem;
+  margin: 3rem 0 0.5rem;
+
+  @include min-width(md) {
+    margin-top: 3.5rem;
+  }
 }
 
 h1 {
