@@ -14,7 +14,7 @@ export default function Languages() {
       {router.locales.map((locale) => (
         <li key={locale}>
           <Link href={router.asPath} locale={locale}>
-            <a className={router.locale === locale ? "active" : ""}>
+            <a aria-current={router.locale === locale ? "page" : null}>
               {languageNames[locale]}
             </a>
           </Link>
