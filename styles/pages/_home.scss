@@ -71,7 +71,10 @@
       figure {
         overflow: hidden;
         border-radius: 0.25rem;
-        transition: transform 0.2s;
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: transform 0.2s linear;
+        }
 
         @include min-width(lg) {
           border-radius: 0.5rem;

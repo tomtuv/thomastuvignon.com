@@ -1,7 +1,10 @@
 .icon {
   display: block;
   line-height: 0;
-  transition: color 0.2s;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color 0.2s linear;
+  }
 
   svg {
     width: 24px;

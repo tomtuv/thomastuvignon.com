@@ -30,7 +30,12 @@
   &-languages {
     a {
       font-weight: 500;
-      transition: color 0.2s, border-color 0.2s;
+      transition-timing-function: linear;
+      transition-property: color, border-color;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition-duration: 0.2s;
+      }
 
       &:hover,
       &:focus,
