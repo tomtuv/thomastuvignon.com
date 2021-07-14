@@ -9,7 +9,7 @@ export default function Index({ homePage }) {
   const intl = useIntl();
 
   return (
-    <Layout isHomePage>
+    <Layout>
       <Seo description={intl.formatMessage({ id: "description" })} />
       <main className="content">
         <div className="container">

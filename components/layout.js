@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import AOS from "aos";
+import { useDataContext } from "../context/data";
 import Header from "./header";
 import Footer from "./footer";
 
-export default function Layout({ isHomePage, children }) {
+export default function Layout({ children }) {
+  const { homePage } = useDataContext();
+
   useEffect(() => {
     AOS.init({
       offset: 60,
@@ -13,8 +16,8 @@ export default function Layout({ isHomePage, children }) {
   }, []);
 
   return (
-    <div className={isHomePage ? "home" : "page"}>
-      <Header isHomePage={isHomePage} />
+    <div className={homePage ? "home" : "page"}>
+      <Header />
       {children}
       <Footer />
     </div>

@@ -2,30 +2,35 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useIntl } from "react-intl";
-import { useAppContext } from "../context/app-context";
+import { useDataContext } from "../context/data";
 import Bubbles from "./bubbles";
 import Modal from "./modal";
 
-export default function Header({ isHomePage }) {
-  const data = useAppContext();
+export default function Header() {
+  const { homePage, project, page } = useDataContext();
   const intl = useIntl();
   const [modal, setModal] = useState(null);
   const video = useRef(null);
-  const { homePage, project, page } = data;
+
+  function openModal() {
+    setModal(true);
+    video.current.play();
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    setModal(null);
+    video.current.pause();
+    document.body.removeAttribute("style");
+  }
 
   function handleClick() {
-    setModal(!modal ? true : null);
-    !modal ? video.current.play() : video.current.pause();
-    document.body.style.overflow = !modal ? "hidden" : "";
+    !modal ? openModal() : closeModal();
   }
 
   useEffect(() => {
     function handleKeyDown(event) {
-      if (event.key === "Escape") {
-        setModal(null);
-        video.current.pause();
-        document.body.removeAttribute("style");
-      }
+      event.key === "Escape" && closeModal();
     }
 
     window.addEventListener("keydown", handleKeyDown);
@@ -36,7 +41,7 @@ export default function Header({ isHomePage }) {
     <header className="header">
       <Bubbles />
       <div className="container">
-        {isHomePage ? (
+        {homePage ? (
           <div className="grid">
             <div data-column="12" data-column-lg="4">
               <figure>
@@ -72,7 +77,7 @@ export default function Header({ isHomePage }) {
           </>
         )}
       </div>
-      {isHomePage && (
+      {homePage && (
         <Modal
           modal={modal}
           handleClick={handleClick}
