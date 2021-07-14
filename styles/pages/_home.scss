@@ -16,24 +16,30 @@
       [data-column] {
         &:first-child {
           justify-self: center;
-          width: 8.125rem;
-          overflow: hidden;
-          border-radius: 50%;
-          transform: translate(0);
 
           @include min-width(lg) {
             justify-self: end;
-            width: 10rem;
-          }
-
-          @include min-width(xl) {
-            width: 10.625rem;
           }
         }
 
         &:last-child {
           align-self: center;
         }
+      }
+    }
+
+    figure {
+      width: 8.125rem;
+      overflow: hidden;
+      border-radius: 50%;
+      transform: translate(0);
+
+      @include min-width(lg) {
+        width: 10rem;
+      }
+
+      @include min-width(xl) {
+        width: 10.625rem;
       }
     }
 

@@ -44,6 +44,8 @@ export default function Header({ isHomePage }) {
                   alt={homePage.title}
                   width={homePage.profilePicture.width}
                   height={homePage.profilePicture.height}
+                  placeholder="blur"
+                  blurDataURL={`/_next/image?url=${homePage.profilePicture.url}&w=16&q=1`}
                   priority
                 />
               </figure>

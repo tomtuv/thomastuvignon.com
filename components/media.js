@@ -23,6 +23,8 @@ export default function Media({ project, block }) {
               height={image.height}
               layout="responsive"
               sizes="(min-width: 64em) 1040px, 100vw"
+              placeholder="blur"
+              blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
             />
           </figure>
         </div>
