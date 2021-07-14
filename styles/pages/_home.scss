@@ -12,19 +12,17 @@
       row-gap: 2rem;
     }
 
-    > .container {
-      [data-column] {
-        &:first-child {
-          justify-self: center;
+    [data-column] {
+      &:first-child {
+        justify-self: center;
 
-          @include min-width(lg) {
-            justify-self: end;
-          }
+        @include min-width(lg) {
+          justify-self: end;
         }
+      }
 
-        &:last-child {
-          align-self: center;
-        }
+      &:last-child {
+        align-self: center;
       }
     }
 
