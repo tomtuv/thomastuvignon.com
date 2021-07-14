@@ -17,6 +17,7 @@ export default function Header({ isHomePage }) {
   function handleClick() {
     setModal(!modal ? true : null);
     !modal ? video.current.play() : video.current.pause();
+    document.body.style.overflow = !modal ? "hidden" : "";
   }
 
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Header({ isHomePage }) {
       if (event.key === "Escape") {
         setModal(null);
         video.current.pause();
+        document.body.removeAttribute("style");
       }
     }
 

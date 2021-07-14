@@ -1,7 +1,8 @@
 {
   "description": "Intégration web. Design graphique. Motion design. Prototypage.",
   "back": "Retour",
-  "modalButton": "Voir le CV vidéo",
+  "close": "Fermer",
   "email": "E-mail",
+  "modalButton": "Voir le CV vidéo",
   "projectLink": "Voir le site web"
 }

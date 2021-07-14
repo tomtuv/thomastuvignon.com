@@ -1,7 +1,8 @@
 {
   "description": "Front-end web development. Graphic design. Motion design. Prototyping.",
   "back": "Back",
-  "modalButton": "Watch the video resume",
+  "close": "Close",
   "email": "Email",
+  "modalButton": "Watch the video resume",
   "projectLink": "See the website"
 }
