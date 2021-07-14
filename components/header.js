@@ -50,6 +50,8 @@ export default function Header() {
                   alt={homePage.title}
                   width={homePage.profilePicture.width}
                   height={homePage.profilePicture.height}
+                  layout="responsive"
+                  sizes="(min-width: 75em) 170px, (min-width: 64em) 160px, 130px"
                   placeholder="blur"
                   blurDataURL={`/_next/image?url=${homePage.profilePicture.url}&w=16&q=1`}
                   priority

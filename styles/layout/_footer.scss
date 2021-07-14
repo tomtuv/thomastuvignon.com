@@ -30,11 +30,10 @@
   &-languages {
     a {
       font-weight: 500;
-      transition-timing-function: linear;
-      transition-property: color, border-color;
+      border-bottom: 0.125rem solid transparent;
 
       @media (prefers-reduced-motion: no-preference) {
-        transition-duration: 0.2s;
+        transition: color 0.2s linear;
       }
 
       &:hover,
@@ -44,13 +43,7 @@
       }
 
       &[aria-current="page"] {
-        border-bottom: 0.125rem solid;
-
-        &:hover,
-        &:focus,
-        &:active {
-          border-color: var(--gray);
-        }
+        border-color: currentColor;
       }
     }
   }
