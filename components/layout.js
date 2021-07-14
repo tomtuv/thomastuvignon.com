@@ -13,7 +13,7 @@ export default function Layout({ isHomePage, children }) {
   }, []);
 
   return (
-    <div className={`page ${isHomePage ? "page-home" : "page-project"}`}>
+    <div className={isHomePage ? "home" : "page"}>
       <Header isHomePage={isHomePage} />
       {children}
       <Footer />

@@ -2,4 +2,58 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100vh;
+
+  article {
+    h2 + p {
+      font-size: 1.125rem;
+      font-weight: 500;
+
+      @include min-width(xl) {
+        font-size: 1.25rem;
+      }
+    }
+
+    ul {
+      margin-top: 2rem;
+    }
+
+    li + li {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      margin-top: 2rem;
+    }
+  }
+
+  section {
+    &:nth-child(even) {
+      margin-top: 3rem;
+
+      @include min-width(lg) {
+        margin-top: 3.5rem;
+      }
+    }
+
+    &:nth-child(odd) {
+      margin-top: 3.5rem;
+
+      @include min-width(lg) {
+        margin-top: 6.5rem;
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  aside {
+    margin-top: 3.5rem;
+    text-align: center;
+
+    @include min-width(lg) {
+      margin-top: 6.5rem;
+    }
+  }
 }
