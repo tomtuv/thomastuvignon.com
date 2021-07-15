@@ -1,14 +1,11 @@
-import Link from "next/link";
-import { useIntl } from "react-intl";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import Text from "../../components/text";
 import Media from "../../components/media";
+import Back from "../../components/back";
 import { getProject, getAllProjectsWithSlug } from "../../lib/api";
 
 export default function Project({ project }) {
-  const intl = useIntl();
-
   return (
     <Layout>
       <Seo title={project.title} description={project.description} />
@@ -25,13 +22,7 @@ export default function Project({ project }) {
               );
             })}
           </article>
-          <aside>
-            <Link href="/">
-              <a className="link link-back">
-                {intl.formatMessage({ id: "back" })}
-              </a>
-            </Link>
-          </aside>
+          <Back />
         </div>
       </main>
     </Layout>

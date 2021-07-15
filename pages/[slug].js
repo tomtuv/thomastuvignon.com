@@ -1,13 +1,10 @@
-import Link from "next/link";
-import { useIntl } from "react-intl";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import Back from "../components/back";
 import { getPage, getAllPagesWithSlug } from "../lib/api";
 
 export default function Page({ page }) {
-  const intl = useIntl();
-
   return (
     <Layout>
       <Seo title={page.title} description={page.description} />
@@ -20,13 +17,7 @@ export default function Page({ page }) {
               </div>
             </div>
           </article>
-          <aside>
-            <Link href="/">
-              <a className="link link-back">
-                {intl.formatMessage({ id: "back" })}
-              </a>
-            </Link>
-          </aside>
+          <Back />
         </div>
       </main>
     </Layout>
