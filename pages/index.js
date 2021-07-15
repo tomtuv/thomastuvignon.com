@@ -24,7 +24,7 @@ export default function Index({ homePage }) {
                       width={project.thumbnail.width}
                       height={project.thumbnail.height}
                       layout="responsive"
-                      sizes="(min-width: 48em) 315px, 50vw"
+                      sizes="(min-width: 75em) 315px, (min-width: 64em) 260px, (min-width: 48em) 308px, (min-width: 35em) 228px, 50vw"
                       placeholder="blur"
                       blurDataURL={`/_next/image?url=${project.thumbnail.url}&w=16&q=1`}
                     />
