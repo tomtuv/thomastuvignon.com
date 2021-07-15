@@ -5,7 +5,6 @@ export default function Github() {
       href="https://github.com/tomtuv"
       target="_blank"
       rel="noreferrer"
-      aria-label="GitHub"
     >
       <svg viewBox="0 0 24 24">
         <title>GitHub</title>

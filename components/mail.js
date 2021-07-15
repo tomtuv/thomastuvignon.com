@@ -4,11 +4,7 @@ export default function Mail() {
   const intl = useIntl();
 
   return (
-    <a
-      className="icon icon-mail"
-      href="mailto:contact@thomastuvignon.com"
-      aria-label={intl.formatMessage({ id: "email" })}
-    >
+    <a className="icon icon-mail" href="mailto:contact@thomastuvignon.com">
       <svg viewBox="0 0 24 24">
         <title>{intl.formatMessage({ id: "email" })}</title>
         <path

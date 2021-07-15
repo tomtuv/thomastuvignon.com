@@ -5,7 +5,6 @@ export default function Facebook() {
       href="https://www.facebook.com/thomas.tuvignon"
       target="_blank"
       rel="noreferrer"
-      aria-label="Facebook"
     >
       <svg viewBox="0 0 24 24">
         <title>Facebook</title>

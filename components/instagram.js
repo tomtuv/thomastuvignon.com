@@ -5,7 +5,6 @@ export default function Instagram() {
       href="https://www.instagram.com/tomtuv"
       target="_blank"
       rel="noreferrer"
-      title="Instagram"
     >
       <svg viewBox="0 0 24 24">
         <title>Instagram</title>

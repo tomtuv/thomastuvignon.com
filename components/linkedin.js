@@ -5,7 +5,6 @@ export default function Linkedin() {
       href="https://www.linkedin.com/in/thomastuvignon"
       target="_blank"
       rel="noreferrer"
-      aria-label="LinkedIn"
     >
       <svg viewBox="0 0 24 24">
         <title>LinkedIn</title>
