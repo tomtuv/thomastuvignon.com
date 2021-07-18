@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
 import { DataProvider } from "../context/data";
-import fr from "../lang/fr.json";
-import en from "../lang/en.json";
+import fr from "../locales/fr.json";
+import en from "../locales/en.json";
 import "../styles/index.scss";
 
 const messages = { fr, en };

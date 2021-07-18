@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useCookies } from "react-cookie";
 import Link from "next/link";
 
 const languageNames = {
@@ -7,14 +8,22 @@ const languageNames = {
 };
 
 export default function Languages() {
-  const router = useRouter();
+  const { locale: activeLocale, locales, asPath } = useRouter();
+  const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
 
   return (
     <ul className="footer-languages">
-      {router.locales.map((locale) => (
+      {locales.map((locale) => (
         <li key={locale}>
-          <Link href={router.asPath} locale={locale}>
-            <a aria-current={router.locale === locale ? "page" : null}>
+          <Link href={asPath} locale={locale}>
+            <a
+              aria-current={locale === activeLocale ? "page" : null}
+              onClick={() => {
+                if (cookie.NEXT_LOCALE !== locale) {
+                  setCookie("NEXT_LOCALE", locale, { path: "/" });
+                }
+              }}
+            >
               {languageNames[locale]}
             </a>
           </Link>
