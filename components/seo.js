@@ -3,24 +3,30 @@ import { useRouter } from "next/router";
 
 export default function Seo({ title, description }) {
   const { asPath, locale: activeLocale, locales, defaultLocale } = useRouter();
+  const alternateLocale = locales.find((locale) => locale !== activeLocale);
   const siteTitle = "Thomas Tuvignon";
   const siteUrl = "https://thomastuvignon.com";
-  const canonicalUrl = `${siteUrl}${
-    activeLocale !== defaultLocale ? `/${activeLocale}` : ""
-  }${asPath}`;
   const image = `${siteUrl}/og-image.jpg`;
   const twitter = "@tomtuv";
+
+  function getPageUrl(locale) {
+    return `${siteUrl}${locale !== defaultLocale ? `/${locale}` : ""}${asPath}`;
+  }
 
   return (
     <Head>
       <title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
-      <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${asPath}`} />
+      <link rel="canonical" href={getPageUrl(activeLocale)} />
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={getPageUrl(defaultLocale)}
+      />
       {locales.map((locale) => (
         <link
           rel="alternate"
           hrefLang={locale}
-          href={`${siteUrl}/${locale}${asPath}`}
+          href={getPageUrl(locale)}
           key={locale}
         />
       ))}
@@ -29,12 +35,9 @@ export default function Seo({ title, description }) {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={siteTitle} />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={getPageUrl(activeLocale)} />
       <meta property="og:locale" content={activeLocale} />
-      <meta
-        property="og:locale:alternate"
-        content={locales.find((locale) => locale !== activeLocale)}
-      />
+      <meta property="og:locale:alternate" content={alternateLocale} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />

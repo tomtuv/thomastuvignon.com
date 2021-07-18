@@ -8,7 +8,7 @@ const languageNames = {
 };
 
 export default function Languages() {
-  const { locale: activeLocale, locales, asPath } = useRouter();
+  const { asPath, locale: activeLocale, locales } = useRouter();
   const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
 
   return (
