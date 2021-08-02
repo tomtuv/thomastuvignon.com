@@ -54,17 +54,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@contentful/rich-text-react-renderer@15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.0.0.tgz#3b9be3587af4c54f033383fcb1731340de14d210"
-  integrity sha512-59NwFkyVyCAJAPilXrNlOjN6y4EZo+h3KLHwREVy8Lo+Fl03GZx5LUb3pijiM4MFdVxByvUiRyRA5VJFzbGX3w==
+"@contentful/rich-text-react-renderer@15.1.0":
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.1.0.tgz#992f7d3ca4590722d0bdf42021ada6957d76e728"
+  integrity sha512-/oo1zJDaYbc9kF7GjtfSrFMc38QucvVtci887RaMZdTJBLC4wyfoFGpeXo8c1xHkbVUeey13eEfEh2356dx20g==
   dependencies:
-    "@contentful/rich-text-types" "^15.0.0"
+    "@contentful/rich-text-types" "^15.1.0"
 
-"@contentful/rich-text-types@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.0.0.tgz#bd676960dea3e4b5a56fd6653d8cc800a81d6bca"
-  integrity sha512-e7aXF/BhXPOpLW+PsbD57Fyt0meiRYT3nTct2iLGa2WYRZMM6E+clnCAXhSRBQ8qhAso7SSUGeiBMxPeaO3KKQ==
+"@contentful/rich-text-types@^15.1.0":
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.1.0.tgz#5637452257e6c7c6fc406ec1ec6ab7fcc1158105"
+  integrity sha512-3PgQi/B5yKC3xXDar1Ry4i4l9jgt56PFZ40cOkE+oCNLmNlFtZolo6cTrf4VunuufSsCfjTs4iWovy7fbM1I8Q==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
