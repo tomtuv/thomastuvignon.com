@@ -70,10 +70,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@contentful/rich-text-react-renderer@15.1.0":
-  version "15.1.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.1.0.tgz#992f7d3ca4590722d0bdf42021ada6957d76e728"
-  integrity sha512-/oo1zJDaYbc9kF7GjtfSrFMc38QucvVtci887RaMZdTJBLC4wyfoFGpeXo8c1xHkbVUeey13eEfEh2356dx20g==
+"@contentful/rich-text-react-renderer@15.2.0":
+  version "15.2.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.2.0.tgz#b5ff25b4746f063f15d83eccaff555597d46683e"
+  integrity sha512-mMvs1tvd8Uab1Rqu1oNNqrVwaiQ3+EiLbjZQkBuQ0vTpVCmFI5w60X/mUg5aLMQzJMyEW/kzzcGEjo5oG7im5Q==
   dependencies:
     "@contentful/rich-text-types" "^15.1.0"
 
