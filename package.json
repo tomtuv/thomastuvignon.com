@@ -21,7 +21,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "15.3.0",
+    "@contentful/rich-text-react-renderer": "15.3.3",
     "aos": "^2.3.4",
     "next": "^11.1.2",
     "react": "^17.0.2",
