@@ -1,13 +1,15 @@
-import Social from "./social";
-import Languages from "./languages";
+import Social from "components/social";
+import Languages from "components/languages";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
-        <Social />
-        <Languages />
-        <p>© {new Date().getFullYear()} Thomas Tuvignon</p>
+      <div className="grid">
+        <div>
+          <Social />
+          <Languages />
+          <p>© {new Date().getFullYear()} Thomas Tuvignon</p>
+        </div>
       </div>
     </footer>
   );

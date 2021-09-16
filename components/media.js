@@ -1,24 +1,27 @@
 import Image from "next/image";
+import { useIntl } from "react-intl";
 
 export default function Media({ project, block }) {
+  const { formatMessage } = useIntl();
+
   return (
-    <section className="grid">
+    <section
+      className="grid"
+      aria-label={formatMessage({ id: "imageGallery" })}
+    >
       {block.imagesCollection.items.map((image) => (
         <div
-          data-column="12"
-          {...(block.layout === "2 columns"
-            ? { "data-column-md": "6" }
-            : block.layout === "3 columns" && {
-                "data-column-md": "6",
-                "data-column-lg": "4",
-              })}
+          style={{
+            "--grid-column-md": block.layout !== "Full width" ? "span 6" : null,
+            "--grid-column-lg": block.layout === "3 columns" ? "span 4" : null,
+          }}
           data-aos="fade-up"
           key={image.sys.id}
         >
           <figure>
             <Image
               src={image.url}
-              alt={project.title}
+              alt={image.description || project.title}
               width={image.width}
               height={image.height}
               layout="responsive"

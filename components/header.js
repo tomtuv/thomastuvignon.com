@@ -1,26 +1,26 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useIntl } from "react-intl";
-import { useDataContext } from "../context/data";
-import Bubbles from "./bubbles";
-import Modal from "./modal";
+import { FormattedMessage, useIntl } from "react-intl";
+import { useDataContext } from "context/data";
+import Bubbles from "components/bubbles";
+import Modal from "components/modal";
 
 export default function Header() {
   const { homePage, project, page } = useDataContext();
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
   const [modal, setModal] = useState(null);
-  const video = useRef(null);
+  const videoEl = useRef(null);
 
   function openModal() {
     setModal(true);
-    video.current.play();
+    videoEl.current.play();
     document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     setModal(null);
-    video.current.pause();
+    videoEl.current.pause();
     document.body.removeAttribute("style");
   }
 
@@ -40,10 +40,10 @@ export default function Header() {
   return (
     <header className="header">
       <Bubbles />
-      <div className="container">
+      <div className="grid">
         {homePage ? (
-          <div className="grid">
-            <div data-column="12" data-column-lg="4">
+          <>
+            <div style={{ "--grid-column-lg": "span 4" }}>
               <figure>
                 <Image
                   src={homePage.profilePicture.url}
@@ -58,7 +58,7 @@ export default function Header() {
                 />
               </figure>
             </div>
-            <div data-column="12" data-column-lg="8">
+            <div style={{ "--grid-column-lg": "span 8" }}>
               <h1>{homePage.title}</h1>
               <p>{homePage.jobTitle}</p>
               <button
@@ -66,24 +66,24 @@ export default function Header() {
                 onClick={handleClick}
                 aria-controls="modal"
               >
-                {intl.formatMessage({ id: "modalButton" })}
+                <FormattedMessage id="modalButton" />
               </button>
             </div>
-          </div>
+          </>
         ) : (
-          <>
-            <Link href="/" aria-label={intl.formatMessage({ id: "back" })}>
+          <div>
+            <Link href="/" aria-label={formatMessage({ id: "back" })}>
               <a className="link link-back">Thomas Tuvignon</a>
             </Link>
             <h1>{project ? project.title : page.title}</h1>
-          </>
+          </div>
         )}
       </div>
       {homePage && (
         <Modal
           modal={modal}
           handleClick={handleClick}
-          video={video}
+          videoEl={videoEl}
           videoUrl={homePage.video.url}
         />
       )}

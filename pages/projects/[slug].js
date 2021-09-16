@@ -1,30 +1,31 @@
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import Text from "../../components/text";
-import Media from "../../components/media";
-import Back from "../../components/back";
-import { getProject, getAllProjectsWithSlug } from "../../lib/api";
+import Layout from "components/layout";
+import Seo from "components/seo";
+import Text from "components/text";
+import Media from "components/media";
+import Back from "components/back";
+import { getProject, getAllProjectsWithSlug } from "lib/api";
 
 export default function Project({ project }) {
   return (
     <Layout>
       <Seo title={project.title} description={project.description} />
-      <main className="content">
-        <div className="container">
-          <article>
-            {project.blocksCollection?.items.map((block) => {
-              if (block.__typename === "Text") {
-                return <Text block={block} key={block.sys.id} />;
-              }
+      <article>
+        {project.blocksCollection?.items.map((block) => {
+          switch (block.__typename) {
+            case "Text":
+              return <Text block={block} key={block.sys.id} />;
 
+            case "Media":
               return (
                 <Media project={project} block={block} key={block.sys.id} />
               );
-            })}
-          </article>
-          <Back />
-        </div>
-      </main>
+
+            default:
+              return null;
+          }
+        })}
+      </article>
+      <Back />
     </Layout>
   );
 }

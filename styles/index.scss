@@ -1,23 +1,20 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@use "base/root";
+@use "base/base";
+@use "base/typography";
 
-@import "base/fonts";
-@import "base/root";
-@import "base/base";
-@import "base/typography";
+@use "components/bubbles";
+@use "components/icon";
+@use "components/link";
+@use "components/modal";
 
-@import "components/bubbles";
-@import "components/icon";
-@import "components/link";
-@import "components/modal";
+@use "layout/content";
+@use "layout/footer";
+@use "layout/grid";
+@use "layout/header";
 
-@import "layout/container";
-@import "layout/content";
-@import "layout/footer";
-@import "layout/grid";
-@import "layout/header";
+@use "pages/page";
+@use "pages/home";
 
-@import "pages/page";
-@import "pages/home";
-
-@import "~aos/src/sass/aos";
+@use "~aos/src/sass/aos" with (
+  $aos-distance: 1.5rem
+);

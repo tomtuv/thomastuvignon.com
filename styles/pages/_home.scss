@@ -1,28 +1,30 @@
+@use "../abstracts/variables" as *;
+
 .home {
   .header {
-    padding: 6.5rem 0;
+    padding-block: 6.5rem;
     text-align: center;
 
-    @include min-width(lg) {
-      padding: 10rem 0;
+    @media (min-width: $lg) {
+      padding-block: 10rem;
       text-align: left;
     }
 
     .grid {
       row-gap: 2rem;
-    }
 
-    [data-column] {
-      &:first-child {
-        justify-self: center;
+      > * {
+        &:first-child {
+          justify-self: center;
 
-        @include min-width(lg) {
-          justify-self: end;
+          @media (min-width: $lg) {
+            justify-self: end;
+          }
         }
-      }
 
-      &:last-child {
-        align-self: center;
+        &:last-child {
+          align-self: center;
+        }
       }
     }
 
@@ -31,11 +33,11 @@
       overflow: hidden;
       border-radius: 50%;
 
-      @include min-width(lg) {
+      @media (min-width: $lg) {
         width: 160px;
       }
 
-      @include min-width(xl) {
+      @media (min-width: $xl) {
         width: 170px;
       }
     }
@@ -49,7 +51,7 @@
       font-size: 1.375rem;
       font-weight: 500;
 
-      @include min-width(lg) {
+      @media (min-width: $lg) {
         margin-bottom: 1.25rem;
       }
     }
@@ -73,7 +75,7 @@
           transition: transform 0.2s linear;
         }
 
-        @include min-width(lg) {
+        @media (min-width: $lg) {
           border-radius: 0.5rem;
         }
       }

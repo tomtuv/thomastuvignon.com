@@ -1,15 +1,17 @@
+@use "../abstracts/variables" as *;
+
 .header {
-  padding: 3.5rem 0;
+  padding-block: 3.5rem;
   overflow: hidden;
   color: white;
   text-align: center;
   background-color: var(--dark-violet);
 
-  @include min-width(lg) {
-    padding: 7.5rem 0;
+  @media (min-width: $lg) {
+    padding-block: 7.5rem;
   }
 
-  .container {
+  .grid {
     position: relative;
   }
 

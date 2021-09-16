@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import AOS from "aos";
-import { useDataContext } from "../context/data";
-import Header from "./header";
-import Footer from "./footer";
+import { useDataContext } from "context/data";
+import Header from "components/header";
+import Footer from "components/footer";
 
 export default function Layout({ children }) {
   const { homePage } = useDataContext();
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
   return (
     <div className={homePage ? "home" : "page"}>
       <Header />
-      {children}
+      <main className="content">{children}</main>
       <Footer />
     </div>
   );

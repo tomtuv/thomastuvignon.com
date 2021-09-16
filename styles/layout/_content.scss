@@ -1,8 +1,10 @@
-.content {
-  padding: 3.5rem 0;
+@use "../abstracts/variables" as *;
 
-  @include min-width(lg) {
-    padding: 6.5rem 0;
+.content {
+  padding-block: 3.5rem;
+
+  @media (min-width: $lg) {
+    padding-block: 6.5rem;
   }
 
   figure {

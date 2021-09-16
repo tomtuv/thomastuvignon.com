@@ -1,4 +1,4 @@
-import { useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 
@@ -17,13 +17,13 @@ const renderOptions = {
 };
 
 export default function Text({ block }) {
-  const intl = useIntl();
-
   return (
-    <section className="grid">
-      <div data-column="12" data-column-lg="10" data-start-lg="2">
-        <h2>{block.title}</h2>
-        <p className="subtitle">{block.subtitle}</p>
+    <section className="grid" aria-labelledby={block.sys.id}>
+      <div style={{ "--grid-column-lg": "2 / span 10" }}>
+        <header>
+          <h2 id={block.sys.id}>{block.title}</h2>
+          <p>{block.subtitle}</p>
+        </header>
         {documentToReactComponents(block.body.json, renderOptions)}
         {block.link && (
           <a
@@ -32,7 +32,7 @@ export default function Text({ block }) {
             rel="noreferrer"
             className="link"
           >
-            {intl.formatMessage({ id: "projectLink" })}
+            <FormattedMessage id="projectLink" />
           </a>
         )}
       </div>

@@ -1,6 +1,6 @@
-import Close from "./close";
+import Close from "components/close";
 
-export default function Modal({ modal, handleClick, video, videoUrl }) {
+export default function Modal({ modal, handleClick, videoEl, videoUrl }) {
   return (
     <div
       id="modal"
@@ -12,7 +12,7 @@ export default function Modal({ modal, handleClick, video, videoUrl }) {
       <button className="modal-button" onClick={handleClick}>
         <Close />
       </button>
-      <div className="container">
+      <div className="grid">
         <video
           width="1920"
           height="1080"
@@ -20,12 +20,12 @@ export default function Modal({ modal, handleClick, video, videoUrl }) {
           playsInline
           preload="none"
           poster="/og-image.jpg"
-          ref={video}
+          ref={videoEl}
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
       </div>
-      <button
+      <div
         className="modal-backdrop"
         onClick={handleClick}
         aria-hidden="true"

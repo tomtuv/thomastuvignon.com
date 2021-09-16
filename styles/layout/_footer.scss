@@ -1,27 +1,29 @@
+@use "../abstracts/variables" as *;
+
 .footer {
-  padding: 3rem 0;
+  padding-block: 3rem;
   text-align: center;
   background-color: var(--light-gray);
 
-  @include min-width(lg) {
-    padding: 5rem 0;
+  @media (min-width: $lg) {
+    padding-block: 5rem;
   }
 
   ul {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
     list-style: none;
 
-    @include min-width(lg) {
+    @media (min-width: $lg) {
       margin-bottom: 2rem;
     }
 
     li + li {
-      margin-left: 1.5rem;
+      margin: 0 0 0 1.5rem;
 
-      @include min-width(lg) {
+      @media (min-width: $lg) {
         margin-left: 2rem;
       }
     }

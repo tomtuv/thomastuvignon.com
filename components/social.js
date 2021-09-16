@@ -1,9 +1,9 @@
-import Linkedin from "./linkedin";
-import Twitter from "./twitter";
-import Facebook from "./facebook";
-import Instagram from "./instagram";
-import Github from "./github";
-import Mail from "./mail";
+import Linkedin from "components/linkedin";
+import Twitter from "components/twitter";
+import Facebook from "components/facebook";
+import Instagram from "components/instagram";
+import Github from "components/github";
+import Mail from "components/mail";
 
 export default function Social() {
   return (
