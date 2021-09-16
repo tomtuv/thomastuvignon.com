@@ -1,8 +1,23 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import Back from "../components/back";
 import { getPage, getAllPagesWithSlug } from "../lib/api";
+
+const renderOptions = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      const [{ value }] = node.content;
+
+      if (value !== "" || node.content.length > 1) {
+        return <p>{children}</p>;
+      }
+
+      return null;
+    },
+  },
+};
 
 export default function Page({ page }) {
   return (
@@ -13,7 +28,7 @@ export default function Page({ page }) {
           <article>
             <div className="grid">
               <div data-column="12" data-column-lg="10" data-start-lg="2">
-                {documentToReactComponents(page.body.json)}
+                {documentToReactComponents(page.body.json, renderOptions)}
               </div>
             </div>
           </article>
