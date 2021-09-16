@@ -13,6 +13,10 @@
       }
     }
 
+    p:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+
     ul {
       margin-top: 2rem;
     }
