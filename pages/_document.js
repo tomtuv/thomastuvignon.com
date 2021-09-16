@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="theme-color" content="#31185a" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -23,11 +24,20 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="theme-color" content="#31185a" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
           />
+          <noscript>
+            <style>
+              {`
+                [data-aos] {
+                  opacity: initial !important;
+                  transform: initial !important;
+                }
+              `}
+            </style>
+          </noscript>
           {process.env.NODE_ENV === "production" && (
             <>
               <script
