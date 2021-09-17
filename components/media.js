@@ -1,14 +1,8 @@
 import Image from "next/image";
-import { useIntl } from "react-intl";
 
-export default function Media({ project, block }) {
-  const { formatMessage } = useIntl();
-
+export default function Media({ block }) {
   return (
-    <section
-      className="grid"
-      aria-label={formatMessage({ id: "imageGallery" })}
-    >
+    <section className="grid" aria-label={block.title}>
       {block.imagesCollection.items.map((image) => (
         <div
           style={{
@@ -21,7 +15,7 @@ export default function Media({ project, block }) {
           <figure>
             <Image
               src={image.url}
-              alt={image.description || project.title}
+              alt={block.title}
               width={image.width}
               height={image.height}
               layout="responsive"

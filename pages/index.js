@@ -25,6 +25,7 @@ export default function Index({ homePage }) {
                 <Image
                   src={project.thumbnail.url}
                   alt={project.title}
+                  title={project.title}
                   width={project.thumbnail.width}
                   height={project.thumbnail.height}
                   layout="responsive"

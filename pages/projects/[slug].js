@@ -16,9 +16,7 @@ export default function Project({ project }) {
               return <Text block={block} key={block.sys.id} />;
 
             case "Media":
-              return (
-                <Media project={project} block={block} key={block.sys.id} />
-              );
+              return <Media block={block} key={block.sys.id} />;
 
             default:
               return null;
