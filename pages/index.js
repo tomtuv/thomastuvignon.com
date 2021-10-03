@@ -5,11 +5,11 @@ import Layout from "components/layout";
 import Seo from "components/seo";
 import { getHomePage } from "lib/api";
 
-export default function Index({ homePage }) {
+export default function Index({ homePage, preview }) {
   const { formatMessage } = useIntl();
 
   return (
-    <Layout>
+    <Layout preview={preview}>
       <Seo description={formatMessage({ id: "description" })} />
       <div className="grid">
         {homePage.projectsCollection?.items.map((project) => (
@@ -42,10 +42,10 @@ export default function Index({ homePage }) {
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const homePage = await getHomePage(locale);
+export async function getStaticProps({ locale, preview = false }) {
+  const homePage = (await getHomePage(locale, preview)) ?? [];
 
   return {
-    props: { homePage },
+    props: { homePage, preview },
   };
 }

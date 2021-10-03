@@ -32,7 +32,6 @@
   &-languages {
     a {
       font-weight: 500;
-      border-bottom: 0.125rem solid transparent;
 
       @media (prefers-reduced-motion: no-preference) {
         transition: color 0.2s linear;
@@ -45,7 +44,9 @@
       }
 
       &[aria-current="page"] {
-        border-color: currentColor;
+        text-decoration: underline;
+        text-decoration-thickness: 0.125rem;
+        text-underline-offset: 0.35rem;
       }
     }
   }

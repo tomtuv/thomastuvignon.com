@@ -19,9 +19,9 @@ const renderOptions = {
   },
 };
 
-export default function Page({ page }) {
+export default function Page({ page, preview }) {
   return (
-    <Layout>
+    <Layout preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
         <div className="grid">
@@ -35,11 +35,11 @@ export default function Page({ page }) {
   );
 }
 
-export async function getStaticProps({ params, locale }) {
-  const page = await getPage(params.slug, locale);
+export async function getStaticProps({ params, locale, preview = false }) {
+  const page = await getPage(params.slug, locale, preview);
 
   return {
-    props: { page },
+    props: { page, preview },
   };
 }
 

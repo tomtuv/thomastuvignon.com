@@ -5,9 +5,9 @@ import Media from "components/media";
 import Back from "components/back";
 import { getProject, getAllProjectsWithSlug } from "lib/api";
 
-export default function Project({ project }) {
+export default function Project({ project, preview }) {
   return (
-    <Layout>
+    <Layout preview={preview}>
       <Seo title={project.title} description={project.description} />
       <article>
         {project.blocksCollection?.items.map((block) => {
@@ -28,11 +28,11 @@ export default function Project({ project }) {
   );
 }
 
-export async function getStaticProps({ params, locale }) {
-  const project = await getProject(params.slug, locale);
+export async function getStaticProps({ params, locale, preview = false }) {
+  const project = await getProject(params.slug, locale, preview);
 
   return {
-    props: { project },
+    props: { project, preview },
   };
 }
 

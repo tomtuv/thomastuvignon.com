@@ -6,6 +6,7 @@
 @use "components/icon";
 @use "components/link";
 @use "components/modal";
+@use "components/preview";
 
 @use "layout/content";
 @use "layout/footer";
@@ -15,6 +16,4 @@
 @use "pages/page";
 @use "pages/home";
 
-@use "~aos/src/sass/aos" with (
-  $aos-distance: 1.5rem
-);
+@use "~aos/src/sass/aos" with ($aos-distance: 1.5rem);
