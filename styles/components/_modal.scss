@@ -32,7 +32,7 @@
     height: 100%;
     cursor: default;
     background-color: hsl(0, 4%, 14%, 0.8);
-    -webkit-backdrop-filter: saturate(180%) blur(1.25rem);
+    backdrop-filter: saturate(180%) blur(1.25rem);
   }
 
   video {
