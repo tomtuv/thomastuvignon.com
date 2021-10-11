@@ -5,38 +5,68 @@
   display: flex;
   align-items: center;
   visibility: hidden;
-  opacity: 0;
-  transition-timing-function: linear;
-  transition-property: visibility, opacity;
+  transition: visibility linear;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
   }
 
   &[aria-modal] {
     visibility: visible;
-    opacity: 1;
+
+    .modal {
+      &-button,
+      &-video,
+      &-backdrop {
+        opacity: 1;
+      }
+
+      &-video {
+        transform: none;
+      }
+    }
+  }
+
+  &-button,
+  &-video,
+  &-backdrop {
+    opacity: 0;
+    transition: opacity ease-in-out;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition-duration: 0.5s;
+    }
   }
 
   &-button {
     position: absolute;
     inset: 1.5rem 1.5rem auto auto;
-    z-index: 1;
     width: 1.5rem;
     height: 1.5rem;
   }
 
-  &-backdrop {
-    position: absolute;
+  &-video {
+    position: relative;
     width: 100%;
-    height: 100%;
-    cursor: default;
-    background-color: hsl(0, 0%, 0%, 0.8);
-    backdrop-filter: saturate(180%) blur(1.25rem);
+    padding-bottom: calc(9 / 16 * 100%);
+    transition-timing-function: ease-in-out;
+    transition-property: transform, opacity;
+    transform: translateY(1.5rem);
+
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  video {
-    position: relative;
-    z-index: 1;
+  &-backdrop {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
   }
 }

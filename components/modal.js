@@ -13,17 +13,19 @@ export default function Modal({ modal, handleClick, videoEl, videoUrl }) {
         <Close />
       </button>
       <div className="grid">
-        <video
-          width="1920"
-          height="1080"
-          controls
-          playsInline
-          preload="none"
-          poster="/og-image.jpg"
-          ref={videoEl}
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
+        <div className="modal-video">
+          <video
+            width={1920}
+            height={1080}
+            controls
+            playsInline
+            preload="none"
+            poster="/og-image.jpg"
+            ref={videoEl}
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+        </div>
       </div>
       <div
         className="modal-backdrop"
