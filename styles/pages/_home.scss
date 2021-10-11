@@ -66,18 +66,19 @@
           transform: scale(1.05);
         }
       }
+    }
 
-      figure {
-        overflow: hidden;
-        border-radius: 0.25rem;
+    figure {
+      will-change: transform;
+      overflow: hidden;
+      border-radius: 0.25rem;
 
-        @media (prefers-reduced-motion: no-preference) {
-          transition: transform 0.2s linear;
-        }
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 0.2s linear;
+      }
 
-        @media (min-width: $lg) {
-          border-radius: 0.5rem;
-        }
+      @media (min-width: $lg) {
+        border-radius: 0.5rem;
       }
     }
   }
