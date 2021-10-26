@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useDataContext } from "context/data";
-import Bubbles from "components/bubbles";
-import Modal from "components/modal";
+import Bubbles from "./bubbles";
+import Modal from "./modal";
 
 export default function Header() {
   const { homePage, project, page } = useDataContext();

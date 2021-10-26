@@ -1,5 +1,5 @@
-import Social from "components/social";
-import Languages from "components/languages";
+import Social from "./social";
+import Languages from "./languages";
 
 export default function Footer() {
   return (

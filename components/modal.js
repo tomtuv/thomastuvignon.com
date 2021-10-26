@@ -1,4 +1,4 @@
-import Close from "components/close";
+import Close from "./close";
 
 export default function Modal({ modal, handleClick, videoEl, videoUrl }) {
   return (

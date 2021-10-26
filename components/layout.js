@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import { useDataContext } from "context/data";
-import Preview from "components/preview";
-import Header from "components/header";
-import Footer from "components/footer";
+import Preview from "./preview";
+import Header from "./header";
+import Footer from "./footer";
 
 export default function Layout({ children, preview }) {
   const { homePage } = useDataContext();
