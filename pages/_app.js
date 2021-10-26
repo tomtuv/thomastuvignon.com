@@ -7,7 +7,7 @@ import "styles/index.scss";
 
 const messages = { fr, en };
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const { locale, defaultLocale } = useRouter();
 
   return (
@@ -22,5 +22,3 @@ function MyApp({ Component, pageProps }) {
     </DataProvider>
   );
 }
-
-export default MyApp;
