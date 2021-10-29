@@ -2,7 +2,7 @@ import { FormattedMessage } from "react-intl";
 
 export default function Mail() {
   return (
-    <a className="icon icon-mail" href="mailto:contact@thomastuvignon.com">
+    <a className="icon icon-mail" href="mailto:ttuvignon@icloud.com">
       <svg viewBox="0 0 24 24">
         <title>
           <FormattedMessage id="email" />
