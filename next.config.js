@@ -8,6 +8,9 @@ module.exports = {
     domains: ["images.ctfassets.net"],
     formats: ["image/avif", "image/webp"],
   },
+  eslint: {
+    dirs: ["pages", "components", "lib", "context"],
+  },
   swcMinify: true,
   async rewrites() {
     return [
