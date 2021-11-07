@@ -33,9 +33,10 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.2"
-  },
-  "browserslist": [
-    "since 2019"
-  ]
+    "eslint-config-next": "^12.0.2",
+    "stylelint": "^14.0.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^2.5.0",
+    "stylelint-config-standard-scss": "^2.0.1"
+  }
 }
