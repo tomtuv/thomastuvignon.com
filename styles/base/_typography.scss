@@ -22,11 +22,6 @@ h5 {
   }
 }
 
-h1,
-h2 {
-  min-height: 0.000001vh;
-}
-
 h1 {
   font-size: clamp(1.875rem, 3vw + 1rem, 2.5rem);
   font-weight: 700;

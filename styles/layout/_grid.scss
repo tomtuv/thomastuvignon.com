@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--gap);
+  /* stylelint-disable-next-line scss/no-global-function-names */
   width: min(100% - var(--gap) * 2, 1040px);
   margin-inline: auto;
 

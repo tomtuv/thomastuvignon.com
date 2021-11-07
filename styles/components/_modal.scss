@@ -11,26 +11,10 @@
     transition-duration: 0.5s;
   }
 
-  &[aria-modal] {
-    visibility: visible;
-
-    .modal {
-      &-button,
-      &-video,
-      &-backdrop {
-        opacity: 1;
-      }
-
-      &-video {
-        transform: none;
-      }
-    }
-  }
-
   &-button,
   &-video,
   &-backdrop {
-    opacity: 0;
+    opacity: 0%;
     transition: opacity ease-in-out;
 
     @media (prefers-reduced-motion: no-preference) {
@@ -66,7 +50,23 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-color: hsl(0, 0%, 0%, 0.8);
-    backdrop-filter: saturate(180%) blur(20px);
+    background-color: hsl(0deg 0% 0% / 80%);
+    backdrop-filter: saturate(180%) blur(20px); /* stylelint-disable-line scss/no-global-function-names */
+  }
+
+  &[aria-modal] {
+    visibility: visible;
+
+    .modal {
+      &-button,
+      &-video,
+      &-backdrop {
+        opacity: 100%;
+      }
+
+      &-video {
+        transform: none;
+      }
+    }
   }
 }

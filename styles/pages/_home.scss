@@ -58,16 +58,6 @@
   }
 
   .content {
-    a {
-      &:hover,
-      &:focus,
-      &:active {
-        figure {
-          transform: scale(1.05);
-        }
-      }
-    }
-
     figure {
       will-change: transform;
       overflow: hidden;
@@ -79,6 +69,16 @@
 
       @media (min-width: $lg) {
         border-radius: 0.5rem;
+      }
+    }
+
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        figure {
+          transform: scale(1.05);
+        }
       }
     }
   }
