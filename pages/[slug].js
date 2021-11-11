@@ -9,23 +9,19 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       const [{ value }] = node.content;
-
-      if (value !== "" || node.content.length > 1) {
-        return <p>{children}</p>;
-      }
-
-      return null;
+      if (value === "" && node.content.length <= 1) return null;
+      return <p>{children}</p>;
     },
   },
 };
 
 export default function Page({ page, preview }) {
   return (
-    <Layout preview={preview}>
+    <Layout data={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
         <div className="grid">
-          <div style={{ "--grid-column-lg": "2 / span 10" }}>
+          <div style={{ "--grid-column-lg": "3 / span 8" }}>
             {documentToReactComponents(page.body.json, renderOptions)}
           </div>
         </div>
@@ -46,21 +42,18 @@ export async function getStaticProps({ params, locale, preview = false }) {
 export async function getStaticPaths({ locales }) {
   const allPages = await getAllPagesWithSlug();
 
-  const paths = locales.reduce(
-    (acc, locale) => [
-      ...acc,
-      ...allPages.map(({ slug }) => ({
-        params: {
-          slug,
-        },
-        locale,
-      })),
-    ],
-    []
-  );
+  const reducer = (acc, locale) => [
+    ...acc,
+    ...allPages.map(({ slug }) => ({
+      params: {
+        slug,
+      },
+      locale,
+    })),
+  ];
 
   return {
-    paths,
+    paths: locales.reduce(reducer, []),
     fallback: false,
   };
 }

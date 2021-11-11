@@ -5,18 +5,13 @@ export default function Bubbles() {
   const bubbles = Array.from(Array(12).keys(), (number) => number + 1);
   const bubbleEls = useRef([]);
 
-  function handleScroll() {
-    const scrollValue =
-      window.scrollY || window.scrollTop || document.documentElement.scrollTop;
-
-    bubbleEls.current.forEach((bubbleElement, index) => {
-      if (bubbleElement) {
-        bubbleElement.style.top = `${0 - scrollValue * 0.1 * index}px`;
-      }
-    });
-  }
-
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollValue = window.scrollY;
+      bubbleEls.current.forEach((bubbleEl, index) => {
+        if (bubbleEl) bubbleEl.style.top = `${0 - scrollValue * 0.1 * index}px`;
+      });
+    };
     window.addEventListener("scroll", handleScroll);
   }, []);
 
@@ -25,7 +20,7 @@ export default function Bubbles() {
       {bubbleGroups.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}
-          ref={(element) => (bubbleEls.current[bubbleGroup] = element)}
+          ref={(el) => (bubbleEls.current[bubbleGroup] = el)}
           key={bubbleGroup}
         >
           {bubbles.map((bubble) => (

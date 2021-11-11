@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import AOS from "aos";
-import { useDataContext } from "context/data";
 import Preview from "./preview";
 import Header from "./header";
 import Footer from "./footer";
 
-export default function Layout({ children, preview }) {
-  const { homePage } = useDataContext();
+export default function Layout({ children, data, preview }) {
+  const className = data.__typename === "HomePage" ? "home" : "page";
 
   useEffect(() => {
     AOS.init({
@@ -17,9 +16,9 @@ export default function Layout({ children, preview }) {
   }, []);
 
   return (
-    <div className={homePage ? "home" : "page"}>
+    <div className={className}>
       {preview && <Preview />}
-      <Header />
+      <Header data={data} />
       <main className="content">{children}</main>
       <Footer />
     </div>

@@ -7,7 +7,7 @@ import { getProject, getAllProjectsWithSlug } from "lib/api";
 
 export default function Project({ project, preview }) {
   return (
-    <Layout preview={preview}>
+    <Layout data={project} preview={preview}>
       <Seo title={project.title} description={project.description} />
       <article>
         {project.blocksCollection?.items.map((block) => {

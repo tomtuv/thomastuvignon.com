@@ -9,7 +9,7 @@ export default function Index({ homePage, preview }) {
   const { formatMessage } = useIntl();
 
   return (
-    <Layout preview={preview}>
+    <Layout data={homePage} preview={preview}>
       <Seo description={formatMessage({ id: "description" })} />
       <div className="grid">
         {homePage.projectsCollection?.items.map((project) => (

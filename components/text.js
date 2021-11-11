@@ -6,12 +6,8 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       const [{ value }] = node.content;
-
-      if (value !== "" || node.content.length > 1) {
-        return <p>{children}</p>;
-      }
-
-      return null;
+      if (value === "" && node.content.length <= 1) return null;
+      return <p>{children}</p>;
     },
   },
 };
