@@ -17,11 +17,15 @@ const renderOptions = {
 
 export default function Page({ page, preview }) {
   return (
-    <Layout data={page} preview={preview}>
+    <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
         <div className="grid">
-          <div style={{ "--grid-column-lg": "3 / span 8" }}>
+          <div
+            style={{
+              "--grid-column-md": "3 / span 8",
+            }}
+          >
             {documentToReactComponents(page.body.json, renderOptions)}
           </div>
         </div>

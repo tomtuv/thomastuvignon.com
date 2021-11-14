@@ -7,7 +7,7 @@ import { getProject, getAllProjectsWithSlug } from "lib/api";
 
 export default function Project({ project, preview }) {
   return (
-    <Layout data={project} preview={preview}>
+    <Layout page={project} preview={preview}>
       <Seo title={project.title} description={project.description} />
       <article>
         {project.blocksCollection?.items.map((block) => {
@@ -39,21 +39,18 @@ export async function getStaticProps({ params, locale, preview = false }) {
 export async function getStaticPaths({ locales }) {
   const allProjects = await getAllProjectsWithSlug();
 
-  const paths = locales.reduce(
-    (acc, locale) => [
-      ...acc,
-      ...allProjects.map(({ slug }) => ({
-        params: {
-          slug,
-        },
-        locale,
-      })),
-    ],
-    []
-  );
+  const reducer = (acc, locale) => [
+    ...acc,
+    ...allProjects.map(({ slug }) => ({
+      params: {
+        slug,
+      },
+      locale,
+    })),
+  ];
 
   return {
-    paths,
+    paths: locales.reduce(reducer, []),
     fallback: false,
   };
 }

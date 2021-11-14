@@ -4,8 +4,8 @@ import Preview from "./preview";
 import Header from "./header";
 import Footer from "./footer";
 
-export default function Layout({ children, data, preview }) {
-  const className = data.__typename === "HomePage" ? "home" : "page";
+export default function Layout({ children, page, preview }) {
+  const className = page.__typename === "HomePage" ? "home" : "page";
 
   useEffect(() => {
     AOS.init({
@@ -18,7 +18,7 @@ export default function Layout({ children, data, preview }) {
   return (
     <div className={className}>
       {preview && <Preview />}
-      <Header data={data} />
+      <Header page={page} />
       <main className="content">{children}</main>
       <Footer />
     </div>
