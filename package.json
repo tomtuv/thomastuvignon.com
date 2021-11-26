@@ -12,7 +12,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomtuv/thomas-tuvignon.git"
+    "url": "git+https://github.com/tomtuv/thomastuvignon.git"
   },
   "scripts": {
     "dev": "next dev",
