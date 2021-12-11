@@ -17,34 +17,32 @@
     @media (--viewport-lg) {
       margin-bottom: 2rem;
     }
+  }
 
-    & li + li {
-      margin: 0 0 0 1.5rem;
+  & li:not(:last-child) {
+    margin: 0 1.5rem 0 0;
 
-      @media (--viewport-lg) {
-        margin-left: 2rem;
-      }
+    @media (--viewport-lg) {
+      margin-right: 2rem;
     }
   }
 }
 
-.footer-languages {
-  a {
-    font-weight: 500;
+.footer-languages a {
+  font-weight: 500;
 
-    @media (--motion-enabled) {
-      transition: color 0.2s linear;
-    }
+  @media (--motion-enabled) {
+    transition: color 0.2s linear;
+  }
 
-    &:hover,
-    &:focus {
-      color: var(--gray);
-    }
+  &:hover,
+  &:focus {
+    color: var(--gray);
+  }
 
-    &[aria-current="page"] {
-      text-decoration: underline;
-      text-decoration-thickness: 0.125rem;
-      text-underline-offset: 0.35rem;
-    }
+  &[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.35rem;
   }
 }

@@ -7,6 +7,10 @@
     & header {
       margin-bottom: 2rem;
 
+      & h2 {
+        margin-bottom: 0.5rem;
+      }
+
       & p {
         margin: 0;
         font-size: 1.125rem;
