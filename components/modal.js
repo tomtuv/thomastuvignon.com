@@ -1,74 +1,42 @@
-import { useRef, useState, useEffect } from "react";
-import { FormattedMessage } from "react-intl";
+import { useState, useEffect } from "react";
 import Close from "./close";
 
-export default function Modal({ videoUrl }) {
-  const [hasModalLoaded, setHasModalLoaded] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const videoEl = useRef(null);
+export default function Modal({ show, close, videoEl, videoUrl }) {
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    setHasModalLoaded(true);
-  }, []);
+    setHasLoaded(true);
+  }, [hasLoaded]);
 
-  const open = () => {
-    setShowModal(true);
-    videoEl.current?.play();
-    document.body.style.overflow = "hidden";
-  };
-
-  const close = () => {
-    setShowModal(false);
-    videoEl.current?.pause();
-    document.body.removeAttribute("style");
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (event) => event.key === "Escape" && close();
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  if (!hasLoaded) return null;
 
   return (
-    <>
-      <button className="link" onClick={open} aria-controls="modal">
-        <FormattedMessage id="modalButton" />
+    <div
+      id="modal"
+      className="modal"
+      role={show === false ? null : "dialog"}
+      aria-modal={show === false ? null : true}
+      tabIndex={-1}
+    >
+      <button className="modal-button" onClick={close}>
+        <Close />
       </button>
-      {hasModalLoaded && (
-        <>
-          <div
-            id="modal"
-            className="modal"
-            role={showModal ? "dialog" : null}
-            aria-modal={showModal ? true : null}
-            tabIndex={-1}
+      <div className="grid">
+        <div className="modal-video">
+          <video
+            width={1920}
+            height={1080}
+            controls
+            playsInline
+            preload="none"
+            poster="/og-image.jpg"
+            ref={videoEl}
           >
-            <button className="modal-button" onClick={close}>
-              <Close />
-            </button>
-            <div className="grid">
-              <div className="modal-video">
-                <video
-                  width={1920}
-                  height={1080}
-                  controls
-                  playsInline
-                  preload="none"
-                  poster="/og-image.jpg"
-                  ref={videoEl}
-                >
-                  <source src={videoUrl} type="video/mp4" />
-                </video>
-              </div>
-            </div>
-            <div
-              className="modal-backdrop"
-              onClick={close}
-              aria-hidden="true"
-            />
-          </div>
-        </>
-      )}
-    </>
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div className="modal-backdrop" onClick={close} aria-hidden="true" />
+    </div>
   );
 }

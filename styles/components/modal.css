@@ -55,7 +55,7 @@
   backdrop-filter: saturate(180%) blur(20px); /* stylelint-disable-line scss/no-global-function-names */
 }
 
-.modal[aria-modal] {
+.modal[aria-modal="true"] {
   visibility: visible;
 
   & .modal-button,

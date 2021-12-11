@@ -1,11 +1,32 @@
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useIntl } from "react-intl";
+import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./bubbles";
 import Modal from "./modal";
 
 export default function Header({ page }) {
   const { formatMessage } = useIntl();
+  const [showModal, setShowModal] = useState(false);
+  const videoEl = useRef(null);
+
+  const openModal = () => {
+    setShowModal(true);
+    videoEl.current.play();
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    videoEl.current.pause();
+    document.body.removeAttribute("style");
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => event.key === "Escape" && closeModal();
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <header className="header">
@@ -31,7 +52,19 @@ export default function Header({ page }) {
             <div style={{ "--grid-column-lg": "span 8" }}>
               <h1>{page.title}</h1>
               <p>{page.jobTitle}</p>
-              <Modal videoUrl={page.video.url} />
+              <button
+                className="link"
+                onClick={openModal}
+                aria-controls="modal"
+              >
+                <FormattedMessage id="modalButton" />
+              </button>
+              <Modal
+                show={showModal}
+                close={closeModal}
+                videoEl={videoEl}
+                videoUrl={page.video.url}
+              />
             </div>
           </>
         ) : (
