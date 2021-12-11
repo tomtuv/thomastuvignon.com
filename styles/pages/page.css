@@ -13,12 +13,8 @@
 
       & p {
         margin: 0;
-        font-size: 1.125rem;
+        font-size: clamp(1.125rem, 1.0156rem + 0.3125vw, 1.25rem);
         font-weight: 500;
-
-        @media (--viewport-xl) {
-          font-size: 1.25rem;
-        }
       }
     }
 

@@ -20,10 +20,6 @@
     @media (--motion-enabled) {
       transition: transform 0.15s linear;
     }
-
-    @media (--viewport-xl) {
-      font-size: 1.5rem;
-    }
   }
 
   &:hover,

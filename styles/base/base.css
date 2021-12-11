@@ -11,17 +11,13 @@ html {
 body {
   margin: 0;
   font-family: var(--font-family);
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.8906rem + 0.3125vw, 1.125rem);
   line-height: 1.5;
   color: var(--black);
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (--viewport-xl) {
-    font-size: 1.125rem;
-  }
 }
 
 a,
