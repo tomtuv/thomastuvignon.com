@@ -57,9 +57,9 @@
 
   & .content {
     & figure {
-      will-change: transform;
       overflow: hidden;
       border-radius: 0.25rem;
+      will-change: transform;
 
       @media (--motion-enabled) {
         transition: transform 0.2s linear;
