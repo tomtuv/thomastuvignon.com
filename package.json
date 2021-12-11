@@ -23,13 +23,14 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "15.9.1",
     "@contentful/rich-text-types": "^15.9.0",
-    "aos": "^3.0.0-beta.6",
     "next": "^12.0.7",
+    "postcss": "^8.4.4",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^7.0.1",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.23.0",
-    "sass": "^1.44.0"
+    "react-intl": "^5.23.0"
   },
   "devDependencies": {
     "eslint": "^8.4.1",
@@ -39,6 +40,6 @@
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
-    "stylelint-config-standard-scss": "^3.0.0"
+    "stylelint-config-standard": "^24.0.0"
   }
 }

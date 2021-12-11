@@ -28,16 +28,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
           />
-          <noscript>
-            <style>
-              {`
-                [data-aos] {
-                  opacity: initial !important;
-                  transform: initial !important;
-                }
-              `}
-            </style>
-          </noscript>
           {process.env.NODE_ENV === "production" && (
             <>
               <script

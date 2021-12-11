@@ -19,7 +19,6 @@ export default function Index({ homePage, preview }) {
                 "--grid-column": "span 6",
                 "--grid-column-lg": "span 4",
               }}
-              data-aos="fade-up"
             >
               <figure>
                 <Image

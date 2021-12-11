@@ -9,7 +9,6 @@ export default function Media({ block }) {
             "--grid-column-md": block.layout !== "Full width" ? "span 6" : null,
             "--grid-column-lg": block.layout === "3 columns" ? "span 4" : null,
           }}
-          data-aos="fade-up"
           key={image.sys.id}
         >
           <figure>

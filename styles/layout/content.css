@@ -1,13 +1,11 @@
-@use "../abstracts/variables" as *;
-
 .content {
   padding-block: 3.5rem;
 
-  @media (min-width: $lg) {
+  @media (--viewport-lg) {
     padding-block: 6.5rem;
   }
 
-  figure {
+  & figure {
     box-shadow: 0 0.625rem 2.5rem 0 hsl(0deg 0% 0% / 10%);
   }
 }

@@ -1,5 +1,3 @@
-@use "../abstracts/variables" as *;
-
 :is(h1, h2, h3, h4, h5, p, ul, ol) {
   &:first-child {
     margin-top: 0;
@@ -17,7 +15,7 @@ h4,
 h5 {
   margin-block: 3rem 0.5rem;
 
-  @media (min-width: $md) {
+  @media (--viewport-md) {
     margin-top: 3.5rem;
   }
 }

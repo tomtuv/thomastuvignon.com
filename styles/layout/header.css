@@ -1,5 +1,3 @@
-@use "../abstracts/variables" as *;
-
 .header {
   padding-block: 3.5rem;
   overflow: hidden;
@@ -7,15 +5,15 @@
   text-align: center;
   background-color: var(--dark-violet);
 
-  @media (min-width: $lg) {
+  @media (--viewport-lg) {
     padding-block: 7.5rem;
   }
 
-  .grid {
+  & .grid {
     position: relative;
   }
 
-  h1 {
+  & h1 {
     margin: 1.25rem 0 0;
   }
 }

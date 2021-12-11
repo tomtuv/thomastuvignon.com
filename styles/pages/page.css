@@ -1,35 +1,33 @@
-@use "../abstracts/variables" as *;
-
 .page {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100vh;
 
-  article {
-    header {
+  & article {
+    & header {
       margin-bottom: 2rem;
 
-      p {
+      & p {
         margin: 0;
         font-size: 1.125rem;
         font-weight: 500;
 
-        @media (min-width: $xl) {
+        @media (--viewport-xl) {
           font-size: 1.25rem;
         }
       }
     }
 
-    p + a {
+    & p + a {
       margin-top: 1rem;
     }
   }
 
-  section {
+  & section {
     &:nth-child(even) {
       margin-top: 3rem;
 
-      @media (min-width: $lg) {
+      @media (--viewport-lg) {
         margin-top: 3.5rem;
       }
     }
@@ -37,7 +35,7 @@
     &:nth-child(odd) {
       margin-top: 3.5rem;
 
-      @media (min-width: $lg) {
+      @media (--viewport-lg) {
         margin-top: 6.5rem;
       }
     }
@@ -47,11 +45,11 @@
     }
   }
 
-  aside {
+  & aside {
     margin-top: 3.5rem;
     text-align: center;
 
-    @media (min-width: $lg) {
+    @media (--viewport-lg) {
       margin-top: 6.5rem;
     }
   }

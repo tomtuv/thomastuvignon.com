@@ -1,35 +1,32 @@
-@use "../abstracts/variables" as *;
-
 .grid {
   --gap: 1.5rem;
 
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--gap);
-  /* stylelint-disable-next-line scss/no-global-function-names */
   width: min(100% - var(--gap) * 2, 1040px);
   margin-inline: auto;
 
-  @media (min-width: $sm) {
+  @media (--viewport-sm) {
     --gap: 2.5rem;
   }
 
-  @media (min-width: $lg) {
+  @media (--viewport-lg) {
     --gap: 3rem;
   }
 
-  > * {
+  & > * {
     --grid-column: span 12;
 
     grid-column: var(--grid-column);
 
-    @media (min-width: $md) {
+    @media (--viewport-md) {
       --grid-column-md: var(--grid-column);
 
       grid-column: var(--grid-column-md);
     }
 
-    @media (min-width: $lg) {
+    @media (--viewport-lg) {
       --grid-column-lg: var(--grid-column-md);
 
       grid-column: var(--grid-column-lg);

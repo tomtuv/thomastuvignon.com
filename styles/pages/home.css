@@ -1,23 +1,21 @@
-@use "../abstracts/variables" as *;
-
 .home {
-  .header {
+  & .header {
     padding-block: 6.5rem;
     text-align: center;
 
-    @media (min-width: $lg) {
+    @media (--viewport-lg) {
       padding-block: 10rem;
       text-align: left;
     }
 
-    .grid {
+    & .grid {
       row-gap: 2rem;
 
-      > * {
+      & > * {
         &:first-child {
           justify-self: center;
 
-          @media (min-width: $lg) {
+          @media (--viewport-lg) {
             justify-self: end;
           }
         }
@@ -28,55 +26,54 @@
       }
     }
 
-    figure {
+    & figure {
       width: 130px;
       overflow: hidden;
       border-radius: 50%;
 
-      @media (min-width: $lg) {
+      @media (--viewport-lg) {
         width: 160px;
       }
 
-      @media (min-width: $xl) {
+      @media (--viewport-xl) {
         width: 170px;
       }
     }
 
-    h1 {
+    & h1 {
       margin: 0 0 1.25rem;
     }
 
-    p {
+    & p {
       margin-bottom: 1.5rem;
       font-size: 1.375rem;
       font-weight: 500;
 
-      @media (min-width: $lg) {
+      @media (--viewport-lg) {
         margin-bottom: 1.25rem;
       }
     }
   }
 
-  .content {
-    figure {
+  & .content {
+    & figure {
       will-change: transform;
       overflow: hidden;
       border-radius: 0.25rem;
 
-      @media (prefers-reduced-motion: no-preference) {
+      @media (--motion-enabled) {
         transition: transform 0.2s linear;
       }
 
-      @media (min-width: $lg) {
+      @media (--viewport-lg) {
         border-radius: 0.5rem;
       }
     }
 
-    a {
+    & a {
       &:hover,
-      &:focus,
-      &:active {
-        figure {
+      &:focus {
+        & figure {
           transform: scale(1.05);
         }
       }

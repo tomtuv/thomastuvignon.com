@@ -1,0 +1,70 @@
+.icon {
+  display: block;
+  line-height: 0;
+
+  @media (--motion-enabled) {
+    transition: color 0.2s linear;
+  }
+
+  & svg {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @media (--viewport-lg) {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}
+
+.icon-linkedin {
+  --blue: #0073b1;
+
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+}
+
+.icon-twitter {
+  --blue: #1da1f2;
+
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+}
+
+.icon-facebook {
+  --blue: #1877f2;
+
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+}
+
+.icon-instagram {
+  --pink: #b900b4;
+
+  &:hover,
+  &:focus {
+    color: var(--pink);
+  }
+}
+
+.icon-github {
+  --blue: #0366d6;
+
+  &:hover,
+  &:focus {
+    color: var(--blue);
+  }
+}
+
+.icon-mail {
+  &:hover,
+  &:focus {
+    color: var(--gray);
+  }
+}

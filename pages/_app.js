@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
 import fr from "locales/fr.json";
 import en from "locales/en.json";
-import "styles/index.scss";
+import "styles/index.css";
 
 const messages = { fr, en };
 
