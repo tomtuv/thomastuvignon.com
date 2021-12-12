@@ -4,7 +4,7 @@ export default function Linkedin() {
       className="icon icon-linkedin"
       href="https://www.linkedin.com/in/thomastuvignon"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       title="LinkedIn"
     >
       <svg viewBox="0 0 24 24" aria-hidden>

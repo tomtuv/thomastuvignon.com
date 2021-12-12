@@ -4,7 +4,7 @@ export default function Github() {
       className="icon icon-github"
       href="https://github.com/tomtuv"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       title="GitHub"
     >
       <svg viewBox="0 0 24 24" aria-hidden>

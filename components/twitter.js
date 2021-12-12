@@ -4,7 +4,7 @@ export default function Twitter() {
       className="icon icon-twitter"
       href="https://twitter.com/tomtuv"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       title="Twitter"
     >
       <svg viewBox="0 0 24 24" aria-hidden>

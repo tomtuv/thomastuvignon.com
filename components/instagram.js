@@ -4,7 +4,7 @@ export default function Instagram() {
       className="icon icon-instagram"
       href="https://www.instagram.com/tomtuv"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       title="Instagram"
     >
       <svg viewBox="0 0 24 24" aria-hidden>

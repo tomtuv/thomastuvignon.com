@@ -25,7 +25,7 @@ export default function Text({ block }) {
           <a
             href={block.link}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="link"
           >
             <FormattedMessage id="projectLink" />

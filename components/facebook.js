@@ -4,7 +4,7 @@ export default function Facebook() {
       className="icon icon-facebook"
       href="https://www.facebook.com/thomas.tuvignon"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       title="Facebook"
     >
       <svg viewBox="0 0 24 24" aria-hidden>
