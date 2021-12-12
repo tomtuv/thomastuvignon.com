@@ -14,7 +14,7 @@ export default function Media({ block }) {
           <figure>
             <Image
               src={image.url}
-              alt={block.title}
+              alt={image.description || ""}
               width={image.width}
               height={image.height}
               layout="responsive"

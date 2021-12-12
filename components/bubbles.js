@@ -16,7 +16,7 @@ export default function Bubbles() {
   }, []);
 
   return (
-    <div className="bubbles" aria-hidden="true">
+    <div className="bubbles">
       {bubbleGroups.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}

@@ -19,12 +19,12 @@ export default function Index({ homePage, preview }) {
                 "--grid-column": "span 6",
                 "--grid-column-lg": "span 4",
               }}
+              title={project.title}
             >
               <figure>
                 <Image
                   src={project.thumbnail.url}
-                  alt={project.title}
-                  title={project.title}
+                  alt=""
                   width={project.thumbnail.width}
                   height={project.thumbnail.height}
                   layout="responsive"

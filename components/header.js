@@ -38,7 +38,7 @@ export default function Header({ page }) {
               <figure>
                 <Image
                   src={page.profilePicture.url}
-                  alt={page.title}
+                  alt=""
                   width={page.profilePicture.width}
                   height={page.profilePicture.height}
                   layout="responsive"
