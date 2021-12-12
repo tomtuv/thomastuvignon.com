@@ -52,7 +52,7 @@
   width: 100%;
   height: 100%;
   background-color: hsl(0deg 0% 0% / 80%);
-  backdrop-filter: saturate(180%) blur(20px); /* stylelint-disable-line scss/no-global-function-names */
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 .modal[aria-modal="true"] {
