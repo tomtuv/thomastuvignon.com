@@ -24,7 +24,7 @@
     "@contentful/rich-text-react-renderer": "15.9.1",
     "@contentful/rich-text-types": "^15.9.0",
     "next": "^12.0.7",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^7.0.1",
     "react": "^17.0.2",
