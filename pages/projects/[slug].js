@@ -29,7 +29,7 @@ export default function Project({ project, preview }) {
 }
 
 export async function getStaticProps({ params, locale, preview = false }) {
-  const project = await getProject(params.slug, locale, preview);
+  const project = (await getProject(params.slug, locale, preview)) ?? {};
 
   return {
     props: { project, preview },
@@ -37,20 +37,20 @@ export async function getStaticProps({ params, locale, preview = false }) {
 }
 
 export async function getStaticPaths({ locales }) {
-  const allProjects = await getAllProjectsWithSlug();
+  const allProjects = (await getAllProjectsWithSlug()) ?? [];
 
   const reducer = (acc, locale) => [
     ...acc,
-    ...allProjects.map(({ slug }) => ({
+    ...(allProjects.map(({ slug }) => ({
       params: {
         slug,
       },
       locale,
-    })),
+    })) ?? []),
   ];
 
   return {
-    paths: locales.reduce(reducer, []),
+    paths: locales.reduce(reducer, []) ?? [],
     fallback: false,
   };
 }

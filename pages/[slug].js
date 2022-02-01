@@ -5,7 +5,7 @@ import Seo from "components/seo";
 import Back from "components/back";
 import { getPage, getAllPagesWithSlug } from "lib/api";
 
-const renderOptions = {
+const richTextOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       const [{ value }] = node.content;
@@ -26,7 +26,7 @@ export default function Page({ page, preview }) {
               "--grid-column-md": "3 / span 8",
             }}
           >
-            {documentToReactComponents(page.body.json, renderOptions)}
+            {documentToReactComponents(page.body.json, richTextOptions)}
           </div>
         </div>
       </article>
@@ -36,7 +36,7 @@ export default function Page({ page, preview }) {
 }
 
 export async function getStaticProps({ params, locale, preview = false }) {
-  const page = await getPage(params.slug, locale, preview);
+  const page = (await getPage(params.slug, locale, preview)) ?? {};
 
   return {
     props: { page, preview },
@@ -44,20 +44,20 @@ export async function getStaticProps({ params, locale, preview = false }) {
 }
 
 export async function getStaticPaths({ locales }) {
-  const allPages = await getAllPagesWithSlug();
+  const allPages = (await getAllPagesWithSlug()) ?? [];
 
   const reducer = (acc, locale) => [
     ...acc,
-    ...allPages.map(({ slug }) => ({
+    ...(allPages.map(({ slug }) => ({
       params: {
         slug,
       },
       locale,
-    })),
+    })) ?? []),
   ];
 
   return {
-    paths: locales.reduce(reducer, []),
+    paths: locales.reduce(reducer, []) ?? [],
     fallback: false,
   };
 }

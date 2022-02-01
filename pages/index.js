@@ -42,7 +42,7 @@ export default function Index({ homePage, preview }) {
 }
 
 export async function getStaticProps({ locale, preview = false }) {
-  const homePage = (await getHomePage(locale, preview)) ?? [];
+  const homePage = (await getHomePage(locale, preview)) ?? {};
 
   return {
     props: { homePage, preview },

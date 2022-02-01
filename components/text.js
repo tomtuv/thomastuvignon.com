@@ -2,7 +2,7 @@ import { FormattedMessage } from "react-intl";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 
-const renderOptions = {
+const richTextOptions = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       const [{ value }] = node.content;
@@ -20,7 +20,7 @@ export default function Text({ block }) {
           <h2 id={block.sys.id}>{block.title}</h2>
           <p>{block.subtitle}</p>
         </header>
-        {documentToReactComponents(block.body.json, renderOptions)}
+        {documentToReactComponents(block.body.json, richTextOptions)}
         {block.link && (
           <a
             href={block.link}
