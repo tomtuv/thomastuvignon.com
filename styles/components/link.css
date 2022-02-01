@@ -8,11 +8,11 @@
     --scale: 1;
 
     position: relative;
-    left: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    inset-inline-start: 0;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
     content: "";
-    background-color: currentColor;
+    background-color: currentcolor;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' /%3E%3C/svg%3E");
     transform: scale(var(--scale));
     will-change: transform;

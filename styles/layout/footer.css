@@ -15,7 +15,7 @@
     list-style: none;
 
     @media (--viewport-lg) {
-      margin-bottom: 2rem;
+      margin-block-end: 2rem;
     }
   }
 
@@ -23,7 +23,7 @@
     margin: 0 1.5rem 0 0;
 
     @media (--viewport-lg) {
-      margin-right: 2rem;
+      margin-inline-end: 2rem;
     }
   }
 }

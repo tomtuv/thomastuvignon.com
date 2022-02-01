@@ -1,8 +1,14 @@
 {
   "plugins": {
-    "postcss-import": {},
     "postcss-preset-env": {
-      "stage": 0
+      "stage": 0,
+      "importFrom": ["./styles/base/variables.css"],
+      "features": {
+        "custom-properties": false,
+        "logical-properties-and-values": {
+          "dir": "ltr"
+        }
+      }
     }
   }
 }

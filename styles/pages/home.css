@@ -5,7 +5,7 @@
 
     @media (--viewport-lg) {
       padding-block: 10rem;
-      text-align: left;
+      text-align: start;
     }
 
     & .grid {
@@ -27,16 +27,16 @@
     }
 
     & figure {
-      width: 130px;
+      inline-size: 130px;
       overflow: hidden;
       border-radius: 50%;
 
       @media (--viewport-lg) {
-        width: 160px;
+        inline-size: 160px;
       }
 
       @media (--viewport-xl) {
-        width: 170px;
+        inline-size: 170px;
       }
     }
 
@@ -45,12 +45,12 @@
     }
 
     & p {
-      margin-bottom: 1.5rem;
+      margin-block-end: 1.5rem;
       font-size: clamp(1.25rem, 1.1406rem + 0.3125vw, 1.375rem);
       font-weight: 500;
 
       @media (--viewport-lg) {
-        margin-bottom: 1.25rem;
+        margin-block-end: 1.25rem;
       }
     }
   }

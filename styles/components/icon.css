@@ -7,12 +7,12 @@
   }
 
   & svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
 
     @media (--viewport-lg) {
-      width: 1.75rem;
-      height: 1.75rem;
+      inline-size: 1.75rem;
+      block-size: 1.75rem;
     }
   }
 }

@@ -1,7 +1,7 @@
 .bubbles {
   position: relative;
   z-index: 0;
-  width: 540px;
+  inline-size: 540px;
   margin-inline: auto;
 
   & [data-bubble-group] {
@@ -31,386 +31,338 @@
   }
 
   & [data-bubble="1"] {
-    top: 20px;
-    left: -200px;
-    width: 125px;
-    height: 125px;
+    inset: 20px auto auto -200px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--violet);
   }
 
   & [data-bubble="2"] {
-    top: 200px;
-    left: 720px;
-    width: 125px;
-    height: 125px;
+    inset: 200px auto auto 720px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="3"] {
-    top: 450px;
-    left: -50px;
-    width: 100px;
-    height: 100px;
+    inset: 450px auto auto -50px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="4"] {
-    top: 200px;
-    left: -450px;
-    width: 125px;
-    height: 125px;
+    inset: 200px auto auto -450px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--blue);
   }
 
   & [data-bubble="5"] {
-    top: 100px;
-    left: 480px;
-    width: 100px;
-    height: 100px;
+    inset: 100px auto auto 480px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="6"] {
-    top: 800px;
-    left: 700px;
-    width: 100px;
-    height: 100px;
+    inset: 800px auto auto 700px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="7"] {
-    top: 650px;
-    left: -100px;
-    width: 100px;
-    height: 100px;
+    inset: 650px auto auto -100px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--orange);
   }
 
   & [data-bubble="8"] {
-    top: -20px;
-    left: 800px;
-    width: 125px;
-    height: 125px;
+    inset: -20px auto auto 800px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--blue);
   }
 
   & [data-bubble="9"] {
-    top: 1250px;
-    left: -100px;
-    width: 100px;
-    height: 100px;
+    inset: 1250px auto auto -100px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--orange);
   }
 
   & [data-bubble="10"] {
-    top: 1350px;
-    left: 450px;
-    width: 125px;
-    height: 125px;
+    inset: 1350px auto auto 450px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--blue);
   }
 
   & [data-bubble="11"] {
-    top: 750px;
-    left: -600px;
-    width: 150px;
-    height: 150px;
+    inset: 750px auto auto -600px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="12"] {
-    top: 900px;
-    left: 400px;
-    width: 125px;
-    height: 125px;
+    inset: 900px auto auto 400px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="13"] {
-    top: -80px;
-    left: -350px;
-    width: 75px;
-    height: 75px;
+    inset: -80px auto auto -350px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--blue);
   }
 
   & [data-bubble="14"] {
-    top: 800px;
-    left: 220px;
-    width: 150px;
-    height: 150px;
+    inset: 800px auto auto 220px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--blue);
   }
 
   & [data-bubble="15"] {
-    top: 100px;
-    left: 70px;
-    width: 125px;
-    height: 125px;
+    inset: 100px auto auto 70px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--blue);
   }
 
   & [data-bubble="16"] {
-    top: 250px;
-    left: -360px;
-    width: 100px;
-    height: 100px;
+    inset: 250px auto auto -360px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--violet);
   }
 
   & [data-bubble="17"] {
-    top: 500px;
-    left: 700px;
-    width: 75px;
-    height: 75px;
+    inset: 500px auto auto 700px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--green);
   }
 
   & [data-bubble="18"] {
-    top: 350px;
-    left: 300px;
-    width: 100px;
-    height: 100px;
+    inset: 350px auto auto 300px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--green);
   }
 
   & [data-bubble="19"] {
-    top: 600px;
-    left: -400px;
-    width: 75px;
-    height: 75px;
+    inset: 600px auto auto -400px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="20"] {
-    top: 800px;
-    left: -300px;
-    width: 150px;
-    height: 150px;
+    inset: 800px auto auto -300px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--green);
   }
 
   & [data-bubble="21"] {
-    top: 1400px;
-    left: -300px;
-    width: 125px;
-    height: 125px;
+    inset: 1400px auto auto -300px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="22"] {
-    top: 1200px;
-    left: 100px;
-    width: 100px;
-    height: 100px;
+    inset: 1200px auto auto 100px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--green);
   }
 
   & [data-bubble="23"] {
-    top: 250px;
-    left: 800px;
-    width: 75px;
-    height: 75px;
+    inset: 250px auto auto 800px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--blue);
   }
 
   & [data-bubble="24"] {
-    top: 600px;
-    left: 900px;
-    width: 150px;
-    height: 150px;
+    inset: 600px auto auto 900px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--blue);
   }
 
   & [data-bubble="25"] {
-    top: 600px;
-    left: 300px;
-    width: 100px;
-    height: 100px;
+    inset: 600px auto auto 300px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--blue);
   }
 
   & [data-bubble="26"] {
-    top: 80px;
-    left: 300px;
-    width: 75px;
-    height: 75px;
+    inset: 80px auto auto 300px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--violet);
   }
 
   & [data-bubble="27"] {
-    top: 1000px;
-    left: 100px;
-    width: 100px;
-    height: 100px;
+    inset: 1000px auto auto 100px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="28"] {
-    top: 1100px;
-    left: 360px;
-    width: 100px;
-    height: 100px;
+    inset: 1100px auto auto 360px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--green);
   }
 
   & [data-bubble="29"] {
-    top: 750px;
-    left: 480px;
-    width: 125px;
-    height: 125px;
+    inset: 750px auto auto 480px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--orange);
   }
 
   & [data-bubble="30"] {
-    top: 500px;
-    left: 500px;
-    width: 75px;
-    height: 75px;
+    inset: 500px auto auto 500px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--orange);
   }
 
   & [data-bubble="31"] {
-    top: 700px;
-    left: 150px;
-    width: 125px;
-    height: 125px;
+    inset: 700px auto auto 150px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--violet);
   }
 
   & [data-bubble="32"] {
-    top: -110px;
-    left: 300px;
-    width: 75px;
-    height: 75px;
+    inset: -110px auto auto 300px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--orange);
   }
 
   & [data-bubble="33"] {
-    top: 1050px;
-    left: -100px;
-    width: 125px;
-    height: 125px;
+    inset: 1050px auto auto -100px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--violet);
   }
 
   & [data-bubble="34"] {
-    top: 1400px;
-    left: 300px;
-    width: 75px;
-    height: 75px;
+    inset: 1400px auto auto 300px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--orange);
   }
 
   & [data-bubble="35"] {
-    top: 700px;
-    left: -600px;
-    width: 100px;
-    height: 100px;
+    inset: 700px auto auto -600px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--blue);
   }
 
   & [data-bubble="36"] {
-    top: 900px;
-    left: 900px;
-    width: 75px;
-    height: 75px;
+    inset: 900px auto auto 900px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--violet);
   }
 
   & [data-bubble="37"] {
-    top: 50px;
-    left: 500px;
-    width: 125px;
-    height: 125px;
+    inset: 50px auto auto 500px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--green);
   }
 
   & [data-bubble="38"] {
-    top: 500px;
-    left: 530px;
-    width: 100px;
-    height: 100px;
+    inset: 500px auto auto 530px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--violet);
   }
 
   & [data-bubble="39"] {
-    top: 450px;
-    left: 150px;
-    width: 75px;
-    height: 75px;
+    inset: 450px auto auto 150px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--orange);
   }
 
   & [data-bubble="40"] {
-    top: 200px;
-    left: -100px;
-    width: 150px;
-    height: 150px;
+    inset: 200px auto auto -100px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--green);
   }
 
   & [data-bubble="41"] {
-    top: 10px;
-    left: -550px;
-    width: 75px;
-    height: 75px;
+    inset: 10px auto auto -550px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--green);
   }
 
   & [data-bubble="42"] {
-    top: 600px;
-    left: -200px;
-    width: 125px;
-    height: 125px;
+    inset: 600px auto auto -200px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--blue);
   }
 
   & [data-bubble="43"] {
-    top: 250px;
-    left: 400px;
-    width: 75px;
-    height: 75px;
+    inset: 250px auto auto 400px;
+    inline-size: 75px;
+    block-size: 75px;
     background-color: var(--blue);
   }
 
   & [data-bubble="44"] {
-    top: -80px;
-    left: -20px;
-    width: 100px;
-    height: 100px;
+    inset: -80px auto auto -20px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="45"] {
-    top: 1600px;
-    left: 50px;
-    width: 150px;
-    height: 150px;
+    inset: 1600px auto auto 50px;
+    inline-size: 150px;
+    block-size: 150px;
     background-color: var(--blue);
   }
 
   & [data-bubble="46"] {
-    top: 1700px;
-    left: 400px;
-    width: 100px;
-    height: 100px;
+    inset: 1700px auto auto 400px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--yellow);
   }
 
   & [data-bubble="47"] {
-    top: 100px;
-    left: 900px;
-    width: 125px;
-    height: 125px;
+    inset: 100px auto auto 900px;
+    inline-size: 125px;
+    block-size: 125px;
     background-color: var(--green);
   }
 
   & [data-bubble="48"] {
-    top: 450px;
-    left: -600px;
-    width: 100px;
-    height: 100px;
+    inset: 450px auto auto -600px;
+    inline-size: 100px;
+    block-size: 100px;
     background-color: var(--violet);
   }
 }

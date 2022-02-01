@@ -1,3 +1,9 @@
+@custom-media --viewport-sm (width >= 35em);
+@custom-media --viewport-md (width >= 48em);
+@custom-media --viewport-lg (width >= 64em);
+@custom-media --viewport-xl (width >= 75em);
+@custom-media --motion-enabled (prefers-reduced-motion: no-preference);
+
 :root {
   --dark-violet: hsl(263deg 58% 22%);
   --violet: hsl(279deg 98% 46%);

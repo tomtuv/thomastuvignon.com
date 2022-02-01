@@ -26,22 +26,22 @@
 .modal-button {
   position: absolute;
   inset: 1.5rem 1.5rem auto auto;
-  width: 1.5rem;
-  height: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
 }
 
 .modal-video {
   position: relative;
-  width: 100%;
-  padding-bottom: calc(9 / 16 * 100%);
+  inline-size: 100%;
+  padding-block-end: calc(9 / 16 * 100%);
   transition-timing-function: ease-in-out;
   transition-property: transform, opacity;
   transform: translateY(1.5rem);
 
   & video {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
   }
 }
@@ -49,8 +49,8 @@
 .modal-backdrop {
   position: absolute;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: hsl(0deg 0% 0% / 80%);
   backdrop-filter: saturate(180%) blur(20px);
 }
