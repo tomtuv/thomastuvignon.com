@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./bubbles";
-import Modal from "./modal";
+
+const Modal = dynamic(() => import("./modal"), { ssr: false });
 
 export default function Header({ page }) {
   const { formatMessage } = useIntl();
@@ -23,9 +25,15 @@ export default function Header({ page }) {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event) => event.key === "Escape" && closeModal();
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") closeModal();
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (

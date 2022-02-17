@@ -1,14 +1,14 @@
 {
   "plugins": {
     "postcss-preset-env": {
-      "stage": 0,
-      "importFrom": ["./styles/base/variables.css"],
       "features": {
+        "color-functional-notation": false,
         "custom-properties": false,
-        "logical-properties-and-values": {
-          "dir": "ltr"
-        }
-      }
+        "gap-properties": false,
+        "logical-properties-and-values": false
+      },
+      "importFrom": ["./styles/base/variables.css"],
+      "stage": 0
     }
   }
 }

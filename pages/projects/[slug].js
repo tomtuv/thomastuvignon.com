@@ -10,7 +10,7 @@ export default function Project({ project, preview }) {
     <Layout page={project} preview={preview}>
       <Seo title={project.title} description={project.description} />
       <article>
-        {project.blocksCollection?.items.map((block) => {
+        {project.blocksCollection.items?.map((block) => {
           switch (block.__typename) {
             case "Text":
               return <Text block={block} key={block.sys.id} />;

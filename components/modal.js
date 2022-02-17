@@ -1,15 +1,6 @@
-import { useState, useEffect } from "react";
 import Close from "./close";
 
 export default function Modal({ show, close, videoEl, videoUrl }) {
-  const [hasLoaded, setHasLoaded] = useState(false);
-
-  useEffect(() => {
-    setHasLoaded(true);
-  }, [hasLoaded]);
-
-  if (!hasLoaded) return null;
-
   return (
     <div
       id="modal"

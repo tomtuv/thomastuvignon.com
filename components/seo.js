@@ -9,9 +9,9 @@ export default function Seo({ title, description }) {
   const image = `${siteUrl}/og-image.jpg`;
   const twitter = "@tomtuv";
 
-  function getPageUrl(locale) {
+  const getPageUrl = (locale) => {
     return `${siteUrl}${locale !== defaultLocale ? `/${locale}` : ""}${asPath}`;
-  }
+  };
 
   return (
     <Head>

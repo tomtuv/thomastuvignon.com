@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function Preview() {
+export default function Alert() {
   return (
-    <div className="preview">
+    <div className="alert">
       <div className="grid">
         <p>
           This is a page preview.{" "}

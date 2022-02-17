@@ -8,11 +8,13 @@ export default function Bubbles() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollValue = window.scrollY;
+
       bubbleEls.current.forEach((bubbleEl, index) => {
         if (bubbleEl) bubbleEl.style.top = `${0 - scrollValue * 0.1 * index}px`;
       });
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, true);
   }, []);
 
   return (

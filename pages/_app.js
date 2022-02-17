@@ -6,7 +6,7 @@ import "styles/index.css";
 
 const messages = { fr, en };
 
-export default function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   const { locale, defaultLocale } = useRouter();
 
   return (
