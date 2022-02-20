@@ -1,22 +1,19 @@
-import { getProject, getPage } from "lib/api";
+import { getEntryForPreview } from "lib/api";
+
+function resolveUrl(entry) {
+  if (entry.__typename === "Project") return `/projects/${entry.slug ?? ""}`;
+  return `/${entry.slug ?? ""}`;
+}
 
 export default async function preview(req, res) {
-  const { secret, slug } = req.query;
+  const { token: id } = req.query;
+  const entry = (await getEntryForPreview(id)) ?? {};
 
-  if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET || !slug) {
-    return res.status(401).json({ message: "Invalid token" });
-  }
+  if (!entry) return res.status(401).json({ message: "Invalid token" });
 
-  const project = await getProject(slug, "fr");
-  const page = await getPage(slug, "fr");
-
-  if (!page && !project && slug !== "home") {
-    return res.status(401).json({ message: "Invalid slug" });
-  }
+  const url = resolveUrl(entry);
 
   res.setPreviewData({});
-
-  const url = `${project ? "/projects" : ""}/${slug === "home" ? "" : slug}`;
   res.write(
     `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
     <script>window.location.href = '${url}'</script>
