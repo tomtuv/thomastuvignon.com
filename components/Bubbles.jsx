@@ -19,7 +19,7 @@ export default function Bubbles() {
   }, []);
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} aria-hidden="true">
       {bubbleGroups.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}
@@ -27,9 +27,7 @@ export default function Bubbles() {
           key={bubbleGroup}
         >
           {bubbles.map((bubble) => (
-            <div data-bubble={bubble + index * bubbles.length} key={bubble}>
-              &nbsp;
-            </div>
+            <div data-bubble={bubble + index * bubbles.length} key={bubble} />
           ))}
         </div>
       ))}

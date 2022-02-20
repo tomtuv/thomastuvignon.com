@@ -35,7 +35,7 @@ export default function Modal({ show, close, videoEl, videoUrl }) {
           </video>
         </div>
       </div>
-      <div className={styles.backdrop} onClick={close} />
+      <div className={styles.backdrop} onClick={close} aria-hidden="true" />
     </div>
   );
 }
