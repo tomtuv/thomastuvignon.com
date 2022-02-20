@@ -7,7 +7,7 @@
         "gap-properties": false,
         "logical-properties-and-values": false
       },
-      "importFrom": ["./styles/base/variables.css"],
+      "importFrom": ["./styles/variables.css"],
       "stage": 0
     }
   }

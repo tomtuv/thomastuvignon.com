@@ -1,0 +1,29 @@
+.root {
+  padding-block: 3rem;
+  text-align: center;
+  background-color: var(--light-gray);
+
+  @media (--viewport-lg) {
+    padding-block: 5rem;
+  }
+
+  & ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    list-style: none;
+
+    @media (--viewport-lg) {
+      margin-block-end: 2rem;
+    }
+  }
+
+  & li:not(:last-child) {
+    margin: 0 1.5rem 0 0;
+
+    @media (--viewport-lg) {
+      margin-inline-end: 2rem;
+    }
+  }
+}

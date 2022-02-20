@@ -1,0 +1,72 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  transition: visibility linear;
+
+  @media (--motion-enabled) {
+    transition-duration: 0.5s;
+  }
+
+  &[aria-modal="true"] {
+    visibility: visible;
+  }
+}
+
+.close,
+.video,
+.backdrop {
+  opacity: 0;
+  transition: opacity ease-in-out;
+
+  @media (--motion-enabled) {
+    transition-duration: 0.5s;
+  }
+
+  @nest .root[aria-modal="true"] & {
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  inset: 1.5rem 1.5rem auto auto;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.video {
+  position: relative;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, opacity;
+  transform: translateY(1.5rem);
+
+  @supports not (aspect-ratio: 16 / 9) {
+    padding-block-end: calc(9 / 16 * 100%);
+  }
+
+  @nest .root[aria-modal="true"] & {
+    transform: none;
+  }
+
+  & video {
+    position: absolute;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  z-index: -1;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: hsl(0deg 0% 0% / 80%);
+  backdrop-filter: saturate(180%) blur(20px);
+}

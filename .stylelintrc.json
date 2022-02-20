@@ -3,5 +3,11 @@
     "stylelint-config-standard",
     "stylelint-config-prettier",
     "stylelint-config-recess-order"
-  ]
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "property-no-unknown": null,
+    "selector-pseudo-class-no-unknown": null,
+    "selector-type-no-unknown": null
+  }
 }

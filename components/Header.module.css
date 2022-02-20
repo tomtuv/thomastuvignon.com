@@ -1,0 +1,19 @@
+.root {
+  padding-block: 3.5rem;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  background-color: var(--dark-violet);
+
+  @media (--viewport-lg) {
+    padding-block: 7.5rem;
+  }
+
+  & :global(.container) {
+    position: relative;
+  }
+
+  & h1 {
+    margin: 1.25rem 0 0;
+  }
+}

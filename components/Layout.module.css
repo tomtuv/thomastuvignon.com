@@ -1,0 +1,151 @@
+.content {
+  padding-block: 3.5rem;
+
+  @media (--viewport-lg) {
+    padding-block: 6.5rem;
+  }
+
+  & figure {
+    box-shadow: 0 0.625rem 2.5rem 0 hsl(0deg 0% 0% / 10%);
+  }
+}
+
+.page {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
+
+  & article {
+    & header {
+      margin-block-end: 2rem;
+
+      & h2 {
+        margin-block-end: 0.5rem;
+      }
+
+      & p {
+        margin: 0;
+        font-size: clamp(1.125rem, 1.0156rem + 0.3125vw, 1.25rem);
+        font-weight: 500;
+      }
+    }
+
+    & p + a {
+      margin-block-start: 1rem;
+    }
+  }
+
+  & section {
+    &:nth-child(even) {
+      margin-block-start: 3rem;
+
+      @media (--viewport-lg) {
+        margin-block-start: 3.5rem;
+      }
+    }
+
+    &:nth-child(odd) {
+      margin-block-start: 3.5rem;
+
+      @media (--viewport-lg) {
+        margin-block-start: 6.5rem;
+      }
+    }
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+  }
+
+  & aside {
+    margin-block-start: 3.5rem;
+    text-align: center;
+
+    @media (--viewport-lg) {
+      margin-block-start: 6.5rem;
+    }
+  }
+}
+
+.home {
+  & > header {
+    padding-block: 6.5rem;
+    text-align: center;
+
+    @media (--viewport-lg) {
+      padding-block: 10rem;
+      text-align: start;
+    }
+
+    & :global(.container) {
+      row-gap: 2rem;
+
+      & > * {
+        &:first-child {
+          justify-self: center;
+
+          @media (--viewport-lg) {
+            justify-self: end;
+          }
+        }
+
+        &:last-child {
+          align-self: center;
+        }
+      }
+    }
+
+    & figure {
+      inline-size: 130px;
+      overflow: hidden;
+      border-radius: 50%;
+
+      @media (--viewport-lg) {
+        inline-size: 160px;
+      }
+
+      @media (--viewport-xl) {
+        inline-size: 170px;
+      }
+    }
+
+    & h1 {
+      margin: 0 0 1.25rem;
+    }
+
+    & p {
+      margin-block-end: 1.5rem;
+      font-size: clamp(1.25rem, 1.1406rem + 0.3125vw, 1.375rem);
+      font-weight: 500;
+
+      @media (--viewport-lg) {
+        margin-block-end: 1.25rem;
+      }
+    }
+  }
+
+  & .content {
+    & figure {
+      overflow: hidden;
+      border-radius: 0.25rem;
+      will-change: transform;
+
+      @media (--motion-enabled) {
+        transition: transform 0.2s linear;
+      }
+
+      @media (--viewport-lg) {
+        border-radius: 0.5rem;
+      }
+    }
+
+    & a {
+      &:hover,
+      &:focus {
+        & figure {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}

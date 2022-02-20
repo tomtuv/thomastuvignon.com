@@ -1,0 +1,68 @@
+.icon {
+  @media (--motion-enabled) {
+    transition: color 0.2s linear;
+  }
+
+  & svg {
+    display: block;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+
+    @media (--viewport-lg) {
+      inline-size: 1.75rem;
+      block-size: 1.75rem;
+    }
+  }
+
+  &[data-icon="linkedin"] {
+    --blue: #0073b1;
+
+    &:hover,
+    &:focus {
+      color: var(--blue);
+    }
+  }
+
+  &[data-icon="twitter"] {
+    --blue: #1da1f2;
+
+    &:hover,
+    &:focus {
+      color: var(--blue);
+    }
+  }
+
+  &[data-icon="facebook"] {
+    --blue: #1877f2;
+
+    &:hover,
+    &:focus {
+      color: var(--blue);
+    }
+  }
+
+  &[data-icon="instagram"] {
+    --pink: #b900b4;
+
+    &:hover,
+    &:focus {
+      color: var(--pink);
+    }
+  }
+
+  &[data-icon="github"] {
+    --blue: #0366d6;
+
+    &:hover,
+    &:focus {
+      color: var(--blue);
+    }
+  }
+
+  &[data-icon="mail"] {
+    &:hover,
+    &:focus {
+      color: var(--gray);
+    }
+  }
+}
