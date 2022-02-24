@@ -16,7 +16,7 @@
   }
 
   & > * {
-    --grid-column: span 12;
+    --grid-column: 1 / -1;
 
     grid-column: var(--grid-column);
 
