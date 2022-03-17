@@ -99,6 +99,7 @@
       inline-size: 130px;
       overflow: hidden;
       border-radius: 50%;
+      transform: scale(1);
 
       @media (--viewport-lg) {
         inline-size: 160px;

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useIntl } from "react-intl";
 import Layout from "components/Layout";
 import Seo from "components/Seo";
+import CustomImage from "components/CustomImage";
 import { getHomePage } from "lib/api";
 
 export default function Index({ homePage, preview }) {
@@ -22,15 +22,13 @@ export default function Index({ homePage, preview }) {
               title={project.title}
             >
               <figure>
-                <Image
+                <CustomImage
                   src={project.thumbnail.url}
                   alt=""
                   width={project.thumbnail.width}
                   height={project.thumbnail.height}
                   layout="responsive"
                   sizes="(min-width: 75em) 315px, (min-width: 64em) 260px, (min-width: 48em) 308px, (min-width: 35em) 228px, 50vw"
-                  placeholder="blur"
-                  blurDataURL={`/_next/image?url=${project.thumbnail.url}&w=16&q=1`}
                 />
               </figure>
             </a>

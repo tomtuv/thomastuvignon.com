@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
+import CustomImage from "./CustomImage";
 import styles from "./Header.module.css";
 
 const Modal = dynamic(() => import("./Modal"), { ssr: false });
@@ -45,15 +45,13 @@ export default function Header({ page }) {
           <>
             <div style={{ "--grid-column-lg": "span 4" }}>
               <figure>
-                <Image
+                <CustomImage
                   src={page.profilePicture.url}
                   alt=""
                   width={page.profilePicture.width}
                   height={page.profilePicture.height}
                   layout="responsive"
                   sizes="(min-width: 75em) 170px, (min-width: 64em) 160px, 130px"
-                  placeholder="blur"
-                  blurDataURL={`/_next/image?url=${page.profilePicture.url}&w=16&q=1`}
                   priority
                 />
               </figure>
