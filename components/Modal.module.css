@@ -1,4 +1,5 @@
 .root {
+  all: unset;
   position: fixed;
   inset: 0;
   z-index: 1;
@@ -11,8 +12,12 @@
     transition-duration: 0.5s;
   }
 
-  &[aria-modal="true"] {
+  &[open] {
     visibility: visible;
+  }
+
+  &::backdrop {
+    display: none;
   }
 }
 
@@ -26,7 +31,7 @@
     transition-duration: 0.5s;
   }
 
-  @nest .root[aria-modal="true"] & {
+  @nest .root[open] & {
     opacity: 1;
   }
 }
@@ -50,7 +55,7 @@
     padding-block-end: calc(9 / 16 * 100%);
   }
 
-  @nest .root[aria-modal="true"] & {
+  @nest .root[open] & {
     transform: none;
   }
 

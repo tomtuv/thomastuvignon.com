@@ -2,16 +2,16 @@ import { useIntl } from "react-intl";
 import Close from "./Close";
 import styles from "./Modal.module.css";
 
-export default function Modal({ show, close, videoEl, videoUrl }) {
+export default function Modal({ el, close, videoEl, videoUrl }) {
   const { formatMessage } = useIntl();
 
   return (
-    <div
+    <dialog
       id="modal"
       className={styles.root}
-      role={show === false ? null : "dialog"}
-      aria-modal={show === false ? null : true}
-      tabIndex={-1}
+      role="dialog"
+      aria-label={formatMessage({ id: "video" })}
+      ref={el}
     >
       <button
         className={styles.close}
@@ -35,7 +35,7 @@ export default function Modal({ show, close, videoEl, videoUrl }) {
           </video>
         </div>
       </div>
-      <div className={styles.backdrop} onClick={close} aria-hidden="true" />
-    </div>
+      <div className={styles.backdrop} onClick={close} />
+    </dialog>
   );
 }

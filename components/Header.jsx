@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useIntl, FormattedMessage } from "react-intl";
@@ -10,19 +10,29 @@ const Modal = dynamic(() => import("./Modal"), { ssr: false });
 
 export default function Header({ page }) {
   const { formatMessage } = useIntl();
-  const [showModal, setShowModal] = useState(false);
+  const modalEl = useRef(null);
   const videoEl = useRef(null);
 
-  const openModal = () => {
-    setShowModal(true);
-    videoEl.current.play();
+  const showModal = () => {
+    if (modalEl.current.showModal) {
+      modalEl.current.showModal();
+    } else {
+      modalEl.current.setAttribute("open", "");
+    }
+
     document.body.style.overflow = "hidden";
+    videoEl.current.play();
   };
 
   const closeModal = () => {
-    setShowModal(false);
-    videoEl.current.pause();
+    if (modalEl.current.close) {
+      modalEl.current.close();
+    } else {
+      modalEl.current.removeAttribute("open");
+    }
+
     document.body.removeAttribute("style");
+    videoEl.current.pause();
   };
 
   useEffect(() => {
@@ -61,13 +71,13 @@ export default function Header({ page }) {
               <p>{page.jobTitle}</p>
               <button
                 className="link"
-                onClick={openModal}
+                onClick={showModal}
                 aria-controls="modal"
               >
                 <FormattedMessage id="modalButton" />
               </button>
               <Modal
-                show={showModal}
+                el={modalEl}
                 close={closeModal}
                 videoEl={videoEl}
                 videoUrl={page.video.url}
