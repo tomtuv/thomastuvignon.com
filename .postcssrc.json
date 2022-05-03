@@ -6,7 +6,8 @@
         "color-functional-notation": false,
         "custom-properties": false,
         "gap-properties": false,
-        "logical-properties-and-values": false
+        "logical-properties-and-values": false,
+        "unset-value": false
       },
       "browsers": [">0.3%", "not ie 11", "not dead", "not op_mini all"],
       "importFrom": ["./styles/variables.css"]
