@@ -21,7 +21,7 @@
     "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.14",
-    "postcss-preset-env": "^7.5.0",
+    "postcss-preset-env": "^7.6.0",
     "stylelint": "^14.8.2",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
