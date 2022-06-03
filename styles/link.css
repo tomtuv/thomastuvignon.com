@@ -17,7 +17,7 @@
     transform: scale(var(--scale));
     will-change: transform;
 
-    @media (--motion-enabled) {
+    @media (--motion-safe) {
       transition: transform 0.15s linear;
     }
   }

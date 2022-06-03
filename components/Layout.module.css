@@ -131,7 +131,7 @@
       border-radius: 0.25rem;
       will-change: transform;
 
-      @media (--motion-enabled) {
+      @media (--motion-safe) {
         transition: transform 0.2s linear;
       }
 

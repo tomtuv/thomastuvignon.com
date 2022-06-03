@@ -14,7 +14,7 @@
     text-decoration: underline;
     text-underline-offset: 0.25rem;
 
-    @media (--motion-enabled) {
+    @media (--motion-safe) {
       transition: text-decoration-color 0.15s linear;
     }
 
