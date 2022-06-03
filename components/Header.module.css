@@ -5,7 +5,7 @@
   text-align: center;
   background-color: var(--dark-violet);
 
-  @media (--viewport-lg) {
+  @media (--screen-lg) {
     padding-block: 7.5rem;
   }
 

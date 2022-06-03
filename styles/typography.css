@@ -29,7 +29,7 @@ h5 {
   &:not(:first-child) {
     margin-block-start: 3rem;
 
-    @media (--viewport-md) {
+    @media (--screen-md) {
       margin-block-start: 3.5rem;
     }
   }

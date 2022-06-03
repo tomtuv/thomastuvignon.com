@@ -7,11 +7,11 @@
   inline-size: min(100% - var(--gap) * 2, 1040px);
   margin-inline: auto;
 
-  @media (--viewport-sm) {
+  @media (--screen-sm) {
     --gap: 2.5rem;
   }
 
-  @media (--viewport-lg) {
+  @media (--screen-lg) {
     --gap: 3rem;
   }
 
@@ -20,13 +20,13 @@
 
     grid-column: var(--grid-column);
 
-    @media (--viewport-md) {
+    @media (--screen-md) {
       --grid-column-md: var(--grid-column);
 
       grid-column: var(--grid-column-md);
     }
 
-    @media (--viewport-lg) {
+    @media (--screen-lg) {
       --grid-column-lg: var(--grid-column-md);
 
       grid-column: var(--grid-column-lg);
