@@ -73,6 +73,6 @@
   z-index: -1;
   inline-size: 100%;
   block-size: 100%;
-  background-color: hsl(0deg 0% 0% / 80%);
+  background-color: lch(0% 0 0deg / 80%);
   backdrop-filter: saturate(180%) blur(20px);
 }

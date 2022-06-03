@@ -2,7 +2,7 @@
   color: white;
   text-align: center;
   background-color: var(--dark-violet);
-  box-shadow: inset 0 -1px hsl(0deg 0% 100% / 15%);
+  box-shadow: inset 0 -1px lch(100% 0 139.088deg / 15%);
 
   & :global(.container) {
     align-items: center;

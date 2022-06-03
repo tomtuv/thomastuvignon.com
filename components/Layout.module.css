@@ -6,7 +6,7 @@
   }
 
   & figure {
-    box-shadow: 0 0.625rem 2.5rem 0 hsl(0deg 0% 0% / 10%);
+    box-shadow: 0 0.625rem 2.5rem 0 lch(0% 0 0deg / 10%);
   }
 }
 

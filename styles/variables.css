@@ -5,14 +5,14 @@
 @custom-media --motion-enabled (prefers-reduced-motion: no-preference);
 
 :root {
-  --dark-violet: hsl(263deg 58% 22%);
-  --violet: hsl(279deg 98% 46%);
-  --blue: hsl(193deg 100% 50%);
-  --green: hsl(131deg 99% 38%);
-  --yellow: hsl(65deg 100% 50%);
-  --orange: hsl(35deg 99% 48%);
-  --black: hsl(0deg 0% 10%);
-  --gray: hsl(0deg 0% 40%);
-  --light-gray: hsl(0deg 0% 95%);
+  --dark-violet: lch(15.189% 43.116 305.27deg);
+  --violet: lch(41.091% 108.481 312.901deg);
+  --blue: lch(74.488% 48.473 234.464deg);
+  --green: lch(68.273% 87.151 136.638deg);
+  --yellow: lch(95.995% 94.518 104.809deg);
+  --orange: lch(69.342% 81.89 65.528deg);
+  --black: lch(9.263% 0 139.088deg);
+  --gray: lch(43.192% 0 139.088deg);
+  --light-gray: lch(95.494% 0 139.088deg);
   --font-family: "Poppins", system-ui, sans-serif;
 }
