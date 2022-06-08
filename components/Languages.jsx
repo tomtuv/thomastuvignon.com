@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import styles from "./Languages.module.css";
 
-const languageNames = {
+const LANGUAGE_NAMES = {
   fr: "Français",
   en: "English",
 };
@@ -27,7 +27,7 @@ export default function Languages() {
                 }
               }}
             >
-              {languageNames[locale]}
+              {LANGUAGE_NAMES[locale]}
             </a>
           </Link>
         </li>

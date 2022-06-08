@@ -1,9 +1,10 @@
 import { useRef, useEffect } from "react";
 import styles from "./Bubbles.module.css";
 
+const BUBBLE_GROUPS = Array.from(Array(4).keys(), (number) => number + 1);
+const BUBBLES = Array.from(Array(12).keys(), (number) => number + 1);
+
 export default function Bubbles() {
-  const bubbleGroups = Array.from(Array(4).keys(), (number) => number + 1);
-  const bubbles = Array.from(Array(12).keys(), (number) => number + 1);
   const bubbleEls = useRef([]);
 
   useEffect(() => {
@@ -20,14 +21,14 @@ export default function Bubbles() {
 
   return (
     <div className={styles.root} aria-hidden="true">
-      {bubbleGroups.map((bubbleGroup, index) => (
+      {BUBBLE_GROUPS.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}
           ref={(el) => (bubbleEls.current[bubbleGroup] = el)}
           key={bubbleGroup}
         >
-          {bubbles.map((bubble) => (
-            <div data-bubble={bubble + index * bubbles.length} key={bubble} />
+          {BUBBLES.map((bubble) => (
+            <div data-bubble={bubble + index * BUBBLES.length} key={bubble} />
           ))}
         </div>
       ))}

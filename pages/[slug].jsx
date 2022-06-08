@@ -1,19 +1,9 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
 import Layout from "components/Layout";
 import Seo from "components/Seo";
 import Back from "components/Back";
 import { getPage, getAllPagesWithSlug } from "lib/api";
-
-const richTextOptions = {
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => {
-      const [{ value }] = node.content;
-      if (value === "" && node.content.length <= 1) return null;
-      return <p>{children}</p>;
-    },
-  },
-};
+import { RICH_TEXT_OPTIONS } from "lib/constants";
 
 export default function Page({ page, preview }) {
   return (
@@ -26,7 +16,7 @@ export default function Page({ page, preview }) {
               "--grid-column-md": "3 / span 8",
             }}
           >
-            {documentToReactComponents(page.body.json, richTextOptions)}
+            {documentToReactComponents(page.body.json, RICH_TEXT_OPTIONS)}
           </div>
         </div>
       </article>

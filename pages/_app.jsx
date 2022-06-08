@@ -4,7 +4,7 @@ import fr from "locales/fr.json";
 import en from "locales/en.json";
 import "styles/index.css";
 
-const messages = { fr, en };
+const MESSAGES = { fr, en };
 
 export default function App({ Component, pageProps }) {
   const { locale, defaultLocale } = useRouter();
@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <IntlProvider
       locale={locale}
       defaultLocale={defaultLocale}
-      messages={messages[locale]}
+      messages={MESSAGES[locale]}
     >
       <Component {...pageProps} />
     </IntlProvider>
