@@ -2,7 +2,7 @@ import { useIntl } from "react-intl";
 import Close from "./Close";
 import styles from "./Modal.module.css";
 
-export default function Modal({ el, close, videoEl, videoUrl }) {
+export default function Modal({ el, close, videoEl, videoURL }) {
   const { formatMessage } = useIntl();
 
   return (
@@ -31,7 +31,7 @@ export default function Modal({ el, close, videoEl, videoUrl }) {
             poster="/og-image.jpg"
             ref={videoEl}
           >
-            <source src={videoUrl} type="video/mp4" />
+            <source src={videoURL} type="video/mp4" />
           </video>
         </div>
       </div>

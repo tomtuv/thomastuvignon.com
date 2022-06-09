@@ -10,7 +10,7 @@ export default function Seo({ title, description }) {
   const { asPath, locale: activeLocale, locales, defaultLocale } = useRouter();
   const alternateLocale = locales.find((locale) => locale !== activeLocale);
 
-  const getPageUrl = (locale) => {
+  const getPageURL = (locale) => {
     return `${SITE_URL}${
       locale !== defaultLocale ? `/${locale}` : ""
     }${asPath}`;
@@ -19,17 +19,17 @@ export default function Seo({ title, description }) {
   return (
     <Head>
       <title>{title ? `${title} | ${SITE_TITLE}` : SITE_TITLE}</title>
-      <link rel="canonical" href={getPageUrl(activeLocale)} />
+      <link rel="canonical" href={getPageURL(activeLocale)} />
       <link
         rel="alternate"
         hrefLang="x-default"
-        href={getPageUrl(defaultLocale)}
+        href={getPageURL(defaultLocale)}
       />
       {locales.map((locale) => (
         <link
           rel="alternate"
           hrefLang={locale}
-          href={getPageUrl(locale)}
+          href={getPageURL(locale)}
           key={locale}
         />
       ))}
@@ -38,7 +38,7 @@ export default function Seo({ title, description }) {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE_TITLE} />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content={getPageUrl(activeLocale)} />
+      <meta property="og:url" content={getPageURL(activeLocale)} />
       <meta property="og:locale" content={activeLocale} />
       <meta property="og:locale:alternate" content={alternateLocale} />
       <meta property="og:description" content={description} />

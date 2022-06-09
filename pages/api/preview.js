@@ -1,6 +1,6 @@
 import { getEntryForPreview } from "lib/api";
 
-function resolveUrl(entry) {
+function resolveURL(entry) {
   if (entry.__typename === "Project") return `/projects/${entry.slug ?? ""}`;
   return `/${entry.slug ?? ""}`;
 }
@@ -11,7 +11,7 @@ export default async function preview(req, res) {
 
   if (!entry) return res.status(401).json({ message: "Invalid token" });
 
-  const url = resolveUrl(entry);
+  const url = resolveURL(entry);
 
   res.setPreviewData({});
   res.write(

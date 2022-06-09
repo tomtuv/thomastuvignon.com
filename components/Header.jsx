@@ -80,7 +80,7 @@ export default function Header({ page }) {
                 el={modalEl}
                 close={closeModal}
                 videoEl={videoEl}
-                videoUrl={page.video.url}
+                videoURL={page.video.url}
               />
             </div>
           </>
