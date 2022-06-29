@@ -1,8 +1,5 @@
-/**
- * @type {import("next").NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: true,
   reactStrictMode: true,
   i18n: {
     locales: ["fr", "en"],
