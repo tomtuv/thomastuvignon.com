@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Image from "next/image";
-import styles from "./CustomImage.module.css";
+import NextImage from "next/image";
+import styles from "./Image.module.css";
 
-export default function CustomImage({ alt, ...props }) {
+export default function Image({ alt, ...props }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
@@ -10,7 +10,7 @@ export default function CustomImage({ alt, ...props }) {
   };
 
   return (
-    <Image
+    <NextImage
       {...props}
       className={styles.root}
       alt={alt}

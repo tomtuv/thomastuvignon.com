@@ -3,7 +3,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
-import CustomImage from "./CustomImage";
+import Image from "./Image";
 import styles from "./Header.module.css";
 
 const Modal = dynamic(() => import("./Modal"), { ssr: false });
@@ -55,7 +55,7 @@ export default function Header({ page }) {
           <>
             <div style={{ "--grid-column-lg": "span 4" }}>
               <figure>
-                <CustomImage
+                <Image
                   src={page.profilePicture.url}
                   alt=""
                   width={page.profilePicture.width}

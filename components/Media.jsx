@@ -1,4 +1,4 @@
-import CustomImage from "./CustomImage";
+import Image from "./Image";
 
 export default function Media({ block }) {
   return (
@@ -12,7 +12,7 @@ export default function Media({ block }) {
           key={image.sys.id}
         >
           <figure>
-            <CustomImage
+            <Image
               src={image.url}
               alt={image.description || ""}
               width={image.width}

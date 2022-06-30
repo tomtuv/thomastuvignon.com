@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useIntl } from "react-intl";
 import Layout from "components/Layout";
 import Seo from "components/Seo";
-import CustomImage from "components/CustomImage";
+import Image from "components/Image";
 import { getHomePage } from "lib/api";
 
 export default function Index({ homePage, preview }) {
@@ -22,7 +22,7 @@ export default function Index({ homePage, preview }) {
               title={project.title}
             >
               <figure>
-                <CustomImage
+                <Image
                   src={project.thumbnail.url}
                   alt=""
                   width={project.thumbnail.width}
