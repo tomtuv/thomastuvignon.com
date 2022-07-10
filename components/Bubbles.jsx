@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./Bubbles.module.css";
 
 const BUBBLE_GROUPS = Array.from(Array(4).keys(), (number) => number + 1);
@@ -20,7 +21,7 @@ export default function Bubbles() {
   }, []);
 
   return (
-    <div className={styles.root} aria-hidden="true">
+    <motion.div className={styles.root} aria-hidden="true" layoutId="bubbles">
       {BUBBLE_GROUPS.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}
@@ -28,10 +29,14 @@ export default function Bubbles() {
           key={bubbleGroup}
         >
           {BUBBLES.map((bubble) => (
-            <div data-bubble={bubble + index * BUBBLES.length} key={bubble} />
+            <motion.div
+              data-bubble={bubble + index * BUBBLES.length}
+              key={bubble}
+              layout
+            />
           ))}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }

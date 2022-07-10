@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
 import Image from "./Image";
@@ -48,9 +49,9 @@ export default function Header({ page }) {
   }, []);
 
   return (
-    <header className={styles.root}>
+    <motion.header className={styles.root} layoutId="header">
       <Bubbles />
-      <div className="container">
+      <motion.div className="container" layout>
         {page.__typename === "HomePage" ? (
           <>
             <div style={{ "--grid-column-lg": "span 4" }}>
@@ -85,7 +86,7 @@ export default function Header({ page }) {
             </div>
           </>
         ) : (
-          <div>
+          <div layout>
             <Link href="/" aria-label={formatMessage({ id: "back" })}>
               <a className="link" data-link="back">
                 Thomas Tuvignon
@@ -94,7 +95,7 @@ export default function Header({ page }) {
             <h1>{page.title}</h1>
           </div>
         )}
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   );
 }

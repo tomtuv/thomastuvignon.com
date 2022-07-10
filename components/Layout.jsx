@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Alert from "./Alert";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -11,7 +12,9 @@ export default function Layout({ children, page, preview }) {
     <div className={className}>
       {preview && <Alert />}
       <Header page={page} />
-      <main className={styles.content}>{children}</main>
+      <motion.main className={styles.content} layout="position" layoutId="main">
+        {children}
+      </motion.main>
       <Footer />
       <Analytics />
     </div>
