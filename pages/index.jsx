@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { useIntl } from "react-intl";
+import { motion } from "framer-motion";
 import Layout from "components/Layout";
 import Seo from "components/Seo";
 import Image from "components/Image";
 import { getHomePage } from "lib/api";
+
+const MotionLink = motion(Link);
 
 export default function Index({ homePage, preview }) {
   const { formatMessage } = useIntl();
@@ -13,12 +16,16 @@ export default function Index({ homePage, preview }) {
       <Seo description={formatMessage({ id: "description" })} />
       <div className="container">
         {homePage.projectsCollection?.items.map((project) => (
-          <Link
+          <MotionLink
             href={`/projects/${project.slug}/`}
             style={{
               "--grid-column": "span 6",
               "--grid-column-lg": "span 4",
             }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             title={project.title}
             key={project.sys.id}
           >
@@ -32,7 +39,7 @@ export default function Index({ homePage, preview }) {
                 sizes="(min-width: 75em) 315px, (min-width: 64em) 260px, (min-width: 48em) 308px, (min-width: 35em) 228px, 50vw"
               />
             </figure>
-          </Link>
+          </MotionLink>
         ))}
       </div>
     </Layout>

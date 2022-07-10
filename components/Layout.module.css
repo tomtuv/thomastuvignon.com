@@ -92,17 +92,17 @@
     }
 
     & figure {
-      inline-size: 130px;
+      inline-size: 8.125rem;
       overflow: hidden;
       border-radius: 50%;
       transform: scale(1);
 
       @media (--screen-lg) {
-        inline-size: 160px;
+        inline-size: 10rem;
       }
 
       @media (--screen-xl) {
-        inline-size: 170px;
+        inline-size: 10.625rem;
       }
     }
 
