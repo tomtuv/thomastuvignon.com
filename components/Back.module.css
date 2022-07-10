@@ -1,4 +1,7 @@
 .root {
   margin-block-start: clamp(3.5rem, 0.875rem + 7.5vw, 6.5rem);
-  text-align: center;
+
+  & a {
+    margin-inline: auto;
+  }
 }
