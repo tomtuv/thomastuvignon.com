@@ -20,7 +20,7 @@ export default function Modal({ el, close, videoEl, videoURL }) {
       >
         <Close />
       </button>
-      <div className="container">
+      <div data-container="">
         <div className={styles.video}>
           <video
             width={1920}

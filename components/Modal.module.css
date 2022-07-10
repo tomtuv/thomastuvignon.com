@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   visibility: hidden;
+  isolation: isolate;
   transition: visibility linear;
 
   @media (--motion-safe) {

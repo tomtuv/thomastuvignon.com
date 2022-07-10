@@ -1,29 +1,17 @@
 .root {
-  padding-block: 3rem;
+  padding-block: clamp(3rem, 1.25rem + 5vw, 5rem);
   text-align: center;
   background-color: var(--light-gray);
-
-  @media (--screen-lg) {
-    padding-block: 5rem;
-  }
 
   & ul {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 0 0 1.5rem;
+    margin: 0 0 clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
     list-style: none;
-
-    @media (--screen-lg) {
-      margin-block-end: 2rem;
-    }
   }
 
   & li:not(:last-child) {
-    margin: 0 1.5rem 0 0;
-
-    @media (--screen-lg) {
-      margin-inline-end: 2rem;
-    }
+    margin: 0 clamp(1.5rem, 1.063rem + 1.25vw, 2rem) 0 0;
   }
 }

@@ -27,20 +27,22 @@ h3,
 h4,
 h5 {
   &:not(:first-child) {
-    margin-block-start: 3rem;
-
-    @media (--screen-md) {
-      margin-block-start: 3.5rem;
-    }
+    margin-block-start: 2.5em;
   }
 
   &:not(:last-child) {
-    margin-block-end: 2rem;
+    margin-block-end: 1.5em;
   }
 }
 
-p:not(:last-child) {
-  margin-block-end: 1rem;
+p {
+  &:not(:last-child) {
+    margin-block-end: 1em;
+  }
+
+  &:empty {
+    display: none;
+  }
 }
 
 ul,
@@ -48,10 +50,14 @@ ol {
   padding-inline-start: 1.25rem;
 
   &:not(:last-child) {
-    margin-block-end: 2rem;
+    margin-block-end: 2em;
   }
 }
 
 li:not(:last-child) {
-  margin-block-end: 0.5rem;
+  margin-block-end: 0.5em;
+}
+
+:has(+ :empty) {
+  margin-block-end: 0;
 }

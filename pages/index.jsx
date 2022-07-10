@@ -14,7 +14,7 @@ export default function Index({ homePage, preview }) {
   return (
     <Layout page={homePage} preview={preview}>
       <Seo description={formatMessage({ id: "description" })} />
-      <div className="container">
+      <div data-container="">
         {homePage.projectsCollection?.items.map((project) => (
           <MotionLink
             href={`/projects/${project.slug}/`}
@@ -36,7 +36,7 @@ export default function Index({ homePage, preview }) {
                 width={project.thumbnail.width}
                 height={project.thumbnail.height}
                 layout="responsive"
-                sizes="(min-width: 75em) 315px, (min-width: 64em) 260px, (min-width: 48em) 308px, (min-width: 35em) 228px, 50vw"
+                sizes="(min-width: 1200px) 315px, (min-width: 1024px) 260px, (min-width: 768px) 308px, (min-width: 560px) 228px, 50vw"
               />
             </figure>
           </MotionLink>

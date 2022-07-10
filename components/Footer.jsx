@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <motion.footer className={styles.root} layout="position" layoutId="footer">
-      <div className="container">
+      <div data-container="">
         <div>
           <Social />
           <Languages />

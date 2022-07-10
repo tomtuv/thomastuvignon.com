@@ -3,7 +3,7 @@ import Image from "./Image";
 
 export default function Media({ block }) {
   return (
-    <section className="container" aria-label={block.title}>
+    <section data-container="" aria-label={block.title}>
       {block.imagesCollection.items.map((image) => (
         <motion.div
           style={{
@@ -23,7 +23,7 @@ export default function Media({ block }) {
               width={image.width}
               height={image.height}
               layout="responsive"
-              sizes="(min-width: 75em) 1040px, (min-width: 64em) 880px, (min-width: 48em) 640px, (min-width: 35em) 480px, 100vw"
+              sizes="(min-width: 1200px) 1040px, (min-width: 1024px) 880px, (min-width: 768px) 640px, (min-width: 560px) 480px, 100vw"
             />
           </figure>
         </motion.div>

@@ -4,14 +4,11 @@
   }
 
   & svg {
-    display: block;
-    inline-size: 1.5rem;
-    block-size: 1.5rem;
+    --size: clamp(1.5rem, 1.281rem + 0.63vw, 1.75rem);
 
-    @media (--screen-lg) {
-      inline-size: 1.75rem;
-      block-size: 1.75rem;
-    }
+    display: block;
+    inline-size: var(--size);
+    block-size: var(--size);
   }
 
   &[data-variant="linkedin"] {

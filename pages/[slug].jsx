@@ -3,20 +3,19 @@ import Layout from "components/Layout";
 import Seo from "components/Seo";
 import Back from "components/Back";
 import { getPage, getAllPagesWithSlug } from "lib/api";
-import { RICH_TEXT_OPTIONS } from "lib/constants";
 
 export default function Page({ page, preview }) {
   return (
     <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
-        <div className="container">
+        <div data-container="">
           <div
             style={{
               "--grid-column-md": "3 / span 8",
             }}
           >
-            {documentToReactComponents(page.body.json, RICH_TEXT_OPTIONS)}
+            {documentToReactComponents(page.body.json)}
           </div>
         </div>
       </article>
@@ -38,12 +37,7 @@ export async function getStaticPaths({ locales }) {
 
   const reducer = (acc, locale) => [
     ...acc,
-    ...(allPages.map(({ slug }) => ({
-      params: {
-        slug,
-      },
-      locale,
-    })) ?? []),
+    ...(allPages.map(({ slug }) => ({ params: { slug }, locale })) ?? []),
   ];
 
   return {

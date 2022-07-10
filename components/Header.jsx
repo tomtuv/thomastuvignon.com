@@ -51,7 +51,7 @@ export default function Header({ page }) {
   return (
     <motion.header className={styles.root} layoutId="header">
       <Bubbles />
-      <motion.div className="container" layout>
+      <motion.div data-container="" layout>
         {page.__typename === "HomePage" ? (
           <>
             <div style={{ "--grid-column-lg": "span 4" }}>
@@ -62,7 +62,7 @@ export default function Header({ page }) {
                   width={page.profilePicture.width}
                   height={page.profilePicture.height}
                   layout="responsive"
-                  sizes="(min-width: 75em) 170px, (min-width: 64em) 160px, 130px"
+                  sizes="(min-width: 1200px) 170px, (min-width: 1024px) 160px, 130px"
                   priority
                 />
               </figure>
@@ -70,11 +70,7 @@ export default function Header({ page }) {
             <div style={{ "--grid-column-lg": "span 8" }}>
               <h1>{page.title}</h1>
               <p>{page.jobTitle}</p>
-              <button
-                className="link"
-                onClick={showModal}
-                aria-controls="modal"
-              >
+              <button data-link="" onClick={showModal} aria-controls="modal">
                 <FormattedMessage id="modalButton" />
               </button>
               <Modal
@@ -88,10 +84,10 @@ export default function Header({ page }) {
         ) : (
           <div>
             <Link
-              className="link"
               href="/"
-              aria-label={formatMessage({ id: "back" })}
+              data-link=""
               data-variant="back"
+              aria-label={formatMessage({ id: "back" })}
             >
               Thomas Tuvignon
             </Link>

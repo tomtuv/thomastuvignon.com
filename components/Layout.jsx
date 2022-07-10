@@ -6,10 +6,10 @@ import Analytics from "./Analytics";
 import styles from "./Layout.module.css";
 
 export default function Layout({ children, page, preview }) {
-  const className = page.__typename === "HomePage" ? styles.home : styles.page;
+  const variant = page.__typename === "HomePage" ? "home" : "page";
 
   return (
-    <div className={className}>
+    <div className={styles.root} data-variant={variant}>
       {preview && <Alert />}
       <Header page={page} />
       <motion.main className={styles.content} layout="position" layoutId="main">

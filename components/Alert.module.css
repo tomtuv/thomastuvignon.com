@@ -4,7 +4,7 @@
   background-color: var(--dark-violet);
   box-shadow: inset 0 -1px lch(100% 0 139.088deg / 15%);
 
-  & :global(.container) {
+  & [data-container] {
     align-items: center;
     min-height: 3rem;
     padding-block: 0.5rem;

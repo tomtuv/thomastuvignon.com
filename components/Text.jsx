@@ -1,26 +1,28 @@
 import { FormattedMessage } from "react-intl";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { RICH_TEXT_OPTIONS } from "lib/constants";
+import styles from "./Text.module.css";
 
 export default function Text({ block }) {
   return (
-    <section className="container" aria-labelledby={block.sys.id}>
+    <section data-container="" aria-labelledby={block.sys.id}>
       <div style={{ "--grid-column-lg": "2 / span 10" }}>
-        <header>
+        <header className={styles.header}>
           <h2 id={block.sys.id}>{block.title}</h2>
           <p>{block.subtitle}</p>
         </header>
-        {documentToReactComponents(block.body.json, RICH_TEXT_OPTIONS)}
-        {block.link && (
-          <a
-            className="link"
-            href={block.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FormattedMessage id="projectLink" />
-          </a>
-        )}
+        <div className={styles.text}>
+          {documentToReactComponents(block.body.json)}
+          {block.link && (
+            <a
+              href={block.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-link=""
+            >
+              <FormattedMessage id="projectLink" />
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
