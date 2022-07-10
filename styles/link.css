@@ -1,8 +1,9 @@
 [data-link] {
-  display: inline-flex;
+  display: flex;
+  inline-size: fit-content;
   align-items: center;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 1;
 
   &::after {
     --scale: 1;

@@ -13,7 +13,7 @@
 }
 
 .text {
-  & > a {
+  & > a:not(:empty + a) {
     margin-block-start: 2rem;
   }
 }

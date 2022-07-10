@@ -1,52 +1,23 @@
-import { useRef, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
 import Image from "./Image";
+import Modal from "./Modal";
 import styles from "./Header.module.css";
-
-const Modal = dynamic(() => import("./Modal"), { ssr: false });
 
 export default function Header({ page }) {
   const { formatMessage } = useIntl();
-  const modalEl = useRef(null);
-  const videoEl = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
-    if (modalEl.current.showModal) {
-      modalEl.current.showModal();
-    } else {
-      modalEl.current.setAttribute("open", "");
-    }
-
-    document.body.style.overflow = "hidden";
-    videoEl.current.play();
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    if (modalEl.current.close) {
-      modalEl.current.close();
-    } else {
-      modalEl.current.removeAttribute("open");
-    }
-
-    document.body.removeAttribute("style");
-    videoEl.current.pause();
+    setIsModalOpen(false);
   };
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") closeModal();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
 
   return (
     <motion.header className={styles.root} layoutId="header">
@@ -74,9 +45,8 @@ export default function Header({ page }) {
                 <FormattedMessage id="modalButton" />
               </button>
               <Modal
-                el={modalEl}
-                close={closeModal}
-                videoEl={videoEl}
+                isOpen={isModalOpen}
+                onDismiss={closeModal}
                 videoURL={page.video.url}
               />
             </div>

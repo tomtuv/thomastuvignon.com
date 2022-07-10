@@ -1,79 +1,46 @@
 .root {
-  all: unset;
-  position: fixed;
-  inset: 0;
-  z-index: 1;
   display: flex;
   align-items: center;
-  visibility: hidden;
-  isolation: isolate;
-  transition: visibility linear;
+  overflow: visible;
+  background: none;
+  opacity: var(--opacity);
+  transition: opacity 0.5s linear;
 
-  @media (--motion-safe) {
-    transition-duration: 0.5s;
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: hsl(0deg 0% 0% / 50%);
+    opacity: var(--backdrop-opacity);
+    backdrop-filter: blur(5px);
   }
+}
 
-  &[open] {
-    visibility: visible;
-  }
-
-  &::backdrop {
-    display: none;
-  }
+.content {
+  position: relative;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  background: none;
 }
 
 .close,
-.video,
-.backdrop {
-  opacity: 0;
-  transition: opacity ease-in-out;
-
-  @media (--motion-safe) {
-    transition-duration: 0.5s;
-  }
-
-  @nest .root[open] & {
-    opacity: 1;
-  }
+.video {
+  pointer-events: auto;
 }
 
 .close {
-  position: absolute;
+  position: fixed;
   inset: 1.5rem 1.5rem auto auto;
   inline-size: 1.5rem;
   block-size: 1.5rem;
+  color: white;
 }
 
 .video {
-  position: relative;
-  inline-size: 100%;
   aspect-ratio: 16 / 9;
-  transition-timing-function: ease-in-out;
-  transition-property: transform, opacity;
-  transform: translateY(1.5rem);
-
-  @supports not (aspect-ratio: 16 / 9) {
-    padding-block-end: calc(9 / 16 * 100%);
-  }
-
-  @nest .root[open] & {
-    transform: none;
-  }
-
-  & video {
-    position: absolute;
-    inset: 0;
-    max-inline-size: 100%;
-    max-block-size: 100%;
-    object-fit: cover;
-  }
-}
-
-.backdrop {
-  position: absolute;
-  z-index: -1;
   inline-size: 100%;
-  block-size: 100%;
-  background-color: lch(0% 0 0deg / 80%);
-  backdrop-filter: saturate(180%) blur(20px);
+  block-size: auto;
+  object-fit: cover;
 }
