@@ -86,11 +86,14 @@ export default function Header({ page }) {
             </div>
           </>
         ) : (
-          <div layout>
-            <Link href="/" aria-label={formatMessage({ id: "back" })}>
-              <a className="link" data-link="back">
-                Thomas Tuvignon
-              </a>
+          <div>
+            <Link
+              className="link"
+              href="/"
+              aria-label={formatMessage({ id: "back" })}
+              data-variant="back"
+            >
+              Thomas Tuvignon
             </Link>
             <h1>{page.title}</h1>
           </div>

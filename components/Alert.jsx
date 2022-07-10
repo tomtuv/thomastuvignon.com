@@ -7,10 +7,7 @@ export default function Alert() {
       <div className="container">
         <p>
           This is a page preview.{" "}
-          <Link href="/api/exit-preview">
-            <a>Click here</a>
-          </Link>{" "}
-          to exit preview mode.
+          <Link href="/api/exit-preview">Click here</Link> to exit preview mode.
         </p>
       </div>
     </div>

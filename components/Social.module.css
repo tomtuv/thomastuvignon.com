@@ -14,7 +14,7 @@
     }
   }
 
-  &[data-icon="linkedin"] {
+  &[data-variant="linkedin"] {
     --blue: #0073b1;
 
     &:hover,
@@ -23,7 +23,7 @@
     }
   }
 
-  &[data-icon="twitter"] {
+  &[data-variant="twitter"] {
     --blue: #1da1f2;
 
     &:hover,
@@ -32,7 +32,7 @@
     }
   }
 
-  &[data-icon="facebook"] {
+  &[data-variant="facebook"] {
     --blue: #1877f2;
 
     &:hover,
@@ -41,7 +41,7 @@
     }
   }
 
-  &[data-icon="instagram"] {
+  &[data-variant="instagram"] {
     --pink: #b900b4;
 
     &:hover,
@@ -50,7 +50,7 @@
     }
   }
 
-  &[data-icon="github"] {
+  &[data-variant="github"] {
     --blue: #0366d6;
 
     &:hover,
@@ -59,7 +59,7 @@
     }
   }
 
-  &[data-icon="mail"] {
+  &[data-variant="mail"] {
     &:hover,
     &:focus {
       color: var(--gray);

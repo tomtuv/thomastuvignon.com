@@ -11,10 +11,6 @@
 }
 
 .page {
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  min-height: 100vh;
-
   & article {
     & header {
       margin-block-end: 2rem;

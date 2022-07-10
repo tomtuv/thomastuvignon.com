@@ -4,10 +4,8 @@ import { FormattedMessage } from "react-intl";
 export default function Back() {
   return (
     <aside>
-      <Link href="/">
-        <a className="link" data-link="back">
-          <FormattedMessage id="back" />
-        </a>
+      <Link className="link" href="/" data-variant="back">
+        <FormattedMessage id="back" />
       </Link>
     </aside>
   );

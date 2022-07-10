@@ -8,6 +8,11 @@ const nextConfig = {
   images: {
     domains: ["images.ctfassets.net"],
   },
+  experimental: {
+    browsersListForSwc: true,
+    legacyBrowsers: false,
+    newNextLinkBehavior: true,
+  },
   async rewrites() {
     return [
       {

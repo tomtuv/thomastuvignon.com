@@ -29,7 +29,7 @@
     }
   }
 
-  &[data-link="back"] {
+  &[data-variant="back"] {
     flex-direction: row-reverse;
 
     &::after {

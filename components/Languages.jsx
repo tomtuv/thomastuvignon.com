@@ -16,19 +16,19 @@ export default function Languages() {
     <ul>
       {locales.map((locale) => (
         <li key={locale}>
-          <Link href={asPath} locale={locale}>
-            <a
-              className={styles.link}
-              hrefLang={locale}
-              aria-current={locale === activeLocale ? "page" : null}
-              onClick={() => {
-                if (cookie.NEXT_LOCALE !== locale) {
-                  setCookie("NEXT_LOCALE", locale, { path: "/" });
-                }
-              }}
-            >
-              {LANGUAGE_NAMES[locale]}
-            </a>
+          <Link
+            className={styles.link}
+            href={asPath}
+            hrefLang={locale}
+            aria-current={locale === activeLocale ? "page" : null}
+            locale={locale}
+            onClick={() => {
+              if (cookie.NEXT_LOCALE !== locale) {
+                setCookie("NEXT_LOCALE", locale, { path: "/" });
+              }
+            }}
+          >
+            {LANGUAGE_NAMES[locale]}
           </Link>
         </li>
       ))}
