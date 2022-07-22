@@ -1,10 +1,10 @@
-import Image from "next/future/image";
 import { motion } from "framer-motion";
+import Image from "./Image";
 
 export default function Media({ block }) {
   return (
     <section data-container="" aria-label={block.title}>
-      {block.images.map((image) => (
+      {block.imagesCollection.items?.map((image) => (
         <motion.div
           style={{
             "--grid-column-md": block.layout !== "Full width" ? "span 6" : null,
@@ -23,8 +23,6 @@ export default function Media({ block }) {
               width={image.width}
               height={image.height}
               sizes="(min-width: 1200px) 1040px, (min-width: 1024px) 880px, (min-width: 768px) 640px, (min-width: 560px) 480px, 100vw"
-              placeholder="blur"
-              blurDataURL={image.base64}
             />
           </figure>
         </motion.div>

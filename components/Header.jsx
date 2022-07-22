@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Image from "next/future/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
+import Image from "./Image";
 import Modal from "./Modal";
 import styles from "./Header.module.css";
 
@@ -35,8 +35,6 @@ export default function Header({ title, jobTitle, profilePicture, video }) {
                   width={profilePicture.width}
                   height={profilePicture.height}
                   sizes="(min-width: 1200px) 170px, (min-width: 1024px) 160px, 130px"
-                  placeholder="blur"
-                  blurDataURL={profilePicture.base64}
                   priority
                 />
               </figure>

@@ -10,16 +10,13 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@contentful/rich-text-types": "^15.12.1",
-    "@plaiceholder/next": "^2.4.0",
     "@reach/dialog": "^0.17.0",
     "framer-motion": "^6.5.1",
     "next": "^12.2.3",
-    "plaiceholder": "^2.4.0",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.0.5",
-    "sharp": "^0.30.7"
+    "react-intl": "^6.0.5"
   },
   "devDependencies": {
     "eslint": "^8.20.0",
