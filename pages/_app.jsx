@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
+import Layout from "components/Layout";
 import fr from "locales/fr.json";
 import en from "locales/en.json";
 import "styles/index.css";
 
 const MESSAGES = { fr, en };
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
   const [isMobile, setIsMobile] = useState(false);
   const { locale, defaultLocale } = useRouter();
 
@@ -36,7 +37,9 @@ export default function App({ Component, pageProps }) {
         defaultLocale={defaultLocale}
         messages={MESSAGES[locale]}
       >
-        <Component {...pageProps} />
+        <Layout {...pageProps} key={router._key}>
+          <Component {...pageProps} />
+        </Layout>
       </IntlProvider>
     </MotionConfig>
   );

@@ -1,3 +1,5 @@
+const { withPlaiceholder } = require("@plaiceholder/next");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -12,6 +14,9 @@ const nextConfig = {
     browsersListForSwc: true,
     legacyBrowsers: false,
     newNextLinkBehavior: true,
+    images: {
+      allowFutureImage: true,
+    },
   },
   async rewrites() {
     return [
@@ -24,4 +29,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPlaiceholder(nextConfig);

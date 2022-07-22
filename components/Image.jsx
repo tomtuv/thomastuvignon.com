@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NextImage from "next/image";
+import NextImage from "next/future/image";
 import styles from "./Image.module.css";
 
 export default function Image({ ...props }) {
@@ -11,10 +11,10 @@ export default function Image({ ...props }) {
 
   return (
     <NextImage
-      {...props}
       className={styles.root}
       data-loading={isLoading ? "true" : null}
       onLoadingComplete={handleLoadingComplete}
+      {...props}
     />
   );
 }

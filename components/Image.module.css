@@ -1,5 +1,4 @@
 .root {
-  overflow: hidden;
   transition: filter 0.5s ease-in-out;
 
   &[data-loading="true"] {

@@ -1,13 +1,12 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Layout from "components/Layout";
 import Seo from "components/Seo";
 import Back from "components/Back";
 import { getPage, getAllPagesWithSlug } from "lib/api";
 
-export default function Page({ page, preview }) {
+export default function Page({ title, description, body }) {
   return (
-    <Layout page={page} preview={preview}>
-      <Seo title={page.title} description={page.description} />
+    <>
+      <Seo title={title} description={description} />
       <article>
         <div data-container="">
           <div
@@ -15,20 +14,21 @@ export default function Page({ page, preview }) {
               "--grid-column-md": "3 / span 8",
             }}
           >
-            {documentToReactComponents(page.body.json)}
+            {documentToReactComponents(body.json)}
           </div>
         </div>
       </article>
       <Back />
-    </Layout>
+    </>
   );
 }
 
 export async function getStaticProps({ params, locale, preview = false }) {
   const page = (await getPage(params.slug, locale, preview)) ?? {};
+  const { title, description, body } = page;
 
   return {
-    props: { page, preview },
+    props: { title, description, body, preview },
   };
 }
 
