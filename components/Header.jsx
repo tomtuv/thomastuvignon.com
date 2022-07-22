@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Image from "./Image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useIntl, FormattedMessage } from "react-intl";
@@ -44,7 +44,7 @@ export default function Header({ title, jobTitle, profilePicture, video }) {
             <div style={{ "--grid-column-lg": "span 8" }}>
               <h1>{title}</h1>
               <p>{jobTitle}</p>
-              <button data-link="" onClick={showModal} aria-controls="modal">
+              <button data-link="" onClick={showModal}>
                 <FormattedMessage id="modalButton" />
               </button>
               <Modal

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "components/Image";
+import Image from "next/future/image";
 import { getPlaiceholder } from "plaiceholder";
 import { useIntl } from "react-intl";
 import { motion } from "framer-motion";

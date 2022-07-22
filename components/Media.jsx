@@ -1,4 +1,4 @@
-import Image from "./Image";
+import Image from "next/future/image";
 import { motion } from "framer-motion";
 
 export default function Media({ block }) {

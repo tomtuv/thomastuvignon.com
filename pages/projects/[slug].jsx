@@ -21,6 +21,7 @@ export default function Project({ title, description, blocks }) {
 export async function getStaticProps({ params, locale, preview = false }) {
   const project = (await getProject(params.slug, locale, preview)) ?? {};
   const { title, description } = project;
+
   const blocks =
     (await Promise.all(
       project.blocksCollection?.items.map(async (block) => {
