@@ -1,14 +1,23 @@
 import React from "react";
-import type { GetStaticPathsContext, GetStaticPropsContext } from "next";
+import type {
+  GetStaticPathsContext,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+} from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Back from "../components/Back";
 import { getPage, getAllPagesWithSlug } from "../lib/api";
+import type { Page as PageType } from "../interfaces";
 
-export default function Page({ title, description, body }: any) {
+export default function Page({
+  page,
+  preview,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
-      <Seo title={title} description={description} />
+    <Layout page={page} preview={preview}>
+      <Seo title={page.title} description={page.description} />
       <article>
         <div data-container="">
           <div
@@ -18,12 +27,12 @@ export default function Page({ title, description, body }: any) {
               } as React.CSSProperties
             }
           >
-            {documentToReactComponents(body.json)}
+            {documentToReactComponents(page.body.json)}
           </div>
         </div>
       </article>
       <Back />
-    </>
+    </Layout>
   );
 }
 
@@ -32,19 +41,18 @@ export async function getStaticProps({
   locale = "fr",
   preview = false,
 }: GetStaticPropsContext) {
-  const page = (await getPage(params.slug, locale, preview)) ?? {};
-  const { title, description, body } = page;
+  const page: PageType = (await getPage(params.slug, locale, preview)) ?? {};
 
   return {
-    props: { title, description, body, preview },
+    props: { page, preview },
   };
 }
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
-  const allPages = (await getAllPagesWithSlug()) ?? [];
+  const allPages: PageType[] = (await getAllPagesWithSlug()) ?? [];
   const paths: any[] = [];
 
-  allPages.forEach(({ slug }: { slug: string }) => {
+  allPages.forEach(({ slug }) => {
     for (const locale of locales) {
       paths.push({
         params: { slug },

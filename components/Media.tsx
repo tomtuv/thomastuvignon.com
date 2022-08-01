@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "./Image";
+import type { Media as MediaType } from "../interfaces";
 
-export default function Media({ block }: any) {
+export default function Media({ block }: { block: MediaType }) {
   return (
     <section data-container="" aria-label={block.title}>
-      {block.imagesCollection.items?.map((image: any) => (
+      {block.imagesCollection.items?.map((image) => (
         <motion.div
           style={
             {

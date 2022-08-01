@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
-import Layout from "../components/Layout";
 import fr from "../locales/fr.json";
 import en from "../locales/en.json";
 import "../styles/index.css";
@@ -33,9 +32,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         defaultLocale={router.defaultLocale}
         messages={MESSAGES[router.locale ?? "fr"]}
       >
-        <Layout {...pageProps} key={router.asPath}>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </IntlProvider>
     </MotionConfig>
   );

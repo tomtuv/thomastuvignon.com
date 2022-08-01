@@ -44,9 +44,9 @@ export async function getEntryForPreview(id: string | string[] | undefined) {
   `;
 
   const variables = { id, preview: true };
-  const entries = await fetchAPI(query, variables);
+  const { data } = await fetchAPI(query, variables);
 
-  return entries?.data?.entryCollection?.items?.[0];
+  return data?.entryCollection?.items?.[0];
 }
 
 export async function getHomePage(locale: string, preview: boolean) {
@@ -58,6 +58,7 @@ export async function getHomePage(locale: string, preview: boolean) {
         preview: $preview
       ) {
         items {
+          __typename
           title
           jobTitle
           profilePicture {
@@ -88,9 +89,9 @@ export async function getHomePage(locale: string, preview: boolean) {
   `;
 
   const variables = { locale, preview };
-  const entries = await fetchAPI(query, variables);
+  const { data } = await fetchAPI(query, variables);
 
-  return entries?.data?.homePageCollection?.items?.[0];
+  return data?.homePageCollection?.items?.[0];
 }
 
 export async function getProject(
@@ -107,6 +108,7 @@ export async function getProject(
         preview: $preview
       ) {
         items {
+          __typename
           title
           slug
           description
@@ -151,9 +153,9 @@ export async function getProject(
   `;
 
   const variables = { slug, locale, preview };
-  const entries = await fetchAPI(query, variables);
+  const { data } = await fetchAPI(query, variables);
 
-  return entries?.data?.projectCollection?.items?.[0];
+  return data?.projectCollection?.items?.[0];
 }
 
 export async function getAllProjectsWithSlug() {
@@ -167,9 +169,9 @@ export async function getAllProjectsWithSlug() {
     }
   `;
 
-  const entries = await fetchAPI(query);
+  const { data } = await fetchAPI(query);
 
-  return entries?.data?.projectCollection?.items;
+  return data?.projectCollection?.items;
 }
 
 export async function getPage(
@@ -186,6 +188,7 @@ export async function getPage(
         preview: $preview
       ) {
         items {
+          __typename
           title
           slug
           description
@@ -198,9 +201,9 @@ export async function getPage(
   `;
 
   const variables = { slug, locale, preview };
-  const entries = await fetchAPI(query, variables);
+  const { data } = await fetchAPI(query, variables);
 
-  return entries?.data?.pageCollection?.items?.[0];
+  return data?.pageCollection?.items?.[0];
 }
 
 export async function getAllPagesWithSlug() {

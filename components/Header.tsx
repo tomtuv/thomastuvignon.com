@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useIntl, FormattedMessage } from "react-intl";
 import Bubbles from "./Bubbles";
 import Image from "./Image";
 import Modal from "./Modal";
+import { HomePage, Project, Page } from "../interfaces";
 import styles from "./Header.module.css";
 
-export default function Header({
-  title,
-  jobTitle,
-  profilePicture,
-  video,
-}: any) {
-  const router = useRouter();
+type Props = {
+  page: HomePage | Project | Page;
+};
+
+export default function Header({ page }: Props) {
   const { formatMessage } = useIntl();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -30,17 +28,17 @@ export default function Header({
     <motion.header className={styles.root} layoutId="header">
       <Bubbles />
       <motion.div data-container="" layout>
-        {router.pathname === "/" ? (
+        {page.__typename === "HomePage" ? (
           <>
             <div
               style={{ "--grid-column-lg": "span 4" } as React.CSSProperties}
             >
               <figure>
                 <Image
-                  src={profilePicture.url}
+                  src={page.profilePicture.url}
                   alt=""
-                  width={profilePicture.width}
-                  height={profilePicture.height}
+                  width={page.profilePicture.width}
+                  height={page.profilePicture.height}
                   sizes="(min-width: 1200px) 170px, (min-width: 1024px) 160px, 130px"
                   priority
                 />
@@ -49,15 +47,15 @@ export default function Header({
             <div
               style={{ "--grid-column-lg": "span 8" } as React.CSSProperties}
             >
-              <h1>{title}</h1>
-              <p>{jobTitle}</p>
+              <h1>{page.title}</h1>
+              <p>{page.jobTitle}</p>
               <button data-link="" onClick={showModal}>
                 <FormattedMessage id="modalButton" />
               </button>
               <Modal
                 isOpen={isModalOpen}
                 onDismiss={closeModal}
-                videoURL={video.url}
+                videoURL={page.video.url}
               />
             </div>
           </>
@@ -71,7 +69,7 @@ export default function Header({
             >
               Thomas Tuvignon
             </Link>
-            <h1>{title}</h1>
+            <h1>{page.title}</h1>
           </div>
         )}
       </motion.div>
