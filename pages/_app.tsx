@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
 import Layout from "../components/Layout";
 import fr from "../locales/fr.json";
 import en from "../locales/en.json";
-import "styles/index.css";
+import "../styles/index.css";
 
 const MESSAGES: any = { fr, en };
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [isMobile, setIsMobile] = useState(false);
-  const { locale = "fr", defaultLocale = "fr" } = useRouter();
 
   useEffect(() => {
     if (
@@ -31,9 +29,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
       transition={{ duration: isMobile ? 0 : 0.3 }}
     >
       <IntlProvider
-        locale={locale}
-        defaultLocale={defaultLocale}
-        messages={MESSAGES[locale]}
+        locale={router.locale ?? "fr"}
+        defaultLocale={router.defaultLocale}
+        messages={MESSAGES[router.locale ?? "fr"]}
       >
         <Layout {...pageProps} key={router.asPath}>
           <Component {...pageProps} />
