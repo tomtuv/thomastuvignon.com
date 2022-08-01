@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./Bubbles.module.css";
 
@@ -6,14 +6,14 @@ const BUBBLE_GROUPS = Array.from(Array(4).keys(), (number) => number + 1);
 const BUBBLES = Array.from(Array(12).keys(), (number) => number + 1);
 
 export default function Bubbles() {
-  const bubbleEls = useRef([]);
+  const bubbleEls = useRef<Array<React.RefObject<HTMLDivElement> | null>>([]);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollValue = window.scrollY;
 
-      bubbleEls.current.forEach((bubbleEl, index) => {
-        if (bubbleEl) bubbleEl.style.top = `${0 - scrollValue * 0.1 * index}px`;
+      bubbleEls.current.forEach((el: any, index) => {
+        if (el) el.style.top = `${0 - scrollValue * 0.1 * index}px`;
       });
     };
 
@@ -25,7 +25,7 @@ export default function Bubbles() {
       {BUBBLE_GROUPS.map((bubbleGroup, index) => (
         <div
           data-bubble-group={bubbleGroup}
-          ref={(el) => (bubbleEls.current[bubbleGroup] = el)}
+          ref={(el: any) => (bubbleEls.current[bubbleGroup] = el)}
           key={bubbleGroup}
         >
           {BUBBLES.map((bubble) => (

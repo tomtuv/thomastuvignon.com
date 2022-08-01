@@ -1,11 +1,12 @@
 import { FormattedMessage } from "react-intl";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styles from "./Text.module.css";
+import React from "react";
 
-export default function Text({ block }) {
+export default function Text({ block }: any) {
   return (
     <section data-container="" aria-labelledby={block.sys.id}>
-      <div style={{ "--grid-column-lg": "2 / span 10" }}>
+      <div style={{ "--grid-column-lg": "2 / span 10" } as React.CSSProperties}>
         <header className={styles.header}>
           <h2 id={block.sys.id}>{block.title}</h2>
           <p>{block.subtitle}</p>

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NextImage from "next/future/image";
+import NextImage, { ImageProps } from "next/future/image";
 import styles from "./Image.module.css";
 
-export default function Image({ ...props }) {
+export default function Image({ src, ...props }: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
@@ -11,8 +11,9 @@ export default function Image({ ...props }) {
 
   return (
     <NextImage
+      src={src}
       className={styles.root}
-      data-loading={isLoading ? "true" : null}
+      data-loading={isLoading ? "true" : undefined}
       onLoadingComplete={handleLoadingComplete}
       {...props}
     />

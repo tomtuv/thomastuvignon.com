@@ -6,11 +6,22 @@ const SITE_URL = "https://thomastuvignon.com";
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 const TWITTER_USERNAME = "@tomtuv";
 
-export default function Seo({ title, description }) {
-  const { asPath, locale: activeLocale, locales, defaultLocale } = useRouter();
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+export default function Seo({ title, description }: Props) {
+  const {
+    asPath,
+    locale: activeLocale = "fr",
+    locales = [],
+    defaultLocale = "fr",
+  } = useRouter();
+
   const alternateLocale = locales.find((locale) => locale !== activeLocale);
 
-  const getPageURL = (locale) => {
+  const getPageURL = (locale: string) => {
     return `${SITE_URL}${
       locale !== defaultLocale ? `/${locale}` : ""
     }${asPath}`;

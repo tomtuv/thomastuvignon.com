@@ -2,7 +2,7 @@ const API_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
 
-async function fetchAPI(query, variables = {}) {
+async function fetchAPI(query: string, variables: any = {}) {
   const { preview } = variables;
 
   const response = await fetch(API_URL, {
@@ -22,7 +22,7 @@ async function fetchAPI(query, variables = {}) {
   return response.json();
 }
 
-export async function getEntryForPreview(id) {
+export async function getEntryForPreview(id: string | string[] | undefined) {
   const query = `#graphql
     query($id: String!, $preview: Boolean!) {
       entryCollection(
@@ -49,7 +49,7 @@ export async function getEntryForPreview(id) {
   return entries?.data?.entryCollection?.items?.[0];
 }
 
-export async function getHomePage(locale, preview) {
+export async function getHomePage(locale: string, preview: boolean) {
   const query = `#graphql
     query($locale: String!, $preview: Boolean!) {
       homePageCollection(
@@ -93,7 +93,11 @@ export async function getHomePage(locale, preview) {
   return entries?.data?.homePageCollection?.items?.[0];
 }
 
-export async function getProject(slug, locale, preview) {
+export async function getProject(
+  slug: string | string[] | undefined,
+  locale: string,
+  preview: boolean
+) {
   const query = `#graphql
     query($slug: String!, $locale: String!, $preview: Boolean!) {
       projectCollection(
@@ -168,7 +172,11 @@ export async function getAllProjectsWithSlug() {
   return entries?.data?.projectCollection?.items;
 }
 
-export async function getPage(slug, locale, preview) {
+export async function getPage(
+  slug: string | string[] | undefined,
+  locale: string,
+  preview: boolean
+) {
   const query = `#graphql
     query($slug: String!, $locale: String!, $preview: Boolean!) {
       pageCollection(

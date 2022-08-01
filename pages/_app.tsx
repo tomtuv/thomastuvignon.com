@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
+import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
-import Layout from "components/Layout";
-import fr from "locales/fr.json";
-import en from "locales/en.json";
+import Layout from "../components/Layout";
+import fr from "../locales/fr.json";
+import en from "../locales/en.json";
 import "styles/index.css";
 
-const MESSAGES = { fr, en };
+const MESSAGES: any = { fr, en };
 
-export default function App({ Component, pageProps, router }) {
+export default function App({ Component, pageProps, router }: AppProps) {
   const [isMobile, setIsMobile] = useState(false);
-  const { locale, defaultLocale } = useRouter();
+  const { locale = "fr", defaultLocale = "fr" } = useRouter();
 
   useEffect(() => {
     if (
@@ -34,7 +35,7 @@ export default function App({ Component, pageProps, router }) {
         defaultLocale={defaultLocale}
         messages={MESSAGES[locale]}
       >
-        <Layout {...pageProps} key={router._key}>
+        <Layout {...pageProps} key={router.asPath}>
           <Component {...pageProps} />
         </Layout>
       </IntlProvider>

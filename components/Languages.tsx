@@ -3,13 +3,13 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import styles from "./Languages.module.css";
 
-const LANGUAGE_NAMES = {
+const LANGUAGE_NAMES: any = {
   fr: "Français",
   en: "English",
 };
 
 export default function Languages() {
-  const { asPath, locale: activeLocale, locales } = useRouter();
+  const { asPath, locale: activeLocale = "fr", locales = [] } = useRouter();
   const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
 
   return (
@@ -20,8 +20,8 @@ export default function Languages() {
             className={styles.link}
             href={asPath}
             hrefLang={locale}
-            aria-current={locale === activeLocale ? "page" : null}
             locale={locale}
+            aria-current={locale === activeLocale ? "page" : undefined}
             onClick={() => {
               if (cookie.NEXT_LOCALE !== locale) {
                 setCookie("NEXT_LOCALE", locale, { path: "/" });

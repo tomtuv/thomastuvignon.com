@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Alert from "./Alert";
@@ -6,7 +7,13 @@ import Footer from "./Footer";
 import Analytics from "./Analytics";
 import styles from "./Layout.module.css";
 
-export default function Layout({ preview, children, ...props }) {
+type Props = {
+  preview: boolean;
+  children: React.ReactNode;
+  props: any;
+};
+
+export default function Layout({ preview, children, ...props }: Props) {
   const router = useRouter();
   const variant = router.pathname === "/" ? "home" : "page";
 

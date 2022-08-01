@@ -1,15 +1,20 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "./Image";
 
-export default function Media({ block }) {
+export default function Media({ block }: any) {
   return (
     <section data-container="" aria-label={block.title}>
-      {block.imagesCollection.items?.map((image) => (
+      {block.imagesCollection.items?.map((image: any) => (
         <motion.div
-          style={{
-            "--grid-column-md": block.layout !== "Full width" ? "span 6" : null,
-            "--grid-column-lg": block.layout === "3 columns" ? "span 4" : null,
-          }}
+          style={
+            {
+              "--grid-column-md":
+                block.layout !== "Full width" ? "span 6" : undefined,
+              "--grid-column-lg":
+                block.layout === "3 columns" ? "span 4" : undefined,
+            } as React.CSSProperties
+          }
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

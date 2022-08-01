@@ -1,11 +1,15 @@
-import { getEntryForPreview } from "lib/api";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getEntryForPreview } from "../../lib/api";
 
-function resolveURL(entry) {
+function resolveURL(entry: any) {
   if (entry.__typename === "Project") return `/projects/${entry.slug ?? ""}`;
   return `/${entry.slug ?? ""}`;
 }
 
-export default async function preview(req, res) {
+export default async function preview(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { token: id } = req.query;
   const entry = (await getEntryForPreview(id)) ?? {};
 

@@ -1,14 +1,32 @@
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useIntl } from "react-intl";
-import { DialogOverlay, DialogContent } from "@reach/dialog";
+import {
+  DialogOverlay as ReachDialogOverlay,
+  DialogContent as ReachDialogContent,
+} from "@reach/dialog";
 import Close from "./Close";
 import "@reach/dialog/styles.css";
 import styles from "./Modal.module.css";
 
+const DialogOverlay = React.forwardRef<HTMLDivElement, any>((props, ref) => (
+  <ReachDialogOverlay ref={ref} {...props} />
+));
+DialogOverlay.displayName = "DialogOverlay";
 const MotionDialogOverlay = motion(DialogOverlay);
+const DialogContent = React.forwardRef<HTMLDivElement, any>((props, ref) => (
+  <ReachDialogContent ref={ref} {...props} />
+));
+DialogContent.displayName = "DialogContent";
 const MotionDialogContent = motion(DialogContent);
 
-export default function Modal({ isOpen, onDismiss, videoURL }) {
+type Props = {
+  isOpen: boolean;
+  onDismiss: () => void;
+  videoURL: string;
+};
+
+export default function Modal({ isOpen, onDismiss, videoURL }: Props) {
   const { formatMessage } = useIntl();
 
   return (
