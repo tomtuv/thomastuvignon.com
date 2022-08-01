@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Alert from "./Alert";
 import Header from "./Header";
 import Footer from "./Footer";
-import Analytics from "./Analytics";
 import styles from "./Layout.module.css";
 
 type Props = {
@@ -25,7 +24,6 @@ export default function Layout({ preview, children, ...props }: Props) {
         {children}
       </motion.main>
       <Footer />
-      <Analytics />
     </div>
   );
 }
