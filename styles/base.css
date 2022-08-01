@@ -11,6 +11,12 @@ body {
   line-height: 1.5;
   color: var(--black);
   text-size-adjust: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  @media (min-resolution: 1.5dppx) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 a,
