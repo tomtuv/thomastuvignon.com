@@ -2,7 +2,7 @@ const API_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
 
-async function fetchAPI(query: string, variables: any = {}) {
+async function fetchAPI(query: string, variables: Record<string, any> = {}) {
   const { preview } = variables;
 
   const response = await fetch(API_URL, {
@@ -22,7 +22,7 @@ async function fetchAPI(query: string, variables: any = {}) {
   return response.json();
 }
 
-export async function getEntryForPreview(id: string | string[] | undefined) {
+export async function getEntryForPreview(id: string) {
   const query = `#graphql
     query($id: String!, $preview: Boolean!) {
       entryCollection(
@@ -95,7 +95,7 @@ export async function getHomePage(locale: string, preview: boolean) {
 }
 
 export async function getProject(
-  slug: string | string[] | undefined,
+  slug: string,
   locale: string,
   preview: boolean
 ) {
@@ -174,11 +174,7 @@ export async function getAllProjectsWithSlug() {
   return data?.projectCollection?.items;
 }
 
-export async function getPage(
-  slug: string | string[] | undefined,
-  locale: string,
-  preview: boolean
-) {
+export async function getPage(slug: string, locale: string, preview: boolean) {
   const query = `#graphql
     query($slug: String!, $locale: String!, $preview: Boolean!) {
       pageCollection(

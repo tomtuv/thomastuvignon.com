@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useCookies } from "react-cookie";
 import styles from "./Languages.module.css";
 
-const LANGUAGE_NAMES: any = {
+const LANGUAGE_NAMES: Record<string, string> = {
   fr: "Français",
   en: "English",
 };

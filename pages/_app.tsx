@@ -6,7 +6,7 @@ import fr from "../locales/fr.json";
 import en from "../locales/en.json";
 import "../styles/index.css";
 
-const MESSAGES: any = { fr, en };
+const MESSAGES: Record<string, any> = { fr, en };
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [isMobile, setIsMobile] = useState(false);

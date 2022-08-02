@@ -1,6 +1,7 @@
 import React from "react";
 import type {
   GetStaticPathsContext,
+  GetStaticPathsResult,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
@@ -40,8 +41,8 @@ export async function getStaticProps({
   locale = "fr",
   preview = false,
 }: GetStaticPropsContext) {
-  const project: ProjectType =
-    (await getProject(params.slug, locale, preview)) ?? {};
+  const { slug }: Record<string, any> = params;
+  const project: ProjectType = (await getProject(slug, locale, preview)) ?? {};
 
   return {
     props: { project, preview },
@@ -50,7 +51,7 @@ export async function getStaticProps({
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   const allProjects: ProjectType[] = (await getAllProjectsWithSlug()) ?? [];
-  const paths: any[] = [];
+  const paths: GetStaticPathsResult["paths"] = [];
 
   allProjects.forEach(({ slug }) => {
     for (const locale of locales) {

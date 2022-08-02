@@ -1,16 +1,25 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { HomePage, Page, Project } from "../../interfaces";
 import { getEntryForPreview } from "../../lib/api";
 
-function resolveURL(entry: any) {
-  if (entry.__typename === "Project") return `/projects/${entry.slug ?? ""}`;
-  return `/${entry.slug ?? ""}`;
+function resolveURL(entry: HomePage | Project | Page) {
+  switch (entry.__typename) {
+    case "Project":
+      return `/projects/${entry.slug ?? ""}`;
+
+    case "Page":
+      return `/${entry.slug}`;
+
+    default:
+      return "/";
+  }
 }
 
 export default async function preview(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { token: id } = req.query;
+  const { token: id }: Record<string, any> = req.query;
   const entry = (await getEntryForPreview(id)) ?? {};
 
   if (!entry) return res.status(401).json({ message: "Invalid token" });

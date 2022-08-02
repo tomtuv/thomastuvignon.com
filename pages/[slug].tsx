@@ -1,6 +1,7 @@
 import React from "react";
 import type {
   GetStaticPathsContext,
+  GetStaticPathsResult,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
@@ -41,7 +42,8 @@ export async function getStaticProps({
   locale = "fr",
   preview = false,
 }: GetStaticPropsContext) {
-  const page: PageType = (await getPage(params.slug, locale, preview)) ?? {};
+  const { slug }: Record<string, any> = params;
+  const page: PageType = (await getPage(slug, locale, preview)) ?? {};
 
   return {
     props: { page, preview },
@@ -50,7 +52,7 @@ export async function getStaticProps({
 
 export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   const allPages: PageType[] = (await getAllPagesWithSlug()) ?? [];
-  const paths: any[] = [];
+  const paths: GetStaticPathsResult["paths"] = [];
 
   allPages.forEach(({ slug }) => {
     for (const locale of locales) {
