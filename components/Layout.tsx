@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Alert from "./Alert";
 import Header from "./Header";
@@ -9,7 +9,7 @@ import styles from "./Layout.module.css";
 type Props = {
   page: HomePage | Project | Page;
   preview: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function Layout({ page, preview, children }: Props) {
