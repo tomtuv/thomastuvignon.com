@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
+import Analytics from "../components/Analytics";
 import fr from "../locales/fr.json";
 import en from "../locales/en.json";
 import "../styles/index.css";
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         defaultLocale={router.defaultLocale}
         messages={MESSAGES[router.locale ?? "fr"]}
       >
+        <Analytics />
         <Component {...pageProps} />
       </IntlProvider>
     </MotionConfig>
