@@ -1,6 +1,6 @@
 # thomastuvignon.com
 
-![og-image](https://user-images.githubusercontent.com/16865165/183249025-2c364ca9-9a7a-4ae0-a5a3-0edc533cbf31.jpg)
+![](https://user-images.githubusercontent.com/16865165/183249025-2c364ca9-9a7a-4ae0-a5a3-0edc533cbf31.jpg)
 
 This is Thomas Tuvignon’s personal website, built with Next.js.
 
