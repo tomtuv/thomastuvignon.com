@@ -1,9 +1,10 @@
 {
   "description": "Développement web. Accessibilité. Performance. Amélioration progressive.",
   "back": "Retour",
-  "close": "Fermer",
   "email": "E-mail",
-  "modalButton": "Voir le CV vidéo",
+  "exit": "Quitter",
+  "previewMode": "Cette page est en mode prévisualisation.",
   "projectLink": "Voir le site web",
-  "video": "Vidéo"
+  "video": "Vidéo",
+  "work": "Mes travaux"
 }

@@ -15,7 +15,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="linkedin"
           href="https://www.linkedin.com/in/thomastuvignon"
           target="_blank"
           rel="noopener noreferrer"
@@ -27,7 +26,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="twitter"
           href="https://twitter.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,7 +37,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="facebook"
           href="https://www.facebook.com/thomas.tuvignon"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,7 +48,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="instagram"
           href="https://www.instagram.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
@@ -63,7 +59,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="github"
           href="https://github.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
@@ -75,7 +70,6 @@ export default function Social() {
       <li>
         <a
           className={styles.icon}
-          data-variant="mail"
           href="mailto:ttuvignon@icloud.com"
           title={formatMessage({ id: "email" })}
         >

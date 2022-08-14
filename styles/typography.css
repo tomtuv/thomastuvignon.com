@@ -12,7 +12,7 @@ ol {
 h1 {
   font-size: clamp(1.875rem, 1.3281rem + 1.5625vw, 2.5rem);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.1;
 }
 
 h2 {

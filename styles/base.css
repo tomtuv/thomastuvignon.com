@@ -32,10 +32,6 @@ figure {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
-
-  @media (--motion-safe) {
-    transition: all 0.5s ease-in-out !important;
-  }
+  inline-size: 100%;
+  block-size: auto;
 }

@@ -5,14 +5,10 @@
 @custom-media --motion-safe (prefers-reduced-motion: no-preference);
 
 :root {
-  --dark-violet: lch(15.189% 43.116 305.27deg);
-  --violet: lch(41.091% 108.481 312.901deg);
-  --blue: lch(74.488% 48.473 234.464deg);
-  --green: lch(68.273% 87.151 136.638deg);
-  --yellow: lch(95.995% 94.518 104.809deg);
-  --orange: lch(69.342% 81.89 65.528deg);
-  --black: lch(9.263% 0 139.088deg);
-  --gray: lch(43.192% 0 139.088deg);
-  --light-gray: lch(95.494% 0 139.088deg);
-  --font-family: "Poppins", system-ui, sans-serif;
+  --gray: #f9f9f9;
+  --black: #242424;
+  --font-family: "Inter var", system-ui, sans-serif;
+  --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  --grid-gap: 1.5rem;
+  --page-padding-x: clamp(1.5rem, 0.188rem + 3.75vw, 3rem);
 }

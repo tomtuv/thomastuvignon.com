@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta name="theme-color" content="#31185a" />
+        <meta name="theme-color" content="#242424" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -24,8 +24,18 @@ export default function Document() {
         />
         <link rel="manifest" href="/manifest.json" />
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          href="/Inter-roman.var.woff2"
+          type="font/woff2"
+          rel="preload"
+          as="font"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="/Inter-italic.var.woff2"
+          type="font/woff2"
+          rel="preload"
+          as="font"
+          crossOrigin="anonymous"
         />
       </Head>
       <body>

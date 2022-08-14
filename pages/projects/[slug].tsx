@@ -20,17 +20,15 @@ export default function Project({
   return (
     <Layout page={project} preview={preview}>
       <Seo title={project.title} description={project.description} />
-      <article>
-        {project.blocksCollection.items?.map((block) => (
-          <React.Fragment key={block.sys.id}>
-            {block.__typename === "Text" ? (
-              <Text block={block} />
-            ) : (
-              <Media block={block} />
-            )}
-          </React.Fragment>
-        ))}
-      </article>
+      {project.blocksCollection.items?.map((block) => (
+        <React.Fragment key={block.sys.id}>
+          {block.__typename === "Text" ? (
+            <Text block={block} />
+          ) : (
+            <Media block={block} />
+          )}
+        </React.Fragment>
+      ))}
       <Back />
     </Layout>
   );

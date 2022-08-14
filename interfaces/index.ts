@@ -5,7 +5,6 @@ export type HomePage = {
   title: string;
   jobTitle: string;
   profilePicture: Image;
-  video: { url: string };
   projectsCollection: { items: Project[] };
 };
 
@@ -40,7 +39,7 @@ export type Media = {
   __typename: "Media";
   sys: { id: string };
   title: string;
-  layout: "Full width" | "2 columns" | "3 columns";
+  layout: "Full width" | "Columns";
   imagesCollection: { items: Image[] };
 };
 
