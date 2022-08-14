@@ -1,37 +1,32 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Image from "./Image";
 import type { Media as MediaType } from "../interfaces";
+import styles from "./Media.module.css";
 
 export default function Media({ block }: { block: MediaType }) {
   return (
-    <section data-container="" aria-label={block.title}>
+    <section
+      className={styles.root}
+      data-variant={block.layout === "Columns" ? "columns" : undefined}
+      aria-label={block.title}
+    >
       {block.imagesCollection.items?.map((image) => (
-        <motion.div
-          style={
-            {
-              "--grid-column-md":
-                block.layout !== "Full width" ? "span 6" : undefined,
-              "--grid-column-lg":
-                block.layout === "3 columns" ? "span 4" : undefined,
-            } as React.CSSProperties
-          }
+        <motion.figure
+          data-media=""
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           key={image.sys.id}
         >
-          <figure>
-            <Image
-              src={image.url}
-              alt={image.description || ""}
-              width={image.width}
-              height={image.height}
-              sizes="(min-width: 1200px) 1040px, (min-width: 1024px) 880px, (min-width: 768px) 640px, (min-width: 560px) 480px, 100vw"
-            />
-          </figure>
-        </motion.div>
+          <Image
+            src={image.url}
+            alt={image.description || ""}
+            width={image.width}
+            height={image.height}
+            sizes="(min-width: 1200px) 800px, 100vw"
+          />
+        </motion.figure>
       ))}
     </section>
   );

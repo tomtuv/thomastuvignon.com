@@ -1,15 +1,10 @@
-import React from "react";
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Layout from "../components/Layout";
-import Link from "next/link";
-import { useIntl } from "react-intl";
-import { motion } from "framer-motion";
+import { FormattedMessage, useIntl } from "react-intl";
 import Seo from "../components/Seo";
-import Image from "../components/Image";
 import { getHomePage } from "../lib/api";
 import type { HomePage } from "../interfaces";
-
-const MotionLink = motion(Link);
+import ProjectGrid from "../components/ProjectGrid";
 
 export default function Index({
   homePage,
@@ -20,35 +15,10 @@ export default function Index({
   return (
     <Layout page={homePage} preview={preview}>
       <Seo description={formatMessage({ id: "description" })} />
-      <div data-container="">
-        {homePage.projectsCollection.items?.map((project) => (
-          <MotionLink
-            href={`/projects/${project.slug}/`}
-            style={
-              {
-                "--grid-column": "span 6",
-                "--grid-column-lg": "span 4",
-              } as React.CSSProperties
-            }
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            title={project.title}
-            key={project.sys.id}
-          >
-            <figure>
-              <Image
-                src={project.thumbnail.url}
-                alt=""
-                width={project.thumbnail.width}
-                height={project.thumbnail.height}
-                sizes="(min-width: 1200px) 315px, (min-width: 1024px) 260px, (min-width: 768px) 308px, (min-width: 560px) 228px, 50vw"
-              />
-            </figure>
-          </MotionLink>
-        ))}
-      </div>
+      <h2>
+        <FormattedMessage id="work" />
+      </h2>
+      <ProjectGrid projects={homePage.projectsCollection.items} />
     </Layout>
   );
 }

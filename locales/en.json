@@ -1,9 +1,10 @@
 {
   "description": "Web development. Accessibility. Performance. Progressive enhancement.",
   "back": "Back",
-  "close": "Close",
   "email": "Email",
-  "modalButton": "Watch the video resume",
+  "exit": "Exit",
+  "previewMode": "This page is in preview mode.",
   "projectLink": "See the website",
-  "video": "Video"
+  "video": "Video",
+  "work": "My work"
 }

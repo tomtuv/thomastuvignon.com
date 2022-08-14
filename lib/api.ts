@@ -66,9 +66,6 @@ export async function getHomePage(locale: string, preview: boolean) {
             width
             height
           }
-          video {
-            url
-          }
           projectsCollection {
             items {
               sys {

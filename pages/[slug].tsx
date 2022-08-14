@@ -1,4 +1,3 @@
-import React from "react";
 import type {
   GetStaticPathsContext,
   GetStaticPathsResult,
@@ -19,19 +18,7 @@ export default function Page({
   return (
     <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
-      <article>
-        <div data-container="">
-          <div
-            style={
-              {
-                "--grid-column-md": "3 / span 8",
-              } as React.CSSProperties
-            }
-          >
-            {documentToReactComponents(page.body.json)}
-          </div>
-        </div>
-      </article>
+      <article>{documentToReactComponents(page.body.json)}</article>
       <Back />
     </Layout>
   );
@@ -55,12 +42,12 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   const paths: GetStaticPathsResult["paths"] = [];
 
   allPages.forEach(({ slug }) => {
-    for (const locale of locales) {
+    locales.forEach((locale) => {
       paths.push({
         params: { slug },
         locale,
       });
-    }
+    });
   });
 
   return {

@@ -5,7 +5,7 @@ import styles from "./Back.module.css";
 export default function Back() {
   return (
     <aside className={styles.root}>
-      <Link href="/" data-link="" data-variant="back">
+      <Link href="/" data-link="" data-variant="arrow-reverse">
         <FormattedMessage id="back" />
       </Link>
     </aside>

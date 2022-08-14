@@ -1,0 +1,10 @@
+.root {
+  display: grid;
+  gap: var(--grid-gap);
+
+  &[data-variant="columns"] {
+    @media (--screen-lg) {
+      grid-template-columns: var(--grid-columns-auto-fit);
+    }
+  }
+}
