@@ -42,12 +42,12 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   const paths: GetStaticPathsResult["paths"] = [];
 
   allPages.forEach(({ slug }) => {
-    for (const locale of locales) {
+    locales.forEach((locale) => {
       paths.push({
         params: { slug },
         locale,
       });
-    }
+    });
   });
 
   return {

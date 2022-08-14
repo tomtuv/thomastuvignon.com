@@ -52,12 +52,12 @@ export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
   const paths: GetStaticPathsResult["paths"] = [];
 
   allProjects.forEach(({ slug }) => {
-    for (const locale of locales) {
+    locales.forEach((locale) => {
       paths.push({
         params: { slug },
         locale,
       });
-    }
+    });
   });
 
   return {
