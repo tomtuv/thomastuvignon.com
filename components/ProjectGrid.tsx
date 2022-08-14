@@ -29,7 +29,7 @@ export default function ProjectGrid({ projects }: Props) {
               alt={project.title}
               width={project.thumbnail.width}
               height={project.thumbnail.height}
-              sizes="(min-width: 1024px) 250px, (min-width: 768px) 458px, (min-width: 560px) 340px, 50vw"
+              sizes="(min-width: 1024px) 240px, (min-width: 768px) 458px, (min-width: 560px) 340px, 50vw"
             />
           </figure>
         </MotionLink>

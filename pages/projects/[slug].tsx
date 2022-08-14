@@ -6,7 +6,7 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 import Layout from "../../components/Layout";
-import Seo from "../../components/Seo";
+import SEO from "../../components/SEO";
 import Text from "../../components/Text";
 import Media from "../../components/Media";
 import Back from "../../components/Back";
@@ -19,7 +19,7 @@ export default function Project({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout page={project} preview={preview}>
-      <Seo title={project.title} description={project.description} />
+      <SEO title={project.title} description={project.description} />
       {project.blocksCollection.items?.map((block) => (
         <React.Fragment key={block.sys.id}>
           {block.__typename === "Text" ? (

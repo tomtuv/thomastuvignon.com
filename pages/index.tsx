@@ -1,10 +1,10 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Layout from "../components/Layout";
 import { FormattedMessage, useIntl } from "react-intl";
-import Seo from "../components/Seo";
+import SEO from "../components/SEO";
+import ProjectGrid from "../components/ProjectGrid";
 import { getHomePage } from "../lib/api";
 import type { HomePage } from "../interfaces";
-import ProjectGrid from "../components/ProjectGrid";
 
 export default function Index({
   homePage,
@@ -14,7 +14,7 @@ export default function Index({
 
   return (
     <Layout page={homePage} preview={preview}>
-      <Seo description={formatMessage({ id: "description" })} />
+      <SEO description={formatMessage({ id: "description" })} />
       <h2>
         <FormattedMessage id="work" />
       </h2>

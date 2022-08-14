@@ -9,7 +9,12 @@
   font-size: 1rem;
   color: white;
   text-align: center;
-  background-color: var(--black);
+  background-color: #242424;
+  box-shadow: var(--shadow);
+
+  @media (--color-scheme-dark) {
+    background-color: #121212;
+  }
 
   @media (--screen-lg) {
     position: fixed;

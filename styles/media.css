@@ -1,4 +1,4 @@
 [data-media] {
   overflow: hidden;
-  box-shadow: 0 0.625rem 2.5rem 0 #0000001a;
+  box-shadow: var(--shadow);
 }

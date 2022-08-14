@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#242424" />
         <link
           rel="apple-touch-icon"

@@ -3,7 +3,11 @@
   padding: clamp(3rem, 1.25rem + 5vw, 5rem) var(--page-padding-x);
   color: white;
   text-align: center;
-  background-color: var(--black);
+  background-color: #242424;
+
+  @media (--color-scheme-dark) {
+    background-color: #121212;
+  }
 
   & ul {
     display: flex;

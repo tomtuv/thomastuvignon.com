@@ -11,7 +11,7 @@ type Props = {
   description?: string;
 };
 
-export default function Seo({ title, description }: Props) {
+export default function SEO({ title, description }: Props) {
   const {
     asPath,
     locale: activeLocale = "fr",
