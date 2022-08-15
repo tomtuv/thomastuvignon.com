@@ -5,6 +5,7 @@ export type HomePage = {
   title: string;
   jobTitle: string;
   profilePicture: Image;
+  intro: { json: Document };
   projectsCollection: { items: Project[] };
 };
 

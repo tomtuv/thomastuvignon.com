@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { FormattedMessage } from "react-intl";
+import Link from "./Link";
 import styles from "./Alert.module.css";
 
 export default function Alert() {
@@ -7,7 +7,7 @@ export default function Alert() {
     <div className={styles.root}>
       <p>
         <FormattedMessage id="previewMode" />{" "}
-        <Link href="/api/exit-preview" data-link="" data-variant="reverse">
+        <Link href="/api/exit-preview" variant="underline">
           <FormattedMessage id="exit" />
         </Link>
       </p>

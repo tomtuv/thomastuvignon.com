@@ -1,4 +1,5 @@
 import { useIntl } from "react-intl";
+import Link from "./Link";
 import Linkedin from "./Linkedin";
 import Twitter from "./Twitter";
 import Facebook from "./Facebook";
@@ -11,70 +12,64 @@ export default function Social() {
   const { formatMessage } = useIntl();
 
   return (
-    <ul>
+    <ul className={styles.root}>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="https://www.linkedin.com/in/thomastuvignon"
           target="_blank"
           rel="noopener noreferrer"
           title="LinkedIn"
         >
           <Linkedin />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="https://twitter.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
           title="Twitter"
         >
           <Twitter />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="https://www.facebook.com/thomas.tuvignon"
           target="_blank"
           rel="noopener noreferrer"
           title="Facebook"
         >
           <Facebook />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="https://www.instagram.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
           title="Instagram"
         >
           <Instagram />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="https://github.com/tomtuv"
           target="_blank"
           rel="noopener noreferrer"
           title="GitHub"
         >
           <Github />
-        </a>
+        </Link>
       </li>
       <li>
-        <a
-          className={styles.icon}
+        <Link
           href="mailto:ttuvignon@icloud.com"
           title={formatMessage({ id: "email" })}
         >
           <Mail />
-        </a>
+        </Link>
       </li>
     </ul>
   );

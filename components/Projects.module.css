@@ -1,0 +1,35 @@
+.root {
+  margin-block-start: clamp(3.5rem, 0.875rem + 7.5vw, 6.5rem);
+}
+
+.heading {
+  margin-block-end: 1.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+
+  @media (--screen-lg) {
+    grid-template-columns: var(--grid-columns-auto-fit);
+  }
+}
+
+.link {
+  &:hover,
+  &:focus {
+    & figure {
+      transform: scale(1.05);
+    }
+  }
+
+  & figure {
+    border-radius: clamp(0.25rem, 0.031rem + 0.63vw, 0.5rem);
+    will-change: transform;
+
+    @media (--motion-safe) {
+      transition: transform 0.2s linear;
+    }
+  }
+}

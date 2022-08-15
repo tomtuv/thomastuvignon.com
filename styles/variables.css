@@ -17,7 +17,7 @@
 
   @media (--color-scheme-dark) {
     --text-color: white;
-    --background-color: #1e1e1e;
+    --background-color: #242424;
     --shadow-color: #0000002a;
   }
 }

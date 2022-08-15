@@ -1,0 +1,4 @@
+.root {
+  font-size: clamp(1.375rem, 0.828rem + 1.56vw, 2rem);
+  line-height: 1.3;
+}

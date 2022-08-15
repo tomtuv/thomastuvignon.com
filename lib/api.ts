@@ -66,6 +66,9 @@ export async function getHomePage(locale: string, preview: boolean) {
             width
             height
           }
+          intro {
+            json
+          }
           projectsCollection {
             items {
               sys {

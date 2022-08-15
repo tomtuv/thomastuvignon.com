@@ -2,6 +2,10 @@
   display: grid;
   gap: var(--grid-gap);
 
+  &:not(:first-child) {
+    margin-block-start: clamp(3rem, 2.563rem + 1.25vw, 3.5rem);
+  }
+
   &[data-variant="columns"] {
     @media (--screen-lg) {
       grid-template-columns: var(--grid-columns-auto-fit);

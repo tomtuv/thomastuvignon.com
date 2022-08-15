@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { useCookies } from "react-cookie";
+import Link from "./Link";
 
 const LANGUAGE_NAMES: Record<string, string> = {
   fr: "Français",
@@ -17,9 +17,8 @@ export default function Languages() {
         <li key={locale}>
           <Link
             href={asPath}
-            hrefLang={locale}
             locale={locale}
-            data-link=""
+            variant="underline-inverse"
             aria-current={locale === activeLocale ? "page" : undefined}
             onClick={() => {
               if (cookie.NEXT_LOCALE !== locale) {

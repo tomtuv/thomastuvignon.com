@@ -1,20 +1,19 @@
-.icon {
-  display: block;
+.root {
+  & a {
+    display: block;
+    will-change: opacity;
 
-  @media (--motion-safe) {
-    transition: opacity 0.15s linear;
-  }
+    @media (--motion-safe) {
+      transition: opacity 0.15s linear;
+    }
 
-  &:hover,
-  &:focus {
-    opacity: 0.5;
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
   }
 
   & svg {
-    --size: clamp(1.5rem, 1.281rem + 0.63vw, 1.75rem);
-
-    display: block;
-    inline-size: var(--size);
-    block-size: var(--size);
+    inline-size: clamp(1.5rem, 1.281rem + 0.63vw, 1.75rem);
   }
 }

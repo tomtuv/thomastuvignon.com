@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { useIntl } from "react-intl";
 import Image from "./Image";
+import Link from "./Link";
 import { HomePage, Project, Page } from "../interfaces";
 import styles from "./Header.module.css";
 
@@ -15,16 +15,14 @@ export default function Header({ page }: Props) {
     <header className={styles.root}>
       {page.__typename === "HomePage" ? (
         <>
-          <figure data-media="">
-            <Image
-              src={page.profilePicture.url}
-              alt=""
-              width={page.profilePicture.width}
-              height={page.profilePicture.height}
-              sizes="(min-width: 560px) 170px, 130px"
-              priority
-            />
-          </figure>
+          <Image
+            src={page.profilePicture.url}
+            alt=""
+            width={page.profilePicture.width}
+            height={page.profilePicture.height}
+            sizes="(min-width: 560px) 170px, 130px"
+            priority
+          />
           <h1>{page.title}</h1>
           <p>{page.jobTitle}</p>
         </>
@@ -32,8 +30,7 @@ export default function Header({ page }: Props) {
         <>
           <Link
             href="/"
-            data-link=""
-            data-variant="arrow-reverse"
+            variant="underline-inverse"
             aria-label={formatMessage({ id: "back" })}
           >
             Thomas Tuvignon

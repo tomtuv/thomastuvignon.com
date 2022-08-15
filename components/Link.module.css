@@ -1,0 +1,35 @@
+.root {
+  &[data-variant^="underline"] {
+    --underline-offset: 0.1em;
+    --underline-thickness: max(1px, 0.08em);
+
+    padding-block: var(--underline-offset);
+    background-image: linear-gradient(currentcolor, currentcolor);
+    background-repeat: no-repeat;
+    background-position: bottom 0 right 100%;
+    background-size: 100% var(--underline-thickness);
+
+    &:hover,
+    &:focus {
+      color: currentcolor;
+      background-position: bottom 0 left 100%;
+      background-size: 0 var(--underline-thickness);
+    }
+
+    @media (--motion-safe) {
+      transition: background-size 0.3s ease-out;
+    }
+  }
+
+  &[data-variant="underline-inverse"] {
+    background-position: bottom 0 left 100%;
+    background-size: 0 var(--underline-thickness);
+
+    &:hover,
+    &:focus,
+    &[aria-current="page"] {
+      background-position: bottom 0 right 100%;
+      background-size: 100% var(--underline-thickness);
+    }
+  }
+}

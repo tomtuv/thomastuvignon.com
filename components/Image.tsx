@@ -10,12 +10,13 @@ export default function Image({ src, ...props }: ImageProps) {
   };
 
   return (
-    <NextImage
-      src={src}
-      className={styles.root}
-      data-loading={isLoading ? "true" : undefined}
-      onLoadingComplete={handleLoadingComplete}
-      {...props}
-    />
+    <figure className={styles.root}>
+      <NextImage
+        src={src}
+        data-loading={isLoading ? "true" : undefined}
+        onLoadingComplete={handleLoadingComplete}
+        {...props}
+      />
+    </figure>
   );
 }

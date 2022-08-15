@@ -4,9 +4,9 @@ import type {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import RichText from "../components/RichText";
 import Back from "../components/Back";
 import { getPage, getAllPagesWithSlug } from "../lib/api";
 import type { Page as PageType } from "../interfaces";
@@ -18,7 +18,9 @@ export default function Page({
   return (
     <Layout page={page} preview={preview}>
       <SEO title={page.title} description={page.description} />
-      <article>{documentToReactComponents(page.body.json)}</article>
+      <article>
+        <RichText text={page.body.json} />
+      </article>
       <Back />
     </Layout>
   );

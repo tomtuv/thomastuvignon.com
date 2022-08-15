@@ -1,28 +1,27 @@
 import { FormattedMessage } from "react-intl";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import styles from "./Text.module.css";
-import React from "react";
+import RichText from "./RichText";
+import Link from "./Link";
 import type { Text as TextType } from "../interfaces";
+import styles from "./Text.module.css";
 
 export default function Text({ block }: { block: TextType }) {
   return (
-    <section aria-labelledby={block.sys.id}>
+    <section className={styles.root} aria-labelledby={block.sys.id}>
       <header className={styles.header}>
         <h2 id={block.sys.id}>{block.title}</h2>
         <p>{block.subtitle}</p>
       </header>
       <div className={styles.text}>
-        {documentToReactComponents(block.body.json)}
+        <RichText text={block.body.json} />
         {block.link && (
-          <a
+          <Link
             href={block.link}
             target="_blank"
             rel="noopener noreferrer"
-            data-link=""
-            data-variant="arrow"
+            variant="underline"
           >
             <FormattedMessage id="projectLink" />
-          </a>
+          </Link>
         )}
       </div>
     </section>

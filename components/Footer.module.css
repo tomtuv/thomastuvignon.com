@@ -12,13 +12,10 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
+    gap: clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
     justify-content: center;
     padding: 0;
-    margin: 0 0 clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
+    margin-block-end: clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
     list-style: none;
-  }
-
-  & li:not(:last-child) {
-    margin: 0 clamp(1.5rem, 1.063rem + 1.25vw, 2rem) 0 0;
   }
 }

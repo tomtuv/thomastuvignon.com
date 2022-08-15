@@ -7,7 +7,7 @@
       "header alert"
       "header content"
       "header footer";
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-columns: minmax(auto, 30rem) minmax(66.6667%, 1fr);
   }
 }
 
@@ -19,20 +19,6 @@
     @media (--screen-lg) {
       max-inline-size: 50rem;
       margin-inline: auto;
-    }
-  }
-
-  & section {
-    &:nth-child(even) {
-      margin-block-start: clamp(3rem, 2.563rem + 1.25vw, 3.5rem);
-    }
-
-    &:nth-child(odd) {
-      margin-block-start: clamp(3.5rem, 0.875rem + 7.5vw, 6.5rem);
-    }
-
-    &:first-child {
-      margin-block-start: 0;
     }
   }
 }

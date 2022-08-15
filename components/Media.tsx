@@ -12,7 +12,6 @@ export default function Media({ block }: { block: MediaType }) {
     >
       {block.imagesCollection.items?.map((image) => (
         <motion.figure
-          data-media=""
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

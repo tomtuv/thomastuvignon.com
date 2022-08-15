@@ -1,11 +1,14 @@
 *,
-* ::before,
-* ::after {
+::before,
+::after {
   box-sizing: border-box;
 }
 
-body {
+* {
   margin: 0;
+}
+
+body {
   font-family: var(--font-family);
   font-size: clamp(1rem, 0.8906rem + 0.3125vw, 1.125rem);
   line-height: 1.5;
@@ -27,12 +30,12 @@ button {
   outline: revert;
 }
 
-figure {
-  margin: 0;
+img,
+svg {
+  display: block;
+  block-size: auto;
 }
 
 img {
-  display: block;
   inline-size: 100%;
-  block-size: auto;
 }
