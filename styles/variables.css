@@ -11,8 +11,8 @@
   --shadow-color: #0000001a;
   --font-family: "Inter var", system-ui, sans-serif;
   --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  --grid-gap: 1.5rem;
-  --page-padding-x: clamp(1.5rem, 0.188rem + 3.75vw, 3rem);
+  --grid-gap: clamp(1rem, 0.563rem + 1.25vw, 1.5rem);
+  --page-padding-x: clamp(1rem, -0.75rem + 5vw, 3rem);
   --shadow: 0 0.625rem 2.5rem 0 var(--shadow-color);
 
   @media (--color-scheme-dark) {
