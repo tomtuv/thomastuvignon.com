@@ -3,8 +3,6 @@
   box-shadow: var(--shadow);
 
   & img {
-    background-color: white;
-
     @media (--motion-safe) {
       transition: filter 0.5s ease-in-out;
     }
