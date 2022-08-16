@@ -16,7 +16,5 @@
 }
 
 .text {
-  & > a:not(:empty + a) {
-    margin-block-start: 2rem;
-  }
+  margin-block-end: 2rem;
 }

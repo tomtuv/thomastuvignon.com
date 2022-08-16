@@ -13,17 +13,17 @@ export default function Text({ block }: { block: TextType }) {
       </header>
       <div className={styles.text}>
         <RichText text={block.body.json} />
-        {block.link && (
-          <Link
-            href={block.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="underline"
-          >
-            <FormattedMessage id="projectLink" />
-          </Link>
-        )}
       </div>
+      {block.link && (
+        <Link
+          href={block.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="underline"
+        >
+          <FormattedMessage id="projectLink" />
+        </Link>
+      )}
     </section>
   );
 }
