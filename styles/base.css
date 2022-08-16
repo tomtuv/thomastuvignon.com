@@ -24,15 +24,14 @@ body {
   }
 }
 
-a {
+:any-link {
   color: inherit;
   text-decoration: none;
 }
 
-button {
-  all: unset;
-  cursor: pointer;
-  outline: revert;
+[role="list"] {
+  padding-inline-start: 0;
+  list-style-type: none;
 }
 
 img,

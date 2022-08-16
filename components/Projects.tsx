@@ -15,9 +15,9 @@ export default function Projects({ projects }: Props) {
       <h2 id="projects-heading" className={styles.heading}>
         <FormattedMessage id="work" />
       </h2>
-      <div className={styles.grid}>
+      <ul className={styles.grid} role="list">
         {projects?.map((project) => (
-          <motion.div
+          <motion.li
             className={styles.link}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,9 +34,9 @@ export default function Projects({ projects }: Props) {
                 sizes="(min-width: 1024px) 240px, (min-width: 768px) 458px, (min-width: 560px) 340px, 50vw"
               />
             </Link>
-          </motion.div>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

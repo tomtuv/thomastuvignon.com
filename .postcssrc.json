@@ -3,6 +3,7 @@
     "postcss-preset-env": {
       "stage": 0,
       "features": {
+        "any-link-pseudo-class": false,
         "color-functional-notation": false,
         "custom-properties": false,
         "gap-properties": false,
