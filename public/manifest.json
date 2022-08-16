@@ -2,8 +2,6 @@
   "name": "Thomas Tuvignon",
   "short_name": "Thomas Tuvignon",
   "start_url": "/",
-  "background_color": "#ffffff",
-  "theme_color": "#242424",
   "display": "minimal-ui",
   "icons": [
     {
