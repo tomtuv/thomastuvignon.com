@@ -18,7 +18,6 @@ export default function Projects({ projects }: Props) {
       <ul className={styles.grid} role="list">
         {projects?.map((project) => (
           <motion.li
-            className={styles.link}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

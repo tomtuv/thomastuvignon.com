@@ -14,13 +14,13 @@
   @media (--screen-lg) {
     grid-template-columns: var(--grid-columns-auto-fit);
   }
-}
 
-.link {
-  &:hover,
-  &:focus {
-    & figure {
-      transform: scale(1.05);
+  & a {
+    &:hover,
+    &:focus {
+      & figure {
+        transform: scale(1.05);
+      }
     }
   }
 
