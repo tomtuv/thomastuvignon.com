@@ -14,6 +14,6 @@
   }
 
   & svg {
-    inline-size: clamp(1.5rem, 1.281rem + 0.63vw, 1.75rem);
+    inline-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem);
   }
 }

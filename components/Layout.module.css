@@ -4,7 +4,6 @@
 
   @media (--screen-lg) {
     grid-template-areas:
-      "header alert"
       "header content"
       "header footer";
     grid-template-columns: minmax(auto, 30rem) minmax(66.6667%, 1fr);
@@ -13,12 +12,9 @@
 
 .content {
   grid-area: content;
-  padding: clamp(3.5rem, 0.875rem + 7.5vw, 6.5rem) var(--page-padding-x);
+  padding: var(--spacing-y) var(--spacing-x);
 
-  & > * {
-    @media (--screen-lg) {
-      max-inline-size: 50rem;
-      margin-inline: auto;
-    }
+  @media (--screen-lg) {
+    padding-inline: max(var(--spacing-x), (100% - 50rem) / 2);
   }
 }

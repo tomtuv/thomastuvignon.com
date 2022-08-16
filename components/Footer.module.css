@@ -1,21 +1,21 @@
 .root {
   grid-area: footer;
-  padding: clamp(3rem, 1.25rem + 5vw, 5rem) var(--page-padding-x);
+  padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--spacing-x);
   color: white;
   text-align: center;
-  background-color: #242424;
+  background-color: var(--black);
 
   @media (--color-scheme-dark) {
-    background-color: #121212;
+    background-color: hsl(0deg 0% 7%);
   }
 
   & ul {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
+    gap: clamp(1.5rem, 1.2rem + 1vw, 2rem);
     justify-content: center;
     padding: 0;
-    margin-block-end: clamp(1.5rem, 1.063rem + 1.25vw, 2rem);
+    margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
     list-style: none;
   }
 }

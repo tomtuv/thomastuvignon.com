@@ -1,5 +1,5 @@
 .root:not(:first-child) {
-  margin-block-start: clamp(3.5rem, 0.875rem + 7.5vw, 6.5rem);
+  margin-block-start: var(--spacing-y);
 }
 
 .header {
@@ -10,7 +10,7 @@
   }
 
   & p {
-    font-size: clamp(1.125rem, 1.0156rem + 0.3125vw, 1.25rem);
+    font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem);
     font-weight: 500;
   }
 }

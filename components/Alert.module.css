@@ -5,15 +5,15 @@
   display: grid;
   grid-area: alert;
   align-items: center;
-  padding: 0.75rem var(--page-padding-x);
+  padding: 0.75rem var(--spacing-x);
   font-size: 1rem;
   color: white;
   text-align: center;
-  background-color: #242424;
+  background-color: var(--black);
   box-shadow: var(--shadow);
 
   @media (--color-scheme-dark) {
-    background-color: #121212;
+    background-color: hsl(0deg 0% 7%);
   }
 
   @media (--screen-lg) {

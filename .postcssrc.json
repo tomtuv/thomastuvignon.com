@@ -6,7 +6,6 @@
         "color-functional-notation": false,
         "custom-properties": false,
         "gap-properties": false,
-        "lab-function": { "preserve": true },
         "logical-properties-and-values": false,
         "unset-value": false
       },
