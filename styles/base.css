@@ -13,6 +13,7 @@ body {
   font-size: clamp(1rem, 0.925rem + 0.25vw, 1.125rem);
   line-height: 1.5;
   color: var(--text-color);
+  letter-spacing: -0.01em;
   background-color: var(--background-color);
   text-size-adjust: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
