@@ -20,7 +20,7 @@ export default function Header({ page }: Props) {
             alt=""
             width={page.profilePicture.width}
             height={page.profilePicture.height}
-            sizes="(min-width: 560px) 170px, 130px"
+            sizes="(min-width: 480px) 170px, 130px"
             priority
           />
           <h1>{page.title}</h1>

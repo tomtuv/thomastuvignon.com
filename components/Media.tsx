@@ -23,7 +23,7 @@ export default function Media({ block }: { block: MediaType }) {
             alt={image.description || ""}
             width={image.width}
             height={image.height}
-            sizes="(min-width: 1200px) 800px, 100vw"
+            sizes="(min-width: 1280px) 800px, (min-width: 1024px) 757px, 100vw"
           />
         </motion.figure>
       ))}
