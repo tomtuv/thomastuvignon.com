@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 100 100">
 <style>@media (prefers-color-scheme:dark){rect{fill:#fff}path{fill:#242424}}</style>
-<rect width="100" height="100" rx="20" fill="#242424"></rect>
-<path d="M42.22 33.64L24.72 33.64L24.72 20.91L75.28 20.91L75.28 33.64L57.78 33.64L57.78 79.09L42.22 79.09L42.22 33.64Z" fill="#fff"></path>
+<rect width="100" height="100" rx="50" fill="#242424"></rect>
+<path d="M44.53 32.95L28.50 32.95L28.50 23.82L71.50 23.82L71.50 32.95L55.47 32.95L55.47 76.18L44.53 76.18L44.53 32.95Z" fill="#fff"></path>
 </svg>
