@@ -1,8 +1,7 @@
 {
   "name": "Thomas Tuvignon",
-  "short_name": "Thomas Tuvignon",
   "start_url": "/",
-  "display": "minimal-ui",
+  "display": "standalone",
   "icons": [
     {
       "purpose": "any maskable",
