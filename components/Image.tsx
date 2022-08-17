@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NextImage, { ImageProps } from "next/future/image";
+import NextImage, { type ImageProps } from "next/future/image";
 import styles from "./Image.module.css";
 
 export default function Image({ src, ...props }: ImageProps) {

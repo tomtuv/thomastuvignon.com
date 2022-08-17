@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import NextLink, { LinkProps } from "next/link";
+import React, { type ReactNode } from "react";
+import NextLink, { type LinkProps } from "next/link";
 import styles from "./Link.module.css";
 
 type Props = {
