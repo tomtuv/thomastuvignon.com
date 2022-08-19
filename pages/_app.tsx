@@ -18,8 +18,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
       >
         {process.env.NODE_ENV === "production" && (
           <Script
-            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-            src={`${process.env.NEXT_PUBLIC_UMAMI_HOST_URL}/umami.js`}
+            data-domain={process.env.NEXT_PUBLIC_DOMAIN}
+            src={`${process.env.NEXT_PUBLIC_PLAUSIBLE_HOST_URL}/js/plausible.js`}
             strategy="afterInteractive"
           />
         )}
