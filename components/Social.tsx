@@ -15,6 +15,16 @@ export default function Social() {
     <ul className={styles.root} role="list">
       <li>
         <Link
+          href="https://github.com/tomtuv"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <Github />
+        </Link>
+      </li>
+      <li>
+        <Link
           href="https://www.linkedin.com/in/thomastuvignon"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,16 +61,6 @@ export default function Social() {
           title="Instagram"
         >
           <Instagram />
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="https://github.com/tomtuv"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-        >
-          <Github />
         </Link>
       </li>
       <li>
