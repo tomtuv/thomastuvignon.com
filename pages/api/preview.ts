@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { HomePage, Page, Project } from "../../interfaces";
+import type { HomePage, Page, Project } from "../../interfaces";
 import { getEntryForPreview } from "../../lib/api";
 
 function resolveURL(entry: HomePage | Project | Page) {
