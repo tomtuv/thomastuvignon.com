@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { FormattedMessage } from "react-intl";
 import { motion } from "framer-motion";
 import Link from "./Link";
@@ -10,9 +11,11 @@ type Props = {
 };
 
 export default function Projects({ projects }: Props) {
+  const id = useId();
+
   return (
-    <section className={styles.root} aria-labelledby="projects-heading">
-      <h2 id="projects-heading" className={styles.heading}>
+    <section className={styles.root} aria-labelledby={id}>
+      <h2 id={id} className={styles.heading}>
         <FormattedMessage id="work" />
       </h2>
       <ul className={styles.grid} role="list">
