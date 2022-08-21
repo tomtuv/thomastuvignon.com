@@ -12,7 +12,7 @@ export default function Languages() {
   const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
 
   return (
-    <ul>
+    <ul role="list">
       {locales.map((locale) => (
         <li key={locale}>
           <Link

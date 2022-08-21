@@ -12,7 +12,7 @@ export default function Social() {
   const { formatMessage } = useIntl();
 
   return (
-    <ul className={styles.root}>
+    <ul className={styles.root} role="list">
       <li>
         <Link
           href="https://www.linkedin.com/in/thomastuvignon"
