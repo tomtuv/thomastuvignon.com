@@ -18,4 +18,8 @@
     margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
     list-style: none;
   }
+
+  & small {
+    font-size: inherit;
+  }
 }
