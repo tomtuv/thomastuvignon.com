@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className={styles.root}>
       <Social />
       <Languages />
-      <small>{`\u00A9 ${year} Thomas Tuvignon`}</small>
+      <small>{`© ${year} Thomas Tuvignon`}</small>
     </footer>
   );
 }
