@@ -2,7 +2,7 @@ import {
   documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
-import { INLINES, Document } from "@contentful/rich-text-types";
+import { INLINES, type Document } from "@contentful/rich-text-types";
 import Link from "./Link";
 import styles from "./RichText.module.css";
 

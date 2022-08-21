@@ -1,4 +1,4 @@
-import { Document } from "@contentful/rich-text-types";
+import type { Document } from "@contentful/rich-text-types";
 import RichText from "./RichText";
 import styles from "./Intro.module.css";
 
