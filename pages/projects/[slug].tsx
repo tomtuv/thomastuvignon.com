@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import type {
   GetStaticPathsContext,
   GetStaticPathsResult,
@@ -21,13 +21,13 @@ export default function Project({
     <Layout page={project} preview={preview}>
       <SEO title={project.title} description={project.description} />
       {project.blocksCollection.items?.map((block) => (
-        <React.Fragment key={block.sys.id}>
+        <Fragment key={block.sys.id}>
           {block.__typename === "Text" ? (
             <Text block={block} />
           ) : (
             <Media block={block} />
           )}
-        </React.Fragment>
+        </Fragment>
       ))}
       <Back />
     </Layout>

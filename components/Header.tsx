@@ -1,14 +1,10 @@
 import { useIntl } from "react-intl";
 import Image from "./Image";
 import Link from "./Link";
-import { HomePage, Project, Page } from "../interfaces";
+import type { HomePage, Project, Page } from "../interfaces";
 import styles from "./Header.module.css";
 
-type Props = {
-  page: HomePage | Project | Page;
-};
-
-export default function Header({ page }: Props) {
+export default function Header({ page }: { page: HomePage | Project | Page }) {
   const { formatMessage } = useIntl();
 
   return (

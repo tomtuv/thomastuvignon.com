@@ -13,7 +13,7 @@ export default function Image({ src, ...props }: ImageProps) {
     <figure className={styles.root}>
       <NextImage
         src={src}
-        data-loading={isLoading ? "true" : undefined}
+        data-loading={isLoading}
         onLoadingComplete={handleLoadingComplete}
         {...props}
       />

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Alert from "./Alert";
 import Header from "./Header";
 import Footer from "./Footer";
-import { HomePage, Page, Project } from "../interfaces";
+import type { HomePage, Page, Project } from "../interfaces";
 import styles from "./Layout.module.css";
 
 type Props = {

@@ -3,7 +3,8 @@ import Languages from "./Languages";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const date = new Date();
+  const year = date.getFullYear();
 
   return (
     <footer className={styles.root}>

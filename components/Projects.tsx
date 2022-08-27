@@ -6,11 +6,7 @@ import Image from "./Image";
 import type { Project } from "../interfaces";
 import styles from "./Projects.module.css";
 
-type Props = {
-  projects: Project[];
-};
-
-export default function Projects({ projects }: Props) {
+export default function Projects({ projects }: { projects: Project[] }) {
   const id = useId();
 
   return (

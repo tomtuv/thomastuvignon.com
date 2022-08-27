@@ -1,6 +1,6 @@
 import {
+  type Options,
   documentToReactComponents,
-  Options,
 } from "@contentful/rich-text-react-renderer";
 import { INLINES, type Document } from "@contentful/rich-text-types";
 import Link from "./Link";
