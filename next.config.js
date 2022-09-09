@@ -13,9 +13,6 @@ const nextConfig = {
     browsersListForSwc: true,
     legacyBrowsers: false,
     newNextLinkBehavior: true,
-    images: {
-      allowFutureImage: true,
-    },
   },
   async rewrites() {
     return [
