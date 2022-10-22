@@ -23,10 +23,10 @@ export default function Index({
 }
 
 export async function getStaticProps({
-  locale = "fr",
+  locale,
   preview = false,
 }: GetStaticPropsContext) {
-  const homePage: HomePage = (await getHomePage(locale, preview)) ?? {};
+  const homePage: HomePage = (await getHomePage(locale!, preview)) ?? {};
 
   return {
     props: { homePage, preview },

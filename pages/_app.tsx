@@ -12,9 +12,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <MotionConfig reducedMotion="user">
       <IntlProvider
-        locale={router.locale ?? "fr"}
+        locale={router.locale!}
         defaultLocale={router.defaultLocale}
-        messages={MESSAGES[router.locale ?? "fr"]}
+        messages={MESSAGES[router.locale!]}
       >
         {process.env.NODE_ENV === "production" && (
           <Script

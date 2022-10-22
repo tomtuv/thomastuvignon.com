@@ -1,22 +1,18 @@
-import type { ReactNode, AnchorHTMLAttributes } from "react";
-import NextLink, { type LinkProps } from "next/link";
+import type { ComponentProps } from "react";
+import NextLink from "next/link";
 import styles from "./Link.module.css";
 
-type Props = {
+interface Props extends ComponentProps<typeof NextLink> {
   variant?: "underline" | "underline-inverse";
-  children: ReactNode;
-} & LinkProps &
-  AnchorHTMLAttributes<HTMLAnchorElement>;
+}
 
-export default function Link({ href, variant, children, ...props }: Props) {
+export default function Link({ href, variant, ...props }: Props) {
   return (
     <NextLink
       className={styles.root}
       href={href}
       data-variant={variant}
       {...props}
-    >
-      {children}
-    </NextLink>
+    />
   );
 }

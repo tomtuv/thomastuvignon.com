@@ -27,24 +27,24 @@ export default function Page({
 }
 
 export async function getStaticProps({
-  params = {},
-  locale = "fr",
+  params,
+  locale,
   preview = false,
 }: GetStaticPropsContext) {
-  const { slug }: Record<string, any> = params;
-  const page: PageType = (await getPage(slug, locale, preview)) ?? {};
+  const { slug } = params as { slug: string };
+  const page: PageType = (await getPage(slug, locale!, preview)) ?? {};
 
   return {
     props: { page, preview },
   };
 }
 
-export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
+export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   const allPages: PageType[] = (await getAllPagesWithSlug()) ?? [];
   const paths: GetStaticPathsResult["paths"] = [];
 
   allPages.forEach(({ slug }) => {
-    locales.forEach((locale) => {
+    locales!.forEach((locale) => {
       paths.push({
         params: { slug },
         locale,

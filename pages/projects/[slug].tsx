@@ -35,24 +35,24 @@ export default function Project({
 }
 
 export async function getStaticProps({
-  params = {},
-  locale = "fr",
+  params,
+  locale,
   preview = false,
 }: GetStaticPropsContext) {
-  const { slug }: Record<string, any> = params;
-  const project: ProjectType = (await getProject(slug, locale, preview)) ?? {};
+  const { slug } = params as { slug: string };
+  const project: ProjectType = (await getProject(slug, locale!, preview)) ?? {};
 
   return {
     props: { project, preview },
   };
 }
 
-export async function getStaticPaths({ locales = [] }: GetStaticPathsContext) {
+export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   const allProjects: ProjectType[] = (await getAllProjectsWithSlug()) ?? [];
   const paths: GetStaticPathsResult["paths"] = [];
 
   allProjects.forEach(({ slug }) => {
-    locales.forEach((locale) => {
+    locales!.forEach((locale) => {
       paths.push({
         params: { slug },
         locale,

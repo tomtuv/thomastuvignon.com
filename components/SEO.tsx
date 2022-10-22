@@ -6,10 +6,10 @@ const SITE_URL = "https://thomastuvignon.com";
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 const TWITTER_USERNAME = "@tomtuv";
 
-type Props = {
+interface Props {
   title?: string;
   description?: string;
-};
+}
 
 export default function SEO({ title, description }: Props) {
   const {

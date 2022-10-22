@@ -2,6 +2,8 @@ const API_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
 
+export const graphql = String.raw;
+
 async function fetchAPI(query: string, variables: Record<string, any> = {}) {
   const { preview } = variables;
 
@@ -23,8 +25,8 @@ async function fetchAPI(query: string, variables: Record<string, any> = {}) {
 }
 
 export async function getEntryForPreview(id: string) {
-  const query = `#graphql
-    query($id: String!, $preview: Boolean!) {
+  const query = graphql`
+    query ($id: String!, $preview: Boolean!) {
       entryCollection(
         where: { sys: { id: $id } }
         limit: 1
@@ -50,13 +52,9 @@ export async function getEntryForPreview(id: string) {
 }
 
 export async function getHomePage(locale: string, preview: boolean) {
-  const query = `#graphql
-    query($locale: String!, $preview: Boolean!) {
-      homePageCollection(
-        locale: $locale
-        limit: 1
-        preview: $preview
-      ) {
+  const query = graphql`
+    query ($locale: String!, $preview: Boolean!) {
+      homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
           __typename
           title
@@ -99,8 +97,8 @@ export async function getProject(
   locale: string,
   preview: boolean
 ) {
-  const query = `#graphql
-    query($slug: String!, $locale: String!, $preview: Boolean!) {
+  const query = graphql`
+    query ($slug: String!, $locale: String!, $preview: Boolean!) {
       projectCollection(
         where: { slug: $slug }
         locale: $locale
@@ -159,7 +157,7 @@ export async function getProject(
 }
 
 export async function getAllProjectsWithSlug() {
-  const query = `#graphql
+  const query = graphql`
     query {
       projectCollection(where: { slug_exists: true }) {
         items {
@@ -175,8 +173,8 @@ export async function getAllProjectsWithSlug() {
 }
 
 export async function getPage(slug: string, locale: string, preview: boolean) {
-  const query = `#graphql
-    query($slug: String!, $locale: String!, $preview: Boolean!) {
+  const query = graphql`
+    query ($slug: String!, $locale: String!, $preview: Boolean!) {
       pageCollection(
         where: { slug: $slug }
         locale: $locale
@@ -203,7 +201,7 @@ export async function getPage(slug: string, locale: string, preview: boolean) {
 }
 
 export async function getAllPagesWithSlug() {
-  const query = `#graphql
+  const query = graphql`
     query {
       pageCollection(where: { slug_exists: true }) {
         items {

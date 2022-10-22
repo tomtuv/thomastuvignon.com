@@ -2,18 +2,18 @@ import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
 import Link from "./Link";
 
-const LANGUAGE_NAMES: Record<string, string> = {
+const LANGUAGE_NAMES = {
   fr: "Français",
   en: "English",
 };
 
 export default function Languages() {
-  const { asPath, locale: activeLocale = "fr", locales = [] } = useRouter();
+  const { asPath, locale: activeLocale, locales } = useRouter();
   const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
 
   return (
     <ul role="list">
-      {locales.map((locale) => (
+      {locales!.map((locale) => (
         <li key={locale}>
           <Link
             href={asPath}
@@ -26,7 +26,7 @@ export default function Languages() {
               }
             }}
           >
-            {LANGUAGE_NAMES[locale]}
+            {LANGUAGE_NAMES[locale as "fr" | "en"]}
           </Link>
         </li>
       ))}
