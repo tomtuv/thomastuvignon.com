@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
 import fr from "../locales/fr.json";
@@ -16,6 +17,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         defaultLocale={router.defaultLocale}
         messages={MESSAGES[router.locale!]}
       >
+        <Component {...pageProps} />
+        <Analytics />
         {process.env.NODE_ENV === "production" && (
           <Script
             data-domain={process.env.NEXT_PUBLIC_DOMAIN}
@@ -23,7 +26,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
             strategy="afterInteractive"
           />
         )}
-        <Component {...pageProps} />
       </IntlProvider>
     </MotionConfig>
   );
