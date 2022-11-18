@@ -3,7 +3,10 @@ const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
 const graphql = String.raw;
 
-async function fetchAPI(query: string, variables: Record<string, any> = {}) {
+async function fetchAPI(
+  query: string,
+  variables: Record<string, unknown> = {}
+) {
   const { preview } = variables;
 
   const response = await fetch(API_URL, {

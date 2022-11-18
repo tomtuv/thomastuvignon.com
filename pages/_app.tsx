@@ -7,7 +7,7 @@ import fr from "../locales/fr.json";
 import en from "../locales/en.json";
 import "../styles/index.css";
 
-const MESSAGES: Record<string, any> = { fr, en };
+const MESSAGES: Record<string, Record<string, string>> = { fr, en };
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (

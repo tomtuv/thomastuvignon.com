@@ -1,8 +1,7 @@
 import type {
-  GetStaticPathsContext,
-  GetStaticPathsResult,
-  GetStaticPropsContext,
   InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
 } from "next";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -26,22 +25,21 @@ export default function Page({
   );
 }
 
-export async function getStaticProps({
-  params,
-  locale,
-  preview = false,
-}: GetStaticPropsContext) {
+export const getStaticProps: GetStaticProps<{
+  page: PageType;
+  preview: boolean;
+}> = async ({ params, locale, preview = false }) => {
   const { slug } = params as { slug: string };
-  const page: PageType = (await getPage(slug, locale!, preview)) ?? {};
+  const page = await getPage(slug, locale!, preview);
 
   return {
     props: { page, preview },
   };
-}
+};
 
-export async function getStaticPaths({ locales }: GetStaticPathsContext) {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const allPages: PageType[] = (await getAllPagesWithSlug()) ?? [];
-  const paths: GetStaticPathsResult["paths"] = [];
+  const paths: { params: { slug: string }; locale: string }[] = [];
 
   allPages.forEach(({ slug }) => {
     locales!.forEach((locale) => {
@@ -53,7 +51,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   });
 
   return {
-    paths: paths ?? [],
+    paths,
     fallback: false,
   };
-}
+};

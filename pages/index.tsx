@@ -1,6 +1,6 @@
-import type { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import Layout from "../components/Layout";
+import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { useIntl } from "react-intl";
+import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Intro from "../components/Intro";
 import Projects from "../components/Projects";
@@ -22,13 +22,13 @@ export default function Index({
   );
 }
 
-export async function getStaticProps({
-  locale,
-  preview = false,
-}: GetStaticPropsContext) {
-  const homePage: HomePage = (await getHomePage(locale!, preview)) ?? {};
+export const getStaticProps: GetStaticProps<{
+  homePage: HomePage;
+  preview: boolean;
+}> = async ({ locale, preview = false }) => {
+  const homePage = (await getHomePage(locale!, preview)) ?? {};
 
   return {
     props: { homePage, preview },
   };
-}
+};

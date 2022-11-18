@@ -1,9 +1,8 @@
 import { Fragment } from "react";
 import type {
-  GetStaticPathsContext,
-  GetStaticPathsResult,
-  GetStaticPropsContext,
   InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
 } from "next";
 import Layout from "../../components/Layout";
 import SEO from "../../components/SEO";
@@ -34,22 +33,21 @@ export default function Project({
   );
 }
 
-export async function getStaticProps({
-  params,
-  locale,
-  preview = false,
-}: GetStaticPropsContext) {
+export const getStaticProps: GetStaticProps<{
+  project: ProjectType;
+  preview: boolean;
+}> = async ({ params, locale, preview = false }) => {
   const { slug } = params as { slug: string };
-  const project: ProjectType = (await getProject(slug, locale!, preview)) ?? {};
+  const project = await getProject(slug, locale!, preview);
 
   return {
     props: { project, preview },
   };
-}
+};
 
-export async function getStaticPaths({ locales }: GetStaticPathsContext) {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const allProjects: ProjectType[] = (await getAllProjectsWithSlug()) ?? [];
-  const paths: GetStaticPathsResult["paths"] = [];
+  const paths: { params: { slug: string }; locale: string }[] = [];
 
   allProjects.forEach(({ slug }) => {
     locales!.forEach((locale) => {
@@ -61,7 +59,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   });
 
   return {
-    paths: paths ?? [],
+    paths,
     fallback: false,
   };
-}
+};

@@ -19,8 +19,8 @@ export default async function preview(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { token: id }: Record<string, any> = req.query;
-  const entry = (await getEntryForPreview(id)) ?? {};
+  const { token: id } = req.query;
+  const entry = (await getEntryForPreview(id as string)) ?? {};
 
   if (!entry) return res.status(401).json({ message: "Invalid token" });
 
