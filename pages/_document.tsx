@@ -9,20 +9,6 @@ export default function Document() {
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
-        <link
-          href="/Inter-roman.var.woff2"
-          type="font/woff2"
-          rel="preload"
-          as="font"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="/Inter-italic.var.woff2"
-          type="font/woff2"
-          rel="preload"
-          as="font"
-          crossOrigin="anonymous"
-        />
       </Head>
       <body>
         <Main />
