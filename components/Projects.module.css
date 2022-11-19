@@ -1,5 +1,5 @@
 .root {
-  margin-block-start: var(--spacing-y);
+  margin-block-start: var(--space-y);
 }
 
 .heading {

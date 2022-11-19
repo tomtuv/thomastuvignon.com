@@ -1,12 +1,12 @@
 .root {
   grid-area: footer;
-  padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--spacing-x);
+  padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--space-x);
   color: white;
   text-align: center;
   background-color: var(--black);
 
   @media (--screen-lg) {
-    padding-inline: max(var(--spacing-x), (100% - 50rem) / 2);
+    padding-inline: max(var(--space-x), (100% - 50rem) / 2);
   }
 
   @media (--color-scheme-dark) {

@@ -1,6 +1,6 @@
 .root {
   grid-area: header;
-  padding: var(--spacing-y) var(--spacing-x);
+  padding: var(--space-y) var(--space-x);
   overflow: hidden;
   background-color: hsl(0deg 0% 98%);
 

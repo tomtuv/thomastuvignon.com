@@ -10,8 +10,8 @@
   --text-color: var(--black);
   --background-color: white;
   --shadow-color: hsl(0deg 0% 0% / 10%);
-  --spacing-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
-  --spacing-x: clamp(1rem, -0.2rem + 4vw, 3rem);
+  --space-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
+  --space-x: clamp(1rem, -0.2rem + 4vw, 3rem);
   --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   --grid-gap: clamp(1rem, 0.7rem + 1vw, 1.5rem);
   --shadow: 0 0.625rem 2.5rem 0 var(--shadow-color);

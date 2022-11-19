@@ -1,5 +1,5 @@
 .root:not(:first-child) {
-  margin-block-start: var(--spacing-y);
+  margin-block-start: var(--space-y);
 }
 
 .header {

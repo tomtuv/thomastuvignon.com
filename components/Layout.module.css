@@ -12,9 +12,9 @@
 
 .content {
   grid-area: content;
-  padding: var(--spacing-y) var(--spacing-x);
+  padding: var(--space-y) var(--space-x);
 
   @media (--screen-lg) {
-    padding-inline: max(var(--spacing-x), (100% - 50rem) / 2);
+    padding-inline: max(var(--space-x), (100% - 50rem) / 2);
   }
 }
