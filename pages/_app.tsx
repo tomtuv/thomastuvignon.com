@@ -12,6 +12,7 @@ const MESSAGES: Record<string, Record<string, string>> = { fr, en };
 
 const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
   fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
   adjustFontFallback: false,
 });
