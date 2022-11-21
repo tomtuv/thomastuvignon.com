@@ -1,9 +1,8 @@
 import { useIntl } from "react-intl";
 import Link from "./Link";
 import Linkedin from "./Linkedin";
+import Mastodon from "./Mastodon";
 import Twitter from "./Twitter";
-import Facebook from "./Facebook";
-import Instagram from "./Instagram";
 import Github from "./Github";
 import Mail from "./Mail";
 import styles from "./Social.module.css";
@@ -17,7 +16,7 @@ export default function Social() {
         <Link
           href="https://github.com/tomtuv"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           title="GitHub"
         >
           <Github />
@@ -27,7 +26,7 @@ export default function Social() {
         <Link
           href="https://www.linkedin.com/in/thomastuvignon"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           title="LinkedIn"
         >
           <Linkedin />
@@ -35,32 +34,22 @@ export default function Social() {
       </li>
       <li>
         <Link
+          href="https://techhub.social/@tomtuv"
+          target="_blank"
+          rel="me noopener noreferrer"
+          title="Mastodon"
+        >
+          <Mastodon />
+        </Link>
+      </li>
+      <li>
+        <Link
           href="https://twitter.com/tomtuv"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           title="Twitter"
         >
           <Twitter />
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="https://www.facebook.com/thomas.tuvignon"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Facebook"
-        >
-          <Facebook />
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="https://www.instagram.com/tomtuv"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Instagram"
-        >
-          <Instagram />
         </Link>
       </li>
       <li>
