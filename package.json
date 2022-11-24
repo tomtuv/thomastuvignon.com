@@ -13,7 +13,7 @@
     "@contentful/rich-text-types": "^15.14.1",
     "@next/font": "^13.0.5",
     "@vercel/analytics": "^0.1.5",
-    "framer-motion": "^7.6.7",
+    "framer-motion": "^7.6.10",
     "next": "^13.0.5",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
