@@ -21,7 +21,7 @@
     "react-intl": "^6.2.4"
   },
   "devDependencies": {
-    "@types/node": "^18.11.10",
+    "@types/node": "^18.11.11",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.6",
     "eslint-config-prettier": "^8.5.0",
