@@ -5,24 +5,6 @@
 @custom-media --color-scheme-dark (prefers-color-scheme: dark);
 @custom-media --motion-safe (prefers-reduced-motion: no-preference);
 
-@font-face {
-  font-family: "Inter var";
-  font-style: normal;
-  font-weight: 100 900;
-  src: url("/Inter-roman.var.woff2") format("woff2");
-  font-display: swap;
-  font-named-instance: "Regular";
-}
-
-@font-face {
-  font-family: "Inter var";
-  font-style: italic;
-  font-weight: 100 900;
-  src: url("/Inter-italic.var.woff2") format("woff2");
-  font-display: swap;
-  font-named-instance: "Italic";
-}
-
 :root {
   --black: hsl(0deg 0% 14%);
   --text-color: var(--black);
