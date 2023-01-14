@@ -16,7 +16,7 @@ export default function Header({ page }: { page: HomePage | Project | Page }) {
             alt=""
             width={page.profilePicture.width}
             height={page.profilePicture.height}
-            sizes="(min-width: 480px) 170px, 130px"
+            sizes="(min-width: 30rem) 170px, 130px"
             priority
           />
           <h1>{page.title}</h1>

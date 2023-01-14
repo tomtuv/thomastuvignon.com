@@ -1,7 +1,7 @@
-@custom-media --screen-sm (width >= 480px);
-@custom-media --screen-md (width >= 768px);
-@custom-media --screen-lg (width >= 1024px);
-@custom-media --screen-xl (width >= 1280px);
+@custom-media --screen-sm (width >= 30rem);
+@custom-media --screen-md (width >= 48rem);
+@custom-media --screen-lg (width >= 64rem);
+@custom-media --screen-xl (width >= 80rem);
 @custom-media --color-scheme-dark (prefers-color-scheme: dark);
 @custom-media --motion-safe (prefers-reduced-motion: no-preference);
 

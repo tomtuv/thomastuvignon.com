@@ -29,7 +29,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                 alt={project.title}
                 width={project.thumbnail.width}
                 height={project.thumbnail.height}
-                sizes="(min-width: 1280px) 251px, (min-width: 1024px) 366px, (min-width: 768px) 463px, (min-width: 480px) 347px, 50vw"
+                sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
               />
             </Link>
           </motion.li>
