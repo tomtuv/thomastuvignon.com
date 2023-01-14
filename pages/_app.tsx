@@ -4,9 +4,9 @@ import { Inter } from "@next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
-import fr from "../locales/fr.json";
-import en from "../locales/en.json";
-import "../styles/index.css";
+import fr from "@/locales/fr.json";
+import en from "@/locales/en.json";
+import "@/styles/globals.css";
 
 const MESSAGES: Record<string, Record<string, string>> = { fr, en };
 

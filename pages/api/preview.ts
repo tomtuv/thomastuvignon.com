@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getEntryForPreview } from "../../lib/api";
-import type { HomePage, Page, Project } from "../../interfaces";
+import type { HomePage, Page, Project } from "../../lib/types";
 
-function resolveURL(entry: HomePage | Project | Page) {
+function resolveUrl(entry: HomePage | Project | Page) {
   switch (entry.__typename) {
     case "Project":
       return `/projects/${entry.slug ?? ""}`;
@@ -24,7 +24,7 @@ export default async function preview(
 
   if (!entry) return res.status(401).json({ message: "Invalid token" });
 
-  const url = resolveURL(entry);
+  const url = resolveUrl(entry);
 
   res.setPreviewData({});
   res.write(

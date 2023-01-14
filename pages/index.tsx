@@ -1,11 +1,11 @@
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { useIntl } from "react-intl";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import Intro from "../components/Intro";
-import Projects from "../components/Projects";
-import { getHomePage } from "../lib/api";
-import type { HomePage } from "../interfaces";
+import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
+import { getHomePage } from "@/lib/api";
+import type { HomePage } from "@/lib/types";
 
 export default function Index({
   homePage,
@@ -15,7 +15,7 @@ export default function Index({
 
   return (
     <Layout page={homePage} preview={preview}>
-      <SEO description={formatMessage({ id: "description" })} />
+      <Seo description={formatMessage({ id: "description" })} />
       <Intro intro={homePage.intro.json} />
       <Projects projects={homePage.projectsCollection.items} />
     </Layout>
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<{
   homePage: HomePage;
   preview: boolean;
 }> = async ({ locale, preview = false }) => {
-  const homePage = (await getHomePage(locale!, preview)) ?? {};
+  const homePage = await getHomePage(locale!, preview);
 
   return {
     props: { homePage, preview },

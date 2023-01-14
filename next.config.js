@@ -6,7 +6,7 @@ const nextConfig = {
     defaultLocale: "fr",
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    remotePatterns: [{ protocol: "https", hostname: "images.ctfassets.net" }],
   },
   async rewrites() {
     return [

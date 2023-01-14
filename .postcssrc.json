@@ -9,7 +9,7 @@
         "gap-properties": false,
         "logical-properties-and-values": false
       },
-      "importFrom": ["./styles/variables.css"]
+      "importFrom": ["./styles/globals.css"]
     }
   }
 }

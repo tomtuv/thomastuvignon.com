@@ -4,13 +4,13 @@ import type {
   GetStaticProps,
   GetStaticPaths,
 } from "next";
-import Layout from "../../components/Layout";
-import SEO from "../../components/SEO";
-import Text from "../../components/Text";
-import Media from "../../components/Media";
-import Back from "../../components/Back";
-import { getProject, getAllProjectsWithSlug } from "../../lib/api";
-import type { Project as ProjectType } from "../../interfaces";
+import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import Text from "@/components/Text";
+import Media from "@/components/Media";
+import Back from "@/components/Back";
+import { getProject, getAllProjectsWithSlug } from "@/lib/api";
+import type { Project as ProjectType } from "@/lib/types";
 
 export default function Project({
   project,
@@ -18,7 +18,7 @@ export default function Project({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout page={project} preview={preview}>
-      <SEO title={project.title} description={project.description} />
+      <Seo title={project.title} description={project.description} />
       {project.blocksCollection.items?.map((block) => (
         <Fragment key={block.sys.id}>
           {block.__typename === "Text" ? (
@@ -33,11 +33,14 @@ export default function Project({
   );
 }
 
-export const getStaticProps: GetStaticProps<{
-  project: ProjectType;
-  preview: boolean;
-}> = async ({ params, locale, preview = false }) => {
-  const { slug } = params as { slug: string };
+export const getStaticProps: GetStaticProps<
+  {
+    project: ProjectType;
+    preview: boolean;
+  },
+  { slug: string }
+> = async ({ params, locale, preview = false }) => {
+  const { slug } = params!;
   const project = await getProject(slug, locale!, preview);
 
   return {
@@ -46,7 +49,7 @@ export const getStaticProps: GetStaticProps<{
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const allProjects: ProjectType[] = (await getAllProjectsWithSlug()) ?? [];
+  const allProjects: ProjectType[] = await getAllProjectsWithSlug();
   const paths: { params: { slug: string }; locale: string }[] = [];
 
   allProjects.forEach(({ slug }) => {

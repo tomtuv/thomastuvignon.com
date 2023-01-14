@@ -1,7 +1,7 @@
 import { useIntl } from "react-intl";
 import Image from "./Image";
 import Link from "./Link";
-import type { HomePage, Project, Page } from "../interfaces";
+import type { HomePage, Project, Page } from "@/lib/types";
 import styles from "./Header.module.css";
 
 export default function Header({ page }: { page: HomePage | Project | Page }) {

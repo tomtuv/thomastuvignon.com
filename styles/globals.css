@@ -1,0 +1,102 @@
+@custom-media --screen-sm (width >= 480px);
+@custom-media --screen-md (width >= 768px);
+@custom-media --screen-lg (width >= 1024px);
+@custom-media --screen-xl (width >= 1280px);
+@custom-media --color-scheme-dark (prefers-color-scheme: dark);
+@custom-media --motion-safe (prefers-reduced-motion: no-preference);
+
+@font-face {
+  font-family: "Inter var";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/Inter-roman.var.woff2") format("woff2");
+  font-display: swap;
+  font-named-instance: "Regular";
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-style: italic;
+  font-weight: 100 900;
+  src: url("/Inter-italic.var.woff2") format("woff2");
+  font-display: swap;
+  font-named-instance: "Italic";
+}
+
+:root {
+  --black: hsl(0deg 0% 14%);
+  --text-color: var(--black);
+  --background-color: white;
+  --shadow-color: hsl(0deg 0% 0% / 10%);
+  --space-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
+  --space-x: clamp(1rem, -0.2rem + 4vw, 3rem);
+  --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  --grid-gap: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+  --shadow: 0 0.625rem 2.5rem 0 var(--shadow-color);
+
+  @media (--color-scheme-dark) {
+    --text-color: white;
+    --background-color: var(--black);
+    --shadow-color: hsl(0deg 0% 0% / 20%);
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 0.925rem + 0.25vw, 1.125rem);
+  line-height: 1.5;
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+  background-color: var(--background-color);
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  @media (min-resolution: 1.5dppx) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+h1 {
+  font-size: clamp(1.875rem, 1.5rem + 1.25vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+img,
+svg {
+  display: block;
+  block-size: auto;
+}
+
+img {
+  inline-size: 100%;
+}
+
+:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+[role="list"] {
+  padding-inline-start: 0;
+  list-style-type: none;
+}

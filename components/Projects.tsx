@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { motion } from "framer-motion";
 import Link from "./Link";
 import Image from "./Image";
-import type { Project } from "../interfaces";
+import type { Project } from "@/lib/types";
 import styles from "./Projects.module.css";
 
 export default function Projects({ projects }: { projects: Project[] }) {

@@ -1,15 +1,15 @@
-const API_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+const Api_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
 const graphql = String.raw;
 
-async function fetchAPI(
+async function fetchApi(
   query: string,
   variables: Record<string, unknown> = {}
 ) {
   const { preview } = variables;
 
-  const response = await fetch(API_URL, {
+  const res = await fetch(Api_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,12 +18,11 @@ async function fetchAPI(
     body: JSON.stringify({ query, variables }),
   });
 
-  if (!response.ok) {
-    const { errors } = await response.json();
-    throw new Error(errors[0].message);
-  }
+  const { data, errors } = await res.json();
 
-  return response.json();
+  if (!res.ok) throw new Error(JSON.stringify(errors));
+
+  return data;
 }
 
 export async function getEntryForPreview(id: string) {
@@ -48,9 +47,9 @@ export async function getEntryForPreview(id: string) {
   `;
 
   const variables = { id, preview: true };
-  const { data } = await fetchAPI(query, variables);
+  const { data } = await fetchApi(query, variables);
 
-  return data?.entryCollection?.items?.[0];
+  return data?.entryCollection?.items?.[0] ?? {};
 }
 
 export async function getHomePage(locale: string, preview: boolean) {
@@ -89,9 +88,9 @@ export async function getHomePage(locale: string, preview: boolean) {
   `;
 
   const variables = { locale, preview };
-  const { data } = await fetchAPI(query, variables);
+  const { data } = await fetchApi(query, variables);
 
-  return data?.homePageCollection?.items?.[0];
+  return data?.homePageCollection?.items?.[0] ?? {};
 }
 
 export async function getProject(
@@ -153,9 +152,9 @@ export async function getProject(
   `;
 
   const variables = { slug, locale, preview };
-  const { data } = await fetchAPI(query, variables);
+  const { data } = await fetchApi(query, variables);
 
-  return data?.projectCollection?.items?.[0];
+  return data?.projectCollection?.items?.[0] ?? {};
 }
 
 export async function getAllProjectsWithSlug() {
@@ -169,9 +168,9 @@ export async function getAllProjectsWithSlug() {
     }
   `;
 
-  const { data } = await fetchAPI(query);
+  const { data } = await fetchApi(query);
 
-  return data?.projectCollection?.items;
+  return data?.projectCollection?.items ?? [];
 }
 
 export async function getPage(slug: string, locale: string, preview: boolean) {
@@ -197,9 +196,9 @@ export async function getPage(slug: string, locale: string, preview: boolean) {
   `;
 
   const variables = { slug, locale, preview };
-  const { data } = await fetchAPI(query, variables);
+  const { data } = await fetchApi(query, variables);
 
-  return data?.pageCollection?.items?.[0];
+  return data?.pageCollection?.items?.[0] ?? {};
 }
 
 export async function getAllPagesWithSlug() {
@@ -213,7 +212,7 @@ export async function getAllPagesWithSlug() {
     }
   `;
 
-  const entries = await fetchAPI(query);
+  const entries = await fetchApi(query);
 
-  return entries?.data?.pageCollection?.items;
+  return entries?.data?.pageCollection?.items ?? [];
 }

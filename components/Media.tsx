@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "./Image";
-import type { Media as MediaType } from "../interfaces";
+import type { Media as MediaType } from "@/lib/types";
 import styles from "./Media.module.css";
 
 export default function Media({ block }: { block: MediaType }) {

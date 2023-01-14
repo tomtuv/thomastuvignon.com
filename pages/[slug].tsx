@@ -3,12 +3,12 @@ import type {
   GetStaticProps,
   GetStaticPaths,
 } from "next";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import RichText from "../components/RichText";
-import Back from "../components/Back";
-import { getPage, getAllPagesWithSlug } from "../lib/api";
-import type { Page as PageType } from "../interfaces";
+import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import RichText from "@/components/RichText";
+import Back from "@/components/Back";
+import { getPage, getAllPagesWithSlug } from "@/lib/api";
+import type { Page as PageType } from "@/lib/types";
 
 export default function Page({
   page,
@@ -16,7 +16,7 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout page={page} preview={preview}>
-      <SEO title={page.title} description={page.description} />
+      <Seo title={page.title} description={page.description} />
       <article>
         <RichText text={page.body.json} />
       </article>
@@ -25,11 +25,14 @@ export default function Page({
   );
 }
 
-export const getStaticProps: GetStaticProps<{
-  page: PageType;
-  preview: boolean;
-}> = async ({ params, locale, preview = false }) => {
-  const { slug } = params as { slug: string };
+export const getStaticProps: GetStaticProps<
+  {
+    page: PageType;
+    preview: boolean;
+  },
+  { slug: string }
+> = async ({ params, locale, preview = false }) => {
+  const { slug } = params!;
   const page = await getPage(slug, locale!, preview);
 
   return {
@@ -38,7 +41,7 @@ export const getStaticProps: GetStaticProps<{
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const allPages: PageType[] = (await getAllPagesWithSlug()) ?? [];
+  const allPages: PageType[] = await getAllPagesWithSlug();
   const paths: { params: { slug: string }; locale: string }[] = [];
 
   allPages.forEach(({ slug }) => {
