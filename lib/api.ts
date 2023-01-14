@@ -9,7 +9,7 @@ async function fetchApi(
 ) {
   const { preview } = variables;
 
-  const res = await fetch(Api_URL, {
+  const response = await fetch(Api_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,11 +18,12 @@ async function fetchApi(
     body: JSON.stringify({ query, variables }),
   });
 
-  const { data, errors } = await res.json();
+  if (!response.ok) {
+    const { errors } = await response.json();
+    throw new Error(JSON.stringify(errors));
+  }
 
-  if (!res.ok) throw new Error(JSON.stringify(errors));
-
-  return data;
+  return response.json();
 }
 
 export async function getEntryForPreview(id: string) {
