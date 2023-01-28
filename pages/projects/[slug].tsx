@@ -44,7 +44,10 @@ export const getStaticProps: GetStaticProps<
   const project = await getProject(slug, locale!, preview);
 
   return {
-    props: { project, preview },
+    props: {
+      project,
+      preview,
+    },
   };
 };
 

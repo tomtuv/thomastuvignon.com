@@ -36,7 +36,10 @@ export const getStaticProps: GetStaticProps<
   const page = await getPage(slug, locale!, preview);
 
   return {
-    props: { page, preview },
+    props: {
+      page,
+      preview,
+    },
   };
 };
 

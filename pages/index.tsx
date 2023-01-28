@@ -29,6 +29,9 @@ export const getStaticProps: GetStaticProps<{
   const homePage = await getHomePage(locale!, preview);
 
   return {
-    props: { homePage, preview },
+    props: {
+      homePage,
+      preview,
+    },
   };
 };

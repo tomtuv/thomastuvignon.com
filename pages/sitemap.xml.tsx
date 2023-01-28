@@ -78,5 +78,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   res.write(sitemap);
   res.end();
 
-  return { props: {} };
+  return {
+    props: {},
+  };
 };
