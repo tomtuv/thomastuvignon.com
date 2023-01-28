@@ -12,11 +12,11 @@
   background-color: var(--black);
   box-shadow: var(--shadow);
 
-  @media (--color-scheme-dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: hsl(0deg 0% 7%);
   }
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     position: fixed;
     inset-block-start: 1.5rem;
     inset-inline-end: 1.5rem;

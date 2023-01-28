@@ -16,7 +16,7 @@
       background-size: 0 var(--underline-thickness);
     }
 
-    @media (--motion-safe) {
+    @media (prefers-reduced-motion: no-preference) {
       transition: background-size 0.3s ease-out;
     }
   }

@@ -11,7 +11,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--grid-gap);
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     grid-template-columns: var(--grid-columns-auto-fit);
   }
 
@@ -28,7 +28,7 @@
     border-radius: clamp(0.25rem, 0.1rem + 0.5vw, 0.5rem);
     will-change: transform;
 
-    @media (--motion-safe) {
+    @media (prefers-reduced-motion: no-preference) {
       transition: transform 0.2s linear;
     }
   }

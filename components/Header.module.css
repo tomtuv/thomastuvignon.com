@@ -4,11 +4,11 @@
   overflow: hidden;
   background-color: hsl(0deg 0% 98%);
 
-  @media (--color-scheme-dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: hsl(0deg 0% 12%);
   }
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     position: sticky;
     inset-block-start: 0;
     block-size: 100vh;

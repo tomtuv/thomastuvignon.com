@@ -3,7 +3,7 @@
     display: block;
     will-change: opacity;
 
-    @media (--motion-safe) {
+    @media (prefers-reduced-motion: no-preference) {
       transition: opacity 0.15s linear;
     }
 

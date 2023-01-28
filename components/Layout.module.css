@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas: "alert" "header" "content" "footer";
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     grid-template-areas:
       "header content"
       "header footer";
@@ -14,7 +14,7 @@
   grid-area: content;
   padding: var(--space-y) var(--space-x);
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     padding-inline: max(var(--space-x), (100% - 50rem) / 2);
   }
 }

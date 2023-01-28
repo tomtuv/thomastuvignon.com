@@ -5,11 +5,11 @@
   text-align: center;
   background-color: var(--black);
 
-  @media (--screen-lg) {
+  @media (width >= 64rem) {
     padding-inline: max(var(--space-x), (100% - 50rem) / 2);
   }
 
-  @media (--color-scheme-dark) {
+  @media (prefers-color-scheme: dark) {
     background-color: hsl(0deg 0% 7%);
   }
 

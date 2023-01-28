@@ -1,10 +1,3 @@
-@custom-media --screen-sm (width >= 30rem);
-@custom-media --screen-md (width >= 48rem);
-@custom-media --screen-lg (width >= 64rem);
-@custom-media --screen-xl (width >= 80rem);
-@custom-media --color-scheme-dark (prefers-color-scheme: dark);
-@custom-media --motion-safe (prefers-reduced-motion: no-preference);
-
 :root {
   --black: hsl(0deg 0% 14%);
   --text-color: var(--black);
@@ -16,7 +9,7 @@
   --grid-gap: clamp(1rem, 0.7rem + 1vw, 1.5rem);
   --shadow: 0 0.625rem 2.5rem 0 var(--shadow-color);
 
-  @media (--color-scheme-dark) {
+  @media (prefers-color-scheme: dark) {
     --text-color: white;
     --background-color: var(--black);
     --shadow-color: hsl(0deg 0% 0% / 20%);
