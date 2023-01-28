@@ -2,10 +2,10 @@
   grid-area: header;
   padding: var(--space-y) var(--space-x);
   overflow: hidden;
-  background-color: hsl(0deg 0% 98%);
+  background-color: var(--color-alabaster);
 
   @media (prefers-color-scheme: dark) {
-    background-color: hsl(0deg 0% 12%);
+    background-color: var(--color-eerie-black);
   }
 
   @media (width >= 64rem) {

@@ -3,14 +3,14 @@
   padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--space-x);
   color: white;
   text-align: center;
-  background-color: var(--black);
+  background-color: var(--color-mine-shaft);
 
   @media (width >= 64rem) {
     padding-inline: max(var(--space-x), (100% - 50rem) / 2);
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: hsl(0deg 0% 7%);
+    background-color: var(--color-cod-gray);
   }
 
   & ul {
