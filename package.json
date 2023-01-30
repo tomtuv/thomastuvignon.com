@@ -18,7 +18,7 @@
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.2.6"
+    "react-intl": "^6.2.7"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
