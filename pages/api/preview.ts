@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getEntryForPreview } from "../../lib/api";
-import type { HomePage, Page, Project } from "../../lib/types";
+import { getEntryForPreview } from "@/lib/api";
+import type { HomePage, Page, Project } from "@/lib/types";
 
 function resolveUrl(entry: HomePage | Project | Page) {
   switch (entry.__typename) {
