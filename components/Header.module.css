@@ -18,7 +18,7 @@
   & h1 {
     margin-block-start: 0.5em;
 
-    &:not(:last-child) {
+    &:where(:not(:last-child)) {
       margin-block-end: 0.5em;
     }
   }

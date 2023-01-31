@@ -18,7 +18,7 @@
   & a {
     &:hover,
     &:focus {
-      & figure {
+      & :where(figure) {
         transform: scale(1.05);
       }
     }
