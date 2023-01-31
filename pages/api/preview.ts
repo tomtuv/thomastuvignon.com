@@ -19,10 +19,15 @@ export default async function preview(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { token: id } = req.query;
-  const entry = (await getEntryForPreview(id as string)) ?? {};
+  const { secret, entryId } = req.query as { secret: string; entryId: string };
 
-  if (!entry) return res.status(401).json({ message: "Invalid token" });
+  if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET || !entryId) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+
+  const entry = (await getEntryForPreview(entryId)) ?? {};
+
+  if (!entry) return res.status(401).json({ message: "Invalid entry ID" });
 
   const url = resolveUrl(entry);
 
