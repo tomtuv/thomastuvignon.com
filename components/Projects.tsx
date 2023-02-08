@@ -6,7 +6,11 @@ import Image from "./Image";
 import type { Project } from "@/lib/types";
 import styles from "./Projects.module.css";
 
-export default function Projects({ projects }: { projects: Project[] }) {
+export default function Projects({
+  projects,
+}: {
+  projects?: (Project | null)[];
+}) {
   const id = useId();
 
   return (
@@ -21,16 +25,18 @@ export default function Projects({ projects }: { projects: Project[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            key={project.sys.id}
+            key={project?.sys.id}
           >
-            <Link href={`/projects/${project.slug}/`}>
-              <Image
-                src={project.thumbnail.url}
-                alt={project.title}
-                width={project.thumbnail.width}
-                height={project.thumbnail.height}
-                sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
-              />
+            <Link href={`/projects/${project?.slug}/`}>
+              {project?.thumbnail?.url && (
+                <Image
+                  src={project.thumbnail.url}
+                  alt={project.title ?? ""}
+                  width={project.thumbnail.width!}
+                  height={project.thumbnail.height!}
+                  sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
+                />
+              )}
             </Link>
           </motion.li>
         ))}

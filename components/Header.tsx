@@ -11,14 +11,16 @@ export default function Header({ page }: { page: HomePage | Project | Page }) {
     <header className={styles.root}>
       {page.__typename === "HomePage" ? (
         <>
-          <Image
-            src={page.profilePicture.url}
-            alt=""
-            width={page.profilePicture.width}
-            height={page.profilePicture.height}
-            sizes="(min-width: 30rem) 170px, 130px"
-            priority
-          />
+          {page.profilePicture?.url && (
+            <Image
+              src={page.profilePicture.url}
+              alt=""
+              width={page.profilePicture.width!}
+              height={page.profilePicture.height!}
+              sizes="(min-width: 30rem) 170px, 130px"
+              priority
+            />
+          )}
           <h1>{page.title}</h1>
           <p>{page.jobTitle}</p>
         </>

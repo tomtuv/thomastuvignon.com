@@ -18,7 +18,7 @@ export default function Page({
     <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
-        <RichText text={page.body.json} />
+        <RichText text={page?.body?.json} />
       </article>
       <Back />
     </Layout>
@@ -35,6 +35,12 @@ export const getStaticProps: GetStaticProps<
   const { slug } = params!;
   const page = await getPage(slug, locale!, preview);
 
+  if (!page) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       page,
@@ -44,13 +50,15 @@ export const getStaticProps: GetStaticProps<
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const allPages: PageType[] = await getAllPagesWithSlug();
+  const allPages = await getAllPagesWithSlug();
   const paths: { params: { slug: string }; locale: string }[] = [];
 
-  allPages.forEach(({ slug }) => {
+  allPages.forEach((page) => {
     locales!.forEach((locale) => {
+      if (!page?.slug) return;
+
       paths.push({
-        params: { slug },
+        params: { slug: page.slug },
         locale,
       });
     });

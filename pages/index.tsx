@@ -16,8 +16,8 @@ export default function Index({
   return (
     <Layout page={homePage} preview={preview}>
       <Seo description={formatMessage({ id: "description" })} />
-      <Intro intro={homePage.intro.json} />
-      <Projects projects={homePage.projectsCollection.items} />
+      <Intro intro={homePage?.intro?.json} />
+      <Projects projects={homePage?.projectsCollection?.items} />
     </Layout>
   );
 }
@@ -27,6 +27,12 @@ export const getStaticProps: GetStaticProps<{
   preview: boolean;
 }> = async ({ locale, preview = false }) => {
   const homePage = await getHomePage(locale!, preview);
+
+  if (!homePage) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

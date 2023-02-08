@@ -12,7 +12,7 @@ export default function Text({ block }: { block: TextType }) {
         <p>{block.subtitle}</p>
       </header>
       <div className={styles.text}>
-        <RichText text={block.body.json} />
+        <RichText text={block?.body?.json} />
       </div>
       {block.link && (
         <Link

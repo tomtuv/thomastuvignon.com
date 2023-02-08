@@ -1,4 +1,5 @@
 .root {
+  display: block;
   overflow: hidden;
   box-shadow: var(--shadow);
 
