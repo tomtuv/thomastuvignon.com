@@ -6,7 +6,7 @@ import type {
   ProjectCollection,
 } from "./types";
 
-function getHeaders(preview: boolean) {
+function getHeaders(preview?: boolean) {
   return new Headers({
     Authorization: `Bearer ${
       preview
@@ -18,7 +18,7 @@ function getHeaders(preview: boolean) {
 
 const client = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-  { headers: getHeaders(false) }
+  { headers: getHeaders() }
 );
 
 export async function getEntryForPreview(id: string) {
@@ -48,7 +48,7 @@ export async function getEntryForPreview(id: string) {
     entryCollection: EntryCollection;
   }>(query, variables, getHeaders(true));
 
-  return entryCollection?.items?.[0] ?? null;
+  return entryCollection.items[0];
 }
 
 export async function getHomePage(locale: string, preview: boolean) {
@@ -92,7 +92,7 @@ export async function getHomePage(locale: string, preview: boolean) {
     homePageCollection: HomePageCollection;
   }>(query, variables, getHeaders(preview));
 
-  return homePageCollection?.items?.[0] ?? null;
+  return homePageCollection.items[0];
 }
 
 export async function getProject(
@@ -159,7 +159,7 @@ export async function getProject(
     projectCollection: ProjectCollection;
   }>(query, variables, getHeaders(preview));
 
-  return projectCollection?.items?.[0] ?? null;
+  return projectCollection.items[0];
 }
 
 export async function getAllProjectsWithSlug() {
@@ -177,7 +177,7 @@ export async function getAllProjectsWithSlug() {
     projectCollection: ProjectCollection;
   }>(query);
 
-  return projectCollection?.items ?? [];
+  return projectCollection.items;
 }
 
 export async function getPage(slug: string, locale: string, preview: boolean) {
@@ -208,7 +208,7 @@ export async function getPage(slug: string, locale: string, preview: boolean) {
     pageCollection: PageCollection;
   }>(query, variables, getHeaders(preview));
 
-  return pageCollection?.items?.[0] ?? null;
+  return pageCollection.items[0];
 }
 
 export async function getAllPagesWithSlug() {
@@ -226,5 +226,5 @@ export async function getAllPagesWithSlug() {
     pageCollection: PageCollection;
   }>(query);
 
-  return pageCollection?.items ?? [];
+  return pageCollection.items;
 }

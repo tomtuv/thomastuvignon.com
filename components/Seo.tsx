@@ -5,10 +5,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 const OG_IMAGE_URL = `${SITE_URL}/og-image.jpg`;
 const TWITTER_USERNAME = "@tomtuv";
 
-interface Props {
+type Props = {
   title?: string | null;
   description?: string | null;
-}
+};
 
 export default function Seo({ title, description }: Props) {
   return (

@@ -18,7 +18,7 @@ export default function Page({
     <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
-        <RichText text={page?.body?.json} />
+        <RichText text={page.body?.json} />
       </article>
       <Back />
     </Layout>
