@@ -1,33 +1,28 @@
-const API_URL = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
-const PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
-const graphql = String.raw;
+import { GraphQLClient, gql } from "graphql-request";
+import type {
+  EntryCollection,
+  HomePageCollection,
+  PageCollection,
+  ProjectCollection,
+} from "./types";
 
-async function fetchApi(
-  query: string,
-  variables: Record<string, unknown> = {}
-) {
-  const { preview } = variables;
-
-  const response = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${preview ? PREVIEW_ACCESS_TOKEN : ACCESS_TOKEN}`,
-    },
-    body: JSON.stringify({ query, variables }),
+function getHeaders(preview: boolean) {
+  return new Headers({
+    Authorization: `Bearer ${
+      preview
+        ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+        : process.env.CONTENTFUL_ACCESS_TOKEN
+    }`,
   });
-
-  if (!response.ok) {
-    const { errors } = await response.json();
-    throw new Error(JSON.stringify(errors));
-  }
-
-  return response.json();
 }
 
+const client = new GraphQLClient(
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+  { headers: getHeaders(false) }
+);
+
 export async function getEntryForPreview(id: string) {
-  const query = graphql`
+  const query = gql`
     query ($id: String!, $preview: Boolean!) {
       entryCollection(
         where: { sys: { id: $id } }
@@ -48,13 +43,16 @@ export async function getEntryForPreview(id: string) {
   `;
 
   const variables = { id, preview: true };
-  const { data } = await fetchApi(query, variables);
 
-  return data?.entryCollection?.items?.[0] ?? {};
+  const { entryCollection } = await client.request<{
+    entryCollection: EntryCollection;
+  }>(query, variables, getHeaders(true));
+
+  return entryCollection?.items?.[0] ?? null;
 }
 
 export async function getHomePage(locale: string, preview: boolean) {
-  const query = graphql`
+  const query = gql`
     query ($locale: String!, $preview: Boolean!) {
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
@@ -89,9 +87,12 @@ export async function getHomePage(locale: string, preview: boolean) {
   `;
 
   const variables = { locale, preview };
-  const { data } = await fetchApi(query, variables);
 
-  return data?.homePageCollection?.items?.[0] ?? {};
+  const { homePageCollection } = await client.request<{
+    homePageCollection: HomePageCollection;
+  }>(query, variables, getHeaders(preview));
+
+  return homePageCollection?.items?.[0] ?? null;
 }
 
 export async function getProject(
@@ -99,7 +100,7 @@ export async function getProject(
   locale: string,
   preview: boolean
 ) {
-  const query = graphql`
+  const query = gql`
     query ($slug: String!, $locale: String!, $preview: Boolean!) {
       projectCollection(
         where: { slug: $slug }
@@ -153,13 +154,16 @@ export async function getProject(
   `;
 
   const variables = { slug, locale, preview };
-  const { data } = await fetchApi(query, variables);
 
-  return data?.projectCollection?.items?.[0] ?? {};
+  const { projectCollection } = await client.request<{
+    projectCollection: ProjectCollection;
+  }>(query, variables, getHeaders(preview));
+
+  return projectCollection?.items?.[0] ?? null;
 }
 
 export async function getAllProjectsWithSlug() {
-  const query = graphql`
+  const query = gql`
     query {
       projectCollection(where: { slug_exists: true }) {
         items {
@@ -169,13 +173,15 @@ export async function getAllProjectsWithSlug() {
     }
   `;
 
-  const { data } = await fetchApi(query);
+  const { projectCollection } = await client.request<{
+    projectCollection: ProjectCollection;
+  }>(query);
 
-  return data?.projectCollection?.items ?? [];
+  return projectCollection?.items ?? [];
 }
 
 export async function getPage(slug: string, locale: string, preview: boolean) {
-  const query = graphql`
+  const query = gql`
     query ($slug: String!, $locale: String!, $preview: Boolean!) {
       pageCollection(
         where: { slug: $slug }
@@ -197,13 +203,16 @@ export async function getPage(slug: string, locale: string, preview: boolean) {
   `;
 
   const variables = { slug, locale, preview };
-  const { data } = await fetchApi(query, variables);
 
-  return data?.pageCollection?.items?.[0] ?? {};
+  const { pageCollection } = await client.request<{
+    pageCollection: PageCollection;
+  }>(query, variables, getHeaders(preview));
+
+  return pageCollection?.items?.[0] ?? null;
 }
 
 export async function getAllPagesWithSlug() {
-  const query = graphql`
+  const query = gql`
     query {
       pageCollection(where: { slug_exists: true }) {
         items {
@@ -213,7 +222,9 @@ export async function getAllPagesWithSlug() {
     }
   `;
 
-  const entries = await fetchApi(query);
+  const { pageCollection } = await client.request<{
+    pageCollection: PageCollection;
+  }>(query);
 
-  return entries?.data?.pageCollection?.items ?? [];
+  return pageCollection?.items ?? [];
 }

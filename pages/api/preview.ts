@@ -25,7 +25,7 @@ export default async function preview(
     return res.status(401).json({ message: "Invalid token" });
   }
 
-  const entry = (await getEntryForPreview(entryId)) ?? {};
+  const entry = await getEntryForPreview(entryId);
 
   if (!entry) return res.status(401).json({ message: "Invalid entry ID" });
 

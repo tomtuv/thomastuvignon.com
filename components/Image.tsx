@@ -11,13 +11,13 @@ export default function Image({ src, ...props }: ImageProps) {
   };
 
   return (
-    <figure className={styles.root}>
+    <span className={styles.root}>
       <NextImage
         src={src}
         data-loading={isLoading}
         onLoadingComplete={handleLoadingComplete}
         {...props}
       />
-    </figure>
+    </span>
   );
 }

@@ -34,17 +34,19 @@ export const getServerSideProps: GetServerSideProps = async ({
           .join("")}
       </url>
       ${projects
-        .map(({ slug }: { slug: string }) => {
+        .map((project) => {
+          if (!project) return null;
+
           return xml`
             <url>
-              <loc>${`${SITE_URL}/projects/${slug}`}</loc>
-              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/projects/${slug}`}" />
+              <loc>${`${SITE_URL}/projects/${project.slug}`}</loc>
+              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/projects/${project.slug}`}" />
               ${locales!
                 .map((locale) => {
                   return xml`
                     <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""
-                  }/projects/${slug}`}" />
+                  }/projects/${project.slug}`}" />
                   `;
                 })
                 .join("")}
@@ -53,17 +55,19 @@ export const getServerSideProps: GetServerSideProps = async ({
         })
         .join("")}
       ${pages
-        .map(({ slug }: { slug: string }) => {
+        .map((page) => {
+          if (!page) return null;
+
           return xml`
             <url>
-              <loc>${`${SITE_URL}/${slug}`}</loc>
-              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/${slug}`}" />
+              <loc>${`${SITE_URL}/${page.slug}`}</loc>
+              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/${page.slug}`}" />
               ${locales!
                 .map((locale) => {
                   return xml`
                     <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""
-                  }/${slug}`}" />
+                  }/${page.slug}`}" />
                   `;
                 })
                 .join("")}

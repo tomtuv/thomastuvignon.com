@@ -23,7 +23,7 @@
     }
   }
 
-  & figure {
+  & span {
     border-radius: 50%;
     transform: translateZ(0);
     inline-size: clamp(8.125rem, 6.625rem + 5vw, 10.625rem);

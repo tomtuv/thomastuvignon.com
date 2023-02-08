@@ -19,12 +19,12 @@ export default function Project({
   return (
     <Layout page={project} preview={preview}>
       <Seo title={project.title} description={project.description} />
-      {project.blocksCollection.items?.map((block) => (
-        <Fragment key={block.sys.id}>
-          {block.__typename === "Text" ? (
+      {project?.blocksCollection?.items.map((block) => (
+        <Fragment key={block?.sys.id}>
+          {block?.__typename === "Text" ? (
             <Text block={block} />
           ) : (
-            <Media block={block} />
+            block?.__typename === "Media" && <Media block={block} />
           )}
         </Fragment>
       ))}
@@ -43,6 +43,12 @@ export const getStaticProps: GetStaticProps<
   const { slug } = params!;
   const project = await getProject(slug, locale!, preview);
 
+  if (!project) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       project,
@@ -52,13 +58,15 @@ export const getStaticProps: GetStaticProps<
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const allProjects: ProjectType[] = await getAllProjectsWithSlug();
+  const allProjects = await getAllProjectsWithSlug();
   const paths: { params: { slug: string }; locale: string }[] = [];
 
-  allProjects.forEach(({ slug }) => {
+  allProjects.forEach((project) => {
     locales!.forEach((locale) => {
+      if (!project?.slug) return;
+
       paths.push({
-        params: { slug },
+        params: { slug: project.slug },
         locale,
       });
     });
