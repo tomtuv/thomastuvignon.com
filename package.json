@@ -27,7 +27,7 @@
     "@graphql-codegen/cli": "^3.0.0",
     "@graphql-codegen/schema-ast": "^3.0.0",
     "@graphql-codegen/typescript": "^3.0.0",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.1.6",
