@@ -8,8 +8,6 @@ import fr from "@/locales/fr.json";
 import en from "@/locales/en.json";
 import "@/styles/globals.css";
 
-const MESSAGES: Record<string, Record<string, string>> = { fr, en };
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -18,12 +16,14 @@ const inter = Inter({
 });
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  const messages = { fr, en };
+
   return (
     <MotionConfig reducedMotion="user">
       <IntlProvider
         locale={router.locale!}
         defaultLocale={router.defaultLocale}
-        messages={MESSAGES[router.locale!]}
+        messages={messages[router.locale as keyof typeof messages]}
       >
         <style jsx global>{`
           :root {
