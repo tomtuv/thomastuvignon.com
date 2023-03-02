@@ -12,7 +12,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.16.2",
     "@contentful/rich-text-types": "^16.0.2",
-    "@next/font": "^13.1.6",
+    "@next/font": "^13.2.3",
     "@vercel/analytics": "^0.1.11",
     "framer-motion": "^10.0.1",
     "graphql": "^16.6.0",
