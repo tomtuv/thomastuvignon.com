@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
