@@ -1,11 +1,11 @@
-import type { AppProps } from "next/app";
-import Script from "next/script";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { MotionConfig } from "framer-motion";
+import type { AppProps } from "next/app";
+import { Inter } from "next/font/google";
+import Script from "next/script";
 import { IntlProvider } from "react-intl";
-import fr from "@/locales/fr.json";
 import en from "@/locales/en.json";
+import fr from "@/locales/fr.json";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -21,7 +21,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <MotionConfig reducedMotion="user">
       <IntlProvider
-        locale={router.locale!}
+        locale={router.locale ?? "fr"}
         defaultLocale={router.defaultLocale}
         messages={messages[router.locale as keyof typeof messages]}
       >

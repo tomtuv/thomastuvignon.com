@@ -1,14 +1,14 @@
-import { Fragment } from "react";
 import type {
   InferGetStaticPropsType,
   GetStaticProps,
   GetStaticPaths,
 } from "next";
+import { Fragment } from "react";
+import Back from "@/components/Back";
 import Layout from "@/components/Layout";
+import Media from "@/components/Media";
 import Seo from "@/components/Seo";
 import Text from "@/components/Text";
-import Media from "@/components/Media";
-import Back from "@/components/Back";
 import { getProject, getAllProjectsWithSlug } from "@/lib/api";
 import type { Project as ProjectType } from "@/lib/types";
 
@@ -39,9 +39,9 @@ export const getStaticProps: GetStaticProps<
     preview: boolean;
   },
   { slug: string }
-> = async ({ params, locale, preview = false }) => {
-  const { slug } = params!;
-  const project = await getProject(slug, locale!, preview);
+> = async ({ params, locale = "fr", preview = false }) => {
+  const { slug } = params as { slug: string };
+  const project = await getProject(slug, locale, preview);
 
   if (!project) {
     return {
@@ -62,7 +62,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths: { params: { slug: string }; locale: string }[] = [];
 
   allProjects.forEach((project) => {
-    locales!.forEach((locale) => {
+    locales?.forEach((locale) => {
       if (!project?.slug) return;
 
       paths.push({

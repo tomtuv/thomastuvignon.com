@@ -1,7 +1,7 @@
+import styles from "./Header.module.css";
 import Image from "./Image";
 import Link from "./Link";
 import type { HomePage, Project, Page } from "@/lib/types";
-import styles from "./Header.module.css";
 
 export default function Header({ page }: { page: HomePage | Project | Page }) {
   return (
@@ -12,8 +12,8 @@ export default function Header({ page }: { page: HomePage | Project | Page }) {
             <Image
               src={page.profilePicture.url}
               alt=""
-              width={page.profilePicture.width!}
-              height={page.profilePicture.height!}
+              width={Number(page.profilePicture.width)}
+              height={Number(page.profilePicture.height)}
               sizes="(min-width: 30rem) 170px, 130px"
               priority
             />

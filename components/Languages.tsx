@@ -13,7 +13,7 @@ export default function Languages() {
 
   return (
     <ul role="list">
-      {locales!.map((locale) => (
+      {locales?.map((locale) => (
         <li key={locale}>
           <Link
             href={asPath}

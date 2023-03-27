@@ -1,10 +1,10 @@
+import { motion } from "framer-motion";
 import { useId } from "react";
 import { FormattedMessage } from "react-intl";
-import { motion } from "framer-motion";
-import Link from "./Link";
 import Image from "./Image";
-import type { Project } from "@/lib/types";
+import Link from "./Link";
 import styles from "./Projects.module.css";
+import type { Project } from "@/lib/types";
 
 export default function Projects({
   projects,
@@ -32,8 +32,8 @@ export default function Projects({
                 <Image
                   src={project.thumbnail.url}
                   alt={project.title ?? ""}
-                  width={project.thumbnail.width!}
-                  height={project.thumbnail.height!}
+                  width={Number(project.thumbnail.width)}
+                  height={Number(project.thumbnail.height)}
                   sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
                 />
               )}

@@ -1,6 +1,6 @@
 import { FormattedMessage } from "react-intl";
-import Link from "./Link";
 import styles from "./Alert.module.css";
+import Link from "./Link";
 
 export default function Alert() {
   return (

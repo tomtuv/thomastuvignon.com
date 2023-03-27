@@ -1,6 +1,6 @@
 import Alert from "./Alert";
-import Header from "./Header";
 import Footer from "./Footer";
+import Header from "./Header";
 import styles from "./Layout.module.css";
 
 type Props = {

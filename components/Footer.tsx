@@ -1,6 +1,6 @@
-import Social from "./Social";
-import Languages from "./Languages";
 import styles from "./Footer.module.css";
+import Languages from "./Languages";
+import Social from "./Social";
 
 export default function Footer() {
   const date = new Date();

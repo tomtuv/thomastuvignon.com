@@ -23,8 +23,8 @@ export const getServerSideProps: GetServerSideProps = async ({
       <url>
         <loc>${SITE_URL}</loc>
         <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}" />
-        ${locales!
-          .map((locale) => {
+        ${locales
+          ?.map((locale) => {
             return xml`
               <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
               locale !== defaultLocale ? `/${locale}` : ""
@@ -41,8 +41,8 @@ export const getServerSideProps: GetServerSideProps = async ({
             <url>
               <loc>${`${SITE_URL}/projects/${project.slug}`}</loc>
               <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/projects/${project.slug}`}" />
-              ${locales!
-                .map((locale) => {
+              ${locales
+                ?.map((locale) => {
                   return xml`
                     <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""
@@ -62,8 +62,8 @@ export const getServerSideProps: GetServerSideProps = async ({
             <url>
               <loc>${`${SITE_URL}/${page.slug}`}</loc>
               <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/${page.slug}`}" />
-              ${locales!
-                .map((locale) => {
+              ${locales
+                ?.map((locale) => {
                   return xml`
                     <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""

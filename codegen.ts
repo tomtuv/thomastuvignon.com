@@ -11,7 +11,10 @@ const config: CodegenConfig = {
       },
   },
   generates: {
-    "./lib/types.ts": { plugins: ["typescript"] },
+    "./lib/types.ts": {
+      plugins: ["typescript"],
+      config: { defaultScalarType: "unknown" },
+    },
     "./lib/schema.graphql": { plugins: ["schema-ast"] },
   },
   hooks: {

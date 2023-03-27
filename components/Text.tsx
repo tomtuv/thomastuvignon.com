@@ -1,8 +1,8 @@
 import { FormattedMessage } from "react-intl";
-import RichText from "./RichText";
 import Link from "./Link";
-import type { Text as TextType } from "@/lib/types";
+import RichText from "./RichText";
 import styles from "./Text.module.css";
+import type { Text as TextType } from "@/lib/types";
 
 export default function Text({ block }: { block: TextType }) {
   return (

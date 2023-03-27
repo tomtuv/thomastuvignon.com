@@ -1,12 +1,13 @@
+import type { Document } from "@contentful/rich-text-types";
 import type {
   InferGetStaticPropsType,
   GetStaticProps,
   GetStaticPaths,
 } from "next";
-import Layout from "@/components/Layout";
-import Seo from "@/components/Seo";
-import RichText from "@/components/RichText";
 import Back from "@/components/Back";
+import Layout from "@/components/Layout";
+import RichText from "@/components/RichText";
+import Seo from "@/components/Seo";
 import { getPage, getAllPagesWithSlug } from "@/lib/api";
 import type { Page as PageType } from "@/lib/types";
 
@@ -18,7 +19,7 @@ export default function Page({
     <Layout page={page} preview={preview}>
       <Seo title={page.title} description={page.description} />
       <article>
-        <RichText text={page.body?.json} />
+        <RichText text={page.body?.json as Document} />
       </article>
       <Back />
     </Layout>
@@ -31,9 +32,9 @@ export const getStaticProps: GetStaticProps<
     preview: boolean;
   },
   { slug: string }
-> = async ({ params, locale, preview = false }) => {
-  const { slug } = params!;
-  const page = await getPage(slug, locale!, preview);
+> = async ({ params, locale = "fr", preview = false }) => {
+  const { slug } = params as { slug: string };
+  const page = await getPage(slug, locale, preview);
 
   if (!page) {
     return {
@@ -54,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths: { params: { slug: string }; locale: string }[] = [];
 
   allPages.forEach((page) => {
-    locales!.forEach((locale) => {
+    locales?.forEach((locale) => {
       if (!page?.slug) return;
 
       paths.push({

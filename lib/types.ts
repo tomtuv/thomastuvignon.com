@@ -16,11 +16,11 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  DateTime: any;
-  Dimension: any;
-  HexColor: any;
-  JSON: any;
-  Quality: any;
+  DateTime: unknown;
+  Dimension: unknown;
+  HexColor: unknown;
+  JSON: unknown;
+  Quality: unknown;
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */

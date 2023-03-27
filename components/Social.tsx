@@ -1,11 +1,11 @@
 import { useIntl } from "react-intl";
+import Github from "./Github";
 import Link from "./Link";
 import Linkedin from "./Linkedin";
-import Mastodon from "./Mastodon";
-import Twitter from "./Twitter";
-import Github from "./Github";
 import Mail from "./Mail";
+import Mastodon from "./Mastodon";
 import styles from "./Social.module.css";
+import Twitter from "./Twitter";
 
 export default function Social() {
   const { formatMessage } = useIntl();

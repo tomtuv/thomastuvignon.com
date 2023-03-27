@@ -1,9 +1,9 @@
-import { useIntl } from "react-intl";
 import { motion } from "framer-motion";
+import { useIntl } from "react-intl";
 import Image from "./Image";
-import type { Media as MediaType } from "@/lib/types";
 import styles from "./Media.module.css";
 import VisuallyHidden from "./VisuallyHidden";
+import type { Media as MediaType } from "@/lib/types";
 
 export default function Media({ block }: { block: MediaType }) {
   const { formatMessage } = useIntl();
@@ -29,8 +29,8 @@ export default function Media({ block }: { block: MediaType }) {
             <Image
               src={image.url}
               alt={`${formatMessage({ id: "page" })} ${index + 1}`}
-              width={image.width!}
-              height={image.height!}
+              width={Number(image.width)}
+              height={Number(image.height)}
               sizes="(min-width: 80rem) 800px, (min-width: 64rem) 757px, 100vw"
             />
           )}
