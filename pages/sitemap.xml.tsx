@@ -2,7 +2,6 @@ import type { GetServerSideProps } from "next";
 import { getAllProjectsWithSlug, getAllPagesWithSlug } from "@/lib/api";
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
-const xml = String.raw;
 
 export default function SiteMap() {
   return null;
@@ -18,61 +17,80 @@ export const getServerSideProps: GetServerSideProps = async ({
     getAllPagesWithSlug(),
   ]);
 
-  const sitemap = xml`<?xml version="1.0" encoding="UTF-8"?>
+  const sitemap = /* XML */ `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-      <url>
-        <loc>${SITE_URL}</loc>
-        <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}" />
-        ${locales
-          ?.map((locale) => {
-            return xml`
-              <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
-              locale !== defaultLocale ? `/${locale}` : ""
-            }`}" />
-            `;
-          })
-          .join("")}
-      </url>
+    ${locales
+      ?.map(
+        (locale) => /* XML */ `
+          <url>
+            <loc>${SITE_URL}${
+          locale !== defaultLocale ? `/${locale}` : ""
+        }</loc>
+            ${locales
+              ?.map((alternateLocale) => {
+                return /* XML */ `
+                  <xhtml:link rel="alternate" hreflang="${alternateLocale}" href="${`${SITE_URL}${
+                  alternateLocale !== defaultLocale ? `/${alternateLocale}` : ""
+                }`}" />
+                `;
+              })
+              .join("")}
+          </url>
+        `
+      )
+      .join("")}
       ${projects
         .map((project) => {
           if (!project) return null;
 
-          return xml`
-            <url>
-              <loc>${`${SITE_URL}/projects/${project.slug}`}</loc>
-              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/projects/${project.slug}`}" />
-              ${locales
-                ?.map((locale) => {
-                  return xml`
-                    <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
+          return locales
+            ?.map(
+              (locale) => /* XML */ `
+                <url>
+                  <loc>${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""
-                  }/projects/${project.slug}`}" />
-                  `;
-                })
-                .join("")}
-            </url>
-          `;
+                  }/projects/${project.slug}`}</loc>
+                  <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/projects/${project.slug}`}" />
+                  ${locales
+                    ?.map((locale) => {
+                      return /* XML */ `
+                        <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
+                        locale !== defaultLocale ? `/${locale}` : ""
+                      }/projects/${project.slug}`}" />
+                      `;
+                    })
+                    .join("")}
+                </url>
+              `
+            )
+            .join("");
         })
         .join("")}
       ${pages
         .map((page) => {
           if (!page) return null;
 
-          return xml`
-            <url>
-              <loc>${`${SITE_URL}/${page.slug}`}</loc>
-              <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/${page.slug}`}" />
-              ${locales
-                ?.map((locale) => {
-                  return xml`
-                    <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
+          return locales
+            ?.map(
+              (locale) => /* XML */ `
+                <url>
+                  <loc>${`${SITE_URL}${
                     locale !== defaultLocale ? `/${locale}` : ""
-                  }/${page.slug}`}" />
-                  `;
-                })
-                .join("")}
-            </url>
-          `;
+                  }/${page.slug}`}</loc>
+                  <xhtml:link rel="alternate" hreflang="x-default" href="${`${SITE_URL}/${page.slug}`}" />
+                  ${locales
+                    ?.map((locale) => {
+                      return /* XML */ `
+                        <xhtml:link rel="alternate" hreflang="${locale}" href="${`${SITE_URL}${
+                        locale !== defaultLocale ? `/${locale}` : ""
+                      }/${page.slug}`}" />
+                      `;
+                    })
+                    .join("")}
+                </url>
+              `
+            )
+            .join("");
         })
         .join("")}
     </urlset>
