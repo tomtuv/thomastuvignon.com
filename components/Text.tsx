@@ -1,3 +1,4 @@
+import type { Document } from "@contentful/rich-text-types";
 import { FormattedMessage } from "react-intl";
 import Link from "./Link";
 import RichText from "./RichText";
@@ -12,7 +13,7 @@ export default function Text({ block }: { block: TextType }) {
         <p>{block.subtitle}</p>
       </header>
       <div className={styles.text}>
-        <RichText text={block?.body?.json} />
+        <RichText text={block?.body?.json as Document} />
       </div>
       {block.link && (
         <Link

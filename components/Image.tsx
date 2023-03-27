@@ -1,5 +1,4 @@
-import NextImage from "next/image";
-import type { ImageProps } from "next/image";
+import NextImage, { type ImageProps } from "next/image";
 import { useState } from "react";
 import styles from "./Image.module.css";
 

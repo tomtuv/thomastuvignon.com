@@ -1,7 +1,8 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import type { Options } from "@contentful/rich-text-react-renderer";
-import { INLINES } from "@contentful/rich-text-types";
-import type { Document } from "@contentful/rich-text-types";
+import {
+  documentToReactComponents,
+  type Options,
+} from "@contentful/rich-text-react-renderer";
+import { INLINES, type Document } from "@contentful/rich-text-types";
 import Link from "./Link";
 import styles from "./RichText.module.css";
 
