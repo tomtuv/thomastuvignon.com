@@ -40,7 +40,7 @@ body {
   text-size-adjust: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  @media (min-resolution: 1.5dppx) {
+  @media (resolution >= 1.5dppx) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
