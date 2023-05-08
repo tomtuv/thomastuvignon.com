@@ -29,7 +29,7 @@ export async function generateMetadata({
     description: MESSAGES[lang as keyof typeof MESSAGES].description,
     metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: "/",
+      canonical: `/${lang}`,
       languages: LOCALES.reduce(
         (acc, locale) => ({
           ...acc,
