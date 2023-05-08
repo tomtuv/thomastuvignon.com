@@ -1,7 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import Providers from "../../components/Providers";
-import { LOCALES, MESSAGES, SITE_NAME } from "@/lib/constants";
+import { LOCALES, MESSAGES, SITE_NAME, SITE_URL } from "@/lib/constants";
 import "../globals.css";
 
 const inter = Inter({
@@ -27,7 +27,7 @@ export async function generateMetadata({
       absolute: SITE_NAME,
     },
     description: MESSAGES[lang as keyof typeof MESSAGES].description,
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL as string),
+    metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: "/",
       languages: LOCALES.reduce(
