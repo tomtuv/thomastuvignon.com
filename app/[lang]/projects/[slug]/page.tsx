@@ -1,3 +1,4 @@
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 import Back from "@/components/Back";
@@ -18,7 +19,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string; lang: string };
 }) {
-  const project = await getProject(slug, lang);
+  const { isEnabled } = draftMode();
+  const project = await getProject(slug, { locale: lang, preview: isEnabled });
 
   return {
     title: project?.title,
@@ -41,7 +43,8 @@ export default async function Project({
 }: {
   params: { slug: string; lang: string };
 }) {
-  const project = await getProject(slug, lang);
+  const { isEnabled } = draftMode();
+  const project = await getProject(slug, { locale: lang, preview: isEnabled });
 
   if (!project) notFound();
 

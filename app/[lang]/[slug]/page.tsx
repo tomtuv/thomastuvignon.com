@@ -1,4 +1,5 @@
 import type { Document } from "@contentful/rich-text-types";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Back from "@/components/Back";
 import PageLayout from "@/components/PageLayout";
@@ -17,7 +18,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string; lang: string };
 }) {
-  const page = await getPage(slug, lang);
+  const { isEnabled } = draftMode();
+  const page = await getPage(slug, { locale: lang, preview: isEnabled });
 
   return {
     title: page?.title,
@@ -40,7 +42,8 @@ export default async function Page({
 }: {
   params: { slug: string; lang: string };
 }) {
-  const page = await getPage(slug, lang);
+  const { isEnabled } = draftMode();
+  const page = await getPage(slug, { locale: lang, preview: isEnabled });
 
   if (!page) notFound();
 

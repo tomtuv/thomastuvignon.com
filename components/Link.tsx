@@ -6,7 +6,6 @@ import styles from "./Link.module.css";
 
 export default function Link({
   href,
-  hrefLang,
   variant,
   ...props
 }: React.ComponentProps<typeof NextLink> & {
@@ -14,7 +13,11 @@ export default function Link({
 }) {
   const { locale } = useIntl();
 
-  if (href.toString().startsWith("/") && !hrefLang) {
+  if (
+    href.toString().startsWith("/") &&
+    !href.toString().startsWith(`/${locale}`) &&
+    !href.toString().startsWith("/api")
+  ) {
     href = `/${locale}${href}`;
   }
 
@@ -22,7 +25,6 @@ export default function Link({
     <NextLink
       className={styles.root}
       href={href}
-      hrefLang={hrefLang}
       data-variant={variant}
       {...props}
     />

@@ -1,11 +1,11 @@
 {
-  "description": "Développement web. Accessibilité. Performance. Amélioration progressive.",
   "back": "Retour",
+  "description": "Développement web. Accessibilité. Performance. Amélioration progressive.",
+  "disable": "Désactiver",
+  "draftMode": "Cette page est en mode brouillon.",
   "email": "E-mail",
-  "exit": "Quitter",
   "introduction": "Introduction",
   "page": "Page",
-  "previewMode": "Cette page est en mode prévisualisation.",
   "projectLink": "Voir le site web",
   "work": "Mes travaux"
 }

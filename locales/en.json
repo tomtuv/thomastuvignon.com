@@ -1,11 +1,11 @@
 {
-  "description": "Web development. Accessibility. Performance. Progressive enhancement.",
   "back": "Back",
+  "description": "Web development. Accessibility. Performance. Progressive enhancement.",
+  "disable": "Disable",
+  "draftMode": "This page is in draft mode.",
   "email": "Email",
-  "exit": "Exit",
   "introduction": "Introduction",
   "page": "Page",
-  "previewMode": "This page is in preview mode.",
   "projectLink": "See the website",
   "work": "My work"
 }

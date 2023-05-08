@@ -1,4 +1,5 @@
 import type { Document } from "@contentful/rich-text-types";
+import { draftMode } from "next/headers";
 import Intro from "@/components/Intro";
 import PageLayout from "@/components/PageLayout";
 import Projects from "@/components/Projects";
@@ -10,7 +11,8 @@ export default async function Index({
 }: {
   params: { lang: string };
 }) {
-  const homePage = await getHomePage(lang);
+  const { isEnabled } = draftMode();
+  const homePage = await getHomePage({ locale: lang, preview: isEnabled });
 
   return (
     <PageLayout page={homePage as HomePage}>
