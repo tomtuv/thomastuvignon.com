@@ -3,6 +3,7 @@
 import NextLink from "next/link";
 import { useIntl } from "react-intl";
 import styles from "./Link.module.css";
+import { LOCALES } from "@/lib/constants";
 
 export default function Link({
   href,
@@ -15,8 +16,8 @@ export default function Link({
 
   if (
     href.toString().startsWith("/") &&
-    !href.toString().startsWith(`/${locale}`) &&
-    !href.toString().startsWith("/api")
+    !href.toString().startsWith("/api") &&
+    !LOCALES.includes(href.toString().split("/")[1] as (typeof LOCALES)[number])
   ) {
     href = `/${locale}${href}`;
   }
