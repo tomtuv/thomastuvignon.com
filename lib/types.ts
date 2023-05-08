@@ -355,6 +355,7 @@ export type HomePageFilter = {
   jobTitle_not_contains?: InputMaybe<Scalars["String"]>;
   jobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
   profilePicture_exists?: InputMaybe<Scalars["Boolean"]>;
+  projects?: InputMaybe<CfProjectNestedFilter>;
   projectsCollection_exists?: InputMaybe<Scalars["Boolean"]>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars["String"]>;
@@ -1179,3 +1180,33 @@ export enum TextOrder {
   TitleAsc = "title_ASC",
   TitleDesc = "title_DESC",
 }
+
+export type CfProjectNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfProjectNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfProjectNestedFilter>>>;
+  blocksCollection_exists?: InputMaybe<Scalars["Boolean"]>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars["String"]>;
+  description_contains?: InputMaybe<Scalars["String"]>;
+  description_exists?: InputMaybe<Scalars["Boolean"]>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  description_not?: InputMaybe<Scalars["String"]>;
+  description_not_contains?: InputMaybe<Scalars["String"]>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug?: InputMaybe<Scalars["String"]>;
+  slug_contains?: InputMaybe<Scalars["String"]>;
+  slug_exists?: InputMaybe<Scalars["Boolean"]>;
+  slug_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  slug_not?: InputMaybe<Scalars["String"]>;
+  slug_not_contains?: InputMaybe<Scalars["String"]>;
+  slug_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  sys?: InputMaybe<SysFilter>;
+  thumbnail_exists?: InputMaybe<Scalars["Boolean"]>;
+  title?: InputMaybe<Scalars["String"]>;
+  title_contains?: InputMaybe<Scalars["String"]>;
+  title_exists?: InputMaybe<Scalars["Boolean"]>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+  title_not?: InputMaybe<Scalars["String"]>;
+  title_not_contains?: InputMaybe<Scalars["String"]>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]>>>;
+};

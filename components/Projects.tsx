@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useId } from "react";
 import { FormattedMessage } from "react-intl";

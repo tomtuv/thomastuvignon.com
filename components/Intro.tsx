@@ -1,3 +1,5 @@
+"use client";
+
 import type { Document } from "@contentful/rich-text-types";
 import { useId } from "react";
 import { FormattedMessage } from "react-intl";

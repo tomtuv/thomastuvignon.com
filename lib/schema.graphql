@@ -255,6 +255,7 @@ input HomePageFilter {
   jobTitle_not_contains: String
   jobTitle_not_in: [String]
   profilePicture_exists: Boolean
+  projects: cfProjectNestedFilter
   projectsCollection_exists: Boolean
   sys: SysFilter
   title: String
@@ -979,4 +980,34 @@ enum TextOrder {
   sys_publishedVersion_DESC
   title_ASC
   title_DESC
+}
+
+input cfProjectNestedFilter {
+  AND: [cfProjectNestedFilter]
+  OR: [cfProjectNestedFilter]
+  blocksCollection_exists: Boolean
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  slug: String
+  slug_contains: String
+  slug_exists: Boolean
+  slug_in: [String]
+  slug_not: String
+  slug_not_contains: String
+  slug_not_in: [String]
+  sys: SysFilter
+  thumbnail_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
 }

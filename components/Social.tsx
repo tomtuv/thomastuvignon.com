@@ -1,3 +1,5 @@
+"use client";
+
 import { useIntl } from "react-intl";
 import Github from "./Github";
 import Link from "./Link";

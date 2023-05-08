@@ -1,4 +1,3 @@
-import { GraphQLClient, gql } from "graphql-request";
 import type {
   EntryCollection,
   HomePageCollection,
@@ -6,29 +5,47 @@ import type {
   ProjectCollection,
 } from "./types";
 
-function getHeaders(preview?: boolean) {
-  return new Headers({
-    Authorization: `Bearer ${
-      preview
-        ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-        : process.env.CONTENTFUL_ACCESS_TOKEN
-    }`,
-  });
+async function fetchApi<T = Record<string, unknown>>(
+  query: string,
+  variables: Record<string, unknown> = {},
+  preview = false
+) {
+  const response = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${
+          process.env[
+            preview
+              ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
+              : "CONTENTFUL_ACCESS_TOKEN"
+          ]
+        }`,
+      },
+      body: JSON.stringify({ query, variables }),
+    }
+  );
+
+  const { data, errors } = (await response.json()) as {
+    data?: T;
+    errors?: Array<{ message: string }>;
+  };
+
+  if (errors) {
+    const message = errors.map((error) => error.message).join("\n");
+
+    throw new Error(message);
+  }
+
+  return data;
 }
 
-const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-  { headers: getHeaders() }
-);
-
-export async function getEntryForPreview(id: string) {
-  const query = gql`
-    query ($id: String!, $preview: Boolean!) {
-      entryCollection(
-        where: { sys: { id: $id } }
-        limit: 1
-        preview: $preview
-      ) {
+export async function getDraftEntry(id: string) {
+  const query = /* GraphQL */ `
+    query ($id: String!) {
+      entryCollection(where: { sys: { id: $id } }, limit: 1, preview: true) {
         items {
           __typename
           ... on Project {
@@ -42,18 +59,24 @@ export async function getEntryForPreview(id: string) {
     }
   `;
 
-  const variables = { id, preview: true };
+  const variables = { id };
 
-  const { entryCollection } = await client.request<{
+  const data = await fetchApi<{
     entryCollection: EntryCollection;
-  }>(query, variables, getHeaders(true));
+  }>(query, variables, true);
 
-  return entryCollection.items[0];
+  return data?.entryCollection.items[0];
 }
 
-export async function getHomePage(locale: string, preview: boolean) {
-  const query = gql`
-    query ($locale: String!, $preview: Boolean!) {
+export async function getHomePage({
+  locale,
+  preview,
+}: {
+  locale: string;
+  preview: boolean;
+}) {
+  const query = /* GraphQL */ `
+    query ($locale: String, $preview: Boolean) {
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
           __typename
@@ -88,20 +111,19 @@ export async function getHomePage(locale: string, preview: boolean) {
 
   const variables = { locale, preview };
 
-  const { homePageCollection } = await client.request<{
+  const data = await fetchApi<{
     homePageCollection: HomePageCollection;
-  }>(query, variables, getHeaders(preview));
+  }>(query, variables, preview);
 
-  return homePageCollection.items[0];
+  return data?.homePageCollection.items[0];
 }
 
 export async function getProject(
   slug: string,
-  locale: string,
-  preview: boolean
+  { locale, preview }: { locale: string; preview: boolean }
 ) {
-  const query = gql`
-    query ($slug: String!, $locale: String!, $preview: Boolean!) {
+  const query = /* GraphQL */ `
+    query ($slug: String!, $locale: String!, $preview: Boolean) {
       projectCollection(
         where: { slug: $slug }
         locale: $locale
@@ -155,15 +177,15 @@ export async function getProject(
 
   const variables = { slug, locale, preview };
 
-  const { projectCollection } = await client.request<{
+  const data = await fetchApi<{
     projectCollection: ProjectCollection;
-  }>(query, variables, getHeaders(preview));
+  }>(query, variables, preview);
 
-  return projectCollection.items[0];
+  return data?.projectCollection.items[0];
 }
 
 export async function getAllProjectsWithSlug() {
-  const query = gql`
+  const query = /* GraphQL */ `
     query {
       projectCollection(where: { slug_exists: true }) {
         items {
@@ -173,16 +195,19 @@ export async function getAllProjectsWithSlug() {
     }
   `;
 
-  const { projectCollection } = await client.request<{
+  const data = await fetchApi<{
     projectCollection: ProjectCollection;
   }>(query);
 
-  return projectCollection.items;
+  return data?.projectCollection.items ?? [];
 }
 
-export async function getPage(slug: string, locale: string, preview: boolean) {
-  const query = gql`
-    query ($slug: String!, $locale: String!, $preview: Boolean!) {
+export async function getPage(
+  slug: string,
+  { locale, preview }: { locale: string; preview: boolean }
+) {
+  const query = /* GraphQL */ `
+    query ($slug: String!, $locale: String!, $preview: Boolean) {
       pageCollection(
         where: { slug: $slug }
         locale: $locale
@@ -204,15 +229,17 @@ export async function getPage(slug: string, locale: string, preview: boolean) {
 
   const variables = { slug, locale, preview };
 
-  const { pageCollection } = await client.request<{
-    pageCollection: PageCollection;
-  }>(query, variables, getHeaders(preview));
+  const data = await fetchApi<{ pageCollection: PageCollection }>(
+    query,
+    variables,
+    preview
+  );
 
-  return pageCollection.items[0];
+  return data?.pageCollection.items[0];
 }
 
 export async function getAllPagesWithSlug() {
-  const query = gql`
+  const query = /* GraphQL */ `
     query {
       pageCollection(where: { slug_exists: true }) {
         items {
@@ -222,9 +249,7 @@ export async function getAllPagesWithSlug() {
     }
   `;
 
-  const { pageCollection } = await client.request<{
-    pageCollection: PageCollection;
-  }>(query);
+  const data = await fetchApi<{ pageCollection: PageCollection }>(query);
 
-  return pageCollection.items;
+  return data?.pageCollection.items ?? [];
 }
