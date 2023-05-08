@@ -1,3 +1,5 @@
+"use client";
+
 import { FormattedMessage } from "react-intl";
 import styles from "./Back.module.css";
 import Link from "./Link";

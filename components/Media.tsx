@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
 import Image from "./Image";

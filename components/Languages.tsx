@@ -1,32 +1,33 @@
-import { useRouter } from "next/router";
-import { useCookies } from "react-cookie";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { useIntl } from "react-intl";
+import { LANGUAGE_NAMES, LOCALES } from "../lib/constants";
 import Link from "./Link";
 
-const LANGUAGE_NAMES = {
-  fr: "Français",
-  en: "English",
-};
-
 export default function Languages() {
-  const { asPath, locale: activeLocale, locales } = useRouter();
-  const [cookie, setCookie] = useCookies(["NEXT_LOCALE"]);
+  const pathname = usePathname();
+  const { locale: activeLocale } = useIntl();
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale;
+
+    return segments.join("/");
+  };
 
   return (
     <ul role="list">
-      {locales?.map((locale) => (
+      {LOCALES.map((locale) => (
         <li key={locale}>
           <Link
-            href={asPath}
-            locale={locale}
+            href={redirectedPathName(locale)}
+            hrefLang={locale}
             variant="underline-inverse"
             aria-current={locale === activeLocale ? "page" : undefined}
-            onClick={() => {
-              if (cookie.NEXT_LOCALE !== locale) {
-                setCookie("NEXT_LOCALE", locale, { path: "/" });
-              }
-            }}
           >
-            {LANGUAGE_NAMES[locale as "fr" | "en"]}
+            {LANGUAGE_NAMES[locale]}
           </Link>
         </li>
       ))}

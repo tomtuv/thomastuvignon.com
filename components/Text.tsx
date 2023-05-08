@@ -1,3 +1,5 @@
+"use client";
+
 import type { Document } from "@contentful/rich-text-types";
 import { FormattedMessage } from "react-intl";
 import Link from "./Link";
