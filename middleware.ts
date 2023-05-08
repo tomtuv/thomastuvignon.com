@@ -1,24 +1,6 @@
-import { match as matchLocale } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { DEFAULT_LOCALE, LOCALES } from "./lib/constants";
-
-function getLocale(request: NextRequest): string | undefined {
-  const negotiatorHeaders: Record<string, string> = {};
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-
-  const locale = matchLocale(languages, [...LOCALES], DEFAULT_LOCALE);
-  console.log({
-    locale,
-    languages,
-    locales: LOCALES,
-    defaultLocale: DEFAULT_LOCALE,
-  });
-
-  return locale;
-}
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -32,7 +14,13 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+    const acceptLanguage = request.headers.get("Accept-Language");
+    const acceptLanguageLocale = acceptLanguage?.split(",")[0].split("-")[0];
+    const isLocaleSupported = LOCALES.includes(
+      acceptLanguageLocale as (typeof LOCALES)[number]
+    );
+
+    const locale = isLocaleSupported ? acceptLanguageLocale : DEFAULT_LOCALE;
 
     return NextResponse.redirect(
       new URL(`/${locale}/${pathname}`, request.url)
