@@ -9,7 +9,15 @@ function getLocale(request: NextRequest): string | undefined {
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
 
-  return matchLocale(languages, [...LOCALES], DEFAULT_LOCALE);
+  const locale = matchLocale(languages, [...LOCALES], DEFAULT_LOCALE);
+  console.log({
+    locale,
+    languages,
+    locales: LOCALES,
+    defaultLocale: DEFAULT_LOCALE,
+  });
+
+  return locale;
 }
 
 export function middleware(request: NextRequest) {
