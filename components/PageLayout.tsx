@@ -12,8 +12,6 @@ export default function PageLayout({
 }>) {
   const { isEnabled } = draftMode();
 
-  console.log(isEnabled);
-
   return (
     <div className={styles.root}>
       {isEnabled && <Alert />}
