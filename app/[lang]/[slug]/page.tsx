@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: page?.title,
     description: page?.description,
     alternates: {
-      canonical: `/${slug}`,
+      canonical: `/${lang}/${slug}`,
       languages: LOCALES.reduce(
         (acc, locale) => ({
           ...acc,

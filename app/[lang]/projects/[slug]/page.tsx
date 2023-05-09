@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: project?.title,
     description: project?.description,
     alternates: {
-      canonical: `/projects/${slug}`,
+      canonical: `/${lang}/projects/${slug}`,
       languages: LOCALES.reduce(
         (acc, locale) => ({
           ...acc,
