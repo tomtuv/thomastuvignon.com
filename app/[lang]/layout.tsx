@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Providers from "../../components/Providers";
 import { LOCALES, MESSAGES, SITE_NAME, SITE_URL } from "@/lib/constants";
 import "../globals.css";
+import { draftMode } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,10 +54,11 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
+  const { isEnabled } = draftMode();
   return (
     <html lang={lang} className={inter.variable}>
       <body>
-        <Providers>
+        <Providers draftMode={isEnabled}>
           {children}
           <Analytics />
         </Providers>
