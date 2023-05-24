@@ -76,7 +76,7 @@ export async function getHomePage({
   preview: boolean;
 }) {
   const query = /* GraphQL */ `
-    query ($locale: String, $preview: Boolean) {
+    query ($locale: String!, $preview: Boolean!) {
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
           __typename
@@ -123,7 +123,7 @@ export async function getProject(
   { locale, preview }: { locale: string; preview: boolean }
 ) {
   const query = /* GraphQL */ `
-    query ($slug: String!, $locale: String!, $preview: Boolean) {
+    query ($slug: String!, $locale: String!, $preview: Boolean!) {
       projectCollection(
         where: { slug: $slug }
         locale: $locale
@@ -207,7 +207,7 @@ export async function getPage(
   { locale, preview }: { locale: string; preview: boolean }
 ) {
   const query = /* GraphQL */ `
-    query ($slug: String!, $locale: String!, $preview: Boolean) {
+    query ($slug: String!, $locale: String!, $preview: Boolean!) {
       pageCollection(
         where: { slug: $slug }
         locale: $locale
