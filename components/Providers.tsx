@@ -3,9 +3,14 @@
 import { MotionConfig } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { IntlProvider } from "react-intl";
+import "@contentful/live-preview/style.css";
+import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 import { DEFAULT_LOCALE, MESSAGES } from "../lib/constants";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({
+  children,
+  draftMode,
+}: React.PropsWithChildren<{ draftMode: boolean }>) {
   const pathname = usePathname();
   const locale = pathname?.split("/")[1];
 
@@ -16,7 +21,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         defaultLocale={DEFAULT_LOCALE}
         messages={MESSAGES[locale as keyof typeof MESSAGES]}
       >
-        {children}
+        <ContentfulLivePreviewProvider
+          locale={locale}
+          enableInspectorMode={draftMode}
+          enableLiveUpdates={draftMode}
+        >
+          {children}
+        </ContentfulLivePreviewProvider>
       </IntlProvider>
     </MotionConfig>
   );
