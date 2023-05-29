@@ -8,8 +8,8 @@ dependencies:
     specifier: ^15.16.4
     version: 15.16.4(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-types':
-    specifier: ^16.1.0
-    version: 16.1.0
+    specifier: ^16.2.0
+    version: 16.2.0
   '@vercel/analytics':
     specifier: ^1.0.1
     version: 1.0.1
@@ -722,13 +722,13 @@ packages:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@contentful/rich-text-types': 16.1.0
+      '@contentful/rich-text-types': 16.2.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@contentful/rich-text-types@16.1.0:
-    resolution: {integrity: sha512-Pucb68FK0j9cHJ96FAewXv+bvH4XizC4KBbVqyHhPLkDIVfasj0AWU5rI1lnvysdVKu66NQkFe8xZdeFTkaLWQ==}
+  /@contentful/rich-text-types@16.2.0:
+    resolution: {integrity: sha512-4BHC+mfa50JB70epzpnas4EkiuB3mGdBZ5Rp8w7R5wXvswEf8TLg5yGau2FxmZeEjrAkDrt4vzBLVQ8v3Y//Jw==}
     engines: {node: '>=6.0.0'}
     dev: false
 
