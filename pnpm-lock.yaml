@@ -5,8 +5,8 @@ dependencies:
     specifier: ^2.4.1
     version: 2.4.1(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
-    specifier: ^15.16.4
-    version: 15.16.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^15.17.0
+    version: 15.17.0(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-types':
     specifier: ^16.2.0
     version: 16.2.0
@@ -718,8 +718,8 @@ packages:
       use-deep-compare-effect: 1.8.1(react@18.2.0)
     dev: false
 
-  /@contentful/rich-text-react-renderer@15.16.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Z+HlJBuCU61QbWMvmSJ7MoyHI/WS8mEURiliITMVAnW+IDD3he8Qo9yEIrTmFtXiJ5VmdPRbAaKgBF3znZ8a7g==}
+  /@contentful/rich-text-react-renderer@15.17.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6dmfzq67eR2Pd4od1WMTWgatO0A873msb/hSFSgAEUwXyS3TjIQAFLfvPA3r6jPy6M5A26wUkfQ3I9caSHyqrw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
