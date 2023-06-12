@@ -33,7 +33,7 @@
     "eslint-config-next": "^13.4.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "postcss-preset-env": "^8.4.1",
     "stylelint": "^15.6.2",
     "stylelint-config-recess-order": "^4.0.0",
