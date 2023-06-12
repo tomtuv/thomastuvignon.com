@@ -37,8 +37,8 @@ devDependencies:
     specifier: ^3.3.1
     version: 3.3.1(@babel/core@7.21.8)(@types/node@20.3.0)(graphql@16.6.0)
   '@graphql-codegen/schema-ast':
-    specifier: ^3.0.1
-    version: 3.0.1(graphql@16.6.0)
+    specifier: ^4.0.0
+    version: 4.0.0(graphql@16.6.0)
   '@graphql-codegen/typescript':
     specifier: ^4.0.0
     version: 4.0.0(graphql@16.6.0)
@@ -1241,20 +1241,6 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@graphql-codegen/plugin-helpers@4.1.0(graphql@16.6.0):
-    resolution: {integrity: sha512-xvSHJb9OGb5CODIls0AI1rCenLz+FuiaNPCsfHMCNsLDjOZK2u0jAQ9zUBdc/Wb+21YXZujBCc0Vm1QX+Zz0nw==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-tools/utils': 9.2.1(graphql@16.6.0)
-      change-case-all: 1.0.15
-      common-tags: 1.8.2
-      graphql: 16.6.0
-      import-from: 4.0.0
-      lodash: 4.17.21
-      tslib: 2.5.0
-    dev: true
-
   /@graphql-codegen/plugin-helpers@4.2.0(graphql@16.6.0):
     resolution: {integrity: sha512-THFTCfg+46PXlXobYJ/OoCX6pzjI+9woQqCjdyKtgoI0tn3Xq2HUUCiidndxUpEYVrXb5pRiRXb7b/ZbMQqD0A==}
     peerDependencies:
@@ -1280,17 +1266,6 @@ packages:
       graphql: 16.6.0
       import-from: 4.0.0
       lodash: 4.17.21
-      tslib: 2.5.0
-    dev: true
-
-  /@graphql-codegen/schema-ast@3.0.1(graphql@16.6.0):
-    resolution: {integrity: sha512-rTKTi4XiW4QFZnrEqetpiYEWVsOFNoiR/v3rY9mFSttXFbIwNXPme32EspTiGWmEEdHY8UuTDtZN3vEcs/31zw==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-codegen/plugin-helpers': 4.1.0(graphql@16.6.0)
-      '@graphql-tools/utils': 9.2.1(graphql@16.6.0)
-      graphql: 16.6.0
       tslib: 2.5.0
     dev: true
 
