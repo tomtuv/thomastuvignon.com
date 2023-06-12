@@ -1,9 +1,9 @@
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
+import { draftMode } from "next/headers";
 import Providers from "../../components/Providers";
 import { LOCALES, MESSAGES, SITE_NAME, SITE_URL } from "@/lib/constants";
 import "../globals.css";
-import { draftMode } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
