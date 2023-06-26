@@ -55,6 +55,7 @@ export default function RootLayout({
   params: { lang: string };
 }) {
   const { isEnabled } = draftMode();
+
   return (
     <html lang={lang} className={inter.variable}>
       <body>

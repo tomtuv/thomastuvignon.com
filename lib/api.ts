@@ -25,6 +25,7 @@ async function fetchApi<T = Record<string, unknown>>(
         }`,
       },
       body: JSON.stringify({ query, variables }),
+      cache: preview ? "no-cache" : "force-cache",
     }
   );
 
