@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@contentful/live-preview':
-    specifier: ^2.4.3
-    version: 2.4.3(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^2.4.4
+    version: 2.4.4(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.17.0
     version: 15.17.0(react-dom@18.2.0)(react@18.2.0)
@@ -707,8 +711,8 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
 
-  /@contentful/live-preview@2.4.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-a2FVIyoKKTul6QUwejI4QyuZlUKMxy2m6x10JFrm8CL03q4jQK4Ku7Up0Ic7XqF8oFZKl0aVNNe2jNOsLoSadQ==}
+  /@contentful/live-preview@2.4.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-pz4Lvhd7fOycaCDiOjSI4VJm8zqyB3DOyfWem5s8ZSpN2GpupAZnlHntHB2IeHRYoCkU3scm2KKgTg/VsFjY4Q==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
