@@ -31,9 +31,6 @@ dependencies:
     version: 6.4.4(react@18.2.0)(typescript@5.1.6)
 
 devDependencies:
-  '@babel/core':
-    specifier: ^7.22.6
-    version: 7.22.6
   '@graphql-codegen/cli':
     specifier: ^4.0.1
     version: 4.0.1(@babel/core@7.22.6)(@types/node@20.3.3)(graphql@16.6.0)
