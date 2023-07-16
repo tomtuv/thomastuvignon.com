@@ -10,6 +10,7 @@
     "codegen": "DOTENV_CONFIG_PATH=./.env.local graphql-codegen --require dotenv/config --config codegen.ts"
   },
   "dependencies": {
+    "@contentful/live-preview": "^2.5.2",
     "@contentful/rich-text-react-renderer": "^15.17.0",
     "@contentful/rich-text-types": "^16.2.0",
     "@vercel/analytics": "^1.0.1",

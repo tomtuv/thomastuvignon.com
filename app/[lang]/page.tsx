@@ -1,5 +1,5 @@
-import type { Document } from "@contentful/rich-text-types";
 import { draftMode } from "next/headers";
+import { notFound } from "next/navigation";
 import Intro from "@/components/Intro";
 import PageLayout from "@/components/PageLayout";
 import Projects from "@/components/Projects";
@@ -14,10 +14,14 @@ export default async function Index({
   const { isEnabled } = draftMode();
   const homePage = await getHomePage({ locale: lang, preview: isEnabled });
 
+  if (!homePage) {
+    return notFound();
+  }
+
   return (
     <PageLayout page={homePage as HomePage}>
-      <Intro intro={homePage?.intro?.json as Document} />
-      <Projects projects={homePage?.projectsCollection?.items} />
+      <Intro homePage={homePage} />
+      <Projects homePage={homePage} />
     </PageLayout>
   );
 }

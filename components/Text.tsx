@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
 import { FormattedMessage } from "react-intl";
 import Link from "./Link";
@@ -7,22 +11,35 @@ import RichText from "./RichText";
 import styles from "./Text.module.css";
 import type { Text as TextType } from "@/lib/types";
 
-export default function Text({ block }: { block: TextType }) {
+export default function Text({ text }: { text: TextType }) {
+  const updatedText = useContentfulLiveUpdates(text);
+
+  const inspectorProps = useContentfulInspectorMode({
+    entryId: text.sys.id,
+  });
+
   return (
-    <section className={styles.root} aria-labelledby={block.sys.id}>
+    <section className={styles.root} aria-labelledby={updatedText.sys.id}>
       <header className={styles.header}>
-        <h2 id={block.sys.id}>{block.title}</h2>
-        <p>{block.subtitle}</p>
+        <h2 id={updatedText.sys.id} {...inspectorProps({ fieldId: "title" })}>
+          {updatedText.title}
+        </h2>
+        <p {...inspectorProps({ fieldId: "subtitle" })}>
+          {updatedText.subtitle}
+        </p>
       </header>
-      <div className={styles.text}>
-        <RichText text={block?.body?.json as Document} />
-      </div>
-      {block.link && (
+      <RichText
+        className={styles.text}
+        text={updatedText.body?.json as Document}
+        {...inspectorProps({ fieldId: "body" })}
+      />
+      {updatedText.link && (
         <Link
-          href={block.link}
+          href={updatedText.link}
           target="_blank"
           rel="noopener noreferrer"
           variant="underline"
+          {...inspectorProps({ fieldId: "link" })}
         >
           <FormattedMessage id="projectLink" />
         </Link>

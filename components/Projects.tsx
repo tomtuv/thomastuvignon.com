@@ -1,47 +1,71 @@
 "use client";
 
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
-import { useId } from "react";
 import { FormattedMessage } from "react-intl";
 import Image from "./Image";
 import Link from "./Link";
 import styles from "./Projects.module.css";
-import type { Project } from "@/lib/types";
+import type { HomePage, Project } from "@/lib/types";
 
-export default function Projects({
-  projects,
-}: {
-  projects?: (Project | null)[];
-}) {
-  const id = useId();
+function ProjectCard({ project }: { project: Project }) {
+  const updatedProject = useContentfulLiveUpdates(project);
+
+  const inspectorProps = useContentfulInspectorMode({
+    entryId: project.sys.id,
+  });
 
   return (
-    <section className={styles.root} aria-labelledby={id}>
-      <h2 id={id} className={styles.heading}>
+    <motion.li
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <Link
+        href={`/projects/${updatedProject?.slug}/`}
+        {...inspectorProps({ fieldId: "slug" })}
+      >
+        {updatedProject?.thumbnail?.url && (
+          <Image
+            src={updatedProject.thumbnail.url}
+            alt={updatedProject.title ?? ""}
+            width={Number(updatedProject.thumbnail.width)}
+            height={Number(updatedProject.thumbnail.height)}
+            sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
+            {...inspectorProps({ fieldId: "thumbnail" })}
+          />
+        )}
+      </Link>
+    </motion.li>
+  );
+}
+
+export default function Projects({ homePage }: { homePage: HomePage }) {
+  const updatedHomePage = useContentfulLiveUpdates(homePage);
+
+  const inspectorProps = useContentfulInspectorMode({
+    entryId: homePage.sys.id,
+  });
+
+  return (
+    <section className={styles.root} aria-labelledby={homePage.sys.id}>
+      <h2 id={homePage.sys.id} className={styles.heading}>
         <FormattedMessage id="work" />
       </h2>
-      <ul className={styles.grid} role="list">
-        {projects?.map((project) => (
-          <motion.li
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            key={project?.sys.id}
-          >
-            <Link href={`/projects/${project?.slug}/`}>
-              {project?.thumbnail?.url && (
-                <Image
-                  src={project.thumbnail.url}
-                  alt={project.title ?? ""}
-                  width={Number(project.thumbnail.width)}
-                  height={Number(project.thumbnail.height)}
-                  sizes="(min-width: 80rem) 251px, (min-width: 64rem) 366px, 50vw"
-                />
-              )}
-            </Link>
-          </motion.li>
-        ))}
+      <ul
+        className={styles.grid}
+        role="list"
+        {...inspectorProps({ fieldId: "projects" })}
+      >
+        {updatedHomePage.projectsCollection?.items.map((project) =>
+          project ? (
+            <ProjectCard project={project} key={project.sys.id} />
+          ) : null
+        )}
       </ul>
     </section>
   );

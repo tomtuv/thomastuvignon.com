@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@contentful/live-preview':
+    specifier: ^2.5.2
+    version: 2.5.2(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.17.0
     version: 15.17.0(react-dom@18.2.0)(react@18.2.0)
@@ -717,6 +720,19 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
 
+  /@contentful/live-preview@2.5.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9LnriFazNCf+VEnq4S84Iar7wlsIH82r33f0goxXc76lkJSlsnQjiYDXiwlHyokpI7YJk5i5K7kYsbsIOanpZQ==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@contentful/rich-text-types': 16.2.0
+      '@contentful/visual-sdk': 1.0.0-alpha.1
+      lodash.isequal: 4.5.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@contentful/rich-text-react-renderer@15.17.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-6dmfzq67eR2Pd4od1WMTWgatO0A873msb/hSFSgAEUwXyS3TjIQAFLfvPA3r6jPy6M5A26wUkfQ3I9caSHyqrw==}
     engines: {node: '>=6.0.0'}
@@ -732,6 +748,10 @@ packages:
   /@contentful/rich-text-types@16.2.0:
     resolution: {integrity: sha512-4BHC+mfa50JB70epzpnas4EkiuB3mGdBZ5Rp8w7R5wXvswEf8TLg5yGau2FxmZeEjrAkDrt4vzBLVQ8v3Y//Jw==}
     engines: {node: '>=6.0.0'}
+    dev: false
+
+  /@contentful/visual-sdk@1.0.0-alpha.1:
+    resolution: {integrity: sha512-cif3p+07E8i2+0luqKHXp+1TuYKFbKJE5akIibrSQSn9gPl1zmiltJuiZxwuUbbd4jGFcVO6g2SVOou4P3DkUQ==}
     dev: false
 
   /@csstools/cascade-layer-name-parser@1.0.3(@csstools/css-parser-algorithms@2.3.0)(@csstools/css-tokenizer@2.1.1):
@@ -4342,6 +4362,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash.isequal@4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
