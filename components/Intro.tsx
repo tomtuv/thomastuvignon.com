@@ -5,14 +5,15 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import styles from "./Intro.module.css";
 import RichText from "./RichText";
 import VisuallyHidden from "./VisuallyHidden";
 import type { HomePage } from "@/lib/types";
 
 export default function Intro({ homePage }: { homePage: HomePage }) {
-  const updatedHomePage = useContentfulLiveUpdates(homePage);
+  const { locale } = useIntl();
+  const updatedHomePage = useContentfulLiveUpdates(homePage, { locale });
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: homePage.sys.id,

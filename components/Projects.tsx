@@ -5,14 +5,15 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import Image from "./Image";
 import Link from "./Link";
 import styles from "./Projects.module.css";
 import type { HomePage, Project } from "@/lib/types";
 
 function ProjectCard({ project }: { project: Project }) {
-  const updatedProject = useContentfulLiveUpdates(project);
+  const { locale } = useIntl();
+  const updatedProject = useContentfulLiveUpdates(project, { locale });
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: project.sys.id,

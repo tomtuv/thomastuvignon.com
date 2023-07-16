@@ -5,12 +5,14 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import React, { Fragment } from "react";
+import { useIntl } from "react-intl";
 import Media from "./Media";
 import Text from "./Text";
 import type { Project } from "@/lib/types";
 
 export default function Blocks({ project }: { project: Project }) {
-  const updatedProject = useContentfulLiveUpdates(project);
+  const { locale } = useIntl();
+  const updatedProject = useContentfulLiveUpdates(project, { locale });
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: project.sys.id,

@@ -12,8 +12,8 @@ import VisuallyHidden from "./VisuallyHidden";
 import type { Asset, Media as MediaType } from "@/lib/types";
 
 function MediaImage({ image, index }: { image: Asset; index: number }) {
-  const { formatMessage } = useIntl();
-  const updatedImage = useContentfulLiveUpdates(image);
+  const { locale, formatMessage } = useIntl();
+  const updatedImage = useContentfulLiveUpdates(image, { locale });
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: image.sys.id,
