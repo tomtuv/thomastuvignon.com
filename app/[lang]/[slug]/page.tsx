@@ -1,10 +1,9 @@
-import type { Document } from "@contentful/rich-text-types";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Back from "@/components/Back";
+import PageBody from "@/components/PageBody";
 import PageLayout from "@/components/PageLayout";
-import RichText from "@/components/RichText";
-import { getPage, getAllPagesWithSlug } from "@/lib/api";
+import { getAllPagesWithSlug, getPage } from "@/lib/api";
 import { LOCALES } from "@/lib/constants";
 
 export async function generateStaticParams() {
@@ -45,13 +44,13 @@ export default async function Page({
   const { isEnabled } = draftMode();
   const page = await getPage(slug, { locale: lang, preview: isEnabled });
 
-  if (!page) notFound();
+  if (!page) {
+    notFound();
+  }
 
   return (
     <PageLayout page={page}>
-      <article>
-        <RichText text={page.body?.json as Document} />
-      </article>
+      <PageBody page={page} />
       <Back />
     </PageLayout>
   );
