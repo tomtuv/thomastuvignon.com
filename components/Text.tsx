@@ -5,15 +5,14 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import Link from "./Link";
 import RichText from "./RichText";
 import styles from "./Text.module.css";
 import type { Text as TextType } from "@/lib/types";
 
 export default function Text({ text }: { text: TextType }) {
-  const { locale } = useIntl();
-  const updatedText = useContentfulLiveUpdates(text, { locale });
+  const updatedText = useContentfulLiveUpdates(text);
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: text.sys.id,

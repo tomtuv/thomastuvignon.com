@@ -5,15 +5,15 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useId } from "react";
+import { FormattedMessage } from "react-intl";
 import Image from "./Image";
 import Link from "./Link";
 import styles from "./Projects.module.css";
 import type { HomePage, Project } from "@/lib/types";
 
 function ProjectCard({ project }: { project: Project }) {
-  const { locale } = useIntl();
-  const updatedProject = useContentfulLiveUpdates(project, { locale });
+  const updatedProject = useContentfulLiveUpdates(project);
 
   const inspectorProps = useContentfulInspectorMode({
     entryId: project.sys.id,
@@ -46,6 +46,7 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects({ homePage }: { homePage: HomePage }) {
+  const id = useId();
   const updatedHomePage = useContentfulLiveUpdates(homePage);
 
   const inspectorProps = useContentfulInspectorMode({
@@ -53,8 +54,8 @@ export default function Projects({ homePage }: { homePage: HomePage }) {
   });
 
   return (
-    <section className={styles.root} aria-labelledby={homePage.sys.id}>
-      <h2 id={homePage.sys.id} className={styles.heading}>
+    <section className={styles.root} aria-labelledby={id}>
+      <h2 id={id} className={styles.heading}>
         <FormattedMessage id="work" />
       </h2>
       <ul

@@ -4,15 +4,13 @@ import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
-import { useIntl } from "react-intl";
 import styles from "./Header.module.css";
 import Image from "./Image";
 import Link from "./Link";
-import type { HomePage, Project, Page } from "@/lib/types";
+import type { HomePage, Page, Project } from "@/lib/types";
 
 export default function Header({ page }: { page: HomePage | Project | Page }) {
-  const { locale } = useIntl();
-  const updatedPage = useContentfulLiveUpdates(page, { locale });
+  const updatedPage = useContentfulLiveUpdates(page);
   const inspectorProps = useContentfulInspectorMode({ entryId: page.sys.id });
 
   return (
