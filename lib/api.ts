@@ -81,6 +81,9 @@ export async function getHomePage({
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
           __typename
+          sys {
+            id
+          }
           title
           jobTitle
           profilePicture {
@@ -133,6 +136,9 @@ export async function getProject(
       ) {
         items {
           __typename
+          sys {
+            id
+          }
           title
           slug
           description
@@ -217,6 +223,9 @@ export async function getPage(
       ) {
         items {
           __typename
+          sys {
+            id
+          }
           title
           slug
           description
