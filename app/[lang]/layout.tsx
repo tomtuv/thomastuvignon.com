@@ -61,7 +61,7 @@ export default function RootLayout({
       <body>
         <Providers draftMode={isEnabled}>
           {children}
-          <Analytics />
+          {!isEnabled && <Analytics />}
         </Providers>
       </body>
     </html>
