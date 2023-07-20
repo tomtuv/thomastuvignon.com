@@ -5,7 +5,12 @@ import Back from "@/components/Back";
 import PageBody from "@/components/PageBody";
 import PageLayout from "@/components/PageLayout";
 import { getAllPagesWithSlug, getPage } from "@/lib/api";
-import { LOCALES, SITE_NAME, TWITTER_USERNAME } from "@/lib/constants";
+import {
+  SITE_NAME,
+  OPEN_GRAPH_IMAGE,
+  TWITTER_USERNAME,
+  LOCALES,
+} from "@/lib/constants";
 
 export async function generateStaticParams() {
   const allPages = await getAllPagesWithSlug();
@@ -38,6 +43,7 @@ export async function generateMetadata({
       title: page?.title ?? undefined,
       siteName: SITE_NAME,
       description: page?.description ?? undefined,
+      images: OPEN_GRAPH_IMAGE,
       url: `/${lang}/${slug}`,
       locale: lang,
       alternateLocale: LOCALES.filter((locale) => locale !== lang),
@@ -45,6 +51,7 @@ export async function generateMetadata({
     twitter: {
       title: page?.title ?? undefined,
       description: page?.description ?? undefined,
+      images: OPEN_GRAPH_IMAGE,
       card: "summary_large_image",
       creator: TWITTER_USERNAME,
     },
