@@ -1,10 +1,11 @@
+import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Back from "@/components/Back";
 import Blocks from "@/components/Blocks";
 import PageLayout from "@/components/PageLayout";
 import { getAllProjectsWithSlug, getProject } from "@/lib/api";
-import { LOCALES } from "@/lib/constants";
+import { LOCALES, SITE_NAME, TWITTER_USERNAME } from "@/lib/constants";
 
 export async function generateStaticParams() {
   const allProjects = await getAllProjectsWithSlug();
@@ -16,7 +17,7 @@ export async function generateMetadata({
   params: { slug, lang },
 }: {
   params: { slug: string; lang: string };
-}) {
+}): Promise<Metadata> {
   const { isEnabled } = draftMode();
   const project = await getProject(slug, { locale: lang, preview: isEnabled });
 
@@ -32,6 +33,20 @@ export async function generateMetadata({
         }),
         {}
       ),
+    },
+    openGraph: {
+      title: project?.title ?? undefined,
+      siteName: SITE_NAME,
+      description: project?.description ?? undefined,
+      url: `/${lang}/projects/${slug}`,
+      locale: lang,
+      alternateLocale: LOCALES.filter((locale) => locale !== lang),
+    },
+    twitter: {
+      title: project?.title ?? undefined,
+      description: project?.description ?? undefined,
+      card: "summary_large_image",
+      creator: TWITTER_USERNAME,
     },
   };
 }

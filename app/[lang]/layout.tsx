@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import Providers from "../../components/Providers";
@@ -21,13 +22,15 @@ export async function generateMetadata({
   params: { lang },
 }: {
   params: { lang: string };
-}) {
+}): Promise<Metadata> {
+  const description = MESSAGES[lang as keyof typeof MESSAGES].description;
+
   return {
     title: {
       template: `%s | ${SITE_NAME}`,
       absolute: SITE_NAME,
     },
-    description: MESSAGES[lang as keyof typeof MESSAGES].description,
+    description,
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: `/${lang}`,
@@ -40,7 +43,17 @@ export async function generateMetadata({
       ),
     },
     colorScheme: "dark light",
+    openGraph: {
+      title: SITE_NAME,
+      siteName: SITE_NAME,
+      description,
+      url: `/${lang}`,
+      locale: lang,
+      alternateLocale: LOCALES.filter((locale) => locale !== lang),
+    },
     twitter: {
+      title: SITE_NAME,
+      description,
       card: "summary_large_image",
       creator: "@tomtuv",
     },
