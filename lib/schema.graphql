@@ -642,46 +642,6 @@ enum MediaLinkingCollectionsProjectCollectionOrder {
   title_DESC
 }
 
-"""
-[See type definition](https://app.contentful.com/spaces/lkq9rik3wezf/content_types/mediaOrText)
-"""
-type MediaOrText implements Entry {
-  contentfulMetadata: ContentfulMetadata!
-  linkedFrom(allowedLocales: [String]): MediaOrTextLinkingCollections
-  sys: Sys!
-  title(locale: String): String
-}
-
-type MediaOrTextCollection {
-  items: [MediaOrText]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input MediaOrTextFilter {
-  AND: [MediaOrTextFilter]
-  OR: [MediaOrTextFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
-type MediaOrTextLinkingCollections {
-  entryCollection(
-    limit: Int = 100
-    locale: String
-    preview: Boolean
-    skip: Int = 0
-  ): EntryCollection
-}
-
 enum MediaOrder {
   layout_ASC
   layout_DESC
@@ -807,7 +767,7 @@ type Project implements Entry {
     locale: String
     preview: Boolean
     skip: Int = 0
-    where: MediaOrTextFilter
+    where: ProjectBlocksFilter
   ): ProjectBlocksCollection
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
@@ -825,6 +785,20 @@ type ProjectBlocksCollection {
   total: Int!
 }
 
+input ProjectBlocksFilter {
+  AND: [ProjectBlocksFilter]
+  OR: [ProjectBlocksFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
 union ProjectBlocksItem = Media | Text
 
 type ProjectCollection {
@@ -837,7 +811,7 @@ type ProjectCollection {
 input ProjectFilter {
   AND: [ProjectFilter]
   OR: [ProjectFilter]
-  blocks: cfMediaOrTextNestedFilter
+  blocks: cfblocksMultiTypeNestedFilter
   blocksCollection_exists: Boolean
   contentfulMetadata: ContentfulMetadataFilter
   description: String
@@ -952,14 +926,6 @@ type Query {
     skip: Int = 0
     where: MediaFilter
   ): MediaCollection
-  mediaOrText(id: String!, locale: String, preview: Boolean): MediaOrText
-  mediaOrTextCollection(
-    limit: Int = 100
-    locale: String
-    preview: Boolean
-    skip: Int = 0
-    where: MediaOrTextFilter
-  ): MediaOrTextCollection
   page(id: String!, locale: String, preview: Boolean): Page
   pageCollection(
     limit: Int = 100
@@ -1170,20 +1136,6 @@ enum TextOrder {
   title_DESC
 }
 
-input cfMediaOrTextNestedFilter {
-  AND: [cfMediaOrTextNestedFilter]
-  OR: [cfMediaOrTextNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
 input cfProjectNestedFilter {
   AND: [cfProjectNestedFilter]
   OR: [cfProjectNestedFilter]
@@ -1205,6 +1157,20 @@ input cfProjectNestedFilter {
   slug_not_in: [String]
   sys: SysFilter
   thumbnail_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+input cfblocksMultiTypeNestedFilter {
+  AND: [cfblocksMultiTypeNestedFilter]
+  OR: [cfblocksMultiTypeNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  sys: SysFilter
   title: String
   title_contains: String
   title_exists: Boolean

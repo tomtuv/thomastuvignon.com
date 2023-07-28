@@ -715,59 +715,6 @@ export enum MediaLinkingCollectionsProjectCollectionOrder {
   TitleDesc = "title_DESC",
 }
 
-/** [See type definition](https://app.contentful.com/spaces/lkq9rik3wezf/content_types/mediaOrText) */
-export type MediaOrText = Entry & {
-  __typename?: "MediaOrText";
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<MediaOrTextLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars["String"]["output"]>;
-};
-
-/** [See type definition](https://app.contentful.com/spaces/lkq9rik3wezf/content_types/mediaOrText) */
-export type MediaOrTextLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
-/** [See type definition](https://app.contentful.com/spaces/lkq9rik3wezf/content_types/mediaOrText) */
-export type MediaOrTextTitleArgs = {
-  locale?: InputMaybe<Scalars["String"]["input"]>;
-};
-
-export type MediaOrTextCollection = {
-  __typename?: "MediaOrTextCollection";
-  items: Array<Maybe<MediaOrText>>;
-  limit: Scalars["Int"]["output"];
-  skip: Scalars["Int"]["output"];
-  total: Scalars["Int"]["output"];
-};
-
-export type MediaOrTextFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MediaOrTextFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MediaOrTextFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars["String"]["input"]>;
-  title_contains?: InputMaybe<Scalars["String"]["input"]>;
-  title_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  title_not?: InputMaybe<Scalars["String"]["input"]>;
-  title_not_contains?: InputMaybe<Scalars["String"]["input"]>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
-export type MediaOrTextLinkingCollections = {
-  __typename?: "MediaOrTextLinkingCollections";
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-export type MediaOrTextLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars["Int"]["input"]>;
-  locale?: InputMaybe<Scalars["String"]["input"]>;
-  preview?: InputMaybe<Scalars["Boolean"]["input"]>;
-  skip?: InputMaybe<Scalars["Int"]["input"]>;
-};
-
 export enum MediaOrder {
   LayoutAsc = "layout_ASC",
   LayoutDesc = "layout_DESC",
@@ -938,7 +885,7 @@ export type ProjectBlocksCollectionArgs = {
   locale?: InputMaybe<Scalars["String"]["input"]>;
   preview?: InputMaybe<Scalars["Boolean"]["input"]>;
   skip?: InputMaybe<Scalars["Int"]["input"]>;
-  where?: InputMaybe<MediaOrTextFilter>;
+  where?: InputMaybe<ProjectBlocksFilter>;
 };
 
 /** [See type definition](https://app.contentful.com/spaces/lkq9rik3wezf/content_types/project) */
@@ -975,6 +922,20 @@ export type ProjectBlocksCollection = {
   total: Scalars["Int"]["output"];
 };
 
+export type ProjectBlocksFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ProjectBlocksFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ProjectBlocksFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars["String"]["input"]>;
+  title_contains?: InputMaybe<Scalars["String"]["input"]>;
+  title_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  title_not?: InputMaybe<Scalars["String"]["input"]>;
+  title_not_contains?: InputMaybe<Scalars["String"]["input"]>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+};
+
 export type ProjectBlocksItem = Media | Text;
 
 export type ProjectCollection = {
@@ -988,7 +949,7 @@ export type ProjectCollection = {
 export type ProjectFilter = {
   AND?: InputMaybe<Array<InputMaybe<ProjectFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<ProjectFilter>>>;
-  blocks?: InputMaybe<CfMediaOrTextNestedFilter>;
+  blocks?: InputMaybe<CfblocksMultiTypeNestedFilter>;
   blocksCollection_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   description?: InputMaybe<Scalars["String"]["input"]>;
@@ -1080,8 +1041,6 @@ export type Query = {
   homePageCollection?: Maybe<HomePageCollection>;
   media?: Maybe<Media>;
   mediaCollection?: Maybe<MediaCollection>;
-  mediaOrText?: Maybe<MediaOrText>;
-  mediaOrTextCollection?: Maybe<MediaOrTextCollection>;
   page?: Maybe<Page>;
   pageCollection?: Maybe<PageCollection>;
   project?: Maybe<Project>;
@@ -1142,20 +1101,6 @@ export type QueryMediaCollectionArgs = {
   preview?: InputMaybe<Scalars["Boolean"]["input"]>;
   skip?: InputMaybe<Scalars["Int"]["input"]>;
   where?: InputMaybe<MediaFilter>;
-};
-
-export type QueryMediaOrTextArgs = {
-  id: Scalars["String"]["input"];
-  locale?: InputMaybe<Scalars["String"]["input"]>;
-  preview?: InputMaybe<Scalars["Boolean"]["input"]>;
-};
-
-export type QueryMediaOrTextCollectionArgs = {
-  limit?: InputMaybe<Scalars["Int"]["input"]>;
-  locale?: InputMaybe<Scalars["String"]["input"]>;
-  preview?: InputMaybe<Scalars["Boolean"]["input"]>;
-  skip?: InputMaybe<Scalars["Int"]["input"]>;
-  where?: InputMaybe<MediaOrTextFilter>;
 };
 
 export type QueryPageArgs = {
@@ -1434,20 +1379,6 @@ export enum TextOrder {
   TitleDesc = "title_DESC",
 }
 
-export type CfMediaOrTextNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfMediaOrTextNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfMediaOrTextNestedFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars["String"]["input"]>;
-  title_contains?: InputMaybe<Scalars["String"]["input"]>;
-  title_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-  title_not?: InputMaybe<Scalars["String"]["input"]>;
-  title_not_contains?: InputMaybe<Scalars["String"]["input"]>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
-};
-
 export type CfProjectNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfProjectNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfProjectNestedFilter>>>;
@@ -1471,6 +1402,20 @@ export type CfProjectNestedFilter = {
   slug_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
   sys?: InputMaybe<SysFilter>;
   thumbnail_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
+  title?: InputMaybe<Scalars["String"]["input"]>;
+  title_contains?: InputMaybe<Scalars["String"]["input"]>;
+  title_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  title_not?: InputMaybe<Scalars["String"]["input"]>;
+  title_not_contains?: InputMaybe<Scalars["String"]["input"]>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+};
+
+export type CfblocksMultiTypeNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfblocksMultiTypeNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfblocksMultiTypeNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars["String"]["input"]>;
   title_contains?: InputMaybe<Scalars["String"]["input"]>;
   title_exists?: InputMaybe<Scalars["Boolean"]["input"]>;
