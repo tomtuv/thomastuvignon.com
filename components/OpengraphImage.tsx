@@ -3,16 +3,16 @@ import path from "path";
 import { ImageResponse } from "next/server";
 import { SITE_NAME } from "@/lib/constants";
 
-const interRegular = fs.promises.readFile(
-  path.join(process.cwd(), "fonts/Inter-Regular.ttf")
-);
-
-const interBold = fs.promises.readFile(
-  path.join(process.cwd(), "fonts/Inter-Bold.ttf")
-);
-
 export default async function OpengraphImage(props?: { title?: string }) {
   const { title } = props ?? {};
+
+  const interRegular = fs.promises.readFile(
+    path.join(process.cwd(), "fonts/Inter-Regular.ttf")
+  );
+
+  const interBold = fs.promises.readFile(
+    path.join(process.cwd(), "fonts/Inter-Bold.ttf")
+  );
 
   return new ImageResponse(
     (

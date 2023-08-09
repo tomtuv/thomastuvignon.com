@@ -10,9 +10,5 @@ export default async function Image({
   const { isEnabled } = draftMode();
   const page = await getPage(slug, { locale: lang, preview: isEnabled });
 
-  if (!page) {
-    return null;
-  }
-
-  return await OpengraphImage({ title: page.title ?? undefined });
+  return await OpengraphImage({ title: page?.title ?? undefined });
 }
