@@ -6,7 +6,6 @@ import Providers from "../../components/Providers";
 import {
   SITE_NAME,
   SITE_URL,
-  OPEN_GRAPH_IMAGE,
   TWITTER_USERNAME,
   LOCALES,
   MESSAGES,
@@ -54,7 +53,6 @@ export async function generateMetadata({
       title: SITE_NAME,
       siteName: SITE_NAME,
       description,
-      images: OPEN_GRAPH_IMAGE,
       url: `/${lang}`,
       locale: lang,
       alternateLocale: LOCALES.filter((locale) => locale !== lang),
@@ -62,7 +60,6 @@ export async function generateMetadata({
     twitter: {
       title: SITE_NAME,
       description,
-      images: OPEN_GRAPH_IMAGE,
       card: "summary_large_image",
       creator: TWITTER_USERNAME,
     },

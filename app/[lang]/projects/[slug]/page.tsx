@@ -5,12 +5,7 @@ import Back from "@/components/Back";
 import Blocks from "@/components/Blocks";
 import PageLayout from "@/components/PageLayout";
 import { getAllProjectsWithSlug, getProject } from "@/lib/api";
-import {
-  SITE_NAME,
-  OPEN_GRAPH_IMAGE,
-  TWITTER_USERNAME,
-  LOCALES,
-} from "@/lib/constants";
+import { SITE_NAME, TWITTER_USERNAME, LOCALES } from "@/lib/constants";
 
 export async function generateStaticParams() {
   const allProjects = await getAllProjectsWithSlug();
@@ -43,7 +38,6 @@ export async function generateMetadata({
       title: project?.title ?? undefined,
       siteName: SITE_NAME,
       description: project?.description ?? undefined,
-      images: OPEN_GRAPH_IMAGE,
       url: `/${lang}/projects/${slug}`,
       locale: lang,
       alternateLocale: LOCALES.filter((locale) => locale !== lang),
@@ -51,7 +45,6 @@ export async function generateMetadata({
     twitter: {
       title: project?.title ?? undefined,
       description: project?.description ?? undefined,
-      images: OPEN_GRAPH_IMAGE,
       card: "summary_large_image",
       creator: TWITTER_USERNAME,
     },
