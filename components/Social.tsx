@@ -7,7 +7,7 @@ import Linkedin from "./Linkedin";
 import Mail from "./Mail";
 import Mastodon from "./Mastodon";
 import styles from "./Social.module.css";
-import Twitter from "./Twitter";
+import X from "./X";
 
 export default function Social() {
   const { formatMessage } = useIntl();
@@ -46,12 +46,12 @@ export default function Social() {
       </li>
       <li>
         <Link
-          href="https://twitter.com/tomtuv"
+          href="https://x.com/tomtuv"
           target="_blank"
           rel="me noopener noreferrer"
-          title="Twitter"
+          title="X"
         >
-          <Twitter />
+          <X />
         </Link>
       </li>
       <li>
