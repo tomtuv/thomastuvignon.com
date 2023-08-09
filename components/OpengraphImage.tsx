@@ -20,13 +20,13 @@ export default async function OpengraphImage(props?: { title?: string }) {
         style={{
           display: "flex",
           flexDirection: "column",
-          rowGap: 24,
+          rowGap: 20,
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          color: "white",
-          backgroundColor: "#1F1F1F",
+          color: "#fff",
+          backgroundColor: "#1f1f1f",
         }}
       >
         {title && (
@@ -42,7 +42,7 @@ export default async function OpengraphImage(props?: { title?: string }) {
         )}
         <div
           style={{
-            fontSize: 96,
+            fontSize: 88,
             fontWeight: 700,
             letterSpacing: -4,
           }}
