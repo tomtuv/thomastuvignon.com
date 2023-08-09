@@ -6,14 +6,6 @@ import { SITE_NAME } from "@/lib/constants";
 export default async function OpengraphImage(props?: { title?: string }) {
   const { title } = props ?? {};
 
-  const interRegular = fs.promises.readFile(
-    path.join(process.cwd(), "fonts/Inter-Regular.ttf")
-  );
-
-  const interBold = fs.promises.readFile(
-    path.join(process.cwd(), "fonts/Inter-Bold.ttf")
-  );
-
   return new ImageResponse(
     (
       <div
@@ -57,13 +49,17 @@ export default async function OpengraphImage(props?: { title?: string }) {
       fonts: [
         {
           name: "Inter",
-          data: await interRegular,
+          data: await fs.promises.readFile(
+            path.join(process.cwd(), "fonts/Inter-Regular.ttf")
+          ),
           style: "normal",
           weight: 400,
         },
         {
           name: "Inter",
-          data: await interBold,
+          data: await fs.promises.readFile(
+            path.join(process.cwd(), "fonts/Inter-Bold.ttf")
+          ),
           style: "normal",
           weight: 700,
         },
