@@ -2,8 +2,6 @@ import { draftMode } from "next/headers";
 import OpengraphImage from "@/components/OpengraphImage";
 import { getPage } from "@/lib/api";
 
-export const runtime = "edge";
-
 export default async function Image({
   params: { slug, lang },
 }: {

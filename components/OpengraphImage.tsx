@@ -48,7 +48,7 @@ export default async function OpengraphImage(props?: { title?: string }) {
         {
           name: "Inter",
           data: await fetch(
-            new URL("../fonts/Inter-Regular.ttf", import.meta.url)
+            new URL("./Inter-Regular.ttf", "http://localhost:3000")
           ).then((res) => res.arrayBuffer()),
 
           style: "normal",
@@ -57,7 +57,7 @@ export default async function OpengraphImage(props?: { title?: string }) {
         {
           name: "Inter",
           data: await fetch(
-            new URL("../fonts/Inter-Bold.ttf", import.meta.url)
+            new URL("./Inter-Bold.ttf", "http://localhost:3000")
           ).then((res) => res.arrayBuffer()),
 
           style: "normal",
