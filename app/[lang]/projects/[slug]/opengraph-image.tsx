@@ -10,5 +10,9 @@ export default async function Image({
   const { isEnabled } = draftMode();
   const project = await getProject(slug, { locale: lang, preview: isEnabled });
 
-  return await OpengraphImage({ title: project?.title ?? undefined });
+  if (!project) {
+    return null;
+  }
+
+  return await OpengraphImage({ title: project.title ?? undefined });
 }
