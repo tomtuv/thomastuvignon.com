@@ -4,8 +4,8 @@ import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 import { MotionConfig } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { IntlProvider } from "react-intl";
+import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
 import "@contentful/live-preview/style.css";
-import { DEFAULT_LOCALE, MESSAGES } from "../lib/constants";
 
 export default function Providers({
   children,

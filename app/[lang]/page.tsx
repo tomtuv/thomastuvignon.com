@@ -4,7 +4,6 @@ import Intro from "@/components/Intro";
 import PageLayout from "@/components/PageLayout";
 import Projects from "@/components/Projects";
 import { getHomePage } from "@/lib/api";
-import { HomePage } from "@/lib/types";
 
 export default async function Index({
   params: { lang },
@@ -19,7 +18,7 @@ export default async function Index({
   }
 
   return (
-    <PageLayout page={homePage as HomePage}>
+    <PageLayout page={homePage}>
       <Intro homePage={homePage} />
       <Projects homePage={homePage} />
     </PageLayout>

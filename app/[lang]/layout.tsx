@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
-import Providers from "../../components/Providers";
+import Providers from "@/components/Providers";
 import {
   SITE_NAME,
   SITE_URL,

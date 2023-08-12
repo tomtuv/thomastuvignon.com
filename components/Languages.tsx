@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { useIntl } from "react-intl";
-import { LANGUAGE_NAMES, LOCALES } from "../lib/constants";
 import Link from "./Link";
+import { LANGUAGE_NAMES, LOCALES } from "@/lib/constants";
 
 export default function Languages() {
   const pathname = usePathname();
