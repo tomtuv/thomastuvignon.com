@@ -20,12 +20,9 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  if (
-    ["/android-chrome-192x192.png", "/android-chrome-512x512.png"].includes(
-      pathname
-    )
-  )
+  if (/\.(.*)$/.test(pathname)) {
     return;
+  }
 
   const pathnameIsMissingLocale = LOCALES.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
