@@ -22,14 +22,14 @@ export default function Media({ media }: { media: MediaType }) {
   return (
     <section
       className={styles.root}
-      data-variant={media?.layout === "Columns" ? "columns" : undefined}
-      aria-labelledby={media.sys.id}
+      data-variant={updatedMedia.layout === "Columns" ? "columns" : undefined}
+      aria-labelledby={updatedMedia.sys.id}
       {...inspectorProps({ fieldId: "images" })}
     >
       <VisuallyHidden as="h2" id={updatedMedia.sys.id}>
-        {updatedMedia?.title}
+        {updatedMedia.title}
       </VisuallyHidden>
-      {updatedMedia?.imagesCollection?.items?.map((image, index) => (
+      {updatedMedia.imagesCollection?.items.map((image, index) => (
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
