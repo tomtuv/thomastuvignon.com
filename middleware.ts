@@ -1,29 +1,44 @@
+import { match as matchLocale } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { DEFAULT_LOCALE, LOCALES } from "./lib/constants";
 
+function getLocale(request: NextRequest): string | undefined {
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    LOCALES
+  );
+
+  const locale = matchLocale(languages, LOCALES, DEFAULT_LOCALE);
+
+  return locale;
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  if (/\.(.*)$/.test(pathname)) {
+  if (
+    ["/android-chrome-192x192.png", "/android-chrome-512x512.png"].includes(
+      pathname
+    )
+  )
     return;
-  }
 
   const pathnameIsMissingLocale = LOCALES.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
   if (pathnameIsMissingLocale) {
-    const acceptLanguage = request.headers.get("Accept-Language");
-    const acceptLanguageLocale = acceptLanguage?.split(",")[0].split("-")[0];
-    const isLocaleSupported = LOCALES.includes(
-      acceptLanguageLocale as (typeof LOCALES)[number]
-    );
-
-    const locale = isLocaleSupported ? acceptLanguageLocale : DEFAULT_LOCALE;
+    const locale = getLocale(request);
 
     return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
+      new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        request.url
+      )
     );
   }
 }

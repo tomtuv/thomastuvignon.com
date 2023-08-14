@@ -27,7 +27,7 @@ export default function Languages() {
             variant="underline-inverse"
             aria-current={locale === activeLocale ? "page" : undefined}
           >
-            {LANGUAGE_NAMES[locale]}
+            {LANGUAGE_NAMES[locale as keyof typeof LANGUAGE_NAMES]}
           </Link>
         </li>
       ))}
