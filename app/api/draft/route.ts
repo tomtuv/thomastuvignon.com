@@ -27,7 +27,7 @@ export async function GET(request: Request) {
   const entry = await getDraftEntry(entryId);
 
   if (!entry) {
-    return new Response("Invalid slug", { status: 401 });
+    return new Response("Invalid entry ID", { status: 401 });
   }
 
   const url = resolveUrl(entry);
