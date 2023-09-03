@@ -1,13 +1,13 @@
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import Intro from "@/components/Intro";
 import PageLayout from "@/components/PageLayout";
-import Projects from "@/components/Projects";
 import { getHomePage } from "@/lib/api";
 
-export default async function Index({
+export default async function Layout({
+  children,
   params: { lang },
 }: {
+  children: React.ReactNode;
   params: { lang: string };
 }) {
   const { isEnabled } = draftMode();
@@ -17,10 +17,5 @@ export default async function Index({
     return notFound();
   }
 
-  return (
-    <PageLayout page={homePage}>
-      <Intro homePage={homePage} />
-      <Projects homePage={homePage} />
-    </PageLayout>
-  );
+  return <PageLayout page={homePage}>{children}</PageLayout>;
 }
