@@ -6,7 +6,7 @@ import {
 } from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
 import { useId } from "react";
-import { FormattedMessage } from "react-intl";
+import FormattedMessage from "./FormattedMessage";
 import styles from "./Intro.module.css";
 import RichText from "./RichText";
 import VisuallyHidden from "./VisuallyHidden";

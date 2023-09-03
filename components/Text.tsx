@@ -5,7 +5,7 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
-import { FormattedMessage } from "react-intl";
+import FormattedMessage from "./FormattedMessage";
 import Link from "./Link";
 import RichText from "./RichText";
 import styles from "./Text.module.css";

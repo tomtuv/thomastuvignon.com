@@ -6,7 +6,7 @@ import {
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
 import { useId } from "react";
-import { FormattedMessage } from "react-intl";
+import FormattedMessage from "./FormattedMessage";
 import Image from "./Image";
 import Link from "./Link";
 import styles from "./Projects.module.css";

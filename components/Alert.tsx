@@ -1,7 +1,5 @@
-"use client";
-
-import { FormattedMessage } from "react-intl";
 import styles from "./Alert.module.css";
+import FormattedMessage from "./FormattedMessage";
 import Link from "./Link";
 
 export default function Alert() {
