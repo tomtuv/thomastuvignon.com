@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.9.6
     version: 2.9.6(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
-    specifier: ^15.17.1
-    version: 15.17.1(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^15.17.2
+    version: 15.17.2(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-types':
     specifier: ^16.2.1
     version: 16.2.1
@@ -705,20 +705,25 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@contentful/rich-text-react-renderer@15.17.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-LSsYBYYAzkSCWmAbbVCzxZhcrUNBWdgOo9YY1WgvANmzF9zEUODxml3lCLN7PQ08nGMAjzhJBV5wpyp5YReRjg==}
+  /@contentful/rich-text-react-renderer@15.17.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7PBjPY7jVWf9pEvQ2olO/pj4ow4d47gj/vPbYFWWyVsxA1s/Lx5lKPVq+9sPV8KbFAjbV18XHsGF6HG/nB1E9g==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@contentful/rich-text-types': 16.2.1
+      '@contentful/rich-text-types': 16.3.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@contentful/rich-text-types@16.2.1:
     resolution: {integrity: sha512-fBxqYcyG3Nw33DhifuE7Ndw3xlrWlOMjwsOvhLmVP4LO475Qyy9ioRChtEt6DPUdH2SFpobvM0qqC/fVe0MNDA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
+
+  /@contentful/rich-text-types@16.3.0:
+    resolution: {integrity: sha512-OfQmAu5bxE0CgQA3WlUleVej+ifFG/iXmB2DmUl4EyWyFue1aiIvfjxQhcDRSH4n1jUNMJ6L1wInZL8uV5m3TQ==}
     engines: {node: '>=6.0.0'}
     dev: false
 
