@@ -12,7 +12,7 @@
   "dependencies": {
     "@contentful/live-preview": "^2.9.6",
     "@contentful/rich-text-react-renderer": "^15.17.2",
-    "@contentful/rich-text-types": "^16.2.1",
+    "@contentful/rich-text-types": "^16.3.0",
     "@formatjs/intl-localematcher": "^0.4.2",
     "@vercel/analytics": "^1.0.2",
     "framer-motion": "^10.16.4",
