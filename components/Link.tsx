@@ -3,6 +3,7 @@
 import NextLink from "next/link";
 import { useIntl } from "react-intl";
 import styles from "./Link.module.css";
+import { useViewTransitionsRouter } from "@/hooks/useViewTransitionsRouter";
 import { LOCALES } from "@/lib/constants";
 
 export default function Link({
@@ -13,6 +14,13 @@ export default function Link({
   variant?: "underline" | "underline-inverse";
 }) {
   const { locale } = useIntl();
+  const router = useViewTransitionsRouter();
+
+  const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
+    event.preventDefault();
+
+    router.push(href.toString());
+  };
 
   if (
     href.toString().startsWith("/") &&
@@ -27,6 +35,7 @@ export default function Link({
       className={styles.root}
       href={href}
       data-variant={variant}
+      onClick={handleClick}
       {...props}
     />
   );

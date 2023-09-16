@@ -3,6 +3,7 @@
   padding: var(--space-y) var(--space-x);
   overflow: hidden;
   background-color: var(--color-alabaster);
+  view-transition-name: header;
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-eerie-black);

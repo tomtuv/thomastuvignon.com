@@ -4,6 +4,7 @@ import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 import { MotionConfig } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { IntlProvider } from "react-intl";
+import ViewTransitionsProvider from "./ViewTransitionsProvider";
 import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
 import "@contentful/live-preview/style.css";
 
@@ -16,19 +17,21 @@ export default function Providers({
 
   return (
     <MotionConfig reducedMotion="user">
-      <IntlProvider
-        locale={locale}
-        defaultLocale={DEFAULT_LOCALE}
-        messages={MESSAGES[locale as keyof typeof MESSAGES]}
-      >
-        <ContentfulLivePreviewProvider
+      <ViewTransitionsProvider>
+        <IntlProvider
           locale={locale}
-          enableInspectorMode={draftMode}
-          enableLiveUpdates={draftMode}
+          defaultLocale={DEFAULT_LOCALE}
+          messages={MESSAGES[locale as keyof typeof MESSAGES]}
         >
-          {children}
-        </ContentfulLivePreviewProvider>
-      </IntlProvider>
+          <ContentfulLivePreviewProvider
+            locale={locale}
+            enableInspectorMode={draftMode}
+            enableLiveUpdates={draftMode}
+          >
+            {children}
+          </ContentfulLivePreviewProvider>
+        </IntlProvider>
+      </ViewTransitionsProvider>
     </MotionConfig>
   );
 }
