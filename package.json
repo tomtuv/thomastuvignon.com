@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.49.0",
-    "eslint-config-next": "^13.4.19",
+    "eslint-config-next": "^13.5.2",
     "eslint-plugin-import": "^2.28.1",
     "postcss": "^8.4.30",
     "postcss-preset-env": "^9.1.4",
