@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^2.10.1
-    version: 2.10.1(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^2.11.0
+    version: 2.11.0(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.17.2
     version: 15.17.2(react-dom@18.2.0)(react@18.2.0)
@@ -692,8 +692,8 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
 
-  /@contentful/live-preview@2.10.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-t+lZrRaBQrtpDmCOLqftgqa7MqAEX04tpW6UMm316AGzRUgAnvbsPeLuaF8c67G89EiaHBEh8YJrzPlWYlERGw==}
+  /@contentful/live-preview@2.11.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-4Fubv0oqi7YZr3ZkYO1sF5te9uzeklzqwjEq92mWsdIm7wqDiGCqUEqyTheuGVB6UlalSPpLImk2MPWm2yylew==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
