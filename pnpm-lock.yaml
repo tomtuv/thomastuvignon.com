@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.11.1
     version: 2.11.1(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
-    specifier: ^15.17.2
-    version: 15.17.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^15.18.0
+    version: 15.18.0(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-types':
     specifier: ^16.3.0
     version: 16.3.0
@@ -705,8 +705,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@contentful/rich-text-react-renderer@15.17.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-7PBjPY7jVWf9pEvQ2olO/pj4ow4d47gj/vPbYFWWyVsxA1s/Lx5lKPVq+9sPV8KbFAjbV18XHsGF6HG/nB1E9g==}
+  /@contentful/rich-text-react-renderer@15.18.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-P88UKawb4MTVPaOaiqm5AERfPleUfjFh1Cd7l4/iwVHAW3G1R4tfsDgOK1dOdozqfBfAlf2zMVITmMS6IkT9sg==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
