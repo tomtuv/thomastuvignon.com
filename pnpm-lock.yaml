@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^2.11.2
-    version: 2.11.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^2.11.3
+    version: 2.11.3(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.18.0
     version: 15.18.0(react-dom@18.2.0)(react@18.2.0)
@@ -692,14 +692,14 @@ packages:
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
 
-  /@contentful/live-preview@2.11.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-bHfSeKE/jkFtVyB7YkfsBZwoUQEqmgimZUDQswcFg+Nte5+v+rgorQONL3oEuw9oxexEHL+Zai8W4DTWSSnCZA==}
+  /@contentful/live-preview@2.11.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nWF85LHMNBWY7eGahzXPtPRPJ9rRfImkdLdgS6+KajQzIV+MYb97zj67rIvlzD83RwmoYGDvX7ws5Ubi4j+U1w==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@contentful/rich-text-types': 16.3.0
-      '@contentful/visual-sdk': 1.0.0-alpha.22
+      '@contentful/visual-sdk': 1.0.0-alpha.23
       lodash.isequal: 4.5.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -722,8 +722,8 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@contentful/visual-sdk@1.0.0-alpha.22:
-    resolution: {integrity: sha512-Ukrkdkakm79j1QwFqNQo2gpK+SHwa+4bEgDMOexZy1la/5H9ktOeAqNtcRe4opqz9aP+sGgPj4ym7rriulWxeA==}
+  /@contentful/visual-sdk@1.0.0-alpha.23:
+    resolution: {integrity: sha512-Flp3kLzUCOeSktAu6mEHeLD4nF+cDIETLFWac3Gp6tGck9CIOICDaqFdtAF9KPae3tB2e05ufhS5qpIcW0zkHw==}
     dev: false
 
   /@csstools/cascade-layer-name-parser@1.0.5(@csstools/css-parser-algorithms@2.3.2)(@csstools/css-tokenizer@2.2.1):
