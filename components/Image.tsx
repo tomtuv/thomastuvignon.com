@@ -7,7 +7,7 @@ import styles from "./Image.module.css";
 export default function Image({ src, ...props }: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleLoadingComplete = () => {
+  const handleLoad = () => {
     setIsLoading(false);
   };
 
@@ -16,7 +16,7 @@ export default function Image({ src, ...props }: ImageProps) {
       <NextImage
         src={src}
         data-loading={isLoading}
-        onLoadingComplete={handleLoadingComplete}
+        onLoad={handleLoad}
         {...props}
       />
     </span>

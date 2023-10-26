@@ -26,13 +26,14 @@ const RICH_TEXT_OPTIONS: Options = {
 };
 
 export default function RichText({
+  className,
   text,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & {
   text: Document;
 }) {
   return (
-    <div className={styles.root} {...props}>
+    <div className={[styles.root, className].join(" ")} {...props}>
       {documentToReactComponents(text, RICH_TEXT_OPTIONS)}
     </div>
   );

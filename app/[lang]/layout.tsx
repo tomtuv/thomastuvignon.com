@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import Providers from "@/components/Providers";
@@ -9,6 +9,7 @@ import {
   TWITTER_USERNAME,
   LOCALES,
   MESSAGES,
+  DEFAULT_LOCALE,
 } from "@/lib/constants";
 import "../globals.css";
 
@@ -20,6 +21,10 @@ const inter = Inter({
   variable: "--font-family",
 });
 
+export const viewport: Viewport = {
+  colorScheme: "dark light",
+};
+
 export async function generateStaticParams() {
   return LOCALES.map((locale) => ({ lang: locale }));
 }
@@ -29,6 +34,7 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }): Promise<Metadata> {
+  lang = lang.replace("worker.js", DEFAULT_LOCALE);
   const description = MESSAGES[lang as keyof typeof MESSAGES].description;
 
   return {
@@ -48,7 +54,6 @@ export async function generateMetadata({
         {}
       ),
     },
-    colorScheme: "dark light",
     openGraph: {
       title: SITE_NAME,
       siteName: SITE_NAME,
