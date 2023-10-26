@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 import { SITE_NAME } from "@/lib/constants";
 
 export default async function OpengraphImage(props?: { title?: string }) {
