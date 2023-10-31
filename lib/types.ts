@@ -466,6 +466,8 @@ export type HomePageIntroLinks = {
 export type HomePageIntroResources = {
   __typename?: "HomePageIntroResources";
   block: Array<ResourceLink>;
+  hyperlink: Array<ResourceLink>;
+  inline: Array<ResourceLink>;
 };
 
 export type HomePageLinkingCollections = {
@@ -796,6 +798,8 @@ export type PageBodyLinks = {
 export type PageBodyResources = {
   __typename?: "PageBodyResources";
   block: Array<ResourceLink>;
+  hyperlink: Array<ResourceLink>;
+  inline: Array<ResourceLink>;
 };
 
 export type PageCollection = {
@@ -1283,6 +1287,8 @@ export type TextBodyLinks = {
 export type TextBodyResources = {
   __typename?: "TextBodyResources";
   block: Array<ResourceLink>;
+  hyperlink: Array<ResourceLink>;
+  inline: Array<ResourceLink>;
 };
 
 export type TextCollection = {

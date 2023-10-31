@@ -342,6 +342,8 @@ type HomePageIntroLinks {
 
 type HomePageIntroResources {
   block: [ResourceLink!]!
+  hyperlink: [ResourceLink!]!
+  inline: [ResourceLink!]!
 }
 
 type HomePageLinkingCollections {
@@ -694,6 +696,8 @@ type PageBodyLinks {
 
 type PageBodyResources {
   block: [ResourceLink!]!
+  hyperlink: [ResourceLink!]!
+  inline: [ResourceLink!]!
 }
 
 type PageCollection {
@@ -1048,6 +1052,8 @@ type TextBodyLinks {
 
 type TextBodyResources {
   block: [ResourceLink!]!
+  hyperlink: [ResourceLink!]!
+  inline: [ResourceLink!]!
 }
 
 type TextCollection {
