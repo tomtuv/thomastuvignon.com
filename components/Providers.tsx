@@ -12,7 +12,7 @@ export default function Providers({
   draftMode,
 }: React.PropsWithChildren<{ draftMode: boolean }>) {
   const pathname = usePathname();
-  const locale = pathname?.split("/")[1].replace("worker.js", DEFAULT_LOCALE);
+  const locale = pathname?.split("/")[1];
 
   return (
     <MotionConfig reducedMotion="user">

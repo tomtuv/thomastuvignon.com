@@ -9,7 +9,6 @@ import {
   TWITTER_USERNAME,
   LOCALES,
   MESSAGES,
-  DEFAULT_LOCALE,
 } from "@/lib/constants";
 import "../globals.css";
 
@@ -34,7 +33,6 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }): Promise<Metadata> {
-  lang = lang.replace("worker.js", DEFAULT_LOCALE);
   const description = MESSAGES[lang as keyof typeof MESSAGES].description;
 
   return {
