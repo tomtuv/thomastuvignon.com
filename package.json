@@ -15,7 +15,7 @@
     "@contentful/rich-text-types": "^16.3.0",
     "@formatjs/intl-localematcher": "^0.5.2",
     "@vercel/analytics": "^1.1.1",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^10.16.8",
     "negotiator": "^0.6.3",
     "next": "^14.0.3",
     "react": "^18.2.0",
