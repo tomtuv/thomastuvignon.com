@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^2.12.4
-    version: 2.12.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^2.12.5
+    version: 2.12.5(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.0
     version: 15.19.0(react-dom@18.2.0)(react@18.2.0)
@@ -755,17 +755,20 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@contentful/live-preview@2.12.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-OCrEIB7lcJqvA4txlNzoGmQnXi3iWEKYI9hNKyrWzzdyisqQ1v0z5CeY+sE/yaSCMQmEHq1jLiXHQpD3IUVD0g==}
+  /@contentful/live-preview@2.12.5(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-dL1/ymaxGChvZeb82M1aeQiIRZHf16PEO74R9QEVUs34GXLEzqTXLTrtsDIoyx6sNO1S9JFLKV+A0xktsqDYTw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@contentful/rich-text-types': 16.3.0
       '@contentful/visual-sdk': 1.0.0-alpha.34
+      graphql-tag: 2.12.6(graphql@16.6.0)
       lodash.isequal: 4.5.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - graphql
     dev: false
 
   /@contentful/rich-text-react-renderer@15.19.0(react-dom@18.2.0)(react@18.2.0):
@@ -3918,7 +3921,6 @@ packages:
     dependencies:
       graphql: 16.6.0
       tslib: 2.5.0
-    dev: true
 
   /graphql-ws@5.13.1(graphql@16.6.0):
     resolution: {integrity: sha512-eiX7ES/ZQr0q7hSM5UBOEIFfaAUmAY9/CSDyAnsETuybByU7l/v46drRg9DQoTvVABEHp3QnrvwgTRMhqy7zxQ==}
@@ -3932,7 +3934,6 @@ packages:
   /graphql@16.6.0:
     resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
-    dev: true
 
   /hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
