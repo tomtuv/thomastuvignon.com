@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
@@ -83,7 +84,8 @@ export default function RootLayout({
       <body>
         <Providers draftMode={isEnabled}>
           {children}
-          {!isEnabled && <Analytics />}
+          <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
