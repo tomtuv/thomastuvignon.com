@@ -1,3 +1,4 @@
+import { DEFAULT_LOCALE } from "./constants";
 import type {
   EntryCollection,
   HomePageCollection,
@@ -5,11 +6,15 @@ import type {
   ProjectCollection,
 } from "./types";
 
-async function fetchApi<T = Record<string, unknown>>(
+async function fetchAPI<T = Record<string, unknown>>(
   query: string,
   variables: Record<string, unknown> = {},
   preview = false
 ) {
+  if ("locale" in variables && typeof variables.locale === "string") {
+    variables.locale = variables.locale.replace("worker.js", DEFAULT_LOCALE);
+  }
+
   const response = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
@@ -29,10 +34,13 @@ async function fetchApi<T = Record<string, unknown>>(
     }
   );
 
-  const { data, errors } = (await response.json()) as {
+  const {
+    data,
+    errors,
+  }: {
     data?: T;
-    errors?: Array<{ message: string }>;
-  };
+    errors?: { message: string }[];
+  } = await response.json();
 
   if (errors) {
     const message = errors.map((error) => error.message).join("\n");
@@ -62,7 +70,7 @@ export async function getDraftEntry(id: string) {
 
   const variables = { id };
 
-  const data = await fetchApi<{
+  const data = await fetchAPI<{
     entryCollection: EntryCollection;
   }>(query, variables, true);
 
@@ -115,7 +123,7 @@ export async function getHomePage({
 
   const variables = { locale, preview };
 
-  const data = await fetchApi<{
+  const data = await fetchAPI<{
     homePageCollection: HomePageCollection;
   }>(query, variables, preview);
 
@@ -184,7 +192,7 @@ export async function getProject(
 
   const variables = { slug, locale, preview };
 
-  const data = await fetchApi<{
+  const data = await fetchAPI<{
     projectCollection: ProjectCollection;
   }>(query, variables, preview);
 
@@ -202,7 +210,7 @@ export async function getAllProjectsWithSlug() {
     }
   `;
 
-  const data = await fetchApi<{
+  const data = await fetchAPI<{
     projectCollection: ProjectCollection;
   }>(query);
 
@@ -239,7 +247,7 @@ export async function getPage(
 
   const variables = { slug, locale, preview };
 
-  const data = await fetchApi<{ pageCollection: PageCollection }>(
+  const data = await fetchAPI<{ pageCollection: PageCollection }>(
     query,
     variables,
     preview
@@ -259,7 +267,7 @@ export async function getAllPagesWithSlug() {
     }
   `;
 
-  const data = await fetchApi<{ pageCollection: PageCollection }>(query);
+  const data = await fetchAPI<{ pageCollection: PageCollection }>(query);
 
   return data?.pageCollection.items ?? [];
 }

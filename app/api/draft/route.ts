@@ -2,7 +2,7 @@ import { draftMode } from "next/headers";
 import { getDraftEntry } from "@/lib/api";
 import type { HomePage, Project, Page } from "@/lib/types";
 
-function resolveUrl(entry: HomePage | Project | Page) {
+function resolveURL(entry: HomePage | Project | Page) {
   switch (entry.__typename) {
     case "Project":
       return `/projects/${entry.slug ?? ""}`;
@@ -30,7 +30,7 @@ export async function GET(request: Request) {
     return new Response("Invalid entry ID", { status: 401 });
   }
 
-  const url = resolveUrl(entry);
+  const url = resolveURL(entry);
 
   draftMode().enable();
 
