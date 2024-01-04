@@ -6,10 +6,9 @@ import { getHomePage } from "@/lib/api";
 export default async function Layout({
   children,
   params: { locale },
-}: {
-  children: React.ReactNode;
+}: React.PropsWithChildren<{
   params: { locale: string };
-}) {
+}>) {
   const { isEnabled } = draftMode();
   const homePage = await getHomePage({ locale, preview: isEnabled });
 

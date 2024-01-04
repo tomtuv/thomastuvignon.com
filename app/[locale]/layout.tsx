@@ -74,10 +74,7 @@ export async function generateMetadata({
 export default function RootLayout({
   children,
   params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+}: React.PropsWithChildren<{ params: { locale: string } }>) {
   locale = locale.replace("worker.js", DEFAULT_LOCALE);
   const { isEnabled } = draftMode();
 

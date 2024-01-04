@@ -52,10 +52,9 @@ export async function generateMetadata({
 export default async function Layout({
   children,
   params: { slug, locale },
-}: {
-  children: React.ReactNode;
+}: React.PropsWithChildren<{
   params: { slug: string; locale: string };
-}) {
+}>) {
   const { isEnabled } = draftMode();
   const project = await getProject(slug, { locale, preview: isEnabled });
 
