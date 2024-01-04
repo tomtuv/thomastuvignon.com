@@ -193,9 +193,6 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
 export type AssetLinkingCollectionsHomePageCollectionArgs = {
   limit?: InputMaybe<Scalars["Int"]["input"]>;
   locale?: InputMaybe<Scalars["String"]["input"]>;
-  order?: InputMaybe<
-    Array<InputMaybe<AssetLinkingCollectionsHomePageCollectionOrder>>
-  >;
   preview?: InputMaybe<Scalars["Boolean"]["input"]>;
   skip?: InputMaybe<Scalars["Int"]["input"]>;
 };
@@ -203,9 +200,6 @@ export type AssetLinkingCollectionsHomePageCollectionArgs = {
 export type AssetLinkingCollectionsMediaCollectionArgs = {
   limit?: InputMaybe<Scalars["Int"]["input"]>;
   locale?: InputMaybe<Scalars["String"]["input"]>;
-  order?: InputMaybe<
-    Array<InputMaybe<AssetLinkingCollectionsMediaCollectionOrder>>
-  >;
   preview?: InputMaybe<Scalars["Boolean"]["input"]>;
   skip?: InputMaybe<Scalars["Int"]["input"]>;
 };
@@ -213,57 +207,9 @@ export type AssetLinkingCollectionsMediaCollectionArgs = {
 export type AssetLinkingCollectionsProjectCollectionArgs = {
   limit?: InputMaybe<Scalars["Int"]["input"]>;
   locale?: InputMaybe<Scalars["String"]["input"]>;
-  order?: InputMaybe<
-    Array<InputMaybe<AssetLinkingCollectionsProjectCollectionOrder>>
-  >;
   preview?: InputMaybe<Scalars["Boolean"]["input"]>;
   skip?: InputMaybe<Scalars["Int"]["input"]>;
 };
-
-export enum AssetLinkingCollectionsHomePageCollectionOrder {
-  JobTitleAsc = "jobTitle_ASC",
-  JobTitleDesc = "jobTitle_DESC",
-  SysFirstPublishedAtAsc = "sys_firstPublishedAt_ASC",
-  SysFirstPublishedAtDesc = "sys_firstPublishedAt_DESC",
-  SysIdAsc = "sys_id_ASC",
-  SysIdDesc = "sys_id_DESC",
-  SysPublishedAtAsc = "sys_publishedAt_ASC",
-  SysPublishedAtDesc = "sys_publishedAt_DESC",
-  SysPublishedVersionAsc = "sys_publishedVersion_ASC",
-  SysPublishedVersionDesc = "sys_publishedVersion_DESC",
-  TitleAsc = "title_ASC",
-  TitleDesc = "title_DESC",
-}
-
-export enum AssetLinkingCollectionsMediaCollectionOrder {
-  LayoutAsc = "layout_ASC",
-  LayoutDesc = "layout_DESC",
-  SysFirstPublishedAtAsc = "sys_firstPublishedAt_ASC",
-  SysFirstPublishedAtDesc = "sys_firstPublishedAt_DESC",
-  SysIdAsc = "sys_id_ASC",
-  SysIdDesc = "sys_id_DESC",
-  SysPublishedAtAsc = "sys_publishedAt_ASC",
-  SysPublishedAtDesc = "sys_publishedAt_DESC",
-  SysPublishedVersionAsc = "sys_publishedVersion_ASC",
-  SysPublishedVersionDesc = "sys_publishedVersion_DESC",
-  TitleAsc = "title_ASC",
-  TitleDesc = "title_DESC",
-}
-
-export enum AssetLinkingCollectionsProjectCollectionOrder {
-  SlugAsc = "slug_ASC",
-  SlugDesc = "slug_DESC",
-  SysFirstPublishedAtAsc = "sys_firstPublishedAt_ASC",
-  SysFirstPublishedAtDesc = "sys_firstPublishedAt_DESC",
-  SysIdAsc = "sys_id_ASC",
-  SysIdDesc = "sys_id_DESC",
-  SysPublishedAtAsc = "sys_publishedAt_ASC",
-  SysPublishedAtDesc = "sys_publishedAt_DESC",
-  SysPublishedVersionAsc = "sys_publishedVersion_ASC",
-  SysPublishedVersionDesc = "sys_publishedVersion_DESC",
-  TitleAsc = "title_ASC",
-  TitleDesc = "title_DESC",
-}
 
 export enum AssetOrder {
   ContentTypeAsc = "contentType_ASC",
