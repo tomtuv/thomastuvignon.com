@@ -15,8 +15,8 @@ dependencies:
     specifier: ^16.3.0
     version: 16.3.0
   '@formatjs/intl-localematcher':
-    specifier: ^0.5.2
-    version: 0.5.2
+    specifier: ^0.5.3
+    version: 0.5.3
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -1277,6 +1277,12 @@ packages:
 
   /@formatjs/intl-localematcher@0.5.2:
     resolution: {integrity: sha512-txaaE2fiBMagLrR4jYhxzFO6wEdEG4TPMqrzBAcbr4HFUYzH/YC+lg6OIzKCHm8WgDdyQevxbAAV1OgcXctuGw==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@formatjs/intl-localematcher@0.5.3:
+    resolution: {integrity: sha512-1/X4YCuocNFcnD8t0J6ksiUk1gvI+UIGWicX6HdPvS9GnAoFsTT0pqNBh0jZ1tJY+oSqY/t9aKIGR9FbXD4yjw==}
     dependencies:
       tslib: 2.5.0
     dev: false
