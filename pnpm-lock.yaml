@@ -12,8 +12,8 @@ dependencies:
     specifier: ^15.19.4
     version: 15.19.4(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-types':
-    specifier: ^16.3.0
-    version: 16.3.0
+    specifier: ^16.3.4
+    version: 16.3.4
   '@formatjs/intl-localematcher':
     specifier: ^0.5.4
     version: 0.5.4
@@ -764,7 +764,7 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@contentful/rich-text-types': 16.3.0
+      '@contentful/rich-text-types': 16.3.4
       '@contentful/visual-sdk': 1.0.0-alpha.34
       '@vercel/stega': 0.1.0
       graphql-tag: 2.12.6(graphql@16.8.1)
@@ -786,11 +786,6 @@ packages:
       '@contentful/rich-text-types': 16.3.4
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@contentful/rich-text-types@16.3.0:
-    resolution: {integrity: sha512-OfQmAu5bxE0CgQA3WlUleVej+ifFG/iXmB2DmUl4EyWyFue1aiIvfjxQhcDRSH4n1jUNMJ6L1wInZL8uV5m3TQ==}
-    engines: {node: '>=6.0.0'}
     dev: false
 
   /@contentful/rich-text-types@16.3.4:
