@@ -24,7 +24,7 @@
     "react-intl": "^6.6.2"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/schema-ast": "^4.0.2",
     "@graphql-codegen/typescript": "^4.0.4",
     "@types/negotiator": "^0.6.3",
