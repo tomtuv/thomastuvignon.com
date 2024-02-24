@@ -4,7 +4,6 @@ import { GraphQLClient } from "graphql-request";
 import { unstable_noStore as noStore } from "next/cache";
 import { draftMode } from "next/headers";
 import type { introspection } from "../graphql-env.d.ts";
-import { DEFAULT_LOCALE } from "./constants";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,
@@ -36,7 +35,7 @@ async function fetchAPI<T, V>(
   try {
     isDraftMode = draftMode().isEnabled || preview;
   } catch {
-    isDraftMode = false;
+    isDraftMode = preview;
   }
 
   if (isDraftMode) {
@@ -48,10 +47,6 @@ async function fetchAPI<T, V>(
     {
       ...variables,
       preview: isDraftMode,
-      locale:
-        typeof variables.locale === "string"
-          ? variables.locale.replace("worker.js", DEFAULT_LOCALE)
-          : undefined,
     },
     {
       Authorization: `Bearer ${

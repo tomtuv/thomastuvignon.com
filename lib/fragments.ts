@@ -1,5 +1,17 @@
 import { graphql } from "gql.tada";
 
+export const draftEntryFragment = graphql(/* GraphQL */ `
+  fragment DraftEntry on Entry {
+    __typename
+    ... on Project {
+      slug
+    }
+    ... on Page {
+      slug
+    }
+  }
+`);
+
 export const projectCardFragment = graphql(/* GraphQL */ `
   fragment ProjectCard on Project {
     sys {

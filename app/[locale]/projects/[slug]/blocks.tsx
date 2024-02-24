@@ -20,19 +20,15 @@ export default function Blocks({ project }: { project: Project }) {
 
   return (
     <div {...inspectorProps({ fieldId: "blocksCollection" })}>
-      {updatedProject?.blocksCollection?.items.map((item) => {
-        const block = readFragment(projectBlockFragment, item);
-
-        if (!block?.__typename) return null;
+      {updatedProject?.blocksCollection?.items.map((block) => {
+        const data = readFragment(projectBlockFragment, block);
 
         return (
-          <Fragment
-            key={(block as unknown as { sys: { id: string } })?.sys?.id}
-          >
-            {block?.__typename === "Text" ? (
-              <Text text={block} />
+          <Fragment key={(data as unknown as { sys: { id: string } })?.sys?.id}>
+            {data?.__typename === "Text" ? (
+              <Text text={data} />
             ) : (
-              block?.__typename === "Media" && <Media media={block} />
+              data?.__typename === "Media" && <Media media={data} />
             )}
           </Fragment>
         );

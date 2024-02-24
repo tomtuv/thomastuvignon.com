@@ -1,21 +1,22 @@
 import { graphql } from "gql.tada";
-import { projectCardFragment, projectBlockFragment } from "./fragments";
+import {
+  draftEntryFragment,
+  projectCardFragment,
+  projectBlockFragment,
+} from "./fragments";
 
-export const draftEntryQuery = graphql(/* GraphQL */ `
-  query DraftEntry($id: String!) {
-    entryCollection(where: { sys: { id: $id } }, limit: 1, preview: true) {
-      items {
-        __typename
-        ... on Project {
-          slug
-        }
-        ... on Page {
-          slug
+export const draftEntryQuery = graphql(
+  /* GraphQL */ `
+    query DraftEntry($id: String!) {
+      entryCollection(where: { sys: { id: $id } }, limit: 1, preview: true) {
+        items {
+          ...DraftEntry
         }
       }
     }
-  }
-`);
+  `,
+  [draftEntryFragment]
+);
 
 export const homePageQuery = graphql(
   /* GraphQL */ `
