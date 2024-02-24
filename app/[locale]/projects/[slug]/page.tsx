@@ -1,4 +1,3 @@
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Blocks from "./blocks";
 import Back from "@/components/back";
@@ -9,8 +8,7 @@ export default async function Project({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const { isEnabled } = draftMode();
-  const project = await getProject(slug, { locale, preview: isEnabled });
+  const project = await getProject(slug, { locale });
 
   if (!project) {
     notFound();

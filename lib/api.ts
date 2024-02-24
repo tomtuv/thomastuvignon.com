@@ -1,273 +1,99 @@
-import { DEFAULT_LOCALE } from "./constants";
-import type {
-  EntryCollection,
-  HomePageCollection,
-  PageCollection,
-  ProjectCollection,
-} from "./types";
+import type { TadaDocumentNode } from "gql.tada";
+import { initGraphQLTada } from "gql.tada";
+import { GraphQLClient } from "graphql-request";
+import { unstable_noStore as noStore } from "next/cache";
+import { draftMode } from "next/headers";
+import type { introspection } from "../graphql-env.d.ts";
+import {
+  allPagesWithSlugQuery,
+  allProjectsWithSlugQuery,
+  draftEntryQuery,
+  homePageQuery,
+  pageQuery,
+  projectQuery,
+} from "./queries";
 
-async function fetchAPI<T = Record<string, unknown>>(
-  query: string,
+export const graphql = initGraphQLTada<{
+  introspection: introspection;
+}>();
+
+export type { FragmentOf, ResultOf, VariablesOf } from "gql.tada";
+export { readFragment } from "gql.tada";
+
+const client = new GraphQLClient(
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
+);
+
+async function fetchAPI<T, V>(
+  query: TadaDocumentNode<T, V>,
   variables: Record<string, unknown> = {},
-  preview = false
+  options: { preview: boolean } = { preview: false }
 ) {
-  if ("locale" in variables && typeof variables.locale === "string") {
-    variables.locale = variables.locale.replace("worker.js", DEFAULT_LOCALE);
+  const { preview } = options;
+  let isDraftMode: boolean;
+
+  try {
+    isDraftMode = draftMode().isEnabled || preview;
+  } catch {
+    isDraftMode = preview;
   }
 
-  const response = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+  if (isDraftMode) {
+    noStore();
+  }
+
+  const data = await client.request(
+    query,
     {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          process.env[
-            preview
-              ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
-              : "CONTENTFUL_ACCESS_TOKEN"
-          ]
-        }`,
-      },
-      body: JSON.stringify({ query, variables }),
-      cache: preview ? "no-cache" : "force-cache",
+      ...variables,
+      preview: isDraftMode,
+    },
+    {
+      Authorization: `Bearer ${
+        process.env[
+          isDraftMode
+            ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
+            : "CONTENTFUL_ACCESS_TOKEN"
+        ]
+      }`,
     }
   );
-
-  const {
-    data,
-    errors,
-  }: {
-    data?: T;
-    errors?: { message: string }[];
-  } = await response.json();
-
-  if (errors) {
-    const message = errors.map((error) => error.message).join("\n");
-
-    throw new Error(message);
-  }
 
   return data;
 }
 
 export async function getDraftEntry(id: string) {
-  const query = /* GraphQL */ `
-    query ($id: String!) {
-      entryCollection(where: { sys: { id: $id } }, limit: 1, preview: true) {
-        items {
-          __typename
-          ... on Project {
-            slug
-          }
-          ... on Page {
-            slug
-          }
-        }
-      }
-    }
-  `;
+  const data = await fetchAPI(draftEntryQuery, { id }, { preview: true });
 
-  const variables = { id };
-
-  const data = await fetchAPI<{
-    entryCollection: EntryCollection;
-  }>(query, variables, true);
-
-  return data?.entryCollection.items[0];
+  return data?.entryCollection?.items[0];
 }
 
-export async function getHomePage({
-  locale,
-  preview,
-}: {
-  locale: string;
-  preview: boolean;
-}) {
-  const query = /* GraphQL */ `
-    query ($locale: String!, $preview: Boolean!) {
-      homePageCollection(locale: $locale, limit: 1, preview: $preview) {
-        items {
-          __typename
-          sys {
-            id
-          }
-          title
-          jobTitle
-          profilePicture {
-            url
-            width
-            height
-          }
-          intro {
-            json
-          }
-          projectsCollection {
-            items {
-              sys {
-                id
-              }
-              title
-              slug
-              thumbnail {
-                url
-                width
-                height
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
+export async function getHomePage({ locale }: { locale: string }) {
+  const data = await fetchAPI(homePageQuery, { locale });
 
-  const variables = { locale, preview };
-
-  const data = await fetchAPI<{
-    homePageCollection: HomePageCollection;
-  }>(query, variables, preview);
-
-  return data?.homePageCollection.items[0];
+  return data?.homePageCollection?.items[0];
 }
 
-export async function getProject(
-  slug: string,
-  { locale, preview }: { locale: string; preview: boolean }
-) {
-  const query = /* GraphQL */ `
-    query ($slug: String!, $locale: String!, $preview: Boolean!) {
-      projectCollection(
-        where: { slug: $slug }
-        locale: $locale
-        limit: 1
-        preview: $preview
-      ) {
-        items {
-          __typename
-          sys {
-            id
-          }
-          title
-          slug
-          description
-          blocksCollection {
-            items {
-              ... on Text {
-                __typename
-                sys {
-                  id
-                }
-                title
-                subtitle
-                body {
-                  json
-                }
-                link
-              }
-              ... on Media {
-                __typename
-                sys {
-                  id
-                }
-                title
-                layout
-                imagesCollection {
-                  items {
-                    sys {
-                      id
-                    }
-                    url
-                    width
-                    height
-                    description
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
+export async function getProject(slug: string, { locale }: { locale: string }) {
+  const data = await fetchAPI(projectQuery, { slug, locale });
 
-  const variables = { slug, locale, preview };
-
-  const data = await fetchAPI<{
-    projectCollection: ProjectCollection;
-  }>(query, variables, preview);
-
-  return data?.projectCollection.items[0];
+  return data?.projectCollection?.items[0];
 }
 
 export async function getAllProjectsWithSlug() {
-  const query = /* GraphQL */ `
-    query {
-      projectCollection(where: { slug_exists: true }) {
-        items {
-          slug
-        }
-      }
-    }
-  `;
+  const data = await fetchAPI(allProjectsWithSlugQuery);
 
-  const data = await fetchAPI<{
-    projectCollection: ProjectCollection;
-  }>(query);
-
-  return data?.projectCollection.items ?? [];
+  return data?.projectCollection?.items ?? [];
 }
 
-export async function getPage(
-  slug: string,
-  { locale, preview }: { locale: string; preview: boolean }
-) {
-  const query = /* GraphQL */ `
-    query ($slug: String!, $locale: String!, $preview: Boolean!) {
-      pageCollection(
-        where: { slug: $slug }
-        locale: $locale
-        limit: 1
-        preview: $preview
-      ) {
-        items {
-          __typename
-          sys {
-            id
-          }
-          title
-          slug
-          description
-          body {
-            json
-          }
-        }
-      }
-    }
-  `;
+export async function getPage(slug: string, { locale }: { locale: string }) {
+  const data = await fetchAPI(pageQuery, { slug, locale });
 
-  const variables = { slug, locale, preview };
-
-  const data = await fetchAPI<{ pageCollection: PageCollection }>(
-    query,
-    variables,
-    preview
-  );
-
-  return data?.pageCollection.items[0];
+  return data?.pageCollection?.items[0];
 }
 
 export async function getAllPagesWithSlug() {
-  const query = /* GraphQL */ `
-    query {
-      pageCollection(where: { slug_exists: true }) {
-        items {
-          slug
-        }
-      }
-    }
-  `;
+  const data = await fetchAPI(allPagesWithSlugQuery);
 
-  const data = await fetchAPI<{ pageCollection: PageCollection }>(query);
-
-  return data?.pageCollection.items ?? [];
+  return data?.pageCollection?.items ?? [];
 }

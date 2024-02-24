@@ -1,14 +1,17 @@
 import { draftMode } from "next/headers";
-import { getDraftEntry } from "@/lib/api";
-import type { HomePage, Project, Page } from "@/lib/types";
+import { getDraftEntry, readFragment } from "@/lib/api";
+import { draftEntryFragment } from "@/lib/fragments";
+import type { DraftEntry } from "@/lib/types";
 
-function resolveURL(entry: HomePage | Project | Page) {
-  switch (entry.__typename) {
+function resolveURL(entry: DraftEntry) {
+  const data = readFragment(draftEntryFragment, entry);
+
+  switch (data?.__typename) {
     case "Project":
-      return `/projects/${entry.slug ?? ""}`;
+      return `/projects/${data.slug ?? ""}`;
 
     case "Page":
-      return `/${entry.slug}`;
+      return `/${data.slug}`;
 
     default:
       return "/";

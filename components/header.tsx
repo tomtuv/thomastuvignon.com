@@ -11,11 +11,11 @@ import type { HomePage, Page, Project } from "@/lib/types";
 
 export default function Header({ page }: { page: HomePage | Project | Page }) {
   const updatedPage = useContentfulLiveUpdates(page);
-  const inspectorProps = useContentfulInspectorMode({ entryId: page.sys.id });
+  const inspectorProps = useContentfulInspectorMode({ entryId: page?.sys.id });
 
   return (
     <header className={styles.root}>
-      {updatedPage.__typename === "HomePage" ? (
+      {updatedPage && updatedPage.__typename === "HomePage" ? (
         <>
           {updatedPage.profilePicture?.url && (
             <Image
@@ -38,7 +38,9 @@ export default function Header({ page }: { page: HomePage | Project | Page }) {
           <Link href="/" variant="underline-inverse">
             Thomas Tuvignon
           </Link>
-          <h1 {...inspectorProps({ fieldId: "title" })}>{updatedPage.title}</h1>
+          <h1 {...inspectorProps({ fieldId: "title" })}>
+            {updatedPage?.title}
+          </h1>
         </>
       )}
     </header>

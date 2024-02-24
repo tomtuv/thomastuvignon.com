@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import PageLayout from "@/components/page-layout";
 import { getAllProjectsWithSlug, getProject } from "@/lib/api";
@@ -16,8 +15,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string; locale: string };
 }): Promise<Metadata> {
-  const { isEnabled } = draftMode();
-  const project = await getProject(slug, { locale, preview: isEnabled });
+  const project = await getProject(slug, { locale });
 
   return {
     title: project?.title,
@@ -55,8 +53,7 @@ export default async function Layout({
 }: React.PropsWithChildren<{
   params: { slug: string; locale: string };
 }>) {
-  const { isEnabled } = draftMode();
-  const project = await getProject(slug, { locale, preview: isEnabled });
+  const project = await getProject(slug, { locale });
 
   if (!project) {
     return notFound();

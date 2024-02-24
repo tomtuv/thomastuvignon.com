@@ -1,4 +1,3 @@
-import { draftMode } from "next/headers";
 import OpengraphImage from "@/components/opengraph-image";
 import { getPage } from "@/lib/api";
 
@@ -7,8 +6,7 @@ export default async function Image({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const { isEnabled } = draftMode();
-  const page = await getPage(slug, { locale, preview: isEnabled });
+  const page = await getPage(slug, { locale });
 
   return await OpengraphImage({ title: page?.title ?? undefined });
 }
