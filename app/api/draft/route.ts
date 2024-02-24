@@ -1,5 +1,6 @@
+import { readFragment } from "gql.tada";
 import { draftMode } from "next/headers";
-import { getDraftEntry, readFragment } from "@/lib/api";
+import { getDraftEntry } from "@/lib/api";
 import { draftEntryFragment } from "@/lib/fragments";
 import type { DraftEntry } from "@/lib/types";
 

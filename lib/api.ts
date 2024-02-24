@@ -1,9 +1,7 @@
 import type { TadaDocumentNode } from "gql.tada";
-import { initGraphQLTada } from "gql.tada";
 import { GraphQLClient } from "graphql-request";
 import { unstable_noStore as noStore } from "next/cache";
 import { draftMode } from "next/headers";
-import type { introspection } from "../graphql-env.d.ts";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,
@@ -12,13 +10,6 @@ import {
   pageQuery,
   projectQuery,
 } from "./queries";
-
-export const graphql = initGraphQLTada<{
-  introspection: introspection;
-}>();
-
-export type { FragmentOf, ResultOf, VariablesOf } from "gql.tada";
-export { readFragment } from "gql.tada";
 
 const client = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`

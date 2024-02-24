@@ -1,4 +1,5 @@
-import { FragmentOf, getHomePage, getPage, getProject } from "./api";
+import { FragmentOf } from "gql.tada";
+import { getHomePage, getPage, getProject } from "./api";
 import {
   draftEntryFragment,
   mediaFragment,

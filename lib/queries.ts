@@ -1,14 +1,18 @@
-import { graphql } from "gql.tada";
 import {
   draftEntryFragment,
   projectCardFragment,
   projectBlockFragment,
 } from "./fragments";
+import { graphql } from "./graphql";
 
 export const draftEntryQuery = graphql(
   /* GraphQL */ `
-    query DraftEntry($id: String!) {
-      entryCollection(where: { sys: { id: $id } }, limit: 1, preview: true) {
+    query DraftEntry($id: String!, $preview: Boolean!) {
+      entryCollection(
+        where: { sys: { id: $id } }
+        limit: 1
+        preview: $preview
+      ) {
         items {
           ...DraftEntry
         }
