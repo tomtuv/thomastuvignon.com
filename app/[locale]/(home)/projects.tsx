@@ -5,18 +5,22 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
+import { readFragment } from "gql.tada";
 import { useId } from "react";
 import styles from "./projects.module.css";
 import FormattedMessage from "@/components/formatted-message";
 import Image from "@/components/image";
 import Link from "@/components/link";
-import type { HomePage, Project } from "@/lib/types";
+import { projectCardFragment } from "@/lib/fragments";
+import { ProjectCard } from "@/lib/types";
+import type { HomePage } from "@/lib/types";
 
-function ProjectCard({ project }: { project: Project }) {
-  const updatedProject = useContentfulLiveUpdates(project);
+function ProjectCard({ project }: { project: ProjectCard }) {
+  const data = readFragment(projectCardFragment, project);
+  const updatedProject = useContentfulLiveUpdates(data);
 
   const inspectorProps = useContentfulInspectorMode({
-    entryId: project.sys.id,
+    entryId: data?.sys.id,
   });
 
   return (
@@ -50,7 +54,7 @@ export default function Projects({ homePage }: { homePage: HomePage }) {
   const updatedHomePage = useContentfulLiveUpdates(homePage);
 
   const inspectorProps = useContentfulInspectorMode({
-    entryId: homePage.sys.id,
+    entryId: homePage?.sys.id,
   });
 
   return (
@@ -63,11 +67,15 @@ export default function Projects({ homePage }: { homePage: HomePage }) {
         role="list"
         {...inspectorProps({ fieldId: "projects" })}
       >
-        {updatedHomePage.projectsCollection?.items.map((project) =>
-          project ? (
-            <ProjectCard project={project} key={project.sys.id} />
-          ) : null
-        )}
+        {updatedHomePage?.projectsCollection?.items.map((project) => {
+          const data = readFragment(projectCardFragment, project);
+
+          if (!project) {
+            return null;
+          }
+
+          return <ProjectCard project={project} key={data?.sys.id} />;
+        })}
       </ul>
     </section>
   );

@@ -5,18 +5,21 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
+import { readFragment } from "gql.tada";
 import { useIntl } from "react-intl";
 import styles from "./media.module.css";
 import Image from "@/components/image";
 import VisuallyHidden from "@/components/visually-hidden";
+import { mediaFragment } from "@/lib/fragments";
 import type { Media as MediaType } from "@/lib/types";
 
 export default function Media({ media }: { media: MediaType }) {
+  const data = readFragment(mediaFragment, media);
   const { formatMessage } = useIntl();
-  const updatedMedia = useContentfulLiveUpdates(media);
+  const updatedMedia = useContentfulLiveUpdates(data);
 
   const inspectorProps = useContentfulInspectorMode({
-    entryId: media.sys.id,
+    entryId: data.sys.id,
   });
 
   return (

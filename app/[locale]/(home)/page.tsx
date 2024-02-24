@@ -1,4 +1,3 @@
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import Intro from "./intro";
 import Projects from "./projects";
@@ -9,8 +8,7 @@ export default async function Home({
 }: {
   params: { locale: string };
 }) {
-  const { isEnabled } = draftMode();
-  const homePage = await getHomePage({ locale, preview: isEnabled });
+  const homePage = await getHomePage({ locale });
 
   if (!homePage) {
     return notFound();

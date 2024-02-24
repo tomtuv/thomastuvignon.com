@@ -17,7 +17,7 @@ export default function Intro({ homePage }: { homePage: HomePage }) {
   const updatedHomePage = useContentfulLiveUpdates(homePage);
 
   const inspectorProps = useContentfulInspectorMode({
-    entryId: homePage.sys.id,
+    entryId: homePage?.sys.id,
   });
 
   return (
@@ -26,7 +26,7 @@ export default function Intro({ homePage }: { homePage: HomePage }) {
         <FormattedMessage id="introduction" />
       </VisuallyHidden>
       <RichText
-        text={updatedHomePage.intro?.json as Document}
+        text={updatedHomePage?.intro?.json as Document}
         {...inspectorProps({ fieldId: "intro" })}
       />
     </section>

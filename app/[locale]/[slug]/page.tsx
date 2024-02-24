@@ -1,4 +1,3 @@
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import PageBody from "./page-body";
 import Back from "@/components/back";
@@ -9,8 +8,7 @@ export default async function Page({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const { isEnabled } = draftMode();
-  const page = await getPage(slug, { locale, preview: isEnabled });
+  const page = await getPage(slug, { locale });
 
   if (!page) {
     notFound();

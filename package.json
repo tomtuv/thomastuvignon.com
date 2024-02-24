@@ -17,6 +17,9 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^11.0.6",
+    "gql.tada": "^1.2.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "negotiator": "^0.6.3",
     "next": "^14.1.0",
     "react": "^18.2.0",
@@ -24,6 +27,7 @@
     "react-intl": "^6.6.2"
   },
   "devDependencies": {
+    "@0no-co/graphqlsp": "^1.4.1",
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/schema-ast": "^4.0.2",
     "@graphql-codegen/typescript": "^4.0.6",
