@@ -1,26 +1,21 @@
-import {
-  draftEntryFragment,
-  projectCardFragment,
-  projectBlockFragment,
-} from "./fragments";
+import { projectCardFragment, mediaFragment, textFragment } from "./fragments";
 import { graphql } from "./graphql";
 
-export const draftEntryQuery = graphql(
-  /* GraphQL */ `
-    query DraftEntry($id: String!, $preview: Boolean!) {
-      entryCollection(
-        where: { sys: { id: $id } }
-        limit: 1
-        preview: $preview
-      ) {
-        items {
-          ...DraftEntry
+export const draftEntryQuery = graphql(/* GraphQL */ `
+  query DraftEntry($id: String!, $preview: Boolean!) {
+    entryCollection(where: { sys: { id: $id } }, limit: 1, preview: $preview) {
+      items {
+        __typename
+        ... on Project {
+          slug
+        }
+        ... on Page {
+          slug
         }
       }
     }
-  `,
-  [draftEntryFragment]
-);
+  }
+`);
 
 export const homePageQuery = graphql(
   /* GraphQL */ `
@@ -43,7 +38,7 @@ export const homePageQuery = graphql(
           }
           projectsCollection {
             items {
-              ...ProjectCard
+              ...projectCardFields
             }
           }
         }
@@ -72,14 +67,16 @@ export const projectQuery = graphql(
           description
           blocksCollection {
             items {
-              ...ProjectBlock
+              __typename
+              ...mediaFields
+              ...textFields
             }
           }
         }
       }
     }
   `,
-  [projectBlockFragment]
+  [mediaFragment, textFragment]
 );
 
 export const allProjectsWithSlugQuery = graphql(/* GraphQL */ `

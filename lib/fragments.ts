@@ -1,19 +1,7 @@
 import { graphql } from "./graphql";
 
-export const draftEntryFragment = graphql(/* GraphQL */ `
-  fragment DraftEntry on Entry {
-    __typename
-    ... on Project {
-      slug
-    }
-    ... on Page {
-      slug
-    }
-  }
-`);
-
 export const projectCardFragment = graphql(/* GraphQL */ `
-  fragment ProjectCard on Project {
+  fragment projectCardFields on Project {
     sys {
       id
     }
@@ -28,7 +16,7 @@ export const projectCardFragment = graphql(/* GraphQL */ `
 `);
 
 export const mediaFragment = graphql(/* GraphQL */ `
-  fragment Media on Media {
+  fragment mediaFields on Media {
     sys {
       id
     }
@@ -49,7 +37,7 @@ export const mediaFragment = graphql(/* GraphQL */ `
 `);
 
 export const textFragment = graphql(/* GraphQL */ `
-  fragment Text on Text {
+  fragment textFields on Text {
     sys {
       id
     }
@@ -61,18 +49,3 @@ export const textFragment = graphql(/* GraphQL */ `
     link
   }
 `);
-
-export const projectBlockFragment = graphql(
-  /* GraphQL */ `
-    fragment ProjectBlock on ProjectBlocksItem {
-      __typename
-      ... on Media {
-        ...Media
-      }
-      ... on Text {
-        ...Text
-      }
-    }
-  `,
-  [mediaFragment, textFragment]
-);

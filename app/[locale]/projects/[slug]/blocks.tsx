@@ -4,11 +4,9 @@ import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
-import { readFragment } from "gql.tada";
 import { Fragment } from "react";
 import Media from "./media";
 import Text from "./text";
-import { projectBlockFragment } from "@/lib/fragments";
 import type { Project } from "@/lib/types";
 
 export default function Blocks({ project }: { project: Project }) {
@@ -20,19 +18,15 @@ export default function Blocks({ project }: { project: Project }) {
 
   return (
     <div {...inspectorProps({ fieldId: "blocksCollection" })}>
-      {updatedProject?.blocksCollection?.items.map((block) => {
-        const data = readFragment(projectBlockFragment, block);
-
-        return (
-          <Fragment key={(data as unknown as { sys: { id: string } })?.sys?.id}>
-            {data?.__typename === "Text" ? (
-              <Text text={data} />
-            ) : (
-              data?.__typename === "Media" && <Media media={data} />
-            )}
-          </Fragment>
-        );
-      })}
+      {updatedProject?.blocksCollection?.items.map((block) => (
+        <Fragment key={(block as unknown as { sys: { id: string } })?.sys?.id}>
+          {block?.__typename === "Text" ? (
+            <Text text={block} />
+          ) : (
+            block?.__typename === "Media" && <Media media={block} />
+          )}
+        </Fragment>
+      ))}
     </div>
   );
 }

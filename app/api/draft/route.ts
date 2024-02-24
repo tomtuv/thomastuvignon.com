@@ -1,18 +1,14 @@
-import { readFragment } from "gql.tada";
 import { draftMode } from "next/headers";
 import { getDraftEntry } from "@/lib/api";
-import { draftEntryFragment } from "@/lib/fragments";
 import type { DraftEntry } from "@/lib/types";
 
 function resolveURL(entry: DraftEntry) {
-  const data = readFragment(draftEntryFragment, entry);
-
-  switch (data?.__typename) {
+  switch (entry?.__typename) {
     case "Project":
-      return `/projects/${data.slug ?? ""}`;
+      return `/projects/${entry.slug ?? ""}`;
 
     case "Page":
-      return `/${data.slug}`;
+      return `/${entry.slug}`;
 
     default:
       return "/";
