@@ -17,7 +17,7 @@ const client = new GraphQLClient(
 
 async function fetchAPI<T, V>(
   query: TadaDocumentNode<T, V>,
-  variables: Record<string, unknown> = {},
+  variables?: Omit<V, "preview">,
   options: { preview: boolean } = { preview: false }
 ) {
   const { preview } = options;
