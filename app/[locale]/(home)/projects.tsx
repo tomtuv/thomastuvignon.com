@@ -5,21 +5,18 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
-import { readFragment } from "gql.tada";
 import { useId } from "react";
 import styles from "./projects.module.css";
 import FormattedMessage from "@/components/formatted-message";
 import Image from "@/components/image";
 import Link from "@/components/link";
-import { projectCardFragment } from "@/lib/fragments";
 import type { ProjectCard as ProjectCardType, HomePage } from "@/lib/types";
 
 function ProjectCard({ project }: { project: ProjectCardType }) {
-  const data = readFragment(projectCardFragment, project);
-  const updatedProject = useContentfulLiveUpdates(data);
+  const updatedProject = useContentfulLiveUpdates(project);
 
   const inspectorProps = useContentfulInspectorMode({
-    entryId: data?.sys.id,
+    entryId: project?.sys.id,
   });
 
   return (
@@ -66,15 +63,10 @@ export default function Projects({ homePage }: { homePage: HomePage }) {
         role="list"
         {...inspectorProps({ fieldId: "projects" })}
       >
-        {updatedHomePage?.projectsCollection?.items.map((project) => {
-          const data = readFragment(projectCardFragment, project);
-
-          if (!project) {
-            return null;
-          }
-
-          return <ProjectCard project={project} key={data?.sys.id} />;
-        })}
+        {updatedHomePage?.projectsCollection?.items.map(
+          (project) =>
+            project && <ProjectCard project={project} key={project?.sys.id} />
+        )}
       </ul>
     </section>
   );

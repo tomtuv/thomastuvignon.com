@@ -3,4 +3,5 @@ import type { introspection } from "../graphql-env.d.ts";
 
 export const graphql = initGraphQLTada<{
   introspection: introspection;
+  disableMasking: true;
 }>();
