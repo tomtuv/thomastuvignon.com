@@ -53,8 +53,8 @@ dependencies:
 
 devDependencies:
   '@0no-co/graphqlsp':
-    specifier: ^1.4.2
-    version: 1.4.2
+    specifier: ^1.4.3
+    version: 1.4.3
   '@types/negotiator':
     specifier: ^0.6.3
     version: 0.6.3
@@ -111,9 +111,10 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@0no-co/graphqlsp@1.4.2:
-    resolution: {integrity: sha512-qgrRwrz5Q7ev7lO9XKm3mf6UefFtjIciZUKL69mZjoEPGbRzM/Mx+6YNd2dGt1uIi52T5jT+f6rR4K5lWyDS0A==}
+  /@0no-co/graphqlsp@1.4.3:
+    resolution: {integrity: sha512-12EE6a2KaAUHdti1j73awaCIK101GumZtZ66uI9ReDg54Hf0FZcS7lAfRDt2+KvNOWCXkYSIwpXxm2VjQQbhUw==}
     dependencies:
+      json5: 2.2.3
       node-fetch: 2.6.9
     transitivePeerDependencies:
       - encoding
@@ -2899,6 +2900,12 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.8
+    dev: true
+
+  /json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
     dev: true
 
   /jsx-ast-utils@3.3.3:
