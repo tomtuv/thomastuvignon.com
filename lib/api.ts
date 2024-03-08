@@ -1,5 +1,5 @@
 import type { TadaDocumentNode } from "gql.tada";
-import { GraphQLClient } from "graphql-request";
+import request from "graphql-request";
 import { unstable_noStore as noStore } from "next/cache";
 import { draftMode } from "next/headers";
 import {
@@ -11,16 +11,10 @@ import {
   projectQuery,
 } from "./queries";
 
-const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
-);
+async function fetchAPI<T, V>(query: TadaDocumentNode<T, V>, variables?: V) {
+  const preview =
+    (variables as { preview?: boolean } | undefined)?.preview ?? false;
 
-async function fetchAPI<T, V>(
-  query: TadaDocumentNode<T, V>,
-  variables?: Omit<V, "preview">,
-  options: { preview: boolean } = { preview: false }
-) {
-  const { preview } = options;
   let isDraftMode: boolean;
 
   try {
@@ -33,7 +27,8 @@ async function fetchAPI<T, V>(
     noStore();
   }
 
-  const data = await client.request(
+  const data = await request(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     query,
     {
       ...variables,
@@ -54,7 +49,7 @@ async function fetchAPI<T, V>(
 }
 
 export async function getDraftEntry(id: string) {
-  const data = await fetchAPI(draftEntryQuery, { id }, { preview: true });
+  const data = await fetchAPI(draftEntryQuery, { id, preview: true });
 
   return data?.entryCollection?.items[0];
 }

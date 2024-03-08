@@ -2,7 +2,7 @@ import { projectCardFragment, mediaFragment, textFragment } from "./fragments";
 import { graphql } from "./graphql";
 
 export const draftEntryQuery = graphql(/* GraphQL */ `
-  query DraftEntry($id: String!, $preview: Boolean!) {
+  query DraftEntry($id: String!, $preview: Boolean = false) {
     entryCollection(where: { sys: { id: $id } }, limit: 1, preview: $preview) {
       items {
         __typename
@@ -19,7 +19,7 @@ export const draftEntryQuery = graphql(/* GraphQL */ `
 
 export const homePageQuery = graphql(
   /* GraphQL */ `
-    query HomePage($locale: String!, $preview: Boolean!) {
+    query HomePage($locale: String!, $preview: Boolean = false) {
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
           __typename
@@ -50,7 +50,7 @@ export const homePageQuery = graphql(
 
 export const projectQuery = graphql(
   /* GraphQL */ `
-    query Project($slug: String!, $locale: String!, $preview: Boolean!) {
+    query Project($slug: String!, $locale: String!, $preview: Boolean = false) {
       projectCollection(
         where: { slug: $slug }
         locale: $locale
@@ -90,7 +90,7 @@ export const allProjectsWithSlugQuery = graphql(/* GraphQL */ `
 `);
 
 export const pageQuery = graphql(/* GraphQL */ `
-  query Page($slug: String!, $locale: String!, $preview: Boolean!) {
+  query Page($slug: String!, $locale: String!, $preview: Boolean = false) {
     pageCollection(
       where: { slug: $slug }
       locale: $locale
