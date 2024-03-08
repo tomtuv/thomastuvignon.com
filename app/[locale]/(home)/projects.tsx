@@ -12,10 +12,9 @@ import FormattedMessage from "@/components/formatted-message";
 import Image from "@/components/image";
 import Link from "@/components/link";
 import { projectCardFragment } from "@/lib/fragments";
-import { ProjectCard } from "@/lib/types";
-import type { HomePage } from "@/lib/types";
+import type { ProjectCard as ProjectCardType, HomePage } from "@/lib/types";
 
-function ProjectCard({ project }: { project: ProjectCard }) {
+function ProjectCard({ project }: { project: ProjectCardType }) {
   const data = readFragment(projectCardFragment, project);
   const updatedProject = useContentfulLiveUpdates(data);
 
