@@ -53,8 +53,8 @@ dependencies:
 
 devDependencies:
   '@0no-co/graphqlsp':
-    specifier: ^1.5.0
-    version: 1.5.0
+    specifier: ^1.6.0
+    version: 1.6.0
   '@types/negotiator':
     specifier: ^0.6.3
     version: 0.6.3
@@ -111,8 +111,8 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@0no-co/graphqlsp@1.5.0:
-    resolution: {integrity: sha512-NGMUwzj7m6DfIqudZxfTfUEmzKR2n9xphPssCKqkGsMEKe9qIzrNqLpXXwzXTWrGBS5FBELW+TXGUyTa0v1LAw==}
+  /@0no-co/graphqlsp@1.6.0:
+    resolution: {integrity: sha512-06wd8ulUs14IAYfF18HwDXIS7qYfC2AOEvnncK9/DQeQdEICIxHG4Ser3Jgy32LAA3+/H0xEambtiXYcKiLdSA==}
     dependencies:
       json5: 2.2.3
       node-fetch: 2.6.9
