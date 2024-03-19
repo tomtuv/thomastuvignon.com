@@ -1,10 +1,13 @@
-import fs from "fs";
-import path from "path";
 import { ImageResponse } from "next/og";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 export default async function OpengraphImage(props?: { title?: string }) {
   const { title } = props ?? {};
+
+  const [interRegular, interBold] = await Promise.all([
+    fetch(`${SITE_URL}/inter-regular.ttf`).then((res) => res.arrayBuffer()),
+    fetch(`${SITE_URL}/inter-bold.ttf`).then((res) => res.arrayBuffer()),
+  ]);
 
   return new ImageResponse(
     (
@@ -49,17 +52,13 @@ export default async function OpengraphImage(props?: { title?: string }) {
       fonts: [
         {
           name: "Inter",
-          data: await fs.promises.readFile(
-            path.join(process.cwd(), "fonts/inter-regular.ttf")
-          ),
+          data: interRegular,
           style: "normal",
           weight: 400,
         },
         {
           name: "Inter",
-          data: await fs.promises.readFile(
-            path.join(process.cwd(), "fonts/inter-bold.ttf")
-          ),
+          data: interBold,
           style: "normal",
           weight: 700,
         },
