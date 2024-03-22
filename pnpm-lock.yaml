@@ -27,8 +27,8 @@ dependencies:
     specifier: ^11.0.20
     version: 11.0.20(react-dom@18.2.0)(react@18.2.0)
   gql.tada:
-    specifier: ^1.3.6
-    version: 1.3.6(graphql@16.8.1)
+    specifier: ^1.4.0
+    version: 1.4.0(graphql@16.8.1)
   graphql:
     specifier: ^16.8.1
     version: 16.8.1
@@ -757,10 +757,10 @@ packages:
       typescript: 5.4.3
     dev: false
 
-  /@gql.tada/cli-utils@0.2.0:
-    resolution: {integrity: sha512-S/1KdJ08G9wKbsHUrBBT6GK38OtGaC82lY9MIFwkIziR9rf/N1PmDxWOThvMWJsaKQaEf5PhioRxquVCjeIbtw==}
+  /@gql.tada/cli-utils@0.3.0:
+    resolution: {integrity: sha512-kDebLVuM5r3/bI1MmlhHr9VKHxXeq8Gxy1wHVTPva4R5ObfbhzxnHsTCvR6MUp8ziy9Pg9MESb8S1YZW8ohM3A==}
     dependencies:
-      '@urql/introspection': 1.0.3(graphql@16.8.1)
+      '@gql.tada/internal': 0.1.0
       graphql: 16.8.1
     dev: false
 
@@ -769,7 +769,6 @@ packages:
     dependencies:
       graphql: 16.8.1
       typescript: 5.4.3
-    dev: true
 
   /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
@@ -1180,14 +1179,6 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
-
-  /@urql/introspection@1.0.3(graphql@16.8.1):
-    resolution: {integrity: sha512-5zgnfUDV10c3qudqYvfZ/rOtWVB2QvqanmoDMttqpt+TCCPkSUZdb2qcLCEB6DL7ph8mQRTZhXI29J57nTnqKg==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: 16.8.1
-    dev: false
 
   /@vercel/analytics@1.2.2(next@14.1.4)(react@18.2.0):
     resolution: {integrity: sha512-X0rctVWkQV1e5Y300ehVNqpOfSOufo7ieA5PIdna8yX/U7Vjz0GFsGf4qvAhxV02uQ2CVt7GYcrFfddXXK2Y4A==}
@@ -2449,12 +2440,13 @@ packages:
       get-intrinsic: 1.2.1
     dev: true
 
-  /gql.tada@1.3.6(graphql@16.8.1):
-    resolution: {integrity: sha512-POQmGyZ0/nfqZUqXT3OQl4GqXMatnYW67ytl27IPTbzopGQEUazVNBoBmb0QPGDOBIXxFpg5NHXxV3wcJ+h21Q==}
+  /gql.tada@1.4.0(graphql@16.8.1):
+    resolution: {integrity: sha512-/LZJmInJQESn0QafOrDCJRk9ASeI65caU/HmarPtcSNitNWBrH7UfNOsHtISnTTA/CS80eUYqy3M4ogasFZWPQ==}
     hasBin: true
     dependencies:
       '@0no-co/graphql.web': 1.0.4(graphql@16.8.1)
-      '@gql.tada/cli-utils': 0.2.0
+      '@gql.tada/cli-utils': 0.3.0
+      '@gql.tada/internal': 0.1.0
     transitivePeerDependencies:
       - graphql
     dev: false
