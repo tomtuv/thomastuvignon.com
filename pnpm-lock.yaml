@@ -53,8 +53,8 @@ dependencies:
 
 devDependencies:
   '@0no-co/graphqlsp':
-    specifier: ^1.6.1
-    version: 1.6.1
+    specifier: ^1.7.0
+    version: 1.7.0
   '@types/negotiator':
     specifier: ^0.6.3
     version: 0.6.3
@@ -111,10 +111,10 @@ packages:
       graphql: 16.8.1
     dev: false
 
-  /@0no-co/graphqlsp@1.6.1:
-    resolution: {integrity: sha512-DJDounDV/mnRSF4bfXxC5hPYC3rKyWwvTBAX/iP6ec/yltbCmnYb2EC7/KSOaLkXE7Xk8q9d0t5fEGoUecoznA==}
+  /@0no-co/graphqlsp@1.7.0:
+    resolution: {integrity: sha512-goXV03Dz/fFmrSsFVb4/Dpzx+Md4G4cQaeo0wXnd6ucCK+/JzmKVqmGLYBqTEJKbLH1pu4YY8Fl7glFcV/sL+w==}
     dependencies:
-      json5: 2.2.3
+      '@gql.tada/internal': 0.1.0
       node-fetch: 2.6.9
     transitivePeerDependencies:
       - encoding
@@ -763,6 +763,13 @@ packages:
       '@urql/introspection': 1.0.3(graphql@16.8.1)
       graphql: 16.8.1
     dev: false
+
+  /@gql.tada/internal@0.1.0:
+    resolution: {integrity: sha512-FTvBVXVvt0xUo8hvRlwFoyeNXpUDqc+e20MzFkF8ozbsa5PoYb/gksmmnHMjUphsIq1H3Hq8o4RGstFN5LKH4w==}
+    dependencies:
+      graphql: 16.8.1
+      typescript: 5.4.3
+    dev: true
 
   /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
@@ -2484,7 +2491,6 @@ packages:
   /graphql@16.8.1:
     resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
-    dev: false
 
   /hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -2883,12 +2889,6 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.8
-    dev: true
-
-  /json5@2.2.3:
-    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
-    engines: {node: '>=6'}
-    hasBin: true
     dev: true
 
   /jsx-ast-utils@3.3.3:
