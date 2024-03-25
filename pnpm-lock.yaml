@@ -27,8 +27,8 @@ dependencies:
     specifier: ^11.0.20
     version: 11.0.20(react-dom@18.2.0)(react@18.2.0)
   gql.tada:
-    specifier: ^1.4.0
-    version: 1.4.0(graphql@16.8.1)
+    specifier: ^1.4.1
+    version: 1.4.1(graphql@16.8.1)(typescript@5.4.3)
   graphql:
     specifier: ^16.8.1
     version: 16.8.1
@@ -757,11 +757,14 @@ packages:
       typescript: 5.4.3
     dev: false
 
-  /@gql.tada/cli-utils@0.3.0:
-    resolution: {integrity: sha512-kDebLVuM5r3/bI1MmlhHr9VKHxXeq8Gxy1wHVTPva4R5ObfbhzxnHsTCvR6MUp8ziy9Pg9MESb8S1YZW8ohM3A==}
+  /@gql.tada/cli-utils@0.3.1(typescript@5.4.3):
+    resolution: {integrity: sha512-Eq7lV0059AqqdM8TL53k3gtxKWQ+aPAG3Nn8ZyTZUM5DNniwqH3CHnHg+pTR67Q51rX8CXRpyAXEHlJvS8GvqQ==}
+    peerDependencies:
+      typescript: ^5.0.0
     dependencies:
-      '@gql.tada/internal': 0.1.0
+      '@gql.tada/internal': 0.1.1(typescript@5.4.3)
       graphql: 16.8.1
+      typescript: 5.4.3
     dev: false
 
   /@gql.tada/internal@0.1.0:
@@ -769,6 +772,16 @@ packages:
     dependencies:
       graphql: 16.8.1
       typescript: 5.4.3
+    dev: true
+
+  /@gql.tada/internal@0.1.1(typescript@5.4.3):
+    resolution: {integrity: sha512-2TrWcoluLySDBKKoGAGWQzXhiF2Vaz9xyfqsAP25Uz/xKmuFm+Nxpma6oLlwRec7lArNiRu9u7Vi1GjLik1UfA==}
+    peerDependencies:
+      typescript: ^5.0.0
+    dependencies:
+      graphql: 16.8.1
+      typescript: 5.4.3
+    dev: false
 
   /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
@@ -2440,13 +2453,16 @@ packages:
       get-intrinsic: 1.2.1
     dev: true
 
-  /gql.tada@1.4.0(graphql@16.8.1):
-    resolution: {integrity: sha512-/LZJmInJQESn0QafOrDCJRk9ASeI65caU/HmarPtcSNitNWBrH7UfNOsHtISnTTA/CS80eUYqy3M4ogasFZWPQ==}
+  /gql.tada@1.4.1(graphql@16.8.1)(typescript@5.4.3):
+    resolution: {integrity: sha512-AnDA26jbbyc4COiNzovgEwI1XKmRz4F5XoFFSI8Gh6TQqqzulOVNafv/1l8/C5S/iIqV9uwQmy33AJ89peCLBg==}
     hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
     dependencies:
       '@0no-co/graphql.web': 1.0.4(graphql@16.8.1)
-      '@gql.tada/cli-utils': 0.3.0
-      '@gql.tada/internal': 0.1.0
+      '@gql.tada/cli-utils': 0.3.1(typescript@5.4.3)
+      '@gql.tada/internal': 0.1.1(typescript@5.4.3)
+      typescript: 5.4.3
     transitivePeerDependencies:
       - graphql
     dev: false
