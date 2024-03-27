@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^20.11.30
     version: 20.11.30
   '@types/react':
-    specifier: ^18.2.70
-    version: 18.2.70
+    specifier: ^18.2.72
+    version: 18.2.72
   '@typescript-eslint/eslint-plugin':
     specifier: ^7.0.0
     version: 7.0.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.4.3)
@@ -970,7 +970,7 @@ packages:
   /@types/hoist-non-react-statics@3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
-      '@types/react': 18.2.70
+      '@types/react': 18.2.72
       hoist-non-react-statics: 3.3.2
     dev: false
 
@@ -1003,15 +1003,11 @@ packages:
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react@18.2.70:
-    resolution: {integrity: sha512-hjlM2hho2vqklPhopNkXkdkeq6Lv8WSZTpr7956zY+3WS5cfYUewtCzsJLsbW5dEv3lfSeQ4W14ZFeKC437JRQ==}
+  /@types/react@18.2.72:
+    resolution: {integrity: sha512-/e7GWxGzXQF7OJAua7UAYqYi/4VpXEfbGtmYQcAQwP3SjjjAXfybTf/JK5S+SaetB/ChXl8Y2g1hCsj7jDXxcg==}
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.3
       csstype: 3.1.1
-
-  /@types/scheduler@0.16.3:
-    resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
 
   /@types/semver@7.5.4:
     resolution: {integrity: sha512-MMzuxN3GdFwskAnb6fz0orFvhfqi752yjaXylr0Rp4oDg5H0Zn1IuyRhDVvYOwAXoJirx2xuS16I3WjxnAIHiQ==}
@@ -3790,7 +3786,7 @@ packages:
       '@formatjs/intl-displaynames': 6.6.6
       '@formatjs/intl-listformat': 7.5.5
       '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.2.70
+      '@types/react': 18.2.72
       hoist-non-react-statics: 3.3.2
       intl-messageformat: 10.5.11
       react: 18.2.0
