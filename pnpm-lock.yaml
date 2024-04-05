@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^2.17.4
-    version: 2.17.4(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^3.0.0
+    version: 3.0.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.6
     version: 15.19.6(react-dom@18.2.0)(react@18.2.0)
@@ -157,15 +157,22 @@ packages:
       regenerator-runtime: 0.13.11
     dev: true
 
-  /@contentful/live-preview@2.17.4(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-8qrTEBl8f2clr4VLnD706qnajRDzje28gxZxEcqv3RdOSX6oulIPYQ+2BZgpaZ18BdPZ9AAd+IT3xqdEl9xKLg==}
+  /@contentful/content-source-maps@0.2.0-alpha.13:
+    resolution: {integrity: sha512-zlwdaA4TFgCIUJjWNtVH4V5MJ3nMQo/XiFGgPbMELz8c3xnoXDaPu9Z8tB0JPCndqSbBcS+ejCVwT2r5lEB5rA==}
+    dependencies:
+      '@vercel/stega': 0.1.0
+      json-pointer: 0.6.2
+    dev: false
+
+  /@contentful/live-preview@3.0.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-8um0ug2LKeWVfhDGFvn1mqKjP3MkgIWCC7SHavQE8wDWHpgx5Bi6ji69+fh4DdT6vsRM+OpASu7V2NO18x7IRw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
+      '@contentful/content-source-maps': 0.2.0-alpha.13
       '@contentful/rich-text-types': 16.3.5
-      '@contentful/visual-sdk': 1.0.0-alpha.34
-      '@vercel/stega': 0.1.0
+      flatted: 3.2.9
       graphql-tag: 2.12.6(graphql@16.8.1)
       json-pointer: 0.6.2
       lodash.isequal: 4.5.0
@@ -190,10 +197,6 @@ packages:
   /@contentful/rich-text-types@16.3.5:
     resolution: {integrity: sha512-ZLq6p5uyQXg+i1XGDFu4tAc2VYS12S1KA/jIOyyZjNgC1DvDajsi1JzuiBuOuMEhi1sKEUy6Ry3Yr9jsQtOKuQ==}
     engines: {node: '>=6.0.0'}
-    dev: false
-
-  /@contentful/visual-sdk@1.0.0-alpha.34:
-    resolution: {integrity: sha512-umPTFWfh3gNNmruyIRD5jgcQQN3KIzSd/6DaoTxPpz+ud3O+g4zYItytJoD0iZaEz1+V9ciVFw+C5+Xe57RvMg==}
     dev: false
 
   /@csstools/cascade-layer-name-parser@1.0.9(@csstools/css-parser-algorithms@2.6.1)(@csstools/css-tokenizer@2.2.4):
@@ -2263,7 +2266,6 @@ packages:
 
   /flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
-    dev: true
 
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
