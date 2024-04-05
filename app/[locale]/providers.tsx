@@ -4,7 +4,6 @@ import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
 import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
-import "@contentful/live-preview/style.css";
 
 export default function Providers({
   children,
