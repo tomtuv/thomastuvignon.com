@@ -29,7 +29,7 @@
     "@0no-co/graphqlsp": "^1.9.1",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20.12.5",
-    "@types/react": "^18.2.74",
+    "@types/react": "^18.2.75",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.0",
