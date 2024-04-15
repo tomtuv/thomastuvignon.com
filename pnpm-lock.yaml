@@ -41,6 +41,9 @@ dependencies:
   next:
     specifier: ^14.2.0
     version: 14.2.0(react-dom@18.2.0)(react@18.2.0)
+  next-view-transitions:
+    specifier: ^0.1.0
+    version: 0.1.0(next@14.2.0)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3086,6 +3089,18 @@ packages:
   /negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /next-view-transitions@0.1.0(next@14.2.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9qYLfoS5GS2erBcERxPWXM1E2SpXJ+NxyDdtyBk+f7x9KQlO8cNACRbdtdz1KfY+k2tGsAa39/MUBuPlfbK8nQ==}
+    peerDependencies:
+      next: ^14.2.1
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      next: 14.2.0(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next@14.2.0(react-dom@18.2.0)(react@18.2.0):

@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
+import { ViewTransitions } from "next-view-transitions";
 import Providers from "./providers";
 import {
   SITE_NAME,
@@ -79,14 +80,16 @@ export default function RootLayout({
   const { isEnabled } = draftMode();
 
   return (
-    <html lang={locale} className={inter.variable}>
-      <body>
-        <Providers locale={locale} draftMode={isEnabled}>
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </Providers>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang={locale} className={inter.variable}>
+        <body>
+          <Providers locale={locale} draftMode={isEnabled}>
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </Providers>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
