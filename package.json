@@ -27,7 +27,7 @@
     "react-intl": "^6.6.5"
   },
   "devDependencies": {
-    "@0no-co/graphqlsp": "^1.9.1",
+    "@0no-co/graphqlsp": "^1.10.0",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.78",
