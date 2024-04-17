@@ -48,5 +48,6 @@
     "> 0.5%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "packageManager": "pnpm@9.0.1+sha256.46d50ee2afecb42b185ebbd662dc7bdd52ef5be56bf035bb615cab81a75345df"
 }
