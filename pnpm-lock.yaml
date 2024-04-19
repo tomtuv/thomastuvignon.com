@@ -27,8 +27,8 @@ dependencies:
     specifier: ^11.1.5
     version: 11.1.5(react-dom@18.2.0)(react@18.2.0)
   gql.tada:
-    specifier: ^1.5.1
-    version: 1.5.2(graphql@16.8.1)(typescript@5.4.5)
+    specifier: ^1.5.3
+    version: 1.5.3(graphql@16.8.1)(typescript@5.4.5)
   graphql:
     specifier: ^16.8.1
     version: 16.8.1
@@ -732,8 +732,8 @@ packages:
       typescript: 5.4.5
     dev: false
 
-  /@gql.tada/cli-utils@1.0.2(typescript@5.4.5):
-    resolution: {integrity: sha512-4r7thsv8hpWc2XJ/2HJPHDirjgEQ5oyXQJzgsF0mV3UkLDA8mVc4+UBS2NJ3+rOVfrVk7k+CSqFZDxvgITtXRQ==}
+  /@gql.tada/cli-utils@1.0.3(typescript@5.4.5):
+    resolution: {integrity: sha512-oB93rsOK4xWu46jpUpZ9Q7AR5VDYWIYtNFGM+drtUQiRzD/wPhmnMLZI1eQWC1vamJDjOSj16taPJEL2m0qLeg==}
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
@@ -2553,14 +2553,14 @@ packages:
       get-intrinsic: 1.2.4
     dev: true
 
-  /gql.tada@1.5.2(graphql@16.8.1)(typescript@5.4.5):
-    resolution: {integrity: sha512-RFbUVPyrh39imfZSMJ3mGporIdaj5RkGdsvODKMiXof2RYUTSI38vpFk9qOpIN1o31S26OmIO8XowZ2/3aiuBw==}
+  /gql.tada@1.5.3(graphql@16.8.1)(typescript@5.4.5):
+    resolution: {integrity: sha512-PBLxypMVAs/mD8HRTTdu++RYkB+PyKjNbKugg80Zr9AKi6CMkTv6sgkiUowjwQsmEDNgVneQWz86tEvKSsFqAw==}
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
       '@0no-co/graphql.web': 1.0.6(graphql@16.8.1)
-      '@gql.tada/cli-utils': 1.0.2(typescript@5.4.5)
+      '@gql.tada/cli-utils': 1.0.3(typescript@5.4.5)
       '@gql.tada/internal': 0.2.1(graphql@16.8.1)(typescript@5.4.5)
       typescript: 5.4.5
     transitivePeerDependencies:
