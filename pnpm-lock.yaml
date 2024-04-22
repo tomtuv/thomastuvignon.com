@@ -56,8 +56,8 @@ dependencies:
 
 devDependencies:
   '@0no-co/graphqlsp':
-    specifier: ^1.10.0
-    version: 1.10.1(typescript@5.4.5)
+    specifier: ^1.10.3
+    version: 1.10.3(typescript@5.4.5)
   '@types/negotiator':
     specifier: ^0.6.3
     version: 0.6.3
@@ -113,8 +113,8 @@ packages:
     dependencies:
       graphql: 16.8.1
 
-  /@0no-co/graphqlsp@1.10.1(typescript@5.4.5):
-    resolution: {integrity: sha512-IFRxxCHIFW8erFDoXYGUnNvI4okn4c7i4AAW0LEDRyrVQb9IhuxxW1kmBKMhXenuPP9aGroNDYgYJzeuR0wEYg==}
+  /@0no-co/graphqlsp@1.10.3(typescript@5.4.5):
+    resolution: {integrity: sha512-8XHFj1efXLywmutSYfzHaqMU2lgfo7onugNj9LZN5kiQNEXIDPPeRqecZukkt4FqHe4J9MBUdn13NVLa3a6JiQ==}
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
@@ -737,7 +737,7 @@ packages:
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
-      '@0no-co/graphqlsp': 1.10.1(typescript@5.4.5)
+      '@0no-co/graphqlsp': 1.10.3(typescript@5.4.5)
       '@gql.tada/internal': 0.2.1(graphql@16.8.1)(typescript@5.4.5)
       graphql: 16.8.1
       ts-morph: 22.0.0
