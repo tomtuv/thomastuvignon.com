@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^3.1.0
-    version: 3.1.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^3.3.0
+    version: 3.3.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.6
     version: 15.19.6(react-dom@18.2.0)(react@18.2.0)
@@ -160,20 +160,20 @@ packages:
       regenerator-runtime: 0.14.1
     dev: true
 
-  /@contentful/content-source-maps@0.2.0-alpha.13:
-    resolution: {integrity: sha512-zlwdaA4TFgCIUJjWNtVH4V5MJ3nMQo/XiFGgPbMELz8c3xnoXDaPu9Z8tB0JPCndqSbBcS+ejCVwT2r5lEB5rA==}
+  /@contentful/content-source-maps@0.4.0:
+    resolution: {integrity: sha512-yjim5TpBMYnufKN+a42b1iJjq04NHppKjAPh4jK2f8yDfVPl/L6035dbFEE3KwDBaMbe3dP79RpMZ+909248fA==}
     dependencies:
       '@vercel/stega': 0.1.0
       json-pointer: 0.6.2
     dev: false
 
-  /@contentful/live-preview@3.1.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-qqb7arksY81zp9Q1GU7V5eF/m3kmd9YZSdXaxsOgxojWbDttasW44cR+3JjjS562lJSvmL6vsf83BdZaQ6db9A==}
+  /@contentful/live-preview@3.3.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-VTid4+ZWqgb+6OygaNPD/17D44DdB8WaizIEbBKMCMcQJvhJd9aXjXqFvfI7pCWA+TgMELUc11JnCCSq55iGng==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@contentful/content-source-maps': 0.2.0-alpha.13
+      '@contentful/content-source-maps': 0.4.0
       '@contentful/rich-text-types': 16.3.5
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.8.1)
