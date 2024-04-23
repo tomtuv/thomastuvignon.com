@@ -15,7 +15,7 @@
     "@formatjs/intl-localematcher": "^0.5.4",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-    "framer-motion": "^11.1.5",
+    "framer-motion": "^11.1.7",
     "gql.tada": "^1.5.3",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
