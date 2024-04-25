@@ -40,7 +40,11 @@ const client = new GraphQLClient(
 );
 
 export async function getDraftEntry(id: string) {
-  const data = await client.request(draftEntryQuery, { id, preview: true });
+  const data = await client.request(
+    draftEntryQuery,
+    { id, preview: true },
+    { Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN}` }
+  );
 
   return data?.entryCollection?.items[0];
 }
