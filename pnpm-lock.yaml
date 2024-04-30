@@ -7,10 +7,10 @@ settings:
 dependencies:
   '@contentful/live-preview':
     specifier: ^3.3.1
-    version: 3.3.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1)
+    version: 3.3.1(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.6
-    version: 15.19.6(react-dom@18.2.0)(react@18.3.1)
+    version: 15.19.6(react-dom@18.3.1)(react@18.3.1)
   '@contentful/rich-text-types':
     specifier: ^16.3.5
     version: 16.3.5
@@ -25,7 +25,7 @@ dependencies:
     version: 1.0.10(next@14.2.3)(react@18.3.1)(svelte@4.2.15)
   framer-motion:
     specifier: ^11.1.7
-    version: 11.1.7(react-dom@18.2.0)(react@18.3.1)
+    version: 11.1.7(react-dom@18.3.1)(react@18.3.1)
   gql.tada:
     specifier: ^1.6.3
     version: 1.6.3(graphql@16.8.1)(svelte@4.2.15)(typescript@5.4.5)
@@ -40,16 +40,16 @@ dependencies:
     version: 0.6.3
   next:
     specifier: ^14.2.3
-    version: 14.2.3(react-dom@18.2.0)(react@18.3.1)
+    version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
   next-view-transitions:
     specifier: ^0.1.1
-    version: 0.1.1(next@14.2.3)(react-dom@18.2.0)(react@18.3.1)
+    version: 0.1.1(next@14.2.3)(react-dom@18.3.1)(react@18.3.1)
   react:
     specifier: ^18.3.1
     version: 18.3.1
   react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.3.1)
+    specifier: ^18.3.1
+    version: 18.3.1(react@18.3.1)
   react-intl:
     specifier: ^6.6.5
     version: 6.6.5(react@18.3.1)(typescript@5.4.5)
@@ -196,7 +196,7 @@ packages:
       json-pointer: 0.6.2
     dev: false
 
-  /@contentful/live-preview@3.3.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1):
+  /@contentful/live-preview@3.3.1(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-OPbr2XDzekmrW7AHOIgekdkwGB97r4Mul95+T3W9tN79BJSqYAi+eTc7Exa8gPL9UV7wd489V8Vdqgp6D+l3rA==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
@@ -209,12 +209,12 @@ packages:
       json-pointer: 0.6.2
       lodash.isequal: 4.5.0
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - graphql
     dev: false
 
-  /@contentful/rich-text-react-renderer@15.19.6(react-dom@18.2.0)(react@18.3.1):
+  /@contentful/rich-text-react-renderer@15.19.6(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-SPpkr2uSyirsN/uUaek8djqLMGP8nPqSqxoQ8M0VJcfD9+INKK56vjmteNr5dBbqAZO/PJMxT1S8to9BndpinQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -223,7 +223,7 @@ packages:
     dependencies:
       '@contentful/rich-text-types': 16.3.5
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /@contentful/rich-text-types@16.3.5:
@@ -1253,7 +1253,7 @@ packages:
       react:
         optional: true
     dependencies:
-      next: 14.2.3(react-dom@18.2.0)(react@18.3.1)
+      next: 14.2.3(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       server-only: 0.0.1
     dev: false
@@ -1282,7 +1282,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      next: 14.2.3(react-dom@18.2.0)(react@18.3.1)
+      next: 14.2.3(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       svelte: 4.2.15
     dev: false
@@ -2538,7 +2538,7 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
 
-  /framer-motion@11.1.7(react-dom@18.2.0)(react@18.3.1):
+  /framer-motion@11.1.7(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-cW11Pu53eDAXUEhv5hEiWuIXWhfkbV32PlgVISn7jRdcAiVrJ1S03YQQ0/DzoswGYYwKi4qYmHHjCzAH52eSdQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
@@ -2553,7 +2553,7 @@ packages:
         optional: true
     dependencies:
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
       tslib: 2.6.2
     dev: false
 
@@ -3354,19 +3354,19 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next-view-transitions@0.1.1(next@14.2.3)(react-dom@18.2.0)(react@18.3.1):
+  /next-view-transitions@0.1.1(next@14.2.3)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-1rpXhWF8j0VJwJG52c8WeeAYpr1K7o3ub82lahbSoUwAry54TEm1d3mqBbSLLIMl85c3OewkZjxncTHwYFk+IA==}
     peerDependencies:
       next: ^14.0.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      next: 14.2.3(react-dom@18.2.0)(react@18.3.1)
+      next: 14.2.3(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
-  /next@14.2.3(react-dom@18.2.0)(react@18.3.1):
+  /next@14.2.3(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-dowFkFTR8v79NPJO4QsBUtxv0g9BrS/phluVpMAt2ku7H+cbcBJlopXjkWlwxrk/xGqMemr7JkGPGemPrLLX7A==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -3391,7 +3391,7 @@ packages:
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.3.1
-      react-dom: 18.2.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
       styled-jsx: 5.1.1(react@18.3.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.2.3
@@ -4047,14 +4047,14 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /react-dom@18.2.0(react@18.3.1):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.1
     dependencies:
       loose-envify: 1.4.0
       react: 18.3.1
-      scheduler: 0.23.0
+      scheduler: 0.23.2
     dev: false
 
   /react-intl@6.6.5(react@18.3.1)(typescript@5.4.5):
@@ -4218,8 +4218,8 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
     dev: false
