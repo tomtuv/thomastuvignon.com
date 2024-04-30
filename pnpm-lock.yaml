@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^3.3.0
-    version: 3.3.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1)
+    specifier: ^3.3.1
+    version: 3.3.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.6
     version: 15.19.6(react-dom@18.2.0)(react@18.3.1)
@@ -196,8 +196,8 @@ packages:
       json-pointer: 0.6.2
     dev: false
 
-  /@contentful/live-preview@3.3.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1):
-    resolution: {integrity: sha512-VTid4+ZWqgb+6OygaNPD/17D44DdB8WaizIEbBKMCMcQJvhJd9aXjXqFvfI7pCWA+TgMELUc11JnCCSq55iGng==}
+  /@contentful/live-preview@3.3.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.1):
+    resolution: {integrity: sha512-OPbr2XDzekmrW7AHOIgekdkwGB97r4Mul95+T3W9tN79BJSqYAi+eTc7Exa8gPL9UV7wd489V8Vdqgp6D+l3rA==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
