@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@contentful/live-preview':
-    specifier: ^3.3.1
-    version: 3.3.1(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^3.3.3
+    version: 3.3.3(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1)
   '@contentful/rich-text-react-renderer':
     specifier: ^15.19.6
     version: 15.19.6(react-dom@18.3.1)(react@18.3.1)
@@ -189,20 +189,20 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@contentful/content-source-maps@0.4.0:
-    resolution: {integrity: sha512-yjim5TpBMYnufKN+a42b1iJjq04NHppKjAPh4jK2f8yDfVPl/L6035dbFEE3KwDBaMbe3dP79RpMZ+909248fA==}
+  /@contentful/content-source-maps@0.4.2:
+    resolution: {integrity: sha512-FU5JRF5mFmelAjtQWT0WW0E73slvMabwDrzOJ0Q3PnF2gSw+JS8glxTuyUi4L+pV3MZBbbY94O/3wjnjucT7aQ==}
     dependencies:
-      '@vercel/stega': 0.1.0
+      '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
     dev: false
 
-  /@contentful/live-preview@3.3.1(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-OPbr2XDzekmrW7AHOIgekdkwGB97r4Mul95+T3W9tN79BJSqYAi+eTc7Exa8gPL9UV7wd489V8Vdqgp6D+l3rA==}
+  /@contentful/live-preview@3.3.3(graphql@16.8.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-ugXGFTexBUImAIzaR5KZdK7UmZuDpmbi60xhkLP1nNtLVbCtQkvCAIVOVlvuc3tXijU1Zm+1cXrUX/yGHNkHSw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@contentful/content-source-maps': 0.4.0
+      '@contentful/content-source-maps': 0.4.2
       '@contentful/rich-text-types': 16.3.5
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.8.1)
@@ -1287,8 +1287,8 @@ packages:
       svelte: 4.2.15
     dev: false
 
-  /@vercel/stega@0.1.0:
-    resolution: {integrity: sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==}
+  /@vercel/stega@0.1.2:
+    resolution: {integrity: sha512-P7mafQXjkrsoyTRppnt0N21udKS9wUmLXHRyP9saLXLHw32j/FgUJ3FscSWgvSqRs4cj7wKZtwqJEvWJ2jbGmA==}
     dev: false
 
   /@volar/language-core@2.2.0-alpha.10:
