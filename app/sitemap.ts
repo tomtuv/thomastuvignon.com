@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPagesWithSlug, getAllProjectsWithSlug } from "@/lib/api";
-import { LOCALES, SITE_URL } from "@/lib/constants";
+import { DEFAULT_LOCALE, LOCALES, SITE_URL } from "@/lib/constants";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [allPages, allProjects] = await Promise.all([
@@ -9,21 +9,44 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   return [
-    ...LOCALES.map((locale) => ({
-      url: `${SITE_URL}/${locale}`,
+    {
+      url: `${SITE_URL}/${DEFAULT_LOCALE}`,
       lastModified: new Date(),
+      alternates: {
+        languages: LOCALES.reduce(
+          (acc, locale) => ({
+            ...acc,
+            [locale]: `${SITE_URL}/${locale}`,
+          }),
+          {}
+        ),
+      },
+    },
+    ...allPages.map((page) => ({
+      url: `${SITE_URL}/${page?.slug}`,
+      lastModified: new Date(),
+      alternates: {
+        languages: LOCALES.reduce(
+          (acc, locale) => ({
+            ...acc,
+            [locale]: `${SITE_URL}/${locale}/${page?.slug}`,
+          }),
+          {}
+        ),
+      },
     })),
-    ...allPages.flatMap((page) =>
-      LOCALES.map((locale) => ({
-        url: `${SITE_URL}/${locale}/${page?.slug}`,
-        lastModified: new Date(),
-      }))
-    ),
-    ...allProjects.flatMap((project) =>
-      LOCALES.map((locale) => ({
-        url: `${SITE_URL}/${locale}/projects/${project?.slug}`,
-        lastModified: new Date(),
-      }))
-    ),
+    ...allProjects.map((project) => ({
+      url: `${SITE_URL}/projects/${project?.slug}`,
+      lastModified: new Date(),
+      alternates: {
+        languages: LOCALES.reduce(
+          (acc, locale) => ({
+            ...acc,
+            [locale]: `${SITE_URL}/${locale}/projects/${project?.slug}`,
+          }),
+          {}
+        ),
+      },
+    })),
   ];
 }
