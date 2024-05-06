@@ -16,7 +16,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^11.1.7",
-    "gql.tada": "^1.6.3",
+    "gql.tada": "^1.7.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "negotiator": "^0.6.3",
