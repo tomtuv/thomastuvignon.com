@@ -29,7 +29,7 @@
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.2",
     "@types/negotiator": "^0.6.3",
-    "@types/node": "^20.12.10",
+    "@types/node": "^20.12.11",
     "@types/react": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
