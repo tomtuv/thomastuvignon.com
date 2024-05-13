@@ -36,8 +36,8 @@ importers:
         specifier: ^16.8.1
         version: 16.8.1
       graphql-request:
-        specifier: ^7.0.0
-        version: 7.0.0(graphql@16.8.1)
+        specifier: ^7.0.1
+        version: 7.0.1(graphql@16.8.1)
       negotiator:
         specifier: ^0.6.3
         version: 0.6.3
@@ -1498,8 +1498,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  graphql-request@7.0.0:
-    resolution: {integrity: sha512-KJ7+YFvxSqSUFHsnBGZtT6lCuyieiaBaKKDor+G2dghKA68//WsmHKKiugoc9CW0oH8l3NYuCdXAAiUSaDkTcw==}
+  graphql-request@7.0.1:
+    resolution: {integrity: sha512-hfGBZF6o6lC3C0th+aTMOFP6p8Ev+ydXn4PUlT8rvqPDUFCbaynXszjBCyu0saZIP3VGbJ67GpxW8UGK+tphSw==}
     hasBin: true
     peerDependencies:
       graphql: 14 - 16
@@ -4349,7 +4349,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-request@7.0.0(graphql@16.8.1):
+  graphql-request@7.0.1(graphql@16.8.1):
     dependencies:
       '@dprint/formatter': 0.3.0
       '@dprint/typescript': 0.90.5

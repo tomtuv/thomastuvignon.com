@@ -18,7 +18,7 @@
     "framer-motion": "^11.1.9",
     "gql.tada": "^1.7.0",
     "graphql": "^16.8.1",
-    "graphql-request": "^7.0.0",
+    "graphql-request": "^7.0.1",
     "negotiator": "^0.6.3",
     "next": "^14.2.3",
     "next-view-transitions": "^0.1.1",
