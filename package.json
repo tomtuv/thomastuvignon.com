@@ -24,7 +24,7 @@
     "next-view-transitions": "^0.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^6.6.6"
+    "react-intl": "^6.6.7"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.3",
