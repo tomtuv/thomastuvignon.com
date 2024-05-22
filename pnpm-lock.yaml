@@ -12,8 +12,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1(graphql@16.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
-        specifier: ^15.19.6
-        version: 15.19.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^15.20.0
+        version: 15.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-types':
         specifier: ^16.3.5
         version: 16.3.5
@@ -165,8 +165,8 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@contentful/rich-text-react-renderer@15.19.6':
-    resolution: {integrity: sha512-SPpkr2uSyirsN/uUaek8djqLMGP8nPqSqxoQ8M0VJcfD9+INKK56vjmteNr5dBbqAZO/PJMxT1S8to9BndpinQ==}
+  '@contentful/rich-text-react-renderer@15.20.0':
+    resolution: {integrity: sha512-CKxiAPWi960i//XXKd3e+Dg7cMSJ6W9yUDFL6d5wcoUrzzuAiOVEp2pfCRtY7hl8NyUarkdDXXsgTpDsJ9mcAg==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
@@ -174,6 +174,10 @@ packages:
 
   '@contentful/rich-text-types@16.3.5':
     resolution: {integrity: sha512-ZLq6p5uyQXg+i1XGDFu4tAc2VYS12S1KA/jIOyyZjNgC1DvDajsi1JzuiBuOuMEhi1sKEUy6Ry3Yr9jsQtOKuQ==}
+    engines: {node: '>=6.0.0'}
+
+  '@contentful/rich-text-types@16.4.0':
+    resolution: {integrity: sha512-m6lKBhw+J/IOa3z0yGabZ/oxFlKqwbHISAYsmoAtYxOgI7Kije1/PMK8eb2WnXRvTmJNu8+0hYpeAI8G7wdexA==}
     engines: {node: '>=6.0.0'}
 
   '@csstools/cascade-layer-name-parser@1.0.11':
@@ -2628,13 +2632,15 @@ snapshots:
     transitivePeerDependencies:
       - graphql
 
-  '@contentful/rich-text-react-renderer@15.19.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/rich-text-react-renderer@15.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/rich-text-types': 16.3.5
+      '@contentful/rich-text-types': 16.4.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
   '@contentful/rich-text-types@16.3.5': {}
+
+  '@contentful/rich-text-types@16.4.0': {}
 
   '@csstools/cascade-layer-name-parser@1.0.11(@csstools/css-parser-algorithms@2.6.3(@csstools/css-tokenizer@2.3.1))(@csstools/css-tokenizer@2.3.1)':
     dependencies:
