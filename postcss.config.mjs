@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('postcss-load-config').Config} */
+const config = {
   plugins: {
     /** @type {import('postcss-preset-env').pluginOptions} */
     "postcss-preset-env": {
@@ -13,3 +14,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
