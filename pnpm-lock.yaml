@@ -15,8 +15,8 @@ importers:
         specifier: ^15.20.0
         version: 15.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-types':
-        specifier: ^16.5.0
-        version: 16.5.0
+        specifier: ^16.5.1
+        version: 16.5.1
       '@formatjs/intl-localematcher':
         specifier: ^0.5.4
         version: 0.5.4
@@ -172,8 +172,8 @@ packages:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
 
-  '@contentful/rich-text-types@16.5.0':
-    resolution: {integrity: sha512-Z5fls/6Hs+ETq6vx+sfiq+n+z3dwurPVJukgLvThdvzs4VlChoPkRIKr4WrBdjzLYqUspawlf7XvtuUpp32glw==}
+  '@contentful/rich-text-types@16.5.1':
+    resolution: {integrity: sha512-NxD01Cuv5It8idQH5jEi0Otqoj651IiUqVTmybX158HebM0uKxYRck8gmoXig1zAKfkUnP0DeqSTGPjQ85lreQ==}
     engines: {node: '>=6.0.0'}
 
   '@csstools/cascade-layer-name-parser@1.0.11':
@@ -2603,7 +2603,7 @@ snapshots:
   '@contentful/live-preview@4.1.1(graphql@16.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@contentful/content-source-maps': 0.5.0
-      '@contentful/rich-text-types': 16.5.0
+      '@contentful/rich-text-types': 16.5.1
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.8.1)
       json-pointer: 0.6.2
@@ -2615,11 +2615,11 @@ snapshots:
 
   '@contentful/rich-text-react-renderer@15.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/rich-text-types': 16.5.0
+      '@contentful/rich-text-types': 16.5.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@contentful/rich-text-types@16.5.0': {}
+  '@contentful/rich-text-types@16.5.1': {}
 
   '@csstools/cascade-layer-name-parser@1.0.11(@csstools/css-parser-algorithms@2.6.3(@csstools/css-tokenizer@2.3.1))(@csstools/css-tokenizer@2.3.1)':
     dependencies:
