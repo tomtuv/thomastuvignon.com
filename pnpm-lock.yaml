@@ -45,8 +45,8 @@ importers:
         specifier: ^14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-view-transitions:
-        specifier: ^0.1.1
-        version: 0.1.1(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.2.0
+        version: 0.2.0(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1821,8 +1821,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  next-view-transitions@0.1.1:
-    resolution: {integrity: sha512-1rpXhWF8j0VJwJG52c8WeeAYpr1K7o3ub82lahbSoUwAry54TEm1d3mqBbSLLIMl85c3OewkZjxncTHwYFk+IA==}
+  next-view-transitions@0.2.0:
+    resolution: {integrity: sha512-dFxevMIJy8irIstytJivLEtgYT4IJ7Gy7fnDCKHJtNZAsuQgmewYcdA/o/mRkMd1zwxTfyGALiOlZYxvtsn5jg==}
     peerDependencies:
       next: ^14.0.0
       react: ^18.2.0
@@ -4480,7 +4480,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  next-view-transitions@0.1.1(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-view-transitions@0.2.0(next@14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       next: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
