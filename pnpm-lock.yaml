@@ -12,8 +12,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
-        specifier: ^15.21.2
-        version: 15.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^15.22.1
+        version: 15.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-types':
         specifier: ^16.6.1
         version: 16.6.1
@@ -168,8 +168,8 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@contentful/rich-text-react-renderer@15.21.2':
-    resolution: {integrity: sha512-4JhqntPTVUyCisvA9KskQcrOQrhmohX0VfDWgc79USJFdp+ZF44Zqxt68xgIIOv/H/qkE2UVsNzO1kinpenHQA==}
+  '@contentful/rich-text-react-renderer@15.22.1':
+    resolution: {integrity: sha512-VmizFF8v2YcjRggfYAn0yW5sV5a5NFsl3PM9JoNrzI5FIAD3nEl1audJGTednsxPoAnC/RYECyL2AhbytjwQKw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
@@ -2634,7 +2634,7 @@ snapshots:
     transitivePeerDependencies:
       - graphql
 
-  '@contentful/rich-text-react-renderer@15.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/rich-text-react-renderer@15.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@contentful/rich-text-types': 16.6.1
       react: 18.3.1
