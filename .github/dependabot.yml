@@ -10,40 +10,7 @@ updates:
     assignees:
       - "tomtuv"
     groups:
-      0no-co:
-        patterns:
-          - "@0no-co/*"
-          - "gql.tada"
-      contentful:
-        patterns:
-          - "@contentful/*"
-      formatjs:
-        patterns:
-          - "@formatjs/*"
-          - "react-intl"
-      nextjs:
-        patterns:
-          - "next"
-          - "eslint-config-next"
-      react:
-        patterns:
-          - "react"
-          - "react-dom"
-      postcss:
-        patterns:
-          - "postcss"
-          - "postcss-load-config"
-          - "postcss-preset-env"
-      stylelint:
-        patterns:
-          - "stylelint"
-          - "stylelint-config-standard"
-      types:
-        patterns:
-          - "@types/*"
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint/*"
-      vercel:
-        patterns:
-          - "@vercel/*"
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
