@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/live-preview": "^4.2.3",
+    "@contentful/live-preview": "^4.3.0",
     "@contentful/rich-text-react-renderer": "^15.22.1",
     "@contentful/rich-text-types": "^16.6.1",
     "@formatjs/intl-localematcher": "^0.5.4",
