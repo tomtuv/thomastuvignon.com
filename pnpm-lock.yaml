@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@contentful/live-preview':
-        specifier: ^4.2.3
-        version: 4.2.3(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.3.0
+        version: 4.3.0(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
         specifier: ^15.22.1
         version: 15.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -163,11 +163,11 @@ packages:
     resolution: {integrity: sha512-XEFXSlxiG5td2EJRe8vOmRbaXVgfcBlszKujvVmWIK/UpywWljQCfzAv3RQCGujWQ1RD4YYWEAqDXfuJiy8f5Q==}
     engines: {node: '>=6.9.0'}
 
-  '@contentful/content-source-maps@0.6.1':
-    resolution: {integrity: sha512-IjsyhakG17OC5xtIa5agVRsnjjxiJf9HZjpDIV6Ix036Pd5YHJrbyyiF4KNEmLlIqe3hQ0kHGWEs9S/HfECmRQ==}
+  '@contentful/content-source-maps@0.7.0':
+    resolution: {integrity: sha512-ovsLmfPASrmQUYJEem4i+ApKhI47TTxr4bKt+aKupNnf4bT6HOolSdF/mSiT1YresnJB8Kr/dnlso77QWXw45A==}
 
-  '@contentful/live-preview@4.2.3':
-    resolution: {integrity: sha512-cc4t1fUSTg+Xg5TOvv2fs85bRgMXv4NdRKtA6+D4qxWTVYMGa02oO0XqtEM8Nr1UBNJ3o76kqvC4N8wWnf6CRQ==}
+  '@contentful/live-preview@4.3.0':
+    resolution: {integrity: sha512-MKD9Bf2ubzdpm9T7pygwy4YcyBxoBl9cc9XP28sPLXCk49/HhfWZwgJuA8dbPIOIhosIJFl7p01vk8ZyEcgWlw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -2626,14 +2626,14 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@contentful/content-source-maps@0.6.1':
+  '@contentful/content-source-maps@0.7.0':
     dependencies:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
 
-  '@contentful/live-preview@4.2.3(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/live-preview@4.3.0(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/content-source-maps': 0.6.1
+      '@contentful/content-source-maps': 0.7.0
       '@contentful/rich-text-types': 16.6.1
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.9.0)
@@ -3102,7 +3102,7 @@ snapshots:
   '@swc/helpers@0.5.5':
     dependencies:
       '@swc/counter': 0.1.3
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@types/estree@1.0.5': {}
 
@@ -4179,7 +4179,7 @@ snapshots:
   graphql-tag@2.12.6(graphql@16.9.0):
     dependencies:
       graphql: 16.9.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   graphql@16.9.0: {}
 
