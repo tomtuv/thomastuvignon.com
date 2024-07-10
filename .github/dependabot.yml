@@ -9,6 +9,6 @@ updates:
     assignees:
       - "tomtuv"
     groups:
-      npm:
+      npm-dependencies:
         patterns:
           - "*"
