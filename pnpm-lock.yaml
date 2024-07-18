@@ -12,11 +12,11 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
-        specifier: ^15.22.5
-        version: 15.22.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^15.22.7
+        version: 15.22.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-types':
-        specifier: ^16.7.0
-        version: 16.7.0
+        specifier: ^16.8.1
+        version: 16.8.1
       '@formatjs/intl-localematcher':
         specifier: ^0.5.4
         version: 0.5.4
@@ -27,8 +27,8 @@ importers:
         specifier: ^1.0.12
         version: 1.0.12(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.15)
       framer-motion:
-        specifier: ^11.3.5
-        version: 11.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^11.3.6
+        version: 11.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gql.tada:
         specifier: ^1.8.2
         version: 1.8.2(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)
@@ -164,15 +164,15 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@contentful/rich-text-react-renderer@15.22.5':
-    resolution: {integrity: sha512-PGSpVcFgI/FP1kuRWOPFr6XM7RzT/SKIJ7oim1tF1hZLqRphtsSv3zy2fQymJbNPliA/FqrInsB/NnZC4hUuZA==}
+  '@contentful/rich-text-react-renderer@15.22.7':
+    resolution: {integrity: sha512-NKk0ShsuK4xRLVkdg/+s4+wyQX1sYbqj+/0cP3pKslT8mUm6ZNe3KtNgV5rUmgkKnfPzGKQf0lCjQZ2CIZp4QA==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
 
-  '@contentful/rich-text-types@16.7.0':
-    resolution: {integrity: sha512-SMW6JjJpp05CU5xBjIJp9azxFJ/bzcRzd2o9sF49C736m3aCxSobfuUIJz0dHw92MGsiFKAfzn5yTL3JMfqBqg==}
+  '@contentful/rich-text-types@16.8.1':
+    resolution: {integrity: sha512-HvH9GyL9ER+P+DR3SKAyqMXcqzUfs4BT9VGh0k8fZx2+e29fQQEL2SBGtvkY5pXNWc5eEC3ytzwAaR0CCTVTOw==}
     engines: {node: '>=6.0.0'}
 
   '@csstools/cascade-layer-name-parser@1.0.13':
@@ -1363,8 +1363,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.3.5:
-    resolution: {integrity: sha512-x4rZl+D7EDVGo3Iww6+iunqymvvo2Ih7zsgMiNnhmF4L8zNS4wvSPaay45k0OsFs/fcwdyxn5Kn29u84YzoPGA==}
+  framer-motion@11.3.6:
+    resolution: {integrity: sha512-olpX48qfoSIDjhw0RbolhOGBQmdMAXHHpSI0PFdTj5LeXChcf5F4ApShs0mQ6FPEPOj7dnEvSyB07UgRK5G9Jw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -2652,7 +2652,7 @@ snapshots:
   '@contentful/live-preview@4.3.0(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@contentful/content-source-maps': 0.7.0
-      '@contentful/rich-text-types': 16.7.0
+      '@contentful/rich-text-types': 16.8.1
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.9.0)
       json-pointer: 0.6.2
@@ -2662,13 +2662,13 @@ snapshots:
     transitivePeerDependencies:
       - graphql
 
-  '@contentful/rich-text-react-renderer@15.22.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/rich-text-react-renderer@15.22.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/rich-text-types': 16.7.0
+      '@contentful/rich-text-types': 16.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@contentful/rich-text-types@16.7.0': {}
+  '@contentful/rich-text-types@16.8.1': {}
 
   '@csstools/cascade-layer-name-parser@1.0.13(@csstools/css-parser-algorithms@2.7.1(@csstools/css-tokenizer@2.4.1))(@csstools/css-tokenizer@2.4.1)':
     dependencies:
@@ -4118,7 +4118,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       tslib: 2.6.3
     optionalDependencies:
