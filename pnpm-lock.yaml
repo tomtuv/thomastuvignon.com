@@ -27,8 +27,8 @@ importers:
         specifier: ^1.0.12
         version: 1.0.12(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.15)
       framer-motion:
-        specifier: ^11.3.7
-        version: 11.3.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^11.3.8
+        version: 11.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gql.tada:
         specifier: ^1.8.2
         version: 1.8.2(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)
@@ -58,8 +58,8 @@ importers:
         version: 6.6.8(react@18.3.1)(typescript@5.5.3)
     devDependencies:
       '@0no-co/graphqlsp':
-        specifier: ^1.12.11
-        version: 1.12.11(graphql@16.9.0)(typescript@5.5.3)
+        specifier: ^1.12.12
+        version: 1.12.12(graphql@16.9.0)(typescript@5.5.3)
       '@types/negotiator':
         specifier: ^0.6.3
         version: 0.6.3
@@ -116,8 +116,8 @@ packages:
       graphql:
         optional: true
 
-  '@0no-co/graphqlsp@1.12.11':
-    resolution: {integrity: sha512-vLja9r7L6BBXwxW86Wyi5z5hjTHscH7qoQooy+MXHkM9srBB6ZuesYZq5DQ/+SErQrFyaxeY+hwv2qBAksxriw==}
+  '@0no-co/graphqlsp@1.12.12':
+    resolution: {integrity: sha512-BmCAc/q3tQcIwXxKoxubYaB23s2fWMMmNGSlY9mgQvWiReBS8ZutPZSf11OADfwTv1J1JIazU6q6OFX+cEp8PQ==}
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
@@ -476,12 +476,6 @@ packages:
     resolution: {integrity: sha512-JVLpoXLa4msrE7MHnmW/7fYnIl8dncLom8T/Ghsxu+Kz5iMGnzK2joJN5cZt4ewCAqfCV3HZZ0VH189OalGd9g==}
     peerDependencies:
       '@0no-co/graphqlsp': ^1.12.9
-      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
-      typescript: ^5.0.0
-
-  '@gql.tada/internal@1.0.3':
-    resolution: {integrity: sha512-n52/OjAkoPsX4ZyEufFBnncjnv0UrbXKs4OUG66db8gxtV5437EkLjI4MTAI1M6dsaj+VLi0unpraPPPbFR59A==}
-    peerDependencies:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
 
@@ -1363,8 +1357,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.3.7:
-    resolution: {integrity: sha512-wolMesg8ruYgZX8nMELY2a/ZgMMpYhggLNIexx1blaYN0yb2+SdQ78sEkGDKde+3LTCeFy/wCi97i5Br4yT0GQ==}
+  framer-motion@11.3.8:
+    resolution: {integrity: sha512-1D+RDTsIp4Rz2dq/oToqSEc9idEQwgBRQyBq4rGpFba+0Z+GCbj9z1s0+ikFbanWe3YJ0SqkNlDe08GcpFGj5A==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -2605,9 +2599,9 @@ snapshots:
     optionalDependencies:
       graphql: 16.9.0
 
-  '@0no-co/graphqlsp@1.12.11(graphql@16.9.0)(typescript@5.5.3)':
+  '@0no-co/graphqlsp@1.12.12(graphql@16.9.0)(typescript@5.5.3)':
     dependencies:
-      '@gql.tada/internal': 1.0.3(graphql@16.9.0)(typescript@5.5.3)
+      '@gql.tada/internal': 1.0.4(graphql@16.9.0)(typescript@5.5.3)
       graphql: 16.9.0
       typescript: 5.5.3
 
@@ -2986,9 +2980,9 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.3
 
-  '@gql.tada/cli-utils@1.5.1(@0no-co/graphqlsp@1.12.11(graphql@16.9.0)(typescript@5.5.3))(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)':
+  '@gql.tada/cli-utils@1.5.1(@0no-co/graphqlsp@1.12.12(graphql@16.9.0)(typescript@5.5.3))(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)':
     dependencies:
-      '@0no-co/graphqlsp': 1.12.11(graphql@16.9.0)(typescript@5.5.3)
+      '@0no-co/graphqlsp': 1.12.12(graphql@16.9.0)(typescript@5.5.3)
       '@gql.tada/internal': 1.0.4(graphql@16.9.0)(typescript@5.5.3)
       '@vue/compiler-dom': 3.4.31
       '@vue/language-core': 2.0.26(typescript@5.5.3)
@@ -2997,12 +2991,6 @@ snapshots:
       typescript: 5.5.3
     transitivePeerDependencies:
       - svelte
-
-  '@gql.tada/internal@1.0.3(graphql@16.9.0)(typescript@5.5.3)':
-    dependencies:
-      '@0no-co/graphql.web': 1.0.7(graphql@16.9.0)
-      graphql: 16.9.0
-      typescript: 5.5.3
 
   '@gql.tada/internal@1.0.4(graphql@16.9.0)(typescript@5.5.3)':
     dependencies:
@@ -4118,7 +4106,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.3.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       tslib: 2.6.3
     optionalDependencies:
@@ -4222,8 +4210,8 @@ snapshots:
   gql.tada@1.8.2(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3):
     dependencies:
       '@0no-co/graphql.web': 1.0.7(graphql@16.9.0)
-      '@0no-co/graphqlsp': 1.12.11(graphql@16.9.0)(typescript@5.5.3)
-      '@gql.tada/cli-utils': 1.5.1(@0no-co/graphqlsp@1.12.11(graphql@16.9.0)(typescript@5.5.3))(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)
+      '@0no-co/graphqlsp': 1.12.12(graphql@16.9.0)(typescript@5.5.3)
+      '@gql.tada/cli-utils': 1.5.1(@0no-co/graphqlsp@1.12.12(graphql@16.9.0)(typescript@5.5.3))(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)
       '@gql.tada/internal': 1.0.4(graphql@16.9.0)(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
