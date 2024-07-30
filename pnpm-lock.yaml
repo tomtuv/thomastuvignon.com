@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@contentful/live-preview':
-        specifier: ^4.3.2
-        version: 4.3.2(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.4.1
+        version: 4.4.1(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
         specifier: ^15.22.9
         version: 15.22.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -155,11 +155,11 @@ packages:
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
 
-  '@contentful/content-source-maps@0.8.0':
-    resolution: {integrity: sha512-lBC44ZQb17fjX3gsEogz2/e9QTV6WOyqekBRAT0ymHZhJh9/KJGns0qg7e9znD2X1QwVMPU+Vd1Zl7pElV18gA==}
+  '@contentful/content-source-maps@0.9.0':
+    resolution: {integrity: sha512-qh8fCCiknl8bliu6Wh/t3wjNd3v6u4CQFN8CXmLu+9HwpqGgdh2w/2wp75qcvk5jCzmwY5bUWOcNikgxWWAFyQ==}
 
-  '@contentful/live-preview@4.3.2':
-    resolution: {integrity: sha512-AsfrFC52YAE+3fW7GQeR0xPRfIMEoiff23i6b4HERwB9a+Cu1936jzAn9cBX1Q6p/x9M5DgS2dhXEk+wM71tzA==}
+  '@contentful/live-preview@4.4.1':
+    resolution: {integrity: sha512-47UFKzNtRUY7YfjtkkY4E3OMmzYGJX/k8K9YQvjnPfWQIW6JNBWroYBtfJDVF+5LINVcjn7LWpJX+vhRJHlPiQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -2644,14 +2644,14 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@contentful/content-source-maps@0.8.0':
+  '@contentful/content-source-maps@0.9.0':
     dependencies:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
 
-  '@contentful/live-preview@4.3.2(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/live-preview@4.4.1(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/content-source-maps': 0.8.0
+      '@contentful/content-source-maps': 0.9.0
       '@contentful/rich-text-types': 16.8.3
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.9.0)
