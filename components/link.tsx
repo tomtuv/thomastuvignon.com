@@ -2,8 +2,8 @@
 
 import { Link as ViewTransitionsLink } from "next-view-transitions";
 import { useIntl } from "react-intl";
-import styles from "./link.module.css";
 import { LOCALES } from "@/lib/constants";
+import styles from "./link.module.css";
 
 export default function Link({
   href,

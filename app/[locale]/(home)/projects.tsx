@@ -6,11 +6,11 @@ import {
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
 import { useId } from "react";
-import styles from "./projects.module.css";
 import FormattedMessage from "@/components/formatted-message";
 import Image from "@/components/image";
 import Link from "@/components/link";
 import type { ProjectCard as ProjectCardType, HomePage } from "@/lib/types";
+import styles from "./projects.module.css";
 
 function ProjectCard({ project }: { project: ProjectCardType }) {
   const updatedProject = useContentfulLiveUpdates(project);

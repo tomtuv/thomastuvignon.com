@@ -6,10 +6,10 @@ import {
 } from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
-import styles from "./media.module.css";
 import Image from "@/components/image";
 import VisuallyHidden from "@/components/visually-hidden";
 import type { Media as MediaType } from "@/lib/types";
+import styles from "./media.module.css";
 
 export default function Media({ media }: { media: MediaType }) {
   const { formatMessage } = useIntl();

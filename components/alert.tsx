@@ -1,6 +1,6 @@
-import styles from "./alert.module.css";
 import FormattedMessage from "./formatted-message";
 import Link from "./link";
+import styles from "./alert.module.css";
 
 export default function Alert() {
   return (

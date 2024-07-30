@@ -5,11 +5,11 @@ import {
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 import type { Document } from "@contentful/rich-text-types";
-import styles from "./text.module.css";
 import FormattedMessage from "@/components/formatted-message";
 import Link from "@/components/link";
 import RichText from "@/components/rich-text";
 import type { Text as TextType } from "@/lib/types";
+import styles from "./text.module.css";
 
 export default function Text({ text }: { text: TextType }) {
   const updatedText = useContentfulLiveUpdates(text);

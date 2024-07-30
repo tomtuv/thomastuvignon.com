@@ -4,9 +4,9 @@ import Link from "./link";
 import Linkedin from "./linkedin";
 import Mail from "./mail";
 import Mastodon from "./mastodon";
-import styles from "./social.module.css";
 import VisuallyHidden from "./visually-hidden";
 import X from "./x";
+import styles from "./social.module.css";
 
 export default function Social() {
   return (

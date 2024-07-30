@@ -1,6 +1,6 @@
-import styles from "./back.module.css";
 import FormattedMessage from "./formatted-message";
 import Link from "./link";
+import styles from "./back.module.css";
 
 export default function Back() {
   return (

@@ -4,10 +4,10 @@ import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
-import styles from "./header.module.css";
 import Image from "./image";
 import Link from "./link";
 import type { HomePage, Page, Project } from "@/lib/types";
+import styles from "./header.module.css";
 
 export default function Header({ page }: { page: HomePage | Project | Page }) {
   const updatedPage = useContentfulLiveUpdates(page);
