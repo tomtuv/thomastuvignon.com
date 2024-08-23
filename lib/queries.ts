@@ -1,22 +1,6 @@
 import { projectCardFragment, mediaFragment, textFragment } from "./fragments";
 import { graphql } from "./graphql";
 
-export const draftEntryQuery = graphql(/* GraphQL */ `
-  query DraftEntry($id: String!, $preview: Boolean = false) {
-    entryCollection(where: { sys: { id: $id } }, limit: 1, preview: $preview) {
-      items {
-        __typename
-        ... on Project {
-          slug
-        }
-        ... on Page {
-          slug
-        }
-      }
-    }
-  }
-`);
-
 export const homePageQuery = graphql(
   /* GraphQL */ `
     query HomePage($locale: String!, $preview: Boolean = false) {

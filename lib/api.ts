@@ -4,7 +4,6 @@ import { draftMode } from "next/headers";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,
-  draftEntryQuery,
   homePageQuery,
   pageQuery,
   projectQuery,
@@ -38,16 +37,6 @@ const client = new GraphQLClient(
     },
   }
 );
-
-export async function getDraftEntry(id: string) {
-  const data = await client.request(
-    draftEntryQuery,
-    { id, preview: true },
-    { Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN}` }
-  );
-
-  return data?.entryCollection?.items[0];
-}
 
 export async function getHomePage({ locale }: { locale: string }) {
   const data = await client.request(homePageQuery, {
