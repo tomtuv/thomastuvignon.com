@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/live-preview": "^4.5.2",
+    "@contentful/live-preview": "^4.5.3",
     "@contentful/rich-text-react-renderer": "^15.22.9",
     "@contentful/rich-text-types": "^16.8.3",
     "@contentful/vercel-nextjs-toolkit": "^1.3.2",
