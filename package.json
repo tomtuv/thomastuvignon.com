@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/live-preview": "^4.5.3",
-    "@contentful/rich-text-react-renderer": "^15.22.9",
-    "@contentful/rich-text-types": "^16.8.3",
+    "@contentful/live-preview": "^4.5.4",
+    "@contentful/rich-text-react-renderer": "^15.22.10",
+    "@contentful/rich-text-types": "^16.8.4",
     "@contentful/vercel-nextjs-toolkit": "^1.3.2",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
-    "framer-motion": "^11.3.29",
+    "framer-motion": "^11.3.30",
     "gql.tada": "^1.8.6",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
