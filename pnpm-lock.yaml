@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@contentful/live-preview':
-        specifier: ^4.5.4
-        version: 4.5.4(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.5.5
+        version: 4.5.5(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
         specifier: ^15.22.10
         version: 15.22.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -30,8 +30,8 @@ importers:
         specifier: ^1.0.12
         version: 1.0.12(next@14.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.15)
       framer-motion:
-        specifier: ^11.5.2
-        version: 11.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^11.5.4
+        version: 11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gql.tada:
         specifier: ^1.8.6
         version: 1.8.6(graphql@16.9.0)(typescript@5.5.4)
@@ -145,11 +145,11 @@ packages:
     resolution: {integrity: sha512-EStJpq4OuY8xYfhGVXngigBJRWxftKX9ksiGDnmlY3o7B/V7KIAc9X4oiK87uPJSc/vs5L869bem5fhZa8caZw==}
     engines: {node: '>=6.9.0'}
 
-  '@contentful/content-source-maps@0.11.1':
-    resolution: {integrity: sha512-dLNhz5NVxhnq2K+O+VfOiGB+JR53qRTD/TmSZxLsYJm+kQObSSziI4lVUlqEm7OBFmRnOW4hgR6woGylrfYuyA==}
+  '@contentful/content-source-maps@0.11.2':
+    resolution: {integrity: sha512-N85VAzEaeQw7tQq3++BksYoHafsXQjmDpeK+Eo6eBcy7Zi6Uwph9gHbaJ0c/vuTig1PtKEVDwzg2tbtQJWWxSg==}
 
-  '@contentful/live-preview@4.5.4':
-    resolution: {integrity: sha512-NZRDDLXT2kdtjqQ+Jl/4YdGoP13Jl1sy4671Dk2NWDYT8JFu1INN1nvuSEJQRVehI0g9kgwtyXGAEjOXmX59hg==}
+  '@contentful/live-preview@4.5.5':
+    resolution: {integrity: sha512-96FPOuSn6bm8iDpUcfWNmvhAPGpy7TPPiGK7M5FRGtUc6R/9b5nIiLf5S3ny1ynw3z2ZMJj9/PcG4PvgVnM76w==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -1365,8 +1365,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.5.2:
-    resolution: {integrity: sha512-dZLb7F+orjs+y2ggdl3tL5wuIDsHV1p28gloOSrDWH+nwmt0RTC7myq9FdfWZcQZ47qzv4RrqHEtHoeaBK57dg==}
+  framer-motion@11.5.4:
+    resolution: {integrity: sha512-E+tb3/G6SO69POkdJT+3EpdMuhmtCh9EWuK4I1DnIC23L7tFPrl8vxP+LSovwaw6uUr73rUbpb4FgK011wbRJQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -2602,14 +2602,14 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.0.1
 
-  '@contentful/content-source-maps@0.11.1':
+  '@contentful/content-source-maps@0.11.2':
     dependencies:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
 
-  '@contentful/live-preview@4.5.4(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/live-preview@4.5.5(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@contentful/content-source-maps': 0.11.1
+      '@contentful/content-source-maps': 0.11.2
       '@contentful/rich-text-types': 16.8.4
       flatted: 3.3.1
       graphql-tag: 2.12.6(graphql@16.9.0)
@@ -4091,7 +4091,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.5.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       tslib: 2.7.0
     optionalDependencies:
