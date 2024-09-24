@@ -30,10 +30,10 @@
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.14",
     "@types/negotiator": "^0.6.3",
-    "@types/node": "^22.5.5",
+    "@types/node": "^22.6.1",
     "@types/react": "^18.3.8",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.13",
     "eslint-plugin-import": "^2.30.0",
