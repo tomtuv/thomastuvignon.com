@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PageLayout from "@/components/page-layout";
+import Layout from "@/components/layout";
 import { getAllProjectsWithSlug, getProject } from "@/lib/api";
 import { SITE_NAME, TWITTER_USERNAME, LOCALES } from "@/lib/constants";
 
@@ -47,7 +47,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Layout({
+export default async function ProjectLayout({
   children,
   params: { slug, locale },
 }: React.PropsWithChildren<{
@@ -59,5 +59,5 @@ export default async function Layout({
     return notFound();
   }
 
-  return <PageLayout page={project}>{children}</PageLayout>;
+  return <Layout page={project}>{children}</Layout>;
 }

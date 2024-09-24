@@ -2,9 +2,9 @@ import { draftMode } from "next/headers";
 import Alert from "./alert";
 import Footer from "./footer";
 import Header from "./header";
-import styles from "./page-layout.module.css";
+import styles from "./layout.module.css";
 
-export default function PageLayout({
+export default function Layout({
   page,
   children,
 }: React.PropsWithChildren<{

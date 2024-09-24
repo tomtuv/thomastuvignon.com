@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import PageLayout from "@/components/page-layout";
+import Layout from "@/components/layout";
 import { getHomePage } from "@/lib/api";
 import { DEFAULT_LOCALE } from "@/lib/constants";
 
-export default async function Layout({
+export default async function HomeLayout({
   children,
   params: { locale },
 }: React.PropsWithChildren<{
@@ -16,5 +16,5 @@ export default async function Layout({
     return notFound();
   }
 
-  return <PageLayout page={homePage}>{children}</PageLayout>;
+  return <Layout page={homePage}>{children}</Layout>;
 }
