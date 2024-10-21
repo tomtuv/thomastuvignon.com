@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@contentful/live-preview':
-        specifier: ^4.5.12
-        version: 4.5.12(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.5.13
+        version: 4.5.13(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@contentful/rich-text-react-renderer':
         specifier: ^15.22.11
         version: 15.22.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -42,8 +42,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(@dprint/formatter@0.3.0)(graphql@16.9.0)
       negotiator:
-        specifier: ^0.6.3
-        version: 0.6.3
+        specifier: ^1.0.0
+        version: 1.0.0
       next:
         specifier: ^14.2.15
         version: 14.2.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -67,8 +67,8 @@ importers:
         specifier: ^0.6.3
         version: 0.6.3
       '@types/node':
-        specifier: ^22.7.6
-        version: 22.7.6
+        specifier: ^22.7.7
+        version: 22.7.7
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.11
@@ -144,8 +144,8 @@ packages:
   '@contentful/content-source-maps@0.11.6':
     resolution: {integrity: sha512-kiP0LcqAMj+Kvt+sLpI1KlqSh2isGkQXRulTEwKZGorXDTbSN3rWfFo/4ysHk2CvlWyF1NotNkB4Thz6LNiHTQ==}
 
-  '@contentful/live-preview@4.5.12':
-    resolution: {integrity: sha512-i+4LkHBhobPNPVAVW/Pe826wGsXoz09pic6ZjJZ3CZwxBOlU226AkbFUo2mFeL92jgO1jPn1eRhH1LG+cJr3jg==}
+  '@contentful/live-preview@4.5.13':
+    resolution: {integrity: sha512-yg1ruivq5DYmLTBHfk0XJUFHZDv7y4YZqxfTBPAc9xa94vIyikIIuod/ggDQd1lyOmB9qlRg57Eo+Pq1RAG+VQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -636,8 +636,8 @@ packages:
   '@types/negotiator@0.6.3':
     resolution: {integrity: sha512-JkXTOdKs5MF086b/pt8C3+yVp3iDUwG635L7oCH6HvJvvr6lSUU5oe/gLXnPEfYRROHjJIPgCV6cuAg8gGkntQ==}
 
-  '@types/node@22.7.6':
-    resolution: {integrity: sha512-/d7Rnj0/ExXDMcioS78/kf1lMzYk4BZV8MZGTBKzTGZ6/406ukkbYlIsZmMPhcR5KlkunDHQLrtAVmSq7r+mSw==}
+  '@types/node@22.7.7':
+    resolution: {integrity: sha512-SRxCrrg9CL/y54aiMCG3edPKdprgMVGDXjA3gB8UmmBW5TcXzRUYAh8EWzTnSJFAd1rgImPELza+A3bJ+qxz8Q==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -1754,8 +1754,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  negotiator@0.6.3:
-    resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
+  negotiator@1.0.0:
+    resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
   next-view-transitions@0.3.2:
@@ -2526,7 +2526,7 @@ snapshots:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
 
-  '@contentful/live-preview@4.5.12(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@contentful/live-preview@4.5.13(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@contentful/content-source-maps': 0.11.6
       '@contentful/rich-text-types': 16.8.5
@@ -3022,7 +3022,7 @@ snapshots:
 
   '@types/negotiator@0.6.3': {}
 
-  '@types/node@22.7.6':
+  '@types/node@22.7.7':
     dependencies:
       undici-types: 6.19.8
 
@@ -4316,7 +4316,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  negotiator@0.6.3: {}
+  negotiator@1.0.0: {}
 
   next-view-transitions@0.3.2(next@14.2.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
