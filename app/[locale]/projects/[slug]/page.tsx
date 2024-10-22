@@ -4,10 +4,11 @@ import Back from "@/components/back";
 import { getProject } from "@/lib/api";
 
 export default async function Project({
-  params: { slug, locale },
+  params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }) {
+  const { slug, locale } = await params;
   const project = await getProject(slug, { locale });
 
   if (!project) {

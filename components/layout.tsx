@@ -4,13 +4,13 @@ import Footer from "./footer";
 import Header from "./header";
 import styles from "./layout.module.css";
 
-export default function Layout({
+export default async function Layout({
   page,
   children,
 }: React.PropsWithChildren<{
   page: React.ComponentPropsWithoutRef<typeof Header>["page"];
 }>) {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
 
   return (
     <div className={styles.root}>

@@ -11,10 +11,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { slug, locale },
+  params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
+  const { slug, locale } = await params;
   const project = await getProject(slug, { locale });
 
   return {
@@ -48,11 +49,12 @@ export async function generateMetadata({
 }
 
 export default async function ProjectLayout({
+  params,
   children,
-  params: { slug, locale },
 }: React.PropsWithChildren<{
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }>) {
+  const { slug, locale } = await params;
   const project = await getProject(slug, { locale });
 
   if (!project) {

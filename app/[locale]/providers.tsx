@@ -1,6 +1,5 @@
 "use client";
 
-import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 import { MotionConfig } from "framer-motion";
 import { IntlProvider } from "react-intl";
 import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
@@ -8,8 +7,7 @@ import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
 export default function Providers({
   children,
   locale,
-  draftMode,
-}: React.PropsWithChildren<{ locale: string; draftMode: boolean }>) {
+}: React.PropsWithChildren<{ locale: string }>) {
   return (
     <MotionConfig reducedMotion="user">
       <IntlProvider
@@ -17,13 +15,7 @@ export default function Providers({
         defaultLocale={DEFAULT_LOCALE}
         messages={MESSAGES[locale as keyof typeof MESSAGES]}
       >
-        <ContentfulLivePreviewProvider
-          locale={locale}
-          enableInspectorMode={draftMode}
-          enableLiveUpdates={draftMode}
-        >
-          {children}
-        </ContentfulLivePreviewProvider>
+        {children}
       </IntlProvider>
     </MotionConfig>
   );

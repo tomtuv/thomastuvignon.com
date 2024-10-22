@@ -4,10 +4,11 @@ import Back from "@/components/back";
 import { getPage } from "@/lib/api";
 
 export default async function Page({
-  params: { slug, locale },
+  params,
 }: {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }) {
+  const { slug, locale } = await params;
   const page = await getPage(slug, { locale });
 
   if (!page) {

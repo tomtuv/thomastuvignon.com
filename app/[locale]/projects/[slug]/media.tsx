@@ -1,9 +1,5 @@
 "use client";
 
-import {
-  useContentfulInspectorMode,
-  useContentfulLiveUpdates,
-} from "@contentful/live-preview/react";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
 import Image from "@/components/image";
@@ -13,23 +9,17 @@ import styles from "./media.module.css";
 
 export default function Media({ media }: { media: MediaType }) {
   const { formatMessage } = useIntl();
-  const updatedMedia = useContentfulLiveUpdates(media);
-
-  const inspectorProps = useContentfulInspectorMode({
-    entryId: media.sys.id,
-  });
 
   return (
     <section
       className={styles.root}
-      data-variant={updatedMedia.layout === "Columns" ? "columns" : undefined}
-      aria-labelledby={updatedMedia.sys.id}
-      {...inspectorProps({ fieldId: "images" })}
+      data-variant={media.layout === "Columns" ? "columns" : undefined}
+      aria-labelledby={media.sys.id}
     >
-      <VisuallyHidden as="h2" id={updatedMedia.sys.id}>
-        {updatedMedia.title}
+      <VisuallyHidden as="h2" id={media.sys.id}>
+        {media.title}
       </VisuallyHidden>
-      {updatedMedia.imagesCollection?.items.map((image, index) => (
+      {media.imagesCollection?.items.map((image, index) => (
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
