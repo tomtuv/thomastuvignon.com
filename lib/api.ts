@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
-import { unstable_noStore as noStore } from "next/cache";
 import { draftMode } from "next/headers";
+import { connection } from "next/server";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,
@@ -23,7 +23,7 @@ async function getHeaders() {
   }
 
   if (isDraftMode) {
-    noStore();
+    await connection();
   }
 
   return {
