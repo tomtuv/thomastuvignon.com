@@ -13,7 +13,7 @@ const client = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
 );
 
-export async function getHeaders() {
+async function getHeaders() {
   let isDraftMode: boolean;
 
   try {
