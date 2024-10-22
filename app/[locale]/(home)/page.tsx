@@ -4,11 +4,11 @@ import Projects from "./projects";
 import { getHomePage } from "@/lib/api";
 import { DEFAULT_LOCALE } from "@/lib/constants";
 
-export default async function Home({
-  params: { locale },
-}: {
-  params: { locale: string };
+export default async function Home(props: {
+  params: Promise<{ locale: string }>;
 }) {
+  const params = await props.params;
+  let { locale } = params;
   locale = locale.replace("worker.js", DEFAULT_LOCALE);
   const homePage = await getHomePage({ locale });
 

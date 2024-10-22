@@ -10,71 +10,90 @@ import {
 } from "./queries";
 
 const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-  {
-    headers: () => {
-      let isDraftMode: boolean;
-
-      try {
-        isDraftMode = draftMode().isEnabled;
-      } catch {
-        isDraftMode = false;
-      }
-
-      if (isDraftMode) {
-        noStore();
-      }
-
-      return {
-        Authorization: `Bearer ${
-          process.env[
-            isDraftMode
-              ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
-              : "CONTENTFUL_ACCESS_TOKEN"
-          ]
-        }`,
-      };
-    },
-  }
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
 );
 
+export async function getHeaders() {
+  let isDraftMode: boolean;
+
+  try {
+    isDraftMode = (await draftMode()).isEnabled;
+  } catch {
+    isDraftMode = false;
+  }
+
+  if (isDraftMode) {
+    noStore();
+  }
+
+  return {
+    Authorization: `Bearer ${
+      process.env[
+        isDraftMode
+          ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
+          : "CONTENTFUL_ACCESS_TOKEN"
+      ]
+    }`,
+  };
+}
+
 export async function getHomePage({ locale }: { locale: string }) {
-  const data = await client.request(homePageQuery, {
-    locale,
-    preview: draftMode().isEnabled,
-  });
+  const data = await client.request(
+    homePageQuery,
+    {
+      locale,
+      preview: (await draftMode()).isEnabled,
+    },
+    await getHeaders()
+  );
 
   return data?.homePageCollection?.items[0];
 }
 
 export async function getProject(slug: string, { locale }: { locale: string }) {
-  const data = await client.request(projectQuery, {
-    slug,
-    locale,
-    preview: draftMode().isEnabled,
-  });
+  const data = await client.request(
+    projectQuery,
+    {
+      slug,
+      locale,
+      preview: (await draftMode()).isEnabled,
+    },
+    await getHeaders()
+  );
 
   return data?.projectCollection?.items[0];
 }
 
 export async function getAllProjectsWithSlug() {
-  const data = await client.request(allProjectsWithSlugQuery);
+  const data = await client.request(
+    allProjectsWithSlugQuery,
+    undefined,
+    await getHeaders()
+  );
 
   return data?.projectCollection?.items ?? [];
 }
 
 export async function getPage(slug: string, { locale }: { locale: string }) {
-  const data = await client.request(pageQuery, {
-    slug,
-    locale,
-    preview: draftMode().isEnabled,
-  });
+  const data = await client.request(
+    pageQuery,
+    {
+      slug,
+      locale,
+      preview: (await draftMode()).isEnabled,
+    },
+    await getHeaders()
+  );
 
   return data?.pageCollection?.items[0];
 }
 
 export async function getAllPagesWithSlug() {
-  const data = await client.request(allPagesWithSlugQuery);
+  const data = await client.request(
+    allPagesWithSlugQuery,
+    undefined,
+    await getHeaders()
+  );
 
   return data?.pageCollection?.items ?? [];
 }

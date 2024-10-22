@@ -2,7 +2,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { draftMode } from "next/headers";
 import Providers from "./providers";
 import {
   SITE_NAME,
@@ -31,10 +30,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const description = MESSAGES[locale as keyof typeof MESSAGES]?.description;
 
   return {
@@ -71,17 +71,17 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
+  params,
   children,
-  params: { locale },
-}: React.PropsWithChildren<{ params: { locale: string } }>) {
+}: React.PropsWithChildren<{ params: Promise<{ locale: string }> }>) {
+  let { locale } = await params;
   locale = locale.replace("worker.js", DEFAULT_LOCALE);
-  const { isEnabled } = draftMode();
 
   return (
     <html lang={locale} className={inter.variable}>
       <body>
-        <Providers locale={locale} draftMode={isEnabled}>
+        <Providers locale={locale}>
           {children}
           <Analytics />
           <SpeedInsights />
