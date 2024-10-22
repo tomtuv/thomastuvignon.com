@@ -1,6 +1,5 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 
@@ -13,9 +12,8 @@ const compat = new FlatCompat({
 });
 
 /** @type {import('eslint').Linter.Config} */
-const eslintConfig = [
-  ...fixupConfigRules(compat.extends("next/core-web-vitals")),
-  ...fixupConfigRules(compat.extends("next/typescript")),
+const config = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
@@ -43,4 +41,4 @@ const eslintConfig = [
   },
 ];
 
-export default eslintConfig;
+export default config;

@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.16",
-    "@eslint/compat": "^1.2.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.13.0",
     "@types/negotiator": "^0.6.3",
