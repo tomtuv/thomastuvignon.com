@@ -3,7 +3,6 @@ import { fileURLToPath } from "node:url";
 import { fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import tsParser from "@typescript-eslint/parser";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,9 +17,6 @@ const eslintConfig = [
   ...fixupConfigRules(compat.extends("next/core-web-vitals")),
   ...fixupConfigRules(compat.extends("next/typescript")),
   {
-    languageOptions: {
-      parser: tsParser,
-    },
     rules: {
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": "error",
