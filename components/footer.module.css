@@ -16,7 +16,7 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    gap: 2rem;
     justify-content: center;
     margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   }

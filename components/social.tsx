@@ -1,8 +1,7 @@
-import FormattedMessage from "./formatted-message";
+import Bluesky from "./bluesky";
 import Github from "./github";
 import Link from "./link";
 import Linkedin from "./linkedin";
-import Mail from "./mail";
 import Mastodon from "./mastodon";
 import VisuallyHidden from "./visually-hidden";
 import X from "./x";
@@ -33,6 +32,16 @@ export default function Social() {
       </li>
       <li>
         <Link
+          href="https://bsky.app/profile/thomastuvignon.com"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <VisuallyHidden>Bluesky</VisuallyHidden>
+          <Bluesky />
+        </Link>
+      </li>
+      <li>
+        <Link
           href="https://techhub.social/@tomtuv"
           target="_blank"
           rel="me noopener noreferrer"
@@ -49,14 +58,6 @@ export default function Social() {
         >
           <VisuallyHidden>X</VisuallyHidden>
           <X />
-        </Link>
-      </li>
-      <li>
-        <Link href="mailto:ttuvignon@icloud.com">
-          <VisuallyHidden>
-            <FormattedMessage id="email" />
-          </VisuallyHidden>
-          <Mail />
         </Link>
       </li>
     </ul>
