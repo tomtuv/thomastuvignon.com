@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useId } from "react";
 import FormattedMessage from "@/components/formatted-message";
 import Image from "@/components/image";
