@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useIntl } from "react-intl";
 import Image from "@/components/image";
 import VisuallyHidden from "@/components/visually-hidden";

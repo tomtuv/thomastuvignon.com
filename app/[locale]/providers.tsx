@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionConfig } from "framer-motion";
+import { MotionConfig } from "motion/react";
 import { IntlProvider } from "react-intl";
 import { DEFAULT_LOCALE, MESSAGES } from "@/lib/constants";
 
