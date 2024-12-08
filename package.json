@@ -47,6 +47,12 @@
     "stylelint-use-logical": "^2.1.2",
     "typescript": "^5.7.2"
   },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.0.1",
+      "@types/react-dom": "^19.0.1"
+    }
+  },
   "browserslist": [
     "last 2 versions",
     "> 0.5%",
