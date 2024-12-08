@@ -16,7 +16,7 @@
     view-transition-name: header;
   }
 
-  & h1 {
+  h1 {
     margin-block-start: 0.5em;
 
     &:where(:not(:last-child)) {
@@ -24,17 +24,17 @@
     }
   }
 
-  & span {
+  span {
     inline-size: clamp(8.125rem, 6.625rem + 5vw, 10.625rem);
     border-radius: 50%;
-    transform: translateZ(0);
+    translate: none;
 
-    & + h1 {
+    + h1 {
       margin-block-start: 0.75em;
     }
   }
 
-  & p {
+  p {
     font-size: clamp(1.25rem, 1.175rem + 0.25vw, 1.375rem);
     font-weight: 500;
   }

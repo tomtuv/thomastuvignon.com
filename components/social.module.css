@@ -1,5 +1,5 @@
 .root {
-  & a {
+  a {
     display: block;
     will-change: opacity;
 
@@ -13,7 +13,7 @@
     }
   }
 
-  & svg {
+  svg {
     inline-size: 1.5rem;
   }
 }

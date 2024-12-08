@@ -13,7 +13,7 @@
     background-color: var(--color-cod-gray);
   }
 
-  & ul {
+  ul {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -21,7 +21,7 @@
     margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   }
 
-  & small {
+  small {
     font-size: inherit;
   }
 }

@@ -11,7 +11,7 @@ import {
   MESSAGES,
   DEFAULT_LOCALE,
 } from "@/lib/constants";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
