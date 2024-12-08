@@ -1,5 +1,3 @@
-"use client";
-
 import type { Document } from "@contentful/rich-text-types";
 import RichText from "@/components/rich-text";
 import type { Page } from "@/lib/types";

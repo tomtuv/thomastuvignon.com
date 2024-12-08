@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "./image";
 import Link from "./link";
 import type { HomePage, Page, Project } from "@/lib/types";

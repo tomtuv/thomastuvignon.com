@@ -1,5 +1,3 @@
-"use client";
-
 import { Fragment } from "react";
 import Media from "./media";
 import Text from "./text";

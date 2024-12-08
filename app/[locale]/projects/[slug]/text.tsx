@@ -1,5 +1,3 @@
-"use client";
-
 import type { Document } from "@contentful/rich-text-types";
 import FormattedMessage from "@/components/formatted-message";
 import Link from "@/components/link";
