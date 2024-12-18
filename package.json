@@ -29,7 +29,6 @@
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.16",
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.16.0",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.1",

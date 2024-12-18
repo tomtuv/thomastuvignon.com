@@ -1,5 +1,5 @@
 /** @type {import('postcss-load-config').Config} */
-const config = {
+const postcssConfig = {
   plugins: {
     /** @type {import('postcss-preset-env').pluginOptions} */
     "postcss-preset-env": {
@@ -15,4 +15,4 @@ const config = {
   },
 };
 
-export default config;
+export default postcssConfig;
