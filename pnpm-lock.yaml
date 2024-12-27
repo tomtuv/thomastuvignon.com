@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@types/react': ^19.0.1
-  '@types/react-dom': ^19.0.1
+  '@types/react': ^19.0.2
+  '@types/react-dom': ^19.0.2
 
 importers:
 
@@ -74,10 +74,10 @@ importers:
         specifier: ^22.10.2
         version: 22.10.2
       '@types/react':
-        specifier: ^19.0.1
+        specifier: ^19.0.2
         version: 19.0.2
       '@types/react-dom':
-        specifier: ^19.0.1
+        specifier: ^19.0.2
         version: 19.0.2(@types/react@19.0.2)
       babel-plugin-react-compiler:
         specifier: 19.0.0-beta-201e55d-20241215
@@ -840,7 +840,7 @@ packages:
   '@types/react-dom@19.0.2':
     resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
     peerDependencies:
-      '@types/react': ^19.0.1
+      '@types/react': ^19.0.2
 
   '@types/react@19.0.2':
     resolution: {integrity: sha512-USU8ZI/xyKJwFTpjSVIrSeHBVAGagkHQKPNbxeWwql/vDmnTIBgx+TJnhFnj1NXgz8XfprU0egV2dROLGpsBEg==}
