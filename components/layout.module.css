@@ -8,6 +8,18 @@
       "header footer";
     grid-template-columns: minmax(auto, 30rem) minmax(66.6667%, 1fr);
   }
+
+  > aside {
+    grid-area: alert;
+  }
+
+  > header {
+    grid-area: header;
+  }
+
+  > footer {
+    grid-area: footer;
+  }
 }
 
 .content {

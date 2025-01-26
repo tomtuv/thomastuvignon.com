@@ -4,13 +4,13 @@ import styles from "./alert.module.css";
 
 export default function Alert() {
   return (
-    <div className={styles.root}>
+    <aside className={styles.root}>
       <p>
         <FormattedMessage id="draftMode" />{" "}
         <Link href="/api/disable-draft" variant="underline">
           <FormattedMessage id="disable" />
         </Link>
       </p>
-    </div>
+    </aside>
   );
 }

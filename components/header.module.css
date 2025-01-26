@@ -1,5 +1,4 @@
 .root {
-  grid-area: header;
   padding: var(--space-y) var(--space-x);
   overflow: hidden;
   background-color: var(--color-alabaster);

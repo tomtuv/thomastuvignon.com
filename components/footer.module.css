@@ -1,5 +1,4 @@
 .root {
-  grid-area: footer;
   padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--space-x);
   color: white;
   text-align: center;
