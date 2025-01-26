@@ -7,8 +7,7 @@
       transition: opacity 0.15s linear;
     }
 
-    &:hover,
-    &:focus {
+    &:is(:hover, :focus) {
       opacity: 0.5;
     }
   }

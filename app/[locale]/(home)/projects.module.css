@@ -15,13 +15,8 @@
     grid-template-columns: var(--grid-columns-auto-fit);
   }
 
-  a {
-    &:hover,
-    &:focus {
-      > :where(span) {
-        scale: 1.05;
-      }
-    }
+  a:is(:hover, :focus) > :where(span) {
+    scale: 1.05;
   }
 
   span {

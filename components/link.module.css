@@ -9,8 +9,7 @@
     background-position: bottom 0 right 100%;
     background-size: 100% var(--underline-thickness);
 
-    &:hover,
-    &:focus {
+    &:is(:hover, :focus) {
       color: currentcolor;
       background-position: bottom 0 left 100%;
       background-size: 0 var(--underline-thickness);
@@ -25,9 +24,7 @@
     background-position: bottom 0 left 100%;
     background-size: 0 var(--underline-thickness);
 
-    &:hover,
-    &:focus,
-    &[aria-current="page"] {
+    :is(:hover, :focus, [aria-current="page"]) {
       background-position: bottom 0 right 100%;
       background-size: 100% var(--underline-thickness);
     }
