@@ -1,5 +1,5 @@
 .root {
-  &[data-variant^="underline"] {
+  &[data-variant="underline"] {
     --underline-offset: 0.1em;
     --underline-thickness: max(1px, 0.08em);
 
@@ -24,7 +24,7 @@
     background-position: bottom 0 left 100%;
     background-size: 0 var(--underline-thickness);
 
-    :is(:hover, :focus, [aria-current="page"]) {
+    &:is(:hover, :focus, [aria-current="page"]) {
       background-position: bottom 0 right 100%;
       background-size: 100% var(--underline-thickness);
     }
