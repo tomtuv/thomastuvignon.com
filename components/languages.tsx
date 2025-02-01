@@ -24,7 +24,7 @@ export default function Languages() {
           <Link
             href={redirectedPathName(locale)}
             hrefLang={locale}
-            variant="underline-inverse"
+            underline="hover"
             aria-current={locale === activeLocale ? "page" : undefined}
           >
             {LANGUAGE_NAMES[locale as keyof typeof LANGUAGE_NAMES]}

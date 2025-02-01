@@ -1,30 +1,32 @@
-.root {
-  margin-block-start: var(--space-y);
-}
-
-.heading {
-  margin-block-end: 1.5em;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--grid-gap);
-
-  @media (width >= 64rem) {
-    grid-template-columns: var(--grid-columns-auto-fit);
+@layer components {
+  .root {
+    margin-block-start: var(--space-y);
   }
 
-  a:is(:hover, :focus) > :where(span) {
-    scale: 1.05;
+  .heading {
+    margin-block-end: 1.5em;
   }
 
-  span {
-    border-radius: clamp(0.25rem, 0.1rem + 0.5vw, 0.5rem);
-    will-change: scale;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap);
 
-    @media (prefers-reduced-motion: no-preference) {
-      transition: scale 0.2s linear;
+    @media (width >= 64rem) {
+      grid-template-columns: var(--grid-columns-auto-fit);
+    }
+
+    a:is(:hover, :focus) > :where(span) {
+      scale: 1.05;
+    }
+
+    span {
+      border-radius: clamp(0.25rem, 0.1rem + 0.5vw, 0.5rem);
+      will-change: scale;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: scale 0.2s linear;
+      }
     }
   }
 }

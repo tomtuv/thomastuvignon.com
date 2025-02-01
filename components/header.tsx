@@ -23,7 +23,7 @@ export default function Header({ page }: { page: HomePage | Project | Page }) {
         </>
       ) : (
         <>
-          <Link href="/" variant="underline-inverse">
+          <Link href="/" underline="hover">
             Thomas Tuvignon
           </Link>
           <h1>{page?.title}</h1>

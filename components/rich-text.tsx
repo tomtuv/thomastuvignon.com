@@ -16,7 +16,7 @@ const RICH_TEXT_OPTIONS: Options = {
           href={node.data.uri}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
-          variant="underline"
+          underline
         >
           {children}
         </Link>

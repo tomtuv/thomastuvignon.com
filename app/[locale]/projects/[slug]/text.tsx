@@ -18,7 +18,7 @@ export default function Text({ text }: { text: TextType }) {
           href={text.link}
           target="_blank"
           rel="noopener noreferrer"
-          variant="underline"
+          underline
         >
           <FormattedMessage id="projectLink" />
         </Link>

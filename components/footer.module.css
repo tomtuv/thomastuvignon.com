@@ -1,26 +1,28 @@
-.root {
-  padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--space-x);
-  color: white;
-  text-align: center;
-  background-color: var(--color-mine-shaft);
+@layer components {
+  .root {
+    padding: clamp(3rem, 1.8rem + 4vw, 5rem) var(--space-x);
+    color: white;
+    text-align: center;
+    background-color: var(--color-mine-shaft);
 
-  @media (width >= 64rem) {
-    padding-inline: max(var(--space-x), (100% - 50rem) / 2);
-  }
+    @media (width >= 64rem) {
+      padding-inline: max(var(--space-x), (100% - 50rem) / 2);
+    }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-cod-gray);
-  }
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-cod-gray);
+    }
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-  }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-block-end: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+    }
 
-  small {
-    font-size: inherit;
+    small {
+      font-size: inherit;
+    }
   }
 }

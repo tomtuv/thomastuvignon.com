@@ -7,10 +7,10 @@ import styles from "./link.module.css";
 
 export default function Link({
   href,
-  variant,
+  underline,
   ...props
 }: React.ComponentPropsWithoutRef<typeof ViewTransitionsLink> & {
-  variant?: "underline" | "underline-inverse";
+  underline?: "hover" | boolean;
 }) {
   const { locale } = useIntl();
 
@@ -26,7 +26,7 @@ export default function Link({
     <ViewTransitionsLink
       className={styles.root}
       href={href}
-      data-variant={variant}
+      data-underline={underline || undefined}
       {...props}
     />
   );

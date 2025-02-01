@@ -1,35 +1,37 @@
-.root {
-  white-space: pre-line;
+@layer components {
+  .root {
+    white-space: pre-line;
 
-  :is(h1, h2, h3, h4, h5) {
-    &:not(:first-child) {
-      margin-block-start: 2.5em;
+    :is(h1, h2, h3, h4, h5) {
+      &:not(:first-child) {
+        margin-block-start: 2.5em;
+      }
+
+      &:not(:last-child) {
+        margin-block-end: 1.5em;
+      }
     }
 
-    &:not(:last-child) {
-      margin-block-end: 1.5em;
+    p {
+      &:not(:last-child) {
+        margin-block-end: 1em;
+      }
+
+      &:empty {
+        display: none;
+      }
     }
-  }
 
-  p {
-    &:not(:last-child) {
-      margin-block-end: 1em;
+    :is(ul, ol) {
+      padding-inline-start: 1.25rem;
+
+      &:not(:last-child) {
+        margin-block-end: 2em;
+      }
     }
 
-    &:empty {
-      display: none;
+    li:where(:not(:last-child)) {
+      margin-block-end: 0.5em;
     }
-  }
-
-  :is(ul, ol) {
-    padding-inline-start: 1.25rem;
-
-    &:not(:last-child) {
-      margin-block-end: 2em;
-    }
-  }
-
-  li:where(:not(:last-child)) {
-    margin-block-end: 0.5em;
   }
 }

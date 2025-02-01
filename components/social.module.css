@@ -1,18 +1,20 @@
-.root {
-  a {
-    display: block;
-    will-change: opacity;
+@layer components {
+  .root {
+    a {
+      display: block;
+      will-change: opacity;
 
-    @media (prefers-reduced-motion: no-preference) {
-      transition: opacity 0.15s linear;
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.15s linear;
+      }
+
+      &:is(:hover, :focus) {
+        opacity: 0.5;
+      }
     }
 
-    &:is(:hover, :focus) {
-      opacity: 0.5;
+    svg {
+      inline-size: 1.5rem;
     }
-  }
-
-  svg {
-    inline-size: 1.5rem;
   }
 }

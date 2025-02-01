@@ -1,14 +1,16 @@
-.root {
-  display: grid;
-  gap: var(--grid-gap);
+@layer components {
+  .root {
+    display: grid;
+    gap: var(--grid-gap);
 
-  &:not(:first-child) {
-    margin-block-start: clamp(3rem, 2.7rem + 1vw, 3.5rem);
-  }
+    &:not(:first-child) {
+      margin-block-start: clamp(3rem, 2.7rem + 1vw, 3.5rem);
+    }
 
-  &[data-variant="columns"] {
-    @media (width >= 64rem) {
-      grid-template-columns: var(--grid-columns-auto-fit);
+    &[data-variant="columns"] {
+      @media (width >= 64rem) {
+        grid-template-columns: var(--grid-columns-auto-fit);
+      }
     }
   }
 }

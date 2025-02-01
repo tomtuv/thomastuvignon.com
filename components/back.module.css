@@ -1,3 +1,5 @@
-.root {
-  margin-block-start: var(--space-y);
+@layer components {
+  .root {
+    margin-block-start: var(--space-y);
+  }
 }

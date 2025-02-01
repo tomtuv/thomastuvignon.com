@@ -1,21 +1,23 @@
-.root:not(:first-child) {
-  margin-block-start: var(--space-y);
-}
-
-.header {
-  margin-block-end: 2rem;
-
-  h2 {
-    margin-block-end: 0.25em;
+@layer components {
+  .root:not(:first-child) {
+    margin-block-start: var(--space-y);
   }
 
-  p {
-    font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem);
-    font-weight: 500;
-    letter-spacing: -0.015em;
-  }
-}
+  .header {
+    margin-block-end: 2rem;
 
-.text {
-  margin-block-end: 2rem;
+    h2 {
+      margin-block-end: 0.25em;
+    }
+
+    p {
+      font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem);
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+  }
+
+  .text {
+    margin-block-end: 2rem;
+  }
 }

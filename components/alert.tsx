@@ -7,7 +7,7 @@ export default function Alert() {
     <aside className={styles.root}>
       <p>
         <FormattedMessage id="draftMode" />{" "}
-        <Link href="/api/disable-draft" variant="underline">
+        <Link href="/api/disable-draft" underline>
           <FormattedMessage id="disable" />
         </Link>
       </p>
