@@ -36,8 +36,8 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(graphql@16.10.0)
       motion:
-        specifier: 12.5.0
-        version: 12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 12.6.0
+        version: 12.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       negotiator:
         specifier: ^1.0.0
         version: 1.0.0
@@ -54,8 +54,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-intl:
-        specifier: ^7.1.9
-        version: 7.1.9(react@19.0.0)(typescript@5.8.2)
+        specifier: ^7.1.10
+        version: 7.1.10(react@19.0.0)(typescript@5.8.2)
     devDependencies:
       '@0no-co/graphqlsp':
         specifier: ^1.12.16
@@ -329,10 +329,10 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@formatjs/intl@3.1.5':
-    resolution: {integrity: sha512-cCTrhTqXGbacet55cKrRlT6lhhDqCBJCqoyngksWNqKzr832jDqrMLjf2tihJArx6TNhPdCJOVgyDw93DhfFhA==}
+  '@formatjs/intl@3.1.6':
+    resolution: {integrity: sha512-tDkXnA4qpIFcDWac8CyVJq6oW8DR7W44QDUBsfXWIIJD/FYYen0QoH46W7XsVMFfPOVKkvbufjboZrrWbEfmww==}
     peerDependencies:
-      typescript: 5.8.2
+      typescript: ^5.6.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -1292,8 +1292,8 @@ packages:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
 
-  framer-motion@12.5.0:
-    resolution: {integrity: sha512-buPlioFbH9/W7rDzYh1C09AuZHAk2D1xTA1BlounJ2Rb9aRg84OXexP0GLd+R83v0khURdMX7b5MKnGTaSg5iA==}
+  framer-motion@12.6.0:
+    resolution: {integrity: sha512-91XLZ3VwDlXe9u2ABhTzYBiFQ/qdoiqyTiTCQDDJ4es5/5lzp76hdB+WG7gcNklcQlOmfDZQqVO48tqzY9Z/bQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -1719,14 +1719,14 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
-  motion-dom@12.5.0:
-    resolution: {integrity: sha512-uH2PETDh7m+Hjd1UQQ56yHqwn83SAwNjimNPE/kC+Kds0t4Yh7+29rfo5wezVFpPOv57U4IuWved5d1x0kNhbQ==}
+  motion-dom@12.6.0:
+    resolution: {integrity: sha512-1s/+/V0ny/gfhocSSf0qhkspZK2da7jrwGw7xHzgiQPcimdHaPRcRCoJ3OxEZYBNzy3ma1ERUD+eUStk6a9pQw==}
 
   motion-utils@12.5.0:
     resolution: {integrity: sha512-+hFFzvimn0sBMP9iPxBa9OtRX35ZQ3py0UHnb8U29VD+d8lQ8zH3dTygJWqK7av2v6yhg7scj9iZuvTS0f4+SA==}
 
-  motion@12.5.0:
-    resolution: {integrity: sha512-BTAYKszMmTvXSsIyeHNMPSicjWgUA4j7OmZv1xPpthm4sPub3ch66fy9U7BhJ1uXNL3YeprsIegzuvps3FkEMw==}
+  motion@12.6.0:
+    resolution: {integrity: sha512-YbwQAeVOhQwTi6I8iA+e8TfsduoV0cbE+k9MDeonlDyN04uz5jiVWKeBR0nXgGyGICnmcTaKe/wsQbHkkM3EMw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -1931,11 +1931,11 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
-  react-intl@7.1.9:
-    resolution: {integrity: sha512-VmM0pD/olitUrzGswkphoPCoVZmaJKNJR0gPKVQfiK5Vy0+l5ucoSsYbTfwu/j0WzYzZl/Gdfr2H7Z22AJ5TBg==}
+  react-intl@7.1.10:
+    resolution: {integrity: sha512-I5eB73BAqBbkd2M3wL8gTSE/xFvJRmxZcjS1HMnBT3KXya2PUSI7nDO/tlapX8khchoDoliliMsmyIURB/ww1g==}
     peerDependencies:
       react: 16 || 17 || 18 || 19
-      typescript: 5.8.2
+      typescript: ^5.6.0
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -2586,7 +2586,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@formatjs/intl@3.1.5(typescript@5.8.2)':
+  '@formatjs/intl@3.1.6(typescript@5.8.2)':
     dependencies:
       '@formatjs/ecma402-abstract': 2.3.4
       '@formatjs/fast-memoize': 2.2.7
@@ -3640,9 +3640,9 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  framer-motion@12.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      motion-dom: 12.5.0
+      motion-dom: 12.6.0
       motion-utils: 12.5.0
       tslib: 2.8.1
     optionalDependencies:
@@ -4063,15 +4063,15 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  motion-dom@12.5.0:
+  motion-dom@12.6.0:
     dependencies:
       motion-utils: 12.5.0
 
   motion-utils@12.5.0: {}
 
-  motion@12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  motion@12.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      framer-motion: 12.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      framer-motion: 12.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       tslib: 2.8.1
     optionalDependencies:
       react: 19.0.0
@@ -4268,11 +4268,11 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
-  react-intl@7.1.9(react@19.0.0)(typescript@5.8.2):
+  react-intl@7.1.10(react@19.0.0)(typescript@5.8.2):
     dependencies:
       '@formatjs/ecma402-abstract': 2.3.4
       '@formatjs/icu-messageformat-parser': 2.11.2
-      '@formatjs/intl': 3.1.5(typescript@5.8.2)
+      '@formatjs/intl': 3.1.6(typescript@5.8.2)
       '@types/hoist-non-react-statics': 3.3.6
       '@types/react': 19.0.12
       hoist-non-react-statics: 3.3.2
