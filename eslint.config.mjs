@@ -18,7 +18,6 @@ const eslintConfig = [
       "react-compiler": reactCompiler,
     },
     rules: {
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": "error",
       "import/order": [
         "error",

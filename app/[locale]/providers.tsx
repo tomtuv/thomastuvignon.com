@@ -11,7 +11,7 @@ export default function Providers({
   return (
     <MotionConfig reducedMotion="user">
       <IntlProvider
-        locale={locale}
+        locale={locale as FormatjsIntl.IntlConfig["locale"]}
         defaultLocale={DEFAULT_LOCALE}
         messages={MESSAGES[locale as keyof typeof MESSAGES]}
       >
