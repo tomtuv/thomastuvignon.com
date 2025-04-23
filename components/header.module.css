@@ -1,7 +1,7 @@
 @layer components {
   .root {
     padding: var(--space-y) var(--space-x);
-    overflow: hidden;
+    overflow: clip;
     background-color: var(--color-alabaster);
 
     @media (prefers-color-scheme: dark) {
@@ -13,6 +13,8 @@
       inset-block-start: 0;
       block-size: 100vh;
       overflow-y: auto;
+      scrollbar-color: var(--color-scrollbar) #0000;
+      scrollbar-width: thin;
       view-transition-name: header;
     }
 

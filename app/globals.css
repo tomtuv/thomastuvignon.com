@@ -43,11 +43,13 @@
     --color-mine-shaft: oklch(26% 0 0deg);
     --color-cod-gray: oklch(18% 0 0deg);
     --color-eerie-black: oklch(24% 0 0deg);
+    --color-silver: oklch(81% 0 0deg);
     --color-alabaster: oklch(98.5% 0 0deg);
     --color-white: oklch(100% 0 0deg);
     --color-text: var(--color-mine-shaft);
     --color-background: var(--color-white);
-    --color-shadow: oklch(0% 0 0deg / 10%);
+    --color-scrollbar: var(--color-silver);
+    --color-shadow: oklch(from currentcolor l c h / 10%);
     --space-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
     --space-x: clamp(1rem, -0.2rem + 4vw, 3rem);
     --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
@@ -57,7 +59,7 @@
     @media (prefers-color-scheme: dark) {
       --color-text: var(--color-white);
       --color-background: var(--color-mine-shaft);
-      --color-shadow: oklch(0% 0 0deg / 20%);
+      --color-shadow: oklch(from currentcolor l c h / 20%);
     }
   }
 
@@ -80,7 +82,7 @@
     background-color: var(--color-background);
     text-size-adjust: none;
     -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: #0000;
 
     @media (resolution >= 1.5dppx) {
       -webkit-font-smoothing: antialiased;

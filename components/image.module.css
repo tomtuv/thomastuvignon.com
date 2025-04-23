@@ -1,7 +1,7 @@
 @layer components {
   .root {
     display: block;
-    overflow: hidden;
+    overflow: clip;
     box-shadow: var(--shadow);
 
     img {
