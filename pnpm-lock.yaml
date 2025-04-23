@@ -36,8 +36,8 @@ importers:
         specifier: ^7.1.2
         version: 7.1.2(graphql@16.10.0)
       motion:
-        specifier: 12.7.5
-        version: 12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 12.8.0
+        version: 12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       negotiator:
         specifier: ^1.0.0
         version: 1.0.0
@@ -88,17 +88,17 @@ importers:
         specifier: 19.0.0-beta-714736e-20250131
         version: 19.0.0-beta-714736e-20250131(eslint@9.25.1)
       stylelint:
-        specifier: ^16.18.0
-        version: 16.18.0(typescript@5.8.3)
+        specifier: ^16.19.0
+        version: 16.19.0(typescript@5.8.3)
       stylelint-config-recess-order:
         specifier: ^6.0.0
-        version: 6.0.0(stylelint@16.18.0(typescript@5.8.3))
+        version: 6.0.0(stylelint@16.19.0(typescript@5.8.3))
       stylelint-config-standard:
         specifier: ^38.0.0
-        version: 38.0.0(stylelint@16.18.0(typescript@5.8.3))
+        version: 38.0.0(stylelint@16.19.0(typescript@5.8.3))
       stylelint-use-logical:
         specifier: ^2.1.2
-        version: 2.1.2(stylelint@16.18.0(typescript@5.8.3))
+        version: 2.1.2(stylelint@16.19.0(typescript@5.8.3))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1322,8 +1322,8 @@ packages:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
 
-  framer-motion@12.7.5:
-    resolution: {integrity: sha512-iD+vBOLn8E8bwBAFUQ1DYXjivm+cGGPgQUQ4Doleq7YP/zHdozUVwAMBJwOOfCTbtM8uOooMi77noD261Kxiyw==}
+  framer-motion@12.8.0:
+    resolution: {integrity: sha512-EarL75miCDcKLEAQLJ+6Zfwdj+KQsVlbHGGlygZ/TigKBj7NLPkyDKk4WLFUScjAs2xNpfMRLBM6VsCJq9Roxg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -1458,8 +1458,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hookified@1.8.1:
-    resolution: {integrity: sha512-GrO2l93P8xCWBSTBX9l2BxI78VU/MAAYag+pG8curS3aBGy0++ZlxrQ7PdUOUVMbn5BwkGb6+eRrnf43ipnFEA==}
+  hookified@1.8.2:
+    resolution: {integrity: sha512-5nZbBNP44sFCDjSoB//0N7m508APCgbQ4mGGo1KJGBYyCKNHfry1Pvd0JVHZIxjdnqn8nFRBAN/eFB6Rk/4w5w==}
 
   html-tags@3.3.1:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
@@ -1674,8 +1674,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  known-css-properties@0.35.0:
-    resolution: {integrity: sha512-a/RAk2BfKk+WFGhhOCAYqSiFLc34k8Mt/6NWRI4joER0EYUzXIcFivjjnoD3+XU1DggLn/tZc3DOAgke7l8a4A==}
+  known-css-properties@0.36.0:
+    resolution: {integrity: sha512-A+9jP+IUmuQsNdsLdcg6Yt7voiMF/D4K83ew0OpJtpu+l34ef7LaohWV0Rc6KNvzw6ZDizkqfyB5JznZnzuKQA==}
 
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
@@ -1749,14 +1749,14 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
-  motion-dom@12.7.5:
-    resolution: {integrity: sha512-0YjhPfv9n5O8DqCrSp8ny+JrsHqYu957oqlNKkrUrAvYpDKYWfp/7uM9Pu26DinbMn+H0p72rdUL8P8RzhSo1Q==}
+  motion-dom@12.8.0:
+    resolution: {integrity: sha512-YsfUE1F8Ycv9th1V0YJ6LOx9U2EMe/8P3RXK1o6NZhRbdFiWvzBLvxqp2X6Fn3rbJbwWkSEfnpe14ZU9Oz1d1Q==}
 
   motion-utils@12.7.5:
     resolution: {integrity: sha512-JIgrmEq7Vw1x0AUrjvkRp7oMMQkGqSUMT50O/Ag6RRCQWG3gRRTkOI+BirBAJT6m+GIPoiyxkJ1u98GgF/a6TQ==}
 
-  motion@12.7.5:
-    resolution: {integrity: sha512-tNybSjfg3bf60Amh/zeMH4KZ96AxyrJdM4meTJUbeEVY7d3Edl6lrWTX/GNfgpmytXwx3ZuAB55KAP+q6IiZcg==}
+  motion@12.8.0:
+    resolution: {integrity: sha512-j03/FAIjwlFSTcr3VIrLFhRTdDyfyyyvJz5s0Ctli3vuv/72+YKEOV2OIC/9QbjDqWU3ChngWlLnFezakCQ3Vg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -2186,8 +2186,8 @@ packages:
     peerDependencies:
       stylelint: '>= 11 < 17'
 
-  stylelint@16.18.0:
-    resolution: {integrity: sha512-OXb68qzesv7J70BSbFwfK3yTVLEVXiQ/ro6wUE4UrSbKCMjLLA02S8Qq3LC01DxKyVjk7z8xh35aB4JzO3/sNA==}
+  stylelint@16.19.0:
+    resolution: {integrity: sha512-BJzc5mo/ez0H/ZSl3UbxGdkK/s0kFGsF5/k6IGu4z8wJ1qp49WrOS9RxswvcN6HMirt0g/iiJqOwLHTbWv49IQ==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -3137,7 +3137,7 @@ snapshots:
 
   cacheable@1.8.10:
     dependencies:
-      hookified: 1.8.1
+      hookified: 1.8.2
       keyv: 5.3.3
 
   call-bind-apply-helpers@1.0.2:
@@ -3680,7 +3680,7 @@ snapshots:
     dependencies:
       cacheable: 1.8.10
       flatted: 3.3.3
-      hookified: 1.8.1
+      hookified: 1.8.2
 
   flatted@3.3.3: {}
 
@@ -3688,9 +3688,9 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.7.5
+      motion-dom: 12.8.0
       motion-utils: 12.7.5
       tslib: 2.8.1
     optionalDependencies:
@@ -3833,7 +3833,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hookified@1.8.1: {}
+  hookified@1.8.2: {}
 
   html-tags@3.3.1: {}
 
@@ -4044,7 +4044,7 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  known-css-properties@0.35.0: {}
+  known-css-properties@0.36.0: {}
 
   language-subtag-registry@0.3.23: {}
 
@@ -4111,15 +4111,15 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  motion-dom@12.7.5:
+  motion-dom@12.8.0:
     dependencies:
       motion-utils: 12.7.5
 
   motion-utils@12.7.5: {}
 
-  motion@12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  motion@12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      framer-motion: 12.7.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      framer-motion: 12.8.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tslib: 2.8.1
     optionalDependencies:
       react: 19.1.0
@@ -4581,31 +4581,31 @@ snapshots:
     optionalDependencies:
       '@babel/core': 7.26.7
 
-  stylelint-config-recess-order@6.0.0(stylelint@16.18.0(typescript@5.8.3)):
+  stylelint-config-recess-order@6.0.0(stylelint@16.19.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.18.0(typescript@5.8.3)
-      stylelint-order: 6.0.4(stylelint@16.18.0(typescript@5.8.3))
+      stylelint: 16.19.0(typescript@5.8.3)
+      stylelint-order: 6.0.4(stylelint@16.19.0(typescript@5.8.3))
 
-  stylelint-config-recommended@16.0.0(stylelint@16.18.0(typescript@5.8.3)):
+  stylelint-config-recommended@16.0.0(stylelint@16.19.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.18.0(typescript@5.8.3)
+      stylelint: 16.19.0(typescript@5.8.3)
 
-  stylelint-config-standard@38.0.0(stylelint@16.18.0(typescript@5.8.3)):
+  stylelint-config-standard@38.0.0(stylelint@16.19.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.18.0(typescript@5.8.3)
-      stylelint-config-recommended: 16.0.0(stylelint@16.18.0(typescript@5.8.3))
+      stylelint: 16.19.0(typescript@5.8.3)
+      stylelint-config-recommended: 16.0.0(stylelint@16.19.0(typescript@5.8.3))
 
-  stylelint-order@6.0.4(stylelint@16.18.0(typescript@5.8.3)):
+  stylelint-order@6.0.4(stylelint@16.19.0(typescript@5.8.3)):
     dependencies:
       postcss: 8.5.3
       postcss-sorting: 8.0.2(postcss@8.5.3)
-      stylelint: 16.18.0(typescript@5.8.3)
+      stylelint: 16.19.0(typescript@5.8.3)
 
-  stylelint-use-logical@2.1.2(stylelint@16.18.0(typescript@5.8.3)):
+  stylelint-use-logical@2.1.2(stylelint@16.19.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.18.0(typescript@5.8.3)
+      stylelint: 16.19.0(typescript@5.8.3)
 
-  stylelint@16.18.0(typescript@5.8.3):
+  stylelint@16.19.0(typescript@5.8.3):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-tokenizer': 3.0.3
@@ -4628,7 +4628,7 @@ snapshots:
       ignore: 7.0.3
       imurmurhash: 0.1.4
       is-plain-object: 5.0.0
-      known-css-properties: 0.35.0
+      known-css-properties: 0.36.0
       mathml-tag-names: 2.1.3
       meow: 13.2.0
       micromatch: 4.0.8
