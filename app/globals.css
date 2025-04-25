@@ -49,7 +49,7 @@
     --color-text: var(--color-mine-shaft);
     --color-background: var(--color-white);
     --color-scrollbar: var(--color-silver);
-    --color-shadow: oklch(from currentcolor l c h / 10%);
+    --color-shadow: oklch(0% 0 0deg / 10%);
     --space-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
     --space-x: clamp(1rem, -0.2rem + 4vw, 3rem);
     --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
@@ -59,7 +59,7 @@
     @media (prefers-color-scheme: dark) {
       --color-text: var(--color-white);
       --color-background: var(--color-mine-shaft);
-      --color-shadow: oklch(from currentcolor l c h / 20%);
+      --color-shadow: oklch(0% 0 0deg / 20%);
     }
   }
 
