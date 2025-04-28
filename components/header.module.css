@@ -15,7 +15,6 @@
       overflow-y: auto;
       scrollbar-color: var(--color-scrollbar) #0000;
       scrollbar-width: thin;
-      view-transition-name: header;
     }
 
     h1 {

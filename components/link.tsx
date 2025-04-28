@@ -1,6 +1,6 @@
 "use client";
 
-import { Link as ViewTransitionsLink } from "next-view-transitions";
+import NextLink from "next/link";
 import { useIntl } from "react-intl";
 import { LOCALES } from "@/lib/constants";
 import styles from "./link.module.css";
@@ -9,7 +9,7 @@ export default function Link({
   href,
   underline,
   ...props
-}: React.ComponentPropsWithoutRef<typeof ViewTransitionsLink> & {
+}: React.ComponentPropsWithoutRef<typeof NextLink> & {
   underline?: "hover" | boolean;
 }) {
   const { locale } = useIntl();
@@ -23,7 +23,7 @@ export default function Link({
   }
 
   return (
-    <ViewTransitionsLink
+    <NextLink
       className={styles.root}
       href={href}
       data-underline={underline || undefined}

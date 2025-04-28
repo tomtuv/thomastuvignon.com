@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   experimental: {
     reactCompiler: true,
     useLightningcss: true,
+    viewTransition: true,
   },
   async redirects() {
     return [
