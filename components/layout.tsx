@@ -1,4 +1,5 @@
 import { draftMode } from "next/headers";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import Alert from "./alert";
 import Footer from "./footer";
 import Header from "./header";
@@ -13,11 +14,15 @@ export default async function Layout({
   const { isEnabled } = await draftMode();
 
   return (
-    <div className={styles.root}>
-      {isEnabled && <Alert />}
-      <Header page={page} />
-      <main className={styles.content}>{children}</main>
-      <Footer />
-    </div>
+    <ViewTransition default={styles["slide-in"]}>
+      <div className={styles.root}>
+        {isEnabled && <Alert />}
+        <ViewTransition name="header">
+          <Header page={page} />
+        </ViewTransition>
+        <main className={styles.content}>{children}</main>
+        <Footer />
+      </div>
+    </ViewTransition>
   );
 }
