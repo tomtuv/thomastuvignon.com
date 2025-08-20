@@ -20,7 +20,7 @@
     "graphql-request": "^7.2.0",
     "motion": "12.23.12",
     "negotiator": "^1.0.0",
-    "next": "^15.4.7",
+    "next": "^15.5.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-intl": "^7.1.11"
@@ -34,7 +34,7 @@
     "@types/react-dom": "^19.1.7",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "^9.33.0",
-    "eslint-config-next": "^15.4.7",
+    "eslint-config-next": "^15.5.0",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "stylelint": "^16.23.1",
     "stylelint-config-recess-order": "^7.2.0",
