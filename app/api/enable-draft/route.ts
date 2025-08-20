@@ -1,1 +1,9 @@
-export { enableDraftHandler as GET } from "@contentful/vercel-nextjs-toolkit/app-router";
+import { enableDraftHandler } from "@contentful/vercel-nextjs-toolkit/app-router";
+
+const GET = enableDraftHandler as () =>
+  | void
+  | Response
+  | Promise<void>
+  | Promise<Response>;
+
+export { GET };

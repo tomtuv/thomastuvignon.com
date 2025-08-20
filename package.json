@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.0",
@@ -20,7 +20,7 @@
     "graphql-request": "^7.2.0",
     "motion": "12.23.12",
     "negotiator": "^1.0.0",
-    "next": "^15.4.7",
+    "next": "^15.5.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-intl": "^7.1.11"
@@ -34,7 +34,7 @@
     "@types/react-dom": "^19.1.7",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "^9.33.0",
-    "eslint-config-next": "^15.4.7",
+    "eslint-config-next": "^15.5.0",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "stylelint": "^16.23.1",
     "stylelint-config-recess-order": "^7.2.0",
@@ -49,5 +49,5 @@
     "last 2 Firefox versions",
     "last 2 iOS major versions"
   ],
-  "packageManager": "pnpm@10.14.0-0+sha512.2cd47a0cbf5f1d1de7693a88307a0ede5be94e0d3b34853d800ee775efbea0650cb562b77605ec80bc8d925f5cd27c4dfe8bb04d3a0b76090784c664450d32d6"
+  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
 }
