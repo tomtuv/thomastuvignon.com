@@ -16,7 +16,7 @@ function ProjectCard({ project }: { project: ProjectCardType }) {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <Link href={`/projects/${project?.slug}/`}>
+      <Link href={`/projects/${project?.slug}`}>
         {project?.thumbnail?.url && (
           <Image
             src={project.thumbnail.url}
