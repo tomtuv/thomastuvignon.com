@@ -31,7 +31,7 @@
     "@types/negotiator": "^0.6.4",
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.11",
-    "@types/react-dom": "^19.1.7",
+    "@types/react-dom": "^19.1.8",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "^9.34.0",
     "eslint-config-next": "^15.5.0",
