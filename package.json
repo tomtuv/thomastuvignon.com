@@ -35,7 +35,7 @@
     "babel-plugin-react-compiler": "19.1.0-rc.3",
     "eslint": "^9.34.0",
     "eslint-config-next": "^15.5.2",
-    "eslint-plugin-react-compiler": "19.1.0-rc.2",
+    "eslint-plugin-react-hooks": "6.0.0-rc.2",
     "stylelint": "^16.23.1",
     "stylelint-config-recess-order": "^7.2.0",
     "stylelint-config-standard": "^39.0.0",
