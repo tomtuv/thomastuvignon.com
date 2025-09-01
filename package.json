@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .; stylelint '**/*.css'"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.0",
