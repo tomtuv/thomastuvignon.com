@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.0",
-    "@contentful/rich-text-types": "^17.1.0",
+    "@contentful/rich-text-types": "^17.2.0",
     "@contentful/vercel-nextjs-toolkit": "^1.6.0",
     "@formatjs/intl-localematcher": "^0.6.1",
     "@vercel/analytics": "^1.5.0",
@@ -29,15 +29,15 @@
     "@0no-co/graphqlsp": "^1.15.0",
     "@eslint/eslintrc": "^3.3.1",
     "@types/negotiator": "^0.6.4",
-    "@types/node": "^24.3.0",
+    "@types/node": "^24.3.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "eslint-config-next": "^15.5.2",
     "eslint-plugin-react-hooks": "6.0.0-rc.2",
-    "stylelint": "^16.23.1",
-    "stylelint-config-recess-order": "^7.2.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-recess-order": "^7.3.0",
     "stylelint-config-standard": "^39.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
@@ -49,5 +49,5 @@
     "last 2 Firefox versions",
     "last 2 iOS major versions"
   ],
-  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
+  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
 }
