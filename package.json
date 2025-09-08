@@ -9,7 +9,7 @@
     "lint": "eslint .; stylelint '**/*.css'"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^16.1.1",
+    "@contentful/rich-text-react-renderer": "^16.1.0",
     "@contentful/rich-text-types": "^17.2.0",
     "@contentful/vercel-nextjs-toolkit": "^1.6.0",
     "@formatjs/intl-localematcher": "^0.6.1",
