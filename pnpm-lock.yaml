@@ -12,11 +12,11 @@ importers:
   .:
     dependencies:
       '@contentful/rich-text-react-renderer':
-        specifier: ^16.1.0
-        version: 16.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: ^16.1.2
+        version: 16.1.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@contentful/rich-text-types':
-        specifier: ^17.2.0
-        version: 17.2.0
+        specifier: ^17.2.1
+        version: 17.2.1
       '@contentful/vercel-nextjs-toolkit':
         specifier: ^1.6.0
         version: 1.6.0(next@15.5.2(@babel/core@7.28.3)(babel-plugin-react-compiler@19.1.0-rc.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
@@ -236,15 +236,15 @@ packages:
     resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
-  '@contentful/rich-text-react-renderer@16.1.0':
-    resolution: {integrity: sha512-tMhSq6227GJ/bgYYsWyd+KWTPTYD7ZrQVVwzL2ormEYRRfV6NeiGKLo1YOA2zC0U0EBNSJfXrERhH1BA88QOvA==}
+  '@contentful/rich-text-react-renderer@16.1.2':
+    resolution: {integrity: sha512-t8kTqeAeputpIFLluyG50ImulQ5W54e+SWCgVGk0zbZJ4UQDFRbYXdtMGHc1Kt51HumC8Bu6I862mL6zFkGncQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@contentful/rich-text-types@17.2.0':
-    resolution: {integrity: sha512-XAfVYrYkvT8573KPxWujl96ZyMZSjON6l4FK2kBT1Si0nc0b/BVkCfBn269/D3t4szSdwt7ui380aB7viAsB1Q==}
+  '@contentful/rich-text-types@17.2.1':
+    resolution: {integrity: sha512-EukLfBQBsLTx8+6gPjmWwzBS3vIZkRZUw3r/qNiWQ+6xtdcsDE4nnWm166S0Nnteq6DNf1T+9XDLs8JPjtingg==}
     engines: {node: '>=6.0.0'}
 
   '@contentful/vercel-nextjs-toolkit@1.6.0':
@@ -1771,8 +1771,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  magic-string@0.30.18:
-    resolution: {integrity: sha512-yi8swmWbO17qHhwIBNeeZxTceJMeBvWJaId6dyvTSOwTipqeHhMhOrz6513r1sOKnpvQ7zkhlG8tPrpilwTxHQ==}
+  magic-string@0.30.19:
+    resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -2565,16 +2565,16 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@contentful/rich-text-react-renderer@16.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@contentful/rich-text-react-renderer@16.1.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@contentful/rich-text-types': 17.2.0
+      '@contentful/rich-text-types': 17.2.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
     transitivePeerDependencies:
       - '@lingui/babel-plugin-lingui-macro'
       - babel-plugin-macros
 
-  '@contentful/rich-text-types@17.2.0':
+  '@contentful/rich-text-types@17.2.1':
     dependencies:
       '@lingui/core': 5.4.1
       is-plain-obj: 3.0.0
@@ -4195,7 +4195,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  magic-string@0.30.18:
+  magic-string@0.30.19:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
     optional: true
@@ -4796,7 +4796,7 @@ snapshots:
       estree-walker: 3.0.3
       is-reference: 3.0.3
       locate-character: 3.0.0
-      magic-string: 0.30.18
+      magic-string: 0.30.19
       periscopic: 3.1.0
     optional: true
 
