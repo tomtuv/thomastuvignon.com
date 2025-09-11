@@ -14,7 +14,7 @@ export default async function Layout({
   const { isEnabled } = await draftMode();
 
   return (
-    <ViewTransition default={styles["slide-in"]}>
+    <ViewTransition enter={styles["slide-in"]}>
       <div className={styles.root}>
         {isEnabled && <Alert />}
         <ViewTransition name="header">
