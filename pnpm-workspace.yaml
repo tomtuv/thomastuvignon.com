@@ -1,7 +1,5 @@
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
-onlyBuiltDependencies:
-  - "@vercel/speed-insights"
 overrides:
   eslint-plugin-react-hooks: 6.0.0-rc.2

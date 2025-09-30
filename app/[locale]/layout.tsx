@@ -1,5 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Providers from "./providers";
@@ -81,11 +79,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={inter.variable}>
       <body>
-        <Providers locale={locale}>
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </Providers>
+        <Providers locale={locale}>{children}</Providers>
       </body>
     </html>
   );
