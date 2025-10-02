@@ -16,7 +16,7 @@
     "gql.tada": "^1.8.13",
     "graphql": "^16.11.0",
     "graphql-request": "^7.2.0",
-    "motion": "12.23.20",
+    "motion": "12.23.22",
     "negotiator": "^1.0.0",
     "next": "^15.5.4",
     "react": "19.1.1",
@@ -27,8 +27,8 @@
     "@0no-co/graphqlsp": "^1.15.0",
     "@eslint/eslintrc": "^3.3.1",
     "@types/negotiator": "^0.6.4",
-    "@types/node": "^24.5.2",
-    "@types/react": "^19.1.13",
+    "@types/node": "^24.6.1",
+    "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
     "eslint": "^9.36.0",
@@ -39,7 +39,7 @@
     "stylelint-config-standard": "^39.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "browserslist": [
     "last 2 Chrome versions",
