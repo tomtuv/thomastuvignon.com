@@ -1,5 +1,8 @@
 ignoredBuiltDependencies:
+  - esbuild
   - sharp
   - unrs-resolver
+  - workerd
+
 overrides:
   eslint-plugin-react-hooks: 6.0.0-rc.2

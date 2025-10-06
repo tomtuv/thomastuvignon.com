@@ -6,13 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .; stylelint '**/*.css'"
+    "lint": "eslint .; stylelint '**/*.css'",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.5",
     "@contentful/rich-text-types": "^17.2.4",
     "@contentful/vercel-nextjs-toolkit": "^1.6.0",
     "@formatjs/intl-localematcher": "^0.6.2",
+    "@opennextjs/cloudflare": "^1.9.1",
     "gql.tada": "^1.8.13",
     "graphql": "^16.11.0",
     "graphql-request": "^7.2.0",
@@ -39,7 +44,8 @@
     "stylelint-config-standard": "^39.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.42.0"
   },
   "browserslist": [
     "last 2 Chrome versions",

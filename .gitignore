@@ -41,3 +41,12 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# OpenNext
+/.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
