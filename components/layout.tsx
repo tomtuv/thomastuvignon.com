@@ -1,5 +1,5 @@
 import { draftMode } from "next/headers";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { ViewTransition } from "react";
 import Alert from "./alert";
 import Footer from "./footer";
 import Header from "./header";
