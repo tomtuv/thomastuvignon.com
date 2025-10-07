@@ -1,5 +1,6 @@
 import { draftMode } from "next/headers";
-import { ViewTransition } from "react";
+// @ts-expect-error Types not yet available
+import { unstable_ViewTransition as ViewTransition } from "react";
 import Alert from "./alert";
 import Footer from "./footer";
 import Header from "./header";
