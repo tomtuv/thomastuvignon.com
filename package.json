@@ -44,7 +44,7 @@
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
     "typescript": "^5.9.3",
-    "wrangler": "^4.42.0"
+    "wrangler": "^4.42.1"
   },
   "browserslist": [
     "last 2 Chrome versions",
