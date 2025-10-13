@@ -2,11 +2,7 @@ import en from "@/locales/en.json";
 import fr from "@/locales/fr.json";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    : "http://localhost:3000");
-
+  process.env.DEPLOY_PRIME_URL ?? process.env.URL ?? "http://localhost:3000";
 export const SITE_NAME = "Thomas Tuvignon";
 export const TWITTER_USERNAME = "@tomtuv";
 export const LOCALES = ["fr", "en"];

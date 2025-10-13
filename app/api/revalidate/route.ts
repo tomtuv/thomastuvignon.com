@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const requestHeaders = new Headers(request.headers);
-  const secret = requestHeaders.get("x-vercel-reval-key");
+  const secret = requestHeaders.get("x-revalidate-secret");
 
   if (secret !== process.env.CONTENTFUL_REVALIDATE_SECRET) {
     return NextResponse.json({ message: "Invalid secret" }, { status: 401 });
