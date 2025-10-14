@@ -12,5 +12,6 @@
     "enabled": true
   },
   "preview_urls": true,
-  "placement": { "mode": "smart" }
+  "placement": { "mode": "smart" },
+  "keep_vars": true
 }
