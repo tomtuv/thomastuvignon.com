@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./image-loader.ts",
   },
+  reactCompiler: true,
   experimental: {
-    reactCompiler: true,
     useLightningcss: true,
     viewTransition: true,
   },
