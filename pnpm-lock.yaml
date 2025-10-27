@@ -19,7 +19,7 @@ importers:
         version: 0.6.2
       '@opennextjs/cloudflare':
         specifier: ^1.11.0
-        version: 1.11.0(wrangler@4.44.0)
+        version: 1.11.0(wrangler@4.45.0)
       gql.tada:
         specifier: ^1.8.13
         version: 1.8.13(graphql@16.11.0)(typescript@5.9.3)
@@ -94,8 +94,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       wrangler:
-        specifier: ^4.44.0
-        version: 4.44.0
+        specifier: ^4.45.0
+        version: 4.45.0
 
 packages:
 
@@ -3050,8 +3050,8 @@ packages:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
 
-  miniflare@4.20251011.0:
-    resolution: {integrity: sha512-DlZ7vR5q/RE9eLsxsrXzfSZIF2f6O5k0YsFrSKhWUtdefyGtJt4sSpR6V+Af/waaZ6+zIFy9lsknHBCm49sEYA==}
+  miniflare@4.20251011.1:
+    resolution: {integrity: sha512-Qbw1Z8HTYM1adWl6FAtzhrj34/6dPRDPwdYOx21dkae8a/EaxbMzRIPbb4HKVGMVvtqbK1FaRCgDLVLolNzGHg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3876,8 +3876,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.44.0:
-    resolution: {integrity: sha512-BLOUigckcWZ0r4rm7b5PuaTpb9KP9as0XeCRSJ8kqcNgXcKoUD3Ij8FlPvN25KybLnFnetaO0ZdfRYUPWle4qw==}
+  wrangler@4.45.0:
+    resolution: {integrity: sha512-2qM6bHw8l7r89Z9Y5A7Wn4L9U+dFoLjYgEUVpqy7CcmXpppL3QIYqU6rU5lre7/SRzBuPu/H93Vwfh538gZ3iw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -5605,7 +5605,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.11.0(wrangler@4.44.0)':
+  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.0)':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.8.5
@@ -5615,7 +5615,7 @@ snapshots:
       glob: 11.0.3
       rclone.js: 0.6.6
       ts-tqdm: 0.8.6
-      wrangler: 4.44.0
+      wrangler: 4.45.0
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -7818,7 +7818,7 @@ snapshots:
 
   mimic-fn@2.1.0: {}
 
-  miniflare@4.20251011.0:
+  miniflare@4.20251011.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.14.0
@@ -8816,13 +8816,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251011.0
       '@cloudflare/workerd-windows-64': 1.20251011.0
 
-  wrangler@4.44.0:
+  wrangler@4.45.0:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.7.8(unenv@2.0.0-rc.21)(workerd@1.20251011.0)
       blake3-wasm: 2.1.5
       esbuild: 0.25.4
-      miniflare: 4.20251011.0
+      miniflare: 4.20251011.1
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.21
       workerd: 1.20251011.0
