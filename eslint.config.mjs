@@ -1,29 +1,19 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-/** @type {import("eslint").Linter.Config[]} */
-const eslintConfig = [
-  {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-      ".open-next/**",
-      ".wrangler/**",
-      "cloudflare-env.d.ts",
-    ],
-  },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    ".open-next/**",
+    ".wrangler/**",
+    "cloudflare-env.d.ts",
+  ]),
   {
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
@@ -48,6 +38,6 @@ const eslintConfig = [
       "react/no-unknown-property": "error",
     },
   },
-];
+]);
 
 export default eslintConfig;
