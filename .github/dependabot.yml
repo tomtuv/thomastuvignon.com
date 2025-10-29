@@ -13,10 +13,3 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "next"
-        versions:
-          - "16.x.x"
-      - dependency-name: "eslint-config-next"
-        versions:
-          - "16.x.x"
