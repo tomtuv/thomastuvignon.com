@@ -1,3 +1,7 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "thomastuvignon",
@@ -11,7 +15,8 @@
   "observability": {
     "enabled": true
   },
-  "preview_urls": true,
-  "placement": { "mode": "smart" },
+  "placement": {
+    "mode": "smart"
+  },
   "keep_vars": true
 }
