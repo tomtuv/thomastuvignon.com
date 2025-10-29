@@ -3,8 +3,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint .; stylelint '**/*.css'",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
@@ -21,7 +21,7 @@
     "graphql-request": "^7.3.1",
     "motion": "12.23.24",
     "negotiator": "^1.0.0",
-    "next": "^15.5.6",
+    "next": "^16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-intl": "^7.1.14"
@@ -35,7 +35,7 @@
     "@types/react-dom": "^19.2.2",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.38.0",
-    "eslint-config-next": "^15.5.6",
+    "eslint-config-next": "^16.0.0",
     "stylelint": "^16.25.0",
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-standard": "^39.0.1",

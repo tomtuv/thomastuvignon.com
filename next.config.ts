@@ -2,12 +2,12 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   images: {
     loader: "custom",
     loaderFile: "./image-loader.ts",
   },
   experimental: {
-    reactCompiler: true,
     useLightningcss: true,
     viewTransition: true,
   },
