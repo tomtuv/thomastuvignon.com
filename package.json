@@ -17,7 +17,7 @@
     "@formatjs/intl-localematcher": "^0.6.2",
     "@opennextjs/cloudflare": "^1.11.0",
     "gql.tada": "^1.8.13",
-    "graphql": "^16.11.0",
+    "graphql": "^16.12.0",
     "graphql-request": "^7.3.1",
     "motion": "12.23.24",
     "negotiator": "^1.0.0",
@@ -30,11 +30,11 @@
     "@0no-co/graphqlsp": "^1.15.0",
     "@eslint/eslintrc": "^3.3.1",
     "@types/negotiator": "^0.6.4",
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "eslint-config-next": "^16.0.1",
     "stylelint": "^16.25.0",
     "stylelint-config-recess-order": "^7.4.0",
@@ -42,7 +42,7 @@
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
     "typescript": "^5.9.3",
-    "wrangler": "^4.45.1"
+    "wrangler": "^4.45.3"
   },
   "browserslist": [
     "last 2 Chrome versions",
