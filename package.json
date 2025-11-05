@@ -12,8 +12,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^16.1.5",
-    "@contentful/rich-text-types": "^17.2.4",
+    "@contentful/rich-text-react-renderer": "^16.1.6",
+    "@contentful/rich-text-types": "^17.2.5",
     "@formatjs/intl-localematcher": "^0.6.2",
     "@opennextjs/cloudflare": "^1.11.0",
     "gql.tada": "^1.8.13",
@@ -34,7 +34,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.1",
     "stylelint": "^16.25.0",
     "stylelint-config-recess-order": "^7.4.0",
@@ -42,7 +42,7 @@
     "stylelint-order": "^7.0.0",
     "stylelint-use-logical": "^2.1.2",
     "typescript": "^5.9.3",
-    "wrangler": "^4.45.3"
+    "wrangler": "^4.45.4"
   },
   "browserslist": [
     "last 2 Chrome versions",
