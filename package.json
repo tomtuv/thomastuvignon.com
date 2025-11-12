@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .; stylelint '**/*.css'",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
