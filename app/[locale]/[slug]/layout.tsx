@@ -12,9 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata> {
+}: LayoutProps<"/[locale]/[slug]">): Promise<Metadata> {
   const { slug, locale } = await params;
   const page = await getPage(slug, { locale });
 
@@ -51,9 +49,7 @@ export async function generateMetadata({
 export default async function PageLayout({
   children,
   params,
-}: React.PropsWithChildren<{
-  params: Promise<{ slug: string; locale: string }>;
-}>) {
+}: LayoutProps<"/[locale]/[slug]">) {
   const { slug, locale } = await params;
   const page = await getPage(slug, { locale });
 

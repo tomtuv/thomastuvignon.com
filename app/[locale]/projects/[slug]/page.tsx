@@ -5,9 +5,7 @@ import { getProject } from "@/lib/api";
 
 export default async function Project({
   params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}) {
+}: PageProps<"/[locale]/projects/[slug]">) {
   const { slug, locale } = await params;
   const project = await getProject(slug, { locale });
 

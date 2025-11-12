@@ -7,7 +7,6 @@ import {
   TWITTER_USERNAME,
   LOCALES,
   MESSAGES,
-  DEFAULT_LOCALE,
 } from "@/lib/constants";
 import "../globals.css";
 
@@ -72,9 +71,8 @@ export async function generateMetadata({
 export default async function RootLayout({
   params,
   children,
-}: React.PropsWithChildren<{ params: Promise<{ locale: string }> }>) {
-  let { locale } = await params;
-  locale = locale.replace("worker.js", DEFAULT_LOCALE);
+}: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
 
   return (
     <html lang={locale} className={inter.variable}>
