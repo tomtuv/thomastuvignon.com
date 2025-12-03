@@ -1,4 +1,4 @@
-@layer components {
+@layer pages {
   .root {
     font-size: clamp(1.375rem, 1rem + 1.25vw, 2rem);
     line-height: 1.3;

@@ -1,4 +1,4 @@
-@layer components {
+@layer pages {
   .root {
     display: grid;
     gap: var(--grid-gap);

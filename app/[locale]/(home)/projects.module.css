@@ -1,4 +1,4 @@
-@layer components {
+@layer pages {
   .root {
     margin-block-start: var(--space-y);
   }
