@@ -29,6 +29,8 @@
   ::before,
   ::after {
     box-sizing: border-box;
+    line-height: calc(1em + 0.6rem);
+    letter-spacing: clamp(-0.025em, calc((1em - 1rem) / -10), 0em);
   }
 
   * {
@@ -38,9 +40,7 @@
   body {
     font-family: var(--font-family);
     font-size: clamp(1rem, 0.925rem + 0.25vw, 1.125rem);
-    line-height: 1.5;
     color: var(--color-text);
-    letter-spacing: -0.01em;
     background-color: var(--color-background);
     text-size-adjust: none;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -55,15 +55,11 @@
   h1 {
     font-size: clamp(1.875rem, 1.5rem + 1.25vw, 2.5rem);
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
   }
 
   h2 {
     font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
     font-weight: 600;
-    line-height: 1.4;
-    letter-spacing: -0.02em;
   }
 
   img,

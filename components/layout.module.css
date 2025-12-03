@@ -25,14 +25,16 @@
 
   ::view-transition-old(.slide-in) {
     @media (prefers-reduced-motion: no-preference) {
-      animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+      animation:
+        90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
         300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
     }
   }
 
   ::view-transition-new(.slide-in) {
     @media (prefers-reduced-motion: no-preference) {
-      animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+      animation:
+        210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
         300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
     }
   }
@@ -42,10 +44,10 @@
     grid-template-areas: "alert" "header" "content" "footer";
 
     @media (width >= 64rem) {
-      grid-template-areas:
-        "header content"
-        "header footer";
-      grid-template-columns: minmax(auto, 30rem) minmax(66.6667%, 1fr);
+      grid-template: "header content" 1fr "header footer" auto / minmax(
+          auto,
+          30rem
+        ) minmax(66.6667%, 1fr);
     }
 
     > aside {
