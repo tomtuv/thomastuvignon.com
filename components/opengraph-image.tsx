@@ -10,42 +10,40 @@ export default async function OpengraphImage(props?: { title?: string }) {
   ]);
 
   return new ImageResponse(
-    (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          rowGap: 20,
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "100%",
-          color: "#fff",
-          backgroundColor: "#1f1f1f",
-        }}
-      >
-        {title && (
-          <div
-            style={{
-              fontSize: 48,
-              fontWeight: 400,
-              letterSpacing: -2,
-            }}
-          >
-            {SITE_NAME}
-          </div>
-        )}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        rowGap: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        height: "100%",
+        color: "#fff",
+        backgroundColor: "#1f1f1f",
+      }}
+    >
+      {title && (
         <div
           style={{
-            fontSize: 88,
-            fontWeight: 700,
-            letterSpacing: -4,
+            fontSize: 48,
+            fontWeight: 400,
+            letterSpacing: -2,
           }}
         >
-          {title ?? SITE_NAME}
+          {SITE_NAME}
         </div>
+      )}
+      <div
+        style={{
+          fontSize: 88,
+          fontWeight: 700,
+          letterSpacing: -4,
+        }}
+      >
+        {title ?? SITE_NAME}
       </div>
-    ),
+    </div>,
     {
       width: 1200,
       height: 630,
@@ -63,6 +61,6 @@ export default async function OpengraphImage(props?: { title?: string }) {
           weight: 700,
         },
       ],
-    }
+    },
   );
 }

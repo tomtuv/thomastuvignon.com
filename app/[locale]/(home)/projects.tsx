@@ -42,7 +42,7 @@ export default function Projects({ homePage }: { homePage: HomePage }) {
       <ul className={styles.grid} role="list">
         {homePage?.projectsCollection?.items.map(
           (project) =>
-            project && <ProjectCard project={project} key={project?.sys.id} />
+            project && <ProjectCard project={project} key={project?.sys.id} />,
         )}
       </ul>
     </section>

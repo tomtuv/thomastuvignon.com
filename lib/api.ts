@@ -10,7 +10,7 @@ import {
 } from "./queries";
 
 const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
+  `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
 );
 
 async function getHeaders() {
@@ -44,7 +44,7 @@ export async function getHomePage({ locale }: { locale: string }) {
       locale,
       preview: (await draftMode()).isEnabled,
     },
-    await getHeaders()
+    await getHeaders(),
   );
 
   return data?.homePageCollection?.items[0];
@@ -58,7 +58,7 @@ export async function getProject(slug: string, { locale }: { locale: string }) {
       locale,
       preview: (await draftMode()).isEnabled,
     },
-    await getHeaders()
+    await getHeaders(),
   );
 
   return data?.projectCollection?.items[0];
@@ -68,7 +68,7 @@ export async function getAllProjectsWithSlug() {
   const data = await client.request(
     allProjectsWithSlugQuery,
     undefined,
-    await getHeaders()
+    await getHeaders(),
   );
 
   return data?.projectCollection?.items ?? [];
@@ -82,7 +82,7 @@ export async function getPage(slug: string, { locale }: { locale: string }) {
       locale,
       preview: (await draftMode()).isEnabled,
     },
-    await getHeaders()
+    await getHeaders(),
   );
 
   return data?.pageCollection?.items[0];
@@ -92,7 +92,7 @@ export async function getAllPagesWithSlug() {
   const data = await client.request(
     allPagesWithSlugQuery,
     undefined,
-    await getHeaders()
+    await getHeaders(),
   );
 
   return data?.pageCollection?.items ?? [];

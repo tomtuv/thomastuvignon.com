@@ -9,7 +9,7 @@ function getLocale(request: NextRequest): string | undefined {
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    LOCALES
+    LOCALES,
   );
 
   const locale = matchLocale(languages, LOCALES, DEFAULT_LOCALE);
@@ -25,7 +25,8 @@ export function middleware(request: NextRequest) {
   }
 
   const pathnameIsMissingLocale = LOCALES.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) =>
+      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
   if (pathnameIsMissingLocale) {
@@ -34,8 +35,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url
-      )
+        request.url,
+      ),
     );
   }
 }

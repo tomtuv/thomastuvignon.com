@@ -18,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ...acc,
             [locale]: `${SITE_URL}/${locale}`,
           }),
-          {}
+          {},
         ),
       },
     },
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ...acc,
             [locale]: `${SITE_URL}/${locale}/${page?.slug}`,
           }),
-          {}
+          {},
         ),
       },
     })),
@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             ...acc,
             [locale]: `${SITE_URL}/${locale}/projects/${project?.slug}`,
           }),
-          {}
+          {},
         ),
       },
     })),

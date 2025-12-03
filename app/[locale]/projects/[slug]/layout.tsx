@@ -26,7 +26,7 @@ export async function generateMetadata({
           ...acc,
           [locale]: `/${locale}/projects/${slug}`,
         }),
-        {}
+        {},
       ),
     },
     openGraph: {

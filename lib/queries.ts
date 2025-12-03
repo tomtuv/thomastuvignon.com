@@ -29,7 +29,7 @@ export const homePageQuery = graphql(
       }
     }
   `,
-  [projectCardFragment]
+  [projectCardFragment],
 );
 
 export const projectQuery = graphql(
@@ -60,7 +60,7 @@ export const projectQuery = graphql(
       }
     }
   `,
-  [mediaFragment, textFragment]
+  [mediaFragment, textFragment],
 );
 
 export const allProjectsWithSlugQuery = graphql(/* GraphQL */ `

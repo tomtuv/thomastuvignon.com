@@ -44,10 +44,9 @@
     grid-template-areas: "alert" "header" "content" "footer";
 
     @media (width >= 64rem) {
-      grid-template: "header content" 1fr "header footer" auto / minmax(
-          auto,
-          30rem
-        ) minmax(66.6667%, 1fr);
+      grid-template:
+        "header content" 1fr "header footer" auto / minmax(auto, 30rem)
+        minmax(66.6667%, 1fr);
     }
 
     > aside {
