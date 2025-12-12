@@ -21,7 +21,7 @@
     "graphql-request": "^7.3.5",
     "motion": "12.23.26",
     "negotiator": "^1.0.0",
-    "next": "^16.0.8",
+    "next": "^16.0.9",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "react-intl": "^7.1.14"
