@@ -14,34 +14,34 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.6",
     "@contentful/rich-text-types": "^17.2.5",
-    "@formatjs/intl-localematcher": "^0.7.5",
+    "@formatjs/intl-localematcher": "^0.8.0",
     "@opennextjs/cloudflare": "^1.14.8",
     "gql.tada": "^1.9.0",
     "graphql": "^16.12.0",
     "graphql-request": "^7.4.0",
-    "motion": "12.26.1",
+    "motion": "12.26.2",
     "negotiator": "^1.0.0",
-    "next": "^16.0.10",
+    "next": "^16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-intl": "^8.0.11"
+    "react-intl": "^8.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@types/negotiator": "^0.6.4",
-    "@types/node": "^25.0.6",
+    "@types/node": "^25.0.9",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.0.10",
-    "stylelint": "^16.26.1",
+    "stylelint": "^17.0.0",
     "stylelint-config-recess-order": "^7.4.0",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^7.0.1",
     "stylelint-use-logical": "^2.1.2",
     "typescript": "^5.9.3",
-    "wrangler": "^4.58.0"
+    "wrangler": "^4.59.2"
   },
   "browserslist": "baseline widely available",
   "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
