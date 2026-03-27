@@ -15,9 +15,9 @@
     "@contentful/rich-text-react-renderer": "^16.1.6",
     "@contentful/rich-text-types": "^17.2.5",
     "@formatjs/intl-localematcher": "^0.8.2",
-    "@opennextjs/cloudflare": "^1.17.3",
-    "gql.tada": "^1.9.0",
-    "graphql": "^16.13.1",
+    "@opennextjs/cloudflare": "^1.18.0",
+    "gql.tada": "^1.9.1",
+    "graphql": "^16.13.2",
     "graphql-request": "^7.4.0",
     "motion": "12.38.0",
     "negotiator": "^1.0.0",
@@ -35,13 +35,13 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.1",
-    "stylelint": "^17.5.0",
+    "stylelint": "^17.6.0",
     "stylelint-config-recess-order": "^7.7.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.1",
     "stylelint-use-logical": "^2.1.3",
     "typescript": "^6.0.2",
-    "wrangler": "^4.76.0"
+    "wrangler": "^4.77.0"
   },
   "browserslist": "baseline widely available",
   "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
