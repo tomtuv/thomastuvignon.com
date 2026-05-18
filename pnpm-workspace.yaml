@@ -1,6 +1,5 @@
-ignoredBuiltDependencies:
-  - esbuild
-  - rclone.js
-  - sharp
-  - unrs-resolver
-  - workerd
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
