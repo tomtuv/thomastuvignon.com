@@ -15,8 +15,8 @@ importers:
         specifier: ^17.2.7
         version: 17.2.7
       '@formatjs/intl-localematcher':
-        specifier: ^0.8.8
-        version: 0.8.8
+        specifier: ^0.8.9
+        version: 0.8.9
       '@opennextjs/cloudflare':
         specifier: ^1.19.11
         version: 1.19.11(next@16.2.6(@babel/core@7.29.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(wrangler@4.95.0)
@@ -45,8 +45,8 @@ importers:
         specifier: 19.2.6
         version: 19.2.6(react@19.2.6)
       react-intl:
-        specifier: ^10.1.9
-        version: 10.1.9(@types/react@19.2.15)(react@19.2.6)
+        specifier: ^10.1.11
+        version: 10.1.11(@types/react@19.2.15)(react@19.2.6)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.5
@@ -913,8 +913,8 @@ packages:
   '@formatjs/icu-skeleton-parser@2.1.9':
     resolution: {integrity: sha512-rsxswgHMfU1zUgB2byc08fesf83wLGjFnzLCEtuf00mx2doiqc6pYrf67raI37XqdRcGUviQepk2UKGqpng74Q==}
 
-  '@formatjs/intl-localematcher@0.8.8':
-    resolution: {integrity: sha512-pBr2hVKWvkHVnfXegW+53NT9U2uaVQCc+EgzLPCCwXqBA3nvM5fPbK9IcJlNjV+NMKGyZ2F3ZSG78iGdxAAqbA==}
+  '@formatjs/intl-localematcher@0.8.9':
+    resolution: {integrity: sha512-GmB0F/gYh4Hdl4rLWjgDsgT+x4pB54fkJeRh8kAZ4XFzKeCK8dGs+SBJWXO42QZtOUni+IDWKNuCw6wiL4lTvw==}
 
   '@formatjs/intl@4.1.12':
     resolution: {integrity: sha512-r288ut+p+CUQZSg+0gAT+D0i6xgrnoxE0B4HTbPY2zei/AtYmFhlu87BKjgCf1CweH4pZIbr152JFjxO8jVb1A==}
@@ -3184,8 +3184,8 @@ packages:
     peerDependencies:
       react: ^19.2.6
 
-  react-intl@10.1.9:
-    resolution: {integrity: sha512-FOWpTmwnZnAfz8JegRzyGnjUiuzLW3xJFjp/o8VR4HZAQ+Eg++YaeMhoUULLY+LMx7gZm3czaZEqcU4hntwerw==}
+  react-intl@10.1.11:
+    resolution: {integrity: sha512-9VCaWKumbrP91QvS50IYRlbZsD4KdSLwcfEeF9CQLmnqK9qCvFCfyof694I9lqHJL2/TUxBwLCA+whjF129oAg==}
     peerDependencies:
       '@types/react': '19'
       react: '19'
@@ -4772,7 +4772,7 @@ snapshots:
 
   '@formatjs/icu-skeleton-parser@2.1.9': {}
 
-  '@formatjs/intl-localematcher@0.8.8':
+  '@formatjs/intl-localematcher@0.8.9':
     dependencies:
       '@formatjs/fast-memoize': 3.1.5
 
@@ -7201,7 +7201,7 @@ snapshots:
       react: 19.2.6
       scheduler: 0.27.0
 
-  react-intl@10.1.9(@types/react@19.2.15)(react@19.2.6):
+  react-intl@10.1.11(@types/react@19.2.15)(react@19.2.6):
     dependencies:
       '@formatjs/icu-messageformat-parser': 3.5.10
       '@formatjs/intl': 4.1.12
