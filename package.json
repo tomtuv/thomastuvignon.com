@@ -16,7 +16,7 @@
     "@contentful/rich-text-types": "^17.2.7",
     "@formatjs/intl-localematcher": "^0.8.10",
     "@opennextjs/cloudflare": "^1.19.11",
-    "gql.tada": "^1.9.3",
+    "gql.tada": "^1.11.1",
     "graphql": "^16.14.2",
     "graphql-request": "^7.4.0",
     "motion": "12.40.0",
