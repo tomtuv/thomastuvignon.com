@@ -3,7 +3,10 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
+      day: "monday"
+      time: "03:00"
+      timezone: "Europe/Paris"
     cooldown:
       default-days: 1
     commit-message:
