@@ -11,5 +11,8 @@ export async function POST(request: Request) {
 
   revalidatePath("/[locale]", "layout");
 
-  return NextResponse.json({ revalidated: true, now: Date.now() });
+  return NextResponse.json({
+    revalidated: true,
+    now: Date.now(),
+  });
 }

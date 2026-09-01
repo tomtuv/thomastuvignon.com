@@ -13,86 +13,125 @@ const client = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
 );
 
-async function getHeaders() {
-  let isDraftMode: boolean;
-
-  try {
-    isDraftMode = (await draftMode()).isEnabled;
-  } catch {
-    isDraftMode = false;
+async function getPreviewMode(preview?: boolean) {
+  if (preview !== undefined) {
+    return preview;
   }
 
-  if (isDraftMode) {
+  try {
+    return (await draftMode()).isEnabled;
+  } catch {
+    return false;
+  }
+}
+
+async function getHeaders(preview: boolean) {
+  if (preview) {
     await connection();
   }
 
   return {
     Authorization: `Bearer ${
       process.env[
-        isDraftMode
-          ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN"
-          : "CONTENTFUL_ACCESS_TOKEN"
+        preview ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN" : "CONTENTFUL_ACCESS_TOKEN"
       ]
     }`,
   };
 }
 
-export async function getHomePage({ locale }: { locale: string }) {
+export async function getHomePage({
+  locale,
+  preview,
+}: {
+  locale: string;
+  preview?: boolean;
+}) {
+  const isPreviewMode = await getPreviewMode(preview);
+
   const data = await client.request(
     homePageQuery,
     {
       locale,
-      preview: (await draftMode()).isEnabled,
+      preview: isPreviewMode,
     },
-    await getHeaders(),
+    await getHeaders(isPreviewMode),
   );
 
   return data?.homePageCollection?.items[0];
 }
 
-export async function getProject(slug: string, { locale }: { locale: string }) {
+export async function getProject(
+  slug: string,
+  {
+    locale,
+    preview,
+  }: {
+    locale: string;
+    preview?: boolean;
+  },
+) {
+  const isPreviewMode = await getPreviewMode(preview);
+
   const data = await client.request(
     projectQuery,
     {
       slug,
       locale,
-      preview: (await draftMode()).isEnabled,
+      preview: isPreviewMode,
     },
-    await getHeaders(),
+    await getHeaders(isPreviewMode),
   );
 
   return data?.projectCollection?.items[0];
 }
 
-export async function getAllProjectsWithSlug() {
+export async function getAllProjectsWithSlug({
+  preview,
+}: { preview?: boolean } = {}) {
+  const isPreviewMode = await getPreviewMode(preview);
   const data = await client.request(
     allProjectsWithSlugQuery,
     undefined,
-    await getHeaders(),
+    await getHeaders(isPreviewMode),
   );
 
   return data?.projectCollection?.items ?? [];
 }
 
-export async function getPage(slug: string, { locale }: { locale: string }) {
+export async function getPage(
+  slug: string,
+  {
+    locale,
+    preview,
+  }: {
+    locale: string;
+    preview?: boolean;
+  },
+) {
+  const isPreviewMode = await getPreviewMode(preview);
+
   const data = await client.request(
     pageQuery,
     {
       slug,
       locale,
-      preview: (await draftMode()).isEnabled,
+      preview: isPreviewMode,
     },
-    await getHeaders(),
+    await getHeaders(isPreviewMode),
   );
 
   return data?.pageCollection?.items[0];
 }
 
-export async function getAllPagesWithSlug() {
+export async function getAllPagesWithSlug({
+  preview,
+}: { preview?: boolean } = {}) {
+  const isPreviewMode = await getPreviewMode(preview);
+
   const data = await client.request(
     allPagesWithSlugQuery,
     undefined,
-    await getHeaders(),
+    await getHeaders(isPreviewMode),
   );
 
   return data?.pageCollection?.items ?? [];

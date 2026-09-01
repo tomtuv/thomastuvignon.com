@@ -2,7 +2,7 @@ import { projectCardFragment, mediaFragment, textFragment } from "./fragments";
 import { graphql } from "./graphql";
 
 export const homePageQuery = graphql(
-  /* GraphQL */ `
+  `
     query HomePage($locale: String!, $preview: Boolean = false) {
       homePageCollection(locale: $locale, limit: 1, preview: $preview) {
         items {
@@ -33,7 +33,7 @@ export const homePageQuery = graphql(
 );
 
 export const projectQuery = graphql(
-  /* GraphQL */ `
+  `
     query Project($slug: String!, $locale: String!, $preview: Boolean = false) {
       projectCollection(
         where: { slug: $slug }
@@ -63,7 +63,7 @@ export const projectQuery = graphql(
   [mediaFragment, textFragment],
 );
 
-export const allProjectsWithSlugQuery = graphql(/* GraphQL */ `
+export const allProjectsWithSlugQuery = graphql(`
   query ProjectsWithSlug {
     projectCollection(where: { slug_exists: true }) {
       items {
@@ -73,7 +73,7 @@ export const allProjectsWithSlugQuery = graphql(/* GraphQL */ `
   }
 `);
 
-export const pageQuery = graphql(/* GraphQL */ `
+export const pageQuery = graphql(`
   query Page($slug: String!, $locale: String!, $preview: Boolean = false) {
     pageCollection(
       where: { slug: $slug }
@@ -97,7 +97,7 @@ export const pageQuery = graphql(/* GraphQL */ `
   }
 `);
 
-export const allPagesWithSlugQuery = graphql(/* GraphQL */ `
+export const allPagesWithSlugQuery = graphql(`
   query PagesWithSlug {
     pageCollection(where: { slug_exists: true }) {
       items {
