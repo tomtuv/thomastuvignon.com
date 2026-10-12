@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
+import { cacheLife, cacheTag } from "next/cache";
 import { draftMode } from "next/headers";
-import { connection } from "next/server";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,
@@ -13,23 +13,7 @@ const client = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
 );
 
-async function getPreviewMode(preview?: boolean) {
-  if (preview !== undefined) {
-    return preview;
-  }
-
-  try {
-    return (await draftMode()).isEnabled;
-  } catch {
-    return false;
-  }
-}
-
 async function getHeaders(preview: boolean) {
-  if (preview) {
-    await connection();
-  }
-
   return {
     Authorization: `Bearer ${
       process.env[
@@ -39,14 +23,12 @@ async function getHeaders(preview: boolean) {
   };
 }
 
-export async function getHomePage({
-  locale,
-  preview,
-}: {
-  locale: string;
-  preview?: boolean;
-}) {
-  const isPreviewMode = await getPreviewMode(preview);
+export async function getHomePage({ locale }: { locale: string }) {
+  "use cache";
+  cacheLife("max");
+  cacheTag("contentful");
+
+  const isPreviewMode = (await draftMode()).isEnabled;
 
   const data = await client.request(
     homePageQuery,
@@ -64,13 +46,15 @@ export async function getProject(
   slug: string,
   {
     locale,
-    preview,
   }: {
     locale: string;
-    preview?: boolean;
   },
 ) {
-  const isPreviewMode = await getPreviewMode(preview);
+  "use cache";
+  cacheLife("max");
+  cacheTag("contentful");
+
+  const isPreviewMode = (await draftMode()).isEnabled;
 
   const data = await client.request(
     projectQuery,
@@ -85,10 +69,13 @@ export async function getProject(
   return data?.projectCollection?.items[0];
 }
 
-export async function getAllProjectsWithSlug({
-  preview,
-}: { preview?: boolean } = {}) {
-  const isPreviewMode = await getPreviewMode(preview);
+export async function getAllProjectsWithSlug() {
+  "use cache";
+  cacheLife("max");
+  cacheTag("contentful");
+
+  const isPreviewMode = (await draftMode()).isEnabled;
+
   const data = await client.request(
     allProjectsWithSlugQuery,
     undefined,
@@ -102,13 +89,15 @@ export async function getPage(
   slug: string,
   {
     locale,
-    preview,
   }: {
     locale: string;
-    preview?: boolean;
   },
 ) {
-  const isPreviewMode = await getPreviewMode(preview);
+  "use cache";
+  cacheLife("max");
+  cacheTag("contentful");
+
+  const isPreviewMode = (await draftMode()).isEnabled;
 
   const data = await client.request(
     pageQuery,
@@ -123,10 +112,12 @@ export async function getPage(
   return data?.pageCollection?.items[0];
 }
 
-export async function getAllPagesWithSlug({
-  preview,
-}: { preview?: boolean } = {}) {
-  const isPreviewMode = await getPreviewMode(preview);
+export async function getAllPagesWithSlug() {
+  "use cache";
+  cacheLife("max");
+  cacheTag("contentful");
+
+  const isPreviewMode = (await draftMode()).isEnabled;
 
   const data = await client.request(
     allPagesWithSlugQuery,
