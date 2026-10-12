@@ -22,6 +22,12 @@ updates:
       - dependency-name: "eslint"
         versions:
           - ">=10.0.0"
+      - dependency-name: "eslint-config-next"
+        versions:
+          - ">=16.4.0"
+      - dependency-name: "next"
+        versions:
+          - ">=16.4.0"
       - dependency-name: "typescript"
         versions:
           - ">=7.0.0"
