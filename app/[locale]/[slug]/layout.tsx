@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Layout from "@/components/layout";
 import { getAllPagesWithSlug, getPage } from "@/lib/api";
 import { LOCALES, SITE_NAME, TWITTER_USERNAME } from "@/lib/constants";
@@ -46,7 +47,18 @@ export async function generateMetadata({
   };
 }
 
-export default async function PageLayout({
+export default function PageLayout({
+  children,
+  params,
+}: LayoutProps<"/[locale]/[slug]">) {
+  return (
+    <Suspense fallback={null}>
+      <PageLayoutContent params={params}>{children}</PageLayoutContent>
+    </Suspense>
+  );
+}
+
+async function PageLayoutContent({
   children,
   params,
 }: LayoutProps<"/[locale]/[slug]">) {
