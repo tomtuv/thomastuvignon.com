@@ -1,10 +1,16 @@
+import { cacheLife } from "next/cache";
 import Languages from "./languages";
 import Social from "./social";
 import styles from "./footer.module.css";
 
-export default function Footer() {
-  const date = new Date();
-  const year = date.getFullYear();
+async function getCurrentYear() {
+  "use cache";
+  cacheLife("max");
+  return new Date().getFullYear();
+}
+
+export default async function Footer() {
+  const year = await getCurrentYear();
 
   return (
     <footer className={styles.root}>
