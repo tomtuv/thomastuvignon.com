@@ -22,6 +22,8 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 
+export const dynamic = "error";
+
 export async function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
