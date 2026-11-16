@@ -151,10 +151,16 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
       --color-silver: oklch(81% 0 0deg);
       --color-alabaster: oklch(98.5% 0 0deg);
       --color-white: oklch(100% 0 0deg);
-      --color-text: var(--color-mine-shaft);
-      --color-background: var(--color-white);
+      --color-text: light-dark(var(--color-mine-shaft), var(--color-white));
+      --color-background: light-dark(
+        var(--color-white),
+        var(--color-mine-shaft)
+      );
       --color-scrollbar: var(--color-silver);
-      --color-shadow: oklch(0% 0 0deg / 10%);
+      --color-shadow: light-dark(
+        oklch(0% 0 0deg / 10%),
+        oklch(0% 0 0deg / 20%)
+      );
       --space-y: clamp(3.5rem, 1.7rem + 6vi, 6.5rem);
       --space-x: clamp(1rem, -0.2rem + 4vi, 3rem);
       --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
@@ -162,12 +168,6 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
       --shadow: 0 0.625rem 2.5rem var(--color-shadow);
 
       view-transition-class: slide-in;
-
-      @media (prefers-color-scheme: dark) {
-        --color-text: var(--color-white);
-        --color-background: var(--color-mine-shaft);
-        --color-shadow: oklch(0% 0 0deg / 20%);
-      }
     }
 
     body {

@@ -43,11 +43,10 @@ const { homePage, pageTitle } = Astro.props;
     padding-block: var(--space-y);
     padding-inline: var(--space-x);
     overflow: clip;
-    background-color: var(--color-alabaster);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-eerie-black);
-    }
+    background-color: light-dark(
+      var(--color-alabaster),
+      var(--color-eerie-black)
+    );
 
     @media (width >= 64rem) {
       position: sticky;

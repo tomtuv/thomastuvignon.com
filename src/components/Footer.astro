@@ -20,14 +20,13 @@ const year = new Date().getFullYear();
     padding-inline: var(--space-x);
     color: white;
     text-align: center;
-    background-color: var(--color-mine-shaft);
+    background-color: light-dark(
+      var(--color-mine-shaft),
+      var(--color-cod-gray)
+    );
 
     @media (width >= 64rem) {
       padding-inline: max(var(--space-x), (100% - 50rem) / 2);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-cod-gray);
     }
 
     small {
