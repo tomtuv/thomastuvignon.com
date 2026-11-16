@@ -23,7 +23,7 @@ const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
   .intro {
     font-size: clamp(1.375rem, 1rem + 1.25vi, 2rem);
 
-    :global(p:not(:last-child)) {
+    :global(.rich-text p:not(:last-child)) {
       margin-block-end: 0.25em;
     }
   }
