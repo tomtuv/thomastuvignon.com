@@ -11,7 +11,7 @@ interface Props {
 const { homePage, pageTitle } = Astro.props;
 ---
 
-<header class="header" transition:name="header">
+<header class="header">
   {homePage ? (
     <>
       {homePage.profilePicture?.url &&
@@ -56,6 +56,7 @@ const { homePage, pageTitle } = Astro.props;
       overflow-block: auto;
       scrollbar-color: var(--color-scrollbar) #0000;
       scrollbar-width: thin;
+      view-transition-name: header;
     }
 
     h1 {
