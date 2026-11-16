@@ -10,7 +10,8 @@
     "astro": "astro",
     "check": "astro check",
     "lint": "eslint .; stylelint 'src/**/*.astro'",
-    "deploy": "pnpm build && wrangler deploy"
+    "deploy": "pnpm build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
