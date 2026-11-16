@@ -1,0 +1,80 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Image from "./Image.astro";
+import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+import type { HomePage } from "@/lib/types";
+
+interface Props {
+  homePage: HomePage;
+}
+
+const { homePage } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+---
+
+<section class="projects" aria-labelledby="projects-heading">
+  <h2 class="heading" id="projects-heading">
+    {MESSAGES[locale].work}
+  </h2>
+  <ul class="grid" role="list">
+    {homePage.projectsCollection?.items.map((project) =>
+      project?.slug &&
+      project.thumbnail?.url &&
+      project.thumbnail.width &&
+      project.thumbnail.height ? (
+        <li>
+          <a href={getRelativeLocaleUrl(locale, `projects/${project.slug}`)}>
+            <Image
+              src={project.thumbnail.url}
+              alt={project.title ?? ""}
+              width={project.thumbnail.width}
+              height={project.thumbnail.height}
+            />
+          </a>
+        </li>
+      ) : null,
+    )}
+  </ul>
+</section>
+
+<style>
+  .projects {
+    margin-block-start: var(--space-y);
+  }
+
+  .heading {
+    margin-block-end: 1.5em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap);
+    padding-inline-start: 0;
+    list-style: none;
+
+    @media (width >= 64rem) {
+      grid-template-columns: var(--grid-columns-auto-fit);
+    }
+
+    a > :global(img) {
+      border-radius: clamp(0.25rem, 0.1rem + 0.5vi, 0.5rem);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: scale 0.2s linear;
+      }
+    }
+
+    a {
+      &:hover > :global(img) {
+        @media (hover: hover) {
+          scale: 1.05;
+        }
+      }
+
+      &:is(:focus-visible, :active) > :global(img) {
+        scale: 1.05;
+      }
+    }
+  }
+</style>

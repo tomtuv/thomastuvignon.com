@@ -1,0 +1,43 @@
+---
+import Back from "@/components/Back.astro";
+import RichText from "@/components/RichText.astro";
+import SiteLayout from "@/layouts/SiteLayout.astro";
+import { getPage, getPageSlugs } from "@/lib/contentful";
+import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@/lib/i18n";
+
+export async function getStaticPaths() {
+  const localizedSlugs = await Promise.all(
+    LOCALES.map(async (locale) => ({
+      locale,
+      slugs: await getPageSlugs(locale),
+    })),
+  );
+
+  return localizedSlugs.flatMap(({ locale, slugs }) =>
+    slugs.map((slug) => ({ params: { locale, slug } })),
+  );
+}
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const { slug } = Astro.params;
+
+if (!slug) throw new Error("Missing page slug in the route parameters.");
+
+const page = await getPage(slug, locale);
+
+if (!page) {
+  throw new Error(
+    `Contentful page "${slug}" not found for locale "${locale}".`,
+  );
+}
+---
+
+<SiteLayout
+  pageTitle={page.title}
+  description={page.description ?? MESSAGES[locale].description}
+>
+  <article>
+    <RichText text={page.body?.json} />
+  </article>
+  <Back />
+</SiteLayout>

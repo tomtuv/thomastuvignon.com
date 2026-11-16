@@ -1,0 +1,34 @@
+---
+import type { RemoteImageProps } from "astro:assets";
+import { Image as AstroImage } from "astro:assets";
+
+type Props = Omit<RemoteImageProps, "densities">;
+
+const { src, width, height, ...props } = Astro.props;
+const imageSource =
+  typeof src === "string" && src.startsWith("//") ? `https:${src}` : src;
+const imageWidth = Math.min(Number(width), 1920);
+const imageHeight = Math.round(Number(height) * (imageWidth / Number(width)));
+const widths = [320, 640, 960, 1280, 1600, 1920].filter(
+  (responsiveWidth) => responsiveWidth <= imageWidth,
+);
+if (!widths.includes(imageWidth)) widths.push(imageWidth);
+---
+
+<AstroImage
+  {...props}
+  class="image"
+  src={imageSource}
+  width={imageWidth}
+  height={imageHeight}
+  widths={widths}
+  sizes="auto"
+/>
+
+<style>
+  .image {
+    display: block;
+    overflow: clip;
+    box-shadow: var(--shadow);
+  }
+</style>

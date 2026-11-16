@@ -1,0 +1,119 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { INLINES, type Document } from "@contentful/rich-text-types";
+import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
+import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n";
+
+interface Props {
+  text?: Document | null;
+  className?: string;
+}
+
+const { text, className } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+
+function escapeAttribute(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+const html = text
+  ? documentToHtmlString(text, {
+      renderNode: {
+        [INLINES.HYPERLINK]: (node, next) => {
+          const uri = String(node.data.uri ?? "");
+          const allowed = /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(uri);
+          const safeUri = allowed ? uri : "#";
+          const protocolRelative = safeUri.startsWith("//");
+          const isExternal =
+            /^(https?:\/\/)/i.test(safeUri) || protocolRelative;
+          const href =
+            safeUri.startsWith("/") &&
+            !protocolRelative &&
+            !safeUri.startsWith("/api") &&
+            !pathHasLocale(safeUri)
+              ? safeUri === "/"
+                ? getRelativeLocaleUrl(locale)
+                : getRelativeLocaleUrl(locale, safeUri.slice(1))
+              : safeUri;
+          const externalAttributes = isExternal
+            ? ' target="_blank" rel="noopener noreferrer"'
+            : "";
+
+          return `<a href="${escapeAttribute(href)}"${externalAttributes}>${next(node.content)}</a>`;
+        },
+      },
+    })
+  : "";
+---
+
+<div class:list={["rich-text", className]} set:html={html} />
+
+<style>
+  .rich-text {
+    white-space: pre-line;
+
+    :global(:is(h1, h2, h3, h4, h5)) {
+      &:not(:first-child) {
+        margin-block-start: 2.5em;
+      }
+
+      &:not(:last-child) {
+        margin-block-end: 1.5em;
+      }
+    }
+
+    :global(p) {
+      &:not(:last-child) {
+        margin-block-end: 1em;
+      }
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    :global(:is(ul, ol)) {
+      padding-inline-start: 1.25rem;
+
+      &:not(:last-child) {
+        margin-block-end: 2em;
+      }
+    }
+
+    :global(li:where(:not(:last-child))) {
+      margin-block-end: 0.5em;
+    }
+
+    :global(a) {
+      --underline-offset: 0.1em;
+      --underline-thickness: max(1px, 0.08em);
+
+      padding-block: var(--underline-offset);
+      background-image: linear-gradient(currentcolor, currentcolor);
+      background-repeat: no-repeat;
+      background-position: bottom 0 right 100%;
+      background-size: 100% var(--underline-thickness);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-size 0.3s ease-out;
+      }
+
+      &:hover {
+        @media (hover: hover) {
+          background-position: bottom 0 left 100%;
+          background-size: 0 var(--underline-thickness);
+        }
+      }
+
+      &:is(:focus-visible, :active) {
+        background-position: bottom 0 left 100%;
+        background-size: 0 var(--underline-thickness);
+      }
+    }
+  }
+</style>

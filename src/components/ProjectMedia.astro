@@ -1,0 +1,51 @@
+---
+import Image from "./Image.astro";
+import VisuallyHidden from "./VisuallyHidden.astro";
+import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+import type { Media } from "@/lib/types";
+
+interface Props {
+  media: Media;
+}
+
+const { media } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+---
+
+<section
+  class="project-media"
+  data-variant={media.layout === "Columns" ? "columns" : undefined}
+  aria-labelledby={media.sys.id}
+>
+  <VisuallyHidden as="h2" id={media.sys.id}>
+    {media.title}
+  </VisuallyHidden>
+  {media.imagesCollection?.items.map((image, index) =>
+    image?.url && image.width && image.height ? (
+      <Image
+        src={image.url}
+        alt={`${MESSAGES[locale].page} ${index + 1}`}
+        width={image.width}
+        height={image.height}
+        priority={index === 0}
+      />
+    ) : null,
+  )}
+</section>
+
+<style>
+  .project-media {
+    display: grid;
+    gap: var(--grid-gap);
+
+    &:not(:first-child) {
+      margin-block-start: clamp(3rem, 2.7rem + 1vi, 3.5rem);
+    }
+
+    &[data-variant="columns"] {
+      @media (width >= 64rem) {
+        grid-template-columns: var(--grid-columns-auto-fit);
+      }
+    }
+  }
+</style>

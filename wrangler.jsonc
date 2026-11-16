@@ -1,22 +1,17 @@
-/**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "thomastuvignon",
-  "main": ".open-next/worker.js",
-  "compatibility_date": "2025-09-15",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "compatibility_date": "2026-11-16",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "keep_vars": true,
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "assets": {
+    "directory": "./dist/",
     "binding": "ASSETS",
-    "directory": ".open-next/assets",
+    "not_found_handling": "404-page",
+    "html_handling": "drop-trailing-slash",
   },
   "observability": {
     "enabled": true,
   },
-  "placement": {
-    "mode": "smart",
-  },
-  "keep_vars": true,
 }

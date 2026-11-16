@@ -1,0 +1,90 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
+import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n";
+
+interface Props extends Omit<HTMLAttributes<"a">, "href"> {
+  href: string;
+  underline?: boolean | "hover";
+}
+
+const {
+  class: className,
+  href,
+  target,
+  rel,
+  underline,
+  ...props
+} = Astro.props;
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const localizedHref =
+  href.startsWith("/") && !href.startsWith("/api") && !pathHasLocale(href)
+    ? href === "/"
+      ? getRelativeLocaleUrl(locale)
+      : getRelativeLocaleUrl(locale, href.slice(1))
+    : href;
+const relationship = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
+---
+
+<a
+  {...props}
+  class:list={["link", className]}
+  href={localizedHref}
+  target={target}
+  rel={relationship}
+  data-underline={underline === true ? "true" : underline || undefined}
+>
+  <slot />
+</a>
+
+<style>
+  @layer components {
+    .link[data-underline] {
+      --underline-offset: 0.1em;
+      --underline-thickness: max(1px, 0.08em);
+
+      padding-block: var(--underline-offset);
+      background-image: linear-gradient(currentcolor, currentcolor);
+      background-repeat: no-repeat;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-size 0.3s ease-out;
+      }
+    }
+
+    .link[data-underline="true"] {
+      background-position: bottom 0 right 100%;
+      background-size: 100% var(--underline-thickness);
+
+      &:hover {
+        @media (hover: hover) {
+          background-position: bottom 0 left 100%;
+          background-size: 0 var(--underline-thickness);
+        }
+      }
+
+      &:is(:focus-visible, :active, [aria-current="page"]) {
+        background-position: bottom 0 left 100%;
+        background-size: 0 var(--underline-thickness);
+      }
+    }
+
+    .link[data-underline="hover"] {
+      background-position: bottom 0 left 100%;
+      background-size: 0 var(--underline-thickness);
+
+      &:hover {
+        @media (hover: hover) {
+          background-position: bottom 0 right 100%;
+          background-size: 100% var(--underline-thickness);
+        }
+      }
+
+      &:is(:focus-visible, :active, [aria-current="page"]) {
+        background-position: bottom 0 right 100%;
+        background-size: 100% var(--underline-thickness);
+      }
+    }
+  }
+</style>

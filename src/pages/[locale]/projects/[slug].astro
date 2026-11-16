@@ -1,0 +1,48 @@
+---
+import Back from "@//components/Back.astro";
+import ProjectMedia from "@//components/ProjectMedia.astro";
+import ProjectText from "@//components/ProjectText.astro";
+import SiteLayout from "@//layouts/SiteLayout.astro";
+import { getProject, getProjectSlugs } from "@//lib/contentful";
+import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@//lib/i18n";
+
+export async function getStaticPaths() {
+  const localizedSlugs = await Promise.all(
+    LOCALES.map(async (locale) => {
+      return { locale, slugs: await getProjectSlugs(locale) };
+    }),
+  );
+
+  return localizedSlugs.flatMap(({ locale, slugs }) =>
+    slugs.map((slug) => ({ params: { locale, slug } })),
+  );
+}
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const { slug } = Astro.params;
+
+if (!slug) throw new Error("Missing project slug in the route parameters.");
+
+const project = await getProject(slug, locale);
+
+if (!project) {
+  throw new Error(
+    `Contentful project "${slug}" not found for locale "${locale}".`,
+  );
+}
+---
+
+<SiteLayout
+  pageTitle={project.title}
+  description={project.description ?? MESSAGES[locale].description}
+  socialImage={project.thumbnail?.url}
+>
+  {project.blocksCollection?.items.map((block) =>
+    block?.__typename === "Text" ? (
+      <ProjectText text={block} />
+    ) : block?.__typename === "Media" ? (
+      <ProjectMedia media={block} />
+    ) : null,
+  )}
+  <Back />
+</SiteLayout>
