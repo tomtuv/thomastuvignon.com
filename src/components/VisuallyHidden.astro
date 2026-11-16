@@ -1,0 +1,24 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag = "span"> = Polymorphic<{
+  as: Tag;
+}>;
+
+const { as: Tag = "span", ...props } = Astro.props;
+---
+
+<Tag {...props} class="visually-hidden">
+  <slot />
+</Tag>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+</style>

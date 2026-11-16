@@ -1,0 +1,18 @@
+---
+import Link from "./Link.astro";
+import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+---
+
+<aside class="back">
+  <Link href="/" underline>
+    {MESSAGES[locale].back}
+  </Link>
+</aside>
+
+<style>
+  .back {
+    margin-block-start: var(--space-y);
+  }
+</style>

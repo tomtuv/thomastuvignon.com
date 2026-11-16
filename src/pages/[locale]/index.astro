@@ -1,0 +1,27 @@
+---
+import Intro from "@/components/Intro.astro";
+import Projects from "@/components/Projects.astro";
+import SiteLayout from "@/layouts/SiteLayout.astro";
+import { getHomePage } from "@/lib/contentful";
+import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@/lib/i18n";
+
+export async function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const homePage = await getHomePage(locale);
+
+if (!homePage) {
+  throw new Error(`Contentful home page not found for locale "${locale}".`);
+}
+---
+
+<SiteLayout
+  description={MESSAGES[locale].description}
+  homePage={homePage}
+  socialImage={homePage.profilePicture?.url}
+>
+  <Intro homePage={homePage} />
+  <Projects homePage={homePage} />
+</SiteLayout>
