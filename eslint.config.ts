@@ -38,7 +38,7 @@ export default defineConfig([
     "dist/**",
     ".astro/**",
     ".wrangler/**",
-    "cloudflare-env.d.ts",
     "graphql-env.d.ts",
+    "worker-configuration.d.ts",
   ]),
 ]);
