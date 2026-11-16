@@ -12,10 +12,10 @@
     --color-background: var(--color-white);
     --color-scrollbar: var(--color-silver);
     --color-shadow: oklch(0% 0 0deg / 10%);
-    --space-y: clamp(3.5rem, 1.7rem + 6vw, 6.5rem);
-    --space-x: clamp(1rem, -0.2rem + 4vw, 3rem);
+    --space-y: clamp(3.5rem, 1.7rem + 6vi, 6.5rem);
+    --space-x: clamp(1rem, -0.2rem + 4vi, 3rem);
     --grid-columns-auto-fit: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-    --grid-gap: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+    --grid-gap: clamp(1rem, 0.7rem + 1vi, 1.5rem);
     --shadow: 0 0.625rem 2.5rem var(--color-shadow);
 
     @media (prefers-color-scheme: dark) {
@@ -39,7 +39,7 @@
 
   body {
     font-family: var(--font-family);
-    font-size: clamp(1rem, 0.925rem + 0.25vw, 1.125rem);
+    font-size: clamp(1rem, 0.925rem + 0.25vi, 1.125rem);
     color: var(--color-text);
     background-color: var(--color-background);
     text-size-adjust: none;
@@ -53,12 +53,12 @@
   }
 
   h1 {
-    font-size: clamp(1.875rem, 1.5rem + 1.25vw, 2.5rem);
+    font-size: clamp(1.875rem, 1.5rem + 1.25vi, 2.5rem);
     font-weight: 700;
   }
 
   h2 {
-    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+    font-size: clamp(1.25rem, 1.1rem + 0.5vi, 1.5rem);
     font-weight: 600;
   }
 

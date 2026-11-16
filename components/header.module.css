@@ -11,8 +11,8 @@
     @media (width >= 64rem) {
       position: sticky;
       inset-block-start: 0;
-      block-size: 100vh;
-      overflow-y: auto;
+      block-size: 100vb;
+      overflow-block: auto;
       scrollbar-color: var(--color-scrollbar) #0000;
       scrollbar-width: thin;
     }
@@ -26,7 +26,7 @@
     }
 
     span {
-      inline-size: clamp(8.125rem, 6.625rem + 5vw, 10.625rem);
+      inline-size: clamp(8.125rem, 6.625rem + 5vi, 10.625rem);
       border-radius: 50%;
       translate: none;
 
@@ -36,7 +36,7 @@
     }
 
     p {
-      font-size: clamp(1.25rem, 1.175rem + 0.25vw, 1.375rem);
+      font-size: clamp(1.25rem, 1.175rem + 0.25vi, 1.375rem);
       font-weight: 500;
     }
   }

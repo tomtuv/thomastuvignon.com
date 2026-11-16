@@ -1,6 +1,6 @@
+import { GraphQLClient } from "graphql-request";
 import { unstable_cache } from "next/cache";
 import { draftMode } from "next/headers";
-import { GraphQLClient } from "graphql-request";
 import {
   allPagesWithSlugQuery,
   allProjectsWithSlugQuery,

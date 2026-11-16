@@ -11,7 +11,7 @@
     }
 
     p {
-      font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem);
+      font-size: clamp(1.125rem, 1.05rem + 0.25vi, 1.25rem);
       font-weight: 500;
     }
   }
