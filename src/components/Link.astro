@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
-import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
 interface Props extends Omit<HTMLAttributes<"a">, "href"> {
   href: string;
@@ -17,7 +17,7 @@ const {
   ...props
 } = Astro.props;
 
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const localizedHref =
   href.startsWith("/") && !href.startsWith("/api") && !pathHasLocale(href)
     ? href === "/"
@@ -28,12 +28,12 @@ const relationship = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
 ---
 
 <a
-  {...props}
   class:list={["link", className]}
   href={localizedHref}
   target={target}
   rel={relationship}
   data-underline={underline === true ? "true" : underline || undefined}
+  {...props}
 >
   <slot />
 </a>

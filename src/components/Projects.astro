@@ -1,7 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Image from "./Image.astro";
-import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+import { defaultLocale, getTranslations } from "@/lib/i18n";
 import type { HomePage } from "@/lib/types";
 
 interface Props {
@@ -9,12 +9,13 @@ interface Props {
 }
 
 const { homePage } = Astro.props;
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 ---
 
 <section class="projects" aria-labelledby="projects-heading">
   <h2 class="heading" id="projects-heading">
-    {MESSAGES[locale].work}
+    {translations.work}
   </h2>
   <ul class="grid" role="list">
     {homePage.projectsCollection?.items.map((project) =>
@@ -38,42 +39,44 @@ const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
 </section>
 
 <style>
-  .projects {
-    margin-block-start: var(--space-y);
-  }
-
-  .heading {
-    margin-block-end: 1.5em;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--grid-gap);
-    padding-inline-start: 0;
-    list-style: none;
-
-    @media (width >= 64rem) {
-      grid-template-columns: var(--grid-columns-auto-fit);
+  @layer pages {
+    .projects {
+      margin-block-start: var(--space-y);
     }
 
-    a > :global(img) {
-      border-radius: clamp(0.25rem, 0.1rem + 0.5vi, 0.5rem);
+    .heading {
+      margin-block-end: 1.5em;
+    }
 
-      @media (prefers-reduced-motion: no-preference) {
-        transition: scale 0.2s linear;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--grid-gap);
+      padding-inline-start: 0;
+      list-style: none;
+
+      @media (width >= 64rem) {
+        grid-template-columns: var(--grid-columns-auto-fit);
       }
-    }
 
-    a {
-      &:hover > :global(img) {
-        @media (hover: hover) {
-          scale: 1.05;
+      a > :global(img) {
+        border-radius: clamp(0.25rem, 0.1rem + 0.5vi, 0.5rem);
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: scale 0.2s linear;
         }
       }
 
-      &:is(:focus-visible, :active) > :global(img) {
-        scale: 1.05;
+      a {
+        &:hover > :global(img) {
+          @media (hover: hover) {
+            scale: 1.05;
+          }
+        }
+
+        &:is(:focus-visible, :active) > :global(img) {
+          scale: 1.05;
+        }
       }
     }
   }

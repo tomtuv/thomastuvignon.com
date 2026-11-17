@@ -3,11 +3,11 @@ import Back from "@/components/Back.astro";
 import RichText from "@/components/RichText.astro";
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { getPage, getPageSlugs } from "@/lib/contentful";
-import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
 export async function getStaticPaths() {
   const localizedSlugs = await Promise.all(
-    LOCALES.map(async (locale) => ({
+    locales.map(async (locale) => ({
       locale,
       slugs: await getPageSlugs(locale),
     })),
@@ -18,7 +18,8 @@ export async function getStaticPaths() {
   );
 }
 
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 const { slug } = Astro.params;
 
 if (!slug) throw new Error("Missing page slug in the route parameters.");
@@ -34,7 +35,7 @@ if (!page) {
 
 <SiteLayout
   pageTitle={page.title}
-  description={page.description ?? MESSAGES[locale].description}
+  description={page.description ?? translations.description}
 >
   <article>
     <RichText text={page.body?.json} />

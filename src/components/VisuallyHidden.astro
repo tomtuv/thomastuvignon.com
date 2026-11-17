@@ -5,20 +5,22 @@ type Props<Tag extends HTMLTag = "span"> = Polymorphic<{
   as: Tag;
 }>;
 
-const { as: Tag = "span", ...props } = Astro.props;
+const { as: Tag = "span", class: className, ...props } = Astro.props;
 ---
 
-<Tag {...props} class="visually-hidden">
+<Tag class:list={["visually-hidden", className]} {...props}>
   <slot />
 </Tag>
 
 <style>
-  .visually-hidden {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    clip-path: inset(50%);
+  @layer utilities {
+    .visually-hidden:not(:focus, :active) {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
   }
 </style>

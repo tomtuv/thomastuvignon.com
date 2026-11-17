@@ -4,18 +4,18 @@ import { getAbsoluteLocaleUrl } from "astro:i18n";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import { SITE_NAME, TWITTER_USERNAME } from "@/lib/constants";
-import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales, type Locale } from "@/lib/i18n";
 import type { HomePage } from "@/lib/types";
 
 interface Props {
-  description: string;
   pageTitle?: string | null;
-  homePage?: HomePage;
+  description: string;
   socialImage?: string | null;
+  homePage?: HomePage;
 }
 
-const { description, pageTitle, homePage, socialImage } = Astro.props;
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const { pageTitle, description, socialImage, homePage } = Astro.props;
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const currentPath = Astro.url.pathname;
 const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
 const localizedSuffix = currentPath
@@ -48,7 +48,7 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
     <link rel="apple-touch-icon" href="/apple-icon.png" />
     <link rel="canonical" href={new URL(currentPath, Astro.site)} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    {LOCALES.map((alternateLocale) => (
+    {locales.map((alternateLocale) => (
       <link
         rel="alternate"
         hreflang={alternateLocale}
@@ -58,7 +58,7 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
     <link
       rel="alternate"
       hreflang="x-default"
-      href={localizedUrl(DEFAULT_LOCALE)}
+      href={localizedUrl(defaultLocale)}
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle ?? SITE_NAME} />
@@ -73,6 +73,9 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
+    <style is:inline>
+      @layer base, components, pages, utilities;
+    </style>
   </head>
   <body>
     <Header homePage={homePage} pageTitle={pageTitle} />
@@ -84,37 +87,11 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
 </html>
 
 <style is:global>
-  @view-transition {
-    navigation: auto;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-  }
-
-  @keyframes fade-out {
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes slide-from-right {
-    from {
-      translate: 30px;
-    }
-  }
-
-  @keyframes slide-to-left {
-    to {
-      translate: -30px;
-    }
-  }
-
-  @layer base, components, pages, utilities;
-
   @layer base {
+    @view-transition {
+      navigation: auto;
+    }
+
     *,
     ::before,
     ::after {
@@ -125,6 +102,30 @@ const twitterCard = socialImage ? "summary_large_image" : "summary";
 
     * {
       margin: 0;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade-out {
+      to {
+        opacity: 0;
+      }
+    }
+
+    @keyframes slide-from-right {
+      from {
+        translate: 30px;
+      }
+    }
+
+    @keyframes slide-to-left {
+      to {
+        translate: -30px;
+      }
     }
 
     ::view-transition-old(.slide-in) {

@@ -2,20 +2,20 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Link from "./Link.astro";
 import {
-  DEFAULT_LOCALE,
-  LANGUAGE_NAMES,
-  LOCALES,
+  defaultLocale,
+  getLanguageLabel,
+  locales,
   type Locale,
 } from "@/lib/i18n";
 
-const activeLocale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const activeLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const path = Astro.url.pathname
   .replace(/^\/(fr|en)(?=\/|$)/, "")
   .replace(/^\/+/, "");
 ---
 
 <ul class="languages" role="list">
-  {LOCALES.map((locale) => {
+  {locales.map((locale) => {
     const href = path
       ? getRelativeLocaleUrl(locale, path)
       : getRelativeLocaleUrl(locale);
@@ -27,7 +27,7 @@ const path = Astro.url.pathname
           underline="hover"
           aria-current={locale === activeLocale ? "page" : undefined}
         >
-          {LANGUAGE_NAMES[locale]}
+          {getLanguageLabel(locale)}
         </Link>
       </li>
     );
@@ -35,11 +35,13 @@ const path = Astro.url.pathname
 </ul>
 
 <style>
-  .languages {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-block-end: clamp(1.5rem, 1.2rem + 1vi, 2rem);
+  @layer components {
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-block-end: clamp(1.5rem, 1.2rem + 1vi, 2rem);
+    }
   }
 </style>

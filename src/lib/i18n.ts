@@ -1,13 +1,21 @@
-import en from "@/locales/en.json";
-import fr from "@/locales/fr.json";
+import en from "@/translations/en.json";
+import fr from "@/translations/fr.json";
 
-export const LOCALES = ["fr", "en"] as const;
-export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = "fr";
+export const locales = ["fr", "en"] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = "fr";
 
-export const LANGUAGE_NAMES: Record<Locale, string> = {
-  fr: "Français",
-  en: "English",
-};
+const translations = { fr, en } satisfies Record<Locale, typeof fr>;
 
-export const MESSAGES = { fr, en };
+export function getTranslations(locale: string) {
+  return translations[locale as Locale] ?? translations.fr;
+}
+
+export function getLanguageLabel(locale: string) {
+  const label = new Intl.DisplayNames([locale], {
+    type: "language",
+    languageDisplay: "standard",
+  }).of(locale);
+
+  return label?.replace(/^./u, (c) => c.toLocaleUpperCase(locale)) ?? locale;
+}

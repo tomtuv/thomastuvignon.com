@@ -1,7 +1,7 @@
 ---
 import Link from "./Link.astro";
 import RichText from "./RichText.astro";
-import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+import { defaultLocale, getTranslations } from "@/lib/i18n";
 import type { Text } from "@/lib/types";
 
 interface Props {
@@ -9,7 +9,8 @@ interface Props {
 }
 
 const { text } = Astro.props;
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 ---
 
 <section class="project-text" aria-labelledby={text.sys.id}>
@@ -20,32 +21,34 @@ const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
   <RichText className="text-content" text={text.body?.json} />
   {text.link && (
     <Link href={text.link} target="_blank" underline>
-      {MESSAGES[locale].projectLink}
+      {translations.projectLink}
     </Link>
   )}
 </section>
 
 <style>
-  .project-text {
-    &:not(:first-child) {
-      margin-block-start: var(--space-y);
-    }
-  }
-
-  .header {
-    margin-block-end: 2rem;
-
-    h2 {
-      margin-block-end: 0.25em;
+  @layer pages {
+    .project-text {
+      &:not(:first-child) {
+        margin-block-start: var(--space-y);
+      }
     }
 
-    p {
-      font-size: clamp(1.125rem, 1.05rem + 0.25vi, 1.25rem);
-      font-weight: 500;
-    }
-  }
+    .header {
+      margin-block-end: 2rem;
 
-  .project-text :global(.text-content) {
-    margin-block-end: 2rem;
+      h2 {
+        margin-block-end: 0.25em;
+      }
+
+      p {
+        font-size: clamp(1.125rem, 1.05rem + 0.25vi, 1.25rem);
+        font-weight: 500;
+      }
+    }
+
+    .project-text :global(.text-content) {
+      margin-block-end: 2rem;
+    }
   }
 </style>

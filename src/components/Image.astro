@@ -16,19 +16,21 @@ if (!widths.includes(imageWidth)) widths.push(imageWidth);
 ---
 
 <AstroImage
-  {...props}
   class="image"
   src={imageSource}
   width={imageWidth}
   height={imageHeight}
   widths={widths}
   sizes="auto"
+  {...props}
 />
 
 <style>
-  .image {
-    display: block;
-    overflow: clip;
-    box-shadow: var(--shadow);
+  @layer components {
+    .image {
+      display: block;
+      overflow: clip;
+      box-shadow: var(--shadow);
+    }
   }
 </style>

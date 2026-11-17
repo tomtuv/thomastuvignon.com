@@ -3,13 +3,14 @@ import Intro from "@/components/Intro.astro";
 import Projects from "@/components/Projects.astro";
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { getHomePage } from "@/lib/contentful";
-import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
 export async function getStaticPaths() {
-  return LOCALES.map((locale) => ({ params: { locale } }));
+  return locales.map((locale) => ({ params: { locale } }));
 }
 
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 const homePage = await getHomePage(locale);
 
 if (!homePage) {
@@ -18,7 +19,7 @@ if (!homePage) {
 ---
 
 <SiteLayout
-  description={MESSAGES[locale].description}
+  description={translations.description}
   homePage={homePage}
   socialImage={homePage.profilePicture?.url}
 >

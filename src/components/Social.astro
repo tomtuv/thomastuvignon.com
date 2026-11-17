@@ -86,44 +86,46 @@ import Link from "./Link.astro";
 </ul>
 
 <style>
-  .social {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    padding-inline-start: 0;
-    margin-block-end: clamp(1.5rem, 1.2rem + 1vi, 2rem);
-    list-style: none;
-  }
-
-  .social :global(a) {
-    display: block;
-
-    @media (prefers-reduced-motion: no-preference) {
-      transition: opacity 0.15s linear;
+  @layer components {
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding-inline-start: 0;
+      margin-block-end: clamp(1.5rem, 1.2rem + 1vi, 2rem);
+      list-style: none;
     }
 
-    &:hover {
-      @media (hover: hover) {
+    .social :global(a) {
+      display: block;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.15s linear;
+      }
+
+      &:hover {
+        @media (hover: hover) {
+          opacity: 0.5;
+        }
+      }
+
+      &:is(:focus-visible, :active) {
         opacity: 0.5;
       }
     }
 
-    &:is(:focus-visible, :active) {
-      opacity: 0.5;
+    .social svg {
+      inline-size: 1.5rem;
     }
-  }
 
-  .social svg {
-    inline-size: 1.5rem;
-  }
-
-  .visually-hidden {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    clip-path: inset(50%);
+    .visually-hidden {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
   }
 </style>

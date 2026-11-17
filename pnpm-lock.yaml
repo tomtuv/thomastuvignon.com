@@ -221,6 +221,9 @@ importers:
       jiti:
         specifier: ^2.7.0
         version: 2.7.0
+      lightningcss:
+        specifier: ^1.33.0
+        version: 1.33.0
       postcss-html:
         specifier: ^2.0.0
         version: 2.0.0(postcss@8.5.33)

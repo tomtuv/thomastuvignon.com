@@ -15,22 +15,24 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
-  .footer {
-    padding-block: clamp(3rem, 1.8rem + 4vi, 5rem);
-    padding-inline: var(--space-x);
-    color: white;
-    text-align: center;
-    background-color: light-dark(
-      var(--color-mine-shaft),
-      var(--color-cod-gray)
-    );
+  @layer components {
+    .footer {
+      padding-block: clamp(3rem, 1.8rem + 4vi, 5rem);
+      padding-inline: var(--space-x);
+      color: white;
+      text-align: center;
+      background-color: light-dark(
+        var(--color-mine-shaft),
+        var(--color-cod-gray)
+      );
 
-    @media (width >= 64rem) {
-      padding-inline: max(var(--space-x), (100% - 50rem) / 2);
-    }
+      @media (width >= 64rem) {
+        padding-inline: max(var(--space-x), (100% - 50rem) / 2);
+      }
 
-    small {
-      font-size: inherit;
+      small {
+        font-size: inherit;
+      }
     }
   }
 </style>

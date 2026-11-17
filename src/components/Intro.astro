@@ -1,7 +1,7 @@
 ---
 import RichText from "./RichText.astro";
 import VisuallyHidden from "./VisuallyHidden.astro";
-import { DEFAULT_LOCALE, MESSAGES, type Locale } from "@/lib/i18n";
+import { defaultLocale, getTranslations } from "@/lib/i18n";
 import type { HomePage } from "@/lib/types";
 
 interface Props {
@@ -9,22 +9,25 @@ interface Props {
 }
 
 const { homePage } = Astro.props;
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 ---
 
 <section class="intro" aria-labelledby="introduction-heading">
   <VisuallyHidden as="h2" id="introduction-heading">
-    {MESSAGES[locale].introduction}
+    {translations.introduction}
   </VisuallyHidden>
   <RichText text={homePage.intro?.json} />
 </section>
 
 <style>
-  .intro {
-    font-size: clamp(1.375rem, 1rem + 1.25vi, 2rem);
+  @layer pages {
+    .intro {
+      font-size: clamp(1.375rem, 1rem + 1.25vi, 2rem);
 
-    :global(.rich-text p:not(:last-child)) {
-      margin-block-end: 0.25em;
+      :global(p:not(:last-child)) {
+        margin-block-end: 0.25em;
+      }
     }
   }
 </style>

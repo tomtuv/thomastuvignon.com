@@ -4,11 +4,11 @@ import ProjectMedia from "@//components/ProjectMedia.astro";
 import ProjectText from "@//components/ProjectText.astro";
 import SiteLayout from "@//layouts/SiteLayout.astro";
 import { getProject, getProjectSlugs } from "@//lib/contentful";
-import { DEFAULT_LOCALE, LOCALES, MESSAGES, type Locale } from "@//lib/i18n";
+import { defaultLocale, locales, getTranslations } from "@//lib/i18n";
 
 export async function getStaticPaths() {
   const localizedSlugs = await Promise.all(
-    LOCALES.map(async (locale) => {
+    locales.map(async (locale) => {
       return { locale, slugs: await getProjectSlugs(locale) };
     }),
   );
@@ -18,7 +18,8 @@ export async function getStaticPaths() {
   );
 }
 
-const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const translations = getTranslations(locale);
 const { slug } = Astro.params;
 
 if (!slug) throw new Error("Missing project slug in the route parameters.");
@@ -34,7 +35,7 @@ if (!project) {
 
 <SiteLayout
   pageTitle={project.title}
-  description={project.description ?? MESSAGES[locale].description}
+  description={project.description ?? translations.description}
   socialImage={project.thumbnail?.url}
 >
   {project.blocksCollection?.items.map((block) =>
