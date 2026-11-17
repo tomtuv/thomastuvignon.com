@@ -1,8 +1,10 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { INLINES, type Document } from "@contentful/rich-text-types";
+import { experimental_AstroContainer } from "astro/container";
 import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
-import { defaultLocale, type Locale } from "@/lib/i18n";
+import Link from "./Link.astro";
+import { defaultLocale } from "@/lib/i18n";
 
 interface Props {
   text?: Document | null;
@@ -10,18 +12,17 @@ interface Props {
 }
 
 const { text, className } = Astro.props;
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
 
-function escapeAttribute(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
-}
+const linkPlaceholders: {
+  placeholder: string;
+  href: string;
+  target?: string;
+  rel?: string;
+  content: string;
+}[] = [];
 
-const html = text
+let html = text
   ? documentToHtmlString(text, {
       renderNode: {
         [INLINES.HYPERLINK]: (node, next) => {
@@ -34,21 +35,41 @@ const html = text
           const href =
             safeUri.startsWith("/") &&
             !protocolRelative &&
-            !safeUri.startsWith("/api") &&
             !pathHasLocale(safeUri)
               ? safeUri === "/"
                 ? getRelativeLocaleUrl(locale)
                 : getRelativeLocaleUrl(locale, safeUri.slice(1))
               : safeUri;
-          const externalAttributes = isExternal
-            ? ' target="_blank" rel="noopener noreferrer"'
-            : "";
+          const placeholder = `<!--rich-text-link-${linkPlaceholders.length}-->`;
 
-          return `<a href="${escapeAttribute(href)}"${externalAttributes}>${next(node.content)}</a>`;
+          linkPlaceholders.push({
+            placeholder,
+            href,
+            target: isExternal ? "_blank" : undefined,
+            rel: isExternal ? "noopener noreferrer" : undefined,
+            content: next(node.content),
+          });
+
+          return placeholder;
         },
       },
     })
   : "";
+
+if (linkPlaceholders.length > 0) {
+  const container = await experimental_AstroContainer.create();
+
+  for (const { placeholder, href, target, rel, content } of linkPlaceholders) {
+    const link = await container.renderToString(Link, {
+      request: Astro.request,
+      params: { locale },
+      props: { href, target, rel },
+      slots: { default: content },
+    });
+
+    html = html.replace(placeholder, link);
+  }
+}
 ---
 
 <div class:list={["rich-text", className]} set:html={html} />
@@ -86,35 +107,8 @@ const html = text
         }
       }
 
-      :global(li:where(:not(:last-child))) {
+      :global(li:not(:last-child)) {
         margin-block-end: 0.5em;
-      }
-
-      :global(a) {
-        --underline-offset: 0.1em;
-        --underline-thickness: max(1px, 0.08em);
-
-        padding-block: var(--underline-offset);
-        background-image: linear-gradient(currentcolor, currentcolor);
-        background-repeat: no-repeat;
-        background-position: bottom 0 right 100%;
-        background-size: 100% var(--underline-thickness);
-
-        @media (prefers-reduced-motion: no-preference) {
-          transition: background-size 0.3s ease-out;
-        }
-
-        &:hover {
-          @media (hover: hover) {
-            background-position: bottom 0 left 100%;
-            background-size: 0 var(--underline-thickness);
-          }
-        }
-
-        &:is(:focus-visible, :active) {
-          background-position: bottom 0 left 100%;
-          background-size: 0 var(--underline-thickness);
-        }
       }
     }
   }

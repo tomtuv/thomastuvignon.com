@@ -2,13 +2,18 @@
 import type { RemoteImageProps } from "astro:assets";
 import { Image as AstroImage } from "astro:assets";
 
-type Props = Omit<RemoteImageProps, "densities">;
+interface Props extends Omit<
+  RemoteImageProps,
+  "width" | "height" | "densities"
+> {
+  width: number;
+  height: number;
+}
 
 const { src, width, height, ...props } = Astro.props;
-const imageSource =
-  typeof src === "string" && src.startsWith("//") ? `https:${src}` : src;
-const imageWidth = Math.min(Number(width), 1920);
-const imageHeight = Math.round(Number(height) * (imageWidth / Number(width)));
+const imageSource = src.startsWith("//") ? `https:${src}` : src;
+const imageWidth = Math.min(width, 1920);
+const imageHeight = Math.round(height * (imageWidth / width));
 const widths = [320, 640, 960, 1280, 1600, 1920].filter(
   (responsiveWidth) => responsiveWidth <= imageWidth,
 );

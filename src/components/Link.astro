@@ -1,11 +1,11 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
-import { defaultLocale, type Locale } from "@/lib/i18n";
+import { defaultLocale } from "@/lib/i18n";
 
 interface Props extends Omit<HTMLAttributes<"a">, "href"> {
   href: string;
-  underline?: boolean | "hover";
+  underline?: "initial" | "hover";
 }
 
 const {
@@ -13,13 +13,14 @@ const {
   href,
   target,
   rel,
-  underline,
+  underline = "initial",
   ...props
 } = Astro.props;
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
+const protocolRelative = href.startsWith("//");
 const localizedHref =
-  href.startsWith("/") && !href.startsWith("/api") && !pathHasLocale(href)
+  href.startsWith("/") && !protocolRelative && !pathHasLocale(href)
     ? href === "/"
       ? getRelativeLocaleUrl(locale)
       : getRelativeLocaleUrl(locale, href.slice(1))
@@ -32,7 +33,7 @@ const relationship = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
   href={localizedHref}
   target={target}
   rel={relationship}
-  data-underline={underline === true ? "true" : underline || undefined}
+  data-underline={underline}
   {...props}
 >
   <slot />
@@ -40,7 +41,7 @@ const relationship = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
 
 <style>
   @layer components {
-    .link[data-underline] {
+    .link {
       --underline-offset: 0.1em;
       --underline-thickness: max(1px, 0.08em);
 
@@ -51,39 +52,39 @@ const relationship = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
       @media (prefers-reduced-motion: no-preference) {
         transition: background-size 0.3s ease-out;
       }
-    }
 
-    .link[data-underline="true"] {
-      background-position: bottom 0 right 100%;
-      background-size: 100% var(--underline-thickness);
+      &[data-underline="initial"] {
+        background-position: bottom 0 right 100%;
+        background-size: 100% var(--underline-thickness);
 
-      &:hover {
-        @media (hover: hover) {
+        &:hover {
+          @media (hover: hover) {
+            background-position: bottom 0 left 100%;
+            background-size: 0 var(--underline-thickness);
+          }
+        }
+
+        &:is(:focus-visible, :active) {
           background-position: bottom 0 left 100%;
           background-size: 0 var(--underline-thickness);
         }
       }
 
-      &:is(:focus-visible, :active, [aria-current="page"]) {
+      &[data-underline="hover"] {
         background-position: bottom 0 left 100%;
         background-size: 0 var(--underline-thickness);
-      }
-    }
 
-    .link[data-underline="hover"] {
-      background-position: bottom 0 left 100%;
-      background-size: 0 var(--underline-thickness);
+        &:hover {
+          @media (hover: hover) {
+            background-position: bottom 0 right 100%;
+            background-size: 100% var(--underline-thickness);
+          }
+        }
 
-      &:hover {
-        @media (hover: hover) {
+        &:is(:focus-visible, :active) {
           background-position: bottom 0 right 100%;
           background-size: 100% var(--underline-thickness);
         }
-      }
-
-      &:is(:focus-visible, :active, [aria-current="page"]) {
-        background-position: bottom 0 right 100%;
-        background-size: 100% var(--underline-thickness);
       }
     }
   }

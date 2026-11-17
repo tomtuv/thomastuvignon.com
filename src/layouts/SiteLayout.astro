@@ -4,7 +4,7 @@ import { getAbsoluteLocaleUrl } from "astro:i18n";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import { SITE_NAME, TWITTER_USERNAME } from "@/lib/constants";
-import { defaultLocale, locales, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales } from "@/lib/i18n";
 import type { HomePage } from "@/lib/types";
 
 interface Props {
@@ -15,13 +15,13 @@ interface Props {
 }
 
 const { pageTitle, description, socialImage, homePage } = Astro.props;
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = Astro.currentLocale ?? defaultLocale;
 const currentPath = Astro.url.pathname;
 const title = pageTitle ? `${pageTitle} | ${SITE_NAME}` : SITE_NAME;
 const localizedSuffix = currentPath
   .replace(/^\/(fr|en)(\/|$)/, "")
   .replace(/^\/+/, "");
-const localizedUrl = (targetLocale: Locale) =>
+const localizedUrl = (targetLocale: string) =>
   localizedSuffix
     ? getAbsoluteLocaleUrl(targetLocale, localizedSuffix)
     : getAbsoluteLocaleUrl(targetLocale);

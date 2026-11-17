@@ -20,7 +20,7 @@ const translations = getTranslations(locale);
   </header>
   <RichText className="text-content" text={text.body?.json} />
   {text.link && (
-    <Link href={text.link} target="_blank" underline>
+    <Link href={text.link} target="_blank">
       {translations.projectLink}
     </Link>
   )}
