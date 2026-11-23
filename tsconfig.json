@@ -1,6 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*", "./worker-configuration.d.ts"],
+  "exclude": ["dist"],
   "compilerOptions": {
+    "types": ["./worker-configuration.d.ts", "node"],
     "plugins": [
       {
         "name": "gql.tada/ts-plugin",
@@ -12,7 +15,5 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  }
 }
