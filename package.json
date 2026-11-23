@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
-    "@astrojs/cloudflare": "^14.4.8",
-    "@astrojs/sitemap": "^3.7.5",
+    "@astrojs/cloudflare": "^14.4.9",
+    "@astrojs/sitemap": "^3.7.6",
     "@contentful/rich-text-html-renderer": "^17.2.3",
     "@contentful/rich-text-types": "^17.2.7",
-    "astro": "^7.4.12",
+    "astro": "^7.4.13",
     "gql.tada": "^1.11.5",
     "graphql": "^17.1.0",
     "graphql-request": "^7.4.0"
@@ -32,16 +32,16 @@
     "eslint-plugin-import-x": "^4.18.1",
     "jiti": "^2.7.0",
     "lightningcss": "^1.33.0",
-    "postcss-html": "^2.0.0",
+    "postcss-html": "^2.0.1",
     "prettier": "3.10.1",
     "prettier-plugin-astro": "1.1.2",
-    "stylelint": "^18.0.0",
-    "stylelint-config-recess-order": "^7.10.0",
-    "stylelint-config-standard": "^41.0.0",
+    "stylelint": "^18.1.0",
+    "stylelint-config-recess-order": "^7.10.1",
+    "stylelint-config-standard": "^41.1.0",
     "stylelint-order": "^8.1.3",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.2",
-    "wrangler": "^4.162.0"
+    "typescript-eslint": "^8.73.0",
+    "wrangler": "^4.166.0"
   },
-  "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0"
+  "packageManager": "pnpm@12.23.0+sha512.02da94ffaf133f46074322afe552f90d40b5f71ae259aefbccdacc5085b1d617e98d65e0131f5748b9b67445978ee5055d7d59a473f1eef0d504854fefcd5975"
 }
