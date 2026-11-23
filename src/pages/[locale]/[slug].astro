@@ -1,11 +1,12 @@
 ---
+import type { GetStaticPaths } from "astro";
 import Back from "@/components/Back.astro";
 import RichText from "@/components/RichText.astro";
 import SiteLayout from "@/layouts/SiteLayout.astro";
 import { getPage, getPageSlugs } from "@/lib/contentful";
 import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const localizedPages = await Promise.all(
     locales.map(async (locale) => {
       const slugs = await getPageSlugs(locale);
@@ -24,7 +25,7 @@ export async function getStaticPaths() {
         : [],
     ),
   );
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 const locale = Astro.currentLocale ?? defaultLocale;
