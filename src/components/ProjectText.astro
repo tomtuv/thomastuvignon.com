@@ -18,7 +18,7 @@ const translations = getTranslations(locale);
     <h2 id={text.sys.id}>{text.title}</h2>
     <p>{text.subtitle}</p>
   </header>
-  <RichText className="text-content" text={text.body?.json} />
+  <RichText class="text" text={text.body?.json} />
   {text.link && (
     <Link href={text.link} target="_blank">
       {translations.projectLink}
@@ -47,7 +47,7 @@ const translations = getTranslations(locale);
       }
     }
 
-    .project-text :global(.text-content) {
+    .text {
       margin-block-end: 2rem;
     }
   }

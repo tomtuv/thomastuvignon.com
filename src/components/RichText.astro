@@ -2,16 +2,16 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { INLINES, type Document } from "@contentful/rich-text-types";
 import { experimental_AstroContainer } from "astro/container";
+import type { HTMLAttributes } from "astro/types";
 import { getRelativeLocaleUrl, pathHasLocale } from "astro:i18n";
 import Link from "./Link.astro";
 import { defaultLocale } from "@/lib/i18n";
 
-interface Props {
+interface Props extends HTMLAttributes<"div"> {
   text?: Document | null;
-  className?: string;
 }
 
-const { text, className } = Astro.props;
+const { text, class: className, ...props } = Astro.props;
 const locale = Astro.currentLocale ?? defaultLocale;
 
 const linkPlaceholders: {
@@ -72,7 +72,7 @@ if (linkPlaceholders.length > 0) {
 }
 ---
 
-<div class:list={["rich-text", className]} set:html={html} />
+<div class:list={["rich-text", className]} set:html={html} {...props} />
 
 <style>
   @layer components {
