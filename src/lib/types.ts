@@ -4,22 +4,13 @@ import type {
   projectCardFragment,
   textFragment,
 } from "./fragments";
-import type { homePageQuery, pageQuery, projectQuery } from "./queries";
+import type { homePageQuery } from "./queries";
 
-type CollectionItem<T> = T extends { items: ReadonlyArray<infer Item> }
-  ? NonNullable<Item>
-  : never;
-
-export type HomePage = CollectionItem<
-  NonNullable<ResultOf<typeof homePageQuery>["homePageCollection"]>
+export type HomePage = NonNullable<
+  NonNullable<
+    ResultOf<typeof homePageQuery>["homePageCollection"]
+  >["items"][number]
 >;
-export type Project = CollectionItem<
-  NonNullable<ResultOf<typeof projectQuery>["projectCollection"]>
->;
-export type Page = CollectionItem<
-  NonNullable<ResultOf<typeof pageQuery>["pageCollection"]>
->;
-
 export type ProjectCard = FragmentOf<typeof projectCardFragment>;
 export type Media = FragmentOf<typeof mediaFragment>;
 export type Text = FragmentOf<typeof textFragment>;

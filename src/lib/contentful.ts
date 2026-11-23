@@ -1,10 +1,10 @@
 import { GraphQLClient } from "graphql-request";
 import {
   homePageQuery,
-  pageQuery,
-  pageSlugsQuery,
   projectQuery,
+  pageQuery,
   projectSlugsQuery,
+  pageSlugsQuery,
 } from "./queries";
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = import.meta.env;

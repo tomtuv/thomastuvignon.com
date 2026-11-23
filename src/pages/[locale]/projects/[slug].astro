@@ -1,36 +1,35 @@
 ---
-import Back from "@//components/Back.astro";
-import ProjectMedia from "@//components/ProjectMedia.astro";
-import ProjectText from "@//components/ProjectText.astro";
-import SiteLayout from "@//layouts/SiteLayout.astro";
-import { getProject, getProjectSlugs } from "@//lib/contentful";
-import { defaultLocale, locales, getTranslations } from "@//lib/i18n";
+import Back from "@/components/Back.astro";
+import ProjectMedia from "@/components/ProjectMedia.astro";
+import ProjectText from "@/components/ProjectText.astro";
+import SiteLayout from "@/layouts/SiteLayout.astro";
+import { getProject, getProjectSlugs } from "@/lib/contentful";
+import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
 export async function getStaticPaths() {
-  const localizedSlugs = await Promise.all(
+  const localizedProjects = await Promise.all(
     locales.map(async (locale) => {
-      return { locale, slugs: await getProjectSlugs(locale) };
+      const slugs = await getProjectSlugs(locale);
+      const projects = await Promise.all(
+        slugs.map((slug) => getProject(slug, locale)),
+      );
+
+      return { locale, projects };
     }),
   );
 
-  return localizedSlugs.flatMap(({ locale, slugs }) =>
-    slugs.map((slug) => ({ params: { locale, slug } })),
+  return localizedProjects.flatMap(({ locale, projects }) =>
+    projects.flatMap((project) =>
+      project?.slug
+        ? [{ params: { locale, slug: project.slug }, props: { project } }]
+        : [],
+    ),
   );
 }
 
 const locale = Astro.currentLocale ?? defaultLocale;
 const translations = getTranslations(locale);
-const { slug } = Astro.params;
-
-if (!slug) throw new Error("Missing project slug in the route parameters.");
-
-const project = await getProject(slug, locale);
-
-if (!project) {
-  throw new Error(
-    `Contentful project "${slug}" not found for locale "${locale}".`,
-  );
-}
+const { project } = Astro.props;
 ---
 
 <SiteLayout

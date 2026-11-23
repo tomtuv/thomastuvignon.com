@@ -6,31 +6,29 @@ import { getPage, getPageSlugs } from "@/lib/contentful";
 import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
 export async function getStaticPaths() {
-  const localizedSlugs = await Promise.all(
-    locales.map(async (locale) => ({
-      locale,
-      slugs: await getPageSlugs(locale),
-    })),
+  const localizedPages = await Promise.all(
+    locales.map(async (locale) => {
+      const slugs = await getPageSlugs(locale);
+      const pages = await Promise.all(
+        slugs.map((slug) => getPage(slug, locale)),
+      );
+
+      return { locale, pages };
+    }),
   );
 
-  return localizedSlugs.flatMap(({ locale, slugs }) =>
-    slugs.map((slug) => ({ params: { locale, slug } })),
+  return localizedPages.flatMap(({ locale, pages }) =>
+    pages.flatMap((page) =>
+      page?.slug
+        ? [{ params: { locale, slug: page.slug }, props: { page } }]
+        : [],
+    ),
   );
 }
 
+const { page } = Astro.props;
 const locale = Astro.currentLocale ?? defaultLocale;
 const translations = getTranslations(locale);
-const { slug } = Astro.params;
-
-if (!slug) throw new Error("Missing page slug in the route parameters.");
-
-const page = await getPage(slug, locale);
-
-if (!page) {
-  throw new Error(
-    `Contentful page "${slug}" not found for locale "${locale}".`,
-  );
-}
 ---
 
 <SiteLayout

@@ -6,16 +6,21 @@ import { getHomePage } from "@/lib/contentful";
 import { defaultLocale, locales, getTranslations } from "@/lib/i18n";
 
 export async function getStaticPaths() {
-  return locales.map((locale) => ({ params: { locale } }));
+  const localizedHomePages = await Promise.all(
+    locales.map(async (locale) => ({
+      locale,
+      homePage: await getHomePage(locale),
+    })),
+  );
+
+  return localizedHomePages.flatMap(({ locale, homePage }) =>
+    homePage ? [{ params: { locale }, props: { homePage } }] : [],
+  );
 }
 
+const { homePage } = Astro.props;
 const locale = Astro.currentLocale ?? defaultLocale;
 const translations = getTranslations(locale);
-const homePage = await getHomePage(locale);
-
-if (!homePage) {
-  throw new Error(`Contentful home page not found for locale "${locale}".`);
-}
 ---
 
 <SiteLayout
