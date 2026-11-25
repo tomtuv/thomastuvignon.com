@@ -8,11 +8,7 @@ declare namespace App {
   }
 }
 
-interface ImportMetaEnv {
-  readonly CONTENTFUL_SPACE_ID: string;
-  readonly CONTENTFUL_ACCESS_TOKEN: string;
-}
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  interface ImportMetaEnv extends Cloudflare.Env {}
 }
