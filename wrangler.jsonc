@@ -12,4 +12,5 @@
   "observability": {
     "enabled": true,
   },
+  "previews": {},
 }
