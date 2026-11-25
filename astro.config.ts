@@ -7,6 +7,7 @@ import { defaultLocale, locales } from "./src/lib/i18n";
 
 export default defineConfig({
   adapter: cloudflare(),
+  session: false,
   integrations: [
     sitemap({
       filter: (page) => new URL(page).pathname !== "/",
